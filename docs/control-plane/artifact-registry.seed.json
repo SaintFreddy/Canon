@@ -1547,6 +1547,115 @@
         "P0.4 human-readable register of accepted shortcut baseline, current enforcement points, and named future review/lint points.",
         "Accepted for downstream use after explicit in-session human approval and validation."
       ]
+    },
+    {
+      "artifact_id": "cp.context-budget-and-packet-policy.v1",
+      "artifact_type_id": "cp.control_plane_spec",
+      "title": "Context-budget and packet policy",
+      "version": "1.0.0",
+      "artifact_status": "accepted",
+      "semantic_owner": "Product/canon owner",
+      "stewardship_mode": "human_only",
+      "acceptance_authority": "Human plan owner",
+      "canonical_locator": "docs/control-plane/core/context-budget-and-packet-policy.md",
+      "source_authority_refs": [
+        "cp.master-plan.v1",
+        "cp.artifact-control-plane-spec.v1",
+        "cp.repo-agent-operating-contract.v1",
+        "cp.packet-brief-schema-data.v1",
+        "cp.factory-operating-contract.v1",
+        "cp.forbidden-shortcuts-register.v1",
+        "sa.all-prims.v1",
+        "sa.chat-native-release-plan.v1",
+        "sa.task-studio-north-star.v1"
+      ],
+      "dependency_refs": [
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.master-plan.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "P0.5 scope, deliverables, acceptance gating, and master-plan update conditions come from the master plan."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.artifact-control-plane-spec.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The policy reuses accepted P0.1 artifact, dependency, validation-hook, and stale semantics."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.repo-agent-operating-contract.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "P0.5 extends the accepted-artifact-only default and packet-brief operating baseline without redefining them."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.packet-brief-schema-data.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The policy is additive to the accepted packet-brief schema baseline and does not change it."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.factory-operating-contract.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "P0.5 preserves accepted Factory execution, headless-run, and review discipline without moving policy back into P0.3."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.forbidden-shortcuts-register.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "P0.5 applies the accepted anti-drift shortcut baseline to packet budgeting and escalation without restating it as new truth."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "sa.all-prims.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The policy preserves the accepted engine/shared-environment/app layer boundary."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "sa.chat-native-release-plan.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The policy preserves the accepted release doctrine, chat-projection rule, and shortcut baseline."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "sa.task-studio-north-star.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The policy preserves human-owned commissioned-work direction and avoids transcript-first drift."
+        }
+      ],
+      "validation_hooks": [
+        {
+          "hook_id": "vh.schema.required-fields"
+        },
+        {
+          "hook_id": "vh.dependency.integrity"
+        },
+        {
+          "hook_id": "vh.source.trace-review"
+        },
+        {
+          "hook_id": "vh.consistency.cross-pack-review"
+        },
+        {
+          "hook_id": "vh.manual.acceptance"
+        }
+      ],
+      "stale_rule_id": "sr.control-plane.strict",
+      "notes": [
+        "P0.5 normative control-plane policy for packet-budget bands, packet composition, local-doc-first reading, bounded subagent exploration, and escalation discipline.",
+        "Accepted for downstream use after explicit in-session human approval, validation, and synchronized master-plan updates."
+      ]
     }
   ]
 }

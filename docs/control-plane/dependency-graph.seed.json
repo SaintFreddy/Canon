@@ -128,6 +128,12 @@
       "artifact_type_id": "cp.control_plane_spec",
       "artifact_status": "accepted",
       "canonical_locator": "docs/control-plane/core/forbidden-shortcuts-register.md"
+    },
+    {
+      "artifact_id": "cp.context-budget-and-packet-policy.v1",
+      "artifact_type_id": "cp.control_plane_spec",
+      "artifact_status": "accepted",
+      "canonical_locator": "docs/control-plane/core/context-budget-and-packet-policy.md"
     }
   ],
   "edges": [
@@ -514,6 +520,78 @@
       "edge_type": "informs",
       "propagation_mode": "none",
       "notes": "Current automated review baseline-preservation guidance is referenced as an enforcement point."
+    },
+    {
+      "edge_id": "e-049",
+      "from_artifact_id": "cp.context-budget-and-packet-policy.v1",
+      "to_artifact_id": "cp.master-plan.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "P0.5 scope, deliverables, acceptance gating, and master-plan update conditions come from the master plan."
+    },
+    {
+      "edge_id": "e-050",
+      "from_artifact_id": "cp.context-budget-and-packet-policy.v1",
+      "to_artifact_id": "cp.artifact-control-plane-spec.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The policy reuses accepted P0.1 artifact, dependency, validation-hook, and stale semantics."
+    },
+    {
+      "edge_id": "e-051",
+      "from_artifact_id": "cp.context-budget-and-packet-policy.v1",
+      "to_artifact_id": "cp.repo-agent-operating-contract.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "P0.5 extends the accepted-artifact-only default and packet-brief operating baseline without redefining them."
+    },
+    {
+      "edge_id": "e-052",
+      "from_artifact_id": "cp.context-budget-and-packet-policy.v1",
+      "to_artifact_id": "cp.packet-brief-schema-data.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The policy is additive to the accepted packet-brief schema baseline and does not change it."
+    },
+    {
+      "edge_id": "e-053",
+      "from_artifact_id": "cp.context-budget-and-packet-policy.v1",
+      "to_artifact_id": "cp.factory-operating-contract.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "P0.5 preserves accepted Factory execution, headless-run, and review discipline without moving policy back into P0.3."
+    },
+    {
+      "edge_id": "e-054",
+      "from_artifact_id": "cp.context-budget-and-packet-policy.v1",
+      "to_artifact_id": "cp.forbidden-shortcuts-register.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "P0.5 applies the accepted anti-drift shortcut baseline to packet budgeting and escalation without restating it as new truth."
+    },
+    {
+      "edge_id": "e-055",
+      "from_artifact_id": "cp.context-budget-and-packet-policy.v1",
+      "to_artifact_id": "sa.all-prims.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The policy preserves the accepted engine/shared-environment/app layer boundary."
+    },
+    {
+      "edge_id": "e-056",
+      "from_artifact_id": "cp.context-budget-and-packet-policy.v1",
+      "to_artifact_id": "sa.chat-native-release-plan.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The policy preserves the accepted release doctrine, chat-projection rule, and shortcut baseline."
+    },
+    {
+      "edge_id": "e-057",
+      "from_artifact_id": "cp.context-budget-and-packet-policy.v1",
+      "to_artifact_id": "sa.task-studio-north-star.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The policy preserves human-owned commissioned-work direction and avoids transcript-first drift."
     }
   ]
 }

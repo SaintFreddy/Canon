@@ -201,6 +201,7 @@ This section answers, in plain terms, what is already done and what is not.
 - [x] The lightweight repo/agent operating contract has been implemented.
 - [x] The Factory operating contract has been implemented in the repo.
 - [x] The forbidden-shortcuts register has been implemented and accepted.
+- [x] The context-budget and packet policy has been implemented and accepted.
 
 ### 5.2 Not done yet
 
@@ -216,7 +217,7 @@ This section answers, in plain terms, what is already done and what is not.
 
 ### 5.3 Phase status summary
 
-- [~] Phase 0 — in progress in the repo; P0.5 remains open
+- [x] Phase 0 — done in the repo
 - [ ] Phase 1 — not done
 - [ ] Phase 2 — not done
 - [ ] Phase 3 — not done
@@ -338,7 +339,7 @@ Return:
 
 ## 8. Phase-by-phase execution plan
 
-## Phase 0 — Anti-drift and operating scaffold `[~]`
+## Phase 0 — Anti-drift and operating scaffold `[x]`
 
 ### Goal
 
@@ -383,7 +384,7 @@ This phase is done when the repo has a real artifact registry, dependency model,
 - **Acceptance:** each forbidden shortcut has a definition, a reason, and an enforcement or lint point
 - **Carry-forward topics:** new shortcut risks discovered, enforcement points added, lint rules added
 
-#### [ ] P0.5 — Context-budget and packet policy
+#### [x] P0.5 — Context-budget and packet policy
 - **Mode:** Human-only
 - **Depends on:** P0.2
 - **Deliverable:** packet size targets, packet composition rules, local-doc-first read policy, subagent exploration rule
@@ -985,6 +986,29 @@ Stale items:
 Notes for future prompts:
 - Preserve the distinction between current enforcement points and future named review/lint points.
 - Keep P0.5 packet-budget and context-policy work separate from this accepted P0.4 register.
+
+#### CF-0009 | 2026-04-11 | Source: P0.5 — Context-budget and packet policy
+
+New information:
+- An accepted P0.5 context-budget and packet policy now exists at `docs/control-plane/core/context-budget-and-packet-policy.md`.
+- The policy defines packet budget bands, packet composition rules, local-doc-first reading, bounded subagent exploration, and escalation discipline on top of accepted P0.2, P0.3, and P0.4 artifacts.
+- New artifact `cp.context-budget-and-packet-policy.v1` is registered in the control-plane registry and dependency graph as `accepted`.
+
+Impact:
+- Downstream packet work can now rely on one accepted packet-budget and packet-composition policy instead of inventing task-local context-budget rules.
+- Phase 0 now has its final accepted artifact and is complete.
+
+Status changes:
+- P0.5 marked done.
+- The completion snapshot line for the context-budget and packet policy has been updated to done.
+- Phase 0 marked done.
+
+Stale items:
+- None.
+
+Notes for future prompts:
+- Treat `cp.context-budget-and-packet-policy.v1` as the accepted control-plane basis for packet budget bands, local-doc-first reading, bounded subagent exploration, and escalation handling.
+- Do not use this artifact to smuggle runtime context-compiler topology, repo/package architecture, or a second orchestration stack into later work.
 
 ---
 
