@@ -227,6 +227,7 @@ This section answers, in plain terms, what is already done and what is not.
 - [x] The Phase 4 R3 Branch / Visual Thinker contract pack has been produced and accepted.
 - [x] The Phase 4 R4 Artifact Workspace contract pack has been produced and accepted.
 - [x] The Phase 4 R5 Prompt Studio contract pack has been produced and accepted.
+- [x] The Phase 4 R6 Governed Agent / Applet Chat contract pack has been produced and accepted.
 
 ### 5.2 Not done yet
 
@@ -635,7 +636,7 @@ This phase is done when the release-to-SDK matrix, milestone architecture, and c
 - **Acceptance:** prompt assets are governed, versioned, and reusable
 - **Carry-forward topics:** adaptation rules, staleness logic, model-profile behavior, reuse rules
 
-#### [ ] P4.8 — R6 Governed Agent / Applet Chat contract pack
+#### [x] P4.8 — R6 Governed Agent / Applet Chat contract pack
 - **Mode:** Human + Factory
 - **Depends on:** P4.2
 - **Deliverable:** contract pack for Protocols, Context Recipes, Strategy Presets, Verifier Packs, Workflows, Triggers, Applets, bounded background runs
@@ -1651,6 +1652,30 @@ Stale items:
 
 Notes for future prompts:
 - Use `rel.r5-prompt-studio-contract.v1` together with `rel.r4-artifact-workspace-contract.v1`, `rel.chat-native-milestone-architecture-plan.v1`, `rel.chat-native-maturity-matrix.v1`, and `arch.phase3-api-ipc-event-contracts.v1` as the accepted R5 contract baseline for P4.8 and later release-pack work.
+
+
+#### CF-0039 | 2026-04-11 | Source: P4.8 — R6 Governed Agent / Applet Chat contract pack
+
+New information:
+- `docs/control-plane/releases/r6-governed-agent-applet-chat-contract/phase-4-r6-governed-agent-applet-chat-contract-pack.md` is now accepted for downstream use.
+- Artifact `rel.r6-governed-agent-applet-chat-contract.v1` has been registered as `accepted`.
+- The accepted R6 contract now fixes governed reusable execution as Protocol, Workflow, Trigger, and Applet packaging over the accepted run model; background runs emit the same Run, Proof Bundle, State Delta, and Writeback Proposal objects as interactive work, and queue/inbox governance plus typed tool execution remain explicit.
+
+Impact:
+- Phase 4 now has accepted contracts for R1 through R6.
+- P4.9 can proceed on an accepted governed-reuse boundary instead of inferring whether protocol/applet packaging, background-run governance, authority limits, and tool-execution gates are already real before explicit Commission/Contract semantics appear.
+- Later release packs can treat R6 as the proof that bounded autonomy is governed substrate rather than agent theater or a second execution ontology.
+
+Status changes:
+- P4.8 marked done.
+- The completion snapshot now records the Phase 4 R6 Governed Agent / Applet Chat contract pack as accepted.
+- Phase 4 remains in progress pending P4.9.
+
+Stale items:
+- None.
+
+Notes for future prompts:
+- Use `rel.r6-governed-agent-applet-chat-contract.v1` together with `rel.r5-prompt-studio-contract.v1`, `reuse.phase2-governance-authority-writeback-invariants.v1`, `rel.chat-native-milestone-architecture-plan.v1`, `rel.chat-native-maturity-matrix.v1`, and `arch.phase3-api-ipc-event-contracts.v1` as the accepted R6 contract baseline for P4.9 and later release-pack work.
 
 ---
 

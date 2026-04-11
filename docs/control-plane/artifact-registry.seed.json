@@ -5423,6 +5423,217 @@
         "P4.7 accepted R5 contract pack defining governed prompt assets, prompt cards, model profiles, adaptations, lineage, staleness, package floors, exit criteria, and explicit refusals.",
         "Accepted for downstream use as the R5 release-contract baseline feeding P4.8 and later release packs plus Phase 6 package planning."
       ]
+    },
+    {
+      "artifact_id": "rel.r6-governed-agent-applet-chat-contract.v1",
+      "artifact_type_id": "rel.release_contract_pack",
+      "title": "Phase 4 R6 Governed Agent / Applet Chat contract pack",
+      "version": "1.0.0",
+      "artifact_status": "accepted",
+      "semantic_owner": "Release doctrine steward",
+      "stewardship_mode": "human_factory",
+      "acceptance_authority": "Human release owner",
+      "release_id": "r6-governed-agent-applet-chat-contract",
+      "canonical_locator": "docs/control-plane/releases/r6-governed-agent-applet-chat-contract/phase-4-r6-governed-agent-applet-chat-contract-pack.md",
+      "source_authority_refs": [
+        "cp.master-plan.v1",
+        "canon.phase1-surface-release-topology.v1",
+        "canon.phase1-rewrite-containment-seams.v1",
+        "canon.phase1-scenario-corpus.v1",
+        "sem.phase2-core-object-state-machines.v1",
+        "sem.phase2-run-class-taxonomy-protocol-kernel.v1",
+        "reuse.phase2-governance-authority-writeback-invariants.v1",
+        "sem.phase2-chat-native-semantic-packs.v1",
+        "sem.phase2-projection-grammar-contracts.v1",
+        "arch.phase3-technical-architecture-baseline.v1",
+        "arch.phase3-context-compiler-topology.v1",
+        "arch.phase3-data-storage-provenance-spec.v1",
+        "arch.phase3-api-ipc-event-contracts.v1",
+        "arch.phase3-platform-gate-spec.v1",
+        "arch.phase3-architecture-sync-pass.v1",
+        "rel.chat-native-maturity-matrix.v1",
+        "rel.chat-native-milestone-architecture-plan.v1",
+        "rel.r5-prompt-studio-contract.v1",
+        "sa.all-prims.v1",
+        "sa.chat-native-release-plan.v1",
+        "sa.task-studio-north-star.v1",
+        "cp.forbidden-shortcuts-register.v1"
+      ],
+      "dependency_refs": [
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.master-plan.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "P4.8 scope, sequencing, and carry-forward rules come from the master plan."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.artifact-control-plane-spec.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The R6 contract pack reuses accepted P0.1 artifact, validation-hook, and stale-rule semantics."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "canon.phase1-surface-release-topology.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P1.4 topology canon defines R6 as the governed reusable-execution stage with chatlet/apply settings surfaces, queue/inbox, and the R6 -> R7 handoff."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "canon.phase1-rewrite-containment-seams.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P1.5 seam map defines the `SS-08` and `SS-12` locks that keep authority/proof boundaries explicit and reusable execution composed from run semantics."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "canon.phase1-scenario-corpus.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P1.6 scenario corpus defines `GS-10`, `GS-11`, and `EC-05` as protected R6 pathways and failure cases."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "sem.phase2-core-object-state-machines.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P2.1 object model defines the Protocol, Applet, Run, Proof Bundle, State Delta, Writeback Proposal, Review, Approval Decision, Workflow, and Trigger contracts that R6 must reuse."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "sem.phase2-run-class-taxonomy-protocol-kernel.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P2.2 pack defines protocol-kernel fields, verifier-slot minima, conservative defaults, and the rule that background execution or applet packaging never creates a new run class."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "reuse.phase2-governance-authority-writeback-invariants.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P2.4 invariants define non-self-expanding authority, lane separation, policy-bearing objects, and review gates that R6 reusable execution must preserve."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "sem.phase2-chat-native-semantic-packs.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P2.5 semantic pack defines the R6 shared-object substrate, projection additions, semantic locks, governance/proof exposure, and handoff obligation to R7."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "sem.phase2-projection-grammar-contracts.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P2.6 grammar pack defines Queue / Inbox, Board, Browser / Library, Live Monitor, and Console compositions that R6 may foreground without inventing applet-private views."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.forbidden-shortcuts-register.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted forbidden-shortcuts register defines the hidden-autonomy, opaque-background, and app-private-ontology shortcuts that R6 must explicitly refuse."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "arch.phase3-technical-architecture-baseline.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P3.1 baseline defines the shared control/data/event substrate and the rule that background execution uses the same run model as interactive work."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "arch.phase3-context-compiler-topology.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P3.2 compiler topology defines the frozen admitted basis behind starter context packs and protocol context recipes."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "arch.phase3-data-storage-provenance-spec.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P3.3 storage/provenance baseline defines the run, proof, delta, writeback, and reusable-object lineage substrate that keeps R6 execution reconstructable."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "arch.phase3-api-ipc-event-contracts.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P3.4 contract baseline defines typed run execution jobs, model/tool gateway calls, run lifecycle events, and gateway execution events that R6 must use."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "arch.phase3-platform-gate-spec.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P3.5 Platform Gate artifact defines the inherited `PG-06` and `PG-07` blockers for typed event-spine continuity and gateway contract discipline."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "arch.phase3-architecture-sync-pass.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P3.6 sync pass confirms there is no regression to agent-builder-first drift and that applets do not bypass substrate objects."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "rel.chat-native-maturity-matrix.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P4.1 maturity matrix defines the `M4` floor for `pkg.tool-gateway-sandbox` that R6 must treat as binding."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "rel.chat-native-milestone-architecture-plan.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P4.2 milestone plan defines R6 as the reusable-execution stage and names the future-stage seams it must not pre-spend."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "rel.r5-prompt-studio-contract.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P4.7 R5 contract defines prompt assets as governed lineage-bearing inputs that R6 must inherit rather than treat as execution identity."
+        },
+        {
+          "edge_type": "informs",
+          "artifact_id": "canon.phase1-source-decomposition.v1",
+          "propagation_mode": "none",
+          "required_for_acceptance": false,
+          "notes": "The accepted P1.1 glossary and contradiction pack informs R6 vocabulary around Agent Profile, Chatlet Projection, Applet boundaries, and governed reuse."
+        },
+        {
+          "edge_type": "informs",
+          "artifact_id": "canon.phase1-product-interpretation-freeze.v1",
+          "propagation_mode": "none",
+          "required_for_acceptance": false,
+          "notes": "The accepted P1.2 interpretation note informs the fixed release order, no-second-ontology discipline, and the requirement that Prompt Studio and R6 remain mandatory bridge stages."
+        }
+      ],
+      "validation_hooks": [
+        {
+          "hook_id": "vh.dependency.integrity"
+        },
+        {
+          "hook_id": "vh.source.trace-review"
+        },
+        {
+          "hook_id": "vh.consistency.cross-pack-review"
+        },
+        {
+          "hook_id": "vh.manual.acceptance"
+        }
+      ],
+      "stale_rule_id": "sr.derivative.manual",
+      "notes": [
+        "P4.8 accepted R6 contract pack defining governed reusable execution through protocols, workflows, triggers, applets, bounded background runs, queue/inbox governance, package floors, exit criteria, and explicit refusals.",
+        "Accepted for downstream use as the R6 release-contract baseline feeding P4.9 and later release packs plus Phase 5 governance/object work."
+      ]
     }
   ]
 }
