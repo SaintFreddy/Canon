@@ -199,10 +199,10 @@ This section answers, in plain terms, what is already done and what is not.
 - [x] The status system and append-only carry-forward mechanism are defined in this file.
 - [x] The repo-level artifact registry and dependency graph have been implemented.
 - [x] The lightweight repo/agent operating contract has been implemented.
+- [x] The Factory operating contract has been implemented in the repo.
 
 ### 5.2 Not done yet
 
-- [ ] The Factory operating contract has been implemented in the repo.
 - [ ] The contradiction register, glossary, and canon freeze artifacts have been produced and accepted.
 - [ ] The layer separation pack and rewrite-containment seam map have been produced and accepted.
 - [ ] The core semantic contracts and state-machine specs have been produced and accepted.
@@ -215,7 +215,7 @@ This section answers, in plain terms, what is already done and what is not.
 
 ### 5.3 Phase status summary
 
-- [~] Phase 0 — partially done inside this file; not implemented in the repo yet
+- [~] Phase 0 — in progress in the repo; P0.4 and P0.5 remain open
 - [ ] Phase 1 — not done
 - [ ] Phase 2 — not done
 - [ ] Phase 3 — not done
@@ -368,7 +368,7 @@ This phase is done when the repo has a real artifact registry, dependency model,
 - **Acceptance:** the repo has a minimal but explicit operating contract that agents and humans both follow
 - **Carry-forward topics:** packet schema changes, repo-wide rules, module-local override rules
 
-#### [ ] P0.3 — Factory operating contract
+#### [x] P0.3 — Factory operating contract
 - **Mode:** Human + Factory
 - **Depends on:** P0.2
 - **Deliverable:** Factory-specific AGENTS.md guidance, skills layout, headless execution conventions, review/approval rules for automated runs
@@ -938,6 +938,29 @@ Notes for future prompts:
 - Preserve the accepted-artifact-only default unless an explicit task targets provisional material.
 - Treat packet briefs as scope-narrowing execution artifacts, not source-of-truth replacements.
 - Keep Factory-specific skills, headless execution rules, and automated-run review conventions deferred to P0.3.
+
+#### CF-0007 | 2026-04-11 | Source: P0.3 — Factory operating contract
+
+New information:
+- Repo-scoped Factory execution assets now live under `/.factory/`, including `/.factory/factory-operating-contract.md`, `/.factory/AGENTS.md`, and initial shared skills for bounded packet execution and automated review guidance.
+- Headless `droid exec` conventions, allowed autonomy bands, review gates, and failure handling are now explicit and registered as accepted control-plane artifacts.
+
+Impact:
+- Downstream packets and headless automation can rely on one accepted Factory-specific execution contract instead of inventing repo-local conventions.
+- P6.4 now has a concrete repo baseline for project skills and headless execution behavior.
+- P0.5 can layer packet-budget and context-policy work on top of an accepted Factory execution contract rather than bundling those concerns into P0.3.
+
+Status changes:
+- P0.3 marked done.
+- The completion snapshot line for the Factory operating contract has been updated to done.
+- Phase 0 remains in progress.
+
+Stale items:
+- None.
+
+Notes for future prompts:
+- Use `/.factory/factory-operating-contract.md` plus the shared `/.factory/skills/` assets as the default Factory execution basis for repo-scoped packets and headless runs.
+- Keep custom droids and hooks optional and additive; do not use them to bypass human acceptance or to smuggle P0.5-only packet policy into execution.
 
 ---
 

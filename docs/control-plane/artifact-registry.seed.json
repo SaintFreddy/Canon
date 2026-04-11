@@ -1181,6 +1181,258 @@
         "P0.2 machine-readable baseline schema for lightweight packet briefs.",
         "Defines the minimum bounded-work fields without adding P0.3-specific execution rules."
       ]
+    },
+    {
+      "artifact_id": "cp.factory-operating-contract.v1",
+      "artifact_type_id": "cp.control_plane_spec",
+      "title": "Factory Operating Contract",
+      "version": "1.0.0",
+      "artifact_status": "accepted",
+      "semantic_owner": "Product/canon owner",
+      "stewardship_mode": "human_factory",
+      "acceptance_authority": "Human plan owner",
+      "canonical_locator": ".factory/factory-operating-contract.md",
+      "source_authority_refs": [
+        "cp.master-plan.v1",
+        "cp.repo-agent-operating-contract.v1",
+        "cp.artifact-control-plane-spec.v1",
+        "sa.all-prims.v1",
+        "sa.chat-native-release-plan.v1",
+        "sa.task-studio-north-star.v1"
+      ],
+      "dependency_refs": [
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.master-plan.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "P0.3 scope, deliverables, and acceptance rules come from the master plan."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.repo-agent-operating-contract.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "P0.3 extends the accepted P0.2 operating contract rather than redefining it."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.packet-brief-schema-data.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "Headless and packet execution rules build on the accepted packet-brief baseline."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.artifact-control-plane-spec.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "P0.3 reuses accepted artifact, dependency, validation-hook, and stale-rule semantics."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "sa.all-prims.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The contract preserves the accepted three-layer architecture."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "sa.chat-native-release-plan.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The contract preserves the fixed release doctrine and forbidden shortcuts."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "sa.task-studio-north-star.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The contract preserves human-owned product truth and the north-star direction."
+        }
+      ],
+      "validation_hooks": [
+        {
+          "hook_id": "vh.schema.required-fields"
+        },
+        {
+          "hook_id": "vh.dependency.integrity"
+        },
+        {
+          "hook_id": "vh.source.trace-review"
+        },
+        {
+          "hook_id": "vh.consistency.cross-pack-review"
+        },
+        {
+          "hook_id": "vh.manual.acceptance"
+        }
+      ],
+      "stale_rule_id": "sr.control-plane.strict",
+      "notes": [
+        "P0.3 normative Factory-specific execution contract.",
+        "Defines project skills, headless execution conventions, and automated review/approval rules without reopening the accepted P0.2 baseline."
+      ]
+    },
+    {
+      "artifact_id": "cp.factory-workspace-agents.v1",
+      "artifact_type_id": "cp.control_plane_spec",
+      "title": "Factory workspace AGENTS projection",
+      "version": "1.0.0",
+      "artifact_status": "accepted",
+      "semantic_owner": "Product/canon owner",
+      "stewardship_mode": "human_factory",
+      "acceptance_authority": "Human plan owner",
+      "canonical_locator": ".factory/AGENTS.md",
+      "source_authority_refs": [
+        "cp.factory-operating-contract.v1",
+        "cp.repo-agent-operating-contract.v1",
+        "cp.master-plan.v1"
+      ],
+      "dependency_refs": [
+        {
+          "edge_type": "derives_from",
+          "artifact_id": "cp.repo-root-agents.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The .factory subtree narrows the repo-wide AGENTS projection for Factory assets."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.factory-operating-contract.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The subtree rules project the accepted P0.3 Factory operating contract."
+        }
+      ],
+      "validation_hooks": [
+        {
+          "hook_id": "vh.schema.required-fields"
+        },
+        {
+          "hook_id": "vh.dependency.integrity"
+        },
+        {
+          "hook_id": "vh.source.trace-review"
+        },
+        {
+          "hook_id": "vh.manual.acceptance"
+        }
+      ],
+      "stale_rule_id": "sr.control-plane.strict",
+      "notes": [
+        "P0.3 descendant AGENTS projection for project-scoped Factory assets.",
+        "Keeps .factory skills and any later droids or hooks additive to accepted repo truth."
+      ]
+    },
+    {
+      "artifact_id": "cp.factory-packet-execution-skill.v1",
+      "artifact_type_id": "cp.control_plane_spec",
+      "title": "Control-plane packet execution skill",
+      "version": "1.0.0",
+      "artifact_status": "accepted",
+      "semantic_owner": "Product/canon owner",
+      "stewardship_mode": "human_factory",
+      "acceptance_authority": "Human plan owner",
+      "canonical_locator": ".factory/skills/control-plane-packet-execution/SKILL.md",
+      "source_authority_refs": [
+        "cp.factory-operating-contract.v1",
+        "cp.repo-agent-operating-contract.v1",
+        "cp.master-plan.v1"
+      ],
+      "dependency_refs": [
+        {
+          "edge_type": "derives_from",
+          "artifact_id": "cp.factory-operating-contract.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The skill operationalizes the accepted P0.3 Factory contract for bounded packet work."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.packet-brief-schema-data.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The skill relies on the accepted packet-brief baseline for scope, deliverables, validators, and approvals."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.artifact-control-plane-spec.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The skill reuses accepted P0.1 artifact, dependency, validation-hook, and stale semantics."
+        }
+      ],
+      "validation_hooks": [
+        {
+          "hook_id": "vh.schema.required-fields"
+        },
+        {
+          "hook_id": "vh.dependency.integrity"
+        },
+        {
+          "hook_id": "vh.consistency.cross-pack-review"
+        },
+        {
+          "hook_id": "vh.manual.acceptance"
+        }
+      ],
+      "stale_rule_id": "sr.control-plane.strict",
+      "notes": [
+        "P0.3 shared skill for executing bounded control-plane packets in this repo.",
+        "Requires accepted artifacts, synchronized registry and graph updates, real validators, and carry-forward/status output."
+      ]
+    },
+    {
+      "artifact_id": "cp.factory-review-guidelines-skill.v1",
+      "artifact_type_id": "cp.control_plane_spec",
+      "title": "Review guidelines skill",
+      "version": "1.0.0",
+      "artifact_status": "accepted",
+      "semantic_owner": "Product/canon owner",
+      "stewardship_mode": "human_factory",
+      "acceptance_authority": "Human plan owner",
+      "canonical_locator": ".factory/skills/review-guidelines/SKILL.md",
+      "source_authority_refs": [
+        "cp.factory-operating-contract.v1",
+        "cp.repo-agent-operating-contract.v1",
+        "cp.master-plan.v1"
+      ],
+      "dependency_refs": [
+        {
+          "edge_type": "derives_from",
+          "artifact_id": "cp.factory-operating-contract.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The skill operationalizes the accepted P0.3 review and approval rules."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.artifact-control-plane-spec.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The skill checks accepted artifact, dependency, validation-hook, and stale-rule usage."
+        }
+      ],
+      "validation_hooks": [
+        {
+          "hook_id": "vh.schema.required-fields"
+        },
+        {
+          "hook_id": "vh.dependency.integrity"
+        },
+        {
+          "hook_id": "vh.consistency.cross-pack-review"
+        },
+        {
+          "hook_id": "vh.manual.acceptance"
+        }
+      ],
+      "stale_rule_id": "sr.control-plane.strict",
+      "notes": [
+        "P0.3 background review skill for automated review and approval-prep runs.",
+        "Focuses on baseline preservation, control-plane integrity, scope discipline, and human-owned acceptance boundaries."
+      ]
     }
   ]
 }
