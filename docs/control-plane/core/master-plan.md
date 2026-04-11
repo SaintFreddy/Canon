@@ -233,6 +233,7 @@ This section answers, in plain terms, what is already done and what is not.
 - [x] The Phase 5 full proof, validation, and evaluation spec has been produced and accepted.
 - [x] The Phase 5 full run-class protocol packs have been produced and accepted.
 - [x] The Phase 5 Workflow / Trigger / Applet / Pack / Integration Binding specs have been produced and accepted.
+- [x] The Phase 5 Task Studio surface and lifecycle contract pack has been produced and accepted.
 
 ### 5.2 Not done yet
 
@@ -695,7 +696,7 @@ This phase is done when governance, proof, protocol packs, reusable execution ob
 - **Acceptance:** recurring and packaged work composes from the run model rather than inventing a separate ontology
 - **Carry-forward topics:** trigger types, packaging rules, integration binding rules, composition constraints
 
-#### [ ] P5.5 — Task Studio surface and lifecycle contract pack
+#### [x] P5.5 — Task Studio surface and lifecycle contract pack
 - **Mode:** Human + Factory
 - **Depends on:** P4.9 and P5.1 through P5.4
 - **Deliverable:** Task Studio surfaces, lifecycle stages, layout rule, progressive disclosure model
@@ -1801,6 +1802,30 @@ Stale items:
 
 Notes for future prompts:
 - Use `reuse.phase5-workflow-trigger-applet-pack-integration-binding-specs.v1` together with `reuse.phase5-run-class-protocol-packs.v1`, `reuse.phase5-governance-authority-writeback-spec.v1`, `reuse.phase5-proof-validation-evaluation-spec.v1`, `rel.r6-governed-agent-applet-chat-contract.v1`, `rel.r7-commissioning-bridge-contract.v1`, `sem.phase2-projection-grammar-contracts.v1`, `arch.phase3-context-compiler-topology.v1`, and `arch.phase3-api-ipc-event-contracts.v1` as the reusable-execution composition baseline for P5.5-P5.7.
+
+
+#### CF-0045 | 2026-04-11 | Source: P5.5 — Task Studio surface and lifecycle contract pack
+
+New information:
+- `docs/control-plane/reuse/phase-5-task-studio-surface-and-lifecycle-contract-pack.md` is now accepted for downstream use.
+- Artifact `reuse.phase5-task-studio-surface-lifecycle-contract-pack.v1` has been registered as `accepted`.
+- The accepted Phase 5 Task Studio pack now makes named surfaces, lifecycle stages, layout rules, and progressive-disclosure behavior machine-usable while preserving shared IDs, reusable-execution lineage, and lane-separated governance semantics.
+
+Impact:
+- Phase 5 now has an accepted Task Studio app-model baseline on top of the accepted R7 handoff, governance, proof, protocol, and reusable-execution composition layers.
+- P5.6 can narrow V1 scope and exposure choices against an explicit Task Studio lifecycle and surface contract instead of relying on future-only intent.
+- P5.7 and later surface-contract work can preserve exact handoff continuity and grammar mapping without inventing app-private state machines.
+
+Status changes:
+- P5.5 marked done.
+- The completion snapshot now records the Phase 5 Task Studio surface and lifecycle contract pack as accepted.
+- Phase 5 remains in progress pending P5.6-P5.7.
+
+Stale items:
+- None.
+
+Notes for future prompts:
+- Use `reuse.phase5-task-studio-surface-lifecycle-contract-pack.v1` together with `reuse.phase5-workflow-trigger-applet-pack-integration-binding-specs.v1`, `reuse.phase5-run-class-protocol-packs.v1`, `reuse.phase5-governance-authority-writeback-spec.v1`, `reuse.phase5-proof-validation-evaluation-spec.v1`, `rel.r7-commissioning-bridge-contract.v1`, `sem.phase2-projection-grammar-contracts.v1`, `canon.phase1-source-decomposition.v1`, and `sa.task-studio-north-star.v1` as the Task Studio app-model baseline for P5.6, P5.7, and P6.1.
 
 ---
 

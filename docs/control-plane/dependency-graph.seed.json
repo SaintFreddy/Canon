@@ -320,6 +320,12 @@
       "artifact_type_id": "reuse.execution_governance_pack",
       "artifact_status": "accepted",
       "canonical_locator": "docs/control-plane/reuse/phase-5-workflow-trigger-applet-pack-and-integration-binding-specs.md"
+    },
+    {
+      "artifact_id": "reuse.phase5-task-studio-surface-lifecycle-contract-pack.v1",
+      "artifact_type_id": "reuse.execution_governance_pack",
+      "artifact_status": "accepted",
+      "canonical_locator": "docs/control-plane/reuse/phase-5-task-studio-surface-and-lifecycle-contract-pack.md"
     }
   ],
   "edges": [
@@ -4978,6 +4984,262 @@
       "edge_type": "depends_on",
       "propagation_mode": "auto",
       "notes": "The forbidden-shortcuts register prevents transcript-first truth, agent-builder-first drift, separate backends per view, hidden memory, and silent proposal application in reusable-execution composition."
+    },
+    {
+      "edge_id": "e-583",
+      "from_artifact_id": "reuse.phase5-task-studio-surface-lifecycle-contract-pack.v1",
+      "to_artifact_id": "cp.master-plan.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The master plan sets the accepted P5.5 scope, dependency order, deliverable, and acceptance bar for the Task Studio app-model contract."
+    },
+    {
+      "edge_id": "e-584",
+      "from_artifact_id": "reuse.phase5-task-studio-surface-lifecycle-contract-pack.v1",
+      "to_artifact_id": "cp.artifact-control-plane-spec.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted P0.1 control-plane spec defines artifact metadata, dependency semantics, validation hooks, and stale rules for this Task Studio contract pack."
+    },
+    {
+      "edge_id": "e-585",
+      "from_artifact_id": "reuse.phase5-task-studio-surface-lifecycle-contract-pack.v1",
+      "to_artifact_id": "reuse.phase2-proof-validation-invariants.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted P2.4 proof invariants define minimum proof visibility, failure inspectability, and projection parity that Task Studio surfaces must preserve."
+    },
+    {
+      "edge_id": "e-586",
+      "from_artifact_id": "reuse.phase5-task-studio-surface-lifecycle-contract-pack.v1",
+      "to_artifact_id": "reuse.phase2-governance-authority-writeback-invariants.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted P2.3 governance invariants define explicit scope, review, approval, and lane-separation rules that Task Studio surfaces must keep visible instead of collapsing."
+    },
+    {
+      "edge_id": "e-587",
+      "from_artifact_id": "reuse.phase5-task-studio-surface-lifecycle-contract-pack.v1",
+      "to_artifact_id": "sem.phase2-core-object-state-machines.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted P2.1 core-object pack defines the shared objects that Task Studio surfaces and lifecycle stages must project without replacement."
+    },
+    {
+      "edge_id": "e-588",
+      "from_artifact_id": "reuse.phase5-task-studio-surface-lifecycle-contract-pack.v1",
+      "to_artifact_id": "sem.phase2-run-class-taxonomy-protocol-kernel.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted P2.2 taxonomy fixes the one-to-one mapping between Task Studio task families and shared run classes."
+    },
+    {
+      "edge_id": "e-589",
+      "from_artifact_id": "reuse.phase5-task-studio-surface-lifecycle-contract-pack.v1",
+      "to_artifact_id": "sem.phase2-chat-native-semantic-packs.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted Phase 2 semantic-release packs keep Task Studio aligned with the release-path projection story rather than inventing an app-private ontology."
+    },
+    {
+      "edge_id": "e-590",
+      "from_artifact_id": "reuse.phase5-task-studio-surface-lifecycle-contract-pack.v1",
+      "to_artifact_id": "sem.phase2-projection-grammar-contracts.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted projection grammar defines the shared Composer, Canvas, Inspector, Browser / Library, Timeline, Ledger, Compare, Queue / Inbox, Board, Diff / Merge, Live Monitor, and Console contracts that Task Studio aliases must resolve to."
+    },
+    {
+      "edge_id": "e-591",
+      "from_artifact_id": "reuse.phase5-task-studio-surface-lifecycle-contract-pack.v1",
+      "to_artifact_id": "rel.r6-governed-agent-applet-chat-contract.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted R6 contract defines reusable-execution context, queue/inbox state, and background-run continuity that Task Studio must inherit rather than replace."
+    },
+    {
+      "edge_id": "e-592",
+      "from_artifact_id": "reuse.phase5-task-studio-surface-lifecycle-contract-pack.v1",
+      "to_artifact_id": "rel.r7-commissioning-bridge-contract.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted R7 contract defines preflight, Live Monitor, Proof Ledger, Delta Inspector, lane-separated review/writeback, and shared-ID handoff continuity that Task Studio must make app-operational."
+    },
+    {
+      "edge_id": "e-593",
+      "from_artifact_id": "reuse.phase5-task-studio-surface-lifecycle-contract-pack.v1",
+      "to_artifact_id": "reuse.phase5-governance-authority-writeback-spec.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted P5.1 governance pack defines authority, review, writeback, partial-acceptance, and compensation semantics that Task Studio must project explicitly."
+    },
+    {
+      "edge_id": "e-594",
+      "from_artifact_id": "reuse.phase5-task-studio-surface-lifecycle-contract-pack.v1",
+      "to_artifact_id": "reuse.phase5-proof-validation-evaluation-spec.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted P5.2 proof/evaluation pack defines proof, evaluator, fixture, replay, and failure semantics that Task Studio must surface without prose-only collapse."
+    },
+    {
+      "edge_id": "e-595",
+      "from_artifact_id": "reuse.phase5-task-studio-surface-lifecycle-contract-pack.v1",
+      "to_artifact_id": "reuse.phase5-run-class-protocol-packs.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted P5.3 protocol pack defines the task-family-to-run-class baseline, protocol pins, proof hooks, and defaults that Task Studio must frame rather than redefine."
+    },
+    {
+      "edge_id": "e-596",
+      "from_artifact_id": "reuse.phase5-task-studio-surface-lifecycle-contract-pack.v1",
+      "to_artifact_id": "reuse.phase5-workflow-trigger-applet-pack-integration-binding-specs.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted P5.4 composition pack defines workflow, trigger, applet, pack, and integration-binding lineage that Task Studio must keep inspectable throughout execution and handoff."
+    },
+    {
+      "edge_id": "e-597",
+      "from_artifact_id": "reuse.phase5-task-studio-surface-lifecycle-contract-pack.v1",
+      "to_artifact_id": "rel.chat-native-maturity-matrix.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted P4.1 maturity matrix fixes the package-floor posture that Task Studio can assume after R7."
+    },
+    {
+      "edge_id": "e-598",
+      "from_artifact_id": "reuse.phase5-task-studio-surface-lifecycle-contract-pack.v1",
+      "to_artifact_id": "rel.chat-native-milestone-architecture-plan.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted P4.2 milestone architecture plan fixes the R7 -> Task Studio shift as a projection change rather than a semantic rewrite."
+    },
+    {
+      "edge_id": "e-599",
+      "from_artifact_id": "reuse.phase5-task-studio-surface-lifecycle-contract-pack.v1",
+      "to_artifact_id": "arch.phase3-technical-architecture-baseline.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted P3.1 technical architecture baseline fixes the boundary between shared substrate truth and app/domain projections that Task Studio must respect."
+    },
+    {
+      "edge_id": "e-600",
+      "from_artifact_id": "reuse.phase5-task-studio-surface-lifecycle-contract-pack.v1",
+      "to_artifact_id": "arch.phase3-context-compiler-topology.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted P3.2 context-compiler topology defines the frozen-basis and context-inspection semantics that Task Studio Context Inspector must project."
+    },
+    {
+      "edge_id": "e-601",
+      "from_artifact_id": "reuse.phase5-task-studio-surface-lifecycle-contract-pack.v1",
+      "to_artifact_id": "arch.phase3-data-storage-provenance-spec.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted P3.3 storage/provenance baseline defines stable IDs, append-only lineage, and tenant-aware continuity that Task Studio route and panel changes must preserve."
+    },
+    {
+      "edge_id": "e-602",
+      "from_artifact_id": "reuse.phase5-task-studio-surface-lifecycle-contract-pack.v1",
+      "to_artifact_id": "arch.phase3-api-ipc-event-contracts.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted P3.4 API/IPC contracts define typed events, inspect queries, and run/proof/delta references that Task Studio surfaces must rely on instead of app-local shadow state."
+    },
+    {
+      "edge_id": "e-603",
+      "from_artifact_id": "reuse.phase5-task-studio-surface-lifecycle-contract-pack.v1",
+      "to_artifact_id": "arch.phase3-platform-gate-spec.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted P3.5 Platform Gate requires Task Studio to run on the same shared substrate with no view-local backdoors, transcript shortcuts, or failure-visibility gaps."
+    },
+    {
+      "edge_id": "e-604",
+      "from_artifact_id": "reuse.phase5-task-studio-surface-lifecycle-contract-pack.v1",
+      "to_artifact_id": "arch.phase3-architecture-sync-pass.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted P3.6 architecture sync pass confirms semantic, release, and architecture seams remain aligned before Task Studio app semantics are fixed."
+    },
+    {
+      "edge_id": "e-605",
+      "from_artifact_id": "reuse.phase5-task-studio-surface-lifecycle-contract-pack.v1",
+      "to_artifact_id": "canon.phase1-product-interpretation-freeze.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted P1.2 product interpretation freeze keeps Task Studio positioned as a projection change over accepted commissioned-work semantics rather than a rewrite destination."
+    },
+    {
+      "edge_id": "e-606",
+      "from_artifact_id": "reuse.phase5-task-studio-surface-lifecycle-contract-pack.v1",
+      "to_artifact_id": "canon.phase1-source-decomposition.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted P1.1 source-decomposition pack extracts TS-01 through TS-06, which define the core commissioned-work loop, run-native posture, and non-goals that this Task Studio contract must preserve."
+    },
+    {
+      "edge_id": "e-607",
+      "from_artifact_id": "reuse.phase5-task-studio-surface-lifecycle-contract-pack.v1",
+      "to_artifact_id": "canon.phase1-layer-primitive-separation.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted P1.3 owner-layer map defines Task Studio app primitives while keeping the underlying commissioned-work objects in the shared environment."
+    },
+    {
+      "edge_id": "e-608",
+      "from_artifact_id": "reuse.phase5-task-studio-surface-lifecycle-contract-pack.v1",
+      "to_artifact_id": "canon.phase1-surface-release-topology.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted P1.4 surface topology canon defines the Task Studio surface set, projection rules, and R7 -> Task Studio handoff story that this pack makes operational."
+    },
+    {
+      "edge_id": "e-609",
+      "from_artifact_id": "reuse.phase5-task-studio-surface-lifecycle-contract-pack.v1",
+      "to_artifact_id": "canon.phase1-rewrite-containment-seams.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted P1.4 rewrite-containment seams prevent Task Studio from becoming a rewrite destination, second truth model, or app-private backend."
+    },
+    {
+      "edge_id": "e-610",
+      "from_artifact_id": "reuse.phase5-task-studio-surface-lifecycle-contract-pack.v1",
+      "to_artifact_id": "canon.phase1-scenario-corpus.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted P1.5 scenario corpus provides GS and EC grounding for Task Studio task-family, handoff, branching, proof, and writeback behavior."
+    },
+    {
+      "edge_id": "e-611",
+      "from_artifact_id": "reuse.phase5-task-studio-surface-lifecycle-contract-pack.v1",
+      "to_artifact_id": "sa.all-prims.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The primitive-set authority defines the shared commissioned-work objects and projection boundaries that Task Studio must preserve."
+    },
+    {
+      "edge_id": "e-612",
+      "from_artifact_id": "reuse.phase5-task-studio-surface-lifecycle-contract-pack.v1",
+      "to_artifact_id": "sa.chat-native-release-plan.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The release doctrine fixes Task Studio as the north-star handoff target after R7 and forbids reopening the release-path semantics here."
+    },
+    {
+      "edge_id": "e-613",
+      "from_artifact_id": "reuse.phase5-task-studio-surface-lifecycle-contract-pack.v1",
+      "to_artifact_id": "sa.task-studio-north-star.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The north-star authority defines Task Studio as a general commissioned-work, run-native, proof-returning app with explicit lifecycle and surface expectations."
+    },
+    {
+      "edge_id": "e-614",
+      "from_artifact_id": "reuse.phase5-task-studio-surface-lifecycle-contract-pack.v1",
+      "to_artifact_id": "cp.forbidden-shortcuts-register.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The forbidden-shortcuts register prevents transcript truth, separate backends per view, silent proposal application, and agent-builder drift from re-entering through Task Studio surfaces."
     }
   ]
 }
