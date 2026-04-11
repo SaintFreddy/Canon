@@ -212,11 +212,11 @@ This section answers, in plain terms, what is already done and what is not.
 - [x] The Phase 2 run-class taxonomy and protocol-kernel pack has been produced and accepted.
 - [x] The Phase 2 governance, authority, and writeback invariants have been produced and accepted.
 - [x] The Phase 2 proof and validation invariants have been produced and accepted.
+- [x] The Phase 2 chat-native semantic packs by release have been produced and accepted.
 
 ### 5.2 Not done yet
 
-- [ ] The rewrite-containment seam map has not yet been produced and accepted.
-- [ ] The core semantic contracts and state-machine specs have been produced and accepted.
+- [ ] The Phase 2 projection grammar contract pack has not yet been produced and accepted.
 - [ ] The technical architecture baseline and Platform Gate artifacts have been produced and accepted.
 - [ ] The release contract packs for Platform Gate through R7 have been produced and accepted.
 - [ ] The full reusable semantics and Task Studio readiness packs have been produced and accepted.
@@ -494,7 +494,7 @@ This phase is done when the core object model, run classes, invariants, release-
 - **Acceptance:** proof is task-shaped and not one generic explanation blob
 - **Carry-forward topics:** proof rules by task family, failure classes, validation expectations, uncertainty policies
 
-#### [ ] P2.5 — Chat-native semantic packs by release
+#### [x] P2.5 — Chat-native semantic packs by release
 - **Mode:** Human + Factory
 - **Depends on:** P2.1 through P2.4
 - **Deliverable:** semantic packs for Transcript Chat, Context Chat, Branch / Visual Thinker, Artifact Workspace, Prompt Studio, Governed Agent / Applet Chat, and Commissioning Bridge
@@ -1286,6 +1286,27 @@ Stale items:
 
 Notes for future prompts:
 - Use `reuse.phase2-proof-validation-invariants.v1` together with the accepted P2.1-P2.3 artifacts as the proof baseline for P2.5, P4 release packs, and P5.2.
+
+#### CF-0023 | 2026-04-11 | Source: P2.5 — Chat-native semantic packs by release
+
+New information:
+- `docs/control-plane/semantics/phase-2-chat-native-semantic-packs-by-release.md` now defines the accepted semantic overlay for each public chat-native release from R1 Transcript Chat through R7 Commissioning Bridge.
+- Artifact `sem.phase2-chat-native-semantic-packs.v1` is registered in the control-plane registry and dependency graph as `accepted`.
+
+Impact:
+- Phase 2 now has an accepted release-semantics baseline that P2.6 and the later Phase 4 release contract packs can extend without inventing release-private ontologies.
+- Each chat-native release now has one explicit mapping from shared objects to projection vocabulary, governance/proof exposure, and handoff obligations.
+
+Status changes:
+- P2.5 marked done.
+- The completion snapshot now records the Phase 2 chat-native semantic packs by release as accepted.
+- Phase 2 remains in progress.
+
+Stale items:
+- None.
+
+Notes for future prompts:
+- Use `sem.phase2-chat-native-semantic-packs.v1` together with the accepted P2.1-P2.4 artifacts as the release-semantics baseline for P2.6, Phase 4 release packs, and the R7 -> Task Studio bridge.
 
 ---
 

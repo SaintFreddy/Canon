@@ -2745,6 +2745,167 @@
         "P2.4 accepted invariant layer for proof expectations, uncertainty, omission, contradiction, replay/comparison expectations, and failure classes.",
         "Accepted for downstream use as the Phase 2 proof baseline feeding release packs, Task Studio proof surfaces, and later full evaluation specs."
       ]
+    },
+    {
+      "artifact_id": "sem.phase2-chat-native-semantic-packs.v1",
+      "artifact_type_id": "sem.semantic_contract_pack",
+      "title": "Phase 2 chat-native semantic packs by release",
+      "version": "1.0.0",
+      "artifact_status": "accepted",
+      "semantic_owner": "Semantic contracts steward",
+      "stewardship_mode": "human_factory",
+      "acceptance_authority": "Human semantic owner",
+      "canonical_locator": "docs/control-plane/semantics/phase-2-chat-native-semantic-packs-by-release.md",
+      "source_authority_refs": [
+        "cp.master-plan.v1",
+        "canon.phase1-source-decomposition.v1",
+        "canon.phase1-product-interpretation-freeze.v1",
+        "canon.phase1-layer-primitive-separation.v1",
+        "canon.phase1-surface-release-topology.v1",
+        "canon.phase1-rewrite-containment-seams.v1",
+        "canon.phase1-scenario-corpus.v1",
+        "sem.phase2-core-object-state-machines.v1",
+        "sem.phase2-run-class-taxonomy-protocol-kernel.v1",
+        "reuse.phase2-governance-authority-writeback-invariants.v1",
+        "reuse.phase2-proof-validation-invariants.v1",
+        "sa.all-prims.v1",
+        "sa.chat-native-release-plan.v1",
+        "sa.task-studio-north-star.v1",
+        "cp.forbidden-shortcuts-register.v1"
+      ],
+      "dependency_refs": [
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.master-plan.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "P2.5 scope, sequencing, and carry-forward rules come from the master plan."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.artifact-control-plane-spec.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The semantic pack reuses accepted P0.1 artifact, validation-hook, and stale-rule semantics."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "canon.phase1-source-decomposition.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P1.1 glossary and contradiction register normalize release-local vocabulary and projection-vs-ontology tensions used here."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "canon.phase1-product-interpretation-freeze.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P1.2 note fixes the chat-native wedge, Task Studio north star, release order, and projection-vs-ontology rule."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "canon.phase1-layer-primitive-separation.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P1.3 owner-layer map keeps release-local vocabulary additive to shared and app-level primitives instead of replacing them."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "canon.phase1-surface-release-topology.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P1.4 topology canon defines the continuity centers, bridge releases, and handoff obligations that each semantic pack must preserve."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "canon.phase1-rewrite-containment-seams.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P1.5 seam map identifies R4 and R7 bridge semantics and shared-object continuity as high-blast-radius seams."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "canon.phase1-scenario-corpus.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P1.6 scenarios and edge cases define the stage-by-stage semantic pathways and drift failures this pack must cover."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "sem.phase2-core-object-state-machines.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P2.1 object model defines the shared objects that each release pack must project without replacement."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "sem.phase2-run-class-taxonomy-protocol-kernel.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P2.2 taxonomy defines the shared run classes that release packs may foreground but may not replace."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "reuse.phase2-governance-authority-writeback-invariants.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P2.3 invariants bind authority, approval, and lane-separation behavior across every release pack."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "reuse.phase2-proof-validation-invariants.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P2.4 invariants bind proof, uncertainty, omission, contradiction, replay, and failure semantics across every release pack."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "sa.all-prims.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The primitive-set authority defines the shared environment objects and projection grammar that the release packs must project."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "sa.chat-native-release-plan.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The release doctrine defines the seven public chat-native releases and the view-specific vocabulary this pack formalizes semantically."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "sa.task-studio-north-star.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The north-star authority defines the commissioned-work handoff target that R7 must preserve without ontology translation."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.forbidden-shortcuts-register.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The pack must preserve no master chat truth, no separate backend per view, no hidden memory sludge, and no agent-builder-first drift."
+        }
+      ],
+      "validation_hooks": [
+        {
+          "hook_id": "vh.dependency.integrity"
+        },
+        {
+          "hook_id": "vh.source.trace-review"
+        },
+        {
+          "hook_id": "vh.consistency.cross-pack-review"
+        },
+        {
+          "hook_id": "vh.manual.acceptance"
+        }
+      ],
+      "stale_rule_id": "sr.derivative.manual",
+      "notes": [
+        "P2.5 accepted semantic pack defining one release-specific semantic overlay for each public chat-native release from R1 through R7.",
+        "Accepted for downstream use as the Phase 2 release-semantics baseline feeding projection grammar, Phase 4 release packs, and the R7 -> Task Studio bridge."
+      ]
     }
   ]
 }
