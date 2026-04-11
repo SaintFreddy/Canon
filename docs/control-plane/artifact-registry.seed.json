@@ -5634,6 +5634,225 @@
         "P4.8 accepted R6 contract pack defining governed reusable execution through protocols, workflows, triggers, applets, bounded background runs, queue/inbox governance, package floors, exit criteria, and explicit refusals.",
         "Accepted for downstream use as the R6 release-contract baseline feeding P4.9 and later release packs plus Phase 5 governance/object work."
       ]
+    },
+    {
+      "artifact_id": "rel.r7-commissioning-bridge-contract.v1",
+      "artifact_type_id": "rel.release_contract_pack",
+      "title": "Phase 4 R7 Commissioning Bridge contract pack",
+      "version": "1.0.0",
+      "artifact_status": "accepted",
+      "semantic_owner": "Release doctrine steward",
+      "stewardship_mode": "human_factory",
+      "acceptance_authority": "Human release owner",
+      "release_id": "r7-commissioning-bridge-contract",
+      "canonical_locator": "docs/control-plane/releases/r7-commissioning-bridge-contract/phase-4-r7-commissioning-bridge-contract-pack.md",
+      "source_authority_refs": [
+        "cp.master-plan.v1",
+        "canon.phase1-surface-release-topology.v1",
+        "canon.phase1-rewrite-containment-seams.v1",
+        "canon.phase1-scenario-corpus.v1",
+        "sem.phase2-core-object-state-machines.v1",
+        "sem.phase2-run-class-taxonomy-protocol-kernel.v1",
+        "reuse.phase2-governance-authority-writeback-invariants.v1",
+        "reuse.phase2-proof-validation-invariants.v1",
+        "sem.phase2-chat-native-semantic-packs.v1",
+        "sem.phase2-projection-grammar-contracts.v1",
+        "arch.phase3-technical-architecture-baseline.v1",
+        "arch.phase3-context-compiler-topology.v1",
+        "arch.phase3-data-storage-provenance-spec.v1",
+        "arch.phase3-api-ipc-event-contracts.v1",
+        "arch.phase3-platform-gate-spec.v1",
+        "arch.phase3-architecture-sync-pass.v1",
+        "rel.chat-native-maturity-matrix.v1",
+        "rel.chat-native-milestone-architecture-plan.v1",
+        "rel.r6-governed-agent-applet-chat-contract.v1",
+        "sa.all-prims.v1",
+        "sa.chat-native-release-plan.v1",
+        "sa.task-studio-north-star.v1",
+        "cp.forbidden-shortcuts-register.v1"
+      ],
+      "dependency_refs": [
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.master-plan.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "P4.9 scope, sequencing, and carry-forward rules come from the master plan."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.artifact-control-plane-spec.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The R7 contract pack reuses accepted P0.1 artifact, validation-hook, and stale-rule semantics."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "canon.phase1-surface-release-topology.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P1.4 topology canon defines R7 as the commissioning-bridge stage with commission preflight, live monitor, proof ledger, delta inspection, and the R7 -> Task Studio handoff."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "canon.phase1-rewrite-containment-seams.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P1.5 seam map defines the `SS-04`, `SS-05`, and `SS-09` locks that keep lane separation, Commission -> Contract -> Run continuity, and Task Studio handoff identity explicit."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "canon.phase1-scenario-corpus.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P1.6 scenario corpus defines `GS-12`, `GS-13`, `GS-14`, `EC-06`, and `EC-07` as protected R7 pathways and failure cases."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "sem.phase2-core-object-state-machines.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P2.1 object model defines the Commission, Contract, Authority Scope, Run, Review, Approval Decision, and writeback continuity contracts that R7 must reuse."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "sem.phase2-run-class-taxonomy-protocol-kernel.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P2.2 pack defines `triage` as the intake class, preserves downstream run-class meaning, and keeps authority/verifier minima binding across Task Studio and background projections."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "reuse.phase2-governance-authority-writeback-invariants.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P2.4 invariants define explicit authority scope, contract requirements, lane separation, approval points, and no-silent-escalation rules for consequential commissioned work."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "reuse.phase2-proof-validation-invariants.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P2.4 proof invariants define explicit proof minima, failure inspectability, validator continuity, and Task Studio-safe proof semantics that R7 must expose."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "sem.phase2-chat-native-semantic-packs.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P2.5 semantic pack defines the R7 shared-object substrate, projection additions, semantic locks, governance/proof exposure, and handoff obligation to Task Studio."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "sem.phase2-projection-grammar-contracts.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P2.6 grammar pack defines Composer, Inspector, Ledger, Diff / Merge View, Live Monitor, and related compositions that R7 may foreground without inventing bridge-private surfaces."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.forbidden-shortcuts-register.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted forbidden-shortcuts register defines chat-private commissioning, governance bypass, and ontology-rewrite shortcuts that R7 must explicitly refuse."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "arch.phase3-technical-architecture-baseline.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P3.1 baseline defines one shared control/data/event substrate where commission/contract normalization, run admission, approvals, and writeback remain authoritative."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "arch.phase3-context-compiler-topology.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P3.2 compiler topology defines the frozen admitted basis that Run Preflight and Task Studio context inspection must preserve."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "arch.phase3-data-storage-provenance-spec.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P3.3 storage/provenance baseline defines the commission, contract, run, proof, delta, writeback, and handoff lineage substrate that keeps R7 continuity reconstructable."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "arch.phase3-api-ipc-event-contracts.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P3.4 contract baseline defines command envelopes with contract/authority refs, inspect queries, live-monitor projection events, review events, and writeback proposal events that R7 must use."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "arch.phase3-platform-gate-spec.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P3.5 Platform Gate artifact defines the inherited `PG-05`, `PG-06`, `PG-08`, and `PG-09` blockers for lane-separated writeback, typed event continuity, failure inspectability, and scope enforcement."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "arch.phase3-architecture-sync-pass.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P3.6 sync pass confirms the accepted bridge seams and shared-object baseline remain aligned before the R7 contract is fixed."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "rel.chat-native-maturity-matrix.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P4.1 maturity matrix defines the `M4` floor for `pkg.environment-control` and `pkg.monitor-inspect` that R7 must treat as binding."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "rel.chat-native-milestone-architecture-plan.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P4.2 milestone plan defines R7 as the commissioning-bridge stage and names the future-stage seams it must not pre-spend."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "rel.r6-governed-agent-applet-chat-contract.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P4.8 R6 contract defines the governed reusable-execution boundary, protocol/applet context, and governance state that R7 must inherit rather than replace."
+        },
+        {
+          "edge_type": "informs",
+          "artifact_id": "canon.phase1-source-decomposition.v1",
+          "propagation_mode": "none",
+          "required_for_acceptance": false,
+          "notes": "The accepted P1.1 glossary and contradiction pack informs R7 vocabulary around Commission Card, Contract Draft, Chat-to-Run Handoff, and no-translation continuity."
+        },
+        {
+          "edge_type": "informs",
+          "artifact_id": "canon.phase1-product-interpretation-freeze.v1",
+          "propagation_mode": "none",
+          "required_for_acceptance": false,
+          "notes": "The accepted P1.2 interpretation note informs the fixed release order, no-second-ontology discipline, and the requirement that R7 be the handoff-grade chat milestone."
+        }
+      ],
+      "validation_hooks": [
+        {
+          "hook_id": "vh.dependency.integrity"
+        },
+        {
+          "hook_id": "vh.source.trace-review"
+        },
+        {
+          "hook_id": "vh.consistency.cross-pack-review"
+        },
+        {
+          "hook_id": "vh.manual.acceptance"
+        }
+      ],
+      "stale_rule_id": "sr.derivative.manual",
+      "notes": [
+        "P4.9 accepted R7 contract pack defining explicit commissioning through commission/contract preflight, monitoring, proof, delta inspection, lane-separated writeback review, Task Studio-safe handoff, package floors, exit criteria, and explicit refusals.",
+        "Accepted for downstream use as the R7 release-contract baseline feeding Phase 5 governance/proof/protocol/handoff work."
+      ]
     }
   ]
 }

@@ -228,6 +228,7 @@ This section answers, in plain terms, what is already done and what is not.
 - [x] The Phase 4 R4 Artifact Workspace contract pack has been produced and accepted.
 - [x] The Phase 4 R5 Prompt Studio contract pack has been produced and accepted.
 - [x] The Phase 4 R6 Governed Agent / Applet Chat contract pack has been produced and accepted.
+- [x] The Phase 4 R7 Commissioning Bridge contract pack has been produced and accepted.
 
 ### 5.2 Not done yet
 
@@ -643,7 +644,7 @@ This phase is done when the release-to-SDK matrix, milestone architecture, and c
 - **Acceptance:** reusable governed execution becomes real without collapsing into agent theater
 - **Carry-forward topics:** protocol creation rules, applet boundaries, background-run rules, memory/contradiction policies
 
-#### [ ] P4.9 — R7 Commissioning Bridge contract pack
+#### [x] P4.9 — R7 Commissioning Bridge contract pack
 - **Mode:** Human + Factory
 - **Depends on:** P4.2
 - **Deliverable:** contract pack for Commission, Contract, Run Class, Authority Scope, Live Monitor, Proof Ledger, Delta Inspector, lane-by-lane writeback, chat-to-run handoff
@@ -1676,6 +1677,30 @@ Stale items:
 
 Notes for future prompts:
 - Use `rel.r6-governed-agent-applet-chat-contract.v1` together with `rel.r5-prompt-studio-contract.v1`, `reuse.phase2-governance-authority-writeback-invariants.v1`, `rel.chat-native-milestone-architecture-plan.v1`, `rel.chat-native-maturity-matrix.v1`, and `arch.phase3-api-ipc-event-contracts.v1` as the accepted R6 contract baseline for P4.9 and later release-pack work.
+
+
+#### CF-0040 | 2026-04-11 | Source: P4.9 — R7 Commissioning Bridge contract pack
+
+New information:
+- `docs/control-plane/releases/r7-commissioning-bridge-contract/phase-4-r7-commissioning-bridge-contract-pack.md` is now accepted for downstream use.
+- Artifact `rel.r7-commissioning-bridge-contract.v1` has been registered as `accepted`.
+- The accepted R7 contract now fixes explicit commissioning inside chat: Commission and Contract preflight, explicit Authority Scope, live monitoring, proof ledger, delta inspection, lane-by-lane writeback review, and chat-to-run handoff that preserves shared IDs into Task Studio.
+
+Impact:
+- Phase 4 now has accepted contracts for R1 through R7.
+- Phase 5 can proceed on an accepted commissioning and handoff boundary instead of inferring whether explicit Commission/Contract semantics, scoped preflight, and Task Studio-safe continuity are already real.
+- Later packets can treat R7 as the proof that Task Studio is a projection change over commissioned-work semantics rather than an ontology rewrite.
+
+Status changes:
+- P4.9 marked done.
+- The completion snapshot now records the Phase 4 R7 Commissioning Bridge contract pack as accepted.
+- Phase 5 is now the next active packet set.
+
+Stale items:
+- None.
+
+Notes for future prompts:
+- Use `rel.r7-commissioning-bridge-contract.v1` together with `rel.r6-governed-agent-applet-chat-contract.v1`, `reuse.phase2-governance-authority-writeback-invariants.v1`, `reuse.phase2-proof-validation-invariants.v1`, `rel.chat-native-milestone-architecture-plan.v1`, `rel.chat-native-maturity-matrix.v1`, `arch.phase3-api-ipc-event-contracts.v1`, and `sa.task-studio-north-star.v1` as the accepted R7 contract baseline for P5.1, P5.2, P5.5, and P5.7.
 
 ---
 
