@@ -2487,6 +2487,135 @@
         "P2.2 accepted run-class taxonomy and protocol-kernel baseline mapping V1 Task Studio task families onto shared run classes.",
         "Accepted for downstream use as the Phase 2 execution-typing baseline for governance, release packs, reusable execution, and Task Studio work."
       ]
+    },
+    {
+      "artifact_id": "reuse.phase2-governance-authority-writeback-invariants.v1",
+      "artifact_type_id": "reuse.execution_governance_pack",
+      "title": "Phase 2 governance, authority, and writeback invariants",
+      "version": "1.0.0",
+      "artifact_status": "accepted",
+      "semantic_owner": "Governance/proof steward",
+      "stewardship_mode": "human_only",
+      "acceptance_authority": "Human plan owner",
+      "canonical_locator": "docs/control-plane/reuse/phase-2-governance-authority-and-writeback-invariants.md",
+      "source_authority_refs": [
+        "cp.master-plan.v1",
+        "canon.phase1-product-interpretation-freeze.v1",
+        "canon.phase1-surface-release-topology.v1",
+        "canon.phase1-rewrite-containment-seams.v1",
+        "canon.phase1-scenario-corpus.v1",
+        "sem.phase2-core-object-state-machines.v1",
+        "sem.phase2-run-class-taxonomy-protocol-kernel.v1",
+        "sa.all-prims.v1",
+        "sa.chat-native-release-plan.v1",
+        "sa.task-studio-north-star.v1",
+        "cp.forbidden-shortcuts-register.v1"
+      ],
+      "dependency_refs": [
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.master-plan.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "P2.3 scope, sequencing, and carry-forward rules come from the master plan."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.artifact-control-plane-spec.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The invariant pack reuses accepted P0.1 artifact, validation-hook, and stale-rule semantics."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "sem.phase2-core-object-state-machines.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P2.1 object model defines the governance-bearing objects that these invariants constrain."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "sem.phase2-run-class-taxonomy-protocol-kernel.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P2.2 taxonomy defines conservative authority and writeback defaults that these invariants make binding."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "canon.phase1-product-interpretation-freeze.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P1.2 note fixes projection-vs-ontology interpretation and the need for explicit commissioning semantics."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "canon.phase1-surface-release-topology.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P1.4 topology canon defines where approval and governance surfaces appear across releases and handoffs."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "canon.phase1-rewrite-containment-seams.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P1.5 seam map fixes lane separation, authority/proof boundaries, and commissioned-work bridge seams as high-blast-radius semantics."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "canon.phase1-scenario-corpus.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P1.6 scenarios and edge cases define the governance paths and failures these invariants must prevent."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "sa.all-prims.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The primitive-set authority defines Authority Scope, Review, Approval Decision, and Writeback Proposal as shared-environment primitives."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "sa.chat-native-release-plan.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The release doctrine requires governed applet work and explicit commissioning semantics before Task Studio handoff."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "sa.task-studio-north-star.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The north-star authority requires explicit contract, authority, proof, delta, and lane-separated writeback for serious work."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.forbidden-shortcuts-register.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The invariant pack must preserve no silent proposal application, no hidden memory sludge, no agent-builder-first, and no app-private ontology drift."
+        }
+      ],
+      "validation_hooks": [
+        {
+          "hook_id": "vh.dependency.integrity"
+        },
+        {
+          "hook_id": "vh.source.trace-review"
+        },
+        {
+          "hook_id": "vh.consistency.cross-pack-review"
+        },
+        {
+          "hook_id": "vh.manual.acceptance"
+        }
+      ],
+      "stale_rule_id": "sr.derivative.manual",
+      "notes": [
+        "P2.3 accepted invariant layer for scope widening, lane separation, approval points, policy boundaries, and authority semantics.",
+        "Accepted for downstream use as the Phase 2 governance baseline feeding release packs, reusable execution, and later full governance specs."
+      ]
     }
   ]
 }

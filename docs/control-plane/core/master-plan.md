@@ -210,6 +210,7 @@ This section answers, in plain terms, what is already done and what is not.
 - [x] The Phase 1 golden scenario corpus and edge-case suite has been produced and accepted.
 - [x] The Phase 2 core object and state-machine spec pack has been produced and accepted.
 - [x] The Phase 2 run-class taxonomy and protocol-kernel pack has been produced and accepted.
+- [x] The Phase 2 governance, authority, and writeback invariants have been produced and accepted.
 
 ### 5.2 Not done yet
 
@@ -478,7 +479,7 @@ This phase is done when the core object model, run classes, invariants, release-
 - **Acceptance:** run classes are typed and no longer treated as vague generic tasks
 - **Carry-forward topics:** run-class additions, schema changes, task-family mappings, protocol kernel rules
 
-#### [ ] P2.3 — Governance / authority / writeback invariants
+#### [x] P2.3 — Governance / authority / writeback invariants
 - **Mode:** Human-only
 - **Depends on:** P2.1
 - **Deliverable:** invariant layer for scope widening, lane separation, approval points, policy boundaries, and authority semantics
@@ -1244,6 +1245,26 @@ Stale items:
 
 Notes for future prompts:
 - Use `sem.phase2-run-class-taxonomy-protocol-kernel.v1` together with `sem.phase2-core-object-state-machines.v1` as the Phase 2 execution-typing baseline for P2.3, P2.4, P2.5, P4.8, P4.9, and P5.3.
+
+#### CF-0021 | 2026-04-11 | Source: P2.3 — Governance / authority / writeback invariants
+
+New information:
+- `docs/control-plane/reuse/phase-2-governance-authority-and-writeback-invariants.md` now defines the accepted invariant layer for scope widening, lane separation, approval points, policy boundaries, and authority semantics.
+- Artifact `reuse.phase2-governance-authority-writeback-invariants.v1` is registered in the control-plane registry and dependency graph as `accepted`.
+
+Impact:
+- Phase 2 now has an accepted governance baseline that later release, applet, commissioning, and full governance specs can reuse.
+- Approval points, lane separation, and authority non-self-expansion are now formalized as explicit shared invariants rather than UI assumptions.
+
+Status changes:
+- P2.3 marked done.
+- The completion snapshot now records the Phase 2 governance, authority, and writeback invariants as accepted.
+
+Stale items:
+- None.
+
+Notes for future prompts:
+- Use `reuse.phase2-governance-authority-writeback-invariants.v1` together with `sem.phase2-core-object-state-machines.v1` and `sem.phase2-run-class-taxonomy-protocol-kernel.v1` as the governance baseline for P2.4, P2.5, P4.8, P4.9, and P5.1.
 
 ---
 

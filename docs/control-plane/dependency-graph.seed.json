@@ -182,6 +182,12 @@
       "artifact_type_id": "sem.semantic_contract_pack",
       "artifact_status": "accepted",
       "canonical_locator": "docs/control-plane/semantics/phase-2-run-class-taxonomy-and-protocol-kernel.md"
+    },
+    {
+      "artifact_id": "reuse.phase2-governance-authority-writeback-invariants.v1",
+      "artifact_type_id": "reuse.execution_governance_pack",
+      "artifact_status": "accepted",
+      "canonical_locator": "docs/control-plane/reuse/phase-2-governance-authority-and-writeback-invariants.md"
     }
   ],
   "edges": [
@@ -1208,6 +1214,102 @@
       "edge_type": "depends_on",
       "propagation_mode": "auto",
       "notes": "The taxonomy must preserve no agent-builder-first, no transcript-first truth, no hidden memory sludge, and no app-private ontology drift."
+    },
+    {
+      "edge_id": "e-129",
+      "from_artifact_id": "reuse.phase2-governance-authority-writeback-invariants.v1",
+      "to_artifact_id": "cp.master-plan.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "P2.3 scope, sequencing, and carry-forward rules come from the master plan."
+    },
+    {
+      "edge_id": "e-130",
+      "from_artifact_id": "reuse.phase2-governance-authority-writeback-invariants.v1",
+      "to_artifact_id": "cp.artifact-control-plane-spec.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The invariant pack reuses accepted P0.1 artifact, validation-hook, and stale-rule semantics."
+    },
+    {
+      "edge_id": "e-131",
+      "from_artifact_id": "reuse.phase2-governance-authority-writeback-invariants.v1",
+      "to_artifact_id": "sem.phase2-core-object-state-machines.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted P2.1 object model defines the governance-bearing objects that these invariants constrain."
+    },
+    {
+      "edge_id": "e-132",
+      "from_artifact_id": "reuse.phase2-governance-authority-writeback-invariants.v1",
+      "to_artifact_id": "sem.phase2-run-class-taxonomy-protocol-kernel.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted P2.2 taxonomy defines conservative authority and writeback defaults that these invariants make binding."
+    },
+    {
+      "edge_id": "e-133",
+      "from_artifact_id": "reuse.phase2-governance-authority-writeback-invariants.v1",
+      "to_artifact_id": "canon.phase1-product-interpretation-freeze.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted P1.2 note fixes projection-vs-ontology interpretation and the need for explicit commissioning semantics."
+    },
+    {
+      "edge_id": "e-134",
+      "from_artifact_id": "reuse.phase2-governance-authority-writeback-invariants.v1",
+      "to_artifact_id": "canon.phase1-surface-release-topology.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted P1.4 topology canon defines where approval and governance surfaces appear across releases and handoffs."
+    },
+    {
+      "edge_id": "e-135",
+      "from_artifact_id": "reuse.phase2-governance-authority-writeback-invariants.v1",
+      "to_artifact_id": "canon.phase1-rewrite-containment-seams.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted P1.5 seam map fixes lane separation, authority/proof boundaries, and commissioned-work bridge seams as high-blast-radius semantics."
+    },
+    {
+      "edge_id": "e-136",
+      "from_artifact_id": "reuse.phase2-governance-authority-writeback-invariants.v1",
+      "to_artifact_id": "canon.phase1-scenario-corpus.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted P1.6 scenarios and edge cases define the governance paths and failures these invariants must prevent."
+    },
+    {
+      "edge_id": "e-137",
+      "from_artifact_id": "reuse.phase2-governance-authority-writeback-invariants.v1",
+      "to_artifact_id": "sa.all-prims.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The primitive-set authority defines Authority Scope, Review, Approval Decision, and Writeback Proposal as shared-environment primitives."
+    },
+    {
+      "edge_id": "e-138",
+      "from_artifact_id": "reuse.phase2-governance-authority-writeback-invariants.v1",
+      "to_artifact_id": "sa.chat-native-release-plan.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The release doctrine requires governed applet work and explicit commissioning semantics before Task Studio handoff."
+    },
+    {
+      "edge_id": "e-139",
+      "from_artifact_id": "reuse.phase2-governance-authority-writeback-invariants.v1",
+      "to_artifact_id": "sa.task-studio-north-star.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The north-star authority requires explicit contract, authority, proof, delta, and lane-separated writeback for serious work."
+    },
+    {
+      "edge_id": "e-140",
+      "from_artifact_id": "reuse.phase2-governance-authority-writeback-invariants.v1",
+      "to_artifact_id": "cp.forbidden-shortcuts-register.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The invariant pack must preserve no silent proposal application, no hidden memory sludge, no agent-builder-first, and no app-private ontology drift."
     }
   ]
 }
