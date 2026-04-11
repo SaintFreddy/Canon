@@ -7162,6 +7162,302 @@
         "P5.5 accepted Task Studio app-model contract covering named surfaces, lifecycle stages, layout rules, and progressive-disclosure behavior over accepted commissioned-work semantics.",
         "Accepted for downstream use as the Phase 5 Task Studio baseline feeding V1 scope, commissioning handoff, and later surface-contract implementation work."
       ]
+    },
+    {
+      "artifact_id": "reuse.phase5-task-studio-v1-scope-pack.v1",
+      "artifact_type_id": "reuse.execution_governance_pack",
+      "title": "Phase 5 Task Studio V1 scope pack",
+      "version": "1.0.0",
+      "artifact_status": "review_ready",
+      "semantic_owner": "Governance/proof steward",
+      "stewardship_mode": "human_only",
+      "acceptance_authority": "Human semantic owner",
+      "canonical_locator": "docs/control-plane/reuse/phase-5-task-studio-v1-scope-pack.md",
+      "source_authority_refs": [
+        "cp.master-plan.v1",
+        "canon.phase1-product-interpretation-freeze.v1",
+        "canon.phase1-source-decomposition.v1",
+        "canon.phase1-layer-primitive-separation.v1",
+        "canon.phase1-surface-release-topology.v1",
+        "canon.phase1-rewrite-containment-seams.v1",
+        "canon.phase1-scenario-corpus.v1",
+        "sem.phase2-core-object-state-machines.v1",
+        "sem.phase2-run-class-taxonomy-protocol-kernel.v1",
+        "reuse.phase2-governance-authority-writeback-invariants.v1",
+        "reuse.phase2-proof-validation-invariants.v1",
+        "sem.phase2-chat-native-semantic-packs.v1",
+        "sem.phase2-projection-grammar-contracts.v1",
+        "arch.phase3-technical-architecture-baseline.v1",
+        "arch.phase3-context-compiler-topology.v1",
+        "arch.phase3-data-storage-provenance-spec.v1",
+        "arch.phase3-api-ipc-event-contracts.v1",
+        "arch.phase3-platform-gate-spec.v1",
+        "arch.phase3-architecture-sync-pass.v1",
+        "rel.chat-native-maturity-matrix.v1",
+        "rel.chat-native-milestone-architecture-plan.v1",
+        "rel.r6-governed-agent-applet-chat-contract.v1",
+        "rel.r7-commissioning-bridge-contract.v1",
+        "reuse.phase5-governance-authority-writeback-spec.v1",
+        "reuse.phase5-proof-validation-evaluation-spec.v1",
+        "reuse.phase5-run-class-protocol-packs.v1",
+        "reuse.phase5-workflow-trigger-applet-pack-integration-binding-specs.v1",
+        "reuse.phase5-task-studio-surface-lifecycle-contract-pack.v1",
+        "sa.all-prims.v1",
+        "sa.chat-native-release-plan.v1",
+        "sa.task-studio-north-star.v1"
+      ],
+      "dependency_refs": [
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.master-plan.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The master plan sets the P5.6 task, dependency order, deliverable, and acceptance bar for the Task Studio V1 scope boundary."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.artifact-control-plane-spec.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P0.1 control-plane spec defines artifact metadata, dependency semantics, validation hooks, and stale rules for this review-ready scope pack."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "canon.phase1-product-interpretation-freeze.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P1.2 canon freeze fixes the wedge, north-star app, projection-vs-ontology rule, and no-overbuild constraints that V1 must preserve."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "canon.phase1-source-decomposition.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P1.1 glossary and contradiction pack defines Task Studio vocabulary such as commissioned work, Proof Bundle, State Delta, and Acceptance Stack continuity that V1 must teach without redefining."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "canon.phase1-layer-primitive-separation.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P1.3 owner-layer pack keeps Task Studio as an app-layer projection over shared commissioned-work primitives rather than a new semantic owner."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "canon.phase1-surface-release-topology.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P1.4 topology canon fixes Task Studio as the commissioned-work app and preserves the release-path handoff rules that V1 must respect."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "canon.phase1-rewrite-containment-seams.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P1.5 seam map protects the high-blast-radius commissioned-work and handoff seams that V1 scope choices must not destabilize."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "canon.phase1-scenario-corpus.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P1.6 scenario corpus grounds the Task Studio V1 scope against bridge-stage, proof, replay, and persistence edge cases."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "sem.phase2-core-object-state-machines.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P2.1 core-object pack defines the shared Commission, Contract, Run, Proof, Delta, Review, and Writeback objects that V1 surfaces must continue to project."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "sem.phase2-run-class-taxonomy-protocol-kernel.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P2.2 taxonomy fixes the exact seven run classes and one-to-one Task Studio family mapping that V1 may not rename or merge."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "reuse.phase2-governance-authority-writeback-invariants.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P2.3 governance invariants define lane separation, approval points, and authority semantics that V1 must keep explicit."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "reuse.phase2-proof-validation-invariants.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P2.4 proof invariants define minimum proof, uncertainty, omission, contradiction, and failure visibility that V1 may not relax."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "sem.phase2-chat-native-semantic-packs.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P2.5 release semantic packs keep Task Studio V1 aligned to the shared commissioned-work substrate and the R7 handoff story."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "sem.phase2-projection-grammar-contracts.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P2.6 grammar contract defines the shared surface grammar that V1 must reuse rather than replace with app-private surface semantics."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "arch.phase3-technical-architecture-baseline.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P3.1 architecture baseline keeps Task Studio scope decisions on the same shared substrate and service seams as the rest of the platform."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "arch.phase3-context-compiler-topology.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P3.2 compiler topology defines the frozen admitted basis and context lineage that V1 must keep inspectable."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "arch.phase3-data-storage-provenance-spec.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P3.3 storage/provenance baseline keeps V1 IDs, lineage, and append-only history stable across resume, replay, and apply flows."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "arch.phase3-api-ipc-event-contracts.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P3.4 API/IPC contracts define the typed events and object refs that V1 surfaces must expose instead of recreating app-local state."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "arch.phase3-platform-gate-spec.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P3.5 Platform Gate keeps V1 from smuggling transcript truth, hidden backdoors, or fake substrate shortcuts into the initial build."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "arch.phase3-architecture-sync-pass.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P3.6 sync pass confirms canon, semantics, architecture, and release seams are aligned before V1 exposure is narrowed."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "rel.chat-native-maturity-matrix.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P4.1 maturity matrix fixes the commissioning-grade control and inspection seams that V1 must assume rather than weaken."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "rel.chat-native-milestone-architecture-plan.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P4.2 milestone plan defines R7 as the final chat-native bridge and Task Studio as the next commissioned-work surface depth."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "rel.r6-governed-agent-applet-chat-contract.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P4.8 contract defines reusable-execution continuity, background parity, and governed launch context that V1 may expose but not rebuild."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "rel.r7-commissioning-bridge-contract.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P4.9 contract fixes the Commission -> Contract -> Run handoff payload and the projection-not-rewrite rule that V1 must preserve."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "reuse.phase5-governance-authority-writeback-spec.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P5.1 governance pack defines authority, review, compensation, and writeback semantics that V1 must surface without convenience collapse."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "reuse.phase5-proof-validation-evaluation-spec.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P5.2 proof pack defines proof bundle, evaluator, fixture, and failure expectations that V1 must keep inspectable."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "reuse.phase5-run-class-protocol-packs.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P5.3 protocol pack defines task-family protocol pins, result/proof shape, and writeback posture that V1 must frame rather than reinterpret."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "reuse.phase5-workflow-trigger-applet-pack-integration-binding-specs.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P5.4 composition pack defines exact pinning, scoped bindings, and pack distinctions that V1 may expose conservatively but not change."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "reuse.phase5-task-studio-surface-lifecycle-contract-pack.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P5.5 Task Studio pack fixes the named surfaces, lifecycle stages, layout rules, and progressive-disclosure floor that V1 may only narrow."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "sa.all-prims.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The primitive-set authority defines the shared commissioned-work primitives and the projection boundaries that Task Studio V1 must preserve."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "sa.chat-native-release-plan.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The release doctrine keeps Task Studio as the north-star commissioned-work app and forbids transcript-first or agent-builder drift in V1."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "sa.task-studio-north-star.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The north-star authority defines Task Studio as a general commissioned-work, run-native, proof-returning app with the accepted family set."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.forbidden-shortcuts-register.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The forbidden-shortcuts register blocks transcript truth, separate backends per view, silent apply, and agent-builder-first overbuild from re-entering through V1 scope choices."
+        }
+      ],
+      "validation_hooks": [
+        {
+          "hook_id": "vh.dependency.integrity"
+        },
+        {
+          "hook_id": "vh.source.trace-review"
+        },
+        {
+          "hook_id": "vh.consistency.cross-pack-review"
+        },
+        {
+          "hook_id": "vh.manual.acceptance"
+        }
+      ],
+      "stale_rule_id": "sr.derivative.manual",
+      "notes": [
+        "P5.6 review-ready Task Studio V1 scope pack narrowing initial family exposure, stage-centered surface scope, result/proof/delta expectations, and conservative reusable-execution exposure without reopening accepted semantics.",
+        "Prepared for human review as the conservative V1 boundary feeding later handoff and surface-contract work; not yet accepted for downstream use."
+      ]
     }
   ]
 }

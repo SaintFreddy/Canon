@@ -1841,3 +1841,25 @@ If the plan is followed correctly, the result should be:
 - one operating model where every accepted change carries forward its impact instead of silently breaking downstream work.
 
 That is the target state.
+
+#### CF-0046 | 2026-04-11 | Source: P5.6 — Task Studio V1 scope pack
+
+New information:
+- A review-ready P5.6 support pack now exists at `docs/control-plane/reuse/phase-5-task-studio-v1-scope-pack.md`.
+- Artifact `reuse.phase5-task-studio-v1-scope-pack.v1` is registered in the control-plane registry and dependency graph as `review_ready`.
+- The pack narrows V1 to the accepted seven task families, stage-centered named surfaces, governable result/proof/delta floors, artifact-lane-first persistence, and conservative onboarding/reusable-execution exposure constraints without reopening accepted semantics.
+
+Impact:
+- P5.6 now has a concrete review-ready scope basis for human approval instead of re-deriving V1 boundaries from P5.5 and R7.
+- P5.7 and P6.1 can draft against an explicit V1 exposure floor while preserving the human-owned acceptance boundary.
+
+Status changes:
+- P5.6 remains pending in the master plan, with validated review-ready deliverables present and human acceptance still pending.
+- Phase 5 remains in progress.
+
+Stale items:
+- None.
+
+Notes for future prompts:
+- Treat `reuse.phase5-task-studio-v1-scope-pack.v1` as the review-ready V1 exposure and non-goal basis for task-family vocabulary, primary-vs-companion surface exposure, artifact-lane-first persistence, and onboarding/category-teaching constraints.
+- Do not treat it as accepted until a human explicitly approves it; preserve the rule that V1 narrows exposure/defaults only and does not redefine lifecycle, task-family mapping, proof, governance, or handoff meaning.
