@@ -211,6 +211,7 @@ This section answers, in plain terms, what is already done and what is not.
 - [x] The Phase 2 core object and state-machine spec pack has been produced and accepted.
 - [x] The Phase 2 run-class taxonomy and protocol-kernel pack has been produced and accepted.
 - [x] The Phase 2 governance, authority, and writeback invariants have been produced and accepted.
+- [x] The Phase 2 proof and validation invariants have been produced and accepted.
 
 ### 5.2 Not done yet
 
@@ -486,7 +487,7 @@ This phase is done when the core object model, run classes, invariants, release-
 - **Acceptance:** governance rules exist as explicit invariants, not as UI hopes
 - **Carry-forward topics:** new invariants, clarified authority classes, writeback lane rules, policy edge cases
 
-#### [ ] P2.4 — Proof / validation invariants
+#### [x] P2.4 — Proof / validation invariants
 - **Mode:** Human-only
 - **Depends on:** P2.2
 - **Deliverable:** invariant layer for proof expectations, uncertainty labeling, omission handling, contradiction handling, replay comparison expectations, and failure taxonomy
@@ -1265,6 +1266,26 @@ Stale items:
 
 Notes for future prompts:
 - Use `reuse.phase2-governance-authority-writeback-invariants.v1` together with `sem.phase2-core-object-state-machines.v1` and `sem.phase2-run-class-taxonomy-protocol-kernel.v1` as the governance baseline for P2.4, P2.5, P4.8, P4.9, and P5.1.
+
+#### CF-0022 | 2026-04-11 | Source: P2.4 — Proof / validation invariants
+
+New information:
+- `docs/control-plane/reuse/phase-2-proof-and-validation-invariants.md` now defines the accepted invariant layer for proof expectations, uncertainty labeling, omission handling, contradiction handling, replay/comparison expectations, and baseline failure classes.
+- Artifact `reuse.phase2-proof-validation-invariants.v1` is registered in the control-plane registry and dependency graph as `accepted`.
+
+Impact:
+- Phase 2 now has an accepted proof baseline that later release packs, Task Studio proof surfaces, and full evaluation specs can reuse.
+- Proof is now formalized as run-class-shaped, frozen-basis, inspectable support rather than a generic explanation blob.
+
+Status changes:
+- P2.4 marked done.
+- The completion snapshot now records the Phase 2 proof and validation invariants as accepted.
+
+Stale items:
+- None.
+
+Notes for future prompts:
+- Use `reuse.phase2-proof-validation-invariants.v1` together with the accepted P2.1-P2.3 artifacts as the proof baseline for P2.5, P4 release packs, and P5.2.
 
 ---
 

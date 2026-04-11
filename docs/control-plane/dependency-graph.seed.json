@@ -188,6 +188,12 @@
       "artifact_type_id": "reuse.execution_governance_pack",
       "artifact_status": "accepted",
       "canonical_locator": "docs/control-plane/reuse/phase-2-governance-authority-and-writeback-invariants.md"
+    },
+    {
+      "artifact_id": "reuse.phase2-proof-validation-invariants.v1",
+      "artifact_type_id": "reuse.execution_governance_pack",
+      "artifact_status": "accepted",
+      "canonical_locator": "docs/control-plane/reuse/phase-2-proof-and-validation-invariants.md"
     }
   ],
   "edges": [
@@ -1310,6 +1316,102 @@
       "edge_type": "depends_on",
       "propagation_mode": "auto",
       "notes": "The invariant pack must preserve no silent proposal application, no hidden memory sludge, no agent-builder-first, and no app-private ontology drift."
+    },
+    {
+      "edge_id": "e-141",
+      "from_artifact_id": "reuse.phase2-proof-validation-invariants.v1",
+      "to_artifact_id": "cp.master-plan.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "P2.4 scope, sequencing, and carry-forward rules come from the master plan."
+    },
+    {
+      "edge_id": "e-142",
+      "from_artifact_id": "reuse.phase2-proof-validation-invariants.v1",
+      "to_artifact_id": "cp.artifact-control-plane-spec.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The invariant pack reuses accepted P0.1 artifact, validation-hook, and stale-rule semantics."
+    },
+    {
+      "edge_id": "e-143",
+      "from_artifact_id": "reuse.phase2-proof-validation-invariants.v1",
+      "to_artifact_id": "sem.phase2-core-object-state-machines.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted P2.1 object model defines the Run, Proof Bundle, State Delta, and lineage objects constrained here."
+    },
+    {
+      "edge_id": "e-144",
+      "from_artifact_id": "reuse.phase2-proof-validation-invariants.v1",
+      "to_artifact_id": "sem.phase2-run-class-taxonomy-protocol-kernel.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted P2.2 taxonomy defines run-class proof minima, verifier slots, and protocol proof-policy hooks."
+    },
+    {
+      "edge_id": "e-145",
+      "from_artifact_id": "reuse.phase2-proof-validation-invariants.v1",
+      "to_artifact_id": "reuse.phase2-governance-authority-writeback-invariants.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted P2.3 invariant layer defines governance boundaries that proof may not bypass."
+    },
+    {
+      "edge_id": "e-146",
+      "from_artifact_id": "reuse.phase2-proof-validation-invariants.v1",
+      "to_artifact_id": "canon.phase1-surface-release-topology.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted P1.4 topology canon defines replay, compare, artifact, and Task Studio surfaces that must preserve proof integrity."
+    },
+    {
+      "edge_id": "e-147",
+      "from_artifact_id": "reuse.phase2-proof-validation-invariants.v1",
+      "to_artifact_id": "canon.phase1-rewrite-containment-seams.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted P1.5 seam map makes proof, replay, and authority boundaries high-blast-radius semantics."
+    },
+    {
+      "edge_id": "e-148",
+      "from_artifact_id": "reuse.phase2-proof-validation-invariants.v1",
+      "to_artifact_id": "canon.phase1-scenario-corpus.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted P1.6 scenarios and edge cases define replay, compare, contradiction, and proof-handling paths this pack must cover."
+    },
+    {
+      "edge_id": "e-149",
+      "from_artifact_id": "reuse.phase2-proof-validation-invariants.v1",
+      "to_artifact_id": "sa.all-prims.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The primitive-set authority defines proof, validation, and variant/replay substrate concerns preserved here."
+    },
+    {
+      "edge_id": "e-150",
+      "from_artifact_id": "reuse.phase2-proof-validation-invariants.v1",
+      "to_artifact_id": "sa.chat-native-release-plan.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The release doctrine requires compare, artifact, governed applet, and commissioning stages to preserve task-shaped proof."
+    },
+    {
+      "edge_id": "e-151",
+      "from_artifact_id": "reuse.phase2-proof-validation-invariants.v1",
+      "to_artifact_id": "sa.task-studio-north-star.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The north-star authority requires proof-returning serious work rather than generic explanation blobs."
+    },
+    {
+      "edge_id": "e-152",
+      "from_artifact_id": "reuse.phase2-proof-validation-invariants.v1",
+      "to_artifact_id": "cp.forbidden-shortcuts-register.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The invariant pack must preserve no hidden memory sludge, no transcript-first rewrite trap, and no app-private proof shortcuts."
     }
   ]
 }
