@@ -1,0 +1,149 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://canon.local/docs/control-plane/core/packet-brief.schema.json",
+  "title": "Lightweight execution packet brief",
+  "description": "P0.2 baseline schema for bounded repo work packets.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "packet_id",
+    "title",
+    "task_id",
+    "objective",
+    "scope",
+    "out_of_scope",
+    "source_authority_refs",
+    "accepted_artifact_refs",
+    "deliverables",
+    "validation_hooks",
+    "approval_requirements",
+    "execution_mode",
+    "carry_forward_topics",
+    "notes"
+  ],
+  "properties": {
+    "packet_id": {
+      "type": "string",
+      "pattern": "^pkt\\.[a-z0-9][a-z0-9.-]*\\.v[0-9]+$",
+      "description": "Execution packet identifier aligned to the accepted packet ID pattern."
+    },
+    "title": {
+      "$ref": "#/$defs/nonEmptyString"
+    },
+    "task_id": {
+      "type": "string",
+      "pattern": "^P[0-9]+(?:\\.[0-9]+)*$",
+      "description": "Master-plan task identifier that the packet implements."
+    },
+    "objective": {
+      "$ref": "#/$defs/nonEmptyString"
+    },
+    "scope": {
+      "$ref": "#/$defs/nonEmptyStringArray"
+    },
+    "out_of_scope": {
+      "$ref": "#/$defs/nonEmptyStringArray"
+    },
+    "source_authority_refs": {
+      "$ref": "#/$defs/artifactIdArray"
+    },
+    "accepted_artifact_refs": {
+      "$ref": "#/$defs/artifactIdArray"
+    },
+    "file_targets": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "description": "Explicit file paths or path globs inside the packet boundary."
+    },
+    "file_whitelist_ref": {
+      "$ref": "#/$defs/nonEmptyString"
+    },
+    "deliverables": {
+      "$ref": "#/$defs/nonEmptyStringArray"
+    },
+    "validation_hooks": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/validationHookRef"
+      }
+    },
+    "approval_requirements": {
+      "$ref": "#/$defs/nonEmptyStringArray"
+    },
+    "execution_mode": {
+      "type": "string",
+      "enum": [
+        "human_only",
+        "human_factory",
+        "factory_first"
+      ]
+    },
+    "carry_forward_topics": {
+      "$ref": "#/$defs/nonEmptyStringArray"
+    },
+    "notes": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/nonEmptyString"
+      }
+    }
+  },
+  "allOf": [
+    {
+      "anyOf": [
+        {
+          "required": [
+            "file_targets"
+          ]
+        },
+        {
+          "required": [
+            "file_whitelist_ref"
+          ]
+        }
+      ]
+    }
+  ],
+  "$defs": {
+    "nonEmptyString": {
+      "type": "string",
+      "minLength": 1
+    },
+    "nonEmptyStringArray": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/nonEmptyString"
+      }
+    },
+    "artifactId": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(?:\\.[a-z0-9-]+)+\\.v[0-9]+$"
+    },
+    "artifactIdArray": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/artifactId"
+      }
+    },
+    "validationHookRef": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "hook_id"
+      ],
+      "properties": {
+        "hook_id": {
+          "type": "string",
+          "pattern": "^vh\\.[a-z0-9.-]+$"
+        }
+      }
+    }
+  }
+}

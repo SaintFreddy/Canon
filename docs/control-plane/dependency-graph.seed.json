@@ -74,6 +74,30 @@
       "artifact_type_id": "cp.control_plane_dataset",
       "artifact_status": "accepted",
       "canonical_locator": "docs/control-plane/dependency-graph.seed.json"
+    },
+    {
+      "artifact_id": "cp.repo-agent-operating-contract.v1",
+      "artifact_type_id": "cp.control_plane_spec",
+      "artifact_status": "accepted",
+      "canonical_locator": "docs/control-plane/core/repo-agent-operating-contract.md"
+    },
+    {
+      "artifact_id": "cp.repo-root-agents.v1",
+      "artifact_type_id": "cp.control_plane_spec",
+      "artifact_status": "accepted",
+      "canonical_locator": "AGENTS.md"
+    },
+    {
+      "artifact_id": "cp.control-plane-module-agents.v1",
+      "artifact_type_id": "cp.control_plane_spec",
+      "artifact_status": "accepted",
+      "canonical_locator": "docs/control-plane/AGENTS.md"
+    },
+    {
+      "artifact_id": "cp.packet-brief-schema-data.v1",
+      "artifact_type_id": "cp.control_plane_dataset",
+      "artifact_status": "accepted",
+      "canonical_locator": "docs/control-plane/core/packet-brief.schema.json"
     }
   ],
   "edges": [
@@ -180,6 +204,94 @@
       "edge_type": "informs",
       "propagation_mode": "none",
       "notes": "The graph references the master plan for human context, not as a direct structural dependency."
+    },
+    {
+      "edge_id": "e-014",
+      "from_artifact_id": "cp.repo-agent-operating-contract.v1",
+      "to_artifact_id": "cp.master-plan.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "P0.2 scope, deliverables, and acceptance rules come from the master plan."
+    },
+    {
+      "edge_id": "e-015",
+      "from_artifact_id": "cp.repo-agent-operating-contract.v1",
+      "to_artifact_id": "cp.artifact-control-plane-spec.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The operating contract reuses accepted P0.1 artifact, validation, and stale semantics."
+    },
+    {
+      "edge_id": "e-016",
+      "from_artifact_id": "cp.repo-agent-operating-contract.v1",
+      "to_artifact_id": "sa.all-prims.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The operating contract preserves the accepted three-layer architecture."
+    },
+    {
+      "edge_id": "e-017",
+      "from_artifact_id": "cp.repo-agent-operating-contract.v1",
+      "to_artifact_id": "sa.chat-native-release-plan.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The operating contract preserves the fixed release doctrine and forbidden shortcuts."
+    },
+    {
+      "edge_id": "e-018",
+      "from_artifact_id": "cp.repo-agent-operating-contract.v1",
+      "to_artifact_id": "sa.task-studio-north-star.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The operating contract preserves the north-star commissioned-work direction."
+    },
+    {
+      "edge_id": "e-019",
+      "from_artifact_id": "cp.repo-root-agents.v1",
+      "to_artifact_id": "cp.repo-agent-operating-contract.v1",
+      "edge_type": "derives_from",
+      "propagation_mode": "auto",
+      "notes": "Root AGENTS is the concise repo-wide projection of the accepted operating contract."
+    },
+    {
+      "edge_id": "e-020",
+      "from_artifact_id": "cp.control-plane-module-agents.v1",
+      "to_artifact_id": "cp.repo-root-agents.v1",
+      "edge_type": "derives_from",
+      "propagation_mode": "auto",
+      "notes": "Module-local AGENTS narrows the repo-wide projection for docs/control-plane/."
+    },
+    {
+      "edge_id": "e-021",
+      "from_artifact_id": "cp.control-plane-module-agents.v1",
+      "to_artifact_id": "cp.repo-agent-operating-contract.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "Module-local rules must remain consistent with the accepted operating contract."
+    },
+    {
+      "edge_id": "e-022",
+      "from_artifact_id": "cp.packet-brief-schema-data.v1",
+      "to_artifact_id": "cp.repo-agent-operating-contract.v1",
+      "edge_type": "derives_from",
+      "propagation_mode": "auto",
+      "notes": "The packet brief schema is derived from the accepted P0.2 operating contract."
+    },
+    {
+      "edge_id": "e-023",
+      "from_artifact_id": "cp.packet-brief-schema-data.v1",
+      "to_artifact_id": "cp.artifact-control-plane-spec.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The schema reuses accepted P0.1 validation-hook and dependency semantics."
+    },
+    {
+      "edge_id": "e-024",
+      "from_artifact_id": "cp.packet-brief-schema-data.v1",
+      "to_artifact_id": "cp.repo-agent-operating-contract.v1",
+      "edge_type": "validated_by",
+      "propagation_mode": "revalidate",
+      "notes": "Revalidate the schema if the accepted operating contract changes."
     }
   ]
 }

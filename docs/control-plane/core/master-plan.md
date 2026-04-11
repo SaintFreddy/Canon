@@ -198,10 +198,10 @@ This section answers, in plain terms, what is already done and what is not.
 - [x] This master plan file exists and is ready to be attached to fresh sessions.
 - [x] The status system and append-only carry-forward mechanism are defined in this file.
 - [x] The repo-level artifact registry and dependency graph have been implemented.
+- [x] The lightweight repo/agent operating contract has been implemented.
 
 ### 5.2 Not done yet
 
-- [ ] The lightweight repo/agent operating contract has been implemented.
 - [ ] The Factory operating contract has been implemented in the repo.
 - [ ] The contradiction register, glossary, and canon freeze artifacts have been produced and accepted.
 - [ ] The layer separation pack and rewrite-containment seam map have been produced and accepted.
@@ -361,7 +361,7 @@ This phase is done when the repo has a real artifact registry, dependency model,
 - **Acceptance:** every major artifact type has an ID pattern, owner, status field, dependency field, validation hook field, and stale propagation rule
 - **Carry-forward topics:** artifact types added, status model refinements, stale propagation rules, validation hook standards
 
-#### [ ] P0.2 — Lightweight repo / agent operating contract
+#### [x] P0.2 — Lightweight repo / agent operating contract
 - **Mode:** Human + Factory
 - **Depends on:** P0.1
 - **Deliverable:** root AGENTS.md policy, module-local instruction convention, packet brief schema, accepted-artifact-only rule
@@ -914,6 +914,30 @@ Notes for future prompts:
 - Preserve the distinction between control-plane artifact types and runtime product primitives.
 - Preserve the separation of semantic owner, stewardship mode, and acceptance authority.
 - Reuse the defined stale rules and validation-hook standards rather than inventing task-local alternatives.
+
+#### CF-0006 | 2026-04-11 | Source: P0.2 — Lightweight repo / agent operating contract
+
+New information:
+- Root `AGENTS.md`, `docs/control-plane/AGENTS.md`, `docs/control-plane/core/repo-agent-operating-contract.md`, and `docs/control-plane/core/packet-brief.schema.json` now exist and are registered as accepted control-plane artifacts.
+- The repo now has an accepted-artifact-only default, explicit root and subtree instruction layering, and a lightweight packet-brief baseline for bounded work.
+
+Impact:
+- P0.3 can extend repo execution behavior without redefining baseline truth or instruction precedence.
+- P0.5 can build packet policy on top of an accepted minimum packet-brief schema instead of inventing one.
+- Downstream work can rely on AGENTS projections as execution guidance without treating them as a competing truth model.
+
+Status changes:
+- P0.2 marked done.
+- The completion snapshot line for the lightweight repo/agent operating contract has been updated to done.
+- Phase 0 remains in progress.
+
+Stale items:
+- None.
+
+Notes for future prompts:
+- Preserve the accepted-artifact-only default unless an explicit task targets provisional material.
+- Treat packet briefs as scope-narrowing execution artifacts, not source-of-truth replacements.
+- Keep Factory-specific skills, headless execution rules, and automated-run review conventions deferred to P0.3.
 
 ---
 

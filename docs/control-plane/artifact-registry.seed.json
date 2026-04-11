@@ -948,6 +948,239 @@
         "P0.1 machine-readable graph example",
         "Accepted for downstream use"
       ]
+    },
+    {
+      "artifact_id": "cp.repo-agent-operating-contract.v1",
+      "artifact_type_id": "cp.control_plane_spec",
+      "title": "Repo / Agent Operating Contract",
+      "version": "1.0.0",
+      "artifact_status": "accepted",
+      "semantic_owner": "Product/canon owner",
+      "stewardship_mode": "human_factory",
+      "acceptance_authority": "Human plan owner",
+      "canonical_locator": "docs/control-plane/core/repo-agent-operating-contract.md",
+      "source_authority_refs": [
+        "cp.master-plan.v1",
+        "cp.artifact-control-plane-spec.v1",
+        "sa.all-prims.v1",
+        "sa.chat-native-release-plan.v1",
+        "sa.task-studio-north-star.v1"
+      ],
+      "dependency_refs": [
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.master-plan.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "P0.2 scope, deliverables, and acceptance rules come from the master plan."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.artifact-control-plane-spec.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The operating contract reuses accepted P0.1 artifact, validation, and stale semantics."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "sa.all-prims.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The operating contract preserves the accepted three-layer architecture."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "sa.chat-native-release-plan.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The operating contract preserves the fixed release doctrine and forbidden shortcuts."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "sa.task-studio-north-star.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The operating contract preserves the north-star commissioned-work direction."
+        }
+      ],
+      "validation_hooks": [
+        {
+          "hook_id": "vh.schema.required-fields"
+        },
+        {
+          "hook_id": "vh.dependency.integrity"
+        },
+        {
+          "hook_id": "vh.source.trace-review"
+        },
+        {
+          "hook_id": "vh.manual.acceptance"
+        }
+      ],
+      "stale_rule_id": "sr.control-plane.strict",
+      "notes": [
+        "P0.2 normative human-readable operating contract.",
+        "Defines the accepted-artifact-only default, AGENTS projection rules, and packet-brief baseline."
+      ]
+    },
+    {
+      "artifact_id": "cp.repo-root-agents.v1",
+      "artifact_type_id": "cp.control_plane_spec",
+      "title": "Repo root AGENTS projection",
+      "version": "1.0.0",
+      "artifact_status": "accepted",
+      "semantic_owner": "Product/canon owner",
+      "stewardship_mode": "human_factory",
+      "acceptance_authority": "Human plan owner",
+      "canonical_locator": "AGENTS.md",
+      "source_authority_refs": [
+        "cp.repo-agent-operating-contract.v1",
+        "cp.master-plan.v1",
+        "sa.all-prims.v1",
+        "sa.chat-native-release-plan.v1",
+        "sa.task-studio-north-star.v1"
+      ],
+      "dependency_refs": [
+        {
+          "edge_type": "derives_from",
+          "artifact_id": "cp.repo-agent-operating-contract.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "Root AGENTS is the concise repo-wide projection of the accepted operating contract."
+        }
+      ],
+      "validation_hooks": [
+        {
+          "hook_id": "vh.schema.required-fields"
+        },
+        {
+          "hook_id": "vh.dependency.integrity"
+        },
+        {
+          "hook_id": "vh.source.trace-review"
+        },
+        {
+          "hook_id": "vh.manual.acceptance"
+        }
+      ],
+      "stale_rule_id": "sr.control-plane.strict",
+      "notes": [
+        "P0.2 concise repo-wide AGENTS projection.",
+        "Applies the accepted-artifact-only rule at repo root without adding P0.3-specific behavior."
+      ]
+    },
+    {
+      "artifact_id": "cp.control-plane-module-agents.v1",
+      "artifact_type_id": "cp.control_plane_spec",
+      "title": "Control-plane module AGENTS projection",
+      "version": "1.0.0",
+      "artifact_status": "accepted",
+      "semantic_owner": "Product/canon owner",
+      "stewardship_mode": "human_factory",
+      "acceptance_authority": "Human plan owner",
+      "canonical_locator": "docs/control-plane/AGENTS.md",
+      "source_authority_refs": [
+        "cp.repo-agent-operating-contract.v1",
+        "cp.master-plan.v1",
+        "sa.all-prims.v1",
+        "sa.chat-native-release-plan.v1",
+        "sa.task-studio-north-star.v1"
+      ],
+      "dependency_refs": [
+        {
+          "edge_type": "derives_from",
+          "artifact_id": "cp.repo-root-agents.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "Module-local AGENTS narrows the repo-wide projection for docs/control-plane/."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.repo-agent-operating-contract.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "Module-local rules must remain consistent with the accepted operating contract."
+        }
+      ],
+      "validation_hooks": [
+        {
+          "hook_id": "vh.schema.required-fields"
+        },
+        {
+          "hook_id": "vh.dependency.integrity"
+        },
+        {
+          "hook_id": "vh.source.trace-review"
+        },
+        {
+          "hook_id": "vh.manual.acceptance"
+        }
+      ],
+      "stale_rule_id": "sr.control-plane.strict",
+      "notes": [
+        "P0.2 subtree-local AGENTS projection for docs/control-plane/.",
+        "Narrows root rules for control-plane artifacts without widening repo truth."
+      ]
+    },
+    {
+      "artifact_id": "cp.packet-brief-schema-data.v1",
+      "artifact_type_id": "cp.control_plane_dataset",
+      "title": "Packet brief schema",
+      "version": "1.0.0",
+      "artifact_status": "accepted",
+      "semantic_owner": "Platform architecture steward",
+      "stewardship_mode": "human_factory",
+      "acceptance_authority": "Human plan owner",
+      "canonical_locator": "docs/control-plane/core/packet-brief.schema.json",
+      "source_authority_refs": [
+        "cp.repo-agent-operating-contract.v1",
+        "cp.master-plan.v1",
+        "sa.all-prims.v1",
+        "sa.chat-native-release-plan.v1",
+        "sa.task-studio-north-star.v1"
+      ],
+      "dependency_refs": [
+        {
+          "edge_type": "derives_from",
+          "artifact_id": "cp.repo-agent-operating-contract.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The packet brief schema is derived from the accepted P0.2 operating contract."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.artifact-control-plane-spec.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The schema reuses accepted P0.1 validation-hook and dependency semantics."
+        },
+        {
+          "edge_type": "validated_by",
+          "artifact_id": "cp.repo-agent-operating-contract.v1",
+          "propagation_mode": "revalidate",
+          "required_for_acceptance": true,
+          "notes": "Revalidate the schema if the accepted operating contract changes."
+        }
+      ],
+      "validation_hooks": [
+        {
+          "hook_id": "vh.schema.json-parse"
+        },
+        {
+          "hook_id": "vh.schema.required-fields"
+        },
+        {
+          "hook_id": "vh.dependency.integrity"
+        },
+        {
+          "hook_id": "vh.manual.acceptance"
+        }
+      ],
+      "stale_rule_id": "sr.control-plane.strict",
+      "notes": [
+        "P0.2 machine-readable baseline schema for lightweight packet briefs.",
+        "Defines the minimum bounded-work fields without adding P0.3-specific execution rules."
+      ]
     }
   ]
 }
