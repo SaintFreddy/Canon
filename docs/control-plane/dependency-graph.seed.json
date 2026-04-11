@@ -122,6 +122,12 @@
       "artifact_type_id": "cp.control_plane_spec",
       "artifact_status": "accepted",
       "canonical_locator": ".factory/skills/review-guidelines/SKILL.md"
+    },
+    {
+      "artifact_id": "cp.forbidden-shortcuts-register.v1",
+      "artifact_type_id": "cp.control_plane_spec",
+      "artifact_status": "accepted",
+      "canonical_locator": "docs/control-plane/core/forbidden-shortcuts-register.md"
     }
   ],
   "edges": [
@@ -428,6 +434,86 @@
       "edge_type": "depends_on",
       "propagation_mode": "auto",
       "notes": "The skill checks accepted artifact, dependency, validation-hook, and stale-rule usage."
+    },
+    {
+      "edge_id": "e-039",
+      "from_artifact_id": "cp.forbidden-shortcuts-register.v1",
+      "to_artifact_id": "cp.master-plan.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "P0.4 scope and the accepted forbidden-shortcut baseline come from the master plan."
+    },
+    {
+      "edge_id": "e-040",
+      "from_artifact_id": "cp.forbidden-shortcuts-register.v1",
+      "to_artifact_id": "cp.artifact-control-plane-spec.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The register reuses accepted P0.1 artifact, validation-hook, and stale semantics."
+    },
+    {
+      "edge_id": "e-041",
+      "from_artifact_id": "cp.forbidden-shortcuts-register.v1",
+      "to_artifact_id": "cp.repo-agent-operating-contract.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "Current repo truth, precedence, and accepted-artifact-only enforcement points come from the accepted P0.2 operating contract."
+    },
+    {
+      "edge_id": "e-042",
+      "from_artifact_id": "cp.forbidden-shortcuts-register.v1",
+      "to_artifact_id": "cp.factory-operating-contract.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "Current Factory execution and review enforcement points come from the accepted P0.3 contract."
+    },
+    {
+      "edge_id": "e-043",
+      "from_artifact_id": "cp.forbidden-shortcuts-register.v1",
+      "to_artifact_id": "sa.all-prims.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The register preserves the accepted engine/shared-environment/app layer boundary."
+    },
+    {
+      "edge_id": "e-044",
+      "from_artifact_id": "cp.forbidden-shortcuts-register.v1",
+      "to_artifact_id": "sa.chat-native-release-plan.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The register formalizes the accepted forbidden shortcuts from the chat-native release doctrine."
+    },
+    {
+      "edge_id": "e-045",
+      "from_artifact_id": "cp.forbidden-shortcuts-register.v1",
+      "to_artifact_id": "sa.task-studio-north-star.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The register preserves the accepted Task Studio handoff target and commissioned-work direction."
+    },
+    {
+      "edge_id": "e-046",
+      "from_artifact_id": "cp.forbidden-shortcuts-register.v1",
+      "to_artifact_id": "cp.control-plane-module-agents.v1",
+      "edge_type": "informs",
+      "propagation_mode": "none",
+      "notes": "Current control-plane subtree boundary is referenced as an enforcement point."
+    },
+    {
+      "edge_id": "e-047",
+      "from_artifact_id": "cp.forbidden-shortcuts-register.v1",
+      "to_artifact_id": "cp.factory-packet-execution-skill.v1",
+      "edge_type": "informs",
+      "propagation_mode": "none",
+      "notes": "Current packet-execution verification discipline is referenced as an enforcement point."
+    },
+    {
+      "edge_id": "e-048",
+      "from_artifact_id": "cp.forbidden-shortcuts-register.v1",
+      "to_artifact_id": "cp.factory-review-guidelines-skill.v1",
+      "edge_type": "informs",
+      "propagation_mode": "none",
+      "notes": "Current automated review baseline-preservation guidance is referenced as an enforcement point."
     }
   ]
 }

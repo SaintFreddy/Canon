@@ -200,6 +200,7 @@ This section answers, in plain terms, what is already done and what is not.
 - [x] The repo-level artifact registry and dependency graph have been implemented.
 - [x] The lightweight repo/agent operating contract has been implemented.
 - [x] The Factory operating contract has been implemented in the repo.
+- [x] The forbidden-shortcuts register has been implemented and accepted.
 
 ### 5.2 Not done yet
 
@@ -215,7 +216,7 @@ This section answers, in plain terms, what is already done and what is not.
 
 ### 5.3 Phase status summary
 
-- [~] Phase 0 — in progress in the repo; P0.4 and P0.5 remain open
+- [~] Phase 0 — in progress in the repo; P0.5 remains open
 - [ ] Phase 1 — not done
 - [ ] Phase 2 — not done
 - [ ] Phase 3 — not done
@@ -375,7 +376,7 @@ This phase is done when the repo has a real artifact registry, dependency model,
 - **Acceptance:** Factory can execute bounded packets consistently without inventing architecture or skipping review gates
 - **Carry-forward topics:** skills created, droid/headless execution patterns, review/approval rules, failure-handling rules
 
-#### [ ] P0.4 — Forbidden-shortcuts register
+#### [x] P0.4 — Forbidden-shortcuts register
 - **Mode:** Human-only
 - **Depends on:** P0.0
 - **Deliverable:** explicit register of prohibited implementation shortcuts and their enforcement points
@@ -961,6 +962,29 @@ Stale items:
 Notes for future prompts:
 - Use `/.factory/factory-operating-contract.md` plus the shared `/.factory/skills/` assets as the default Factory execution basis for repo-scoped packets and headless runs.
 - Keep custom droids and hooks optional and additive; do not use them to bypass human acceptance or to smuggle P0.5-only packet policy into execution.
+
+#### CF-0008 | 2026-04-11 | Source: P0.4 — Forbidden-shortcuts register
+
+New information:
+- An accepted forbidden-shortcuts register now exists at `docs/control-plane/core/forbidden-shortcuts-register.md`.
+- The register formalizes the accepted shortcut baseline from `docs/control-plane/core/master-plan.md` Section 4.3 and maps current enforcement points plus named future review/lint points.
+- New artifact `cp.forbidden-shortcuts-register.v1` is registered in the control-plane registry and dependency graph as `accepted`.
+
+Impact:
+- Downstream control-plane, architecture, release, and execution work can now reference one accepted anti-drift register instead of restating shortcut prohibitions ad hoc.
+- Phase 0 now has the accepted P0.4 shortcut artifact it needed; only P0.5 remains open in Phase 0.
+
+Status changes:
+- P0.4 marked done.
+- The completion snapshot line for the forbidden-shortcuts register has been updated to done.
+- Phase 0 remains in progress.
+
+Stale items:
+- None.
+
+Notes for future prompts:
+- Preserve the distinction between current enforcement points and future named review/lint points.
+- Keep P0.5 packet-budget and context-policy work separate from this accepted P0.4 register.
 
 ---
 

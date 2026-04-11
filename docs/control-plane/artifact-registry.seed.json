@@ -1433,6 +1433,120 @@
         "P0.3 background review skill for automated review and approval-prep runs.",
         "Focuses on baseline preservation, control-plane integrity, scope discipline, and human-owned acceptance boundaries."
       ]
+    },
+    {
+      "artifact_id": "cp.forbidden-shortcuts-register.v1",
+      "artifact_type_id": "cp.control_plane_spec",
+      "title": "Forbidden-shortcuts register",
+      "version": "1.0.0",
+      "artifact_status": "accepted",
+      "semantic_owner": "Product/canon owner",
+      "stewardship_mode": "human_only",
+      "acceptance_authority": "Human plan owner",
+      "canonical_locator": "docs/control-plane/core/forbidden-shortcuts-register.md",
+      "source_authority_refs": [
+        "cp.master-plan.v1",
+        "cp.artifact-control-plane-spec.v1",
+        "cp.repo-agent-operating-contract.v1",
+        "cp.factory-operating-contract.v1",
+        "sa.all-prims.v1",
+        "sa.chat-native-release-plan.v1",
+        "sa.task-studio-north-star.v1"
+      ],
+      "dependency_refs": [
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.master-plan.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "P0.4 scope and the accepted forbidden-shortcut baseline come from the master plan."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.artifact-control-plane-spec.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The register reuses accepted P0.1 artifact, validation-hook, and stale semantics."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.repo-agent-operating-contract.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "Current repo truth, precedence, and accepted-artifact-only enforcement points come from the accepted P0.2 operating contract."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.factory-operating-contract.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "Current Factory execution and review enforcement points come from the accepted P0.3 contract."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "sa.all-prims.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The register preserves the accepted engine/shared-environment/app layer boundary."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "sa.chat-native-release-plan.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The register formalizes the accepted forbidden shortcuts from the chat-native release doctrine."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "sa.task-studio-north-star.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The register preserves the accepted Task Studio handoff target and commissioned-work direction."
+        },
+        {
+          "edge_type": "informs",
+          "artifact_id": "cp.control-plane-module-agents.v1",
+          "propagation_mode": "none",
+          "required_for_acceptance": false,
+          "notes": "Current control-plane subtree boundary is referenced as an enforcement point."
+        },
+        {
+          "edge_type": "informs",
+          "artifact_id": "cp.factory-packet-execution-skill.v1",
+          "propagation_mode": "none",
+          "required_for_acceptance": false,
+          "notes": "Current packet-execution verification discipline is referenced as an enforcement point."
+        },
+        {
+          "edge_type": "informs",
+          "artifact_id": "cp.factory-review-guidelines-skill.v1",
+          "propagation_mode": "none",
+          "required_for_acceptance": false,
+          "notes": "Current automated review baseline-preservation guidance is referenced as an enforcement point."
+        }
+      ],
+      "validation_hooks": [
+        {
+          "hook_id": "vh.schema.required-fields"
+        },
+        {
+          "hook_id": "vh.dependency.integrity"
+        },
+        {
+          "hook_id": "vh.source.trace-review"
+        },
+        {
+          "hook_id": "vh.consistency.cross-pack-review"
+        },
+        {
+          "hook_id": "vh.manual.acceptance"
+        }
+      ],
+      "stale_rule_id": "sr.control-plane.strict",
+      "notes": [
+        "P0.4 human-readable register of accepted shortcut baseline, current enforcement points, and named future review/lint points.",
+        "Accepted for downstream use after explicit in-session human approval and validation."
+      ]
     }
   ]
 }
