@@ -223,6 +223,7 @@ This section answers, in plain terms, what is already done and what is not.
 - [x] The Phase 4 release-to-SDK maturity matrix has been produced and accepted.
 - [x] The Phase 4 release / milestone architecture plan has been produced and accepted.
 - [x] The Phase 4 R1 Transcript Chat contract pack has been produced and accepted.
+- [x] The Phase 4 R2 Context Chat contract pack has been produced and accepted.
 
 ### 5.2 Not done yet
 
@@ -603,7 +604,7 @@ This phase is done when the release-to-SDK matrix, milestone architecture, and c
 - **Acceptance:** R1 is an explicit contract, not just a name on a roadmap
 - **Carry-forward topics:** R1 surface clarifications, exit criteria changes, hidden assumptions uncovered
 
-#### [ ] P4.4 — R2 Context Chat contract pack
+#### [x] P4.4 — R2 Context Chat contract pack
 - **Mode:** Human + Factory
 - **Depends on:** P4.2
 - **Deliverable:** contract pack for packs, spans, memory/canon visibility, inclusion/exclusion explainability, save/diff/merge/freeze behavior
@@ -1531,6 +1532,29 @@ Stale items:
 
 Notes for future prompts:
 - Use `rel.r1-transcript-chat-contract.v1` together with `rel.chat-native-milestone-architecture-plan.v1`, `rel.chat-native-maturity-matrix.v1`, `arch.phase3-platform-gate-spec.v1`, and `sem.phase2-chat-native-semantic-packs.v1` as the accepted R1 contract baseline for P4.4 and later release-pack work.
+
+#### CF-0034 | 2026-04-11 | Source: P4.4 — R2 Context Chat contract pack
+
+New information:
+- `docs/control-plane/releases/r2-context-chat-contract/phase-4-r2-context-chat-contract-pack.md` is now accepted for downstream use.
+- Artifact `rel.r2-context-chat-contract.v1` has been registered as `accepted`.
+- The accepted R2 contract now fixes what real context control means: explicit Evidence Pack and Context Pack inspection, visible memory/canon injection, pack operations, the inherited package-floor raises, and the explicit non-goals that prevent context theater or hidden memory behavior.
+
+Impact:
+- Phase 4 now has accepted contracts for both R1 and R2.
+- P4.5 can proceed on an accepted context-control boundary instead of inferring whether pack freeze, diff, and replay-basis semantics are already real before branch UX appears.
+- Later release packs can treat R2 as the proof that context control is a shared-substrate capability rather than a transcript sidebar illusion.
+
+Status changes:
+- P4.4 marked done.
+- The completion snapshot now records the Phase 4 R2 Context Chat contract pack as accepted.
+- Phase 4 remains in progress pending P4.5-P4.9.
+
+Stale items:
+- None.
+
+Notes for future prompts:
+- Use `rel.r2-context-chat-contract.v1` together with `rel.r1-transcript-chat-contract.v1`, `rel.chat-native-milestone-architecture-plan.v1`, `rel.chat-native-maturity-matrix.v1`, and `arch.phase3-context-compiler-topology.v1` as the accepted R2 contract baseline for P4.5 and later release-pack work.
 
 ---
 

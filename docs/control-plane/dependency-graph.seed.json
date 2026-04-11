@@ -260,6 +260,12 @@
       "artifact_type_id": "rel.release_contract_pack",
       "artifact_status": "accepted",
       "canonical_locator": "docs/control-plane/releases/r1-transcript-chat-contract/phase-4-r1-transcript-chat-contract-pack.md"
+    },
+    {
+      "artifact_id": "rel.r2-context-chat-contract.v1",
+      "artifact_type_id": "rel.release_contract_pack",
+      "artifact_status": "accepted",
+      "canonical_locator": "docs/control-plane/releases/r2-context-chat-contract/phase-4-r2-context-chat-contract-pack.md"
     }
   ],
   "edges": [
@@ -2982,6 +2988,174 @@
       "edge_type": "informs",
       "propagation_mode": "none",
       "notes": "The accepted P1.2 interpretation note informs the fixed chat-native wedge and projection-vs-ontology discipline that R1 must preserve."
+    },
+    {
+      "edge_id": "e-341",
+      "from_artifact_id": "rel.r2-context-chat-contract.v1",
+      "to_artifact_id": "cp.master-plan.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "P4.4 scope, sequencing, and carry-forward rules come from the master plan."
+    },
+    {
+      "edge_id": "e-342",
+      "from_artifact_id": "rel.r2-context-chat-contract.v1",
+      "to_artifact_id": "cp.artifact-control-plane-spec.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The R2 contract pack reuses accepted P0.1 artifact, validation-hook, and stale-rule semantics."
+    },
+    {
+      "edge_id": "e-343",
+      "from_artifact_id": "rel.r2-context-chat-contract.v1",
+      "to_artifact_id": "canon.phase1-surface-release-topology.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted P1.4 topology canon defines R2 as the full context/evidence drawer stage with run continuity and explicit pack control."
+    },
+    {
+      "edge_id": "e-344",
+      "from_artifact_id": "rel.r2-context-chat-contract.v1",
+      "to_artifact_id": "canon.phase1-rewrite-containment-seams.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted P1.5 seam map defines the `SS-01` lock that R2 must deepen without turning pack control into transcript-local behavior."
+    },
+    {
+      "edge_id": "e-345",
+      "from_artifact_id": "rel.r2-context-chat-contract.v1",
+      "to_artifact_id": "canon.phase1-scenario-corpus.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted P1.6 scenario corpus defines `GS-02`, `GS-03`, and `EC-02` as protected R2 pathways and failure cases."
+    },
+    {
+      "edge_id": "e-346",
+      "from_artifact_id": "rel.r2-context-chat-contract.v1",
+      "to_artifact_id": "sem.phase2-core-object-state-machines.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted P2.1 object model defines the Evidence Pack, Context Pack, Memory Object, Canon Object, and Run identities that R2 must expose directly."
+    },
+    {
+      "edge_id": "e-347",
+      "from_artifact_id": "rel.r2-context-chat-contract.v1",
+      "to_artifact_id": "sem.phase2-run-class-taxonomy-protocol-kernel.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted P2.2 pack defines the run-class baseline that R2 expands through real compare-capable pack control rather than generic prompt editing."
+    },
+    {
+      "edge_id": "e-348",
+      "from_artifact_id": "rel.r2-context-chat-contract.v1",
+      "to_artifact_id": "sem.phase2-chat-native-semantic-packs.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted P2.5 semantic pack defines the R2 shared-object substrate, projection additions, and handoff obligation to R3."
+    },
+    {
+      "edge_id": "e-349",
+      "from_artifact_id": "rel.r2-context-chat-contract.v1",
+      "to_artifact_id": "sem.phase2-projection-grammar-contracts.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted P2.6 grammar pack defines the context/evidence drawer, inspector, compare, and browser surfaces R2 may use without inventing a private pack backend."
+    },
+    {
+      "edge_id": "e-350",
+      "from_artifact_id": "rel.r2-context-chat-contract.v1",
+      "to_artifact_id": "cp.forbidden-shortcuts-register.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted forbidden-shortcuts register defines the fake-context-control and hidden-memory shortcuts that R2 must explicitly refuse."
+    },
+    {
+      "edge_id": "e-351",
+      "from_artifact_id": "rel.r2-context-chat-contract.v1",
+      "to_artifact_id": "arch.phase3-technical-architecture-baseline.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted P3.1 baseline defines the shared control/data/event substrate that R2 pack operations must project rather than replace."
+    },
+    {
+      "edge_id": "e-352",
+      "from_artifact_id": "rel.r2-context-chat-contract.v1",
+      "to_artifact_id": "arch.phase3-context-compiler-topology.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted P3.2 compiler topology defines evidence/context separation, staged retrieval, explicit memory/canon injection, and freeze/diff/replay behavior that R2 must expose for users."
+    },
+    {
+      "edge_id": "e-353",
+      "from_artifact_id": "rel.r2-context-chat-contract.v1",
+      "to_artifact_id": "arch.phase3-data-storage-provenance-spec.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted P3.3 storage/provenance baseline defines the lineage substrate required for saved packs, freezes, and pack diffs to survive beyond sidebar state."
+    },
+    {
+      "edge_id": "e-354",
+      "from_artifact_id": "rel.r2-context-chat-contract.v1",
+      "to_artifact_id": "arch.phase3-api-ipc-event-contracts.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted P3.4 contract baseline defines the typed control/event seams that pack editing, reruns, and inspection must use."
+    },
+    {
+      "edge_id": "e-355",
+      "from_artifact_id": "rel.r2-context-chat-contract.v1",
+      "to_artifact_id": "arch.phase3-platform-gate-spec.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted P3.5 Platform Gate artifact defines the inherited frozen-context and source-traceability blockers that remain binding in R2."
+    },
+    {
+      "edge_id": "e-356",
+      "from_artifact_id": "rel.r2-context-chat-contract.v1",
+      "to_artifact_id": "arch.phase3-architecture-sync-pass.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted P3.6 sync pass confirms the accepted architecture baseline remains aligned before the R2 contract is fixed."
+    },
+    {
+      "edge_id": "e-357",
+      "from_artifact_id": "rel.r2-context-chat-contract.v1",
+      "to_artifact_id": "rel.chat-native-maturity-matrix.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted P4.1 maturity matrix defines the `M4`, `M3`, and `M2` package floors that R2 must treat as binding."
+    },
+    {
+      "edge_id": "e-358",
+      "from_artifact_id": "rel.r2-context-chat-contract.v1",
+      "to_artifact_id": "rel.chat-native-milestone-architecture-plan.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted P4.2 milestone plan defines R2 as the context-control stage and names the future-stage seams it must not pre-spend."
+    },
+    {
+      "edge_id": "e-359",
+      "from_artifact_id": "rel.r2-context-chat-contract.v1",
+      "to_artifact_id": "rel.r1-transcript-chat-contract.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted P4.3 R1 contract defines the bounded-run and source-grounded substrate that R2 must inherit rather than replace."
+    },
+    {
+      "edge_id": "e-360",
+      "from_artifact_id": "rel.r2-context-chat-contract.v1",
+      "to_artifact_id": "canon.phase1-source-decomposition.v1",
+      "edge_type": "informs",
+      "propagation_mode": "none",
+      "notes": "The accepted P1.1 glossary and contradiction pack informs R2 vocabulary around evidence, context, memory, canon, and replay."
+    },
+    {
+      "edge_id": "e-361",
+      "from_artifact_id": "rel.r2-context-chat-contract.v1",
+      "to_artifact_id": "canon.phase1-product-interpretation-freeze.v1",
+      "edge_type": "informs",
+      "propagation_mode": "none",
+      "notes": "The accepted P1.2 interpretation note informs the fixed chat-native wedge and projection-vs-ontology discipline that R2 must preserve."
     }
   ]
 }
