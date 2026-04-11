@@ -208,6 +208,7 @@ This section answers, in plain terms, what is already done and what is not.
 - [x] The Phase 1 surface and release topology canon has been produced and accepted.
 - [x] The Phase 1 rewrite-containment / stable seam map has been produced and accepted.
 - [x] The Phase 1 golden scenario corpus and edge-case suite has been produced and accepted.
+- [x] The Phase 2 core object and state-machine spec pack has been produced and accepted.
 
 ### 5.2 Not done yet
 
@@ -224,7 +225,7 @@ This section answers, in plain terms, what is already done and what is not.
 
 - [x] Phase 0 — done in the repo
 - [x] Phase 1 — done in the repo
-- [ ] Phase 2 — not done
+- [~] Phase 2 — in progress
 - [ ] Phase 3 — not done
 - [ ] Phase 4 — not done
 - [ ] Phase 5 — not done
@@ -452,7 +453,7 @@ This phase is done when there is one accepted canon for what belongs in engine, 
 
 ---
 
-## Phase 2 — Shared semantic contracts before architecture `[ ]`
+## Phase 2 — Shared semantic contracts before architecture `[~]`
 
 ### Goal
 
@@ -462,7 +463,7 @@ Lock the machine-grade nouns, transitions, governance rules, and proof rules bef
 
 This phase is done when the core object model, run classes, invariants, release-specific semantic packs, and projection grammar are accepted.
 
-#### [ ] P2.1 — Core object and state-machine spec pack
+#### [x] P2.1 — Core object and state-machine spec pack
 - **Mode:** Human + Factory
 - **Depends on:** P1.3 and P1.5
 - **Deliverable:** schemas and state transitions for Run, Artifact, Branch, Proof Bundle, State Delta, Writeback Proposal, Memory, Canon, Commission, Contract, Protocol, Applet, Review, Approval Decision, and related core objects
@@ -1201,6 +1202,27 @@ Stale items:
 
 Notes for future prompts:
 - Use `canon.phase1-scenario-corpus.v1` together with the accepted P1.1-P1.5 canon artifacts as the full Phase 1 baseline for Phase 2 and later work.
+
+#### CF-0019 | 2026-04-11 | Source: P2.1 — Core object and state-machine spec pack
+
+New information:
+- `docs/control-plane/semantics/phase-2-core-object-and-state-machine-spec-pack.md` now defines the accepted shared first-class object contracts, identity rules, and lifecycle/state-machine semantics for Run, Artifact, Branch, Proof Bundle, State Delta, Writeback Proposal, Memory, Canon, Commission, Contract, Protocol, Applet, Review, Approval Decision, and related support objects.
+- Artifact `sem.phase2-core-object-state-machines.v1` is registered in the control-plane registry and dependency graph as `accepted`.
+
+Impact:
+- Phase 2 now has an accepted object-model baseline that later run-class, governance, release, and architecture work can build against.
+- High-blast-radius continuity, lane separation, commissioned-work continuity, and Task Studio handoff semantics are now formalized as explicit shared object contracts.
+
+Status changes:
+- P2.1 marked done.
+- Phase 2 marked in progress.
+- The completion snapshot now records the Phase 2 core object and state-machine spec pack as accepted.
+
+Stale items:
+- None.
+
+Notes for future prompts:
+- Use `sem.phase2-core-object-state-machines.v1` as the baseline semantic contract pack for P2.2 through P2.6 and for Phase 3 storage/API/runtime work.
 
 ---
 

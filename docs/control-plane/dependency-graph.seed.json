@@ -170,6 +170,12 @@
       "artifact_type_id": "canon.interpretation_pack",
       "artifact_status": "accepted",
       "canonical_locator": "docs/control-plane/canon/phase-1-golden-scenario-corpus-and-edge-case-suite.md"
+    },
+    {
+      "artifact_id": "sem.phase2-core-object-state-machines.v1",
+      "artifact_type_id": "sem.semantic_contract_pack",
+      "artifact_status": "accepted",
+      "canonical_locator": "docs/control-plane/semantics/phase-2-core-object-and-state-machine-spec-pack.md"
     }
   ],
   "edges": [
@@ -1012,6 +1018,94 @@
       "edge_type": "informs",
       "propagation_mode": "none",
       "notes": "The accepted owner-layer map informs scenario coverage for ownership and non-owner drift cases."
+    },
+    {
+      "edge_id": "e-106",
+      "from_artifact_id": "sem.phase2-core-object-state-machines.v1",
+      "to_artifact_id": "cp.master-plan.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "P2.1 scope, sequencing, and carry-forward rules come from the master plan."
+    },
+    {
+      "edge_id": "e-107",
+      "from_artifact_id": "sem.phase2-core-object-state-machines.v1",
+      "to_artifact_id": "cp.artifact-control-plane-spec.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The semantic pack reuses accepted P0.1 artifact, validation-hook, and stale-rule semantics."
+    },
+    {
+      "edge_id": "e-108",
+      "from_artifact_id": "sem.phase2-core-object-state-machines.v1",
+      "to_artifact_id": "canon.phase1-product-interpretation-freeze.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted P1.2 note fixes wedge, north star, and projection-vs-ontology interpretation for these object contracts."
+    },
+    {
+      "edge_id": "e-109",
+      "from_artifact_id": "sem.phase2-core-object-state-machines.v1",
+      "to_artifact_id": "canon.phase1-layer-primitive-separation.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted P1.3 owner-layer map defines which object families belong to the shared environment."
+    },
+    {
+      "edge_id": "e-110",
+      "from_artifact_id": "sem.phase2-core-object-state-machines.v1",
+      "to_artifact_id": "canon.phase1-surface-release-topology.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted P1.4 topology canon defines continuity shifts and preserved identities across releases and Task Studio handoff."
+    },
+    {
+      "edge_id": "e-111",
+      "from_artifact_id": "sem.phase2-core-object-state-machines.v1",
+      "to_artifact_id": "canon.phase1-rewrite-containment-seams.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted P1.5 seam map defines the high-blast-radius seams the object model must stabilize."
+    },
+    {
+      "edge_id": "e-112",
+      "from_artifact_id": "sem.phase2-core-object-state-machines.v1",
+      "to_artifact_id": "canon.phase1-scenario-corpus.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted P1.6 scenario corpus defines the semantic pathways and edge cases the object contracts must support."
+    },
+    {
+      "edge_id": "e-113",
+      "from_artifact_id": "sem.phase2-core-object-state-machines.v1",
+      "to_artifact_id": "sa.all-prims.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The primitive-set authority defines the engine/shared-environment substrate pairings preserved here."
+    },
+    {
+      "edge_id": "e-114",
+      "from_artifact_id": "sem.phase2-core-object-state-machines.v1",
+      "to_artifact_id": "sa.chat-native-release-plan.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The release doctrine defines the chat-native path and bridge releases these contracts must support."
+    },
+    {
+      "edge_id": "e-115",
+      "from_artifact_id": "sem.phase2-core-object-state-machines.v1",
+      "to_artifact_id": "sa.task-studio-north-star.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The north-star authority defines the commissioned-work semantics preserved into Task Studio."
+    },
+    {
+      "edge_id": "e-116",
+      "from_artifact_id": "sem.phase2-core-object-state-machines.v1",
+      "to_artifact_id": "cp.forbidden-shortcuts-register.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The object model must preserve no transcript-first truth, no hidden memory sludge, no silent proposal application, and no app-private ontology drift."
     }
   ]
 }
