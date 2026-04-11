@@ -230,6 +230,12 @@
       "artifact_type_id": "arch.technical_architecture_pack",
       "artifact_status": "accepted",
       "canonical_locator": "docs/control-plane/architecture/phase-3-api-ipc-and-event-contract-spec.md"
+    },
+    {
+      "artifact_id": "arch.phase3-platform-gate-spec.v1",
+      "artifact_type_id": "arch.technical_architecture_pack",
+      "artifact_status": "accepted",
+      "canonical_locator": "docs/control-plane/architecture/phase-3-platform-gate-spec-and-exit-audit.md"
     }
   ],
   "edges": [
@@ -2200,6 +2206,166 @@
       "edge_type": "informs",
       "propagation_mode": "none",
       "notes": "The accepted P1.3 owner-layer map informs which commands and events terminate in engine, shared environment, or projection layers."
+    },
+    {
+      "edge_id": "e-247",
+      "from_artifact_id": "arch.phase3-platform-gate-spec.v1",
+      "to_artifact_id": "cp.master-plan.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "P3.5 scope, sequencing, and carry-forward rules come from the master plan."
+    },
+    {
+      "edge_id": "e-248",
+      "from_artifact_id": "arch.phase3-platform-gate-spec.v1",
+      "to_artifact_id": "cp.artifact-control-plane-spec.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The Platform Gate pack reuses accepted P0.1 artifact, validation-hook, and stale-rule semantics."
+    },
+    {
+      "edge_id": "e-249",
+      "from_artifact_id": "arch.phase3-platform-gate-spec.v1",
+      "to_artifact_id": "canon.phase1-surface-release-topology.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted P1.4 topology canon defines Platform Gate as the mandatory pre-R1 internal stage."
+    },
+    {
+      "edge_id": "e-250",
+      "from_artifact_id": "arch.phase3-platform-gate-spec.v1",
+      "to_artifact_id": "canon.phase1-rewrite-containment-seams.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted P1.5 seam map defines SS-10 and the prelaunch substrate obligations that the gate must test."
+    },
+    {
+      "edge_id": "e-251",
+      "from_artifact_id": "arch.phase3-platform-gate-spec.v1",
+      "to_artifact_id": "canon.phase1-scenario-corpus.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted P1.6 scenarios and edge cases define the replay, lane-separation, and transcript-truth failures the gate must catch."
+    },
+    {
+      "edge_id": "e-252",
+      "from_artifact_id": "arch.phase3-platform-gate-spec.v1",
+      "to_artifact_id": "canon.phase1-source-decomposition.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted P1.1 contradiction pack fixes Platform Gate as a hard prerequisite and preserves glossary discipline around substrate semantics."
+    },
+    {
+      "edge_id": "e-253",
+      "from_artifact_id": "arch.phase3-platform-gate-spec.v1",
+      "to_artifact_id": "arch.phase3-technical-architecture-baseline.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted P3.1 baseline defines the runtime planes, workers, gateways, and shared data/provenance substrate the gate must prove."
+    },
+    {
+      "edge_id": "e-254",
+      "from_artifact_id": "arch.phase3-platform-gate-spec.v1",
+      "to_artifact_id": "arch.phase3-context-compiler-topology.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted P3.2 compiler topology defines frozen context, replay basis, span traceability, and recovery behavior that the gate must test."
+    },
+    {
+      "edge_id": "e-255",
+      "from_artifact_id": "arch.phase3-platform-gate-spec.v1",
+      "to_artifact_id": "arch.phase3-data-storage-provenance-spec.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted P3.3 storage/provenance baseline defines the event and lineage substrate the gate must require."
+    },
+    {
+      "edge_id": "e-256",
+      "from_artifact_id": "arch.phase3-platform-gate-spec.v1",
+      "to_artifact_id": "arch.phase3-api-ipc-event-contracts.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted P3.4 contract baseline defines the typed boundary rules, no-direct-UI-worker-RPC rule, and event families the gate must enforce."
+    },
+    {
+      "edge_id": "e-257",
+      "from_artifact_id": "arch.phase3-platform-gate-spec.v1",
+      "to_artifact_id": "sem.phase2-core-object-state-machines.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted P2.1 object model defines the runs, packs, branches, reviews, approvals, proofs, deltas, and writeback proposals that gate tests must traverse."
+    },
+    {
+      "edge_id": "e-258",
+      "from_artifact_id": "arch.phase3-platform-gate-spec.v1",
+      "to_artifact_id": "sem.phase2-run-class-taxonomy-protocol-kernel.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted P2.2 pack defines admission, proof, verifier, and writeback defaults that gate execution must preserve."
+    },
+    {
+      "edge_id": "e-259",
+      "from_artifact_id": "arch.phase3-platform-gate-spec.v1",
+      "to_artifact_id": "reuse.phase2-governance-authority-writeback-invariants.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted P2.3 invariants define lane-local writeback, approval points, and authority constraints that the gate must prove are real."
+    },
+    {
+      "edge_id": "e-260",
+      "from_artifact_id": "arch.phase3-platform-gate-spec.v1",
+      "to_artifact_id": "reuse.phase2-proof-validation-invariants.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted P2.4 invariants define replay, failure, and proof inspectability expectations that gate tests must verify."
+    },
+    {
+      "edge_id": "e-261",
+      "from_artifact_id": "arch.phase3-platform-gate-spec.v1",
+      "to_artifact_id": "sem.phase2-projection-grammar-contracts.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted P2.6 grammar pack defines Live Monitor, Ledger, Timeline, Queue, Compare View, and Console as shared projections over the gated substrate."
+    },
+    {
+      "edge_id": "e-262",
+      "from_artifact_id": "arch.phase3-platform-gate-spec.v1",
+      "to_artifact_id": "sa.all-prims.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The primitive-set authority defines the shared-environment and engine primitives that the gate requires."
+    },
+    {
+      "edge_id": "e-263",
+      "from_artifact_id": "arch.phase3-platform-gate-spec.v1",
+      "to_artifact_id": "sa.chat-native-release-plan.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The release doctrine defines Platform Gate as the mandatory pre-R1 stage and fixes its place in the release order."
+    },
+    {
+      "edge_id": "e-264",
+      "from_artifact_id": "arch.phase3-platform-gate-spec.v1",
+      "to_artifact_id": "sa.task-studio-north-star.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The north-star authority requires the commissioned-work substrate that Platform Gate must prove before public release hardening."
+    },
+    {
+      "edge_id": "e-265",
+      "from_artifact_id": "arch.phase3-platform-gate-spec.v1",
+      "to_artifact_id": "cp.forbidden-shortcuts-register.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The gate must block transcript truth, silent proposal application, second-stack drift, and repo-shape-driven architecture drift."
+    },
+    {
+      "edge_id": "e-266",
+      "from_artifact_id": "arch.phase3-platform-gate-spec.v1",
+      "to_artifact_id": "canon.phase1-layer-primitive-separation.v1",
+      "edge_type": "informs",
+      "propagation_mode": "none",
+      "notes": "The accepted P1.3 owner-layer map informs which primitive/package areas belong to engine, shared environment, or projection layers."
     }
   ]
 }

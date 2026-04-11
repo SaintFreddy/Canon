@@ -218,10 +218,11 @@ This section answers, in plain terms, what is already done and what is not.
 - [x] The Phase 3 context compiler / retrieval / memory / canon topology has been produced and accepted.
 - [x] The Phase 3 data / storage / indexing / provenance spec has been produced and accepted.
 - [x] The Phase 3 API / IPC / event contract spec has been produced and accepted.
+- [x] The Phase 3 Platform Gate spec and exit audit have been produced and accepted.
 
 ### 5.2 Not done yet
 
-- [ ] The remaining Phase 3 Platform Gate artifact and architecture sync pass have not yet been completed.
+- [ ] The remaining Phase 3 architecture sync pass has not yet been completed.
 - [ ] The release contract packs for Platform Gate through R7 have been produced and accepted.
 - [ ] The full reusable semantics and Task Studio readiness packs have been produced and accepted.
 - [ ] The repo/package architecture and agent execution system have been implemented.
@@ -552,7 +553,7 @@ This phase is done when the technical baseline, compiler topology, data/storage/
 - **Acceptance:** major process boundaries and message contracts are typed and explicit
 - **Carry-forward topics:** event types, IPC rules, adapter contracts, compatibility constraints
 
-#### [ ] P3.5 — Platform Gate spec + exit audit
+#### [x] P3.5 — Platform Gate spec + exit audit
 - **Mode:** Human + Factory
 - **Depends on:** P3.1 through P3.4
 - **Deliverable:** internal gate spec, required primitives, forced packages, exit tests, audit checklist
@@ -1416,6 +1417,27 @@ Stale items:
 
 Notes for future prompts:
 - Use `arch.phase3-api-ipc-event-contracts.v1` together with the accepted P3.1-P3.3 architecture packs as the API/event baseline for Platform Gate, release contracts, and later service/package boundary planning.
+
+#### CF-0029 | 2026-04-11 | Source: P3.5 — Platform Gate spec + exit audit
+
+New information:
+- `docs/control-plane/architecture/phase-3-platform-gate-spec-and-exit-audit.md` now defines the accepted internal Platform Gate, including required primitives, forced package/service areas, exit tests, audit checklist, and blocking failure classes.
+- Artifact `arch.phase3-platform-gate-spec.v1` is registered in the control-plane registry and dependency graph as `accepted`.
+
+Impact:
+- Phase 3 now has an explicit hard pre-R1 gate proving frozen context, source tracing, run identity, provenance continuity, governance, typed boundaries, and scope enforcement before public release work.
+- The program now has one concrete checklist for deciding whether the substrate is real enough to leave internal hardening and enter release-contract work.
+
+Status changes:
+- P3.5 marked done.
+- The completion snapshot now records the Phase 3 Platform Gate spec and exit audit as accepted.
+- Phase 3 remains in progress pending the final architecture synchronization pass.
+
+Stale items:
+- None.
+
+Notes for future prompts:
+- Use `arch.phase3-platform-gate-spec.v1` together with the accepted P3.1-P3.4 packs as the blocking pre-R1 baseline for P3.6 sync review, Phase 4 release contracts, and later repo/package concretization.
 
 ---
 
