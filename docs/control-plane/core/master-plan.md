@@ -222,6 +222,7 @@ This section answers, in plain terms, what is already done and what is not.
 - [x] The Phase 3 architecture synchronization pass has been produced and accepted.
 - [x] The Phase 4 release-to-SDK maturity matrix has been produced and accepted.
 - [x] The Phase 4 release / milestone architecture plan has been produced and accepted.
+- [x] The Phase 4 R1 Transcript Chat contract pack has been produced and accepted.
 
 ### 5.2 Not done yet
 
@@ -595,7 +596,7 @@ This phase is done when the release-to-SDK matrix, milestone architecture, and c
 - **Acceptance:** there is one accepted release architecture story distinct from implementation blueprints
 - **Carry-forward topics:** milestone boundary changes, deferrals, conscious non-goals, sequencing clarifications
 
-#### [ ] P4.3 — R1 Transcript Chat contract pack
+#### [x] P4.3 — R1 Transcript Chat contract pack
 - **Mode:** Human + Factory
 - **Depends on:** P4.2
 - **Deliverable:** product promise, shared primitives, chat-domain primitives, packages forced to mature, exit criteria, non-goals
@@ -1507,6 +1508,29 @@ Stale items:
 
 Notes for future prompts:
 - Use `rel.chat-native-milestone-architecture-plan.v1` together with `rel.chat-native-maturity-matrix.v1`, `arch.phase3-platform-gate-spec.v1`, and the accepted Phase 1 topology/seam/scenario artifacts as the milestone-architecture baseline for the R1-R7 contract packs.
+
+#### CF-0033 | 2026-04-11 | Source: P4.3 — R1 Transcript Chat contract pack
+
+New information:
+- `docs/control-plane/releases/r1-transcript-chat-contract/phase-4-r1-transcript-chat-contract-pack.md` is now accepted for downstream use.
+- Artifact `rel.r1-transcript-chat-contract.v1` has been registered as `accepted`.
+- The accepted R1 contract now fixes the first public release promise, the shared primitives and chat-only additions it may expose, the package-maturity floor it inherits, the exit criteria it must satisfy, and the explicit R1 non-goals it must refuse.
+
+Impact:
+- Phase 4 now has its first stage-specific release contract pack after the milestone architecture plan.
+- P4.4 can proceed on an accepted R1 boundary instead of inferring what Transcript Chat must preserve before explicit context control begins.
+- Later release packs can treat R1 as the proof that familiar chat already runs on bounded runs, frozen context, and source grounding rather than on transcript-truth shortcuts.
+
+Status changes:
+- P4.3 marked done.
+- The completion snapshot now records the Phase 4 R1 Transcript Chat contract pack as accepted.
+- Phase 4 remains in progress pending P4.4-P4.9.
+
+Stale items:
+- None.
+
+Notes for future prompts:
+- Use `rel.r1-transcript-chat-contract.v1` together with `rel.chat-native-milestone-architecture-plan.v1`, `rel.chat-native-maturity-matrix.v1`, `arch.phase3-platform-gate-spec.v1`, and `sem.phase2-chat-native-semantic-packs.v1` as the accepted R1 contract baseline for P4.4 and later release-pack work.
 
 ---
 
