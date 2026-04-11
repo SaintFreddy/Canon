@@ -2358,6 +2358,135 @@
         "P2.1 accepted semantic contract pack defining shared first-class object fields, identity rules, and lifecycle/state-machine semantics.",
         "Accepted for downstream use as the Phase 2 object-model baseline for run classes, governance invariants, release packs, and architecture work."
       ]
+    },
+    {
+      "artifact_id": "sem.phase2-run-class-taxonomy-protocol-kernel.v1",
+      "artifact_type_id": "sem.semantic_contract_pack",
+      "title": "Phase 2 run-class taxonomy and protocol-kernel pack",
+      "version": "1.0.0",
+      "artifact_status": "accepted",
+      "semantic_owner": "Semantic contracts steward",
+      "stewardship_mode": "human_factory",
+      "acceptance_authority": "Human plan owner",
+      "canonical_locator": "docs/control-plane/semantics/phase-2-run-class-taxonomy-and-protocol-kernel.md",
+      "source_authority_refs": [
+        "cp.master-plan.v1",
+        "canon.phase1-source-decomposition.v1",
+        "canon.phase1-product-interpretation-freeze.v1",
+        "canon.phase1-surface-release-topology.v1",
+        "canon.phase1-rewrite-containment-seams.v1",
+        "canon.phase1-scenario-corpus.v1",
+        "sem.phase2-core-object-state-machines.v1",
+        "sa.all-prims.v1",
+        "sa.chat-native-release-plan.v1",
+        "sa.task-studio-north-star.v1",
+        "cp.forbidden-shortcuts-register.v1"
+      ],
+      "dependency_refs": [
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.master-plan.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "P2.2 scope, sequencing, and carry-forward rules come from the master plan."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.artifact-control-plane-spec.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The semantic pack reuses accepted P0.1 artifact, validation-hook, and stale-rule semantics."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "sem.phase2-core-object-state-machines.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P2.1 object model defines the Run, Protocol, Applet, Proof Bundle, State Delta, and Writeback Proposal objects specialized here."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "canon.phase1-source-decomposition.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P1.1 glossary and unresolved-term list identify Task Family -> Run Class mapping as a P2.2 formalization task."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "canon.phase1-product-interpretation-freeze.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P1.2 note fixes projection-vs-ontology and release-order interpretation for run-class exposure."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "canon.phase1-surface-release-topology.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P1.4 topology canon defines where run classes surface across releases and Task Studio handoff."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "canon.phase1-rewrite-containment-seams.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P1.5 seam map requires reusable execution and task-family projections to stay downstream of shared run semantics."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "canon.phase1-scenario-corpus.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P1.6 scenario corpus defines the release-stage pathways the run classes and protocol defaults must support."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "sa.all-prims.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The primitive-set authority defines Run Class, Protocol, Workflow, and Applet as shared-environment primitives."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "sa.chat-native-release-plan.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The release doctrine fixes Prompt Studio, governed applet chat, and Commissioning Bridge as required release stages."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "sa.task-studio-north-star.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The north-star authority fixes the V1 task-family set and commissioned-work orientation that this taxonomy formalizes."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.forbidden-shortcuts-register.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The taxonomy must preserve no agent-builder-first, no transcript-first truth, no hidden memory sludge, and no app-private ontology drift."
+        }
+      ],
+      "validation_hooks": [
+        {
+          "hook_id": "vh.dependency.integrity"
+        },
+        {
+          "hook_id": "vh.source.trace-review"
+        },
+        {
+          "hook_id": "vh.consistency.cross-pack-review"
+        },
+        {
+          "hook_id": "vh.manual.acceptance"
+        }
+      ],
+      "stale_rule_id": "sr.derivative.manual",
+      "notes": [
+        "P2.2 accepted run-class taxonomy and protocol-kernel baseline mapping V1 Task Studio task families onto shared run classes.",
+        "Accepted for downstream use as the Phase 2 execution-typing baseline for governance, release packs, reusable execution, and Task Studio work."
+      ]
     }
   ]
 }

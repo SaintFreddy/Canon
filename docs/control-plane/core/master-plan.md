@@ -209,6 +209,7 @@ This section answers, in plain terms, what is already done and what is not.
 - [x] The Phase 1 rewrite-containment / stable seam map has been produced and accepted.
 - [x] The Phase 1 golden scenario corpus and edge-case suite has been produced and accepted.
 - [x] The Phase 2 core object and state-machine spec pack has been produced and accepted.
+- [x] The Phase 2 run-class taxonomy and protocol-kernel pack has been produced and accepted.
 
 ### 5.2 Not done yet
 
@@ -470,7 +471,7 @@ This phase is done when the core object model, run classes, invariants, release-
 - **Acceptance:** major first-class objects have fields, transitions, and identity rules that downstream work can code against
 - **Carry-forward topics:** field additions, transition rules, identity rules, lifecycle clarifications
 
-#### [ ] P2.2 — Run-class taxonomy + protocol kernel
+#### [x] P2.2 — Run-class taxonomy + protocol kernel
 - **Mode:** Human + Factory
 - **Depends on:** P2.1
 - **Deliverable:** base run classes, Task Studio task-family mappings, intake/result/proof schema skeletons, authority defaults, verifier slots, writeback defaults
@@ -1223,6 +1224,26 @@ Stale items:
 
 Notes for future prompts:
 - Use `sem.phase2-core-object-state-machines.v1` as the baseline semantic contract pack for P2.2 through P2.6 and for Phase 3 storage/API/runtime work.
+
+#### CF-0020 | 2026-04-11 | Source: P2.2 — Run-class taxonomy + protocol kernel
+
+New information:
+- `docs/control-plane/semantics/phase-2-run-class-taxonomy-and-protocol-kernel.md` now defines the accepted base run classes, V1 Task Studio task-family mapping, protocol-kernel required fields, schema skeletons, authority defaults, verifier slots, and writeback defaults.
+- Artifact `sem.phase2-run-class-taxonomy-protocol-kernel.v1` is registered in the control-plane registry and dependency graph as `accepted`.
+
+Impact:
+- Phase 2 now has an accepted execution-typing baseline that later governance, release, reusable-execution, and Task Studio work can build against.
+- V1 task-family labels are now explicitly downstream projections over shared run classes instead of vague generic task buckets.
+
+Status changes:
+- P2.2 marked done.
+- The completion snapshot now records the Phase 2 run-class taxonomy and protocol-kernel pack as accepted.
+
+Stale items:
+- None.
+
+Notes for future prompts:
+- Use `sem.phase2-run-class-taxonomy-protocol-kernel.v1` together with `sem.phase2-core-object-state-machines.v1` as the Phase 2 execution-typing baseline for P2.3, P2.4, P2.5, P4.8, P4.9, and P5.3.
 
 ---
 

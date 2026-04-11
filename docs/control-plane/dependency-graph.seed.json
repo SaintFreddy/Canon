@@ -176,6 +176,12 @@
       "artifact_type_id": "sem.semantic_contract_pack",
       "artifact_status": "accepted",
       "canonical_locator": "docs/control-plane/semantics/phase-2-core-object-and-state-machine-spec-pack.md"
+    },
+    {
+      "artifact_id": "sem.phase2-run-class-taxonomy-protocol-kernel.v1",
+      "artifact_type_id": "sem.semantic_contract_pack",
+      "artifact_status": "accepted",
+      "canonical_locator": "docs/control-plane/semantics/phase-2-run-class-taxonomy-and-protocol-kernel.md"
     }
   ],
   "edges": [
@@ -1106,6 +1112,102 @@
       "edge_type": "depends_on",
       "propagation_mode": "auto",
       "notes": "The object model must preserve no transcript-first truth, no hidden memory sludge, no silent proposal application, and no app-private ontology drift."
+    },
+    {
+      "edge_id": "e-117",
+      "from_artifact_id": "sem.phase2-run-class-taxonomy-protocol-kernel.v1",
+      "to_artifact_id": "cp.master-plan.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "P2.2 scope, sequencing, and carry-forward rules come from the master plan."
+    },
+    {
+      "edge_id": "e-118",
+      "from_artifact_id": "sem.phase2-run-class-taxonomy-protocol-kernel.v1",
+      "to_artifact_id": "cp.artifact-control-plane-spec.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The semantic pack reuses accepted P0.1 artifact, validation-hook, and stale-rule semantics."
+    },
+    {
+      "edge_id": "e-119",
+      "from_artifact_id": "sem.phase2-run-class-taxonomy-protocol-kernel.v1",
+      "to_artifact_id": "sem.phase2-core-object-state-machines.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted P2.1 object model defines the Run, Protocol, Applet, Proof Bundle, State Delta, and Writeback Proposal objects specialized here."
+    },
+    {
+      "edge_id": "e-120",
+      "from_artifact_id": "sem.phase2-run-class-taxonomy-protocol-kernel.v1",
+      "to_artifact_id": "canon.phase1-source-decomposition.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted P1.1 glossary and unresolved-term list identify Task Family -> Run Class mapping as a P2.2 formalization task."
+    },
+    {
+      "edge_id": "e-121",
+      "from_artifact_id": "sem.phase2-run-class-taxonomy-protocol-kernel.v1",
+      "to_artifact_id": "canon.phase1-product-interpretation-freeze.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted P1.2 note fixes projection-vs-ontology and release-order interpretation for run-class exposure."
+    },
+    {
+      "edge_id": "e-122",
+      "from_artifact_id": "sem.phase2-run-class-taxonomy-protocol-kernel.v1",
+      "to_artifact_id": "canon.phase1-surface-release-topology.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted P1.4 topology canon defines where run classes surface across releases and Task Studio handoff."
+    },
+    {
+      "edge_id": "e-123",
+      "from_artifact_id": "sem.phase2-run-class-taxonomy-protocol-kernel.v1",
+      "to_artifact_id": "canon.phase1-rewrite-containment-seams.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted P1.5 seam map requires reusable execution and task-family projections to stay downstream of shared run semantics."
+    },
+    {
+      "edge_id": "e-124",
+      "from_artifact_id": "sem.phase2-run-class-taxonomy-protocol-kernel.v1",
+      "to_artifact_id": "canon.phase1-scenario-corpus.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted P1.6 scenario corpus defines the release-stage pathways the run classes and protocol defaults must support."
+    },
+    {
+      "edge_id": "e-125",
+      "from_artifact_id": "sem.phase2-run-class-taxonomy-protocol-kernel.v1",
+      "to_artifact_id": "sa.all-prims.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The primitive-set authority defines Run Class, Protocol, Workflow, and Applet as shared-environment primitives."
+    },
+    {
+      "edge_id": "e-126",
+      "from_artifact_id": "sem.phase2-run-class-taxonomy-protocol-kernel.v1",
+      "to_artifact_id": "sa.chat-native-release-plan.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The release doctrine fixes Prompt Studio, governed applet chat, and Commissioning Bridge as required release stages."
+    },
+    {
+      "edge_id": "e-127",
+      "from_artifact_id": "sem.phase2-run-class-taxonomy-protocol-kernel.v1",
+      "to_artifact_id": "sa.task-studio-north-star.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The north-star authority fixes the V1 task-family set and commissioned-work orientation that this taxonomy formalizes."
+    },
+    {
+      "edge_id": "e-128",
+      "from_artifact_id": "sem.phase2-run-class-taxonomy-protocol-kernel.v1",
+      "to_artifact_id": "cp.forbidden-shortcuts-register.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The taxonomy must preserve no agent-builder-first, no transcript-first truth, no hidden memory sludge, and no app-private ontology drift."
     }
   ]
 }
