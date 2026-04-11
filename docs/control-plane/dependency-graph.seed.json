@@ -218,6 +218,12 @@
       "artifact_type_id": "arch.technical_architecture_pack",
       "artifact_status": "accepted",
       "canonical_locator": "docs/control-plane/architecture/phase-3-context-compiler-retrieval-memory-canon-topology.md"
+    },
+    {
+      "artifact_id": "arch.phase3-data-storage-provenance-spec.v1",
+      "artifact_type_id": "arch.technical_architecture_pack",
+      "artifact_status": "accepted",
+      "canonical_locator": "docs/control-plane/architecture/phase-3-data-storage-indexing-and-provenance-spec.md"
     }
   ],
   "edges": [
@@ -1940,6 +1946,118 @@
       "edge_type": "informs",
       "propagation_mode": "none",
       "notes": "The accepted P2.6 projection grammar informs how compiler state surfaces are exposed without changing subsystem ownership."
+    },
+    {
+      "edge_id": "e-216",
+      "from_artifact_id": "arch.phase3-data-storage-provenance-spec.v1",
+      "to_artifact_id": "cp.master-plan.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "P3.3 scope, sequencing, and carry-forward rules come from the master plan."
+    },
+    {
+      "edge_id": "e-217",
+      "from_artifact_id": "arch.phase3-data-storage-provenance-spec.v1",
+      "to_artifact_id": "cp.artifact-control-plane-spec.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The storage/provenance spec reuses accepted P0.1 artifact, validation-hook, and stale-rule semantics."
+    },
+    {
+      "edge_id": "e-218",
+      "from_artifact_id": "arch.phase3-data-storage-provenance-spec.v1",
+      "to_artifact_id": "arch.phase3-technical-architecture-baseline.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted P3.1 baseline defines the data and provenance plane that this spec makes explicit."
+    },
+    {
+      "edge_id": "e-219",
+      "from_artifact_id": "arch.phase3-data-storage-provenance-spec.v1",
+      "to_artifact_id": "arch.phase3-context-compiler-topology.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted P3.2 compiler topology defines authoritative and derived compiler outputs that storage, indexing, and provenance must carry."
+    },
+    {
+      "edge_id": "e-220",
+      "from_artifact_id": "arch.phase3-data-storage-provenance-spec.v1",
+      "to_artifact_id": "sem.phase2-core-object-state-machines.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted P2.1 object model defines the first-class objects, refs, and lifecycle semantics that authoritative stores must preserve."
+    },
+    {
+      "edge_id": "e-221",
+      "from_artifact_id": "arch.phase3-data-storage-provenance-spec.v1",
+      "to_artifact_id": "reuse.phase2-governance-authority-writeback-invariants.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted P2.3 invariants require storage lanes and writeback state to remain explicit and separable."
+    },
+    {
+      "edge_id": "e-222",
+      "from_artifact_id": "arch.phase3-data-storage-provenance-spec.v1",
+      "to_artifact_id": "reuse.phase2-proof-validation-invariants.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted P2.4 invariants require proof, replay, omission, contradiction, and failure lineage to remain queryable and inspectable."
+    },
+    {
+      "edge_id": "e-223",
+      "from_artifact_id": "arch.phase3-data-storage-provenance-spec.v1",
+      "to_artifact_id": "canon.phase1-rewrite-containment-seams.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted P1.5 seam map identifies provenance continuity, replay basis, and writeback separation as high-blast-radius seams."
+    },
+    {
+      "edge_id": "e-224",
+      "from_artifact_id": "arch.phase3-data-storage-provenance-spec.v1",
+      "to_artifact_id": "canon.phase1-scenario-corpus.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted P1.6 scenarios and edge cases define replay, artifact lineage, prompt lineage, and transcript-truth failures the storage baseline must support."
+    },
+    {
+      "edge_id": "e-225",
+      "from_artifact_id": "arch.phase3-data-storage-provenance-spec.v1",
+      "to_artifact_id": "sa.all-prims.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The primitive-set authority defines storage classes, provenance, eventing, replay, and tenancy/security capabilities that this spec grounds."
+    },
+    {
+      "edge_id": "e-226",
+      "from_artifact_id": "arch.phase3-data-storage-provenance-spec.v1",
+      "to_artifact_id": "sa.chat-native-release-plan.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The release doctrine requires Platform Gate, artifact lineage, prompt assets, governed execution, and commissioning flows to share one substrate."
+    },
+    {
+      "edge_id": "e-227",
+      "from_artifact_id": "arch.phase3-data-storage-provenance-spec.v1",
+      "to_artifact_id": "sa.task-studio-north-star.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The north-star authority requires proof-backed commissioned work with explicit state deltas, writeback lanes, and artifact provenance."
+    },
+    {
+      "edge_id": "e-228",
+      "from_artifact_id": "arch.phase3-data-storage-provenance-spec.v1",
+      "to_artifact_id": "cp.forbidden-shortcuts-register.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The storage baseline must preserve no master chat truth, no silent proposal application, and no repo-shape-driven architecture drift."
+    },
+    {
+      "edge_id": "e-229",
+      "from_artifact_id": "arch.phase3-data-storage-provenance-spec.v1",
+      "to_artifact_id": "canon.phase1-layer-primitive-separation.v1",
+      "edge_type": "informs",
+      "propagation_mode": "none",
+      "notes": "The accepted P1.3 owner-layer map informs which storage concerns belong to engine/runtime substrate versus app projections."
     }
   ]
 }

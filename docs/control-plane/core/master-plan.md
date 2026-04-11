@@ -216,10 +216,11 @@ This section answers, in plain terms, what is already done and what is not.
 - [x] The Phase 2 projection grammar contract pack has been produced and accepted.
 - [x] The Phase 3 high-level technical architecture baseline has been produced and accepted.
 - [x] The Phase 3 context compiler / retrieval / memory / canon topology has been produced and accepted.
+- [x] The Phase 3 data / storage / indexing / provenance spec has been produced and accepted.
 
 ### 5.2 Not done yet
 
-- [ ] The remaining Phase 3 storage, API/event, and Platform Gate artifacts have not yet been produced and accepted.
+- [ ] The remaining Phase 3 API/event and Platform Gate artifacts have not yet been produced and accepted.
 - [ ] The release contract packs for Platform Gate through R7 have been produced and accepted.
 - [ ] The full reusable semantics and Task Studio readiness packs have been produced and accepted.
 - [ ] The repo/package architecture and agent execution system have been implemented.
@@ -536,7 +537,7 @@ This phase is done when the technical baseline, compiler topology, data/storage/
 - **Acceptance:** the compiler is defined as a first-class subsystem rather than buried in prose
 - **Carry-forward topics:** compiler pipeline changes, retrieval rules, memory/canon injection rules, replay constraints
 
-#### [ ] P3.3 — Data / storage / indexing / provenance spec
+#### [x] P3.3 — Data / storage / indexing / provenance spec
 - **Mode:** Human + Factory
 - **Depends on:** P3.1
 - **Deliverable:** storage classes, relational metadata, event streams, object/blob storage, vector/search index, graph/provenance rules, migration/invalidation/rebuild rules
@@ -1372,6 +1373,27 @@ Stale items:
 
 Notes for future prompts:
 - Use `arch.phase3-context-compiler-topology.v1` together with `arch.phase3-technical-architecture-baseline.v1` and the accepted P2 artifacts as the compiler baseline for storage/index, API/event, Platform Gate, and later context-facing release work.
+
+#### CF-0027 | 2026-04-11 | Source: P3.3 — Data / storage / indexing / provenance spec
+
+New information:
+- `docs/control-plane/architecture/phase-3-data-storage-indexing-and-provenance-spec.md` now defines the accepted storage-class, event-stream, provenance, migration, invalidation, and rebuild baseline for the platform.
+- Artifact `arch.phase3-data-storage-provenance-spec.v1` is registered in the control-plane registry and dependency graph as `accepted`.
+
+Impact:
+- Phase 3 now has an accepted data and provenance baseline that P3.4, P3.5, and later sync/regeneration work can extend without collapsing authoritative and derived lanes.
+- The program now has one explicit separation between metadata, blobs, events, provenance, indexes, caches, and secrets.
+
+Status changes:
+- P3.3 marked done.
+- The completion snapshot now records the Phase 3 data / storage / indexing / provenance spec as accepted.
+- Phase 3 remains in progress.
+
+Stale items:
+- None.
+
+Notes for future prompts:
+- Use `arch.phase3-data-storage-provenance-spec.v1` together with the accepted P3.1 and P3.2 architecture packs as the storage/provenance baseline for API/event contracts, Platform Gate, and later stale/regeneration automation.
 
 ---
 
