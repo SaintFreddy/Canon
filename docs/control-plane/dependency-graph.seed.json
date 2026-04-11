@@ -212,6 +212,12 @@
       "artifact_type_id": "arch.technical_architecture_pack",
       "artifact_status": "accepted",
       "canonical_locator": "docs/control-plane/architecture/phase-3-high-level-technical-architecture-baseline.md"
+    },
+    {
+      "artifact_id": "arch.phase3-context-compiler-topology.v1",
+      "artifact_type_id": "arch.technical_architecture_pack",
+      "artifact_status": "accepted",
+      "canonical_locator": "docs/control-plane/architecture/phase-3-context-compiler-retrieval-memory-canon-topology.md"
     }
   ],
   "edges": [
@@ -1798,6 +1804,142 @@
       "edge_type": "depends_on",
       "propagation_mode": "auto",
       "notes": "The baseline runtime must preserve no master chat truth, no separate backend per view, no transcript-first rewrite trap, and no repo-shape-driven architecture."
+    },
+    {
+      "edge_id": "e-199",
+      "from_artifact_id": "arch.phase3-context-compiler-topology.v1",
+      "to_artifact_id": "cp.master-plan.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "P3.2 scope, sequencing, and carry-forward rules come from the master plan."
+    },
+    {
+      "edge_id": "e-200",
+      "from_artifact_id": "arch.phase3-context-compiler-topology.v1",
+      "to_artifact_id": "cp.artifact-control-plane-spec.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The topology pack reuses accepted P0.1 artifact, validation-hook, and stale-rule semantics."
+    },
+    {
+      "edge_id": "e-201",
+      "from_artifact_id": "arch.phase3-context-compiler-topology.v1",
+      "to_artifact_id": "arch.phase3-technical-architecture-baseline.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted P3.1 architecture baseline defines the runtime planes and process families that this subsystem refines."
+    },
+    {
+      "edge_id": "e-202",
+      "from_artifact_id": "arch.phase3-context-compiler-topology.v1",
+      "to_artifact_id": "sem.phase2-core-object-state-machines.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted P2.1 object model defines Evidence Pack, Context Pack, Checkpoint, Authority Scope, Memory Object, and Canon Object semantics used here."
+    },
+    {
+      "edge_id": "e-203",
+      "from_artifact_id": "arch.phase3-context-compiler-topology.v1",
+      "to_artifact_id": "sem.phase2-run-class-taxonomy-protocol-kernel.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted P2.2 taxonomy defines run-class inputs and protocol kernels that drive retrieval and compilation requirements."
+    },
+    {
+      "edge_id": "e-204",
+      "from_artifact_id": "arch.phase3-context-compiler-topology.v1",
+      "to_artifact_id": "reuse.phase2-governance-authority-writeback-invariants.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted P2.3 invariants require explicit authority scope handling and prevent hidden widening during context assembly."
+    },
+    {
+      "edge_id": "e-205",
+      "from_artifact_id": "arch.phase3-context-compiler-topology.v1",
+      "to_artifact_id": "reuse.phase2-proof-validation-invariants.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted P2.4 invariants require frozen replay bases, explicit omissions/contradictions, and inspectable replay failure handling."
+    },
+    {
+      "edge_id": "e-206",
+      "from_artifact_id": "arch.phase3-context-compiler-topology.v1",
+      "to_artifact_id": "sem.phase2-chat-native-semantic-packs.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted P2.5 release semantic packs define the R2/R3/R7 and Task Studio projections that rely on explicit compiler behavior."
+    },
+    {
+      "edge_id": "e-207",
+      "from_artifact_id": "arch.phase3-context-compiler-topology.v1",
+      "to_artifact_id": "canon.phase1-surface-release-topology.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted P1.4 topology canon defines where context control, branching, and commissioning surfaces expose this subsystem."
+    },
+    {
+      "edge_id": "e-208",
+      "from_artifact_id": "arch.phase3-context-compiler-topology.v1",
+      "to_artifact_id": "canon.phase1-rewrite-containment-seams.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted P1.5 seam map makes compiled context, replay, and source-aware continuity high-blast-radius seams."
+    },
+    {
+      "edge_id": "e-209",
+      "from_artifact_id": "arch.phase3-context-compiler-topology.v1",
+      "to_artifact_id": "canon.phase1-scenario-corpus.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted P1.6 scenarios and edge cases define pack editing, freeze/replay, branch narrowing, hidden-memory drift, and transcript-truth failures this subsystem must prevent."
+    },
+    {
+      "edge_id": "e-210",
+      "from_artifact_id": "arch.phase3-context-compiler-topology.v1",
+      "to_artifact_id": "sa.all-prims.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The primitive-set authority defines source ingestion, retrieval, compiled context, memory, accepted knowledge, and replay as engine-level capabilities."
+    },
+    {
+      "edge_id": "e-211",
+      "from_artifact_id": "arch.phase3-context-compiler-topology.v1",
+      "to_artifact_id": "sa.chat-native-release-plan.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The release doctrine requires explicit context control, semantic branching, and frozen context snapshots before later release work."
+    },
+    {
+      "edge_id": "e-212",
+      "from_artifact_id": "arch.phase3-context-compiler-topology.v1",
+      "to_artifact_id": "sa.task-studio-north-star.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The north-star authority requires evidence/context visibility, context inspection, and replayable commissioned work."
+    },
+    {
+      "edge_id": "e-213",
+      "from_artifact_id": "arch.phase3-context-compiler-topology.v1",
+      "to_artifact_id": "cp.forbidden-shortcuts-register.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The subsystem must preserve no fake fine-grained context control, no hidden memory sludge, and no transcript-first replay trap."
+    },
+    {
+      "edge_id": "e-214",
+      "from_artifact_id": "arch.phase3-context-compiler-topology.v1",
+      "to_artifact_id": "canon.phase1-layer-primitive-separation.v1",
+      "edge_type": "informs",
+      "propagation_mode": "none",
+      "notes": "The accepted P1.3 owner-layer map informs how compiler runtime concerns stay below app projection layers."
+    },
+    {
+      "edge_id": "e-215",
+      "from_artifact_id": "arch.phase3-context-compiler-topology.v1",
+      "to_artifact_id": "sem.phase2-projection-grammar-contracts.v1",
+      "edge_type": "informs",
+      "propagation_mode": "none",
+      "notes": "The accepted P2.6 projection grammar informs how compiler state surfaces are exposed without changing subsystem ownership."
     }
   ]
 }

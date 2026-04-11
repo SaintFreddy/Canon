@@ -215,10 +215,11 @@ This section answers, in plain terms, what is already done and what is not.
 - [x] The Phase 2 chat-native semantic packs by release have been produced and accepted.
 - [x] The Phase 2 projection grammar contract pack has been produced and accepted.
 - [x] The Phase 3 high-level technical architecture baseline has been produced and accepted.
+- [x] The Phase 3 context compiler / retrieval / memory / canon topology has been produced and accepted.
 
 ### 5.2 Not done yet
 
-- [ ] The remaining Phase 3 compiler, storage, API/event, and Platform Gate artifacts have not yet been produced and accepted.
+- [ ] The remaining Phase 3 storage, API/event, and Platform Gate artifacts have not yet been produced and accepted.
 - [ ] The release contract packs for Platform Gate through R7 have been produced and accepted.
 - [ ] The full reusable semantics and Task Studio readiness packs have been produced and accepted.
 - [ ] The repo/package architecture and agent execution system have been implemented.
@@ -528,7 +529,7 @@ This phase is done when the technical baseline, compiler topology, data/storage/
 - **Acceptance:** the platform has one accepted technical architecture baseline
 - **Carry-forward topics:** runtime boundary changes, process model clarifications, identity/policy implications
 
-#### [ ] P3.2 — Context compiler / retrieval / memory / canon topology
+#### [x] P3.2 — Context compiler / retrieval / memory / canon topology
 - **Mode:** Human + Factory
 - **Depends on:** P3.1
 - **Deliverable:** topology for spans, ingestion, evidence-vs-context distinction, staged retrieval, memory/canon injection, freeze/replay/diff, recovery/compaction behavior
@@ -1350,6 +1351,27 @@ Stale items:
 
 Notes for future prompts:
 - Use `arch.phase3-technical-architecture-baseline.v1` together with the accepted P2.1-P2.6 artifacts as the architecture baseline for compiler, storage, API/event, Platform Gate, and later repo/package work.
+
+#### CF-0026 | 2026-04-11 | Source: P3.2 — Context compiler / retrieval / memory / canon topology
+
+New information:
+- `docs/control-plane/architecture/phase-3-context-compiler-retrieval-memory-canon-topology.md` now defines the accepted compiler subsystem topology for ingestion, spanization, evidence/context separation, staged retrieval, memory/canon injection, freeze/replay/diff, and recovery/compaction behavior.
+- Artifact `arch.phase3-context-compiler-topology.v1` is registered in the control-plane registry and dependency graph as `accepted`.
+
+Impact:
+- Phase 3 now has an accepted compiler baseline that P3.3 through P3.5 can refine without burying context assembly inside generic orchestration prose.
+- The program now has one explicit topology for R2 context control, R3 replay, R7 preflight, and Task Studio context inspection to project.
+
+Status changes:
+- P3.2 marked done.
+- The completion snapshot now records the Phase 3 context compiler / retrieval / memory / canon topology as accepted.
+- Phase 3 remains in progress.
+
+Stale items:
+- None.
+
+Notes for future prompts:
+- Use `arch.phase3-context-compiler-topology.v1` together with `arch.phase3-technical-architecture-baseline.v1` and the accepted P2 artifacts as the compiler baseline for storage/index, API/event, Platform Gate, and later context-facing release work.
 
 ---
 
