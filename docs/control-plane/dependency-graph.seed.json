@@ -206,6 +206,12 @@
       "artifact_type_id": "sem.semantic_contract_pack",
       "artifact_status": "accepted",
       "canonical_locator": "docs/control-plane/semantics/phase-2-projection-grammar-contract-pack.md"
+    },
+    {
+      "artifact_id": "arch.phase3-technical-architecture-baseline.v1",
+      "artifact_type_id": "arch.technical_architecture_pack",
+      "artifact_status": "accepted",
+      "canonical_locator": "docs/control-plane/architecture/phase-3-high-level-technical-architecture-baseline.md"
     }
   ],
   "edges": [
@@ -1656,6 +1662,142 @@
       "edge_type": "informs",
       "propagation_mode": "none",
       "notes": "The accepted P2.5 release semantic packs inform stage-fit aliases and grammar composition without changing the P2.6 dependency order."
+    },
+    {
+      "edge_id": "e-182",
+      "from_artifact_id": "arch.phase3-technical-architecture-baseline.v1",
+      "to_artifact_id": "cp.master-plan.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "P3.1 scope, sequencing, and carry-forward rules come from the master plan."
+    },
+    {
+      "edge_id": "e-183",
+      "from_artifact_id": "arch.phase3-technical-architecture-baseline.v1",
+      "to_artifact_id": "cp.artifact-control-plane-spec.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The architecture pack reuses accepted P0.1 artifact, validation-hook, and stale-rule semantics."
+    },
+    {
+      "edge_id": "e-184",
+      "from_artifact_id": "arch.phase3-technical-architecture-baseline.v1",
+      "to_artifact_id": "canon.phase1-product-interpretation-freeze.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted P1.2 note fixes the chat-native wedge, Task Studio handoff, and projection-vs-ontology constraints that the runtime must preserve."
+    },
+    {
+      "edge_id": "e-185",
+      "from_artifact_id": "arch.phase3-technical-architecture-baseline.v1",
+      "to_artifact_id": "canon.phase1-layer-primitive-separation.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted P1.3 owner-layer map constrains which runtime planes belong to engine, shared environment, and app/domain projections."
+    },
+    {
+      "edge_id": "e-186",
+      "from_artifact_id": "arch.phase3-technical-architecture-baseline.v1",
+      "to_artifact_id": "canon.phase1-surface-release-topology.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted P1.4 topology canon defines release sequencing, continuity centers, and handoff obligations that the baseline runtime must support."
+    },
+    {
+      "edge_id": "e-187",
+      "from_artifact_id": "arch.phase3-technical-architecture-baseline.v1",
+      "to_artifact_id": "canon.phase1-rewrite-containment-seams.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted P1.5 seam map identifies the high-blast-radius semantics that must stay below client projection changes."
+    },
+    {
+      "edge_id": "e-188",
+      "from_artifact_id": "arch.phase3-technical-architecture-baseline.v1",
+      "to_artifact_id": "canon.phase1-scenario-corpus.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted P1.6 scenarios and edge cases define the continuity, branching, artifact, reusable execution, and commissioning paths the runtime must support."
+    },
+    {
+      "edge_id": "e-189",
+      "from_artifact_id": "arch.phase3-technical-architecture-baseline.v1",
+      "to_artifact_id": "sem.phase2-core-object-state-machines.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted P2.1 object model defines the authoritative objects and lifecycle states that the runtime must persist and transport."
+    },
+    {
+      "edge_id": "e-190",
+      "from_artifact_id": "arch.phase3-technical-architecture-baseline.v1",
+      "to_artifact_id": "sem.phase2-run-class-taxonomy-protocol-kernel.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted P2.2 taxonomy defines the typed execution classes and protocol defaults the worker and control planes must handle."
+    },
+    {
+      "edge_id": "e-191",
+      "from_artifact_id": "arch.phase3-technical-architecture-baseline.v1",
+      "to_artifact_id": "reuse.phase2-governance-authority-writeback-invariants.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted P2.3 invariants require explicit authority, review, and lane-separated writeback behavior in the runtime baseline."
+    },
+    {
+      "edge_id": "e-192",
+      "from_artifact_id": "arch.phase3-technical-architecture-baseline.v1",
+      "to_artifact_id": "reuse.phase2-proof-validation-invariants.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted P2.4 invariants require the runtime to preserve proof, validation, replay, and failure inspectability."
+    },
+    {
+      "edge_id": "e-193",
+      "from_artifact_id": "arch.phase3-technical-architecture-baseline.v1",
+      "to_artifact_id": "sem.phase2-chat-native-semantic-packs.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted P2.5 release semantic packs define the stage-by-stage continuity and shared-object exposure that the runtime topology must support."
+    },
+    {
+      "edge_id": "e-194",
+      "from_artifact_id": "arch.phase3-technical-architecture-baseline.v1",
+      "to_artifact_id": "sem.phase2-projection-grammar-contracts.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted P2.6 projection grammar defines the client-facing grammar that the architecture must keep separate from shared object ownership."
+    },
+    {
+      "edge_id": "e-195",
+      "from_artifact_id": "arch.phase3-technical-architecture-baseline.v1",
+      "to_artifact_id": "sa.all-prims.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The primitive-set authority defines engine layers, environment layers, storage classes, orchestration, provenance, and projection grammar capabilities."
+    },
+    {
+      "edge_id": "e-196",
+      "from_artifact_id": "arch.phase3-technical-architecture-baseline.v1",
+      "to_artifact_id": "sa.chat-native-release-plan.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The release doctrine defines the mandatory Platform Gate and the fixed public release order that the runtime must support."
+    },
+    {
+      "edge_id": "e-197",
+      "from_artifact_id": "arch.phase3-technical-architecture-baseline.v1",
+      "to_artifact_id": "sa.task-studio-north-star.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The north-star authority defines the commissioned-work execution loop, proof surfaces, and writeback controls that later runtime phases must enable."
+    },
+    {
+      "edge_id": "e-198",
+      "from_artifact_id": "arch.phase3-technical-architecture-baseline.v1",
+      "to_artifact_id": "cp.forbidden-shortcuts-register.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The baseline runtime must preserve no master chat truth, no separate backend per view, no transcript-first rewrite trap, and no repo-shape-driven architecture."
     }
   ]
 }

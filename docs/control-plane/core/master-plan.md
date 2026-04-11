@@ -214,10 +214,11 @@ This section answers, in plain terms, what is already done and what is not.
 - [x] The Phase 2 proof and validation invariants have been produced and accepted.
 - [x] The Phase 2 chat-native semantic packs by release have been produced and accepted.
 - [x] The Phase 2 projection grammar contract pack has been produced and accepted.
+- [x] The Phase 3 high-level technical architecture baseline has been produced and accepted.
 
 ### 5.2 Not done yet
 
-- [ ] The technical architecture baseline and Platform Gate artifacts have been produced and accepted.
+- [ ] The remaining Phase 3 compiler, storage, API/event, and Platform Gate artifacts have not yet been produced and accepted.
 - [ ] The release contract packs for Platform Gate through R7 have been produced and accepted.
 - [ ] The full reusable semantics and Task Studio readiness packs have been produced and accepted.
 - [ ] The repo/package architecture and agent execution system have been implemented.
@@ -229,7 +230,7 @@ This section answers, in plain terms, what is already done and what is not.
 - [x] Phase 0 — done in the repo
 - [x] Phase 1 — done in the repo
 - [x] Phase 2 — done in the repo
-- [ ] Phase 3 — not done
+- [~] Phase 3 — in progress
 - [ ] Phase 4 — not done
 - [ ] Phase 5 — not done
 - [ ] Phase 6 — not done
@@ -510,7 +511,7 @@ This phase is done when the core object model, run classes, invariants, release-
 
 ---
 
-## Phase 3 — Technical baseline and Platform Gate `[ ]`
+## Phase 3 — Technical baseline and Platform Gate `[~]`
 
 ### Goal
 
@@ -520,7 +521,7 @@ Turn accepted semantics into a real technical architecture and define the intern
 
 This phase is done when the technical baseline, compiler topology, data/storage/provenance spec, API contracts, Platform Gate, and architecture sync pass are accepted.
 
-#### [ ] P3.1 — High-level technical architecture baseline
+#### [x] P3.1 — High-level technical architecture baseline
 - **Mode:** Human + Factory
 - **Depends on:** P2.1 through P2.6
 - **Deliverable:** runtime topology, process model, local/cloud split, engine/environment/app boundaries, identity/tenancy touchpoints
@@ -1328,6 +1329,27 @@ Stale items:
 
 Notes for future prompts:
 - Use `sem.phase2-projection-grammar-contracts.v1` together with `canon.phase1-surface-release-topology.v1`, `sem.phase2-core-object-state-machines.v1`, and `sem.phase2-chat-native-semantic-packs.v1` as the surface-grammar baseline for Phase 3 architecture, Phase 4 release packs, and Phase 6 surface contracts.
+
+#### CF-0025 | 2026-04-11 | Source: P3.1 — High-level technical architecture baseline
+
+New information:
+- `docs/control-plane/architecture/phase-3-high-level-technical-architecture-baseline.md` now defines the accepted runtime topology, process model, hosted-default local/cloud split, layer boundary map, and identity/tenancy touchpoints for the platform baseline.
+- Artifact `arch.phase3-technical-architecture-baseline.v1` is registered in the control-plane registry and dependency graph as `accepted`.
+
+Impact:
+- Phase 3 now has an accepted top-level architecture story that P3.2 through P3.5 can refine without inventing new top-level runtime planes.
+- The program now has one explicit technical baseline tying the accepted semantic objects to bounded workers, shared data/provenance planes, and projection-only clients.
+
+Status changes:
+- P3.1 marked done.
+- The completion snapshot now records the Phase 3 high-level technical architecture baseline as accepted.
+- Phase 3 marked in progress.
+
+Stale items:
+- None.
+
+Notes for future prompts:
+- Use `arch.phase3-technical-architecture-baseline.v1` together with the accepted P2.1-P2.6 artifacts as the architecture baseline for compiler, storage, API/event, Platform Gate, and later repo/package work.
 
 ---
 
