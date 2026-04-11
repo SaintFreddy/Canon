@@ -144,7 +144,7 @@
     {
       "artifact_id": "canon.phase1-product-interpretation-freeze.v1",
       "artifact_type_id": "canon.interpretation_pack",
-      "artifact_status": "review_ready",
+      "artifact_status": "accepted",
       "canonical_locator": "docs/control-plane/canon/phase-1-canon-freeze-and-resolved-product-interpretation.md"
     }
   ],

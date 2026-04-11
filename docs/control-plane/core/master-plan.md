@@ -203,10 +203,10 @@ This section answers, in plain terms, what is already done and what is not.
 - [x] The forbidden-shortcuts register has been implemented and accepted.
 - [x] The context-budget and packet policy has been implemented and accepted.
 - [x] The Phase 1 source decomposition / contradiction register / glossary pack has been produced and accepted.
+- [x] The Phase 1 canon freeze / resolved product interpretation note has been produced and accepted.
 
 ### 5.2 Not done yet
 
-- [ ] The canon freeze / resolved product interpretation artifact has not yet been produced and accepted.
 - [ ] The layer separation pack and rewrite-containment seam map have been produced and accepted.
 - [ ] The core semantic contracts and state-machine specs have been produced and accepted.
 - [ ] The technical architecture baseline and Platform Gate artifacts have been produced and accepted.
@@ -411,7 +411,7 @@ This phase is done when there is one accepted canon for what belongs in engine, 
 - **Acceptance:** major terms are normalized, contradictions are explicit, and unresolved questions are named rather than buried
 - **Carry-forward topics:** resolved contradictions, glossary lock-ins, unresolved terms that affect downstream specs
 
-#### [~] P1.2 — Canon freeze / resolved product interpretation
+#### [x] P1.2 — Canon freeze / resolved product interpretation
 - **Mode:** Human-only
 - **Depends on:** P1.1
 - **Deliverable:** accepted product interpretation note covering first wedge, north star, release order, and non-negotiable constraints
@@ -1074,6 +1074,26 @@ Stale items:
 
 Notes for future prompts:
 - Treat this P1.2 note as the review-ready basis for wedge, north star, release order, and projection-vs-ontology interpretation, but do not treat it as accepted canon until a human explicitly approves it.
+
+#### CF-0013 | 2026-04-11 | Source: P1.2 — Human acceptance and landing
+
+New information:
+- `docs/control-plane/canon/phase-1-canon-freeze-and-resolved-product-interpretation.md` is now accepted for downstream use.
+- Artifact `canon.phase1-product-interpretation-freeze.v1` has been promoted from `review_ready` to `accepted`.
+
+Impact:
+- P1.3 is now unblocked on an accepted canon-freeze basis.
+- Downstream Phase 1 work can rely on one accepted interpretation note for wedge, north star, fixed release order, projection-vs-ontology rules, and non-negotiable constraints.
+
+Status changes:
+- P1.2 marked done.
+- The completion snapshot now records the Phase 1 canon freeze / resolved product interpretation note as accepted.
+
+Stale items:
+- None.
+
+Notes for future prompts:
+- Use `canon.phase1-product-interpretation-freeze.v1` together with `canon.phase1-source-decomposition.v1` as the accepted Phase 1 canon basis for P1.3 through P1.6.
 
 ---
 

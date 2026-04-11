@@ -1743,7 +1743,7 @@
       "artifact_type_id": "canon.interpretation_pack",
       "title": "Phase 1 canon freeze and resolved product interpretation note",
       "version": "1.0.0",
-      "artifact_status": "review_ready",
+      "artifact_status": "accepted",
       "semantic_owner": "Product/canon owner",
       "stewardship_mode": "human_only",
       "acceptance_authority": "Human plan owner",
@@ -1823,8 +1823,8 @@
       ],
       "stale_rule_id": "sr.derivative.manual",
       "notes": [
-        "P1.2 review-ready canon-freeze note resolving wedge, north star, release order, projection-vs-ontology rules, and non-negotiable constraints.",
-        "Prepared for human review and acceptance; not yet accepted for downstream truth."
+        "P1.2 accepted canon-freeze note resolving wedge, north star, release order, projection-vs-ontology rules, and non-negotiable constraints.",
+        "Accepted for downstream use as the Phase 1 interpretation basis feeding P1.3 through P1.6 and later semantic work."
       ]
     }
   ]

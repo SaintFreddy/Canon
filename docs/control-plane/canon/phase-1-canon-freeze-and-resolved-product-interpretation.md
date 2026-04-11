@@ -1,6 +1,6 @@
 # Phase 1 canon freeze and resolved product interpretation note
 Version: 1.0
-Status: Review-ready
+Status: Accepted
 Task: P1.2 — Canon freeze / resolved product interpretation
 Artifact ID: canon.phase1-product-interpretation-freeze.v1
 Canon scope: Resolved product interpretation for wedge, north star, release order, and non-negotiable constraints
@@ -15,8 +15,8 @@ It exists to:
 - restate the non-negotiable constraints that later semantic, architecture, release, and repo work must preserve,
 - provide one reviewable canon note that later Phase 1 and Phase 2 tasks can reference directly.
 
-This artifact is review-ready, not yet accepted.
-It is intended to become the accepted P1.2 canon-freeze note after human review.
+This artifact is accepted for downstream use.
+It serves as the accepted P1.2 canon-freeze note.
 
 ## 2. Scope boundaries
 
