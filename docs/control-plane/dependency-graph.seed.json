@@ -200,6 +200,12 @@
       "artifact_type_id": "sem.semantic_contract_pack",
       "artifact_status": "accepted",
       "canonical_locator": "docs/control-plane/semantics/phase-2-chat-native-semantic-packs-by-release.md"
+    },
+    {
+      "artifact_id": "sem.phase2-projection-grammar-contracts.v1",
+      "artifact_type_id": "sem.semantic_contract_pack",
+      "artifact_status": "accepted",
+      "canonical_locator": "docs/control-plane/semantics/phase-2-projection-grammar-contract-pack.md"
     }
   ],
   "edges": [
@@ -1546,6 +1552,110 @@
       "edge_type": "depends_on",
       "propagation_mode": "auto",
       "notes": "The pack must preserve no master chat truth, no separate backend per view, no hidden memory sludge, and no agent-builder-first drift."
+    },
+    {
+      "edge_id": "e-169",
+      "from_artifact_id": "sem.phase2-projection-grammar-contracts.v1",
+      "to_artifact_id": "cp.master-plan.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "P2.6 scope, sequencing, and carry-forward rules come from the master plan."
+    },
+    {
+      "edge_id": "e-170",
+      "from_artifact_id": "sem.phase2-projection-grammar-contracts.v1",
+      "to_artifact_id": "cp.artifact-control-plane-spec.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The projection grammar pack reuses accepted P0.1 artifact, validation-hook, and stale-rule semantics."
+    },
+    {
+      "edge_id": "e-171",
+      "from_artifact_id": "sem.phase2-projection-grammar-contracts.v1",
+      "to_artifact_id": "canon.phase1-product-interpretation-freeze.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted P1.2 note fixes projection-vs-ontology rules and the chat-native -> Task Studio continuity that this grammar must preserve."
+    },
+    {
+      "edge_id": "e-172",
+      "from_artifact_id": "sem.phase2-projection-grammar-contracts.v1",
+      "to_artifact_id": "canon.phase1-surface-release-topology.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted P1.4 topology canon defines the shared projection grammar set, stage emphasis, and cross-app handoff rules formalized here."
+    },
+    {
+      "edge_id": "e-173",
+      "from_artifact_id": "sem.phase2-projection-grammar-contracts.v1",
+      "to_artifact_id": "canon.phase1-rewrite-containment-seams.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted P1.5 seam map places projection changes above the high-blast-radius semantic seams and prevents surface-level truth drift."
+    },
+    {
+      "edge_id": "e-174",
+      "from_artifact_id": "sem.phase2-projection-grammar-contracts.v1",
+      "to_artifact_id": "canon.phase1-scenario-corpus.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted P1.6 scenarios and edge cases define the surface transitions, alias mappings, and drift failures this pack must cover."
+    },
+    {
+      "edge_id": "e-175",
+      "from_artifact_id": "sem.phase2-projection-grammar-contracts.v1",
+      "to_artifact_id": "sem.phase2-core-object-state-machines.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted P2.1 object model defines the shared objects that these grammars must project without replacing."
+    },
+    {
+      "edge_id": "e-176",
+      "from_artifact_id": "sem.phase2-projection-grammar-contracts.v1",
+      "to_artifact_id": "sa.all-prims.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The primitive-set authority defines Composer, Canvas, Inspector, Browser / Library, Timeline, Ledger, Compare View, Queue / Inbox, Board, Diff / Merge View, Live Monitor, and Console as shared projection grammar primitives."
+    },
+    {
+      "edge_id": "e-177",
+      "from_artifact_id": "sem.phase2-projection-grammar-contracts.v1",
+      "to_artifact_id": "sa.chat-native-release-plan.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The release doctrine defines what is shared across views, what is view-specific, and why projection grammar reuse matters during the chat-native phase."
+    },
+    {
+      "edge_id": "e-178",
+      "from_artifact_id": "sem.phase2-projection-grammar-contracts.v1",
+      "to_artifact_id": "sa.task-studio-north-star.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The north-star authority defines Task Studio surface arrangements that must remain compositions of the shared grammar rather than a new semantic layer."
+    },
+    {
+      "edge_id": "e-179",
+      "from_artifact_id": "sem.phase2-projection-grammar-contracts.v1",
+      "to_artifact_id": "cp.forbidden-shortcuts-register.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The pack must preserve no master chat truth, no separate backend per view, and no transcript-first rewrite trap through shared grammar reuse."
+    },
+    {
+      "edge_id": "e-180",
+      "from_artifact_id": "sem.phase2-projection-grammar-contracts.v1",
+      "to_artifact_id": "canon.phase1-layer-primitive-separation.v1",
+      "edge_type": "informs",
+      "propagation_mode": "none",
+      "notes": "The accepted P1.3 owner-layer map informs non-owner boundaries so projection grammar does not transfer primitive ownership."
+    },
+    {
+      "edge_id": "e-181",
+      "from_artifact_id": "sem.phase2-projection-grammar-contracts.v1",
+      "to_artifact_id": "sem.phase2-chat-native-semantic-packs.v1",
+      "edge_type": "informs",
+      "propagation_mode": "none",
+      "notes": "The accepted P2.5 release semantic packs inform stage-fit aliases and grammar composition without changing the P2.6 dependency order."
     }
   ]
 }

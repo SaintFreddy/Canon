@@ -213,10 +213,10 @@ This section answers, in plain terms, what is already done and what is not.
 - [x] The Phase 2 governance, authority, and writeback invariants have been produced and accepted.
 - [x] The Phase 2 proof and validation invariants have been produced and accepted.
 - [x] The Phase 2 chat-native semantic packs by release have been produced and accepted.
+- [x] The Phase 2 projection grammar contract pack has been produced and accepted.
 
 ### 5.2 Not done yet
 
-- [ ] The Phase 2 projection grammar contract pack has not yet been produced and accepted.
 - [ ] The technical architecture baseline and Platform Gate artifacts have been produced and accepted.
 - [ ] The release contract packs for Platform Gate through R7 have been produced and accepted.
 - [ ] The full reusable semantics and Task Studio readiness packs have been produced and accepted.
@@ -228,7 +228,7 @@ This section answers, in plain terms, what is already done and what is not.
 
 - [x] Phase 0 — done in the repo
 - [x] Phase 1 — done in the repo
-- [~] Phase 2 — in progress
+- [x] Phase 2 — done in the repo
 - [ ] Phase 3 — not done
 - [ ] Phase 4 — not done
 - [ ] Phase 5 — not done
@@ -456,7 +456,7 @@ This phase is done when there is one accepted canon for what belongs in engine, 
 
 ---
 
-## Phase 2 — Shared semantic contracts before architecture `[~]`
+## Phase 2 — Shared semantic contracts before architecture `[x]`
 
 ### Goal
 
@@ -501,7 +501,7 @@ This phase is done when the core object model, run classes, invariants, release-
 - **Acceptance:** each release has an explicit semantic pack that sits on shared primitives instead of replacing them
 - **Carry-forward topics:** release-specific object additions, semantic constraints, projection-specific vocabulary
 
-#### [ ] P2.6 — Projection grammar contract pack
+#### [x] P2.6 — Projection grammar contract pack
 - **Mode:** Human + Factory
 - **Depends on:** P1.4 and P2.1
 - **Deliverable:** contract pack for Composer, Canvas, Inspector, Browser/Library, Timeline, Ledger, Compare View, Queue/Inbox, Board, Diff/Merge View, Live Monitor, Console
@@ -1307,6 +1307,27 @@ Stale items:
 
 Notes for future prompts:
 - Use `sem.phase2-chat-native-semantic-packs.v1` together with the accepted P2.1-P2.4 artifacts as the release-semantics baseline for P2.6, Phase 4 release packs, and the R7 -> Task Studio bridge.
+
+#### CF-0024 | 2026-04-11 | Source: P2.6 — Projection grammar contract pack
+
+New information:
+- `docs/control-plane/semantics/phase-2-projection-grammar-contract-pack.md` now defines the accepted shared interaction grammar for Composer, Canvas, Inspector, Browser / Library, Timeline, Ledger, Compare View, Queue / Inbox, Board, Diff / Merge View, Live Monitor, and Console.
+- Artifact `sem.phase2-projection-grammar-contracts.v1` is registered in the control-plane registry and dependency graph as `accepted`.
+
+Impact:
+- Phase 2 now has an accepted surface-grammar baseline that later architecture, release, and surface-contract work can extend without inventing private view metaphors.
+- Chat-native aliases and Task Studio surface names now have one explicit mapping back to shared grammar contracts and compositions.
+
+Status changes:
+- P2.6 marked done.
+- The completion snapshot now records the Phase 2 projection grammar contract pack as accepted.
+- Phase 2 marked done.
+
+Stale items:
+- None.
+
+Notes for future prompts:
+- Use `sem.phase2-projection-grammar-contracts.v1` together with `canon.phase1-surface-release-topology.v1`, `sem.phase2-core-object-state-machines.v1`, and `sem.phase2-chat-native-semantic-packs.v1` as the surface-grammar baseline for Phase 3 architecture, Phase 4 release packs, and Phase 6 surface contracts.
 
 ---
 
