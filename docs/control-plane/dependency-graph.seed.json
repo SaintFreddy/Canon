@@ -242,6 +242,18 @@
       "artifact_type_id": "rel.release_contract_pack",
       "artifact_status": "accepted",
       "canonical_locator": "docs/control-plane/releases/chat-native-maturity-matrix/phase-4-release-to-sdk-maturity-matrix.md"
+    },
+    {
+      "artifact_id": "arch.phase3-architecture-sync-pass.v1",
+      "artifact_type_id": "arch.technical_architecture_pack",
+      "artifact_status": "accepted",
+      "canonical_locator": "docs/control-plane/architecture/phase-3-architecture-synchronization-pass.md"
+    },
+    {
+      "artifact_id": "rel.chat-native-milestone-architecture-plan.v1",
+      "artifact_type_id": "rel.release_contract_pack",
+      "artifact_status": "accepted",
+      "canonical_locator": "docs/control-plane/releases/chat-native-milestone-architecture-plan/phase-4-release-milestone-architecture-plan.md"
     }
   ],
   "edges": [
@@ -2548,6 +2560,262 @@
       "edge_type": "informs",
       "propagation_mode": "none",
       "notes": "The accepted P1.3 owner-layer map informs which package areas belong to engine, shared environment, or app projection seams."
+    },
+    {
+      "edge_id": "e-289",
+      "from_artifact_id": "arch.phase3-architecture-sync-pass.v1",
+      "to_artifact_id": "cp.master-plan.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "P3.6 scope, sequencing, and carry-forward rules come from the master plan."
+    },
+    {
+      "edge_id": "e-290",
+      "from_artifact_id": "arch.phase3-architecture-sync-pass.v1",
+      "to_artifact_id": "cp.artifact-control-plane-spec.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The sync-pass pack reuses accepted P0.1 artifact, validation-hook, and stale-rule semantics."
+    },
+    {
+      "edge_id": "e-291",
+      "from_artifact_id": "arch.phase3-architecture-sync-pass.v1",
+      "to_artifact_id": "canon.phase1-surface-release-topology.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted P1.4 topology canon defines the fixed stage path and continuity centers this sync pass verifies against the accepted architecture packs."
+    },
+    {
+      "edge_id": "e-292",
+      "from_artifact_id": "arch.phase3-architecture-sync-pass.v1",
+      "to_artifact_id": "canon.phase1-rewrite-containment-seams.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted P1.5 seam map defines the high-blast-radius locks this sync pass must confirm remain preserved."
+    },
+    {
+      "edge_id": "e-293",
+      "from_artifact_id": "arch.phase3-architecture-sync-pass.v1",
+      "to_artifact_id": "canon.phase1-scenario-corpus.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted P1.6 scenarios and edge cases define the branch, replay, writeback, reusable-execution, and commissioning pathways that the accepted architecture must still support."
+    },
+    {
+      "edge_id": "e-294",
+      "from_artifact_id": "arch.phase3-architecture-sync-pass.v1",
+      "to_artifact_id": "sem.phase2-projection-grammar-contracts.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted P2.6 projection grammar pack defines the shared surface grammar that the Phase 3 architecture must still project over rather than replace."
+    },
+    {
+      "edge_id": "e-295",
+      "from_artifact_id": "arch.phase3-architecture-sync-pass.v1",
+      "to_artifact_id": "cp.forbidden-shortcuts-register.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted forbidden-shortcuts register defines the transcript-truth, silent-writeback, second-stack, and repo-shape regressions that this sync pass must reject."
+    },
+    {
+      "edge_id": "e-296",
+      "from_artifact_id": "arch.phase3-architecture-sync-pass.v1",
+      "to_artifact_id": "arch.phase3-technical-architecture-baseline.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted P3.1 baseline defines the runtime planes, shared control/data/event substrate, and tenancy rules that this sync pass confirms remain aligned."
+    },
+    {
+      "edge_id": "e-297",
+      "from_artifact_id": "arch.phase3-architecture-sync-pass.v1",
+      "to_artifact_id": "arch.phase3-context-compiler-topology.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted P3.2 compiler topology defines the staged evidence/context/replay basis whose integrity this sync pass confirms."
+    },
+    {
+      "edge_id": "e-298",
+      "from_artifact_id": "arch.phase3-architecture-sync-pass.v1",
+      "to_artifact_id": "arch.phase3-data-storage-provenance-spec.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted P3.3 storage/provenance baseline defines the lineage, replay, and audit substrate that this sync pass confirms remains coherent."
+    },
+    {
+      "edge_id": "e-299",
+      "from_artifact_id": "arch.phase3-architecture-sync-pass.v1",
+      "to_artifact_id": "arch.phase3-api-ipc-event-contracts.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted P3.4 contract baseline defines the typed control/event boundaries and no-direct-UI-worker rule that this sync pass confirms remain intact."
+    },
+    {
+      "edge_id": "e-300",
+      "from_artifact_id": "arch.phase3-architecture-sync-pass.v1",
+      "to_artifact_id": "arch.phase3-platform-gate-spec.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted P3.5 Platform Gate artifact defines the final pre-R1 substrate lock that this sync pass confirms remains aligned with canon and architecture."
+    },
+    {
+      "edge_id": "e-301",
+      "from_artifact_id": "arch.phase3-architecture-sync-pass.v1",
+      "to_artifact_id": "rel.chat-native-maturity-matrix.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted P4.1 maturity matrix is part of the reviewed input set and must remain aligned with the accepted Phase 3 substrate story."
+    },
+    {
+      "edge_id": "e-302",
+      "from_artifact_id": "arch.phase3-architecture-sync-pass.v1",
+      "to_artifact_id": "canon.phase1-source-decomposition.v1",
+      "edge_type": "informs",
+      "propagation_mode": "none",
+      "notes": "The accepted P1.1 glossary and contradiction pack informs terminology and drift checks used in this synchronization pass."
+    },
+    {
+      "edge_id": "e-303",
+      "from_artifact_id": "arch.phase3-architecture-sync-pass.v1",
+      "to_artifact_id": "canon.phase1-layer-primitive-separation.v1",
+      "edge_type": "informs",
+      "propagation_mode": "none",
+      "notes": "The accepted P1.3 owner-layer map informs the no-app-private-ontology and no-view-owned-truth checks in this synchronization pass."
+    },
+    {
+      "edge_id": "e-304",
+      "from_artifact_id": "rel.chat-native-milestone-architecture-plan.v1",
+      "to_artifact_id": "cp.master-plan.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "P4.2 scope, sequencing, and carry-forward rules come from the master plan."
+    },
+    {
+      "edge_id": "e-305",
+      "from_artifact_id": "rel.chat-native-milestone-architecture-plan.v1",
+      "to_artifact_id": "cp.artifact-control-plane-spec.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The milestone architecture plan reuses accepted P0.1 artifact, validation-hook, and stale-rule semantics."
+    },
+    {
+      "edge_id": "e-306",
+      "from_artifact_id": "rel.chat-native-milestone-architecture-plan.v1",
+      "to_artifact_id": "canon.phase1-surface-release-topology.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted P1.4 topology canon defines Platform Gate through R7 as one fixed path whose continuity centers and handoffs this plan narrows into milestone boundaries."
+    },
+    {
+      "edge_id": "e-307",
+      "from_artifact_id": "rel.chat-native-milestone-architecture-plan.v1",
+      "to_artifact_id": "canon.phase1-rewrite-containment-seams.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted P1.5 seam map defines the bridge seams and no-overbuild boundaries this milestone plan must preserve."
+    },
+    {
+      "edge_id": "e-308",
+      "from_artifact_id": "rel.chat-native-milestone-architecture-plan.v1",
+      "to_artifact_id": "canon.phase1-scenario-corpus.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted P1.6 scenarios and edge cases define the stage-specific continuity and failure patterns this milestone plan must keep distinct."
+    },
+    {
+      "edge_id": "e-309",
+      "from_artifact_id": "rel.chat-native-milestone-architecture-plan.v1",
+      "to_artifact_id": "sem.phase2-chat-native-semantic-packs.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted P2.5 release semantics define the shared and chat-domain objects that each milestone may expose or defer."
+    },
+    {
+      "edge_id": "e-310",
+      "from_artifact_id": "rel.chat-native-milestone-architecture-plan.v1",
+      "to_artifact_id": "sem.phase2-projection-grammar-contracts.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted P2.6 grammar pack defines the shared projection families and view constraints that this milestone plan must preserve."
+    },
+    {
+      "edge_id": "e-311",
+      "from_artifact_id": "rel.chat-native-milestone-architecture-plan.v1",
+      "to_artifact_id": "cp.forbidden-shortcuts-register.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted forbidden-shortcuts register defines the overbuild and substrate-faking behaviors this milestone plan must continue to refuse."
+    },
+    {
+      "edge_id": "e-312",
+      "from_artifact_id": "rel.chat-native-milestone-architecture-plan.v1",
+      "to_artifact_id": "arch.phase3-technical-architecture-baseline.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted P3.1 baseline defines the shared control/data/event substrate that milestone exposures must inherit rather than reopen."
+    },
+    {
+      "edge_id": "e-313",
+      "from_artifact_id": "rel.chat-native-milestone-architecture-plan.v1",
+      "to_artifact_id": "arch.phase3-context-compiler-topology.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted P3.2 compiler topology defines the evidence/context and replay substrate that R1-R3 and later milestones must carry forward."
+    },
+    {
+      "edge_id": "e-314",
+      "from_artifact_id": "rel.chat-native-milestone-architecture-plan.v1",
+      "to_artifact_id": "arch.phase3-data-storage-provenance-spec.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted P3.3 storage/provenance baseline defines the lineage and audit substrate that milestone boundaries must assume already exists."
+    },
+    {
+      "edge_id": "e-315",
+      "from_artifact_id": "rel.chat-native-milestone-architecture-plan.v1",
+      "to_artifact_id": "arch.phase3-api-ipc-event-contracts.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted P3.4 boundary-contract pack defines the typed control/event seams that milestone exposure cannot bypass or hide."
+    },
+    {
+      "edge_id": "e-316",
+      "from_artifact_id": "rel.chat-native-milestone-architecture-plan.v1",
+      "to_artifact_id": "arch.phase3-platform-gate-spec.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted P3.5 Platform Gate artifact defines the mandatory pre-R1 substrate proof and bridge-stage baseline this plan must inherit."
+    },
+    {
+      "edge_id": "e-317",
+      "from_artifact_id": "rel.chat-native-milestone-architecture-plan.v1",
+      "to_artifact_id": "arch.phase3-architecture-sync-pass.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted P3.6 sync pass confirms the accepted architecture stack is aligned and provides the final architecture lock before milestone planning proceeds."
+    },
+    {
+      "edge_id": "e-318",
+      "from_artifact_id": "rel.chat-native-milestone-architecture-plan.v1",
+      "to_artifact_id": "rel.chat-native-maturity-matrix.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted P4.1 maturity matrix defines the package floors that each milestone must inherit and not overbuild around."
+    },
+    {
+      "edge_id": "e-319",
+      "from_artifact_id": "rel.chat-native-milestone-architecture-plan.v1",
+      "to_artifact_id": "canon.phase1-source-decomposition.v1",
+      "edge_type": "informs",
+      "propagation_mode": "none",
+      "notes": "The accepted P1.1 glossary and contradiction pack informs milestone vocabulary and bridge-stage interpretation."
+    },
+    {
+      "edge_id": "e-320",
+      "from_artifact_id": "rel.chat-native-milestone-architecture-plan.v1",
+      "to_artifact_id": "canon.phase1-layer-primitive-separation.v1",
+      "edge_type": "informs",
+      "propagation_mode": "none",
+      "notes": "The accepted P1.3 owner-layer map informs which milestone surfaces may project shared primitives without claiming ownership of them."
     }
   ]
 }

@@ -219,11 +219,12 @@ This section answers, in plain terms, what is already done and what is not.
 - [x] The Phase 3 data / storage / indexing / provenance spec has been produced and accepted.
 - [x] The Phase 3 API / IPC / event contract spec has been produced and accepted.
 - [x] The Phase 3 Platform Gate spec and exit audit have been produced and accepted.
+- [x] The Phase 3 architecture synchronization pass has been produced and accepted.
 - [x] The Phase 4 release-to-SDK maturity matrix has been produced and accepted.
+- [x] The Phase 4 release / milestone architecture plan has been produced and accepted.
 
 ### 5.2 Not done yet
 
-- [ ] The remaining Phase 3 architecture sync pass has not yet been completed.
 - [ ] The release contract packs for Platform Gate through R7 have been produced and accepted.
 - [ ] The full reusable semantics and Task Studio readiness packs have been produced and accepted.
 - [ ] The repo/package architecture and agent execution system have been implemented.
@@ -235,7 +236,7 @@ This section answers, in plain terms, what is already done and what is not.
 - [x] Phase 0 — done in the repo
 - [x] Phase 1 — done in the repo
 - [x] Phase 2 — done in the repo
-- [~] Phase 3 — in progress
+- [x] Phase 3 — done in the repo
 - [~] Phase 4 — in progress
 - [ ] Phase 5 — not done
 - [ ] Phase 6 — not done
@@ -516,7 +517,7 @@ This phase is done when the core object model, run classes, invariants, release-
 
 ---
 
-## Phase 3 — Technical baseline and Platform Gate `[~]`
+## Phase 3 — Technical baseline and Platform Gate `[x]`
 
 ### Goal
 
@@ -561,7 +562,7 @@ This phase is done when the technical baseline, compiler topology, data/storage/
 - **Acceptance:** there is a hard pre-R1 gate and a concrete way to test it
 - **Carry-forward topics:** forced packages, gate test changes, missing prerequisites, audit failures and fixes
 
-#### [ ] P3.6 — Architecture synchronization pass
+#### [x] P3.6 — Architecture synchronization pass
 - **Mode:** Human-only
 - **Depends on:** P3.1 through P3.5
 - **Deliverable:** hard sync review across canon, seam map, scenario corpus, projection grammar, forbidden shortcuts, and Platform Gate
@@ -587,7 +588,7 @@ This phase is done when the release-to-SDK matrix, milestone architecture, and c
 - **Acceptance:** every release forces explicit substrate maturity and nothing is hand-waved
 - **Carry-forward topics:** package maturity changes, forced-package corrections, matrix implications
 
-#### [ ] P4.2 — Release / milestone architecture plan
+#### [x] P4.2 — Release / milestone architecture plan
 - **Mode:** Human-only
 - **Depends on:** P4.1 and P3.6
 - **Deliverable:** milestone architecture plan covering what is exposed, what is deferred, and where overbuilding is intentionally refused
@@ -1460,6 +1461,52 @@ Stale items:
 
 Notes for future prompts:
 - Use `rel.chat-native-maturity-matrix.v1` together with `arch.phase3-platform-gate-spec.v1`, `sem.phase2-chat-native-semantic-packs.v1`, and `canon.phase1-surface-release-topology.v1` as the release-maturity baseline for the human-only milestone architecture plan and the later R1-R7 contract packs.
+
+#### CF-0031 | 2026-04-11 | Source: P3.6 — Architecture synchronization pass
+
+New information:
+- `docs/control-plane/architecture/phase-3-architecture-synchronization-pass.md` is now accepted for downstream use.
+- Artifact `arch.phase3-architecture-sync-pass.v1` has been registered as `accepted`.
+- The accepted sync pass records that no accepted Phase 3 artifact is stale at acceptance time and that the Phase 3 architecture stack remains aligned with the seam map, scenario corpus, projection grammar, forbidden shortcuts, Platform Gate, and accepted P4.1 maturity matrix.
+
+Impact:
+- Phase 3 is now complete.
+- P4.2 and later Phase 4 release-contract work can inherit the accepted Phase 3 architecture stack without reopening bridge-stage locks or substrate-baseline questions.
+- Later stale review can use `arch.phase3-architecture-sync-pass.v1` as the accepted sync baseline rather than a draft support note.
+
+Status changes:
+- P3.6 marked done.
+- The completion snapshot now records the Phase 3 architecture synchronization pass as accepted.
+- Phase 3 marked done.
+
+Stale items:
+- None.
+
+Notes for future prompts:
+- Use `arch.phase3-architecture-sync-pass.v1` together with the accepted P3.1-P3.5 artifacts and `rel.chat-native-maturity-matrix.v1` as the final accepted Phase 3 architecture-alignment lock for Phase 4 release work and later package planning.
+
+#### CF-0032 | 2026-04-11 | Source: P4.2 — Release / milestone architecture plan
+
+New information:
+- `docs/control-plane/releases/chat-native-milestone-architecture-plan/phase-4-release-milestone-architecture-plan.md` is now accepted for downstream use.
+- Artifact `rel.chat-native-milestone-architecture-plan.v1` has been registered as `accepted`.
+- The accepted milestone plan now fixes what Platform Gate and R1-R7 intentionally expose, defer, and refuse to overbuild, and it records the downstream contract-pack handoff constraints for P4.3-P4.9.
+
+Impact:
+- Phase 4 now has one accepted milestone architecture story distinct from implementation blueprints.
+- P4.3 can proceed on an accepted R1 boundary instead of a review-ready milestone draft.
+- Later release packs can narrow stage contracts without reopening stage ordering, bridge-stage ownership, or package-floor inheritance.
+
+Status changes:
+- P4.2 marked done.
+- The completion snapshot now records the Phase 4 release / milestone architecture plan as accepted.
+- Phase 4 remains in progress pending P4.3-P4.9.
+
+Stale items:
+- None.
+
+Notes for future prompts:
+- Use `rel.chat-native-milestone-architecture-plan.v1` together with `rel.chat-native-maturity-matrix.v1`, `arch.phase3-platform-gate-spec.v1`, and the accepted Phase 1 topology/seam/scenario artifacts as the milestone-architecture baseline for the R1-R7 contract packs.
 
 ---
 

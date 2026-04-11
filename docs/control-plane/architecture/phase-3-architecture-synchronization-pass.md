@@ -1,12 +1,11 @@
 # Phase 3 architecture synchronization pass
-Version: 0.1
-Status: Review Ready
+Version: 1.0
+Status: Accepted
 Task: P3.6 — Architecture synchronization pass
 Artifact ID: arch.phase3-architecture-sync-pass.v1
-Architecture scope: Review-ready human-only sync review across accepted canon, seam, scenario, grammar, architecture, and Platform Gate artifacts
+Architecture scope: Accepted human-owned sync review across accepted canon, seam, scenario, grammar, architecture, and Platform Gate artifacts
 
-This file is drafting support for a human-only task.
-It is not accepted repo truth and is intentionally not registered in the accepted artifact datasets yet.
+This artifact is accepted for downstream use.
 
 ## 1. Purpose
 
@@ -42,6 +41,22 @@ Do the accepted artifacts above still preserve one substrate story in which:
 2. runs remain the consequential unit,
 3. branch/replay and writeback stay semantic rather than transcript- or UI-local,
 4. Platform Gate still blocks fake substrate claims before release-contract work proceeds?
+
+### 2.1 Artifact-to-lock crosswalk
+
+| Accepted artifact | Lock or question it contributes | Sync result | Accepted interpretation |
+| --- | --- | --- | --- |
+| `canon.phase1-surface-release-topology.v1` | Fixed stage path, continuity centers, and handoff rules | Aligned | Confirms Platform Gate, R4, and R7 still behave as bridge seams |
+| `canon.phase1-rewrite-containment-seams.v1` | High-blast-radius seams `SS-01`, `SS-02`, `SS-04`, `SS-07`, `SS-08`, `SS-10` | Aligned | Confirms no accepted Phase 3 pack relocated truth into views or app-private objects |
+| `canon.phase1-scenario-corpus.v1` | Scenario and edge-case coverage for replay, branch, writeback, reusable execution, and commissioning | Aligned | Confirms accepted architecture still supports `GS-03`, `GS-04`, `GS-07`, `GS-10`-`GS-13`, `EC-01`, `EC-03`, and `EC-10` |
+| `cp.forbidden-shortcuts-register.v1` | Shortcut-regression review basis | Aligned | Confirms no master-chat truth, silent proposal application, second-stack drift, or hidden memory regression |
+| `sem.phase2-projection-grammar-contracts.v1` | Projection-only surface contract lock | Aligned | Confirms grammar surfaces still project shared objects and authoritative events rather than private backends |
+| `arch.phase3-technical-architecture-baseline.v1` | Runtime-plane and boundary baseline | Aligned | Confirms one shared control/data/event substrate still underlies all views |
+| `arch.phase3-context-compiler-topology.v1` | Evidence/context/replay basis lock | Aligned | Confirms compiled-context inspectability remains explicit and staged |
+| `arch.phase3-data-storage-provenance-spec.v1` | Storage, provenance, lineage, and reconstruction lanes | Aligned | Confirms branch/replay, audit, and writeback lineage stay reconstructable |
+| `arch.phase3-api-ipc-event-contracts.v1` | Typed boundary and event-spine contract lock | Aligned | Confirms no direct UI-to-worker backdoor or transcript-blob boundary contract |
+| `arch.phase3-platform-gate-spec.v1` | Final Phase 3 pre-R1 gate lock | Aligned | Confirms Platform Gate remains blocking and evidence-based before release-contract work |
+| `rel.chat-native-maturity-matrix.v1` | Phase 4 maturity-floor inheritance check | Aligned | Confirms the first accepted Phase 4 artifact extends rather than weakens the Phase 3 substrate story |
 
 ## 3. Sync findings summary
 
@@ -141,25 +156,35 @@ No grammar requires a view-private backend to satisfy its contract.
 | `fs.no-transcript-first-rewrite-trap` | No regression found | Platform Gate plus replay/context constraints keep frozen-basis continuity explicit |
 | `fs.no-hidden-memory-sludge` | No regression found | P3.2 keeps memory/canon injection explicit and post-evidence |
 
-## 7. Human review decisions still required
+## 7. Stale-review determination
 
-1. Confirm that this sync pass is strong enough to count as the P3.6 human-owned architecture review.
-2. Confirm that no accepted Phase 3 artifact should be marked stale before P4.2 proceeds.
-3. Confirm that Phase 4 release-contract work should inherit the current bridge-stage locks unchanged, especially for Platform Gate, R4, and R7.
+This sync pass did not find an accepted artifact that must be marked stale before Phase 4 proceeds.
 
-## 8. Draft recommendation for downstream work
+| Accepted artifact | Stale review result | Reason |
+| --- | --- | --- |
+| `arch.phase3-technical-architecture-baseline.v1` | Keep current | Runtime planes, control-plane boundaries, and tenancy rules still match the accepted topology and seam map |
+| `arch.phase3-context-compiler-topology.v1` | Keep current | Evidence/context freeze, memory/canon injection, and replay basis still preserve `SS-01` and `SS-07` |
+| `arch.phase3-data-storage-provenance-spec.v1` | Keep current | Storage/provenance lanes still support replay, lineage, and lane-separated governance without contradiction |
+| `arch.phase3-api-ipc-event-contracts.v1` | Keep current | Typed control/event contracts still match the projection grammar and no-direct-UI-worker rule |
+| `arch.phase3-platform-gate-spec.v1` | Keep current | The gate remains the accepted pre-R1 blocker and still matches the accepted seam/scenario expectations |
+| `rel.chat-native-maturity-matrix.v1` | Keep current | The matrix inherits Platform Gate and bridge-stage locks instead of downgrading or bypassing them |
 
-If human review agrees with this pass:
+No accepted artifact is marked stale by this pass at acceptance time.
 
-- P3.6 can be closed as “no silent architecture drift found,”
-- P4.2 should use `rel.chat-native-maturity-matrix.v1` plus the accepted P3 artifacts as its planning baseline,
-- later R1-R7 packs should inherit rather than reinterpret the accepted substrate story.
+## 8. Accepted decisions
 
-## 9. Review notes
+1. This sync pass counts as the completed P3.6 human-owned architecture review.
+2. No accepted Phase 3 artifact should be marked stale before P4.2 and later Phase 4 work proceeds.
+3. Phase 4 release-contract work must inherit the current bridge-stage locks unchanged, especially for Platform Gate, R4, and R7.
 
-Human review should confirm that this draft:
+## 9. Downstream implications
 
-- accurately summarizes the accepted artifacts,
-- has not hidden any unresolved contradiction,
-- does not overstep the human-owned acceptance boundary,
-- is suitable to promote or revise as the formal P3.6 result.
+- P3.6 closes as “no silent architecture drift found.”
+- P4.2 should use `rel.chat-native-maturity-matrix.v1` plus the accepted P3 artifacts as its planning baseline.
+- Later R1-R7 packs should inherit rather than reinterpret the accepted substrate story.
+- Phase 6 repo/package planning should treat the accepted Phase 3 architecture baseline as internally synchronized unless a later accepted delta marks it stale.
+
+## 10. Acceptance notes
+
+- This accepted artifact summarizes the reviewed Phase 1-4 inputs without reopening human-owned product canon.
+- This accepted artifact preserves the human-owned acceptance boundary by recording the result of the sync pass rather than automating product-meaning decisions.
