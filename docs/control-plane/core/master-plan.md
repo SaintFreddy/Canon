@@ -202,10 +202,11 @@ This section answers, in plain terms, what is already done and what is not.
 - [x] The Factory operating contract has been implemented in the repo.
 - [x] The forbidden-shortcuts register has been implemented and accepted.
 - [x] The context-budget and packet policy has been implemented and accepted.
+- [x] The Phase 1 source decomposition / contradiction register / glossary pack has been produced and accepted.
 
 ### 5.2 Not done yet
 
-- [ ] The contradiction register, glossary, and canon freeze artifacts have been produced and accepted.
+- [ ] The canon freeze / resolved product interpretation artifact has not yet been produced and accepted.
 - [ ] The layer separation pack and rewrite-containment seam map have been produced and accepted.
 - [ ] The core semantic contracts and state-machine specs have been produced and accepted.
 - [ ] The technical architecture baseline and Platform Gate artifacts have been produced and accepted.
@@ -218,7 +219,7 @@ This section answers, in plain terms, what is already done and what is not.
 ### 5.3 Phase status summary
 
 - [x] Phase 0 — done in the repo
-- [ ] Phase 1 — not done
+- [~] Phase 1 — in progress
 - [ ] Phase 2 — not done
 - [ ] Phase 3 — not done
 - [ ] Phase 4 — not done
@@ -393,7 +394,7 @@ This phase is done when the repo has a real artifact registry, dependency model,
 
 ---
 
-## Phase 1 — Product canon, layer separation, and topology `[ ]`
+## Phase 1 — Product canon, layer separation, and topology `[~]`
 
 ### Goal
 
@@ -403,14 +404,14 @@ Turn the source docs into one coherent product truth with explicit layer boundar
 
 This phase is done when there is one accepted canon for what belongs in engine, shared environment, chat-domain packs, and Task Studio, plus a stable seam map and scenario corpus.
 
-#### [ ] P1.1 — Source decomposition / contradiction register / glossary
+#### [x] P1.1 — Source decomposition / contradiction register / glossary
 - **Mode:** Human + Factory
 - **Depends on:** P0.1
 - **Deliverable:** claim inventory, contradiction register, glossary, unresolved-term list
 - **Acceptance:** major terms are normalized, contradictions are explicit, and unresolved questions are named rather than buried
 - **Carry-forward topics:** resolved contradictions, glossary lock-ins, unresolved terms that affect downstream specs
 
-#### [ ] P1.2 — Canon freeze / resolved product interpretation
+#### [~] P1.2 — Canon freeze / resolved product interpretation
 - **Mode:** Human-only
 - **Depends on:** P1.1
 - **Deliverable:** accepted product interpretation note covering first wedge, north star, release order, and non-negotiable constraints
@@ -1009,6 +1010,70 @@ Stale items:
 Notes for future prompts:
 - Treat `cp.context-budget-and-packet-policy.v1` as the accepted control-plane basis for packet budget bands, local-doc-first reading, bounded subagent exploration, and escalation handling.
 - Do not use this artifact to smuggle runtime context-compiler topology, repo/package architecture, or a second orchestration stack into later work.
+
+#### CF-0010 | 2026-04-11 | Source: P1.1 — Source decomposition / contradiction register / glossary
+
+New information:
+- A review-ready P1.1 canon pack now exists at `docs/control-plane/canon/phase-1-source-decomposition-contradictions-and-glossary.md`.
+- The pack extracts the major governing claims from the three source-authority documents, makes cross-source tensions explicit, normalizes major terms, and names unresolved terms for later tasks.
+- New artifact `canon.phase1-source-decomposition.v1` is registered in the control-plane registry and dependency graph as `review_ready`.
+
+Impact:
+- P1.2 now has a concrete decomposition/glossary basis for human review and canon freeze work instead of re-deriving terminology from scratch.
+- Downstream Phase 1 and Phase 2 work can reuse one review-ready normalization pack while preserving the human-owned acceptance boundary.
+
+Status changes:
+- P1.1 marked in progress with validated review-ready deliverables present and human acceptance still pending.
+- Phase 1 marked in progress.
+
+Stale items:
+- None.
+
+Notes for future prompts:
+- Preserve the distinction between transcript continuity, run consequence, and artifact-centered continuity.
+- Preserve the distinction between product canon in the control plane and runtime Canon Objects in the shared environment.
+- Keep prompt assets distinct from execution assets when expanding Prompt Studio, Protocol, Workflow, and Applet work.
+
+#### CF-0011 | 2026-04-11 | Source: P1.1 — Human acceptance and landing
+
+New information:
+- `docs/control-plane/canon/phase-1-source-decomposition-contradictions-and-glossary.md` is now accepted for downstream use.
+- Artifact `canon.phase1-source-decomposition.v1` has been promoted from `review_ready` to `accepted`.
+
+Impact:
+- P1.2 is now unblocked on an accepted source decomposition/glossary basis.
+- Downstream Phase 1 and Phase 2 work can reference one accepted terminology/tension pack instead of re-deriving these interpretations.
+
+Status changes:
+- P1.1 marked done.
+- The completion snapshot now records the Phase 1 source decomposition / contradiction register / glossary pack as accepted.
+
+Stale items:
+- None.
+
+Notes for future prompts:
+- Use `canon.phase1-source-decomposition.v1` as the accepted normalization basis for layer ownership, continuity semantics, projection-vs-ontology rules, and the product-canon vs runtime-canon distinction.
+
+#### CF-0012 | 2026-04-11 | Source: P1.2 — Canon freeze / resolved product interpretation
+
+New information:
+- A review-ready P1.2 canon note now exists at `docs/control-plane/canon/phase-1-canon-freeze-and-resolved-product-interpretation.md`.
+- The note resolves the first wedge, north-star app, fixed release order, projection-vs-ontology rule, and non-negotiable downstream constraints into one reviewable artifact.
+- New artifact `canon.phase1-product-interpretation-freeze.v1` is registered in the control-plane registry and dependency graph as `review_ready`.
+
+Impact:
+- P1.3 through P1.6 now have a concrete review-ready interpretation note to review against while preserving the human-owned acceptance boundary.
+- The accepted P1.1 normalization pack is now paired with a draft canon-freeze note instead of leaving P1.2 implicit.
+
+Status changes:
+- P1.2 marked in progress with validated review-ready deliverables present and human acceptance still pending.
+- Phase 1 remains in progress.
+
+Stale items:
+- None.
+
+Notes for future prompts:
+- Treat this P1.2 note as the review-ready basis for wedge, north star, release order, and projection-vs-ontology interpretation, but do not treat it as accepted canon until a human explicitly approves it.
 
 ---
 

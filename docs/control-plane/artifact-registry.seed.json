@@ -1656,6 +1656,176 @@
         "P0.5 normative control-plane policy for packet-budget bands, packet composition, local-doc-first reading, bounded subagent exploration, and escalation discipline.",
         "Accepted for downstream use after explicit in-session human approval, validation, and synchronized master-plan updates."
       ]
+    },
+    {
+      "artifact_id": "canon.phase1-source-decomposition.v1",
+      "artifact_type_id": "canon.interpretation_pack",
+      "title": "Phase 1 source decomposition, contradiction register, and glossary pack",
+      "version": "1.0.0",
+      "artifact_status": "accepted",
+      "semantic_owner": "Product/canon owner",
+      "stewardship_mode": "human_factory",
+      "acceptance_authority": "Human plan owner",
+      "canonical_locator": "docs/control-plane/canon/phase-1-source-decomposition-contradictions-and-glossary.md",
+      "source_authority_refs": [
+        "cp.master-plan.v1",
+        "sa.all-prims.v1",
+        "sa.chat-native-release-plan.v1",
+        "sa.task-studio-north-star.v1",
+        "cp.forbidden-shortcuts-register.v1"
+      ],
+      "dependency_refs": [
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.master-plan.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "P1.1 scope, status discipline, and carry-forward rules come from the master plan."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.artifact-control-plane-spec.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The pack reuses accepted P0.1 artifact, validation-hook, and stale-rule semantics."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "sa.all-prims.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "Layer ownership and primitive decomposition come from the accepted primitive-set authority."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "sa.chat-native-release-plan.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "Release doctrine, projection sequencing, and shortcut constraints come from the accepted release plan."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "sa.task-studio-north-star.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "Task Studio commissioned-work semantics and glossary terms come from the north-star source authority."
+        },
+        {
+          "edge_type": "informs",
+          "artifact_id": "cp.forbidden-shortcuts-register.v1",
+          "propagation_mode": "none",
+          "required_for_acceptance": false,
+          "notes": "The accepted anti-drift register is referenced while extracting tensions and glossary boundaries."
+        }
+      ],
+      "validation_hooks": [
+        {
+          "hook_id": "vh.dependency.integrity"
+        },
+        {
+          "hook_id": "vh.source.trace-review"
+        },
+        {
+          "hook_id": "vh.consistency.cross-pack-review"
+        },
+        {
+          "hook_id": "vh.manual.acceptance"
+        }
+      ],
+      "stale_rule_id": "sr.derivative.manual",
+      "notes": [
+        "P1.1 accepted canon/interpretation pack covering source decomposition, contradiction extraction, glossary normalization, and unresolved terms.",
+        "Accepted for downstream use as the Phase 1 normalization basis feeding P1.2 and later semantic work."
+      ]
+    },
+    {
+      "artifact_id": "canon.phase1-product-interpretation-freeze.v1",
+      "artifact_type_id": "canon.interpretation_pack",
+      "title": "Phase 1 canon freeze and resolved product interpretation note",
+      "version": "1.0.0",
+      "artifact_status": "review_ready",
+      "semantic_owner": "Product/canon owner",
+      "stewardship_mode": "human_only",
+      "acceptance_authority": "Human plan owner",
+      "canonical_locator": "docs/control-plane/canon/phase-1-canon-freeze-and-resolved-product-interpretation.md",
+      "source_authority_refs": [
+        "cp.master-plan.v1",
+        "canon.phase1-source-decomposition.v1",
+        "sa.all-prims.v1",
+        "sa.chat-native-release-plan.v1",
+        "sa.task-studio-north-star.v1",
+        "cp.forbidden-shortcuts-register.v1"
+      ],
+      "dependency_refs": [
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.master-plan.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "P1.2 scope, acceptance discipline, and carry-forward rules come from the master plan."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.artifact-control-plane-spec.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The note reuses accepted P0.1 artifact, validation-hook, and stale-rule semantics."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "canon.phase1-source-decomposition.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P1.1 decomposition/glossary pack provides the normalization basis for this canon freeze note."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "sa.all-prims.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "Layer boundary and primitive-set interpretations come from the accepted primitive-set authority."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "sa.chat-native-release-plan.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "Release order, bridge releases, and projection constraints come from the accepted release plan."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "sa.task-studio-north-star.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The north-star commissioned-work interpretation comes from the accepted Task Studio authority."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.forbidden-shortcuts-register.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The note carries forward the accepted non-negotiable shortcut constraints directly."
+        }
+      ],
+      "validation_hooks": [
+        {
+          "hook_id": "vh.dependency.integrity"
+        },
+        {
+          "hook_id": "vh.source.trace-review"
+        },
+        {
+          "hook_id": "vh.consistency.cross-pack-review"
+        },
+        {
+          "hook_id": "vh.manual.acceptance"
+        }
+      ],
+      "stale_rule_id": "sr.derivative.manual",
+      "notes": [
+        "P1.2 review-ready canon-freeze note resolving wedge, north star, release order, projection-vs-ontology rules, and non-negotiable constraints.",
+        "Prepared for human review and acceptance; not yet accepted for downstream truth."
+      ]
     }
   ]
 }

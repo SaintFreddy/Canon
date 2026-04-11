@@ -134,6 +134,18 @@
       "artifact_type_id": "cp.control_plane_spec",
       "artifact_status": "accepted",
       "canonical_locator": "docs/control-plane/core/context-budget-and-packet-policy.md"
+    },
+    {
+      "artifact_id": "canon.phase1-source-decomposition.v1",
+      "artifact_type_id": "canon.interpretation_pack",
+      "artifact_status": "accepted",
+      "canonical_locator": "docs/control-plane/canon/phase-1-source-decomposition-contradictions-and-glossary.md"
+    },
+    {
+      "artifact_id": "canon.phase1-product-interpretation-freeze.v1",
+      "artifact_type_id": "canon.interpretation_pack",
+      "artifact_status": "review_ready",
+      "canonical_locator": "docs/control-plane/canon/phase-1-canon-freeze-and-resolved-product-interpretation.md"
     }
   ],
   "edges": [
@@ -592,6 +604,110 @@
       "edge_type": "depends_on",
       "propagation_mode": "auto",
       "notes": "The policy preserves human-owned commissioned-work direction and avoids transcript-first drift."
+    },
+    {
+      "edge_id": "e-058",
+      "from_artifact_id": "canon.phase1-source-decomposition.v1",
+      "to_artifact_id": "cp.master-plan.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "P1.1 scope, acceptance discipline, and carry-forward handling come from the master plan."
+    },
+    {
+      "edge_id": "e-059",
+      "from_artifact_id": "canon.phase1-source-decomposition.v1",
+      "to_artifact_id": "cp.artifact-control-plane-spec.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The pack reuses accepted P0.1 artifact, validation-hook, and stale-rule semantics."
+    },
+    {
+      "edge_id": "e-060",
+      "from_artifact_id": "canon.phase1-source-decomposition.v1",
+      "to_artifact_id": "sa.all-prims.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "Layer ownership and primitive decomposition come from the accepted primitive-set authority."
+    },
+    {
+      "edge_id": "e-061",
+      "from_artifact_id": "canon.phase1-source-decomposition.v1",
+      "to_artifact_id": "sa.chat-native-release-plan.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "Release doctrine, projection sequencing, and shortcut constraints come from the accepted release plan."
+    },
+    {
+      "edge_id": "e-062",
+      "from_artifact_id": "canon.phase1-source-decomposition.v1",
+      "to_artifact_id": "sa.task-studio-north-star.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "Task Studio commissioned-work semantics and glossary terms come from the north-star source authority."
+    },
+    {
+      "edge_id": "e-063",
+      "from_artifact_id": "canon.phase1-source-decomposition.v1",
+      "to_artifact_id": "cp.forbidden-shortcuts-register.v1",
+      "edge_type": "informs",
+      "propagation_mode": "none",
+      "notes": "The accepted anti-drift register is referenced while extracting tensions and glossary boundaries."
+    },
+    {
+      "edge_id": "e-064",
+      "from_artifact_id": "canon.phase1-product-interpretation-freeze.v1",
+      "to_artifact_id": "cp.master-plan.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "P1.2 scope, acceptance discipline, and carry-forward rules come from the master plan."
+    },
+    {
+      "edge_id": "e-065",
+      "from_artifact_id": "canon.phase1-product-interpretation-freeze.v1",
+      "to_artifact_id": "cp.artifact-control-plane-spec.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The note reuses accepted P0.1 artifact, validation-hook, and stale-rule semantics."
+    },
+    {
+      "edge_id": "e-066",
+      "from_artifact_id": "canon.phase1-product-interpretation-freeze.v1",
+      "to_artifact_id": "canon.phase1-source-decomposition.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted P1.1 decomposition/glossary pack provides the normalization basis for this canon freeze note."
+    },
+    {
+      "edge_id": "e-067",
+      "from_artifact_id": "canon.phase1-product-interpretation-freeze.v1",
+      "to_artifact_id": "sa.all-prims.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "Layer boundary and primitive-set interpretations come from the accepted primitive-set authority."
+    },
+    {
+      "edge_id": "e-068",
+      "from_artifact_id": "canon.phase1-product-interpretation-freeze.v1",
+      "to_artifact_id": "sa.chat-native-release-plan.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "Release order, bridge releases, and projection constraints come from the accepted release plan."
+    },
+    {
+      "edge_id": "e-069",
+      "from_artifact_id": "canon.phase1-product-interpretation-freeze.v1",
+      "to_artifact_id": "sa.task-studio-north-star.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The north-star commissioned-work interpretation comes from the accepted Task Studio authority."
+    },
+    {
+      "edge_id": "e-070",
+      "from_artifact_id": "canon.phase1-product-interpretation-freeze.v1",
+      "to_artifact_id": "cp.forbidden-shortcuts-register.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The note carries forward the accepted non-negotiable shortcut constraints directly."
     }
   ]
 }
