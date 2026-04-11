@@ -207,6 +207,7 @@ This section answers, in plain terms, what is already done and what is not.
 - [x] The Phase 1 layer and primitive separation pack has been produced and accepted.
 - [x] The Phase 1 surface and release topology canon has been produced and accepted.
 - [x] The Phase 1 rewrite-containment / stable seam map has been produced and accepted.
+- [x] The Phase 1 golden scenario corpus and edge-case suite has been produced and accepted.
 
 ### 5.2 Not done yet
 
@@ -222,7 +223,7 @@ This section answers, in plain terms, what is already done and what is not.
 ### 5.3 Phase status summary
 
 - [x] Phase 0 — done in the repo
-- [~] Phase 1 — in progress
+- [x] Phase 1 — done in the repo
 - [ ] Phase 2 — not done
 - [ ] Phase 3 — not done
 - [ ] Phase 4 — not done
@@ -397,7 +398,7 @@ This phase is done when the repo has a real artifact registry, dependency model,
 
 ---
 
-## Phase 1 — Product canon, layer separation, and topology `[~]`
+## Phase 1 — Product canon, layer separation, and topology `[x]`
 
 ### Goal
 
@@ -442,7 +443,7 @@ This phase is done when there is one accepted canon for what belongs in engine, 
 - **Acceptance:** all high-blast-radius semantics are explicitly identified and placed below chat-specific UI logic
 - **Carry-forward topics:** high-blast-radius seams, low-blast-radius seams, rewrite risks, stable interface rules
 
-#### [ ] P1.6 — Golden scenario corpus + edge-case suite
+#### [x] P1.6 — Golden scenario corpus + edge-case suite
 - **Mode:** Human + Factory
 - **Depends on:** P1.2 and P1.4
 - **Deliverable:** scenario corpus and edge-case suite spanning chat flows, artifact flows, branching, prompt assets, applets, commissioning, and Task Studio flows
@@ -1179,6 +1180,27 @@ Stale items:
 
 Notes for future prompts:
 - Use `canon.phase1-rewrite-containment-seams.v1` together with the accepted P1.1-P1.4 canon artifacts as the Phase 1 rewrite-containment baseline for P1.6, Phase 3 architecture, and Phase 6 repo/package planning.
+
+#### CF-0018 | 2026-04-11 | Source: P1.6 — Golden scenario corpus + edge-case suite
+
+New information:
+- `docs/control-plane/canon/phase-1-golden-scenario-corpus-and-edge-case-suite.md` now defines the accepted scenario corpus spanning the chat-native wedge, bridge releases, reusable execution, commissioning, and Task Studio handoff.
+- Artifact `canon.phase1-scenario-corpus.v1` is registered in the control-plane registry and dependency graph as `accepted`.
+
+Impact:
+- Phase 1 now has an accepted scenario baseline for semantic, architecture, release-contract, and repo/package work.
+- The major semantic pathways and edge cases are now explicit enough to drive later validation work.
+
+Status changes:
+- P1.6 marked done.
+- Phase 1 marked done.
+- The completion snapshot now records the Phase 1 golden scenario corpus and edge-case suite as accepted.
+
+Stale items:
+- None.
+
+Notes for future prompts:
+- Use `canon.phase1-scenario-corpus.v1` together with the accepted P1.1-P1.5 canon artifacts as the full Phase 1 baseline for Phase 2 and later work.
 
 ---
 

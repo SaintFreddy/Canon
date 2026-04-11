@@ -164,6 +164,12 @@
       "artifact_type_id": "canon.interpretation_pack",
       "artifact_status": "accepted",
       "canonical_locator": "docs/control-plane/canon/phase-1-rewrite-containment-and-stable-seam-map.md"
+    },
+    {
+      "artifact_id": "canon.phase1-scenario-corpus.v1",
+      "artifact_type_id": "canon.interpretation_pack",
+      "artifact_status": "accepted",
+      "canonical_locator": "docs/control-plane/canon/phase-1-golden-scenario-corpus-and-edge-case-suite.md"
     }
   ],
   "edges": [
@@ -926,6 +932,86 @@
       "edge_type": "depends_on",
       "propagation_mode": "auto",
       "notes": "The seam map carries forward accepted anti-drift constraints, especially no transcript-first rewrite trap and no repo-shape architecture drift."
+    },
+    {
+      "edge_id": "e-096",
+      "from_artifact_id": "canon.phase1-scenario-corpus.v1",
+      "to_artifact_id": "cp.master-plan.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "P1.6 scope, acceptance discipline, and carry-forward rules come from the master plan."
+    },
+    {
+      "edge_id": "e-097",
+      "from_artifact_id": "canon.phase1-scenario-corpus.v1",
+      "to_artifact_id": "cp.artifact-control-plane-spec.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The scenario corpus reuses accepted P0.1 artifact, validation-hook, and stale-rule semantics."
+    },
+    {
+      "edge_id": "e-098",
+      "from_artifact_id": "canon.phase1-scenario-corpus.v1",
+      "to_artifact_id": "canon.phase1-product-interpretation-freeze.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted P1.2 note fixes the interpretation the scenarios must protect."
+    },
+    {
+      "edge_id": "e-099",
+      "from_artifact_id": "canon.phase1-scenario-corpus.v1",
+      "to_artifact_id": "canon.phase1-surface-release-topology.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted P1.4 topology canon defines the release path and handoff chain covered by the scenarios."
+    },
+    {
+      "edge_id": "e-100",
+      "from_artifact_id": "canon.phase1-scenario-corpus.v1",
+      "to_artifact_id": "canon.phase1-rewrite-containment-seams.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted P1.5 seam map defines the high-blast-radius seams the corpus must exercise."
+    },
+    {
+      "edge_id": "e-101",
+      "from_artifact_id": "canon.phase1-scenario-corpus.v1",
+      "to_artifact_id": "sa.all-prims.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The primitive-set authority defines the objects that the scenarios must preserve."
+    },
+    {
+      "edge_id": "e-102",
+      "from_artifact_id": "canon.phase1-scenario-corpus.v1",
+      "to_artifact_id": "sa.chat-native-release-plan.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The release doctrine defines the stage path that the corpus covers."
+    },
+    {
+      "edge_id": "e-103",
+      "from_artifact_id": "canon.phase1-scenario-corpus.v1",
+      "to_artifact_id": "sa.task-studio-north-star.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The north-star authority defines the commissioned-work scenarios and Task Studio handoff target."
+    },
+    {
+      "edge_id": "e-104",
+      "from_artifact_id": "canon.phase1-scenario-corpus.v1",
+      "to_artifact_id": "cp.forbidden-shortcuts-register.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The corpus explicitly exercises the accepted shortcut-failure cases and anti-drift constraints."
+    },
+    {
+      "edge_id": "e-105",
+      "from_artifact_id": "canon.phase1-scenario-corpus.v1",
+      "to_artifact_id": "canon.phase1-layer-primitive-separation.v1",
+      "edge_type": "informs",
+      "propagation_mode": "none",
+      "notes": "The accepted owner-layer map informs scenario coverage for ownership and non-owner drift cases."
     }
   ]
 }
