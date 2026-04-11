@@ -266,6 +266,12 @@
       "artifact_type_id": "rel.release_contract_pack",
       "artifact_status": "accepted",
       "canonical_locator": "docs/control-plane/releases/r2-context-chat-contract/phase-4-r2-context-chat-contract-pack.md"
+    },
+    {
+      "artifact_id": "rel.r3-branch-visual-thinker-contract.v1",
+      "artifact_type_id": "rel.release_contract_pack",
+      "artifact_status": "accepted",
+      "canonical_locator": "docs/control-plane/releases/r3-branch-visual-thinker-contract/phase-4-r3-branch-visual-thinker-contract-pack.md"
     }
   ],
   "edges": [
@@ -3172,6 +3178,174 @@
       "edge_type": "depends_on",
       "propagation_mode": "auto",
       "notes": "Graph semantics come from the normative control-plane spec."
+    },
+    {
+      "edge_id": "e-364",
+      "from_artifact_id": "rel.r3-branch-visual-thinker-contract.v1",
+      "to_artifact_id": "cp.master-plan.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "P4.5 scope, sequencing, and carry-forward rules come from the master plan."
+    },
+    {
+      "edge_id": "e-365",
+      "from_artifact_id": "rel.r3-branch-visual-thinker-contract.v1",
+      "to_artifact_id": "cp.artifact-control-plane-spec.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The R3 contract pack reuses accepted P0.1 artifact, validation-hook, and stale-rule semantics."
+    },
+    {
+      "edge_id": "e-366",
+      "from_artifact_id": "rel.r3-branch-visual-thinker-contract.v1",
+      "to_artifact_id": "canon.phase1-surface-release-topology.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted P1.4 topology canon defines R3 as the branch/replay stage with mode projections over shared branch state."
+    },
+    {
+      "edge_id": "e-367",
+      "from_artifact_id": "rel.r3-branch-visual-thinker-contract.v1",
+      "to_artifact_id": "canon.phase1-rewrite-containment-seams.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted P1.5 seam map defines the `SS-07` and `SS-11` locks that R3 must preserve without transcript-clone or mode-private shortcuts."
+    },
+    {
+      "edge_id": "e-368",
+      "from_artifact_id": "rel.r3-branch-visual-thinker-contract.v1",
+      "to_artifact_id": "canon.phase1-scenario-corpus.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted P1.6 scenario corpus defines `GS-04`, `GS-05`, `EC-01`, and `EC-09` as protected R3 pathways and failure cases."
+    },
+    {
+      "edge_id": "e-369",
+      "from_artifact_id": "rel.r3-branch-visual-thinker-contract.v1",
+      "to_artifact_id": "sem.phase2-core-object-state-machines.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted P2.1 object model defines the Branch, Checkpoint, Run, Proof Bundle, and State Delta identities that R3 must expose directly."
+    },
+    {
+      "edge_id": "e-370",
+      "from_artifact_id": "rel.r3-branch-visual-thinker-contract.v1",
+      "to_artifact_id": "sem.phase2-run-class-taxonomy-protocol-kernel.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted P2.2 pack defines compare and plan as the main run-class emphases for R3 while keeping replay over shared run classes rather than inventing a branch-only class."
+    },
+    {
+      "edge_id": "e-371",
+      "from_artifact_id": "rel.r3-branch-visual-thinker-contract.v1",
+      "to_artifact_id": "sem.phase2-chat-native-semantic-packs.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted P2.5 semantic pack defines the R3 shared-object substrate, projection additions, and handoff obligation to R4."
+    },
+    {
+      "edge_id": "e-372",
+      "from_artifact_id": "rel.r3-branch-visual-thinker-contract.v1",
+      "to_artifact_id": "sem.phase2-projection-grammar-contracts.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted P2.6 grammar pack defines the Timeline, Compare View, Live Monitor, and Diff / Merge compositions that R3 may foreground without inventing a private backend."
+    },
+    {
+      "edge_id": "e-373",
+      "from_artifact_id": "rel.r3-branch-visual-thinker-contract.v1",
+      "to_artifact_id": "cp.forbidden-shortcuts-register.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted forbidden-shortcuts register defines the transcript-clone, mode-private-backend, and silent-merge shortcuts that R3 must explicitly refuse."
+    },
+    {
+      "edge_id": "e-374",
+      "from_artifact_id": "rel.r3-branch-visual-thinker-contract.v1",
+      "to_artifact_id": "arch.phase3-technical-architecture-baseline.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted P3.1 baseline defines the shared control/data/event substrate that R3 branch, replay, and compare work must project rather than replace."
+    },
+    {
+      "edge_id": "e-375",
+      "from_artifact_id": "rel.r3-branch-visual-thinker-contract.v1",
+      "to_artifact_id": "arch.phase3-context-compiler-topology.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted P3.2 compiler topology defines the frozen pack lineage, basis diff, and replay behavior that R3 must surface through semantic branching."
+    },
+    {
+      "edge_id": "e-376",
+      "from_artifact_id": "rel.r3-branch-visual-thinker-contract.v1",
+      "to_artifact_id": "arch.phase3-data-storage-provenance-spec.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted P3.3 storage/provenance baseline defines the append-only lineage substrate required for branches, checkpoints, replays, and merge proposals to remain reconstructable."
+    },
+    {
+      "edge_id": "e-377",
+      "from_artifact_id": "rel.r3-branch-visual-thinker-contract.v1",
+      "to_artifact_id": "arch.phase3-api-ipc-event-contracts.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted P3.4 contract baseline defines the typed branch-fork, replay, compare, and monitor seams that R3 must use."
+    },
+    {
+      "edge_id": "e-378",
+      "from_artifact_id": "rel.r3-branch-visual-thinker-contract.v1",
+      "to_artifact_id": "arch.phase3-platform-gate-spec.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted P3.5 Platform Gate artifact defines the inherited frozen-replay and branch-continuity blockers that remain binding in R3."
+    },
+    {
+      "edge_id": "e-379",
+      "from_artifact_id": "rel.r3-branch-visual-thinker-contract.v1",
+      "to_artifact_id": "arch.phase3-architecture-sync-pass.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted P3.6 sync pass confirms the accepted architecture baseline remains aligned before the R3 contract is fixed."
+    },
+    {
+      "edge_id": "e-380",
+      "from_artifact_id": "rel.r3-branch-visual-thinker-contract.v1",
+      "to_artifact_id": "rel.chat-native-maturity-matrix.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted P4.1 maturity matrix defines the `M4`, `M4`, and `M2` package-floor raises that R3 must treat as binding."
+    },
+    {
+      "edge_id": "e-381",
+      "from_artifact_id": "rel.r3-branch-visual-thinker-contract.v1",
+      "to_artifact_id": "rel.chat-native-milestone-architecture-plan.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted P4.2 milestone plan defines R3 as the semantic branch/replay stage and names the future-stage seams it must not pre-spend."
+    },
+    {
+      "edge_id": "e-382",
+      "from_artifact_id": "rel.r3-branch-visual-thinker-contract.v1",
+      "to_artifact_id": "rel.r2-context-chat-contract.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted P4.4 R2 contract defines the explicit pack-control and replay-basis substrate that R3 must inherit rather than replace."
+    },
+    {
+      "edge_id": "e-383",
+      "from_artifact_id": "rel.r3-branch-visual-thinker-contract.v1",
+      "to_artifact_id": "canon.phase1-source-decomposition.v1",
+      "edge_type": "informs",
+      "propagation_mode": "none",
+      "notes": "The accepted P1.1 glossary and contradiction pack informs R3 vocabulary around branch, replay, mode projection, and merge behavior."
+    },
+    {
+      "edge_id": "e-384",
+      "from_artifact_id": "rel.r3-branch-visual-thinker-contract.v1",
+      "to_artifact_id": "canon.phase1-product-interpretation-freeze.v1",
+      "edge_type": "informs",
+      "propagation_mode": "none",
+      "notes": "The accepted P1.2 interpretation note informs the fixed chat-native wedge and projection-vs-ontology discipline that R3 must preserve."
     }
   ]
 }

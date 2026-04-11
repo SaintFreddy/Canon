@@ -4814,6 +4814,209 @@
         "P4.4 accepted R2 contract pack defining real evidence/context control, pack operations, package floors, exit criteria, and explicit refusals.",
         "Accepted for downstream use as the R2 release-contract baseline feeding P4.5 and later release packs plus Phase 6 package planning."
       ]
+    },
+    {
+      "artifact_id": "rel.r3-branch-visual-thinker-contract.v1",
+      "artifact_type_id": "rel.release_contract_pack",
+      "title": "Phase 4 R3 Branch / Visual Thinker contract pack",
+      "version": "1.0.0",
+      "artifact_status": "accepted",
+      "semantic_owner": "Release doctrine steward",
+      "stewardship_mode": "human_factory",
+      "acceptance_authority": "Human release owner",
+      "release_id": "r3-branch-visual-thinker-contract",
+      "canonical_locator": "docs/control-plane/releases/r3-branch-visual-thinker-contract/phase-4-r3-branch-visual-thinker-contract-pack.md",
+      "source_authority_refs": [
+        "cp.master-plan.v1",
+        "canon.phase1-surface-release-topology.v1",
+        "canon.phase1-rewrite-containment-seams.v1",
+        "canon.phase1-scenario-corpus.v1",
+        "sem.phase2-core-object-state-machines.v1",
+        "sem.phase2-run-class-taxonomy-protocol-kernel.v1",
+        "sem.phase2-chat-native-semantic-packs.v1",
+        "sem.phase2-projection-grammar-contracts.v1",
+        "arch.phase3-technical-architecture-baseline.v1",
+        "arch.phase3-context-compiler-topology.v1",
+        "arch.phase3-data-storage-provenance-spec.v1",
+        "arch.phase3-api-ipc-event-contracts.v1",
+        "arch.phase3-platform-gate-spec.v1",
+        "arch.phase3-architecture-sync-pass.v1",
+        "rel.chat-native-maturity-matrix.v1",
+        "rel.chat-native-milestone-architecture-plan.v1",
+        "rel.r2-context-chat-contract.v1",
+        "sa.all-prims.v1",
+        "sa.chat-native-release-plan.v1",
+        "sa.task-studio-north-star.v1",
+        "cp.forbidden-shortcuts-register.v1"
+      ],
+      "dependency_refs": [
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.master-plan.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "P4.5 scope, sequencing, and carry-forward rules come from the master plan."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.artifact-control-plane-spec.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The R3 contract pack reuses accepted P0.1 artifact, validation-hook, and stale-rule semantics."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "canon.phase1-surface-release-topology.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P1.4 topology canon defines R3 as the branch/replay stage with mode projections over shared branch state."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "canon.phase1-rewrite-containment-seams.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P1.5 seam map defines the `SS-07` and `SS-11` locks that R3 must preserve without transcript-clone or mode-private shortcuts."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "canon.phase1-scenario-corpus.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P1.6 scenario corpus defines `GS-04`, `GS-05`, `EC-01`, and `EC-09` as protected R3 pathways and failure cases."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "sem.phase2-core-object-state-machines.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P2.1 object model defines the Branch, Checkpoint, Run, Proof Bundle, and State Delta identities that R3 must expose directly."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "sem.phase2-run-class-taxonomy-protocol-kernel.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P2.2 pack defines compare and plan as the main run-class emphases for R3 while keeping replay over shared run classes rather than inventing a branch-only class."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "sem.phase2-chat-native-semantic-packs.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P2.5 semantic pack defines the R3 shared-object substrate, projection additions, and handoff obligation to R4."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "sem.phase2-projection-grammar-contracts.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P2.6 grammar pack defines the Timeline, Compare View, Live Monitor, and Diff / Merge compositions that R3 may foreground without inventing a private backend."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.forbidden-shortcuts-register.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted forbidden-shortcuts register defines the transcript-clone, mode-private-backend, and silent-merge shortcuts that R3 must explicitly refuse."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "arch.phase3-technical-architecture-baseline.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P3.1 baseline defines the shared control/data/event substrate that R3 branch, replay, and compare work must project rather than replace."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "arch.phase3-context-compiler-topology.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P3.2 compiler topology defines the frozen pack lineage, basis diff, and replay behavior that R3 must surface through semantic branching."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "arch.phase3-data-storage-provenance-spec.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P3.3 storage/provenance baseline defines the append-only lineage substrate required for branches, checkpoints, replays, and merge proposals to remain reconstructable."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "arch.phase3-api-ipc-event-contracts.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P3.4 contract baseline defines the typed branch-fork, replay, compare, and monitor seams that R3 must use."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "arch.phase3-platform-gate-spec.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P3.5 Platform Gate artifact defines the inherited frozen-replay and branch-continuity blockers that remain binding in R3."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "arch.phase3-architecture-sync-pass.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P3.6 sync pass confirms the accepted architecture baseline remains aligned before the R3 contract is fixed."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "rel.chat-native-maturity-matrix.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P4.1 maturity matrix defines the `M4`, `M4`, and `M2` package-floor raises that R3 must treat as binding."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "rel.chat-native-milestone-architecture-plan.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P4.2 milestone plan defines R3 as the semantic branch/replay stage and names the future-stage seams it must not pre-spend."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "rel.r2-context-chat-contract.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P4.4 R2 contract defines the explicit pack-control and replay-basis substrate that R3 must inherit rather than replace."
+        },
+        {
+          "edge_type": "informs",
+          "artifact_id": "canon.phase1-source-decomposition.v1",
+          "propagation_mode": "none",
+          "required_for_acceptance": false,
+          "notes": "The accepted P1.1 glossary and contradiction pack informs R3 vocabulary around branch, replay, mode projection, and merge behavior."
+        },
+        {
+          "edge_type": "informs",
+          "artifact_id": "canon.phase1-product-interpretation-freeze.v1",
+          "propagation_mode": "none",
+          "required_for_acceptance": false,
+          "notes": "The accepted P1.2 interpretation note informs the fixed chat-native wedge and projection-vs-ontology discipline that R3 must preserve."
+        }
+      ],
+      "validation_hooks": [
+        {
+          "hook_id": "vh.dependency.integrity"
+        },
+        {
+          "hook_id": "vh.source.trace-review"
+        },
+        {
+          "hook_id": "vh.consistency.cross-pack-review"
+        },
+        {
+          "hook_id": "vh.manual.acceptance"
+        }
+      ],
+      "stale_rule_id": "sr.derivative.manual",
+      "notes": [
+        "P4.5 accepted R3 contract pack defining semantic branching, replay, mode projections, off-chain merge behavior, package floors, exit criteria, and explicit refusals.",
+        "Accepted for downstream use as the R3 release-contract baseline feeding P4.6 and later release packs plus Phase 6 package planning."
+      ]
     }
   ]
 }

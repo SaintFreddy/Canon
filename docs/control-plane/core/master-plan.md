@@ -224,6 +224,7 @@ This section answers, in plain terms, what is already done and what is not.
 - [x] The Phase 4 release / milestone architecture plan has been produced and accepted.
 - [x] The Phase 4 R1 Transcript Chat contract pack has been produced and accepted.
 - [x] The Phase 4 R2 Context Chat contract pack has been produced and accepted.
+- [x] The Phase 4 R3 Branch / Visual Thinker contract pack has been produced and accepted.
 
 ### 5.2 Not done yet
 
@@ -611,7 +612,7 @@ This phase is done when the release-to-SDK matrix, milestone architecture, and c
 - **Acceptance:** R2 is defined as real context control rather than fake sidebar behavior
 - **Carry-forward topics:** pack semantics, span rules, inclusion/exclusion policies, diff/freeze behavior
 
-#### [ ] P4.5 — R3 Branch / Visual Thinker contract pack
+#### [x] P4.5 — R3 Branch / Visual Thinker contract pack
 - **Mode:** Human + Factory
 - **Depends on:** P4.2
 - **Deliverable:** contract pack for branching, replay, compare, off-chain jobs, merge proposals, mode projections
@@ -1576,6 +1577,30 @@ Stale items:
 
 Notes for future prompts:
 - Treat the current `cp.artifact-registry-data.v1` and `cp.dependency-graph-data.v1` pair as structurally aligned after the repo-wide sync correction.
+
+
+#### CF-0036 | 2026-04-11 | Source: P4.5 — R3 Branch / Visual Thinker contract pack
+
+New information:
+- `docs/control-plane/releases/r3-branch-visual-thinker-contract/phase-4-r3-branch-visual-thinker-contract-pack.md` is now accepted for downstream use.
+- Artifact `rel.r3-branch-visual-thinker-contract.v1` has been registered as `accepted`.
+- The accepted R3 contract now fixes what semantic branching means: checkpoint-based branch identity, replay and compare over frozen pack lineage, mode projections over shared branch state, explicit off-chain return/merge behavior, the inherited package-floor raises, and the explicit non-goals that prevent transcript-clone or mode-private backend drift.
+
+Impact:
+- Phase 4 now has accepted contracts for R1 through R3.
+- P4.6 can proceed on an accepted branch/replay boundary instead of inferring whether checkpoints, replay lineage, proof/delta compare surfaces, and proposal-bearing branch returns are already real before artifact-centered continuity becomes primary.
+- Later release packs can treat R3 as the proof that semantic branching is a shared-substrate capability rather than transcript duplication with a branch map skin.
+
+Status changes:
+- P4.5 marked done.
+- The completion snapshot now records the Phase 4 R3 Branch / Visual Thinker contract pack as accepted.
+- Phase 4 remains in progress pending P4.6-P4.9.
+
+Stale items:
+- None.
+
+Notes for future prompts:
+- Use `rel.r3-branch-visual-thinker-contract.v1` together with `rel.r2-context-chat-contract.v1`, `rel.chat-native-milestone-architecture-plan.v1`, `rel.chat-native-maturity-matrix.v1`, and `arch.phase3-api-ipc-event-contracts.v1` as the accepted R3 contract baseline for P4.6 and later release-pack work.
 
 ---
 
