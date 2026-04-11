@@ -1,0 +1,185 @@
+{
+  "graph_meta": {
+    "schema_version": "1.0.0",
+    "title": "Seed control-plane dependency graph",
+    "task_id": "P0.1",
+    "edge_direction_note": "Edges point from downstream artifact to upstream artifact."
+  },
+  "edge_type_catalog": [
+    {
+      "edge_type": "depends_on",
+      "meaning": "Hard prerequisite. Downstream meaning or validity depends materially on the upstream artifact.",
+      "default_propagation_mode": "auto"
+    },
+    {
+      "edge_type": "derives_from",
+      "meaning": "Downstream artifact is materially derived from the upstream artifact.",
+      "default_propagation_mode": "auto"
+    },
+    {
+      "edge_type": "validated_by",
+      "meaning": "Upstream artifact defines the validator, fixture, or normative validation basis.",
+      "default_propagation_mode": "revalidate"
+    },
+    {
+      "edge_type": "supersedes",
+      "meaning": "New artifact replaces an older artifact for downstream use.",
+      "default_propagation_mode": "none"
+    },
+    {
+      "edge_type": "informs",
+      "meaning": "Reference-only link. Helpful context, not a hard validity dependency.",
+      "default_propagation_mode": "none"
+    }
+  ],
+  "nodes": [
+    {
+      "artifact_id": "cp.master-plan.v1",
+      "artifact_type_id": "cp.master_plan_record",
+      "artifact_status": "accepted",
+      "canonical_locator": "attachment://platform-build-master-plan-factory-first.md"
+    },
+    {
+      "artifact_id": "sa.all-prims.v1",
+      "artifact_type_id": "sa.source_authority_doc",
+      "artifact_status": "accepted",
+      "canonical_locator": "attachment://All Prims.md"
+    },
+    {
+      "artifact_id": "sa.chat-native-release-plan.v1",
+      "artifact_type_id": "sa.source_authority_doc",
+      "artifact_status": "accepted",
+      "canonical_locator": "attachment://Chat-Native Release Plan.md"
+    },
+    {
+      "artifact_id": "sa.task-studio-north-star.v1",
+      "artifact_type_id": "sa.source_authority_doc",
+      "artifact_status": "accepted",
+      "canonical_locator": "attachment://Task Studio - North Star commissioned-work app.md"
+    },
+    {
+      "artifact_id": "cp.artifact-control-plane-spec.v1",
+      "artifact_type_id": "cp.control_plane_spec",
+      "artifact_status": "review_ready",
+      "canonical_locator": "docs/control-plane/artifact-control-plane-spec.md"
+    },
+    {
+      "artifact_id": "cp.artifact-registry-data.v1",
+      "artifact_type_id": "cp.control_plane_dataset",
+      "artifact_status": "review_ready",
+      "canonical_locator": "docs/control-plane/artifact-registry.seed.json"
+    },
+    {
+      "artifact_id": "cp.dependency-graph-data.v1",
+      "artifact_type_id": "cp.control_plane_dataset",
+      "artifact_status": "review_ready",
+      "canonical_locator": "docs/control-plane/dependency-graph.seed.json"
+    }
+  ],
+  "edges": [
+    {
+      "edge_id": "e-001",
+      "from_artifact_id": "cp.master-plan.v1",
+      "to_artifact_id": "sa.all-prims.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "Master plan carries forward the layer boundary and primitive baseline."
+    },
+    {
+      "edge_id": "e-002",
+      "from_artifact_id": "cp.master-plan.v1",
+      "to_artifact_id": "sa.chat-native-release-plan.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "Master plan carries forward the fixed release doctrine."
+    },
+    {
+      "edge_id": "e-003",
+      "from_artifact_id": "cp.master-plan.v1",
+      "to_artifact_id": "sa.task-studio-north-star.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "Master plan carries forward the north-star app model."
+    },
+    {
+      "edge_id": "e-004",
+      "from_artifact_id": "cp.artifact-control-plane-spec.v1",
+      "to_artifact_id": "cp.master-plan.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "P0.1 scope and acceptance come from the master plan."
+    },
+    {
+      "edge_id": "e-005",
+      "from_artifact_id": "cp.artifact-control-plane-spec.v1",
+      "to_artifact_id": "sa.all-prims.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "Control-plane boundaries must preserve the three-layer architecture."
+    },
+    {
+      "edge_id": "e-006",
+      "from_artifact_id": "cp.artifact-control-plane-spec.v1",
+      "to_artifact_id": "sa.chat-native-release-plan.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "Control-plane rules must preserve release doctrine and forbidden shortcuts."
+    },
+    {
+      "edge_id": "e-007",
+      "from_artifact_id": "cp.artifact-control-plane-spec.v1",
+      "to_artifact_id": "sa.task-studio-north-star.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "Control-plane rules must preserve run-native commissioned-work direction."
+    },
+    {
+      "edge_id": "e-008",
+      "from_artifact_id": "cp.artifact-registry-data.v1",
+      "to_artifact_id": "cp.artifact-control-plane-spec.v1",
+      "edge_type": "derives_from",
+      "propagation_mode": "auto",
+      "notes": "The registry dataset is derived from the normative control-plane spec."
+    },
+    {
+      "edge_id": "e-009",
+      "from_artifact_id": "cp.artifact-registry-data.v1",
+      "to_artifact_id": "cp.artifact-control-plane-spec.v1",
+      "edge_type": "validated_by",
+      "propagation_mode": "revalidate",
+      "notes": "The registry dataset must be revalidated if the normative rules change."
+    },
+    {
+      "edge_id": "e-010",
+      "from_artifact_id": "cp.dependency-graph-data.v1",
+      "to_artifact_id": "cp.artifact-control-plane-spec.v1",
+      "edge_type": "derives_from",
+      "propagation_mode": "auto",
+      "notes": "Graph structure and edge semantics are derived from the normative control-plane spec."
+    },
+    {
+      "edge_id": "e-011",
+      "from_artifact_id": "cp.dependency-graph-data.v1",
+      "to_artifact_id": "cp.artifact-registry-data.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "Graph node IDs must match the seed registry."
+    },
+    {
+      "edge_id": "e-012",
+      "from_artifact_id": "cp.dependency-graph-data.v1",
+      "to_artifact_id": "cp.artifact-control-plane-spec.v1",
+      "edge_type": "validated_by",
+      "propagation_mode": "revalidate",
+      "notes": "The graph dataset must be revalidated if normative edge rules change."
+    },
+    {
+      "edge_id": "e-013",
+      "from_artifact_id": "cp.dependency-graph-data.v1",
+      "to_artifact_id": "cp.master-plan.v1",
+      "edge_type": "informs",
+      "propagation_mode": "none",
+      "notes": "The graph references the master plan for human context, not as a direct structural dependency."
+    }
+  ]
+}

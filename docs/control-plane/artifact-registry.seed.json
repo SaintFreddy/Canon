@@ -1,0 +1,953 @@
+{
+  "registry_meta": {
+    "schema_version": "1.0.0",
+    "title": "Seed control-plane artifact registry",
+    "task_id": "P0.1",
+    "status_note": "artifact_status is independent from master-plan task status markers",
+    "default_root": "docs/control-plane/"
+  },
+  "artifact_status_values": [
+    "draft",
+    "review_ready",
+    "accepted",
+    "stale",
+    "superseded",
+    "archived",
+    "rejected"
+  ],
+  "shape_catalog": {
+    "dependency_ref.v1": {
+      "required_fields": [
+        "edge_type",
+        "artifact_id",
+        "propagation_mode",
+        "required_for_acceptance",
+        "notes"
+      ]
+    },
+    "validation_hook_ref.v1": {
+      "required_fields": [
+        "hook_id"
+      ]
+    }
+  },
+  "validation_hook_standards": [
+    {
+      "hook_id": "vh.schema.required-fields",
+      "hook_kind": "schema",
+      "executor_mode": "factory",
+      "blocking": true,
+      "evidence_required": "Required fields present for every artifact or artifact type record",
+      "result_ref": null
+    },
+    {
+      "hook_id": "vh.schema.json-parse",
+      "hook_kind": "schema",
+      "executor_mode": "factory",
+      "blocking": true,
+      "evidence_required": "JSON file parses cleanly",
+      "result_ref": null
+    },
+    {
+      "hook_id": "vh.dependency.integrity",
+      "hook_kind": "dependency_integrity",
+      "executor_mode": "factory",
+      "blocking": true,
+      "evidence_required": "Referenced artifact IDs and edge fields resolve",
+      "result_ref": null
+    },
+    {
+      "hook_id": "vh.source.trace-review",
+      "hook_kind": "source_trace",
+      "executor_mode": "hybrid",
+      "blocking": true,
+      "evidence_required": "Source-authority references and material grounding are explicit",
+      "result_ref": null
+    },
+    {
+      "hook_id": "vh.consistency.cross-pack-review",
+      "hook_kind": "consistency_review",
+      "executor_mode": "hybrid",
+      "blocking": true,
+      "evidence_required": "Terminology, dependencies, and boundaries are consistent with accepted upstream artifacts",
+      "result_ref": null
+    },
+    {
+      "hook_id": "vh.manual.acceptance",
+      "hook_kind": "manual_acceptance",
+      "executor_mode": "human",
+      "blocking": true,
+      "evidence_required": "Explicit human acceptance for downstream use",
+      "result_ref": null
+    },
+    {
+      "hook_id": "vh.revalidation.trigger",
+      "hook_kind": "revalidation",
+      "executor_mode": "hybrid",
+      "blocking": true,
+      "evidence_required": "Revalidation required after validator or upstream acceptance change",
+      "result_ref": null
+    },
+    {
+      "hook_id": "vh.fixture.or-test-when-applicable",
+      "hook_kind": "test_or_fixture",
+      "executor_mode": "hybrid",
+      "blocking": false,
+      "evidence_required": "Only used when real fixtures, harnesses, or test contracts exist",
+      "result_ref": null
+    }
+  ],
+  "stale_rule_catalog": [
+    {
+      "stale_rule_id": "sr.source-authority.strict",
+      "applies_to": [
+        "sa.source_authority_doc"
+      ],
+      "rule": "Accepted downstream artifacts connected by hard dependency edges become stale on accepted source-authority change; reference-only links do not propagate by default."
+    },
+    {
+      "stale_rule_id": "sr.control-plane.strict",
+      "applies_to": [
+        "cp.master_plan_record",
+        "cp.control_plane_spec",
+        "cp.control_plane_dataset"
+      ],
+      "rule": "Hard dependencies auto-stale on accepted upstream change; validator changes require revalidation."
+    },
+    {
+      "stale_rule_id": "sr.derivative.manual",
+      "applies_to": [
+        "canon.interpretation_pack",
+        "sem.semantic_contract_pack",
+        "arch.technical_architecture_pack",
+        "rel.release_contract_pack",
+        "reuse.execution_governance_pack",
+        "surf.surface_repo_pack",
+        "bp.implementation_blueprint",
+        "pkt.execution_packet"
+      ],
+      "rule": "Accepted upstream changes trigger stale review by default; deterministic derivations may opt into auto propagation per dependency edge."
+    },
+    {
+      "stale_rule_id": "sr.sync.manual",
+      "applies_to": [
+        "sync.delta_sync_pack"
+      ],
+      "rule": "Sync and delta artifacts summarize accepted truth and normally require human stale review on upstream change."
+    },
+    {
+      "stale_rule_id": "sr.reference.none",
+      "applies_to": [],
+      "rule": "Reference-only edges do not propagate stale status by default."
+    }
+  ],
+  "artifact_types": [
+    {
+      "artifact_type_id": "sa.source_authority_doc",
+      "name": "Source authority document",
+      "purpose": "External or mirrored authority document governing platform meaning",
+      "semantic_owner_default": "Product/canon owner",
+      "stewardship_mode_default": "human_only",
+      "acceptance_authority_default": "Human plan owner",
+      "id_pattern": "sa.<source-key>.v<major>",
+      "required_metadata_fields": [
+        "source_key",
+        "authority_scope"
+      ],
+      "artifact_status_field": "artifact_status",
+      "allowed_status_values": [
+        "draft",
+        "review_ready",
+        "accepted",
+        "stale",
+        "superseded",
+        "archived",
+        "rejected"
+      ],
+      "dependency_ref_shape": "dependency_ref.v1",
+      "validation_hook_shape": "validation_hook_ref.v1",
+      "default_validation_hooks": [
+        {
+          "hook_id": "vh.source.trace-review"
+        },
+        {
+          "hook_id": "vh.manual.acceptance"
+        }
+      ],
+      "stale_rule_id": "sr.source-authority.strict",
+      "default_repo_location": "docs/control-plane/source-authority/<slug>.md"
+    },
+    {
+      "artifact_type_id": "cp.master_plan_record",
+      "name": "Master execution plan record",
+      "purpose": "Working control document for the program",
+      "semantic_owner_default": "Product/canon owner",
+      "stewardship_mode_default": "human_only",
+      "acceptance_authority_default": "Human plan owner",
+      "id_pattern": "cp.master-plan.v<major>",
+      "required_metadata_fields": [
+        "phase_scope"
+      ],
+      "artifact_status_field": "artifact_status",
+      "allowed_status_values": [
+        "draft",
+        "review_ready",
+        "accepted",
+        "stale",
+        "superseded",
+        "archived",
+        "rejected"
+      ],
+      "dependency_ref_shape": "dependency_ref.v1",
+      "validation_hook_shape": "validation_hook_ref.v1",
+      "default_validation_hooks": [
+        {
+          "hook_id": "vh.source.trace-review"
+        },
+        {
+          "hook_id": "vh.manual.acceptance"
+        }
+      ],
+      "stale_rule_id": "sr.control-plane.strict",
+      "default_repo_location": "docs/control-plane/core/master-plan.md"
+    },
+    {
+      "artifact_type_id": "cp.control_plane_spec",
+      "name": "Control-plane spec",
+      "purpose": "Normative spec for registry, rules, or operating artifacts",
+      "semantic_owner_default": "Product/canon owner",
+      "stewardship_mode_default": "human_factory",
+      "acceptance_authority_default": "Human plan owner",
+      "id_pattern": "cp.<topic>.v<major>",
+      "required_metadata_fields": [
+        "topic_key"
+      ],
+      "artifact_status_field": "artifact_status",
+      "allowed_status_values": [
+        "draft",
+        "review_ready",
+        "accepted",
+        "stale",
+        "superseded",
+        "archived",
+        "rejected"
+      ],
+      "dependency_ref_shape": "dependency_ref.v1",
+      "validation_hook_shape": "validation_hook_ref.v1",
+      "default_validation_hooks": [
+        {
+          "hook_id": "vh.schema.required-fields"
+        },
+        {
+          "hook_id": "vh.dependency.integrity"
+        },
+        {
+          "hook_id": "vh.source.trace-review"
+        },
+        {
+          "hook_id": "vh.manual.acceptance"
+        }
+      ],
+      "stale_rule_id": "sr.control-plane.strict",
+      "default_repo_location": "docs/control-plane/core/<slug>.md"
+    },
+    {
+      "artifact_type_id": "cp.control_plane_dataset",
+      "name": "Control-plane dataset",
+      "purpose": "Machine-readable registry, graph, or control-plane data",
+      "semantic_owner_default": "Platform architecture steward",
+      "stewardship_mode_default": "human_factory",
+      "acceptance_authority_default": "Human plan owner",
+      "id_pattern": "cp.<topic>-data.v<major>",
+      "required_metadata_fields": [
+        "dataset_kind"
+      ],
+      "artifact_status_field": "artifact_status",
+      "allowed_status_values": [
+        "draft",
+        "review_ready",
+        "accepted",
+        "stale",
+        "superseded",
+        "archived",
+        "rejected"
+      ],
+      "dependency_ref_shape": "dependency_ref.v1",
+      "validation_hook_shape": "validation_hook_ref.v1",
+      "default_validation_hooks": [
+        {
+          "hook_id": "vh.schema.json-parse"
+        },
+        {
+          "hook_id": "vh.schema.required-fields"
+        },
+        {
+          "hook_id": "vh.dependency.integrity"
+        },
+        {
+          "hook_id": "vh.manual.acceptance"
+        }
+      ],
+      "stale_rule_id": "sr.control-plane.strict",
+      "default_repo_location": "docs/control-plane/core/<slug>.json"
+    },
+    {
+      "artifact_type_id": "canon.interpretation_pack",
+      "name": "Canon or interpretation pack",
+      "purpose": "Contradiction, glossary, or canon interpretation artifact",
+      "semantic_owner_default": "Product/canon owner",
+      "stewardship_mode_default": "human_factory",
+      "acceptance_authority_default": "Human plan owner",
+      "id_pattern": "canon.<topic>.v<major>",
+      "required_metadata_fields": [
+        "canon_scope"
+      ],
+      "artifact_status_field": "artifact_status",
+      "allowed_status_values": [
+        "draft",
+        "review_ready",
+        "accepted",
+        "stale",
+        "superseded",
+        "archived",
+        "rejected"
+      ],
+      "dependency_ref_shape": "dependency_ref.v1",
+      "validation_hook_shape": "validation_hook_ref.v1",
+      "default_validation_hooks": [
+        {
+          "hook_id": "vh.dependency.integrity"
+        },
+        {
+          "hook_id": "vh.source.trace-review"
+        },
+        {
+          "hook_id": "vh.consistency.cross-pack-review"
+        },
+        {
+          "hook_id": "vh.manual.acceptance"
+        }
+      ],
+      "stale_rule_id": "sr.derivative.manual",
+      "default_repo_location": "docs/control-plane/canon/<slug>.md"
+    },
+    {
+      "artifact_type_id": "sem.semantic_contract_pack",
+      "name": "Semantic contract pack",
+      "purpose": "Shared semantic contracts and state-machine packs",
+      "semantic_owner_default": "Semantic contracts steward",
+      "stewardship_mode_default": "human_factory",
+      "acceptance_authority_default": "Human semantic owner",
+      "id_pattern": "sem.<topic>.v<major>",
+      "required_metadata_fields": [
+        "semantic_scope"
+      ],
+      "artifact_status_field": "artifact_status",
+      "allowed_status_values": [
+        "draft",
+        "review_ready",
+        "accepted",
+        "stale",
+        "superseded",
+        "archived",
+        "rejected"
+      ],
+      "dependency_ref_shape": "dependency_ref.v1",
+      "validation_hook_shape": "validation_hook_ref.v1",
+      "default_validation_hooks": [
+        {
+          "hook_id": "vh.dependency.integrity"
+        },
+        {
+          "hook_id": "vh.source.trace-review"
+        },
+        {
+          "hook_id": "vh.consistency.cross-pack-review"
+        },
+        {
+          "hook_id": "vh.manual.acceptance"
+        }
+      ],
+      "stale_rule_id": "sr.derivative.manual",
+      "default_repo_location": "docs/control-plane/semantics/<slug>.md"
+    },
+    {
+      "artifact_type_id": "arch.technical_architecture_pack",
+      "name": "Technical architecture pack",
+      "purpose": "Technical baseline, Platform Gate, topology, or interface pack",
+      "semantic_owner_default": "Architecture steward",
+      "stewardship_mode_default": "human_factory",
+      "acceptance_authority_default": "Human architecture owner",
+      "id_pattern": "arch.<topic>.v<major>",
+      "required_metadata_fields": [
+        "architecture_scope"
+      ],
+      "artifact_status_field": "artifact_status",
+      "allowed_status_values": [
+        "draft",
+        "review_ready",
+        "accepted",
+        "stale",
+        "superseded",
+        "archived",
+        "rejected"
+      ],
+      "dependency_ref_shape": "dependency_ref.v1",
+      "validation_hook_shape": "validation_hook_ref.v1",
+      "default_validation_hooks": [
+        {
+          "hook_id": "vh.dependency.integrity"
+        },
+        {
+          "hook_id": "vh.source.trace-review"
+        },
+        {
+          "hook_id": "vh.consistency.cross-pack-review"
+        },
+        {
+          "hook_id": "vh.manual.acceptance"
+        }
+      ],
+      "stale_rule_id": "sr.derivative.manual",
+      "default_repo_location": "docs/control-plane/architecture/<slug>.md"
+    },
+    {
+      "artifact_type_id": "rel.release_contract_pack",
+      "name": "Release contract pack",
+      "purpose": "Platform Gate or release-specific contract pack",
+      "semantic_owner_default": "Release doctrine steward",
+      "stewardship_mode_default": "human_factory",
+      "acceptance_authority_default": "Human release owner",
+      "id_pattern": "rel.<stage>.v<major>",
+      "required_metadata_fields": [
+        "release_id"
+      ],
+      "artifact_status_field": "artifact_status",
+      "allowed_status_values": [
+        "draft",
+        "review_ready",
+        "accepted",
+        "stale",
+        "superseded",
+        "archived",
+        "rejected"
+      ],
+      "dependency_ref_shape": "dependency_ref.v1",
+      "validation_hook_shape": "validation_hook_ref.v1",
+      "default_validation_hooks": [
+        {
+          "hook_id": "vh.dependency.integrity"
+        },
+        {
+          "hook_id": "vh.source.trace-review"
+        },
+        {
+          "hook_id": "vh.consistency.cross-pack-review"
+        },
+        {
+          "hook_id": "vh.manual.acceptance"
+        }
+      ],
+      "stale_rule_id": "sr.derivative.manual",
+      "default_repo_location": "docs/control-plane/releases/<stage>/<slug>.md"
+    },
+    {
+      "artifact_type_id": "reuse.execution_governance_pack",
+      "name": "Reusable execution or governance pack",
+      "purpose": "Governance, proof, protocol, workflow, applet, or handoff pack",
+      "semantic_owner_default": "Governance/proof steward",
+      "stewardship_mode_default": "human_factory",
+      "acceptance_authority_default": "Human semantic owner",
+      "id_pattern": "reuse.<topic>.v<major>",
+      "required_metadata_fields": [
+        "reuse_scope"
+      ],
+      "artifact_status_field": "artifact_status",
+      "allowed_status_values": [
+        "draft",
+        "review_ready",
+        "accepted",
+        "stale",
+        "superseded",
+        "archived",
+        "rejected"
+      ],
+      "dependency_ref_shape": "dependency_ref.v1",
+      "validation_hook_shape": "validation_hook_ref.v1",
+      "default_validation_hooks": [
+        {
+          "hook_id": "vh.dependency.integrity"
+        },
+        {
+          "hook_id": "vh.consistency.cross-pack-review"
+        },
+        {
+          "hook_id": "vh.manual.acceptance"
+        }
+      ],
+      "stale_rule_id": "sr.derivative.manual",
+      "default_repo_location": "docs/control-plane/reuse/<slug>.md"
+    },
+    {
+      "artifact_type_id": "surf.surface_repo_pack",
+      "name": "Surface or repo architecture pack",
+      "purpose": "Surface contract, repo/package architecture, or documentation-plane artifact",
+      "semantic_owner_default": "Surface/repo steward",
+      "stewardship_mode_default": "human_factory",
+      "acceptance_authority_default": "Human architecture owner",
+      "id_pattern": "surf.<topic>.v<major>",
+      "required_metadata_fields": [
+        "surface_scope"
+      ],
+      "artifact_status_field": "artifact_status",
+      "allowed_status_values": [
+        "draft",
+        "review_ready",
+        "accepted",
+        "stale",
+        "superseded",
+        "archived",
+        "rejected"
+      ],
+      "dependency_ref_shape": "dependency_ref.v1",
+      "validation_hook_shape": "validation_hook_ref.v1",
+      "default_validation_hooks": [
+        {
+          "hook_id": "vh.dependency.integrity"
+        },
+        {
+          "hook_id": "vh.consistency.cross-pack-review"
+        },
+        {
+          "hook_id": "vh.manual.acceptance"
+        }
+      ],
+      "stale_rule_id": "sr.derivative.manual",
+      "default_repo_location": "docs/control-plane/surfaces/<slug>.md"
+    },
+    {
+      "artifact_type_id": "bp.implementation_blueprint",
+      "name": "Implementation blueprint",
+      "purpose": "Release or module implementation blueprint",
+      "semantic_owner_default": "Implementation steward",
+      "stewardship_mode_default": "human_factory",
+      "acceptance_authority_default": "Human implementation owner",
+      "id_pattern": "bp.<scope>.v<major>",
+      "required_metadata_fields": [
+        "implementation_scope"
+      ],
+      "artifact_status_field": "artifact_status",
+      "allowed_status_values": [
+        "draft",
+        "review_ready",
+        "accepted",
+        "stale",
+        "superseded",
+        "archived",
+        "rejected"
+      ],
+      "dependency_ref_shape": "dependency_ref.v1",
+      "validation_hook_shape": "validation_hook_ref.v1",
+      "default_validation_hooks": [
+        {
+          "hook_id": "vh.dependency.integrity"
+        },
+        {
+          "hook_id": "vh.consistency.cross-pack-review"
+        },
+        {
+          "hook_id": "vh.fixture.or-test-when-applicable"
+        },
+        {
+          "hook_id": "vh.manual.acceptance"
+        }
+      ],
+      "stale_rule_id": "sr.derivative.manual",
+      "default_repo_location": "docs/control-plane/implementation/<slug>.md"
+    },
+    {
+      "artifact_type_id": "pkt.execution_packet",
+      "name": "Execution packet",
+      "purpose": "Bounded implementation packet with whitelist and approval rules",
+      "semantic_owner_default": "Implementation steward",
+      "stewardship_mode_default": "factory_first",
+      "acceptance_authority_default": "Human implementation owner",
+      "id_pattern": "pkt.<scope>.v<major>",
+      "required_metadata_fields": [
+        "packet_scope",
+        "file_whitelist_ref"
+      ],
+      "artifact_status_field": "artifact_status",
+      "allowed_status_values": [
+        "draft",
+        "review_ready",
+        "accepted",
+        "stale",
+        "superseded",
+        "archived",
+        "rejected"
+      ],
+      "dependency_ref_shape": "dependency_ref.v1",
+      "validation_hook_shape": "validation_hook_ref.v1",
+      "default_validation_hooks": [
+        {
+          "hook_id": "vh.dependency.integrity"
+        },
+        {
+          "hook_id": "vh.consistency.cross-pack-review"
+        },
+        {
+          "hook_id": "vh.fixture.or-test-when-applicable"
+        },
+        {
+          "hook_id": "vh.manual.acceptance"
+        }
+      ],
+      "stale_rule_id": "sr.derivative.manual",
+      "default_repo_location": "docs/control-plane/implementation/packets/<slug>.md"
+    },
+    {
+      "artifact_type_id": "sync.delta_sync_pack",
+      "name": "Delta, sync, or stale-detection pack",
+      "purpose": "Delta capture, recurring sync, stale rules, or gate re-check artifact",
+      "semantic_owner_default": "Sync steward",
+      "stewardship_mode_default": "factory_first",
+      "acceptance_authority_default": "Human plan owner",
+      "id_pattern": "sync.<topic>.v<major>",
+      "required_metadata_fields": [
+        "sync_scope"
+      ],
+      "artifact_status_field": "artifact_status",
+      "allowed_status_values": [
+        "draft",
+        "review_ready",
+        "accepted",
+        "stale",
+        "superseded",
+        "archived",
+        "rejected"
+      ],
+      "dependency_ref_shape": "dependency_ref.v1",
+      "validation_hook_shape": "validation_hook_ref.v1",
+      "default_validation_hooks": [
+        {
+          "hook_id": "vh.dependency.integrity"
+        },
+        {
+          "hook_id": "vh.revalidation.trigger"
+        },
+        {
+          "hook_id": "vh.manual.acceptance"
+        }
+      ],
+      "stale_rule_id": "sr.sync.manual",
+      "default_repo_location": "docs/control-plane/sync/<slug>.md"
+    }
+  ],
+  "artifacts": [
+    {
+      "artifact_id": "cp.master-plan.v1",
+      "artifact_type_id": "cp.master_plan_record",
+      "title": "Platform Build Master Plan Record",
+      "version": "1.0.0",
+      "artifact_status": "accepted",
+      "semantic_owner": "Product/canon owner",
+      "stewardship_mode": "human_only",
+      "acceptance_authority": "Human plan owner",
+      "canonical_locator": "attachment://platform-build-master-plan-factory-first.md",
+      "source_authority_refs": [
+        "sa.all-prims.v1",
+        "sa.chat-native-release-plan.v1",
+        "sa.task-studio-north-star.v1"
+      ],
+      "dependency_refs": [
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "sa.all-prims.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "Defines engine/shared-environment baseline"
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "sa.chat-native-release-plan.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "Defines fixed release doctrine"
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "sa.task-studio-north-star.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "Defines north-star commissioned-work app"
+        }
+      ],
+      "validation_hooks": [
+        {
+          "hook_id": "vh.source.trace-review"
+        },
+        {
+          "hook_id": "vh.manual.acceptance"
+        }
+      ],
+      "stale_rule_id": "sr.control-plane.strict",
+      "notes": [
+        "P0.0 accepted master control document",
+        "Currently attached rather than mirrored in repo"
+      ]
+    },
+    {
+      "artifact_id": "sa.all-prims.v1",
+      "artifact_type_id": "sa.source_authority_doc",
+      "title": "Agentic Stack — Engine + Shared Environment Primitive Set",
+      "version": "1.0.0",
+      "artifact_status": "accepted",
+      "semantic_owner": "Product/canon owner",
+      "stewardship_mode": "human_only",
+      "acceptance_authority": "Human plan owner",
+      "canonical_locator": "attachment://All Prims.md",
+      "source_authority_refs": [],
+      "dependency_refs": [],
+      "validation_hooks": [
+        {
+          "hook_id": "vh.source.trace-review"
+        },
+        {
+          "hook_id": "vh.manual.acceptance"
+        }
+      ],
+      "stale_rule_id": "sr.source-authority.strict",
+      "notes": [
+        "Authoritative layer-boundary and primitive-set document"
+      ]
+    },
+    {
+      "artifact_id": "sa.chat-native-release-plan.v1",
+      "artifact_type_id": "sa.source_authority_doc",
+      "title": "Chat-Native Release Plan",
+      "version": "1.0.0",
+      "artifact_status": "accepted",
+      "semantic_owner": "Product/canon owner",
+      "stewardship_mode": "human_only",
+      "acceptance_authority": "Human plan owner",
+      "canonical_locator": "attachment://Chat-Native Release Plan.md",
+      "source_authority_refs": [],
+      "dependency_refs": [],
+      "validation_hooks": [
+        {
+          "hook_id": "vh.source.trace-review"
+        },
+        {
+          "hook_id": "vh.manual.acceptance"
+        }
+      ],
+      "stale_rule_id": "sr.source-authority.strict",
+      "notes": [
+        "Authoritative release doctrine for the chat-native phase"
+      ]
+    },
+    {
+      "artifact_id": "sa.task-studio-north-star.v1",
+      "artifact_type_id": "sa.source_authority_doc",
+      "title": "Task Studio — North Star commissioned-work app",
+      "version": "1.0.0",
+      "artifact_status": "accepted",
+      "semantic_owner": "Product/canon owner",
+      "stewardship_mode": "human_only",
+      "acceptance_authority": "Human plan owner",
+      "canonical_locator": "attachment://Task Studio - North Star commissioned-work app.md",
+      "source_authority_refs": [],
+      "dependency_refs": [],
+      "validation_hooks": [
+        {
+          "hook_id": "vh.source.trace-review"
+        },
+        {
+          "hook_id": "vh.manual.acceptance"
+        }
+      ],
+      "stale_rule_id": "sr.source-authority.strict",
+      "notes": [
+        "Authoritative commissioned-work application model"
+      ]
+    },
+    {
+      "artifact_id": "cp.artifact-control-plane-spec.v1",
+      "artifact_type_id": "cp.control_plane_spec",
+      "title": "Artifact Control-Plane Spec",
+      "version": "1.0.0",
+      "artifact_status": "review_ready",
+      "semantic_owner": "Product/canon owner",
+      "stewardship_mode": "human_factory",
+      "acceptance_authority": "Human plan owner",
+      "canonical_locator": "docs/control-plane/artifact-control-plane-spec.md",
+      "source_authority_refs": [
+        "cp.master-plan.v1",
+        "sa.all-prims.v1",
+        "sa.chat-native-release-plan.v1",
+        "sa.task-studio-north-star.v1"
+      ],
+      "dependency_refs": [
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.master-plan.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "Master execution plan rules and P0.1 scope"
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "sa.all-prims.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "Three-layer architecture and primitive boundary rules"
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "sa.chat-native-release-plan.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "Fixed release doctrine and forbidden shortcuts"
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "sa.task-studio-north-star.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "North-star commissioned-work constraints"
+        }
+      ],
+      "validation_hooks": [
+        {
+          "hook_id": "vh.schema.required-fields"
+        },
+        {
+          "hook_id": "vh.dependency.integrity"
+        },
+        {
+          "hook_id": "vh.source.trace-review"
+        },
+        {
+          "hook_id": "vh.manual.acceptance"
+        }
+      ],
+      "stale_rule_id": "sr.control-plane.strict",
+      "notes": [
+        "P0.1 human-readable normative spec",
+        "Review-ready pending human acceptance for downstream use"
+      ]
+    },
+    {
+      "artifact_id": "cp.artifact-registry-data.v1",
+      "artifact_type_id": "cp.control_plane_dataset",
+      "title": "Seed control-plane artifact registry",
+      "version": "1.0.0",
+      "artifact_status": "review_ready",
+      "semantic_owner": "Platform architecture steward",
+      "stewardship_mode": "human_factory",
+      "acceptance_authority": "Human plan owner",
+      "canonical_locator": "docs/control-plane/artifact-registry.seed.json",
+      "source_authority_refs": [
+        "cp.master-plan.v1",
+        "sa.all-prims.v1",
+        "sa.chat-native-release-plan.v1",
+        "sa.task-studio-north-star.v1"
+      ],
+      "dependency_refs": [
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.artifact-control-plane-spec.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "Registry data must match the accepted control-plane spec"
+        },
+        {
+          "edge_type": "validated_by",
+          "artifact_id": "cp.artifact-control-plane-spec.v1",
+          "propagation_mode": "revalidate",
+          "required_for_acceptance": true,
+          "notes": "Validated against the normative control-plane rules"
+        }
+      ],
+      "validation_hooks": [
+        {
+          "hook_id": "vh.schema.json-parse"
+        },
+        {
+          "hook_id": "vh.schema.required-fields"
+        },
+        {
+          "hook_id": "vh.dependency.integrity"
+        },
+        {
+          "hook_id": "vh.manual.acceptance"
+        }
+      ],
+      "stale_rule_id": "sr.control-plane.strict",
+      "notes": [
+        "P0.1 machine-readable seed registry",
+        "Review-ready pending human acceptance for downstream use"
+      ]
+    },
+    {
+      "artifact_id": "cp.dependency-graph-data.v1",
+      "artifact_type_id": "cp.control_plane_dataset",
+      "title": "Seed control-plane dependency graph",
+      "version": "1.0.0",
+      "artifact_status": "review_ready",
+      "semantic_owner": "Platform architecture steward",
+      "stewardship_mode": "human_factory",
+      "acceptance_authority": "Human plan owner",
+      "canonical_locator": "docs/control-plane/dependency-graph.seed.json",
+      "source_authority_refs": [
+        "cp.master-plan.v1",
+        "sa.all-prims.v1",
+        "sa.chat-native-release-plan.v1",
+        "sa.task-studio-north-star.v1"
+      ],
+      "dependency_refs": [
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.artifact-control-plane-spec.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "Graph semantics come from the normative control-plane spec"
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.artifact-registry-data.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "Graph node IDs must align with the seed registry"
+        },
+        {
+          "edge_type": "validated_by",
+          "artifact_id": "cp.artifact-control-plane-spec.v1",
+          "propagation_mode": "revalidate",
+          "required_for_acceptance": true,
+          "notes": "Validated against the normative edge semantics"
+        }
+      ],
+      "validation_hooks": [
+        {
+          "hook_id": "vh.schema.json-parse"
+        },
+        {
+          "hook_id": "vh.schema.required-fields"
+        },
+        {
+          "hook_id": "vh.dependency.integrity"
+        },
+        {
+          "hook_id": "vh.manual.acceptance"
+        }
+      ],
+      "stale_rule_id": "sr.control-plane.strict",
+      "notes": [
+        "P0.1 machine-readable graph example",
+        "Review-ready pending human acceptance for downstream use"
+      ]
+    }
+  ]
+}
