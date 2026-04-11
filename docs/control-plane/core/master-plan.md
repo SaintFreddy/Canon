@@ -230,6 +230,7 @@ This section answers, in plain terms, what is already done and what is not.
 - [x] The Phase 4 R6 Governed Agent / Applet Chat contract pack has been produced and accepted.
 - [x] The Phase 4 R7 Commissioning Bridge contract pack has been produced and accepted.
 - [x] The Phase 5 full governance, authority, and writeback spec has been produced and accepted.
+- [x] The Phase 5 full proof, validation, and evaluation spec has been produced and accepted.
 
 ### 5.2 Not done yet
 
@@ -671,7 +672,7 @@ This phase is done when governance, proof, protocol packs, reusable execution ob
 - **Acceptance:** governance is machine-usable and reviewable, not only conceptual
 - **Carry-forward topics:** approval-routing rules, compensation rules, partial-accept rules, governance edge cases
 
-#### [ ] P5.2 — Full proof / validation / evaluation spec
+#### [x] P5.2 — Full proof / validation / evaluation spec
 - **Mode:** Human + Factory
 - **Depends on:** P2.4 and P4.9
 - **Deliverable:** verifier packs, proof assemblers, evaluation fixtures, replay/regression suites, task-family proof sections
@@ -1726,6 +1727,30 @@ Stale items:
 
 Notes for future prompts:
 - Use `reuse.phase5-governance-authority-writeback-spec.v1` together with `rel.r7-commissioning-bridge-contract.v1`, `rel.r6-governed-agent-applet-chat-contract.v1`, `reuse.phase2-governance-authority-writeback-invariants.v1`, `reuse.phase2-proof-validation-invariants.v1`, `sem.phase2-core-object-state-machines.v1`, `sem.phase2-run-class-taxonomy-protocol-kernel.v1`, `sem.phase2-projection-grammar-contracts.v1`, and `arch.phase3-api-ipc-event-contracts.v1` as the governance baseline for P5.3, P5.4, P5.5, and P5.7.
+
+
+#### CF-0042 | 2026-04-11 | Source: P5.2 — Full proof / validation / evaluation spec
+
+New information:
+- `docs/control-plane/reuse/phase-5-full-proof-validation-and-evaluation-spec.md` is now accepted for downstream use.
+- Artifact `reuse.phase5-proof-validation-evaluation-spec.v1` has been registered as `accepted`.
+- The accepted Phase 5 proof/evaluation spec now makes verifier-pack definitions, proof assembly, threshold profiles, evaluation fixtures, replay/regression suites, and task-family proof sections machine-usable while preserving accepted governance and R7 handoff boundaries.
+
+Impact:
+- Phase 5 now has an accepted full proof/evaluation baseline beyond the Phase 2 invariant layer.
+- P5.3 can bind protocol packs to explicit verifier/evaluation contracts, failure mappings, and fixtures instead of relying only on proof skeletons.
+- P5.4-P5.7 and Task Studio proof surfaces can project accepted evaluator, ledger, regression, and handoff semantics without redefining proof.
+
+Status changes:
+- P5.2 marked done.
+- The completion snapshot now records the Phase 5 full proof, validation, and evaluation spec as accepted.
+- Phase 5 remains in progress pending P5.3-P5.7.
+
+Stale items:
+- None.
+
+Notes for future prompts:
+- Use `reuse.phase5-proof-validation-evaluation-spec.v1` together with `reuse.phase5-governance-authority-writeback-spec.v1`, `rel.r7-commissioning-bridge-contract.v1`, `rel.r6-governed-agent-applet-chat-contract.v1`, `reuse.phase2-proof-validation-invariants.v1`, `sem.phase2-run-class-taxonomy-protocol-kernel.v1`, `sem.phase2-projection-grammar-contracts.v1`, `arch.phase3-context-compiler-topology.v1`, `arch.phase3-api-ipc-event-contracts.v1`, and `arch.phase3-platform-gate-spec.v1` as the proof/evaluation baseline for P5.3-P5.7.
 
 ---
 
