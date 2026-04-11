@@ -6343,6 +6343,263 @@
         "P5.2 accepted machine-usable proof pack covering verifier packs, proof assembly, threshold profiles, evaluation fixtures, replay/regression suites, and task-family proof sections.",
         "Accepted for downstream use as the Phase 5 proof/evaluation baseline feeding protocol packs, reusable execution composition specs, Task Studio surfaces, and handoff work."
       ]
+    },
+    {
+      "artifact_id": "reuse.phase5-run-class-protocol-packs.v1",
+      "artifact_type_id": "reuse.execution_governance_pack",
+      "title": "Phase 5 full run-class protocol packs",
+      "version": "1.0.0",
+      "artifact_status": "accepted",
+      "semantic_owner": "Governance/proof steward",
+      "stewardship_mode": "human_factory",
+      "acceptance_authority": "Human semantic owner",
+      "canonical_locator": "docs/control-plane/reuse/phase-5-full-run-class-protocol-packs.md",
+      "source_authority_refs": [
+        "cp.master-plan.v1",
+        "canon.phase1-product-interpretation-freeze.v1",
+        "canon.phase1-surface-release-topology.v1",
+        "canon.phase1-rewrite-containment-seams.v1",
+        "canon.phase1-scenario-corpus.v1",
+        "sem.phase2-core-object-state-machines.v1",
+        "sem.phase2-run-class-taxonomy-protocol-kernel.v1",
+        "reuse.phase2-governance-authority-writeback-invariants.v1",
+        "reuse.phase2-proof-validation-invariants.v1",
+        "sem.phase2-chat-native-semantic-packs.v1",
+        "sem.phase2-projection-grammar-contracts.v1",
+        "arch.phase3-technical-architecture-baseline.v1",
+        "arch.phase3-context-compiler-topology.v1",
+        "arch.phase3-data-storage-provenance-spec.v1",
+        "arch.phase3-api-ipc-event-contracts.v1",
+        "arch.phase3-platform-gate-spec.v1",
+        "arch.phase3-architecture-sync-pass.v1",
+        "rel.chat-native-maturity-matrix.v1",
+        "rel.chat-native-milestone-architecture-plan.v1",
+        "rel.r6-governed-agent-applet-chat-contract.v1",
+        "rel.r7-commissioning-bridge-contract.v1",
+        "reuse.phase5-governance-authority-writeback-spec.v1",
+        "reuse.phase5-proof-validation-evaluation-spec.v1",
+        "sa.all-prims.v1",
+        "sa.chat-native-release-plan.v1",
+        "sa.task-studio-north-star.v1",
+        "cp.forbidden-shortcuts-register.v1"
+      ],
+      "dependency_refs": [
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.master-plan.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The master plan sets the accepted P5.3 scope, dependencies, deliverable, and acceptance bar for full run-class protocol packs."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.artifact-control-plane-spec.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P0.1 control-plane spec defines artifact metadata, dependency semantics, validation hooks, and stale rules for this pack."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "reuse.phase2-proof-validation-invariants.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P2.4 proof invariants define the minimum proof, verifier, and failure semantics that each protocol pack must bind explicitly."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "reuse.phase2-governance-authority-writeback-invariants.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P2.3 governance invariants define explicit scope, review, and lane-separation rules that protocol defaults must preserve."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "sem.phase2-core-object-state-machines.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P2.1 core-object pack defines Protocol, Contract, Run, Proof Bundle, State Delta, Review, Approval Decision, and Applet objects that protocol packs specialize."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "sem.phase2-run-class-taxonomy-protocol-kernel.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P2.2 taxonomy defines the seven base run classes, kernel fields, and conservative defaults that this full protocol pack deepens."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "sem.phase2-chat-native-semantic-packs.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted Phase 2 semantic-release packs define release projection boundaries that protocol packs must fit without reopening earlier release meaning."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "sem.phase2-projection-grammar-contracts.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted projection grammar defines surface-safe mapping rules so protocol packs remain projection-stable across chat, background, and Task Studio."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "rel.r6-governed-agent-applet-chat-contract.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted R6 contract makes Protocol, Workflow, Trigger, and Applet reusable execution real; P5.3 must bind run-class protocol depth onto that surface."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "rel.r7-commissioning-bridge-contract.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted R7 contract defines commissioning and handoff continuity that protocol packs must preserve through Commission, Contract, Run, and Task Studio flows."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "reuse.phase5-governance-authority-writeback-spec.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P5.1 governance spec defines routing, preview, approval, compensation, and writeback rules that protocol packs must encode in their defaults and review hooks."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "reuse.phase5-proof-validation-evaluation-spec.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P5.2 proof/evaluation spec defines verifier packs, proof assembly, thresholds, fixtures, regression suites, and failure mappings that protocol packs must bind explicitly per run class."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "rel.chat-native-maturity-matrix.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P4.1 maturity matrix fixes the package-floor posture that Phase 5 protocol semantics can assume."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "rel.chat-native-milestone-architecture-plan.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P4.2 milestone architecture plan fixes the release-to-phase progression that the Phase 5 protocol baseline must honor."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "arch.phase3-technical-architecture-baseline.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P3.1 technical architecture baseline defines the shared runtime, storage, and API substrate that protocol pack refs ultimately target."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "arch.phase3-context-compiler-topology.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P3.2 context-compiler topology constrains how Context Recipes compile frozen basis, exclusions, and reusable context inputs for each protocol pack."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "arch.phase3-data-storage-provenance-spec.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P3.3 storage/provenance baseline defines append-only run, proof, delta, review, and handoff lineage that protocol results and fixtures must preserve."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "arch.phase3-api-ipc-event-contracts.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P3.4 API/IPC contracts define typed protocol, proof, writeback, inspect, and gateway surfaces that protocol packs must stay compatible with."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "arch.phase3-platform-gate-spec.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P3.5 Platform Gate defines replay, event continuity, scope enforcement, and failure-inspectability blockers that protocol packs must not weaken."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "arch.phase3-architecture-sync-pass.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P3.6 architecture sync pass confirms the semantic, release, and architecture seams remain aligned before full protocol depth is fixed."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "canon.phase1-product-interpretation-freeze.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P1.1 product interpretation freeze keeps protocol packs inside the canonical product meaning and prevents ontology drift."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "canon.phase1-surface-release-topology.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P1.3 surface/release topology defines where protocol semantics appear across chat, reusable execution, and Task Studio."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "canon.phase1-rewrite-containment-seams.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P1.4 rewrite-containment seams protect protocol packs from view-local truth or private-backend drift."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "canon.phase1-scenario-corpus.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P1.5 scenario corpus provides GS and EC grounding for protocol identity, reusable execution, commissioning, and Task Studio continuity."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "sa.all-prims.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The primitive-set authority defines Protocol, Context Recipe, Strategy Preset, Verifier Pack, Run, Proof Bundle, State Delta, Review, Approval Decision, and Handoff as shared primitives."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "sa.chat-native-release-plan.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The release doctrine requires governed reusable execution and clean R7 -> Task Studio continuity that protocol packs must support."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "sa.task-studio-north-star.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The north-star authority requires task-family typing and reusable protocol semantics under Task Studio without inventing a new ontology."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.forbidden-shortcuts-register.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The forbidden-shortcuts register prevents transcript-first truth, agent-builder-first drift, separate backends per view, hidden memory, and silent governance bypass in protocol packs."
+        }
+      ],
+      "validation_hooks": [
+        {
+          "hook_id": "vh.dependency.integrity"
+        },
+        {
+          "hook_id": "vh.source.trace-review"
+        },
+        {
+          "hook_id": "vh.consistency.cross-pack-review"
+        },
+        {
+          "hook_id": "vh.manual.acceptance"
+        }
+      ],
+      "stale_rule_id": "sr.derivative.manual",
+      "notes": [
+        "P5.3 accepted machine-usable run-class protocol pack covering intake/contract/result/proof schemas, context recipes, strategy presets, verifier bindings, authority/writeback defaults, failure mappings, and fixtures.",
+        "Accepted for downstream use as the Phase 5 protocol baseline feeding reusable execution composition specs, Task Studio surfaces, V1 scope framing, and handoff work."
+      ]
     }
   ]
 }

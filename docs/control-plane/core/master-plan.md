@@ -231,10 +231,11 @@ This section answers, in plain terms, what is already done and what is not.
 - [x] The Phase 4 R7 Commissioning Bridge contract pack has been produced and accepted.
 - [x] The Phase 5 full governance, authority, and writeback spec has been produced and accepted.
 - [x] The Phase 5 full proof, validation, and evaluation spec has been produced and accepted.
+- [x] The Phase 5 full run-class protocol packs have been produced and accepted.
 
 ### 5.2 Not done yet
 
-- [ ] The release contract packs for Platform Gate through R7 have been produced and accepted.
+- [x] The release contract packs for Platform Gate through R7 have been produced and accepted.
 - [ ] The full reusable semantics and Task Studio readiness packs have been produced and accepted.
 - [ ] The repo/package architecture and agent execution system have been implemented.
 - [ ] The implementation blueprints and bounded execution packets have not yet been generated and accepted.
@@ -246,7 +247,7 @@ This section answers, in plain terms, what is already done and what is not.
 - [x] Phase 1 — done in the repo
 - [x] Phase 2 — done in the repo
 - [x] Phase 3 — done in the repo
-- [~] Phase 4 — in progress
+- [x] Phase 4 — done in the repo
 - [~] Phase 5 — in progress
 - [ ] Phase 6 — not done
 - [ ] Phase 7 — not done
@@ -580,7 +581,7 @@ This phase is done when the technical baseline, compiler topology, data/storage/
 
 ---
 
-## Phase 4 — Fixed chat-native release doctrine `[~]`
+## Phase 4 — Fixed chat-native release doctrine `[x]`
 
 ### Goal
 
@@ -679,7 +680,7 @@ This phase is done when governance, proof, protocol packs, reusable execution ob
 - **Acceptance:** proof and evaluation are explicit enough to drive implementation and review
 - **Carry-forward topics:** proof pack changes, evaluation fixture additions, task-family proof refinements
 
-#### [ ] P5.3 — Full run-class protocol packs
+#### [x] P5.3 — Full run-class protocol packs
 - **Mode:** Human + Factory
 - **Depends on:** P2.2 and P5.1 and P5.2
 - **Deliverable:** protocol packs with intake schema, contract schema, result schema, proof schema, context recipe, strategy preset, verifier pack, authority defaults, writeback defaults, failure classes, fixtures
@@ -1751,6 +1752,30 @@ Stale items:
 
 Notes for future prompts:
 - Use `reuse.phase5-proof-validation-evaluation-spec.v1` together with `reuse.phase5-governance-authority-writeback-spec.v1`, `rel.r7-commissioning-bridge-contract.v1`, `rel.r6-governed-agent-applet-chat-contract.v1`, `reuse.phase2-proof-validation-invariants.v1`, `sem.phase2-run-class-taxonomy-protocol-kernel.v1`, `sem.phase2-projection-grammar-contracts.v1`, `arch.phase3-context-compiler-topology.v1`, `arch.phase3-api-ipc-event-contracts.v1`, and `arch.phase3-platform-gate-spec.v1` as the proof/evaluation baseline for P5.3-P5.7.
+
+
+#### CF-0043 | 2026-04-11 | Source: P5.3 — Full run-class protocol packs
+
+New information:
+- `docs/control-plane/reuse/phase-5-full-run-class-protocol-packs.md` is now accepted for downstream use.
+- Artifact `reuse.phase5-run-class-protocol-packs.v1` has been registered as `accepted`.
+- The accepted Phase 5 protocol pack now makes versioned run-class schemas, Context Recipe and Strategy Preset bindings, verifier pack links, authority/writeback defaults, failure mappings, and fixture sets machine-usable across all seven base run classes.
+
+Impact:
+- Phase 5 now has an accepted operational protocol baseline on top of the accepted taxonomy, governance, and proof layers.
+- P5.4 can compose Workflow / Trigger / Applet / Pack / Integration specs from accepted protocol-pack refs instead of inventing a separate reusable-execution model.
+- P5.5-P5.7 and Task Studio can project protocol IDs/versions, verifier and fixture expectations, and review-hook/writeback posture without redefining run-class meaning.
+
+Status changes:
+- P5.3 marked done.
+- The completion snapshot now records the Phase 5 full run-class protocol packs as accepted.
+- Phase 5 remains in progress pending P5.4-P5.7.
+
+Stale items:
+- None.
+
+Notes for future prompts:
+- Use `reuse.phase5-run-class-protocol-packs.v1` together with `reuse.phase5-governance-authority-writeback-spec.v1`, `reuse.phase5-proof-validation-evaluation-spec.v1`, `sem.phase2-run-class-taxonomy-protocol-kernel.v1`, `rel.r6-governed-agent-applet-chat-contract.v1`, `rel.r7-commissioning-bridge-contract.v1`, `reuse.phase2-governance-authority-writeback-invariants.v1`, `reuse.phase2-proof-validation-invariants.v1`, `arch.phase3-context-compiler-topology.v1`, and `arch.phase3-api-ipc-event-contracts.v1` as the protocol baseline for P5.4-P5.7.
 
 ---
 
