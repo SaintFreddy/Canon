@@ -3156,6 +3156,22 @@
       "edge_type": "informs",
       "propagation_mode": "none",
       "notes": "The accepted P1.2 interpretation note informs the fixed chat-native wedge and projection-vs-ontology discipline that R2 must preserve."
+    },
+    {
+      "edge_id": "e-362",
+      "from_artifact_id": "cp.artifact-registry-data.v1",
+      "to_artifact_id": "cp.artifact-control-plane-spec.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "Registry data must match the accepted control-plane spec."
+    },
+    {
+      "edge_id": "e-363",
+      "from_artifact_id": "cp.dependency-graph-data.v1",
+      "to_artifact_id": "cp.artifact-control-plane-spec.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "Graph semantics come from the normative control-plane spec."
     }
   ]
 }

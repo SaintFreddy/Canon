@@ -1556,6 +1556,27 @@ Stale items:
 Notes for future prompts:
 - Use `rel.r2-context-chat-contract.v1` together with `rel.r1-transcript-chat-contract.v1`, `rel.chat-native-milestone-architecture-plan.v1`, `rel.chat-native-maturity-matrix.v1`, and `arch.phase3-context-compiler-topology.v1` as the accepted R2 contract baseline for P4.5 and later release-pack work.
 
+#### CF-0035 | 2026-04-11 | Source: Repo-wide control-plane sync audit
+
+New information:
+- A repo-wide control-plane consistency check found two missing `depends_on` edges in `docs/control-plane/dependency-graph.seed.json` for existing accepted dataset artifacts:
+  - `cp.artifact-registry-data.v1 -> cp.artifact-control-plane-spec.v1`
+  - `cp.dependency-graph-data.v1 -> cp.artifact-control-plane-spec.v1`
+- The dependency graph has been corrected so the graph now matches the accepted registry dependency refs for those artifacts.
+
+Impact:
+- Repo-wide registry/graph consistency validation now passes without the previously discovered mismatch.
+- No accepted product, architecture, or release-contract meaning changed; this was a control-plane dataset integrity correction.
+
+Status changes:
+- No phase or packet status markers changed.
+
+Stale items:
+- None.
+
+Notes for future prompts:
+- Treat the current `cp.artifact-registry-data.v1` and `cp.dependency-graph-data.v1` pair as structurally aligned after the repo-wide sync correction.
+
 ---
 
 ## 10. End state this plan is aiming at
