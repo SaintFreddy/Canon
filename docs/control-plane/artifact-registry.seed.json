@@ -5220,6 +5220,209 @@
         "P4.6 accepted R4 contract pack defining artifact-centered continuity, focal-artifact runs, proposal/review behavior, historical truth per run, package floors, exit criteria, and explicit refusals.",
         "Accepted for downstream use as the R4 release-contract baseline feeding P4.7 and later release packs plus Phase 6 package planning."
       ]
+    },
+    {
+      "artifact_id": "rel.r5-prompt-studio-contract.v1",
+      "artifact_type_id": "rel.release_contract_pack",
+      "title": "Phase 4 R5 Prompt Studio contract pack",
+      "version": "1.0.0",
+      "artifact_status": "accepted",
+      "semantic_owner": "Release doctrine steward",
+      "stewardship_mode": "human_factory",
+      "acceptance_authority": "Human release owner",
+      "release_id": "r5-prompt-studio-contract",
+      "canonical_locator": "docs/control-plane/releases/r5-prompt-studio-contract/phase-4-r5-prompt-studio-contract-pack.md",
+      "source_authority_refs": [
+        "cp.master-plan.v1",
+        "canon.phase1-surface-release-topology.v1",
+        "canon.phase1-rewrite-containment-seams.v1",
+        "canon.phase1-scenario-corpus.v1",
+        "sem.phase2-core-object-state-machines.v1",
+        "sem.phase2-run-class-taxonomy-protocol-kernel.v1",
+        "sem.phase2-chat-native-semantic-packs.v1",
+        "sem.phase2-projection-grammar-contracts.v1",
+        "arch.phase3-technical-architecture-baseline.v1",
+        "arch.phase3-context-compiler-topology.v1",
+        "arch.phase3-data-storage-provenance-spec.v1",
+        "arch.phase3-api-ipc-event-contracts.v1",
+        "arch.phase3-platform-gate-spec.v1",
+        "arch.phase3-architecture-sync-pass.v1",
+        "rel.chat-native-maturity-matrix.v1",
+        "rel.chat-native-milestone-architecture-plan.v1",
+        "rel.r4-artifact-workspace-contract.v1",
+        "sa.all-prims.v1",
+        "sa.chat-native-release-plan.v1",
+        "sa.task-studio-north-star.v1",
+        "cp.forbidden-shortcuts-register.v1"
+      ],
+      "dependency_refs": [
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.master-plan.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "P4.7 scope, sequencing, and carry-forward rules come from the master plan."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.artifact-control-plane-spec.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The R5 contract pack reuses accepted P0.1 artifact, validation-hook, and stale-rule semantics."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "canon.phase1-surface-release-topology.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P1.4 topology canon defines R5 as the prompt-studio stage with prompt browser, adaptation views, and prompt artifact lineage continuity."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "canon.phase1-rewrite-containment-seams.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P1.5 seam map defines the `SS-13` lock that R5 must preserve by keeping prompt assets as governed artifacts rather than reusable execution substitutes."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "canon.phase1-scenario-corpus.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P1.6 scenario corpus defines `GS-08`, `GS-09`, and `EC-04` as protected R5 pathways and failure cases."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "sem.phase2-core-object-state-machines.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P2.1 object model defines the Artifact, Run, Proof Bundle, State Delta, and Writeback Proposal identities that R5 must reuse for prompt assets and adaptations."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "sem.phase2-run-class-taxonomy-protocol-kernel.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P2.2 pack defines transform as the main run-class emphasis for prompt adaptation work without inventing a prompt-only execution class."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "sem.phase2-chat-native-semantic-packs.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P2.5 semantic pack defines the R5 shared-object substrate, projection additions, and handoff obligation to R6."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "sem.phase2-projection-grammar-contracts.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P2.6 grammar pack defines the Prompt Browser, Adaptation Compare, Canvas, and Diff / Merge compositions that R5 may foreground without inventing a private backend."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.forbidden-shortcuts-register.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted forbidden-shortcuts register defines the app-private-ontology and hidden-lore shortcuts that R5 must explicitly refuse."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "arch.phase3-technical-architecture-baseline.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P3.1 baseline defines the shared control/data/event substrate that prompt-asset lineage and adaptation views must project rather than replace."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "arch.phase3-context-compiler-topology.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P3.2 compiler topology defines the frozen admitted basis behind prompt-generation runs and adaptation derivations."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "arch.phase3-data-storage-provenance-spec.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P3.3 storage/provenance baseline defines the artifact derivation, revision, staleness, and lineage substrate that keeps R5 prompt assets reconstructable."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "arch.phase3-api-ipc-event-contracts.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P3.4 contract baseline defines the typed model invocation, inspect-query, compare, and lineage event seams that R5 must use."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "arch.phase3-platform-gate-spec.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P3.5 Platform Gate artifact defines the inherited model-gateway and typed-lineage blockers that remain binding in R5."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "arch.phase3-architecture-sync-pass.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P3.6 sync pass confirms the accepted architecture baseline remains aligned before the R5 contract is fixed."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "rel.chat-native-maturity-matrix.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P4.1 maturity matrix defines the `M4` floor for `pkg.model-gateway` that R5 must treat as binding."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "rel.chat-native-milestone-architecture-plan.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P4.2 milestone plan defines R5 as the prompt-lineage stage and names the future-stage seams it must not pre-spend."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "rel.r4-artifact-workspace-contract.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P4.6 R4 contract defines the artifact-governance and lineage substrate that R5 must inherit rather than replace."
+        },
+        {
+          "edge_type": "informs",
+          "artifact_id": "canon.phase1-source-decomposition.v1",
+          "propagation_mode": "none",
+          "required_for_acceptance": false,
+          "notes": "The accepted P1.1 glossary and contradiction pack informs R5 vocabulary around prompt assets, adaptations, model profiles, and reuse boundaries."
+        },
+        {
+          "edge_type": "informs",
+          "artifact_id": "canon.phase1-product-interpretation-freeze.v1",
+          "propagation_mode": "none",
+          "required_for_acceptance": false,
+          "notes": "The accepted P1.2 interpretation note informs the fixed chat-native wedge and projection-vs-ontology discipline that R5 must preserve."
+        }
+      ],
+      "validation_hooks": [
+        {
+          "hook_id": "vh.dependency.integrity"
+        },
+        {
+          "hook_id": "vh.source.trace-review"
+        },
+        {
+          "hook_id": "vh.consistency.cross-pack-review"
+        },
+        {
+          "hook_id": "vh.manual.acceptance"
+        }
+      ],
+      "stale_rule_id": "sr.derivative.manual",
+      "notes": [
+        "P4.7 accepted R5 contract pack defining governed prompt assets, prompt cards, model profiles, adaptations, lineage, staleness, package floors, exit criteria, and explicit refusals.",
+        "Accepted for downstream use as the R5 release-contract baseline feeding P4.8 and later release packs plus Phase 6 package planning."
+      ]
     }
   ]
 }

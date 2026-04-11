@@ -226,6 +226,7 @@ This section answers, in plain terms, what is already done and what is not.
 - [x] The Phase 4 R2 Context Chat contract pack has been produced and accepted.
 - [x] The Phase 4 R3 Branch / Visual Thinker contract pack has been produced and accepted.
 - [x] The Phase 4 R4 Artifact Workspace contract pack has been produced and accepted.
+- [x] The Phase 4 R5 Prompt Studio contract pack has been produced and accepted.
 
 ### 5.2 Not done yet
 
@@ -627,7 +628,7 @@ This phase is done when the release-to-SDK matrix, milestone architecture, and c
 - **Acceptance:** continuity moves from transcript gravity to artifact-centered work
 - **Carry-forward topics:** artifact roles, proposal behavior, review/approval rules, historical truth rules
 
-#### [ ] P4.7 — R5 Prompt Studio contract pack
+#### [x] P4.7 — R5 Prompt Studio contract pack
 - **Mode:** Human + Factory
 - **Depends on:** P4.2
 - **Deliverable:** contract pack for canonical prompts, prompt cards, model profiles, adaptations, lineage, staleness
@@ -1626,6 +1627,30 @@ Stale items:
 
 Notes for future prompts:
 - Use `rel.r4-artifact-workspace-contract.v1` together with `rel.r3-branch-visual-thinker-contract.v1`, `rel.chat-native-milestone-architecture-plan.v1`, `rel.chat-native-maturity-matrix.v1`, and `arch.phase3-data-storage-provenance-spec.v1` as the accepted R4 contract baseline for P4.7 and later release-pack work.
+
+
+#### CF-0038 | 2026-04-11 | Source: P4.7 — R5 Prompt Studio contract pack
+
+New information:
+- `docs/control-plane/releases/r5-prompt-studio-contract/phase-4-r5-prompt-studio-contract-pack.md` is now accepted for downstream use.
+- Artifact `rel.r5-prompt-studio-contract.v1` has been registered as `accepted`.
+- The accepted R5 contract now fixes what governed prompt assets mean: canonical prompts and model-specific adaptations remain artifact-level derivatives with explicit model-profile/output-target lineage, staleness stays inspectable, and prompt assets can feed later runs without replacing reusable execution identity or hiding provider behavior as lore.
+
+Impact:
+- Phase 4 now has accepted contracts for R1 through R5.
+- P4.8 can proceed on an accepted prompt-asset boundary instead of inferring whether model-profile behavior, adaptation lineage, staleness handling, and governed prompt reuse are already real before Protocol/Applet packaging appears.
+- Later release packs can treat R5 as the proof that provider abstraction and prompt adaptation are governed substrate rather than hidden prompt-state conventions.
+
+Status changes:
+- P4.7 marked done.
+- The completion snapshot now records the Phase 4 R5 Prompt Studio contract pack as accepted.
+- Phase 4 remains in progress pending P4.8-P4.9.
+
+Stale items:
+- None.
+
+Notes for future prompts:
+- Use `rel.r5-prompt-studio-contract.v1` together with `rel.r4-artifact-workspace-contract.v1`, `rel.chat-native-milestone-architecture-plan.v1`, `rel.chat-native-maturity-matrix.v1`, and `arch.phase3-api-ipc-event-contracts.v1` as the accepted R5 contract baseline for P4.8 and later release-pack work.
 
 ---
 
