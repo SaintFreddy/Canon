@@ -205,6 +205,7 @@ This section answers, in plain terms, what is already done and what is not.
 - [x] The Phase 1 source decomposition / contradiction register / glossary pack has been produced and accepted.
 - [x] The Phase 1 canon freeze / resolved product interpretation note has been produced and accepted.
 - [x] The Phase 1 layer and primitive separation pack has been produced and accepted.
+- [x] The Phase 1 surface and release topology canon has been produced and accepted.
 
 ### 5.2 Not done yet
 
@@ -426,7 +427,7 @@ This phase is done when there is one accepted canon for what belongs in engine, 
 - **Acceptance:** each major object family has one owner layer and clear non-owners
 - **Carry-forward topics:** ownership clarifications, moved boundaries, downstream implications of any boundary changes
 
-#### [ ] P1.4 — Surface and release topology canon
+#### [x] P1.4 — Surface and release topology canon
 - **Mode:** Human-only
 - **Depends on:** P1.2
 - **Deliverable:** topology artifact covering Platform Gate, R1-R7, Task Studio handoff, surfaces, modes, and cross-app handoff rules
@@ -1137,6 +1138,26 @@ Stale items:
 
 Notes for future prompts:
 - Use `canon.phase1-layer-primitive-separation.v1` together with the accepted P1.1 and P1.2 canon packs as the Phase 1 owner-layer baseline for later topology, seam, and semantic work.
+
+#### CF-0016 | 2026-04-11 | Source: P1.4 — Surface and release topology canon
+
+New information:
+- `docs/control-plane/canon/phase-1-surface-and-release-topology-canon.md` now defines the accepted topology story for Platform Gate, R1-R7, Task Studio handoff, surface emphasis, mode rules, and cross-app handoff rules.
+- Artifact `canon.phase1-surface-release-topology.v1` is registered in the control-plane registry and dependency graph as `accepted`.
+
+Impact:
+- Phase 1 now has an accepted release-path and surface-topology basis for rewrite containment, scenario design, and later release-contract work.
+- Downstream packs can now reuse one accepted continuity-and-handoff story instead of inventing local release topology narratives.
+
+Status changes:
+- P1.4 marked done.
+- The completion snapshot now records the Phase 1 surface and release topology canon as accepted.
+
+Stale items:
+- None.
+
+Notes for future prompts:
+- Use `canon.phase1-surface-release-topology.v1` together with the accepted P1.1-P1.3 canon artifacts as the Phase 1 topology baseline for P1.5, P1.6, and Phase 4 release packs.
 
 ---
 

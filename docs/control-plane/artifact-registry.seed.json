@@ -1923,6 +1923,102 @@
         "P1.3 accepted owner-layer map for engine, shared environment, chat-domain, Task Studio, and later domain-pack primitives.",
         "Accepted for downstream use as the Phase 1 owner-layer baseline feeding later topology, seam, and semantic work."
       ]
+    },
+    {
+      "artifact_id": "canon.phase1-surface-release-topology.v1",
+      "artifact_type_id": "canon.interpretation_pack",
+      "title": "Phase 1 surface and release topology canon",
+      "version": "1.0.0",
+      "artifact_status": "accepted",
+      "semantic_owner": "Product/canon owner",
+      "stewardship_mode": "human_only",
+      "acceptance_authority": "Human plan owner",
+      "canonical_locator": "docs/control-plane/canon/phase-1-surface-and-release-topology-canon.md",
+      "source_authority_refs": [
+        "cp.master-plan.v1",
+        "canon.phase1-product-interpretation-freeze.v1",
+        "sa.all-prims.v1",
+        "sa.chat-native-release-plan.v1",
+        "sa.task-studio-north-star.v1",
+        "cp.forbidden-shortcuts-register.v1"
+      ],
+      "dependency_refs": [
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.master-plan.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "P1.4 scope, acceptance discipline, and carry-forward rules come from the master plan."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.artifact-control-plane-spec.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The canon reuses accepted P0.1 artifact, validation-hook, and stale-rule semantics."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "canon.phase1-product-interpretation-freeze.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P1.2 note fixes wedge, north star, release order, and projection-vs-ontology interpretation."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "sa.all-prims.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "Layer and projection grammar boundaries come from the accepted primitive-set authority."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "sa.chat-native-release-plan.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The fixed release order and stage-specific release doctrine come from the accepted release plan."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "sa.task-studio-north-star.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "Task Studio handoff target and commissioned-work surface role come from the accepted north-star authority."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.forbidden-shortcuts-register.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The topology canon preserves the accepted anti-drift constraints around transcript truth, backend fragmentation, and rewrite traps."
+        },
+        {
+          "edge_type": "informs",
+          "artifact_id": "canon.phase1-layer-primitive-separation.v1",
+          "propagation_mode": "none",
+          "required_for_acceptance": false,
+          "notes": "The accepted P1.3 owner-layer map informs surface ownership and non-owner clarifications without changing P1.4 dependency order."
+        }
+      ],
+      "validation_hooks": [
+        {
+          "hook_id": "vh.dependency.integrity"
+        },
+        {
+          "hook_id": "vh.source.trace-review"
+        },
+        {
+          "hook_id": "vh.consistency.cross-pack-review"
+        },
+        {
+          "hook_id": "vh.manual.acceptance"
+        }
+      ],
+      "stale_rule_id": "sr.derivative.manual",
+      "notes": [
+        "P1.4 accepted topology canon covering Platform Gate, R1-R7, Task Studio handoff, surface emphasis, mode rules, and cross-app handoff rules.",
+        "Accepted for downstream use as the Phase 1 release-path and surface-topology basis."
+      ]
     }
   ]
 }
