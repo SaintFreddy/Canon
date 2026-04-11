@@ -37,7 +37,7 @@
       "artifact_id": "cp.master-plan.v1",
       "artifact_type_id": "cp.master_plan_record",
       "artifact_status": "accepted",
-      "canonical_locator": "attachment://platform-build-master-plan-factory-first.md"
+      "canonical_locator": "docs/control-plane/core/master-plan.md"
     },
     {
       "artifact_id": "sa.all-prims.v1",
@@ -60,19 +60,19 @@
     {
       "artifact_id": "cp.artifact-control-plane-spec.v1",
       "artifact_type_id": "cp.control_plane_spec",
-      "artifact_status": "review_ready",
+      "artifact_status": "accepted",
       "canonical_locator": "docs/control-plane/artifact-control-plane-spec.md"
     },
     {
       "artifact_id": "cp.artifact-registry-data.v1",
       "artifact_type_id": "cp.control_plane_dataset",
-      "artifact_status": "review_ready",
+      "artifact_status": "accepted",
       "canonical_locator": "docs/control-plane/artifact-registry.seed.json"
     },
     {
       "artifact_id": "cp.dependency-graph-data.v1",
       "artifact_type_id": "cp.control_plane_dataset",
-      "artifact_status": "review_ready",
+      "artifact_status": "accepted",
       "canonical_locator": "docs/control-plane/dependency-graph.seed.json"
     }
   ],

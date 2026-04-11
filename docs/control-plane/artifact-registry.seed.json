@@ -654,7 +654,7 @@
       "semantic_owner": "Product/canon owner",
       "stewardship_mode": "human_only",
       "acceptance_authority": "Human plan owner",
-      "canonical_locator": "attachment://platform-build-master-plan-factory-first.md",
+      "canonical_locator": "docs/control-plane/core/master-plan.md",
       "source_authority_refs": [
         "sa.all-prims.v1",
         "sa.chat-native-release-plan.v1",
@@ -694,7 +694,7 @@
       "stale_rule_id": "sr.control-plane.strict",
       "notes": [
         "P0.0 accepted master control document",
-        "Currently attached rather than mirrored in repo"
+        "Canonical control-plane record mirrored in repo for ongoing status and carry-forward updates"
       ]
     },
     {
@@ -777,7 +777,7 @@
       "artifact_type_id": "cp.control_plane_spec",
       "title": "Artifact Control-Plane Spec",
       "version": "1.0.0",
-      "artifact_status": "review_ready",
+      "artifact_status": "accepted",
       "semantic_owner": "Product/canon owner",
       "stewardship_mode": "human_factory",
       "acceptance_authority": "Human plan owner",
@@ -835,7 +835,7 @@
       "stale_rule_id": "sr.control-plane.strict",
       "notes": [
         "P0.1 human-readable normative spec",
-        "Review-ready pending human acceptance for downstream use"
+        "Accepted for downstream use"
       ]
     },
     {
@@ -843,7 +843,7 @@
       "artifact_type_id": "cp.control_plane_dataset",
       "title": "Seed control-plane artifact registry",
       "version": "1.0.0",
-      "artifact_status": "review_ready",
+      "artifact_status": "accepted",
       "semantic_owner": "Platform architecture steward",
       "stewardship_mode": "human_factory",
       "acceptance_authority": "Human plan owner",
@@ -887,7 +887,7 @@
       "stale_rule_id": "sr.control-plane.strict",
       "notes": [
         "P0.1 machine-readable seed registry",
-        "Review-ready pending human acceptance for downstream use"
+        "Accepted for downstream use"
       ]
     },
     {
@@ -895,7 +895,7 @@
       "artifact_type_id": "cp.control_plane_dataset",
       "title": "Seed control-plane dependency graph",
       "version": "1.0.0",
-      "artifact_status": "review_ready",
+      "artifact_status": "accepted",
       "semantic_owner": "Platform architecture steward",
       "stewardship_mode": "human_factory",
       "acceptance_authority": "Human plan owner",
@@ -946,7 +946,7 @@
       "stale_rule_id": "sr.control-plane.strict",
       "notes": [
         "P0.1 machine-readable graph example",
-        "Review-ready pending human acceptance for downstream use"
+        "Accepted for downstream use"
       ]
     }
   ]

@@ -1,6 +1,6 @@
 # Artifact Control-Plane Spec
 Version: 1.0
-Status: Review ready
+Status: Accepted
 Task: P0.1 — Artifact registry, dependency graph, and promotion model
 
 ## 1. Purpose
