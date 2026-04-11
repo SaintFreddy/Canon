@@ -1826,6 +1826,103 @@
         "P1.2 accepted canon-freeze note resolving wedge, north star, release order, projection-vs-ontology rules, and non-negotiable constraints.",
         "Accepted for downstream use as the Phase 1 interpretation basis feeding P1.3 through P1.6 and later semantic work."
       ]
+    },
+    {
+      "artifact_id": "canon.phase1-layer-primitive-separation.v1",
+      "artifact_type_id": "canon.interpretation_pack",
+      "title": "Phase 1 layer and primitive separation pack",
+      "version": "1.0.0",
+      "artifact_status": "accepted",
+      "semantic_owner": "Product/canon owner",
+      "stewardship_mode": "human_only",
+      "acceptance_authority": "Human plan owner",
+      "canonical_locator": "docs/control-plane/canon/phase-1-layer-and-primitive-separation-pack.md",
+      "source_authority_refs": [
+        "cp.master-plan.v1",
+        "canon.phase1-source-decomposition.v1",
+        "canon.phase1-product-interpretation-freeze.v1",
+        "sa.all-prims.v1",
+        "sa.chat-native-release-plan.v1",
+        "sa.task-studio-north-star.v1",
+        "cp.forbidden-shortcuts-register.v1"
+      ],
+      "dependency_refs": [
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.master-plan.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "P1.3 scope, acceptance discipline, and carry-forward rules come from the master plan."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.artifact-control-plane-spec.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The pack reuses accepted P0.1 artifact, validation-hook, and stale-rule semantics."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "canon.phase1-source-decomposition.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P1.1 pack provides the normalized terminology and contradiction handling basis."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "canon.phase1-product-interpretation-freeze.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P1.2 note fixes wedge, north star, release order, and projection-vs-ontology interpretation."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "sa.all-prims.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "Primitive-set ownership and layer boundary rules come from the accepted primitive-set authority."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "sa.chat-native-release-plan.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "Release-view and chat-domain ownership limits come from the accepted release doctrine."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "sa.task-studio-north-star.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "Task Studio app-layer ownership and non-owner rules come from the accepted north-star authority."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.forbidden-shortcuts-register.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The pack preserves the accepted anti-drift ownership constraints, especially no competing truth models and no repo-shape architecture drift."
+        }
+      ],
+      "validation_hooks": [
+        {
+          "hook_id": "vh.dependency.integrity"
+        },
+        {
+          "hook_id": "vh.source.trace-review"
+        },
+        {
+          "hook_id": "vh.consistency.cross-pack-review"
+        },
+        {
+          "hook_id": "vh.manual.acceptance"
+        }
+      ],
+      "stale_rule_id": "sr.derivative.manual",
+      "notes": [
+        "P1.3 accepted owner-layer map for engine, shared environment, chat-domain, Task Studio, and later domain-pack primitives.",
+        "Accepted for downstream use as the Phase 1 owner-layer baseline feeding later topology, seam, and semantic work."
+      ]
     }
   ]
 }

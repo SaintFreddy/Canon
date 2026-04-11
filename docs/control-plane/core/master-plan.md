@@ -204,10 +204,11 @@ This section answers, in plain terms, what is already done and what is not.
 - [x] The context-budget and packet policy has been implemented and accepted.
 - [x] The Phase 1 source decomposition / contradiction register / glossary pack has been produced and accepted.
 - [x] The Phase 1 canon freeze / resolved product interpretation note has been produced and accepted.
+- [x] The Phase 1 layer and primitive separation pack has been produced and accepted.
 
 ### 5.2 Not done yet
 
-- [ ] The layer separation pack and rewrite-containment seam map have been produced and accepted.
+- [ ] The rewrite-containment seam map has not yet been produced and accepted.
 - [ ] The core semantic contracts and state-machine specs have been produced and accepted.
 - [ ] The technical architecture baseline and Platform Gate artifacts have been produced and accepted.
 - [ ] The release contract packs for Platform Gate through R7 have been produced and accepted.
@@ -418,7 +419,7 @@ This phase is done when there is one accepted canon for what belongs in engine, 
 - **Acceptance:** no open ambiguity remains about wedge, north star, release order, or projection-vs-ontology rules
 - **Carry-forward topics:** canon clarifications, explicit non-goals, confirmed interpretations that downstream work must not reopen
 
-#### [ ] P1.3 — Layer and primitive separation pack
+#### [x] P1.3 — Layer and primitive separation pack
 - **Mode:** Human-only
 - **Depends on:** P1.2
 - **Deliverable:** explicit ownership map for engine primitives, environment primitives, chat-domain primitives, Task Studio primitives, later domain-pack primitives
@@ -1094,6 +1095,48 @@ Stale items:
 
 Notes for future prompts:
 - Use `canon.phase1-product-interpretation-freeze.v1` together with `canon.phase1-source-decomposition.v1` as the accepted Phase 1 canon basis for P1.3 through P1.6.
+
+#### CF-0014 | 2026-04-11 | Source: P1.3 — Layer and primitive separation pack
+
+New information:
+- A review-ready P1.3 owner-layer pack now exists at `docs/control-plane/canon/phase-1-layer-and-primitive-separation-pack.md`.
+- The pack assigns one owner layer to the major primitive families across engine, shared environment, chat-domain, Task Studio, and later domain packs, and it explicitly names non-owners.
+- New artifact `canon.phase1-layer-primitive-separation.v1` is registered in the control-plane registry and dependency graph as `review_ready`.
+
+Impact:
+- P1.4 and P1.5 now have a concrete review-ready layer-ownership basis instead of leaving projection language and owner boundaries implicit.
+- Later semantic and architecture work now has one review-ready map for projection pairs, app-vs-shared ownership, and domain-pack containment.
+
+Status changes:
+- P1.3 marked in progress with validated review-ready deliverables present and human acceptance still pending.
+- Phase 1 remains in progress.
+
+Stale items:
+- None.
+
+Notes for future prompts:
+- Treat this pack as the review-ready owner-layer map, but do not treat it as accepted canon until a human explicitly approves it.
+- Preserve the rule that Task Studio owns a commissioned-work app projection, not the underlying shared primitives it uses.
+
+#### CF-0015 | 2026-04-11 | Source: P1.3 — Human acceptance and landing
+
+New information:
+- `docs/control-plane/canon/phase-1-layer-and-primitive-separation-pack.md` is now accepted for downstream use.
+- Artifact `canon.phase1-layer-primitive-separation.v1` has been promoted from `review_ready` to `accepted`.
+
+Impact:
+- P1.4 and P1.5 are now grounded on one accepted owner-layer map instead of a review-ready draft.
+- Later semantic and architecture work now has an accepted basis for owner-layer decisions, projection pairs, and non-owner boundaries.
+
+Status changes:
+- P1.3 marked done.
+- The completion snapshot now records the Phase 1 layer and primitive separation pack as accepted.
+
+Stale items:
+- None.
+
+Notes for future prompts:
+- Use `canon.phase1-layer-primitive-separation.v1` together with the accepted P1.1 and P1.2 canon packs as the Phase 1 owner-layer baseline for later topology, seam, and semantic work.
 
 ---
 

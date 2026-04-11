@@ -146,6 +146,12 @@
       "artifact_type_id": "canon.interpretation_pack",
       "artifact_status": "accepted",
       "canonical_locator": "docs/control-plane/canon/phase-1-canon-freeze-and-resolved-product-interpretation.md"
+    },
+    {
+      "artifact_id": "canon.phase1-layer-primitive-separation.v1",
+      "artifact_type_id": "canon.interpretation_pack",
+      "artifact_status": "accepted",
+      "canonical_locator": "docs/control-plane/canon/phase-1-layer-and-primitive-separation-pack.md"
     }
   ],
   "edges": [
@@ -708,6 +714,70 @@
       "edge_type": "depends_on",
       "propagation_mode": "auto",
       "notes": "The note carries forward the accepted non-negotiable shortcut constraints directly."
+    },
+    {
+      "edge_id": "e-071",
+      "from_artifact_id": "canon.phase1-layer-primitive-separation.v1",
+      "to_artifact_id": "cp.master-plan.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "P1.3 scope, acceptance discipline, and carry-forward rules come from the master plan."
+    },
+    {
+      "edge_id": "e-072",
+      "from_artifact_id": "canon.phase1-layer-primitive-separation.v1",
+      "to_artifact_id": "cp.artifact-control-plane-spec.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The pack reuses accepted P0.1 artifact, validation-hook, and stale-rule semantics."
+    },
+    {
+      "edge_id": "e-073",
+      "from_artifact_id": "canon.phase1-layer-primitive-separation.v1",
+      "to_artifact_id": "canon.phase1-source-decomposition.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted P1.1 pack provides the normalized terminology and contradiction handling basis."
+    },
+    {
+      "edge_id": "e-074",
+      "from_artifact_id": "canon.phase1-layer-primitive-separation.v1",
+      "to_artifact_id": "canon.phase1-product-interpretation-freeze.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted P1.2 note fixes wedge, north star, release order, and projection-vs-ontology interpretation."
+    },
+    {
+      "edge_id": "e-075",
+      "from_artifact_id": "canon.phase1-layer-primitive-separation.v1",
+      "to_artifact_id": "sa.all-prims.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "Primitive-set ownership and layer boundary rules come from the accepted primitive-set authority."
+    },
+    {
+      "edge_id": "e-076",
+      "from_artifact_id": "canon.phase1-layer-primitive-separation.v1",
+      "to_artifact_id": "sa.chat-native-release-plan.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "Release-view and chat-domain ownership limits come from the accepted release doctrine."
+    },
+    {
+      "edge_id": "e-077",
+      "from_artifact_id": "canon.phase1-layer-primitive-separation.v1",
+      "to_artifact_id": "sa.task-studio-north-star.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "Task Studio app-layer ownership and non-owner rules come from the accepted north-star authority."
+    },
+    {
+      "edge_id": "e-078",
+      "from_artifact_id": "canon.phase1-layer-primitive-separation.v1",
+      "to_artifact_id": "cp.forbidden-shortcuts-register.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The pack preserves the accepted anti-drift ownership constraints, especially no competing truth models and no repo-shape architecture drift."
     }
   ]
 }
