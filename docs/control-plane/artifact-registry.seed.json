@@ -7458,6 +7458,309 @@
         "P5.6 review-ready Task Studio V1 scope pack narrowing initial family exposure, stage-centered surface scope, result/proof/delta expectations, and conservative reusable-execution exposure without reopening accepted semantics.",
         "Prepared for human review as the conservative V1 boundary feeding later handoff and surface-contract work; not yet accepted for downstream use."
       ]
+    },
+    {
+      "artifact_id": "reuse.phase5-commissioning-bridge-task-studio-handoff-contract.v1",
+      "artifact_type_id": "reuse.execution_governance_pack",
+      "title": "Phase 5 Commissioning Bridge -> Task Studio handoff contract",
+      "version": "1.0.0",
+      "artifact_status": "review_ready",
+      "semantic_owner": "Governance/proof steward",
+      "stewardship_mode": "human_only",
+      "acceptance_authority": "Human semantic owner",
+      "canonical_locator": "docs/control-plane/reuse/phase-5-commissioning-bridge-to-task-studio-handoff-contract.md",
+      "source_authority_refs": [
+        "cp.master-plan.v1",
+        "canon.phase1-product-interpretation-freeze.v1",
+        "canon.phase1-source-decomposition.v1",
+        "canon.phase1-layer-primitive-separation.v1",
+        "canon.phase1-surface-release-topology.v1",
+        "canon.phase1-rewrite-containment-seams.v1",
+        "canon.phase1-scenario-corpus.v1",
+        "sem.phase2-core-object-state-machines.v1",
+        "sem.phase2-run-class-taxonomy-protocol-kernel.v1",
+        "reuse.phase2-governance-authority-writeback-invariants.v1",
+        "reuse.phase2-proof-validation-invariants.v1",
+        "sem.phase2-chat-native-semantic-packs.v1",
+        "sem.phase2-projection-grammar-contracts.v1",
+        "arch.phase3-technical-architecture-baseline.v1",
+        "arch.phase3-context-compiler-topology.v1",
+        "arch.phase3-data-storage-provenance-spec.v1",
+        "arch.phase3-api-ipc-event-contracts.v1",
+        "arch.phase3-platform-gate-spec.v1",
+        "arch.phase3-architecture-sync-pass.v1",
+        "rel.chat-native-maturity-matrix.v1",
+        "rel.chat-native-milestone-architecture-plan.v1",
+        "rel.r6-governed-agent-applet-chat-contract.v1",
+        "rel.r7-commissioning-bridge-contract.v1",
+        "reuse.phase5-governance-authority-writeback-spec.v1",
+        "reuse.phase5-proof-validation-evaluation-spec.v1",
+        "reuse.phase5-run-class-protocol-packs.v1",
+        "reuse.phase5-workflow-trigger-applet-pack-integration-binding-specs.v1",
+        "reuse.phase5-task-studio-surface-lifecycle-contract-pack.v1",
+        "sa.all-prims.v1",
+        "sa.chat-native-release-plan.v1",
+        "sa.task-studio-north-star.v1"
+      ],
+      "dependency_refs": [
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.master-plan.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The master plan sets the P5.7 task, dependency order, deliverable, and acceptance bar for the Commissioning Bridge -> Task Studio handoff contract."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.artifact-control-plane-spec.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P0.1 control-plane spec defines artifact metadata, dependency semantics, validation hooks, and stale rules for this review-ready handoff contract."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "canon.phase1-product-interpretation-freeze.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P1.2 canon freeze fixes the projection-vs-ontology rule and Task Studio handoff direction that this contract must preserve."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "canon.phase1-source-decomposition.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P1.1 glossary and contradiction pack identifies `Acceptance Stack` and other R7 handoff vocabulary that this contract must normalize without redefining."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "canon.phase1-layer-primitive-separation.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P1.3 owner-layer pack keeps chat-domain additions and Task Studio surfaces as projections over shared commissioned-work primitives rather than new owners."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "canon.phase1-surface-release-topology.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P1.4 topology canon fixes R7 -> Task Studio as a handoff between projections over the same substrate rather than an ontology rewrite."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "canon.phase1-rewrite-containment-seams.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P1.5 seam map protects the high-blast-radius handoff and commissioned-work seams that this contract must keep stable."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "canon.phase1-scenario-corpus.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P1.6 scenario corpus grounds the handoff against commissioning, proof, branch, and persistence edge cases."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "sem.phase2-core-object-state-machines.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P2.1 core-object pack defines the shared Commission, Contract, Run, Proof, Delta, Review, and Writeback objects whose identities must survive handoff unchanged."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "sem.phase2-run-class-taxonomy-protocol-kernel.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P2.2 taxonomy fixes run-class meaning so the handoff may project families but may not translate or reclassify work."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "reuse.phase2-governance-authority-writeback-invariants.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P2.3 governance invariants define approval, lane separation, and authority semantics that must remain explicit after handoff."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "reuse.phase2-proof-validation-invariants.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P2.4 proof invariants define the minimum proof and failure visibility that the handoff may not lose."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "sem.phase2-chat-native-semantic-packs.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P2.5 release semantic packs define R7 as a chat-domain projection that must hand off to Task Studio without semantic translation."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "sem.phase2-projection-grammar-contracts.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P2.6 grammar contract defines the shared surface grammar that receives the R7 payload inside Task Studio."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "arch.phase3-technical-architecture-baseline.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P3.1 architecture baseline keeps the handoff on the same shared substrate and service seams rather than spawning a view-local backend."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "arch.phase3-context-compiler-topology.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P3.2 compiler topology keeps frozen admitted basis and context lineage stable across the handoff."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "arch.phase3-data-storage-provenance-spec.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P3.3 storage/provenance baseline keeps IDs, lineage, and append-only history reconstructable before and after the handoff."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "arch.phase3-api-ipc-event-contracts.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P3.4 API/IPC contracts define the typed events and refs that must continue to represent the handed-off objects."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "arch.phase3-platform-gate-spec.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P3.5 Platform Gate prevents the handoff from falling back to transcript truth, hidden state, or fake inspect surfaces."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "arch.phase3-architecture-sync-pass.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P3.6 sync pass confirms canon, semantics, release, and architecture seams remain aligned before this handoff is fixed."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "rel.chat-native-maturity-matrix.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P4.1 maturity matrix fixes the commissioning-grade control and monitor/inspect floors that the handoff assumes."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "rel.chat-native-milestone-architecture-plan.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P4.2 milestone plan defines R7 as the last chat-native bridge and Task Studio as the post-bridge commissioned-work surface depth."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "rel.r6-governed-agent-applet-chat-contract.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P4.8 contract defines reusable-execution context and background-run continuity that may cross the handoff when materially relevant."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "rel.r7-commissioning-bridge-contract.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P4.9 contract defines the exact shared-object handoff payload and the projection-not-rewrite obligation this pack makes surface-explicit."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "reuse.phase5-governance-authority-writeback-spec.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P5.1 governance pack defines authority, review, compensation, and writeback semantics that must survive the handoff unchanged."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "reuse.phase5-proof-validation-evaluation-spec.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P5.2 proof pack defines proof bundle, evaluator, and failure semantics that must remain inspectable after handoff."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "reuse.phase5-run-class-protocol-packs.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P5.3 protocol pack defines run-class protocol pins and proof hooks that the handoff must preserve as refs and inspectable lineage."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "reuse.phase5-workflow-trigger-applet-pack-integration-binding-specs.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P5.4 composition pack defines exact pinning, scoped bindings, and reusable-execution lineage refs that must not be rewritten during handoff."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "reuse.phase5-task-studio-surface-lifecycle-contract-pack.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P5.5 Task Studio pack defines the named surfaces and lifecycle stages that receive the R7 payload."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "reuse.phase5-task-studio-v1-scope-pack.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The review-ready P5.6 scope pack narrows V1 default landing and exposure choices that this handoff must honor without weakening exact payload preservation."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "sa.all-prims.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The primitive-set authority defines the shared commissioned-work primitives and projection boundaries the handoff must preserve."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "sa.chat-native-release-plan.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The release doctrine fixes Task Studio as the commissioned-work target beyond R7 and forbids transcript-first handoff shortcuts."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "sa.task-studio-north-star.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The north-star authority defines Task Studio as a general commissioned-work, run-native, proof-returning app whose surfaces receive the R7 payload."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.forbidden-shortcuts-register.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The forbidden-shortcuts register blocks second truth models, silent apply, and per-view backends from re-entering through the handoff."
+        }
+      ],
+      "validation_hooks": [
+        {
+          "hook_id": "vh.dependency.integrity"
+        },
+        {
+          "hook_id": "vh.source.trace-review"
+        },
+        {
+          "hook_id": "vh.consistency.cross-pack-review"
+        },
+        {
+          "hook_id": "vh.manual.acceptance"
+        }
+      ],
+      "stale_rule_id": "sr.derivative.manual",
+      "notes": [
+        "P5.7 review-ready Commissioning Bridge -> Task Studio handoff contract mapping the accepted R7 payload onto Task Studio surfaces, lifecycle landings, and continuity rules without ontology translation.",
+        "Prepared for human review as the exact projection baseline for later surface-contract work; not yet accepted for downstream use."
+      ]
     }
   ]
 }

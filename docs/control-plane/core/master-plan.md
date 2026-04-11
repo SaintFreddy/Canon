@@ -1863,3 +1863,25 @@ Stale items:
 Notes for future prompts:
 - Treat `reuse.phase5-task-studio-v1-scope-pack.v1` as the review-ready V1 exposure and non-goal basis for task-family vocabulary, primary-vs-companion surface exposure, artifact-lane-first persistence, and onboarding/category-teaching constraints.
 - Do not treat it as accepted until a human explicitly approves it; preserve the rule that V1 narrows exposure/defaults only and does not redefine lifecycle, task-family mapping, proof, governance, or handoff meaning.
+
+#### CF-0047 | 2026-04-11 | Source: P5.7 — Commissioning Bridge -> Task Studio handoff contract
+
+New information:
+- A review-ready P5.7 support pack now exists at `docs/control-plane/reuse/phase-5-commissioning-bridge-to-task-studio-handoff-contract.md`.
+- Artifact `reuse.phase5-commissioning-bridge-task-studio-handoff-contract.v1` is registered in the control-plane registry and dependency graph as `review_ready`.
+- The pack maps the accepted R7 commissioning payload, `Acceptance Stack`, and `Chat-to-Run Handoff` onto Task Studio surfaces, lifecycle landings, proof/delta/writeback continuity, and reusable-execution lineage without ontology translation.
+
+Impact:
+- P5.7 now has a concrete review-ready handoff basis for human approval instead of re-deriving exact surface mappings from R7 and P5.5.
+- P6.1 can treat the R7 -> Task Studio projection and lifecycle landing matrix as explicit while preserving the human-owned acceptance boundary.
+
+Status changes:
+- P5.7 remains pending in the master plan, with validated review-ready deliverables present and human acceptance still pending.
+- Phase 5 remains in progress pending human acceptance of P5.6-P5.7.
+
+Stale items:
+- None.
+
+Notes for future prompts:
+- Treat `reuse.phase5-commissioning-bridge-task-studio-handoff-contract.v1` together with `reuse.phase5-task-studio-v1-scope-pack.v1` as the review-ready R7 -> Task Studio projection baseline for exact payload preservation, `Acceptance Stack` decomposition, default landings, and reusable-execution continuity.
+- Do not treat it as accepted until a human explicitly approves it; preserve the rule that Task Studio is a projection change, not a semantic translation or rewrite destination.
