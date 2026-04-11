@@ -232,6 +232,7 @@ This section answers, in plain terms, what is already done and what is not.
 - [x] The Phase 5 full governance, authority, and writeback spec has been produced and accepted.
 - [x] The Phase 5 full proof, validation, and evaluation spec has been produced and accepted.
 - [x] The Phase 5 full run-class protocol packs have been produced and accepted.
+- [x] The Phase 5 Workflow / Trigger / Applet / Pack / Integration Binding specs have been produced and accepted.
 
 ### 5.2 Not done yet
 
@@ -687,7 +688,7 @@ This phase is done when governance, proof, protocol packs, reusable execution ob
 - **Acceptance:** reusable execution is typed and versionable
 - **Carry-forward topics:** protocol versioning rules, defaults by run class, fixture changes, failure-class refinements
 
-#### [ ] P5.4 — Workflow / Trigger / Applet / Pack / Integration Binding specs
+#### [x] P5.4 — Workflow / Trigger / Applet / Pack / Integration Binding specs
 - **Mode:** Human + Factory
 - **Depends on:** P5.3
 - **Deliverable:** reusable execution composition specs and packaging specs
@@ -1776,6 +1777,30 @@ Stale items:
 
 Notes for future prompts:
 - Use `reuse.phase5-run-class-protocol-packs.v1` together with `reuse.phase5-governance-authority-writeback-spec.v1`, `reuse.phase5-proof-validation-evaluation-spec.v1`, `sem.phase2-run-class-taxonomy-protocol-kernel.v1`, `rel.r6-governed-agent-applet-chat-contract.v1`, `rel.r7-commissioning-bridge-contract.v1`, `reuse.phase2-governance-authority-writeback-invariants.v1`, `reuse.phase2-proof-validation-invariants.v1`, `arch.phase3-context-compiler-topology.v1`, and `arch.phase3-api-ipc-event-contracts.v1` as the protocol baseline for P5.4-P5.7.
+
+
+#### CF-0044 | 2026-04-11 | Source: P5.4 — Workflow / Trigger / Applet / Pack / Integration Binding specs
+
+New information:
+- `docs/control-plane/reuse/phase-5-workflow-trigger-applet-pack-and-integration-binding-specs.md` is now accepted for downstream use.
+- Artifact `reuse.phase5-workflow-trigger-applet-pack-integration-binding-specs.v1` has been registered as `accepted`.
+- The accepted Phase 5 composition pack now makes workflow stages, trigger enablement, applet pinning, pack lifecycle, and scoped integration-binding rules machine-usable without inventing a second reusable-execution ontology.
+
+Impact:
+- Phase 5 now has an accepted reusable-execution composition baseline on top of the accepted protocol, governance, and proof layers.
+- P5.5 can specify Task Studio surfaces and lifecycle stages against exact workflow/applet/trigger/pack/binding objects instead of app-local execution lore.
+- P5.6-P5.7 can narrow V1 exposure and handoff behavior while preserving exact version pinning, scoped binding, and background-parity continuity.
+
+Status changes:
+- P5.4 marked done.
+- The completion snapshot now records the Phase 5 Workflow / Trigger / Applet / Pack / Integration Binding specs as accepted.
+- Phase 5 remains in progress pending P5.5-P5.7.
+
+Stale items:
+- None.
+
+Notes for future prompts:
+- Use `reuse.phase5-workflow-trigger-applet-pack-integration-binding-specs.v1` together with `reuse.phase5-run-class-protocol-packs.v1`, `reuse.phase5-governance-authority-writeback-spec.v1`, `reuse.phase5-proof-validation-evaluation-spec.v1`, `rel.r6-governed-agent-applet-chat-contract.v1`, `rel.r7-commissioning-bridge-contract.v1`, `sem.phase2-projection-grammar-contracts.v1`, `arch.phase3-context-compiler-topology.v1`, and `arch.phase3-api-ipc-event-contracts.v1` as the reusable-execution composition baseline for P5.5-P5.7.
 
 ---
 
