@@ -224,6 +224,12 @@
       "artifact_type_id": "arch.technical_architecture_pack",
       "artifact_status": "accepted",
       "canonical_locator": "docs/control-plane/architecture/phase-3-data-storage-indexing-and-provenance-spec.md"
+    },
+    {
+      "artifact_id": "arch.phase3-api-ipc-event-contracts.v1",
+      "artifact_type_id": "arch.technical_architecture_pack",
+      "artifact_status": "accepted",
+      "canonical_locator": "docs/control-plane/architecture/phase-3-api-ipc-and-event-contract-spec.md"
     }
   ],
   "edges": [
@@ -2058,6 +2064,142 @@
       "edge_type": "informs",
       "propagation_mode": "none",
       "notes": "The accepted P1.3 owner-layer map informs which storage concerns belong to engine/runtime substrate versus app projections."
+    },
+    {
+      "edge_id": "e-230",
+      "from_artifact_id": "arch.phase3-api-ipc-event-contracts.v1",
+      "to_artifact_id": "cp.master-plan.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "P3.4 scope, sequencing, and carry-forward rules come from the master plan."
+    },
+    {
+      "edge_id": "e-231",
+      "from_artifact_id": "arch.phase3-api-ipc-event-contracts.v1",
+      "to_artifact_id": "cp.artifact-control-plane-spec.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The API/IPC/event pack reuses accepted P0.1 artifact, validation-hook, and stale-rule semantics."
+    },
+    {
+      "edge_id": "e-232",
+      "from_artifact_id": "arch.phase3-api-ipc-event-contracts.v1",
+      "to_artifact_id": "arch.phase3-technical-architecture-baseline.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted P3.1 baseline defines the runtime planes and process boundaries this contract pack must type explicitly."
+    },
+    {
+      "edge_id": "e-233",
+      "from_artifact_id": "arch.phase3-api-ipc-event-contracts.v1",
+      "to_artifact_id": "arch.phase3-data-storage-provenance-spec.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted P3.3 storage/provenance baseline defines the authoritative event and lineage substrate carried by these contracts."
+    },
+    {
+      "edge_id": "e-234",
+      "from_artifact_id": "arch.phase3-api-ipc-event-contracts.v1",
+      "to_artifact_id": "arch.phase3-context-compiler-topology.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted P3.2 compiler topology defines the frozen packs, replay bases, and compiler events that cross these boundaries."
+    },
+    {
+      "edge_id": "e-235",
+      "from_artifact_id": "arch.phase3-api-ipc-event-contracts.v1",
+      "to_artifact_id": "sem.phase2-core-object-state-machines.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted P2.1 object model defines the run, branch, review, approval, proof, delta, and writeback refs carried in boundary messages."
+    },
+    {
+      "edge_id": "e-236",
+      "from_artifact_id": "arch.phase3-api-ipc-event-contracts.v1",
+      "to_artifact_id": "sem.phase2-run-class-taxonomy-protocol-kernel.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted P2.2 pack defines protocol-kernel fields, run-class defaults, and verifier slots that admission and execution messages must preserve."
+    },
+    {
+      "edge_id": "e-237",
+      "from_artifact_id": "arch.phase3-api-ipc-event-contracts.v1",
+      "to_artifact_id": "reuse.phase2-governance-authority-writeback-invariants.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted P2.3 invariants require typed authority, review, approval, and lane-local writeback messages."
+    },
+    {
+      "edge_id": "e-238",
+      "from_artifact_id": "arch.phase3-api-ipc-event-contracts.v1",
+      "to_artifact_id": "reuse.phase2-proof-validation-invariants.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted P2.4 invariants require replay, failure, and validation events to remain inspectable and attached to run truth."
+    },
+    {
+      "edge_id": "e-239",
+      "from_artifact_id": "arch.phase3-api-ipc-event-contracts.v1",
+      "to_artifact_id": "sem.phase2-projection-grammar-contracts.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted P2.6 grammar pack informs which views consume monitor, queue, timeline, ledger, compare, and console events without redefining their meaning."
+    },
+    {
+      "edge_id": "e-240",
+      "from_artifact_id": "arch.phase3-api-ipc-event-contracts.v1",
+      "to_artifact_id": "canon.phase1-rewrite-containment-seams.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted P1.5 seam map identifies run identity, writeback separation, approval boundaries, and branch/replay semantics as high-blast-radius seams."
+    },
+    {
+      "edge_id": "e-241",
+      "from_artifact_id": "arch.phase3-api-ipc-event-contracts.v1",
+      "to_artifact_id": "canon.phase1-scenario-corpus.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted P1.6 scenarios define replay, lane-local approval, commissioning, and live-monitor continuity cases the contract pack must preserve."
+    },
+    {
+      "edge_id": "e-242",
+      "from_artifact_id": "arch.phase3-api-ipc-event-contracts.v1",
+      "to_artifact_id": "sa.all-prims.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The primitive-set authority defines shared-environment APIs, runtime eventing, approval primitives, and adapter layers this spec grounds."
+    },
+    {
+      "edge_id": "e-243",
+      "from_artifact_id": "arch.phase3-api-ipc-event-contracts.v1",
+      "to_artifact_id": "sa.chat-native-release-plan.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The release doctrine requires chat-native releases to surface approvals, replay, writeback, and live monitoring over shared contracts."
+    },
+    {
+      "edge_id": "e-244",
+      "from_artifact_id": "arch.phase3-api-ipc-event-contracts.v1",
+      "to_artifact_id": "sa.task-studio-north-star.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The north-star authority requires commissioned work, proofs, deltas, and governed execution to remain typed across surfaces and runtimes."
+    },
+    {
+      "edge_id": "e-245",
+      "from_artifact_id": "arch.phase3-api-ipc-event-contracts.v1",
+      "to_artifact_id": "cp.forbidden-shortcuts-register.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The contract baseline must preserve no hidden transcript truth, no separate backend per view, no silent proposal application, and no agent-builder-first drift."
+    },
+    {
+      "edge_id": "e-246",
+      "from_artifact_id": "arch.phase3-api-ipc-event-contracts.v1",
+      "to_artifact_id": "canon.phase1-layer-primitive-separation.v1",
+      "edge_type": "informs",
+      "propagation_mode": "none",
+      "notes": "The accepted P1.3 owner-layer map informs which commands and events terminate in engine, shared environment, or projection layers."
     }
   ]
 }

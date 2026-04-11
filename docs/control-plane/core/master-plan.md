@@ -217,10 +217,11 @@ This section answers, in plain terms, what is already done and what is not.
 - [x] The Phase 3 high-level technical architecture baseline has been produced and accepted.
 - [x] The Phase 3 context compiler / retrieval / memory / canon topology has been produced and accepted.
 - [x] The Phase 3 data / storage / indexing / provenance spec has been produced and accepted.
+- [x] The Phase 3 API / IPC / event contract spec has been produced and accepted.
 
 ### 5.2 Not done yet
 
-- [ ] The remaining Phase 3 API/event and Platform Gate artifacts have not yet been produced and accepted.
+- [ ] The remaining Phase 3 Platform Gate artifact and architecture sync pass have not yet been completed.
 - [ ] The release contract packs for Platform Gate through R7 have been produced and accepted.
 - [ ] The full reusable semantics and Task Studio readiness packs have been produced and accepted.
 - [ ] The repo/package architecture and agent execution system have been implemented.
@@ -544,7 +545,7 @@ This phase is done when the technical baseline, compiler topology, data/storage/
 - **Acceptance:** storage and provenance lanes are explicit and separable
 - **Carry-forward topics:** storage-class decisions, provenance model changes, rebuild rules, migration implications
 
-#### [ ] P3.4 — API / IPC / event contract spec
+#### [x] P3.4 — API / IPC / event contract spec
 - **Mode:** Human + Factory
 - **Depends on:** P3.1 and P3.3
 - **Deliverable:** contracts for environment shell <-> engine, app <-> engine, UI <-> workers, runtime <-> model gateway, runtime <-> tool adapters, approvals/branching/replay/writeback/live-monitor events
@@ -1394,6 +1395,27 @@ Stale items:
 
 Notes for future prompts:
 - Use `arch.phase3-data-storage-provenance-spec.v1` together with the accepted P3.1 and P3.2 architecture packs as the storage/provenance baseline for API/event contracts, Platform Gate, and later stale/regeneration automation.
+
+#### CF-0028 | 2026-04-11 | Source: P3.4 — API / IPC / event contract spec
+
+New information:
+- `docs/control-plane/architecture/phase-3-api-ipc-and-event-contract-spec.md` now defines the accepted boundary-contract baseline for APIs, internal IPC, gateway adapters, and shared event families.
+- Artifact `arch.phase3-api-ipc-event-contracts.v1` is registered in the control-plane registry and dependency graph as `accepted`.
+
+Impact:
+- Phase 3 now has an accepted contract baseline covering environment/control boundaries, worker IPC, gateway adapters, and event-spine semantics for approvals, branching, replay, writeback, and live monitoring.
+- The program now has one explicit rule set preventing direct UI-to-worker RPC and transcript-blob boundary contracts.
+
+Status changes:
+- P3.4 marked done.
+- The completion snapshot now records the Phase 3 API / IPC / event contract spec as accepted.
+- Phase 3 remains in progress pending Platform Gate and the final architecture sync pass.
+
+Stale items:
+- None.
+
+Notes for future prompts:
+- Use `arch.phase3-api-ipc-event-contracts.v1` together with the accepted P3.1-P3.3 architecture packs as the API/event baseline for Platform Gate, release contracts, and later service/package boundary planning.
 
 ---
 
