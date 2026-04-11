@@ -206,6 +206,7 @@ This section answers, in plain terms, what is already done and what is not.
 - [x] The Phase 1 canon freeze / resolved product interpretation note has been produced and accepted.
 - [x] The Phase 1 layer and primitive separation pack has been produced and accepted.
 - [x] The Phase 1 surface and release topology canon has been produced and accepted.
+- [x] The Phase 1 rewrite-containment / stable seam map has been produced and accepted.
 
 ### 5.2 Not done yet
 
@@ -434,7 +435,7 @@ This phase is done when there is one accepted canon for what belongs in engine, 
 - **Acceptance:** the platform has one accepted topology story and one accepted release-path story
 - **Carry-forward topics:** topology corrections, surface vocabulary, handoff rules, mode/projection clarifications
 
-#### [ ] P1.5 — Rewrite-containment / stable seam map
+#### [x] P1.5 — Rewrite-containment / stable seam map
 - **Mode:** Human-only
 - **Depends on:** P1.3 and P1.4
 - **Deliverable:** stable seam map showing what must be stable now, what can change later, and what would be catastrophic to rewrite
@@ -1158,6 +1159,26 @@ Stale items:
 
 Notes for future prompts:
 - Use `canon.phase1-surface-release-topology.v1` together with the accepted P1.1-P1.3 canon artifacts as the Phase 1 topology baseline for P1.5, P1.6, and Phase 4 release packs.
+
+#### CF-0017 | 2026-04-11 | Source: P1.5 — Rewrite-containment / stable seam map
+
+New information:
+- `docs/control-plane/canon/phase-1-rewrite-containment-and-stable-seam-map.md` now defines the accepted high-, medium-, and low-blast-radius seams for the substrate, bridge releases, and app projections.
+- Artifact `canon.phase1-rewrite-containment-seams.v1` is registered in the control-plane registry and dependency graph as `accepted`.
+
+Impact:
+- Phase 1 now has an accepted rewrite-containment basis for architecture, scenario, and repo/package work.
+- High-blast-radius seams are now explicit enough to guide later implementation without relying on hidden assumptions.
+
+Status changes:
+- P1.5 marked done.
+- The completion snapshot now records the Phase 1 rewrite-containment / stable seam map as accepted.
+
+Stale items:
+- None.
+
+Notes for future prompts:
+- Use `canon.phase1-rewrite-containment-seams.v1` together with the accepted P1.1-P1.4 canon artifacts as the Phase 1 rewrite-containment baseline for P1.6, Phase 3 architecture, and Phase 6 repo/package planning.
 
 ---
 

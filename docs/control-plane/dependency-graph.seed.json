@@ -158,6 +158,12 @@
       "artifact_type_id": "canon.interpretation_pack",
       "artifact_status": "accepted",
       "canonical_locator": "docs/control-plane/canon/phase-1-surface-and-release-topology-canon.md"
+    },
+    {
+      "artifact_id": "canon.phase1-rewrite-containment-seams.v1",
+      "artifact_type_id": "canon.interpretation_pack",
+      "artifact_status": "accepted",
+      "canonical_locator": "docs/control-plane/canon/phase-1-rewrite-containment-and-stable-seam-map.md"
     }
   ],
   "edges": [
@@ -848,6 +854,78 @@
       "edge_type": "informs",
       "propagation_mode": "none",
       "notes": "The accepted P1.3 owner-layer map informs surface ownership and non-owner clarifications without changing P1.4 dependency order."
+    },
+    {
+      "edge_id": "e-087",
+      "from_artifact_id": "canon.phase1-rewrite-containment-seams.v1",
+      "to_artifact_id": "cp.master-plan.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "P1.5 scope, acceptance discipline, and carry-forward rules come from the master plan."
+    },
+    {
+      "edge_id": "e-088",
+      "from_artifact_id": "canon.phase1-rewrite-containment-seams.v1",
+      "to_artifact_id": "cp.artifact-control-plane-spec.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The seam map reuses accepted P0.1 artifact, validation-hook, and stale-rule semantics."
+    },
+    {
+      "edge_id": "e-089",
+      "from_artifact_id": "canon.phase1-rewrite-containment-seams.v1",
+      "to_artifact_id": "canon.phase1-layer-primitive-separation.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted P1.3 owner-layer map defines where the high-blast-radius seams live."
+    },
+    {
+      "edge_id": "e-090",
+      "from_artifact_id": "canon.phase1-rewrite-containment-seams.v1",
+      "to_artifact_id": "canon.phase1-surface-release-topology.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted P1.4 topology canon defines the bridge stages and handoff path the seam map protects."
+    },
+    {
+      "edge_id": "e-091",
+      "from_artifact_id": "canon.phase1-rewrite-containment-seams.v1",
+      "to_artifact_id": "canon.phase1-product-interpretation-freeze.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted P1.2 note fixes wedge, north star, release order, and projection-vs-ontology interpretation."
+    },
+    {
+      "edge_id": "e-092",
+      "from_artifact_id": "canon.phase1-rewrite-containment-seams.v1",
+      "to_artifact_id": "sa.all-prims.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The primitive-set authority defines the core substrate semantics that must not drift."
+    },
+    {
+      "edge_id": "e-093",
+      "from_artifact_id": "canon.phase1-rewrite-containment-seams.v1",
+      "to_artifact_id": "sa.chat-native-release-plan.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The release doctrine fixes Platform Gate, R4, and R7 as key bridge stages."
+    },
+    {
+      "edge_id": "e-094",
+      "from_artifact_id": "canon.phase1-rewrite-containment-seams.v1",
+      "to_artifact_id": "sa.task-studio-north-star.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The north-star commissioned-work model defines the final handoff and high-blast-radius commissioned-work seams."
+    },
+    {
+      "edge_id": "e-095",
+      "from_artifact_id": "canon.phase1-rewrite-containment-seams.v1",
+      "to_artifact_id": "cp.forbidden-shortcuts-register.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The seam map carries forward accepted anti-drift constraints, especially no transcript-first rewrite trap and no repo-shape architecture drift."
     }
   ]
 }
