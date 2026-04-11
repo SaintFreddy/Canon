@@ -272,6 +272,12 @@
       "artifact_type_id": "rel.release_contract_pack",
       "artifact_status": "accepted",
       "canonical_locator": "docs/control-plane/releases/r3-branch-visual-thinker-contract/phase-4-r3-branch-visual-thinker-contract-pack.md"
+    },
+    {
+      "artifact_id": "rel.r4-artifact-workspace-contract.v1",
+      "artifact_type_id": "rel.release_contract_pack",
+      "artifact_status": "accepted",
+      "canonical_locator": "docs/control-plane/releases/r4-artifact-workspace-contract/phase-4-r4-artifact-workspace-contract-pack.md"
     }
   ],
   "edges": [
@@ -3346,6 +3352,174 @@
       "edge_type": "informs",
       "propagation_mode": "none",
       "notes": "The accepted P1.2 interpretation note informs the fixed chat-native wedge and projection-vs-ontology discipline that R3 must preserve."
+    },
+    {
+      "edge_id": "e-385",
+      "from_artifact_id": "rel.r4-artifact-workspace-contract.v1",
+      "to_artifact_id": "cp.master-plan.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "P4.6 scope, sequencing, and carry-forward rules come from the master plan."
+    },
+    {
+      "edge_id": "e-386",
+      "from_artifact_id": "rel.r4-artifact-workspace-contract.v1",
+      "to_artifact_id": "cp.artifact-control-plane-spec.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The R4 contract pack reuses accepted P0.1 artifact, validation-hook, and stale-rule semantics."
+    },
+    {
+      "edge_id": "e-387",
+      "from_artifact_id": "rel.r4-artifact-workspace-contract.v1",
+      "to_artifact_id": "canon.phase1-surface-release-topology.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted P1.4 topology canon defines R4 as the artifact workspace stage with focal artifacts, proposal inbox behavior, and artifact-centered continuity over run history."
+    },
+    {
+      "edge_id": "e-388",
+      "from_artifact_id": "rel.r4-artifact-workspace-contract.v1",
+      "to_artifact_id": "canon.phase1-rewrite-containment-seams.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted P1.5 seam map defines the `SS-02`, `SS-03`, and `SS-04` locks that R4 must preserve while shifting visible continuity out of transcript gravity."
+    },
+    {
+      "edge_id": "e-389",
+      "from_artifact_id": "rel.r4-artifact-workspace-contract.v1",
+      "to_artifact_id": "canon.phase1-scenario-corpus.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted P1.6 scenario corpus defines `GS-06`, `GS-07`, and `EC-03` as protected R4 pathways and failure cases."
+    },
+    {
+      "edge_id": "e-390",
+      "from_artifact_id": "rel.r4-artifact-workspace-contract.v1",
+      "to_artifact_id": "sem.phase2-core-object-state-machines.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted P2.1 object model defines the Artifact, Run, Proof Bundle, State Delta, Writeback Proposal, Review, and Approval Decision identities that R4 must expose directly."
+    },
+    {
+      "edge_id": "e-391",
+      "from_artifact_id": "rel.r4-artifact-workspace-contract.v1",
+      "to_artifact_id": "sem.phase2-run-class-taxonomy-protocol-kernel.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted P2.2 pack defines transform, audit, and synthesize as the main run-class emphases for artifact-targeted work without inventing an artifact-only execution class."
+    },
+    {
+      "edge_id": "e-392",
+      "from_artifact_id": "rel.r4-artifact-workspace-contract.v1",
+      "to_artifact_id": "sem.phase2-chat-native-semantic-packs.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted P2.5 semantic pack defines the R4 shared-object substrate, projection additions, and handoff obligation to R5."
+    },
+    {
+      "edge_id": "e-393",
+      "from_artifact_id": "rel.r4-artifact-workspace-contract.v1",
+      "to_artifact_id": "sem.phase2-projection-grammar-contracts.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted P2.6 grammar pack defines the Canvas, Browser / Library, Ledger, Queue / Inbox, and Diff / Merge compositions that R4 may foreground without inventing a private backend."
+    },
+    {
+      "edge_id": "e-394",
+      "from_artifact_id": "rel.r4-artifact-workspace-contract.v1",
+      "to_artifact_id": "cp.forbidden-shortcuts-register.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted forbidden-shortcuts register defines the silent-proposal-application and artifact-local-truth shortcuts that R4 must explicitly refuse."
+    },
+    {
+      "edge_id": "e-395",
+      "from_artifact_id": "rel.r4-artifact-workspace-contract.v1",
+      "to_artifact_id": "arch.phase3-technical-architecture-baseline.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted P3.1 baseline defines the shared control/data/event substrate that artifact workspace, proposal review, and historical-truth inspection must project rather than replace."
+    },
+    {
+      "edge_id": "e-396",
+      "from_artifact_id": "rel.r4-artifact-workspace-contract.v1",
+      "to_artifact_id": "arch.phase3-context-compiler-topology.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted P3.2 compiler topology defines the frozen admitted basis and replayable context snapshots that preserve historical truth behind later artifact revisions."
+    },
+    {
+      "edge_id": "e-397",
+      "from_artifact_id": "rel.r4-artifact-workspace-contract.v1",
+      "to_artifact_id": "arch.phase3-data-storage-provenance-spec.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted P3.3 storage/provenance baseline defines the artifact revision, proposal, review, and lineage substrate that keeps R4 continuity reconstructable."
+    },
+    {
+      "edge_id": "e-398",
+      "from_artifact_id": "rel.r4-artifact-workspace-contract.v1",
+      "to_artifact_id": "arch.phase3-api-ipc-event-contracts.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted P3.4 contract baseline defines the typed review, approval, writeback, inspect-query, and event-spine seams that R4 must use."
+    },
+    {
+      "edge_id": "e-399",
+      "from_artifact_id": "rel.r4-artifact-workspace-contract.v1",
+      "to_artifact_id": "arch.phase3-platform-gate-spec.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted P3.5 Platform Gate artifact defines the inherited lane-separated writeback and typed event-spine blockers that remain binding in R4."
+    },
+    {
+      "edge_id": "e-400",
+      "from_artifact_id": "rel.r4-artifact-workspace-contract.v1",
+      "to_artifact_id": "arch.phase3-architecture-sync-pass.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted P3.6 sync pass confirms the accepted architecture baseline remains aligned before the R4 contract is fixed."
+    },
+    {
+      "edge_id": "e-401",
+      "from_artifact_id": "rel.r4-artifact-workspace-contract.v1",
+      "to_artifact_id": "rel.chat-native-maturity-matrix.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted P4.1 maturity matrix defines the `M4` floors for `pkg.shared-object-api` and `pkg.review-writeback` that R4 must treat as binding."
+    },
+    {
+      "edge_id": "e-402",
+      "from_artifact_id": "rel.r4-artifact-workspace-contract.v1",
+      "to_artifact_id": "rel.chat-native-milestone-architecture-plan.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted P4.2 milestone plan defines R4 as the artifact-continuity bridge stage and names the future-stage seams it must not pre-spend."
+    },
+    {
+      "edge_id": "e-403",
+      "from_artifact_id": "rel.r4-artifact-workspace-contract.v1",
+      "to_artifact_id": "rel.r3-branch-visual-thinker-contract.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted P4.5 R3 contract defines the branch lineage, proof/delta compare basis, and proposal-bearing branch returns that R4 must inherit rather than replace."
+    },
+    {
+      "edge_id": "e-404",
+      "from_artifact_id": "rel.r4-artifact-workspace-contract.v1",
+      "to_artifact_id": "canon.phase1-source-decomposition.v1",
+      "edge_type": "informs",
+      "propagation_mode": "none",
+      "notes": "The accepted P1.1 glossary and contradiction pack informs R4 vocabulary around artifact continuity, proposal behavior, and review anchors."
+    },
+    {
+      "edge_id": "e-405",
+      "from_artifact_id": "rel.r4-artifact-workspace-contract.v1",
+      "to_artifact_id": "canon.phase1-product-interpretation-freeze.v1",
+      "edge_type": "informs",
+      "propagation_mode": "none",
+      "notes": "The accepted P1.2 interpretation note informs the fixed chat-native wedge and projection-vs-ontology discipline that R4 must preserve."
     }
   ]
 }

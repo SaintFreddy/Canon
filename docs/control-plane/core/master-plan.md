@@ -225,6 +225,7 @@ This section answers, in plain terms, what is already done and what is not.
 - [x] The Phase 4 R1 Transcript Chat contract pack has been produced and accepted.
 - [x] The Phase 4 R2 Context Chat contract pack has been produced and accepted.
 - [x] The Phase 4 R3 Branch / Visual Thinker contract pack has been produced and accepted.
+- [x] The Phase 4 R4 Artifact Workspace contract pack has been produced and accepted.
 
 ### 5.2 Not done yet
 
@@ -619,7 +620,7 @@ This phase is done when the release-to-SDK matrix, milestone architecture, and c
 - **Acceptance:** branching is semantic and replayable, not transcript cloning
 - **Carry-forward topics:** branch types, replay semantics, compare rules, off-chain merge behavior
 
-#### [ ] P4.6 — R4 Artifact Workspace contract pack
+#### [x] P4.6 — R4 Artifact Workspace contract pack
 - **Mode:** Human + Factory
 - **Depends on:** P4.2
 - **Deliverable:** contract pack for focal artifacts, proposal inbox, root canon strip, review/approval loop, historical truth per run
@@ -1601,6 +1602,30 @@ Stale items:
 
 Notes for future prompts:
 - Use `rel.r3-branch-visual-thinker-contract.v1` together with `rel.r2-context-chat-contract.v1`, `rel.chat-native-milestone-architecture-plan.v1`, `rel.chat-native-maturity-matrix.v1`, and `arch.phase3-api-ipc-event-contracts.v1` as the accepted R3 contract baseline for P4.6 and later release-pack work.
+
+
+#### CF-0037 | 2026-04-11 | Source: P4.6 — R4 Artifact Workspace contract pack
+
+New information:
+- `docs/control-plane/releases/r4-artifact-workspace-contract/phase-4-r4-artifact-workspace-contract-pack.md` is now accepted for downstream use.
+- Artifact `rel.r4-artifact-workspace-contract.v1` has been registered as `accepted`.
+- The accepted R4 contract now fixes what artifact-centered continuity means: focal-artifact runs remain run-native, model outputs become explicit proposals with review and lane-local writeback behavior, historical truth stays frozen per run, and alternatives or objections remain first-class artifacts instead of comments or silent overwrites.
+
+Impact:
+- Phase 4 now has accepted contracts for R1 through R4.
+- P4.7 can proceed on an accepted artifact-governance boundary instead of inferring whether proposal inbox behavior, historical truth per run, artifact lineage, and lane-local review/writeback semantics are already real before prompt assets appear.
+- Later release packs can treat R4 as the bridge out of transcript gravity and the proof that durable mutation remains proposal-first and explicitly governed.
+
+Status changes:
+- P4.6 marked done.
+- The completion snapshot now records the Phase 4 R4 Artifact Workspace contract pack as accepted.
+- Phase 4 remains in progress pending P4.7-P4.9.
+
+Stale items:
+- None.
+
+Notes for future prompts:
+- Use `rel.r4-artifact-workspace-contract.v1` together with `rel.r3-branch-visual-thinker-contract.v1`, `rel.chat-native-milestone-architecture-plan.v1`, `rel.chat-native-maturity-matrix.v1`, and `arch.phase3-data-storage-provenance-spec.v1` as the accepted R4 contract baseline for P4.7 and later release-pack work.
 
 ---
 
