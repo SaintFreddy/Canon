@@ -7761,6 +7761,605 @@
         "P5.7 review-ready Commissioning Bridge -> Task Studio handoff contract mapping the accepted R7 payload onto Task Studio surfaces, lifecycle landings, and continuity rules without ontology translation.",
         "Prepared for human review as the exact projection baseline for later surface-contract work; not yet accepted for downstream use."
       ]
+    },
+    {
+      "artifact_id": "surf.phase6-shared-projection-grammar-surface-contract-pack.v1",
+      "artifact_type_id": "surf.surface_repo_pack",
+      "title": "Phase 6 shared projection grammar surface contract pack",
+      "version": "1.0.0",
+      "artifact_status": "accepted",
+      "semantic_owner": "Surface/repo steward",
+      "stewardship_mode": "human_factory",
+      "acceptance_authority": "Human architecture owner",
+      "canonical_locator": "docs/control-plane/surfaces/phase-6-shared-projection-grammar-surface-contract-pack.md",
+      "surface_scope": "Accepted Phase 6 surface-contract deepening of the shared projection grammar for route clusters, alias resolution, companion-surface rules, and cross-app surface composition",
+      "source_authority_refs": [
+        "cp.master-plan.v1",
+        "canon.phase1-product-interpretation-freeze.v1",
+        "canon.phase1-layer-primitive-separation.v1",
+        "canon.phase1-surface-release-topology.v1",
+        "canon.phase1-rewrite-containment-seams.v1",
+        "canon.phase1-scenario-corpus.v1",
+        "sem.phase2-core-object-state-machines.v1",
+        "sem.phase2-projection-grammar-contracts.v1",
+        "sem.phase2-chat-native-semantic-packs.v1",
+        "arch.phase3-architecture-sync-pass.v1",
+        "sa.all-prims.v1",
+        "sa.chat-native-release-plan.v1",
+        "sa.task-studio-north-star.v1"
+      ],
+      "dependency_refs": [
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.master-plan.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The master plan defines P6.1 as the surface-contract phase and sets the deliverable bundle that this pack begins."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.artifact-control-plane-spec.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P0.1 control-plane spec defines artifact metadata, dependency semantics, validation hooks, and stale rules for this surface contract pack."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "canon.phase1-product-interpretation-freeze.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P1.2 canon freeze fixes projection-vs-ontology and no-overbuild constraints that this pack must preserve."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "canon.phase1-layer-primitive-separation.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P1.3 owner-layer pack keeps surfaces below shared-object ownership and prevents grammar contracts from becoming new primitive owners."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "canon.phase1-surface-release-topology.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P1.4 topology canon defines the release path and Task Studio surface direction that later surface contracts must reuse."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "canon.phase1-rewrite-containment-seams.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P1.5 seam map protects high-blast-radius truth, continuity, and handoff boundaries that surface contracts may not relocate."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "canon.phase1-scenario-corpus.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P1.6 scenario corpus grounds the shared grammar contract against continuity, governance, and replay edge cases."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "sem.phase2-core-object-state-machines.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P2.1 core-object pack defines the shared objects that every surface contract must round-trip without replacement."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "sem.phase2-projection-grammar-contracts.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P2.6 grammar pack is the direct semantic baseline that this pack deepens into Phase 6 surface contracts."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "sem.phase2-chat-native-semantic-packs.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P2.5 release semantic packs inform how shared grammar aliases recur across the chat-native path."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "arch.phase3-architecture-sync-pass.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P3.6 sync pass confirms grammar, canon, release, and architecture seams remain aligned before surface contracts deepen them."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "sa.all-prims.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The primitive-set authority defines the shared object and projection boundaries that the grammar contracts must preserve."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "sa.chat-native-release-plan.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The release doctrine requires one reusable grammar underneath release surfaces instead of stage-private metaphors."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "sa.task-studio-north-star.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The north-star authority supplies the Task Studio-side surface expectations that must still resolve to the same grammar set."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.forbidden-shortcuts-register.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The forbidden-shortcuts register blocks transcript truth, second backends per view, and silent governance collapse from re-entering through surface contracts."
+        }
+      ],
+      "validation_hooks": [
+        {
+          "hook_id": "vh.dependency.integrity"
+        },
+        {
+          "hook_id": "vh.source.trace-review"
+        },
+        {
+          "hook_id": "vh.consistency.cross-pack-review"
+        },
+        {
+          "hook_id": "vh.manual.acceptance"
+        }
+      ],
+      "stale_rule_id": "sr.derivative.manual",
+      "notes": [
+        "P6.1 accepted shared grammar surface contract pack deepening the accepted projection grammar into route-cluster, alias-resolution, and companion-surface rules.",
+        "Accepted for downstream use as the Phase 6 shared surface-contract baseline for chat-native releases, Task Studio, and later domain packs."
+      ]
+    },
+    {
+      "artifact_id": "surf.phase6-chat-native-surface-contract-pack.v1",
+      "artifact_type_id": "surf.surface_repo_pack",
+      "title": "Phase 6 chat-native surface contract pack",
+      "version": "1.0.0",
+      "artifact_status": "accepted",
+      "semantic_owner": "Surface/repo steward",
+      "stewardship_mode": "human_factory",
+      "acceptance_authority": "Human architecture owner",
+      "canonical_locator": "docs/control-plane/surfaces/phase-6-chat-native-surface-contract-pack.md",
+      "surface_scope": "Accepted Phase 6 chat-native surface contract pack mapping R1-R7 surface clusters and aliases onto the shared projection grammar",
+      "source_authority_refs": [
+        "cp.master-plan.v1",
+        "canon.phase1-source-decomposition.v1",
+        "canon.phase1-surface-release-topology.v1",
+        "canon.phase1-rewrite-containment-seams.v1",
+        "canon.phase1-scenario-corpus.v1",
+        "sem.phase2-chat-native-semantic-packs.v1",
+        "rel.chat-native-maturity-matrix.v1",
+        "rel.chat-native-milestone-architecture-plan.v1",
+        "rel.r1-transcript-chat-contract.v1",
+        "rel.r2-context-chat-contract.v1",
+        "rel.r3-branch-visual-thinker-contract.v1",
+        "rel.r4-artifact-workspace-contract.v1",
+        "rel.r5-prompt-studio-contract.v1",
+        "rel.r6-governed-agent-applet-chat-contract.v1",
+        "rel.r7-commissioning-bridge-contract.v1"
+      ],
+      "dependency_refs": [
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.master-plan.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The master plan defines P6.1 as the surface-contract phase and requires chat-native surface contracts as part of the bundle."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.artifact-control-plane-spec.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P0.1 control-plane spec defines artifact metadata, dependency semantics, validation hooks, and stale rules for this chat-native surface pack."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "surf.phase6-shared-projection-grammar-surface-contract-pack.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted shared grammar surface pack defines the route-cluster and alias rules that chat-native release surfaces must inherit."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "canon.phase1-source-decomposition.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P1.1 glossary and contradiction pack identifies release-specific surface terms such as `Chatlet Projection`, `Acceptance Stack`, and `Chat-to-Run Handoff` that this pack normalizes."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "canon.phase1-surface-release-topology.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P1.4 topology canon fixes the release order and stage emphasis that the chat-native surface clusters must follow."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "canon.phase1-rewrite-containment-seams.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P1.5 seam map keeps chat-native surfaces from relocating truth into transcript-only or stage-private views."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "canon.phase1-scenario-corpus.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P1.6 scenario corpus grounds the release clusters against branching, artifact review, reusable execution, and commissioning edge cases."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "sem.phase2-chat-native-semantic-packs.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P2.5 release semantic packs define the shared object substrate and projection additions for each release surface cluster."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "rel.chat-native-maturity-matrix.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P4.1 maturity matrix fixes the package floors that chat-native surface clusters may assume."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "rel.chat-native-milestone-architecture-plan.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P4.2 milestone plan fixes what each release may expose and what it must refuse to overbuild."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "rel.r1-transcript-chat-contract.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted R1 contract fixes the bounded familiar chat cluster that this pack normalizes to shared grammar."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "rel.r2-context-chat-contract.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted R2 contract fixes the evidence/context-control cluster that this pack maps to shared grammar."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "rel.r3-branch-visual-thinker-contract.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted R3 contract fixes the branch/replay surface cluster that this pack maps to shared grammar."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "rel.r4-artifact-workspace-contract.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted R4 contract fixes the artifact workspace and proposal-review surface cluster that this pack maps to shared grammar."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "rel.r5-prompt-studio-contract.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted R5 contract fixes the prompt-asset cluster that this pack maps to shared grammar."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "rel.r6-governed-agent-applet-chat-contract.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted R6 contract fixes the reusable-execution and queue/inbox surface cluster that this pack maps to shared grammar."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "rel.r7-commissioning-bridge-contract.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted R7 contract fixes the commissioning bridge surfaces and handoff obligation that this pack maps to shared grammar."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.forbidden-shortcuts-register.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The forbidden-shortcuts register blocks transcript truth, hidden autonomy widening, silent apply, and second-stack drift from re-entering through chat-native surfaces."
+        }
+      ],
+      "validation_hooks": [
+        {
+          "hook_id": "vh.dependency.integrity"
+        },
+        {
+          "hook_id": "vh.source.trace-review"
+        },
+        {
+          "hook_id": "vh.consistency.cross-pack-review"
+        },
+        {
+          "hook_id": "vh.manual.acceptance"
+        }
+      ],
+      "stale_rule_id": "sr.derivative.manual",
+      "notes": [
+        "P6.1 accepted chat-native surface contract pack mapping R1-R7 surface clusters and aliases onto the shared grammar baseline.",
+        "Accepted for downstream use as the chat-native surface-contract basis feeding Task Studio handoff and later implementation-facing route planning."
+      ]
+    },
+    {
+      "artifact_id": "surf.phase6-task-studio-surface-contract-pack.v1",
+      "artifact_type_id": "surf.surface_repo_pack",
+      "title": "Phase 6 Task Studio surface contract pack",
+      "version": "1.0.0",
+      "artifact_status": "review_ready",
+      "semantic_owner": "Surface/repo steward",
+      "stewardship_mode": "human_factory",
+      "acceptance_authority": "Human architecture owner",
+      "canonical_locator": "docs/control-plane/surfaces/phase-6-task-studio-surface-contract-pack.md",
+      "surface_scope": "Review-ready Phase 6 Task Studio surface contract pack mapping named Task Studio surfaces, route contracts, lifecycle landings, and R7 handoff continuity onto the shared grammar",
+      "source_authority_refs": [
+        "cp.master-plan.v1",
+        "canon.phase1-layer-primitive-separation.v1",
+        "canon.phase1-surface-release-topology.v1",
+        "canon.phase1-rewrite-containment-seams.v1",
+        "canon.phase1-scenario-corpus.v1",
+        "sem.phase2-projection-grammar-contracts.v1",
+        "reuse.phase5-task-studio-surface-lifecycle-contract-pack.v1",
+        "reuse.phase5-run-class-protocol-packs.v1",
+        "reuse.phase5-workflow-trigger-applet-pack-integration-binding-specs.v1",
+        "rel.r7-commissioning-bridge-contract.v1",
+        "sa.task-studio-north-star.v1"
+      ],
+      "dependency_refs": [
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.master-plan.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The master plan defines P6.1 as the surface-contract phase and requires a Task Studio surface contract pack."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.artifact-control-plane-spec.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P0.1 control-plane spec defines artifact metadata, dependency semantics, validation hooks, and stale rules for this Task Studio surface pack."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "surf.phase6-shared-projection-grammar-surface-contract-pack.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted shared grammar surface pack defines the grammar and alias rules that every Task Studio route contract must inherit."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "canon.phase1-layer-primitive-separation.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P1.3 owner-layer pack keeps Task Studio surfaces as projections over shared primitives rather than new owners."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "canon.phase1-surface-release-topology.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P1.4 topology canon defines Task Studio as the commissioned-work app whose named surfaces this pack contracts."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "canon.phase1-rewrite-containment-seams.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P1.5 seam map protects the high-blast-radius Task Studio and handoff seams that this route contract layer must preserve."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "canon.phase1-scenario-corpus.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P1.6 scenario corpus grounds Task Studio route contracts against proof, replay, and persistence edge cases."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "sem.phase2-projection-grammar-contracts.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P2.6 grammar pack remains the underlying grammar baseline for every named Task Studio surface."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "reuse.phase5-task-studio-surface-lifecycle-contract-pack.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P5.5 Task Studio pack defines the named surfaces, lifecycle stages, layout rules, and progressive-disclosure floor that this pack contracts."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "reuse.phase5-task-studio-v1-scope-pack.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The review-ready P5.6 scope pack narrows V1 default landings, primary-vs-companion emphasis, and persistence posture that this pack must honor."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "reuse.phase5-commissioning-bridge-task-studio-handoff-contract.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The review-ready P5.7 handoff contract defines the exact R7 payload landing and continuity rules that this pack must surface-contract."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "rel.r7-commissioning-bridge-contract.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted R7 contract defines the upstream commissioning surfaces and payload that hand off into these Task Studio routes."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "reuse.phase5-run-class-protocol-packs.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P5.3 protocol pack keeps task-family/run-class meaning and protocol pins stable across Task Studio route contracts."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "reuse.phase5-workflow-trigger-applet-pack-integration-binding-specs.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P5.4 composition pack keeps reusable-execution lineage refs and exact pinning inspectable in the relevant Task Studio routes."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "sa.task-studio-north-star.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The north-star authority defines Task Studio as a general commissioned-work, run-native, proof-returning app whose named surfaces this pack contracts."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.forbidden-shortcuts-register.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The forbidden-shortcuts register blocks master-chat truth, silent apply, per-view backends, and hidden orchestration drift from re-entering through Task Studio routes."
+        }
+      ],
+      "validation_hooks": [
+        {
+          "hook_id": "vh.dependency.integrity"
+        },
+        {
+          "hook_id": "vh.source.trace-review"
+        },
+        {
+          "hook_id": "vh.consistency.cross-pack-review"
+        },
+        {
+          "hook_id": "vh.manual.acceptance"
+        }
+      ],
+      "stale_rule_id": "sr.derivative.manual",
+      "notes": [
+        "P6.1 review-ready Task Studio surface contract pack mapping named Task Studio surfaces, route contracts, lifecycle landings, and R7 handoff continuity onto the shared grammar baseline.",
+        "Prepared for human review pending acceptance of the review-ready P5.6/P5.7 support packs; not yet accepted for downstream use."
+      ]
+    },
+    {
+      "artifact_id": "surf.phase6-later-domain-surface-backlog-contract-pack.v1",
+      "artifact_type_id": "surf.surface_repo_pack",
+      "title": "Phase 6 later domain-surface backlog contract pack",
+      "version": "1.0.0",
+      "artifact_status": "accepted",
+      "semantic_owner": "Surface/repo steward",
+      "stewardship_mode": "human_factory",
+      "acceptance_authority": "Human architecture owner",
+      "canonical_locator": "docs/control-plane/surfaces/phase-6-later-domain-surface-backlog-contract-pack.md",
+      "surface_scope": "Accepted Phase 6 later domain-surface backlog contract pack reserving future surface families, grammar slots, and dependency gates without inventing domain semantics",
+      "source_authority_refs": [
+        "cp.master-plan.v1",
+        "canon.phase1-source-decomposition.v1",
+        "canon.phase1-layer-primitive-separation.v1",
+        "canon.phase1-surface-release-topology.v1",
+        "canon.phase1-rewrite-containment-seams.v1",
+        "sem.phase2-projection-grammar-contracts.v1",
+        "sa.all-prims.v1"
+      ],
+      "dependency_refs": [
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.master-plan.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The master plan defines P6.1 as including later domain-surface backlog contracts as part of the surface-contract bundle."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.artifact-control-plane-spec.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P0.1 control-plane spec defines artifact metadata, dependency semantics, validation hooks, and stale rules for this backlog pack."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "canon.phase1-source-decomposition.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P1.1 glossary identifies still-future domain-facing terms and keeps them explicitly out of accepted surface semantics until later packs resolve them."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "canon.phase1-layer-primitive-separation.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P1.3 owner-layer pack prevents later domain surfaces from re-owning shared commissioned-work primitives."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "canon.phase1-surface-release-topology.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P1.4 topology canon fixes the release and app topology that later domain packs must sit beside rather than reinterpret."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "canon.phase1-rewrite-containment-seams.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P1.5 seam map prevents later domain backlog planning from piercing high-blast-radius truth boundaries."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "sem.phase2-projection-grammar-contracts.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P2.6 grammar pack defines the only shared grammar families that later domain surfaces may reuse."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "surf.phase6-shared-projection-grammar-surface-contract-pack.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted shared grammar surface pack defines the route-cluster and alias rules that later domain packs must inherit."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "sa.all-prims.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The primitive-set authority keeps later domain packs from claiming shared primitives as domain-owned."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.forbidden-shortcuts-register.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The forbidden-shortcuts register blocks later domain packs from using implementation convenience, hidden state, or per-view backends as semantic shortcuts."
+        }
+      ],
+      "validation_hooks": [
+        {
+          "hook_id": "vh.dependency.integrity"
+        },
+        {
+          "hook_id": "vh.source.trace-review"
+        },
+        {
+          "hook_id": "vh.consistency.cross-pack-review"
+        },
+        {
+          "hook_id": "vh.manual.acceptance"
+        }
+      ],
+      "stale_rule_id": "sr.derivative.manual",
+      "notes": [
+        "P6.1 accepted later domain-surface backlog contract pack reserving future surface families, grammar slots, and dependency gates without inventing domain semantics.",
+        "Accepted for downstream use as the boundary-only backlog baseline feeding later domain surface work, repo/package planning, and implementation blueprints."
+      ]
     }
   ]
 }

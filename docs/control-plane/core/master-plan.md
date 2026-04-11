@@ -251,7 +251,7 @@ This section answers, in plain terms, what is already done and what is not.
 - [x] Phase 3 — done in the repo
 - [x] Phase 4 — done in the repo
 - [~] Phase 5 — in progress
-- [ ] Phase 6 — not done
+- [~] Phase 6 — in progress
 - [ ] Phase 7 — not done
 
 ---
@@ -1885,3 +1885,27 @@ Stale items:
 Notes for future prompts:
 - Treat `reuse.phase5-commissioning-bridge-task-studio-handoff-contract.v1` together with `reuse.phase5-task-studio-v1-scope-pack.v1` as the review-ready R7 -> Task Studio projection baseline for exact payload preservation, `Acceptance Stack` decomposition, default landings, and reusable-execution continuity.
 - Do not treat it as accepted until a human explicitly approves it; preserve the rule that Task Studio is a projection change, not a semantic translation or rewrite destination.
+
+#### CF-0048 | 2026-04-11 | Source: P6.1 — Surface contract packs
+
+New information:
+- Accepted surface-contract packs now exist at `docs/control-plane/surfaces/phase-6-shared-projection-grammar-surface-contract-pack.md`, `docs/control-plane/surfaces/phase-6-chat-native-surface-contract-pack.md`, and `docs/control-plane/surfaces/phase-6-later-domain-surface-backlog-contract-pack.md`.
+- A review-ready Task Studio surface contract pack now exists at `docs/control-plane/surfaces/phase-6-task-studio-surface-contract-pack.md`.
+- Artifacts `surf.phase6-shared-projection-grammar-surface-contract-pack.v1`, `surf.phase6-chat-native-surface-contract-pack.v1`, and `surf.phase6-later-domain-surface-backlog-contract-pack.v1` are registered as `accepted`, while `surf.phase6-task-studio-surface-contract-pack.v1` is registered as `review_ready` pending human acceptance of P5.6/P5.7.
+
+Impact:
+- Phase 6 now has an accepted shared grammar surface baseline, an accepted chat-native surface-contract baseline, and an accepted later-domain backlog boundary pack instead of leaving surface contracts implicit.
+- P6.1 now has a concrete review-ready Task Studio route-contract pack that can be promoted after human acceptance of the review-ready P5.6/P5.7 support packs.
+- Later route/module work can plan against explicit surface contracts without inventing new grammar families or app-private handoff state.
+
+Status changes:
+- P6.1 remains pending in the master plan, with validated surface-contract packs present and the Task Studio pack awaiting upstream human acceptance.
+- Phase 6 marked in progress.
+
+Stale items:
+- None.
+
+Notes for future prompts:
+- Treat `surf.phase6-shared-projection-grammar-surface-contract-pack.v1`, `surf.phase6-chat-native-surface-contract-pack.v1`, and `surf.phase6-later-domain-surface-backlog-contract-pack.v1` as the accepted Phase 6 surface-contract baseline.
+- Treat `surf.phase6-task-studio-surface-contract-pack.v1` as review-ready only until `reuse.phase5-task-studio-v1-scope-pack.v1` and `reuse.phase5-commissioning-bridge-task-studio-handoff-contract.v1` are human-accepted.
+- Keep `P6.1` out of repo/package/module architecture detail; that belongs to `P6.2`.
