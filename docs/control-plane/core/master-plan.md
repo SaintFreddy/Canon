@@ -229,6 +229,7 @@ This section answers, in plain terms, what is already done and what is not.
 - [x] The Phase 4 R5 Prompt Studio contract pack has been produced and accepted.
 - [x] The Phase 4 R6 Governed Agent / Applet Chat contract pack has been produced and accepted.
 - [x] The Phase 4 R7 Commissioning Bridge contract pack has been produced and accepted.
+- [x] The Phase 5 full governance, authority, and writeback spec has been produced and accepted.
 
 ### 5.2 Not done yet
 
@@ -245,7 +246,7 @@ This section answers, in plain terms, what is already done and what is not.
 - [x] Phase 2 — done in the repo
 - [x] Phase 3 — done in the repo
 - [~] Phase 4 — in progress
-- [ ] Phase 5 — not done
+- [~] Phase 5 — in progress
 - [ ] Phase 6 — not done
 - [ ] Phase 7 — not done
 
@@ -663,7 +664,7 @@ Complete the reusable semantics stack and make the R7 -> Task Studio handoff str
 
 This phase is done when governance, proof, protocol packs, reusable execution objects, Task Studio surfaces, V1 scope, and the commissioning-bridge handoff contract are accepted.
 
-#### [ ] P5.1 — Full governance / authority / writeback spec
+#### [x] P5.1 — Full governance / authority / writeback spec
 - **Mode:** Human + Factory
 - **Depends on:** P2.3 and P4.9
 - **Deliverable:** complete policy, approval, side-effect preview, partial acceptance, rollback/compensation, scope-aware writeback model
@@ -1701,6 +1702,30 @@ Stale items:
 
 Notes for future prompts:
 - Use `rel.r7-commissioning-bridge-contract.v1` together with `rel.r6-governed-agent-applet-chat-contract.v1`, `reuse.phase2-governance-authority-writeback-invariants.v1`, `reuse.phase2-proof-validation-invariants.v1`, `rel.chat-native-milestone-architecture-plan.v1`, `rel.chat-native-maturity-matrix.v1`, `arch.phase3-api-ipc-event-contracts.v1`, and `sa.task-studio-north-star.v1` as the accepted R7 contract baseline for P5.1, P5.2, P5.5, and P5.7.
+
+
+#### CF-0041 | 2026-04-11 | Source: P5.1 — Full governance / authority / writeback spec
+
+New information:
+- `docs/control-plane/reuse/phase-5-full-governance-authority-and-writeback-spec.md` is now accepted for downstream use.
+- Artifact `reuse.phase5-governance-authority-writeback-spec.v1` has been registered as `accepted`.
+- The accepted Phase 5 governance spec now makes policy composition, authority admission, approval routing, side-effect preview, scope-aware writeback, partial acceptance, and rollback/compensation machine-usable while preserving the accepted R7 commissioning and handoff boundary.
+
+Impact:
+- Phase 5 now has an accepted machine-usable governance baseline instead of only the Phase 2 invariant layer.
+- P5.3, P5.4, P5.5, and P5.7 can build on explicit routing, preview, compensation, and append-only governance rules instead of inferring them from R7 release-contract language.
+- Later work can treat governance continuity into Task Studio as an operational substrate, not a conceptual promise.
+
+Status changes:
+- P5.1 marked done.
+- The completion snapshot now records the Phase 5 full governance, authority, and writeback spec as accepted.
+- Phase 5 is in progress pending P5.2-P5.7.
+
+Stale items:
+- None.
+
+Notes for future prompts:
+- Use `reuse.phase5-governance-authority-writeback-spec.v1` together with `rel.r7-commissioning-bridge-contract.v1`, `rel.r6-governed-agent-applet-chat-contract.v1`, `reuse.phase2-governance-authority-writeback-invariants.v1`, `reuse.phase2-proof-validation-invariants.v1`, `sem.phase2-core-object-state-machines.v1`, `sem.phase2-run-class-taxonomy-protocol-kernel.v1`, `sem.phase2-projection-grammar-contracts.v1`, and `arch.phase3-api-ipc-event-contracts.v1` as the governance baseline for P5.3, P5.4, P5.5, and P5.7.
 
 ---
 

@@ -5853,6 +5853,247 @@
         "P4.9 accepted R7 contract pack defining explicit commissioning through commission/contract preflight, monitoring, proof, delta inspection, lane-separated writeback review, Task Studio-safe handoff, package floors, exit criteria, and explicit refusals.",
         "Accepted for downstream use as the R7 release-contract baseline feeding Phase 5 governance/proof/protocol/handoff work."
       ]
+    },
+    {
+      "artifact_id": "reuse.phase5-governance-authority-writeback-spec.v1",
+      "artifact_type_id": "reuse.execution_governance_pack",
+      "title": "Phase 5 full governance, authority, and writeback spec",
+      "version": "1.0.0",
+      "artifact_status": "accepted",
+      "semantic_owner": "Governance/proof steward",
+      "stewardship_mode": "human_factory",
+      "acceptance_authority": "Human semantic owner",
+      "canonical_locator": "docs/control-plane/reuse/phase-5-full-governance-authority-and-writeback-spec.md",
+      "source_authority_refs": [
+        "cp.master-plan.v1",
+        "canon.phase1-product-interpretation-freeze.v1",
+        "canon.phase1-surface-release-topology.v1",
+        "canon.phase1-rewrite-containment-seams.v1",
+        "canon.phase1-scenario-corpus.v1",
+        "sem.phase2-core-object-state-machines.v1",
+        "sem.phase2-run-class-taxonomy-protocol-kernel.v1",
+        "reuse.phase2-governance-authority-writeback-invariants.v1",
+        "reuse.phase2-proof-validation-invariants.v1",
+        "sem.phase2-chat-native-semantic-packs.v1",
+        "sem.phase2-projection-grammar-contracts.v1",
+        "arch.phase3-technical-architecture-baseline.v1",
+        "arch.phase3-context-compiler-topology.v1",
+        "arch.phase3-data-storage-provenance-spec.v1",
+        "arch.phase3-api-ipc-event-contracts.v1",
+        "arch.phase3-platform-gate-spec.v1",
+        "arch.phase3-architecture-sync-pass.v1",
+        "rel.chat-native-maturity-matrix.v1",
+        "rel.chat-native-milestone-architecture-plan.v1",
+        "rel.r6-governed-agent-applet-chat-contract.v1",
+        "rel.r7-commissioning-bridge-contract.v1",
+        "sa.all-prims.v1",
+        "sa.chat-native-release-plan.v1",
+        "sa.task-studio-north-star.v1",
+        "cp.forbidden-shortcuts-register.v1"
+      ],
+      "dependency_refs": [
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.master-plan.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "P5.1 scope, sequencing, and carry-forward rules come from the master plan."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.artifact-control-plane-spec.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The full governance spec reuses accepted P0.1 artifact, validation-hook, and stale-rule semantics."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "reuse.phase2-governance-authority-writeback-invariants.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P2.3 invariants define the governance floor that this pack operationalizes rather than revises."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "reuse.phase2-proof-validation-invariants.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P2.4 proof invariants define proof/failure and validator constraints that governance routing, preview, and compensation must preserve."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "sem.phase2-core-object-state-machines.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P2.1 object model defines the Commission, Contract, Authority Scope, Writeback Proposal, Review, Approval Decision, and lane-bearing objects this spec deepens."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "sem.phase2-run-class-taxonomy-protocol-kernel.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P2.2 taxonomy defines authority defaults, writeback defaults, triage intake, and verifier minima that this governance model must preserve."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "sem.phase2-chat-native-semantic-packs.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P2.5 semantic pack fixes the R6/R7 governance and handoff semantics that this full governance spec must operationalize."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "sem.phase2-projection-grammar-contracts.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P2.6 grammar pack defines Inspector, Ledger, Queue / Inbox, Diff / Merge View, and Live Monitor contracts that this governance spec must feed."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "rel.r6-governed-agent-applet-chat-contract.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P4.8 contract defines the governed reusable-execution boundary, background writable behavior, and queue/review semantics that this pack must deepen."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "rel.r7-commissioning-bridge-contract.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P4.9 contract defines preflight, monitoring, proof, delta, writeback, and Task Studio-safe handoff semantics that this pack must make operational."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "rel.chat-native-maturity-matrix.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P4.1 maturity matrix fixes the review/writeback, environment-control, monitor/inspect, and gateway package floors that governance behavior must assume."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "rel.chat-native-milestone-architecture-plan.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P4.2 milestone plan defines R7 as the commissioning bridge and frames Phase 5 as the reusable-semantics deepening stage."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "arch.phase3-technical-architecture-baseline.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P3.1 baseline defines one shared control/data/event substrate where admission, approvals, and writeback remain authoritative."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "arch.phase3-context-compiler-topology.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P3.2 topology defines the frozen admitted basis that preflight, routing, and compensation must preserve."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "arch.phase3-data-storage-provenance-spec.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P3.3 storage/provenance baseline defines append-only review, approval, writeback, and lineage streams that this spec operationalizes."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "arch.phase3-api-ipc-event-contracts.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P3.4 contract baseline defines typed governance commands, review/apply jobs, side-effect preview refs, and live-monitor events that this spec must use."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "arch.phase3-platform-gate-spec.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P3.5 Platform Gate artifact defines lane-separated writeback, typed event continuity, failure inspectability, and scope enforcement blockers that governance must satisfy."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "arch.phase3-architecture-sync-pass.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P3.6 sync pass confirms the bridge seams and shared-object baseline remain aligned before full governance depth is fixed."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "canon.phase1-product-interpretation-freeze.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P1.2 note fixes projection-vs-ontology discipline and the requirement for explicit commissioning semantics."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "canon.phase1-surface-release-topology.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P1.4 topology canon defines where governance surfaces, preflight, monitoring, and Task Studio handoff appear."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "canon.phase1-rewrite-containment-seams.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P1.5 seam map fixes lane separation, authority/proof boundaries, and Task Studio handoff identity as high-blast-radius semantics."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "canon.phase1-scenario-corpus.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P1.6 scenarios and edge cases define the approval, background, compensation, and handoff paths this full governance spec must preserve."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "sa.all-prims.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The primitive-set authority defines Authority Scope, Review, Approval Decision, Writeback Proposal, Workflow, Trigger, and Handoff as shared primitives."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "sa.chat-native-release-plan.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The release doctrine requires governed reusable execution plus explicit commissioning before Task Studio handoff."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "sa.task-studio-north-star.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The north-star authority requires commissioned work, contract-aware governance, proof, delta, and handoff continuity into Task Studio."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.forbidden-shortcuts-register.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The full governance spec must preserve no silent proposal application, no hidden memory sludge, no agent-builder-first drift, and no app-private ontology shortcuts."
+        }
+      ],
+      "validation_hooks": [
+        {
+          "hook_id": "vh.dependency.integrity"
+        },
+        {
+          "hook_id": "vh.source.trace-review"
+        },
+        {
+          "hook_id": "vh.consistency.cross-pack-review"
+        },
+        {
+          "hook_id": "vh.manual.acceptance"
+        }
+      ],
+      "stale_rule_id": "sr.derivative.manual",
+      "notes": [
+        "P5.1 accepted machine-usable governance pack covering policy composition, authority admission, approval routing, side-effect preview, scope-aware writeback, partial acceptance, and rollback/compensation.",
+        "Accepted for downstream use as the Phase 5 governance baseline feeding protocol packs, reusable execution composition specs, Task Studio surfaces, and handoff work."
+      ]
     }
   ]
 }
