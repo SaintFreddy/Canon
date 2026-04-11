@@ -219,6 +219,7 @@ This section answers, in plain terms, what is already done and what is not.
 - [x] The Phase 3 data / storage / indexing / provenance spec has been produced and accepted.
 - [x] The Phase 3 API / IPC / event contract spec has been produced and accepted.
 - [x] The Phase 3 Platform Gate spec and exit audit have been produced and accepted.
+- [x] The Phase 4 release-to-SDK maturity matrix has been produced and accepted.
 
 ### 5.2 Not done yet
 
@@ -235,7 +236,7 @@ This section answers, in plain terms, what is already done and what is not.
 - [x] Phase 1 — done in the repo
 - [x] Phase 2 — done in the repo
 - [~] Phase 3 — in progress
-- [ ] Phase 4 — not done
+- [~] Phase 4 — in progress
 - [ ] Phase 5 — not done
 - [ ] Phase 6 — not done
 - [ ] Phase 7 — not done
@@ -569,7 +570,7 @@ This phase is done when the technical baseline, compiler topology, data/storage/
 
 ---
 
-## Phase 4 — Fixed chat-native release doctrine `[ ]`
+## Phase 4 — Fixed chat-native release doctrine `[~]`
 
 ### Goal
 
@@ -579,7 +580,7 @@ Convert the release roadmap into concrete release architecture contracts that dr
 
 This phase is done when the release-to-SDK matrix, milestone architecture, and contract packs for Platform Gate through R7 are accepted.
 
-#### [ ] P4.1 — Release-to-SDK maturity matrix
+#### [x] P4.1 — Release-to-SDK maturity matrix
 - **Mode:** Human + Factory
 - **Depends on:** P3.5
 - **Deliverable:** matrix mapping Platform Gate and each release to the SDK/package areas that must become real
@@ -1438,6 +1439,27 @@ Stale items:
 
 Notes for future prompts:
 - Use `arch.phase3-platform-gate-spec.v1` together with the accepted P3.1-P3.4 packs as the blocking pre-R1 baseline for P3.6 sync review, Phase 4 release contracts, and later repo/package concretization.
+
+#### CF-0030 | 2026-04-11 | Source: P4.1 — Release-to-SDK maturity matrix
+
+New information:
+- `docs/control-plane/releases/chat-native-maturity-matrix/phase-4-release-to-sdk-maturity-matrix.md` now defines the accepted cross-stage matrix mapping Platform Gate and R1-R7 to forced SDK/package maturity floors.
+- Artifact `rel.chat-native-maturity-matrix.v1` is registered in the control-plane registry and dependency graph as `accepted`.
+
+Impact:
+- Phase 4 now has an explicit package-maturity baseline telling later release packs which substrate seams each stage forces to harden.
+- The program now has one release-doctrine matrix that keeps Platform Gate, R4, and R7 bridge stages from hand-waving package maturity.
+
+Status changes:
+- P4.1 marked done.
+- The completion snapshot now records the Phase 4 release-to-SDK maturity matrix as accepted.
+- Phase 4 marked in progress.
+
+Stale items:
+- None.
+
+Notes for future prompts:
+- Use `rel.chat-native-maturity-matrix.v1` together with `arch.phase3-platform-gate-spec.v1`, `sem.phase2-chat-native-semantic-packs.v1`, and `canon.phase1-surface-release-topology.v1` as the release-maturity baseline for the human-only milestone architecture plan and the later R1-R7 contract packs.
 
 ---
 

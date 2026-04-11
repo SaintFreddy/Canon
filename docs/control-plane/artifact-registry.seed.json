@@ -3883,6 +3883,214 @@
         "P3.5 accepted Platform Gate baseline defining required primitives, forced package/service areas, exit tests, audit checklist, and blocking failure classes.",
         "Accepted for downstream use as the final Phase 3 architecture gate feeding sync review, release contracts, and later repo/package planning."
       ]
+    },
+    {
+      "artifact_id": "rel.chat-native-maturity-matrix.v1",
+      "artifact_type_id": "rel.release_contract_pack",
+      "title": "Phase 4 release-to-SDK maturity matrix",
+      "version": "1.0.0",
+      "artifact_status": "accepted",
+      "semantic_owner": "Release doctrine steward",
+      "stewardship_mode": "human_factory",
+      "acceptance_authority": "Human release owner",
+      "release_id": "chat-native-maturity-matrix",
+      "canonical_locator": "docs/control-plane/releases/chat-native-maturity-matrix/phase-4-release-to-sdk-maturity-matrix.md",
+      "source_authority_refs": [
+        "cp.master-plan.v1",
+        "canon.phase1-surface-release-topology.v1",
+        "canon.phase1-rewrite-containment-seams.v1",
+        "canon.phase1-scenario-corpus.v1",
+        "sem.phase2-core-object-state-machines.v1",
+        "sem.phase2-run-class-taxonomy-protocol-kernel.v1",
+        "sem.phase2-chat-native-semantic-packs.v1",
+        "sem.phase2-projection-grammar-contracts.v1",
+        "reuse.phase2-governance-authority-writeback-invariants.v1",
+        "reuse.phase2-proof-validation-invariants.v1",
+        "arch.phase3-technical-architecture-baseline.v1",
+        "arch.phase3-context-compiler-topology.v1",
+        "arch.phase3-data-storage-provenance-spec.v1",
+        "arch.phase3-api-ipc-event-contracts.v1",
+        "arch.phase3-platform-gate-spec.v1",
+        "sa.all-prims.v1",
+        "sa.chat-native-release-plan.v1",
+        "sa.task-studio-north-star.v1",
+        "cp.forbidden-shortcuts-register.v1"
+      ],
+      "dependency_refs": [
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.master-plan.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "P4.1 scope, sequencing, and carry-forward rules come from the master plan."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.artifact-control-plane-spec.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The release matrix pack reuses accepted P0.1 artifact, validation-hook, and stale-rule semantics."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "canon.phase1-surface-release-topology.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P1.4 topology canon defines Platform Gate through R7 as one ordered path that this matrix maps onto package maturity."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "canon.phase1-rewrite-containment-seams.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P1.5 seam map identifies Platform Gate, R4, and R7 as bridge seams whose package floors must remain explicit."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "canon.phase1-scenario-corpus.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P1.6 scenarios and edge cases show which substrate capabilities each stage must preserve as maturity rises."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "sem.phase2-core-object-state-machines.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P2.1 object model defines the shared objects whose APIs, review flows, and continuity the matrix must harden."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "sem.phase2-run-class-taxonomy-protocol-kernel.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P2.2 taxonomy defines run-class, protocol, verifier, and writeback defaults that stage maturity cannot hand-wave away."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "sem.phase2-chat-native-semantic-packs.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P2.5 release semantics define what each chat-native stage must project over the shared substrate."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "sem.phase2-projection-grammar-contracts.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P2.6 grammar pack informs which surfaces become visible when package areas mature at each release stage."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "reuse.phase2-governance-authority-writeback-invariants.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P2.3 invariants define the governance and lane-separated writeback floors that later releases must preserve."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "reuse.phase2-proof-validation-invariants.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P2.4 invariants define proof, replay, and failure expectations that stage maturity must keep explicit."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "arch.phase3-technical-architecture-baseline.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P3.1 baseline defines the runtime planes and process families the release matrix maps onto package areas."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "arch.phase3-context-compiler-topology.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P3.2 compiler topology defines the context and replay substrate that R1-R3 and later stages force to mature."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "arch.phase3-data-storage-provenance-spec.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P3.3 storage/provenance baseline defines the lineage and audit substrate that the matrix must carry forward by stage."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "arch.phase3-api-ipc-event-contracts.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P3.4 contract baseline defines the typed API, IPC, gateway, and event seams whose floors rise across releases."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "arch.phase3-platform-gate-spec.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P3.5 Platform Gate pack defines the forced package areas and pre-R1 substrate floor that this matrix extends release by release."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "sa.all-prims.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The primitive-set authority defines the underlying engine and shared-environment capability surface the matrix is hardening."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "sa.chat-native-release-plan.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The release doctrine defines the fixed Platform Gate through R7 order and the stage promises that package maturity must support."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "sa.task-studio-north-star.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The north-star authority explains why late-stage package floors must become strong enough for R7 to hand into Task Studio without ontology drift."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.forbidden-shortcuts-register.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The matrix must prevent transcript-truth, silent writeback, second-stack, and repo-shape shortcuts from being smuggled into release doctrine."
+        },
+        {
+          "edge_type": "informs",
+          "artifact_id": "canon.phase1-source-decomposition.v1",
+          "propagation_mode": "none",
+          "required_for_acceptance": false,
+          "notes": "The accepted P1.1 glossary and contradiction pack informs cross-stage terminology and the fixed Platform Gate prerequisite."
+        },
+        {
+          "edge_type": "informs",
+          "artifact_id": "canon.phase1-layer-primitive-separation.v1",
+          "propagation_mode": "none",
+          "required_for_acceptance": false,
+          "notes": "The accepted P1.3 owner-layer map informs which package areas belong to engine, shared environment, or app projection seams."
+        }
+      ],
+      "validation_hooks": [
+        {
+          "hook_id": "vh.dependency.integrity"
+        },
+        {
+          "hook_id": "vh.source.trace-review"
+        },
+        {
+          "hook_id": "vh.consistency.cross-pack-review"
+        },
+        {
+          "hook_id": "vh.manual.acceptance"
+        }
+      ],
+      "stale_rule_id": "sr.derivative.manual",
+      "notes": [
+        "P4.1 accepted cross-stage matrix mapping Platform Gate and R1-R7 to forced SDK/package maturity floors.",
+        "Accepted for downstream use as the Phase 4 release-doctrine baseline feeding the human-only milestone architecture plan, later release packs, and Phase 6 package planning."
+      ]
     }
   ]
 }
