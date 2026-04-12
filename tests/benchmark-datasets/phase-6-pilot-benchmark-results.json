@@ -1,0 +1,81 @@
+{
+  "benchmark_results_meta": {
+    "schema_version": "1.0.0",
+    "title": "Phase 6 pilot benchmark results",
+    "task_id": "P6.4",
+    "generated_on": "2026-04-12",
+    "benchmark_matrix_ref": "cp.phase6-pilot-benchmark-matrix-data.v1",
+    "benchmark_harness_ref": "cp.phase6-factory-benchmark-harness.v1",
+    "benchmark_posture": "dry_run_structural"
+  },
+  "benchmark_results": [
+    {
+      "benchmark_case_id": "bm.phase6.pilot.plan.v1",
+      "packet_ref": "pkt.phase6-pilot-plan-release-blueprint-packet.v1",
+      "packet_path": "docs/control-plane/implementation/packets/phase-6-pilot-plan-release-blueprint-packet.md",
+      "run_class": "plan",
+      "status": "pass",
+      "benchmark_focus": [
+        "blueprint-scope clarity",
+        "accepted-root mapping",
+        "validation-hook completeness"
+      ],
+      "metrics": {
+        "governing_ref_count": 8,
+        "governing_ref_limit": 8,
+        "whitelist_path_count": 4,
+        "whitelist_root_count": 1,
+        "validation_hook_count": 4,
+        "expected_fixture_family_count": 3
+      },
+      "issues": []
+    },
+    {
+      "benchmark_case_id": "bm.phase6.pilot.audit.v1",
+      "packet_ref": "pkt.phase6-pilot-audit-doc-plane-consistency-packet.v1",
+      "packet_path": "docs/control-plane/implementation/packets/phase-6-pilot-audit-doc-plane-consistency-packet.md",
+      "run_class": "audit",
+      "status": "pass",
+      "benchmark_focus": [
+        "documentation-plane coherence",
+        "fixture-policy alignment",
+        "review-output clarity"
+      ],
+      "metrics": {
+        "governing_ref_count": 8,
+        "governing_ref_limit": 8,
+        "whitelist_path_count": 6,
+        "whitelist_root_count": 2,
+        "validation_hook_count": 4,
+        "expected_fixture_family_count": 3
+      },
+      "issues": []
+    },
+    {
+      "benchmark_case_id": "bm.phase6.pilot.transform.v1",
+      "packet_ref": "pkt.phase6-pilot-transform-factory-skill-harness-packet.v1",
+      "packet_path": "docs/control-plane/implementation/packets/phase-6-pilot-transform-factory-skill-harness-packet.md",
+      "run_class": "transform",
+      "status": "pass",
+      "benchmark_focus": [
+        "bounded write-path clarity",
+        "additive Factory-scope discipline",
+        "wrapper validation readiness"
+      ],
+      "metrics": {
+        "governing_ref_count": 8,
+        "governing_ref_limit": 8,
+        "whitelist_path_count": 8,
+        "whitelist_root_count": 3,
+        "validation_hook_count": 4,
+        "expected_fixture_family_count": 3
+      },
+      "issues": []
+    }
+  ],
+  "summary": {
+    "case_count": 3,
+    "pass_count": 3,
+    "fail_count": 0
+  }
+}

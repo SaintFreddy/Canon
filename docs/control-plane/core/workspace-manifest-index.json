@@ -21,7 +21,12 @@
         "releases/",
         "reuse/",
         "semantics/",
-        "surfaces/"
+        "surfaces/",
+        "implementation/",
+        "AGENTS.md",
+        "artifact-control-plane-spec.md",
+        "artifact-registry.seed.json",
+        "dependency-graph.seed.json"
       ],
       "governing_artifact_refs": [
         "cp.master-plan.v1",
@@ -30,7 +35,8 @@
       ],
       "notes": [
         "This root remains the accepted planning and architecture truth plane.",
-        "Generated current-state and packet-context datasets may live under core/ without redefining runtime ownership."
+        "Generated current-state and packet-context datasets may live under core/ without redefining runtime ownership.",
+        "P6.4 now materializes implementation/ packets beneath this root using accepted control-plane storage conventions only."
       ]
     },
     {
@@ -191,7 +197,7 @@
       ],
       "notes": [
         "P6.3 materializes tests/ as documentation-plane contract and fixture roots before executable harnesses exist.",
-        "Future replay, regression, and benchmark datasets should remain versioned and frozen."
+        "P6.4 now materializes benchmark-datasets/ under tests/ while keeping replay, regression, and benchmark assets versioned and frozen."
       ]
     },
     {
@@ -199,7 +205,7 @@
       "root_path": "scripts/",
       "workspace_family": "repo_local_wrappers",
       "documentation_role": "thin validator and generation wrappers over accepted tools",
-      "current_posture": "reserved_not_materialized",
+      "current_posture": "materialized_active",
       "execution_posture": "reserved_future_wrappers",
       "allowed_children": [
         "validators/",
@@ -211,8 +217,8 @@
         "surf.phase6-agent-oriented-codebase-pattern-and-documentation-plane-pack.v1"
       ],
       "notes": [
-        "Scripts remain thin wrappers around accepted validators and generators rather than a second control plane.",
-        "This root stays reserved until real wrappers are required."
+        "Thin validator and wrapper helpers now live here as additive execution support only.",
+        "Scripts remain wrappers around accepted validators and generators rather than a second control plane."
       ]
     }
   ]

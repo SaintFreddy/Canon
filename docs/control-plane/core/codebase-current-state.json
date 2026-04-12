@@ -23,6 +23,7 @@
         "canon/",
         "core/",
         "dependency-graph.seed.json",
+        "implementation/",
         "releases/",
         "reuse/",
         "semantics/",
@@ -112,6 +113,7 @@
       "present_on_disk": true,
       "current_state": "materialized_active",
       "notable_entries": [
+        "benchmark-datasets/",
         "contracts/",
         "fixtures/"
       ],
@@ -124,9 +126,12 @@
     {
       "workspace_id": "ws.scripts",
       "root_path": "scripts/",
-      "present_on_disk": false,
-      "current_state": "reserved_not_materialized",
-      "notable_entries": [],
+      "present_on_disk": true,
+      "current_state": "materialized_active",
+      "notable_entries": [
+        "validators/",
+        "wrappers/"
+      ],
       "governing_artifact_refs": [
         "surf.phase6-repo-package-architecture-and-agent-execution-rules-pack.v1",
         "surf.phase6-agent-oriented-codebase-pattern-and-documentation-plane-pack.v1"
@@ -134,9 +139,9 @@
     }
   ],
   "summary": {
-    "materialized_root_count": 3,
-    "reserved_root_count": 5,
+    "materialized_root_count": 4,
+    "reserved_root_count": 4,
     "gated_root_count": 1,
-    "repo_posture": "control-plane and Factory roots are materialized; tests/ hosts accepted contract and fixture datasets; implementation roots remain reserved."
+    "repo_posture": "control-plane, Factory, tests, and scripts roots are materialized; pilot packets live under docs/control-plane/implementation/ and benchmark datasets live under tests/benchmark-datasets/ while runtime implementation roots remain reserved."
   }
 }

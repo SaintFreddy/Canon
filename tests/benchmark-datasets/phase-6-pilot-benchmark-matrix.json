@@ -1,0 +1,99 @@
+{
+  "benchmark_matrix_meta": {
+    "schema_version": "1.0.0",
+    "title": "Phase 6 pilot benchmark matrix",
+    "task_id": "P6.4",
+    "benchmark_harness_ref": "cp.phase6-factory-benchmark-harness.v1",
+    "documentation_plane_refs": [
+      "cp.phase6-workspace-manifest-index-data.v1",
+      "cp.phase6-codebase-current-state-data.v1",
+      "cp.phase6-agent-packet-context-pack-rules-data.v1"
+    ]
+  },
+  "benchmark_cases": [
+    {
+      "benchmark_case_id": "bm.phase6.pilot.plan.v1",
+      "packet_ref": "pkt.phase6-pilot-plan-release-blueprint-packet.v1",
+      "packet_path": "docs/control-plane/implementation/packets/phase-6-pilot-plan-release-blueprint-packet.md",
+      "run_class": "plan",
+      "selected_budget_band": "standard",
+      "benchmark_focus": [
+        "blueprint-scope clarity",
+        "accepted-root mapping",
+        "validation-hook completeness"
+      ],
+      "expected_validation_hooks": [
+        "vh.dependency.integrity",
+        "vh.consistency.cross-pack-review",
+        "vh.fixture.or-test-when-applicable",
+        "vh.manual.acceptance"
+      ],
+      "expected_root_paths": [
+        "docs/control-plane/"
+      ],
+      "expected_fixture_families": [
+        "golden_scenario",
+        "edge_case",
+        "regression"
+      ],
+      "expected_outcome": "pass"
+    },
+    {
+      "benchmark_case_id": "bm.phase6.pilot.audit.v1",
+      "packet_ref": "pkt.phase6-pilot-audit-doc-plane-consistency-packet.v1",
+      "packet_path": "docs/control-plane/implementation/packets/phase-6-pilot-audit-doc-plane-consistency-packet.md",
+      "run_class": "audit",
+      "selected_budget_band": "standard",
+      "benchmark_focus": [
+        "documentation-plane coherence",
+        "fixture-policy alignment",
+        "review-output clarity"
+      ],
+      "expected_validation_hooks": [
+        "vh.dependency.integrity",
+        "vh.consistency.cross-pack-review",
+        "vh.fixture.or-test-when-applicable",
+        "vh.manual.acceptance"
+      ],
+      "expected_root_paths": [
+        "docs/control-plane/",
+        "tests/"
+      ],
+      "expected_fixture_families": [
+        "golden_scenario",
+        "edge_case",
+        "regression"
+      ],
+      "expected_outcome": "pass"
+    },
+    {
+      "benchmark_case_id": "bm.phase6.pilot.transform.v1",
+      "packet_ref": "pkt.phase6-pilot-transform-factory-skill-harness-packet.v1",
+      "packet_path": "docs/control-plane/implementation/packets/phase-6-pilot-transform-factory-skill-harness-packet.md",
+      "run_class": "transform",
+      "selected_budget_band": "standard",
+      "benchmark_focus": [
+        "bounded write-path clarity",
+        "additive Factory-scope discipline",
+        "wrapper validation readiness"
+      ],
+      "expected_validation_hooks": [
+        "vh.dependency.integrity",
+        "vh.consistency.cross-pack-review",
+        "vh.fixture.or-test-when-applicable",
+        "vh.manual.acceptance"
+      ],
+      "expected_root_paths": [
+        ".factory/",
+        "scripts/",
+        "docs/control-plane/"
+      ],
+      "expected_fixture_families": [
+        "golden_scenario",
+        "regression",
+        "background_parity"
+      ],
+      "expected_outcome": "pass"
+    }
+  ]
+}

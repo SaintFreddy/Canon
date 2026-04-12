@@ -243,7 +243,8 @@ This section answers, in plain terms, what is already done and what is not.
 - [x] The release contract packs for Platform Gate through R7 have been produced and accepted.
 - [x] The full reusable semantics and Task Studio readiness packs have been produced and accepted.
 - [x] The repo/package architecture, documentation plane, and agent execution system have been implemented.
-- [ ] The implementation blueprints and bounded execution packets have not yet been generated and accepted.
+- [x] The pilot packet set, benchmark harness, and internal Factory skills/adapters have been implemented and benchmarked.
+- [ ] The implementation blueprints and broader bounded execution packets have not yet been generated and accepted.
 - [ ] The continuous stale-detection, carry-forward, and sync loop is operational.
 
 ### 5.3 Phase status summary
@@ -753,7 +754,7 @@ This phase is done when the package map, documentation plane, Factory operating 
 - **Acceptance:** agents can navigate and execute safely from accepted artifacts
 - **Carry-forward topics:** manifest rules, documentation-generation rules, fixture policies, packet compilation changes
 
-#### [ ] P6.4 — Pilot packet set + Factory benchmark harness + internal skills/adapters
+#### [x] P6.4 — Pilot packet set + Factory benchmark harness + internal skills/adapters
 - **Mode:** Factory-first
 - **Depends on:** P0.3 and P6.2 and P6.3
 - **Deliverable:** pilot packet set, benchmark results, internal Factory skills/adapters, tuning notes
@@ -2028,3 +2029,29 @@ Notes for future prompts:
 - Use `cp.phase6-workspace-manifest-index-data.v1` and `cp.phase6-codebase-current-state-data.v1` together as the accepted repo-navigation baseline for later implementation-facing work.
 - Use `cp.phase6-module-test-contracts-data.v1` and `cp.phase6-fixture-rules-data.v1` when blueprinting or packetizing module, validation, replay, or benchmark work.
 - Compile later bounded packet context from accepted manifests/current-state plus accepted P0.5 packet-budget rules; do not reinterpret runtime context-compiler topology as a packet-only invention.
+
+#### CF-0054 | 2026-04-12 | Source: P6.4 — Pilot packet set + Factory benchmark harness + internal skills/adapters
+
+New information:
+- `docs/control-plane/core/phase-6-factory-benchmark-harness.md` now defines the accepted dry-run benchmark contract for the first-wave pilot packet set.
+- Artifacts `cp.phase6-factory-benchmark-harness.v1`, `cp.factory-pilot-packet-authoring-skill.v1`, `cp.factory-benchmark-harness-skill.v1`, `cp.phase6-pilot-benchmark-matrix-data.v1`, `cp.phase6-pilot-benchmark-results-data.v1`, `cp.phase6-pilot-packet-tuning-notes.v1`, `pkt.phase6-pilot-plan-release-blueprint-packet.v1`, `pkt.phase6-pilot-audit-doc-plane-consistency-packet.v1`, and `pkt.phase6-pilot-transform-factory-skill-harness-packet.v1` are registered in the control-plane registry and dependency graph as `accepted`.
+- `docs/control-plane/implementation/packets/`, `.factory/skills/`, `scripts/validators/`, `scripts/wrappers/`, and `tests/benchmark-datasets/` now materialize the accepted pilot-packet, benchmark, and additive Factory-execution support lane.
+- The frozen benchmark results record all three first-wave pilot packets passing the dry-run structural harness, and the tuning notes lock in the initial budget, whitelist-root, and run-class observations.
+
+Impact:
+- `P6.5` can shape release blueprints against an accepted plan-packet archetype and a tested benchmark harness instead of inventing packet structure ad hoc.
+- `P6.6` can expand bounded execution packets from accepted `plan`, `audit`, and `transform` pilot shapes, shared packet-authoring skill guidance, and frozen benchmark expectations.
+- Later Factory execution work now has one accepted validator and one accepted benchmark wrapper for checking packet briefs, whitelist-root mapping, fixture bindings, and budget-band ceilings before scale-out.
+
+Status changes:
+- P6.4 marked done.
+- The completion snapshot now records the pilot packet set, benchmark harness, and internal Factory skills/adapters as implemented and benchmarked.
+- Phase 6 remains in progress.
+
+Stale items:
+- None.
+
+Notes for future prompts:
+- Start from the accepted pilot packet archetypes before creating broader execution packets; split scope instead of widening the current standard-band packets by default.
+- Run `scripts/validators/validate_pilot_packets.py` and `scripts/wrappers/run_phase6_benchmarks.py` when packet briefs, whitelist roots, fixture bindings, or packet-context rules change.
+- Keep transform-style packet writes additive to `.factory/`, `scripts/`, `docs/control-plane/`, and other explicitly accepted roots unless a new packet family is accepted.

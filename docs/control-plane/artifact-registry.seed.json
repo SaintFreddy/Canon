@@ -9299,6 +9299,992 @@
         "P6.3 accepted machine-readable packet context-pack composition rules aligned to accepted packet briefs, budget bands, manifest data, current-state data, module boundaries, and fixture expectations.",
         "Accepted for downstream use as the context-assembly baseline feeding later P6.6 bounded execution packets."
       ]
+    },
+    {
+      "artifact_id": "cp.phase6-factory-benchmark-harness.v1",
+      "artifact_type_id": "cp.control_plane_spec",
+      "title": "Phase 6 Factory benchmark harness",
+      "version": "1.0.0",
+      "artifact_status": "accepted",
+      "semantic_owner": "Product/canon owner",
+      "stewardship_mode": "human_factory",
+      "acceptance_authority": "Human plan owner",
+      "canonical_locator": "docs/control-plane/core/phase-6-factory-benchmark-harness.md",
+      "source_authority_refs": [
+        "cp.master-plan.v1",
+        "cp.factory-operating-contract.v1",
+        "surf.phase6-repo-package-architecture-and-agent-execution-rules-pack.v1",
+        "surf.phase6-agent-oriented-codebase-pattern-and-documentation-plane-pack.v1",
+        "sem.phase2-run-class-taxonomy-protocol-kernel.v1",
+        "reuse.phase5-proof-validation-evaluation-spec.v1",
+        "reuse.phase5-run-class-protocol-packs.v1"
+      ],
+      "dependency_refs": [
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.master-plan.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The master plan defines P6.4 as the pilot-packet, benchmark-harness, and internal-skill task."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.artifact-control-plane-spec.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted control-plane spec defines artifact metadata, dependency semantics, validation hooks, and stale rules for this harness spec."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.factory-operating-contract.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P0.3 Factory contract defines the additive execution layer that the benchmark harness must preserve."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "surf.phase6-repo-package-architecture-and-agent-execution-rules-pack.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P6.2 pack defines the root-family and boundary baseline that the pilot packets and wrappers must stay inside."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "surf.phase6-agent-oriented-codebase-pattern-and-documentation-plane-pack.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P6.3 documentation plane defines manifests, current-state data, packet-context rules, and validation assets that the harness consumes."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.phase6-workspace-manifest-index-data.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted manifest index maps packet whitelists to workspace roots."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.phase6-codebase-current-state-data.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted current-state view reports which roots are materialized for packet benchmarking."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.phase6-agent-packet-context-pack-rules-data.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted packet-context rules define budget-fit and scope-compilation expectations that the harness checks."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.phase6-module-test-contracts-data.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted module-boundary dataset provides cross-root and route-family rules that audit and transform packets must preserve."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.phase6-fixture-rules-data.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted fixture-rules dataset provides run-class fixture expectations that the benchmark matrix and results must preserve."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "sem.phase2-run-class-taxonomy-protocol-kernel.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted run-class taxonomy defines the plan, audit, and transform packet classes used in the pilot wave."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "reuse.phase5-proof-validation-evaluation-spec.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P5.2 proof pack defines benchmark dataset and fixture-family rules that the harness freezes into results."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "reuse.phase5-run-class-protocol-packs.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P5.3 protocol pack defines run-class fixture bindings and validation posture that the harness checks."
+        }
+      ],
+      "validation_hooks": [
+        {
+          "hook_id": "vh.schema.required-fields"
+        },
+        {
+          "hook_id": "vh.dependency.integrity"
+        },
+        {
+          "hook_id": "vh.consistency.cross-pack-review"
+        },
+        {
+          "hook_id": "vh.manual.acceptance"
+        }
+      ],
+      "stale_rule_id": "sr.control-plane.strict",
+      "notes": [
+        "P6.4 accepted dry-run benchmark harness spec for validating pilot packets, additive Factory skills, and thin wrappers before broader packet rollout.",
+        "Accepted for downstream use as the benchmark contract feeding the pilot matrix, results dataset, and tuning notes."
+      ]
+    },
+    {
+      "artifact_id": "cp.factory-pilot-packet-authoring-skill.v1",
+      "artifact_type_id": "cp.control_plane_spec",
+      "title": "Pilot packet authoring skill",
+      "version": "1.0.0",
+      "artifact_status": "accepted",
+      "semantic_owner": "Product/canon owner",
+      "stewardship_mode": "human_factory",
+      "acceptance_authority": "Human plan owner",
+      "canonical_locator": ".factory/skills/pilot-packet-authoring/SKILL.md",
+      "source_authority_refs": [
+        "cp.factory-operating-contract.v1",
+        "cp.repo-agent-operating-contract.v1",
+        "cp.phase6-factory-benchmark-harness.v1",
+        "surf.phase6-agent-oriented-codebase-pattern-and-documentation-plane-pack.v1"
+      ],
+      "dependency_refs": [
+        {
+          "edge_type": "derives_from",
+          "artifact_id": "cp.factory-operating-contract.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The skill operationalizes the accepted P0.3 Factory contract for pilot packet authoring work."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.packet-brief-schema-data.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The skill relies on the accepted packet-brief schema for embedded packet JSON."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.phase6-workspace-manifest-index-data.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted manifest index maps packet whitelists to workspace roots."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.phase6-codebase-current-state-data.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted current-state view tells packet authors which roots are materialized today."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.phase6-agent-packet-context-pack-rules-data.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted packet-context rules define band, scope, and segment expectations for pilot packets."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "sem.phase2-run-class-taxonomy-protocol-kernel.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted run-class taxonomy defines the packet classes that this skill can author."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "reuse.phase5-run-class-protocol-packs.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted protocol pack defines run-class-specific fixture posture that pilot packets should preserve."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.artifact-control-plane-spec.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The skill reuses accepted artifact, dependency, validation-hook, and stale semantics."
+        }
+      ],
+      "validation_hooks": [
+        {
+          "hook_id": "vh.schema.required-fields"
+        },
+        {
+          "hook_id": "vh.dependency.integrity"
+        },
+        {
+          "hook_id": "vh.consistency.cross-pack-review"
+        },
+        {
+          "hook_id": "vh.manual.acceptance"
+        }
+      ],
+      "stale_rule_id": "sr.control-plane.strict",
+      "notes": [
+        "P6.4 shared skill for building and refining pilot execution packets from accepted manifests, current-state data, packet rules, and run-class baselines.",
+        "Requires bounded whitelists and use of the accepted packet validator wrapper."
+      ]
+    },
+    {
+      "artifact_id": "cp.factory-benchmark-harness-skill.v1",
+      "artifact_type_id": "cp.control_plane_spec",
+      "title": "Benchmark harness skill",
+      "version": "1.0.0",
+      "artifact_status": "accepted",
+      "semantic_owner": "Product/canon owner",
+      "stewardship_mode": "human_factory",
+      "acceptance_authority": "Human plan owner",
+      "canonical_locator": ".factory/skills/benchmark-harness/SKILL.md",
+      "source_authority_refs": [
+        "cp.factory-operating-contract.v1",
+        "cp.phase6-factory-benchmark-harness.v1",
+        "surf.phase6-agent-oriented-codebase-pattern-and-documentation-plane-pack.v1"
+      ],
+      "dependency_refs": [
+        {
+          "edge_type": "derives_from",
+          "artifact_id": "cp.phase6-factory-benchmark-harness.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The skill operationalizes the accepted Phase 6 benchmark harness spec."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.factory-operating-contract.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P0.3 Factory contract defines the bounded execution posture that the harness skill must preserve."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.phase6-pilot-benchmark-matrix-data.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted benchmark matrix defines which pilot packets and expectations the harness runs."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.phase6-agent-packet-context-pack-rules-data.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted packet-context rules define the budget and scope checks that the harness enforces."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.phase6-fixture-rules-data.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted fixture-rules dataset defines run-class fixture expectations that the harness compares against packet cases."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.artifact-control-plane-spec.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The skill reuses accepted artifact, dependency, validation-hook, and stale semantics."
+        }
+      ],
+      "validation_hooks": [
+        {
+          "hook_id": "vh.schema.required-fields"
+        },
+        {
+          "hook_id": "vh.dependency.integrity"
+        },
+        {
+          "hook_id": "vh.consistency.cross-pack-review"
+        },
+        {
+          "hook_id": "vh.manual.acceptance"
+        }
+      ],
+      "stale_rule_id": "sr.control-plane.strict",
+      "notes": [
+        "P6.4 shared skill for running the dry-run benchmark harness over accepted pilot packets and freezing result output.",
+        "Focuses on structural packet readiness rather than runtime product benchmarking."
+      ]
+    },
+    {
+      "artifact_id": "cp.phase6-pilot-benchmark-matrix-data.v1",
+      "artifact_type_id": "cp.control_plane_dataset",
+      "title": "Phase 6 pilot benchmark matrix",
+      "version": "1.0.0",
+      "artifact_status": "accepted",
+      "semantic_owner": "Platform architecture steward",
+      "stewardship_mode": "human_factory",
+      "acceptance_authority": "Human plan owner",
+      "canonical_locator": "tests/benchmark-datasets/phase-6-pilot-benchmark-matrix.json",
+      "source_authority_refs": [
+        "cp.master-plan.v1",
+        "cp.phase6-factory-benchmark-harness.v1",
+        "cp.phase6-fixture-rules-data.v1",
+        "sem.phase2-run-class-taxonomy-protocol-kernel.v1"
+      ],
+      "dependency_refs": [
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.master-plan.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The master plan requires pilot packets and benchmark results as part of P6.4."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.artifact-control-plane-spec.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted control-plane spec defines dataset metadata, dependency semantics, validation hooks, and stale rules."
+        },
+        {
+          "edge_type": "derives_from",
+          "artifact_id": "cp.phase6-factory-benchmark-harness.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The benchmark matrix is the machine-readable case list defined by the accepted Phase 6 harness spec."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "sem.phase2-run-class-taxonomy-protocol-kernel.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted run-class taxonomy defines the packet classes benchmarked in the matrix."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.phase6-fixture-rules-data.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted fixture-rules dataset defines expected fixture families by run class for each benchmark case."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "pkt.phase6-pilot-plan-release-blueprint-packet.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The benchmark matrix includes the accepted plan pilot packet as a benchmark case."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "pkt.phase6-pilot-audit-doc-plane-consistency-packet.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The benchmark matrix includes the accepted audit pilot packet as a benchmark case."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "pkt.phase6-pilot-transform-factory-skill-harness-packet.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The benchmark matrix includes the accepted transform pilot packet as a benchmark case."
+        },
+        {
+          "edge_type": "validated_by",
+          "artifact_id": "cp.phase6-factory-benchmark-harness.v1",
+          "propagation_mode": "revalidate",
+          "required_for_acceptance": true,
+          "notes": "Revalidate the benchmark matrix if the accepted Phase 6 harness spec changes."
+        }
+      ],
+      "validation_hooks": [
+        {
+          "hook_id": "vh.schema.json-parse"
+        },
+        {
+          "hook_id": "vh.schema.required-fields"
+        },
+        {
+          "hook_id": "vh.dependency.integrity"
+        },
+        {
+          "hook_id": "vh.consistency.cross-pack-review"
+        },
+        {
+          "hook_id": "vh.manual.acceptance"
+        }
+      ],
+      "stale_rule_id": "sr.control-plane.strict",
+      "notes": [
+        "P6.4 accepted benchmark matrix covering the first-wave plan, audit, and transform pilot packets and their dry-run expectations.",
+        "Accepted for downstream use as the frozen benchmark case list feeding benchmark execution and result capture."
+      ]
+    },
+    {
+      "artifact_id": "pkt.phase6-pilot-plan-release-blueprint-packet.v1",
+      "artifact_type_id": "pkt.execution_packet",
+      "title": "Phase 6 pilot plan packet \u2014 release blueprint shaping",
+      "version": "1.0.0",
+      "artifact_status": "accepted",
+      "semantic_owner": "Implementation steward",
+      "stewardship_mode": "factory_first",
+      "acceptance_authority": "Human implementation owner",
+      "canonical_locator": "docs/control-plane/implementation/packets/phase-6-pilot-plan-release-blueprint-packet.md",
+      "packet_scope": "First-wave plan packet for shaping one bounded release blueprint from accepted release contracts and documentation-plane assets",
+      "file_whitelist_ref": "wl.phase6-pilot-plan-release-blueprint.v1",
+      "source_authority_refs": [
+        "rel.chat-native-milestone-architecture-plan.v1",
+        "rel.r3-branch-visual-thinker-contract.v1"
+      ],
+      "dependency_refs": [
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.master-plan.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The master plan requires a pilot packet set as part of P6.4."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.artifact-control-plane-spec.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted control-plane spec defines execution-packet metadata, dependency semantics, validation hooks, and stale rules."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.packet-brief-schema-data.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted packet-brief schema defines the embedded JSON brief used by this packet."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.context-budget-and-packet-policy.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P0.5 policy defines the selected budget band and scope-escalation posture used by this packet."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "surf.phase6-repo-package-architecture-and-agent-execution-rules-pack.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P6.2 pack defines the root-family, workspace, and boundary baseline this packet targets."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "surf.phase6-agent-oriented-codebase-pattern-and-documentation-plane-pack.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P6.3 pack defines the manifests, current-state data, and packet-context guidance that this packet inherits."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.phase6-workspace-manifest-index-data.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted manifest index maps this packet whitelist to accepted workspace roots."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.phase6-codebase-current-state-data.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted current-state view shows which roots are materialized for this packet today."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.phase6-module-test-contracts-data.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted module-boundary dataset preserves route-family and cross-root boundary rules for later blueprint work."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.phase6-agent-packet-context-pack-rules-data.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted packet-context rules define the segment order and band discipline this packet must preserve."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "sem.phase2-run-class-taxonomy-protocol-kernel.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted run-class taxonomy defines the plan run class used by this packet."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "reuse.phase5-run-class-protocol-packs.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted protocol pack preserves plan-class proof and fixture posture for this packet type."
+        }
+      ],
+      "validation_hooks": [
+        {
+          "hook_id": "vh.dependency.integrity"
+        },
+        {
+          "hook_id": "vh.consistency.cross-pack-review"
+        },
+        {
+          "hook_id": "vh.fixture.or-test-when-applicable"
+        },
+        {
+          "hook_id": "vh.manual.acceptance"
+        }
+      ],
+      "stale_rule_id": "sr.derivative.manual",
+      "notes": [
+        "P6.4 accepted plan-class pilot packet for bounded release-blueprint shaping inside control-plane implementation roots.",
+        "Accepted for downstream use as the first-wave planning packet archetype for later P6.5 blueprint work."
+      ]
+    },
+    {
+      "artifact_id": "pkt.phase6-pilot-audit-doc-plane-consistency-packet.v1",
+      "artifact_type_id": "pkt.execution_packet",
+      "title": "Phase 6 pilot audit packet \u2014 documentation-plane consistency",
+      "version": "1.0.0",
+      "artifact_status": "accepted",
+      "semantic_owner": "Implementation steward",
+      "stewardship_mode": "factory_first",
+      "acceptance_authority": "Human implementation owner",
+      "canonical_locator": "docs/control-plane/implementation/packets/phase-6-pilot-audit-doc-plane-consistency-packet.md",
+      "packet_scope": "First-wave audit packet for reviewing documentation-plane, contract, and fixture consistency inside accepted control-plane roots",
+      "file_whitelist_ref": "wl.phase6-pilot-audit-doc-plane-consistency.v1",
+      "source_authority_refs": [
+        "surf.phase6-repo-package-architecture-and-agent-execution-rules-pack.v1",
+        "surf.phase6-agent-oriented-codebase-pattern-and-documentation-plane-pack.v1"
+      ],
+      "dependency_refs": [
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.master-plan.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The master plan requires a pilot packet set as part of P6.4."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.artifact-control-plane-spec.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted control-plane spec defines execution-packet metadata, dependency semantics, validation hooks, and stale rules."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.packet-brief-schema-data.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted packet-brief schema defines the embedded JSON brief used by this packet."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.context-budget-and-packet-policy.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P0.5 policy defines the selected budget band and scope-escalation posture used by this packet."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.phase6-workspace-manifest-index-data.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted manifest index maps this packet whitelist to accepted workspace roots."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.phase6-codebase-current-state-data.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted current-state view shows which documentation-plane and test roots are materialized for this packet today."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.phase6-agent-packet-context-pack-rules-data.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted packet-context rules define the segment order and band discipline this packet must preserve."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.phase6-module-test-contracts-data.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted module-boundary dataset provides one of the audit targets for this packet."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.phase6-fixture-rules-data.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted fixture-rules dataset provides one of the audit targets for this packet."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.factory-review-guidelines-skill.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted review skill provides baseline-preservation checks that this audit packet should mirror."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "sem.phase2-run-class-taxonomy-protocol-kernel.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted run-class taxonomy defines the audit run class used by this packet."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "reuse.phase5-run-class-protocol-packs.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted protocol pack preserves audit-class proof and fixture posture for this packet type."
+        }
+      ],
+      "validation_hooks": [
+        {
+          "hook_id": "vh.dependency.integrity"
+        },
+        {
+          "hook_id": "vh.consistency.cross-pack-review"
+        },
+        {
+          "hook_id": "vh.fixture.or-test-when-applicable"
+        },
+        {
+          "hook_id": "vh.manual.acceptance"
+        }
+      ],
+      "stale_rule_id": "sr.derivative.manual",
+      "notes": [
+        "P6.4 accepted audit-class pilot packet for reviewing documentation-plane, contract, and fixture coherence inside accepted roots.",
+        "Accepted for downstream use as the first-wave audit packet archetype for later packetized review work."
+      ]
+    },
+    {
+      "artifact_id": "pkt.phase6-pilot-transform-factory-skill-harness-packet.v1",
+      "artifact_type_id": "pkt.execution_packet",
+      "title": "Phase 6 pilot transform packet \u2014 Factory skill and harness refinement",
+      "version": "1.0.0",
+      "artifact_status": "accepted",
+      "semantic_owner": "Implementation steward",
+      "stewardship_mode": "factory_first",
+      "acceptance_authority": "Human implementation owner",
+      "canonical_locator": "docs/control-plane/implementation/packets/phase-6-pilot-transform-factory-skill-harness-packet.md",
+      "packet_scope": "First-wave transform packet for bounded write-path refinement of Factory packet-authoring or benchmark-harness assets",
+      "file_whitelist_ref": "wl.phase6-pilot-transform-factory-skill-harness.v1",
+      "source_authority_refs": [
+        "cp.factory-operating-contract.v1",
+        "surf.phase6-agent-oriented-codebase-pattern-and-documentation-plane-pack.v1"
+      ],
+      "dependency_refs": [
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.master-plan.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The master plan requires a pilot packet set as part of P6.4."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.artifact-control-plane-spec.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted control-plane spec defines execution-packet metadata, dependency semantics, validation hooks, and stale rules."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.packet-brief-schema-data.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted packet-brief schema defines the embedded JSON brief used by this packet."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.context-budget-and-packet-policy.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P0.5 policy defines the selected budget band and scope-escalation posture used by this packet."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.factory-operating-contract.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P0.3 Factory contract defines the additive execution posture that this write-path packet must preserve."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.factory-packet-execution-skill.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted packet-execution skill provides the bounded packet discipline that this transform packet must preserve."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.factory-review-guidelines-skill.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted review skill provides baseline-preservation checks that this transform packet must preserve."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.phase6-factory-benchmark-harness.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted benchmark harness spec defines the additive skill and wrapper assets that this packet may refine."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.phase6-agent-packet-context-pack-rules-data.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted packet-context rules define the segment order and band discipline this packet must preserve."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.phase6-workspace-manifest-index-data.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted manifest index maps this packet whitelist to accepted workspace roots."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.phase6-codebase-current-state-data.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted current-state view shows which .factory, scripts, and control-plane roots are materialized for this packet today."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "sem.phase2-run-class-taxonomy-protocol-kernel.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted run-class taxonomy defines the transform run class used by this packet."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "reuse.phase5-run-class-protocol-packs.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted protocol pack preserves transform-class proof and fixture posture for this packet type."
+        }
+      ],
+      "validation_hooks": [
+        {
+          "hook_id": "vh.dependency.integrity"
+        },
+        {
+          "hook_id": "vh.consistency.cross-pack-review"
+        },
+        {
+          "hook_id": "vh.fixture.or-test-when-applicable"
+        },
+        {
+          "hook_id": "vh.manual.acceptance"
+        }
+      ],
+      "stale_rule_id": "sr.derivative.manual",
+      "notes": [
+        "P6.4 accepted transform-class pilot packet for bounded write-path refinement of additive Factory skill and benchmark-harness assets.",
+        "Accepted for downstream use as the first-wave mutating packet archetype before broader packet rollout."
+      ]
+    },
+    {
+      "artifact_id": "cp.phase6-pilot-benchmark-results-data.v1",
+      "artifact_type_id": "cp.control_plane_dataset",
+      "title": "Phase 6 pilot benchmark results",
+      "version": "1.0.0",
+      "artifact_status": "accepted",
+      "semantic_owner": "Platform architecture steward",
+      "stewardship_mode": "human_factory",
+      "acceptance_authority": "Human plan owner",
+      "canonical_locator": "tests/benchmark-datasets/phase-6-pilot-benchmark-results.json",
+      "source_authority_refs": [
+        "cp.master-plan.v1",
+        "cp.phase6-factory-benchmark-harness.v1",
+        "cp.phase6-pilot-benchmark-matrix-data.v1",
+        "cp.phase6-fixture-rules-data.v1"
+      ],
+      "dependency_refs": [
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.master-plan.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The master plan requires frozen pilot benchmark results as part of P6.4."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.artifact-control-plane-spec.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted control-plane spec defines dataset metadata, dependency semantics, validation hooks, and stale rules."
+        },
+        {
+          "edge_type": "derives_from",
+          "artifact_id": "cp.phase6-factory-benchmark-harness.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The results dataset is generated by the accepted Phase 6 benchmark harness."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.phase6-pilot-benchmark-matrix-data.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted benchmark matrix defines the cases and expectations summarized in the results dataset."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.phase6-agent-packet-context-pack-rules-data.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted packet-context rules provide the budget-band ceiling checks summarized in the results dataset."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.phase6-fixture-rules-data.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted fixture-rules dataset provides the run-class fixture expectations checked by the harness."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.factory-benchmark-harness-skill.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted benchmark-harness skill defines the shared execution posture used to generate this result set."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "pkt.phase6-pilot-plan-release-blueprint-packet.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted plan pilot packet contributes one benchmark case to this result set."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "pkt.phase6-pilot-audit-doc-plane-consistency-packet.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted audit pilot packet contributes one benchmark case to this result set."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "pkt.phase6-pilot-transform-factory-skill-harness-packet.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted transform pilot packet contributes one benchmark case to this result set."
+        },
+        {
+          "edge_type": "validated_by",
+          "artifact_id": "cp.phase6-factory-benchmark-harness.v1",
+          "propagation_mode": "revalidate",
+          "required_for_acceptance": true,
+          "notes": "Re-run the accepted benchmark harness if benchmark expectations, packet briefs, or fixture bindings change."
+        }
+      ],
+      "validation_hooks": [
+        {
+          "hook_id": "vh.schema.json-parse"
+        },
+        {
+          "hook_id": "vh.schema.required-fields"
+        },
+        {
+          "hook_id": "vh.dependency.integrity"
+        },
+        {
+          "hook_id": "vh.consistency.cross-pack-review"
+        },
+        {
+          "hook_id": "vh.manual.acceptance"
+        }
+      ],
+      "stale_rule_id": "sr.control-plane.strict",
+      "notes": [
+        "P6.4 accepted dry-run benchmark results showing all first-wave pilot packets passing structural validation against the benchmark matrix.",
+        "Accepted for downstream use as the frozen benchmark snapshot that informs pilot-packet tuning notes."
+      ]
+    },
+    {
+      "artifact_id": "cp.phase6-pilot-packet-tuning-notes.v1",
+      "artifact_type_id": "cp.control_plane_spec",
+      "title": "Phase 6 pilot packet tuning notes",
+      "version": "1.0.0",
+      "artifact_status": "accepted",
+      "semantic_owner": "Product/canon owner",
+      "stewardship_mode": "human_factory",
+      "acceptance_authority": "Human plan owner",
+      "canonical_locator": "docs/control-plane/core/phase-6-pilot-packet-tuning-notes.md",
+      "source_authority_refs": [
+        "cp.phase6-factory-benchmark-harness.v1",
+        "cp.phase6-pilot-benchmark-matrix-data.v1",
+        "cp.phase6-pilot-benchmark-results-data.v1"
+      ],
+      "dependency_refs": [
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.artifact-control-plane-spec.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted control-plane spec defines artifact metadata, dependency semantics, validation hooks, and stale rules for this tuning note."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.phase6-factory-benchmark-harness.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted benchmark harness spec defines the benchmark posture summarized by these notes."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.phase6-pilot-benchmark-matrix-data.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted benchmark matrix defines the pilot cases summarized by these notes."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.phase6-pilot-benchmark-results-data.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted benchmark results dataset is the evidence source summarized by these tuning notes."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.phase6-agent-packet-context-pack-rules-data.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted packet-context rules explain the governing-ref ceiling observation captured in these notes."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.phase6-fixture-rules-data.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted fixture-rules dataset explains the run-class fixture posture summarized by these notes."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.factory-benchmark-harness-skill.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted benchmark-harness skill defines the shared execution workflow summarized by these tuning notes."
+        }
+      ],
+      "validation_hooks": [
+        {
+          "hook_id": "vh.schema.required-fields"
+        },
+        {
+          "hook_id": "vh.dependency.integrity"
+        },
+        {
+          "hook_id": "vh.consistency.cross-pack-review"
+        },
+        {
+          "hook_id": "vh.manual.acceptance"
+        }
+      ],
+      "stale_rule_id": "sr.control-plane.strict",
+      "notes": [
+        "P6.4 accepted tuning notes freezing the first dry-run pilot-packet observations and carry-forward guidance.",
+        "Accepted for downstream use as the tuning baseline for future packet-wave refinements."
+      ]
     }
   ]
 }
