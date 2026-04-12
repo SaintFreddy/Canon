@@ -650,6 +650,18 @@
       "artifact_type_id": "cp.control_plane_dataset",
       "artifact_status": "accepted",
       "canonical_locator": "docs/control-plane/core/phase-6-execution-packet-index.json"
+    },
+    {
+      "artifact_id": "sync.phase7-carry-forward-delta-pack.v1",
+      "artifact_type_id": "sync.delta_sync_pack",
+      "artifact_status": "accepted",
+      "canonical_locator": "docs/control-plane/sync/phase-7-carry-forward-delta-pack-operating-rule.md"
+    },
+    {
+      "artifact_id": "cp.phase7-delta-pack-index-data.v1",
+      "artifact_type_id": "cp.control_plane_dataset",
+      "artifact_status": "accepted",
+      "canonical_locator": "docs/control-plane/core/phase-7-delta-pack-index.json"
     }
   ],
   "edges": [
@@ -11060,6 +11072,86 @@
       "edge_type": "depends_on",
       "propagation_mode": "auto",
       "notes": "The execution-packet index includes `pkt.phase6-r7-commissioning-bridge-test-fixtures-packet.v1` as one bounded release packet entry."
+    },
+    {
+      "edge_id": "e-1302",
+      "from_artifact_id": "sync.phase7-carry-forward-delta-pack.v1",
+      "to_artifact_id": "cp.master-plan.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "manual",
+      "notes": "The master plan names P7.1 as the accepted delta-pack deliverable and the append-only carry-forward destination."
+    },
+    {
+      "edge_id": "e-1303",
+      "from_artifact_id": "sync.phase7-carry-forward-delta-pack.v1",
+      "to_artifact_id": "cp.artifact-control-plane-spec.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "revalidate",
+      "notes": "The accepted control-plane spec defines sync artifact metadata, validation hooks, and stale propagation semantics."
+    },
+    {
+      "edge_id": "e-1304",
+      "from_artifact_id": "sync.phase7-carry-forward-delta-pack.v1",
+      "to_artifact_id": "cp.phase6-release-blueprint-index-data.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "manual",
+      "notes": "The rule inherits accepted release-blueprint coverage from the Phase 6 blueprint index."
+    },
+    {
+      "edge_id": "e-1305",
+      "from_artifact_id": "sync.phase7-carry-forward-delta-pack.v1",
+      "to_artifact_id": "cp.phase6-execution-packet-index-data.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "manual",
+      "notes": "The rule inherits accepted execution-packet coverage from the Phase 6 packet index."
+    },
+    {
+      "edge_id": "e-1306",
+      "from_artifact_id": "sync.phase7-carry-forward-delta-pack.v1",
+      "to_artifact_id": "surf.phase6-agent-oriented-codebase-pattern-and-documentation-plane-pack.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "manual",
+      "notes": "The rule preserves the accepted documentation-plane placement and repo-truth posture for sync artifacts."
+    },
+    {
+      "edge_id": "e-1307",
+      "from_artifact_id": "cp.phase7-delta-pack-index-data.v1",
+      "to_artifact_id": "cp.master-plan.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The master plan names P7.1 as the accepted delta-pack rule and carry-forward baseline."
+    },
+    {
+      "edge_id": "e-1308",
+      "from_artifact_id": "cp.phase7-delta-pack-index-data.v1",
+      "to_artifact_id": "cp.artifact-control-plane-spec.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted control-plane spec defines dataset metadata, dependency semantics, validation hooks, and stale rules."
+    },
+    {
+      "edge_id": "e-1309",
+      "from_artifact_id": "cp.phase7-delta-pack-index-data.v1",
+      "to_artifact_id": "sync.phase7-carry-forward-delta-pack.v1",
+      "edge_type": "derives_from",
+      "propagation_mode": "auto",
+      "notes": "The delta index operationalizes the accepted P7.1 delta-pack rule as a machine-readable coverage map."
+    },
+    {
+      "edge_id": "e-1310",
+      "from_artifact_id": "cp.phase7-delta-pack-index-data.v1",
+      "to_artifact_id": "cp.phase6-release-blueprint-index-data.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The delta index tracks the accepted release-blueprint inventory that must trigger durable delta capture."
+    },
+    {
+      "edge_id": "e-1311",
+      "from_artifact_id": "cp.phase7-delta-pack-index-data.v1",
+      "to_artifact_id": "cp.phase6-execution-packet-index-data.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The delta index tracks the accepted execution-packet inventory that must trigger durable delta capture."
     }
   ]
 }

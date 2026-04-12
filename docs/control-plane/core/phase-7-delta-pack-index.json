@@ -1,0 +1,338 @@
+{
+  "delta_pack_index_meta": {
+    "schema_version": "1.0.0",
+    "title": "Phase 7 delta pack index",
+    "task_id": "P7.1",
+    "release_blueprint_index_ref": "cp.phase6-release-blueprint-index-data.v1",
+    "execution_packet_index_ref": "cp.phase6-execution-packet-index-data.v1",
+    "delta_sync_pack_ref": "sync.phase7-carry-forward-delta-pack.v1"
+  },
+  "delta_template_requirements": {
+    "required_section_headings": [
+      "## 1. Purpose",
+      "## 2. Scope boundaries",
+      "## 3. Governing baseline",
+      "## 4. Operating loop",
+      "## 5. Validation and review",
+      "## 6. Acceptance notes"
+    ],
+    "required_capture_fields": [
+      "trigger artifact ref or accepted task ID",
+      "accepted change summary",
+      "touched accepted artifact refs",
+      "affected downstream artifact refs",
+      "required stale-review or revalidation actions",
+      "regeneration commands or explicit `None`",
+      "release-gate follow-up state",
+      "master-plan carry-forward entry ref"
+    ],
+    "required_validator_commands": [
+      "python3 scripts/validators/validate_control_plane_integrity.py",
+      "python3 scripts/validators/validate_phase7_sync_artifacts.py"
+    ],
+    "carry_forward_log_ref": "cp.master-plan.v1"
+  },
+  "tracked_releases": [
+    {
+      "release_slug": "r1-conversation",
+      "release_ref": "rel.r1-transcript-chat-contract.v1",
+      "blueprint_ref": "bp.phase6-r1-conversation-blueprint.v1",
+      "packet_refs": [
+        "pkt.phase6-r1-conversation-contracts-objects-packet.v1",
+        "pkt.phase6-r1-conversation-runtime-execution-packet.v1",
+        "pkt.phase6-r1-conversation-surface-validation-packet.v1"
+      ],
+      "delta_scope": "Capture the accepted change summary, affected packet families, downstream sync actions, and release-gate follow-ups for this release slice."
+    },
+    {
+      "release_slug": "r2-context-control",
+      "release_ref": "rel.r2-context-chat-contract.v1",
+      "blueprint_ref": "bp.phase6-r2-context-control-blueprint.v1",
+      "packet_refs": [
+        "pkt.phase6-r2-context-control-contracts-objects-packet.v1",
+        "pkt.phase6-r2-context-control-runtime-execution-packet.v1",
+        "pkt.phase6-r2-context-control-surface-validation-packet.v1"
+      ],
+      "delta_scope": "Capture the accepted change summary, affected packet families, downstream sync actions, and release-gate follow-ups for this release slice."
+    },
+    {
+      "release_slug": "r3-branch-replay",
+      "release_ref": "rel.r3-branch-visual-thinker-contract.v1",
+      "blueprint_ref": "bp.phase6-r3-branch-replay-blueprint.v1",
+      "packet_refs": [
+        "pkt.phase6-r3-branch-replay-contracts-objects-packet.v1",
+        "pkt.phase6-r3-branch-replay-runtime-execution-packet.v1",
+        "pkt.phase6-r3-branch-replay-surface-validation-packet.v1"
+      ],
+      "delta_scope": "Capture the accepted change summary, affected packet families, downstream sync actions, and release-gate follow-ups for this release slice."
+    },
+    {
+      "release_slug": "r4-artifact-workspace",
+      "release_ref": "rel.r4-artifact-workspace-contract.v1",
+      "blueprint_ref": "bp.phase6-r4-artifact-workspace-blueprint.v1",
+      "packet_refs": [
+        "pkt.phase6-r4-artifact-workspace-contracts-objects-packet.v1",
+        "pkt.phase6-r4-artifact-workspace-runtime-execution-packet.v1",
+        "pkt.phase6-r4-artifact-workspace-surface-validation-packet.v1"
+      ],
+      "delta_scope": "Capture the accepted change summary, affected packet families, downstream sync actions, and release-gate follow-ups for this release slice."
+    },
+    {
+      "release_slug": "r5-prompt-assets",
+      "release_ref": "rel.r5-prompt-studio-contract.v1",
+      "blueprint_ref": "bp.phase6-r5-prompt-assets-blueprint.v1",
+      "packet_refs": [
+        "pkt.phase6-r5-prompt-assets-contracts-objects-packet.v1",
+        "pkt.phase6-r5-prompt-assets-runtime-execution-packet.v1",
+        "pkt.phase6-r5-prompt-assets-surface-validation-packet.v1"
+      ],
+      "delta_scope": "Capture the accepted change summary, affected packet families, downstream sync actions, and release-gate follow-ups for this release slice."
+    },
+    {
+      "release_slug": "r6-governed-reusable-execution",
+      "release_ref": "rel.r6-governed-agent-applet-chat-contract.v1",
+      "blueprint_ref": "bp.phase6-r6-governed-reusable-execution-blueprint.v1",
+      "packet_refs": [
+        "pkt.phase6-r6-governed-reusable-execution-contracts-objects-packet.v1",
+        "pkt.phase6-r6-governed-reusable-execution-runtime-execution-packet.v1",
+        "pkt.phase6-r6-governed-reusable-execution-surface-validation-packet.v1"
+      ],
+      "delta_scope": "Capture the accepted change summary, affected packet families, downstream sync actions, and release-gate follow-ups for this release slice."
+    },
+    {
+      "release_slug": "r7-commissioning-bridge",
+      "release_ref": "rel.r7-commissioning-bridge-contract.v1",
+      "blueprint_ref": "bp.phase6-r7-commissioning-bridge-blueprint.v1",
+      "packet_refs": [
+        "pkt.phase6-r7-commissioning-bridge-contracts-objects-packet.v1",
+        "pkt.phase6-r7-commissioning-bridge-runtime-execution-packet.v1",
+        "pkt.phase6-r7-commissioning-bridge-chat-surface-packet.v1",
+        "pkt.phase6-r7-commissioning-bridge-task-studio-handoff-packet.v1",
+        "pkt.phase6-r7-commissioning-bridge-test-fixtures-packet.v1"
+      ],
+      "delta_scope": "Capture the accepted change summary, affected packet families, downstream sync actions, and release-gate follow-ups for this release slice."
+    }
+  ],
+  "tracked_packets": [
+    {
+      "release_slug": "r1-conversation",
+      "packet_ref": "pkt.phase6-r1-conversation-contracts-objects-packet.v1",
+      "packet_family": "contracts_objects",
+      "packet_order": 1,
+      "prerequisite_packet_refs": [],
+      "delta_scope": "Capture the accepted packet change, downstream packet or sync impact, revalidation commands, and any required release-gate follow-up."
+    },
+    {
+      "release_slug": "r1-conversation",
+      "packet_ref": "pkt.phase6-r1-conversation-runtime-execution-packet.v1",
+      "packet_family": "runtime_execution",
+      "packet_order": 2,
+      "prerequisite_packet_refs": [
+        "pkt.phase6-r1-conversation-contracts-objects-packet.v1"
+      ],
+      "delta_scope": "Capture the accepted packet change, downstream packet or sync impact, revalidation commands, and any required release-gate follow-up."
+    },
+    {
+      "release_slug": "r1-conversation",
+      "packet_ref": "pkt.phase6-r1-conversation-surface-validation-packet.v1",
+      "packet_family": "surface_validation",
+      "packet_order": 3,
+      "prerequisite_packet_refs": [
+        "pkt.phase6-r1-conversation-runtime-execution-packet.v1"
+      ],
+      "delta_scope": "Capture the accepted packet change, downstream packet or sync impact, revalidation commands, and any required release-gate follow-up."
+    },
+    {
+      "release_slug": "r2-context-control",
+      "packet_ref": "pkt.phase6-r2-context-control-contracts-objects-packet.v1",
+      "packet_family": "contracts_objects",
+      "packet_order": 1,
+      "prerequisite_packet_refs": [],
+      "delta_scope": "Capture the accepted packet change, downstream packet or sync impact, revalidation commands, and any required release-gate follow-up."
+    },
+    {
+      "release_slug": "r2-context-control",
+      "packet_ref": "pkt.phase6-r2-context-control-runtime-execution-packet.v1",
+      "packet_family": "runtime_execution",
+      "packet_order": 2,
+      "prerequisite_packet_refs": [
+        "pkt.phase6-r2-context-control-contracts-objects-packet.v1"
+      ],
+      "delta_scope": "Capture the accepted packet change, downstream packet or sync impact, revalidation commands, and any required release-gate follow-up."
+    },
+    {
+      "release_slug": "r2-context-control",
+      "packet_ref": "pkt.phase6-r2-context-control-surface-validation-packet.v1",
+      "packet_family": "surface_validation",
+      "packet_order": 3,
+      "prerequisite_packet_refs": [
+        "pkt.phase6-r2-context-control-runtime-execution-packet.v1"
+      ],
+      "delta_scope": "Capture the accepted packet change, downstream packet or sync impact, revalidation commands, and any required release-gate follow-up."
+    },
+    {
+      "release_slug": "r3-branch-replay",
+      "packet_ref": "pkt.phase6-r3-branch-replay-contracts-objects-packet.v1",
+      "packet_family": "contracts_objects",
+      "packet_order": 1,
+      "prerequisite_packet_refs": [],
+      "delta_scope": "Capture the accepted packet change, downstream packet or sync impact, revalidation commands, and any required release-gate follow-up."
+    },
+    {
+      "release_slug": "r3-branch-replay",
+      "packet_ref": "pkt.phase6-r3-branch-replay-runtime-execution-packet.v1",
+      "packet_family": "runtime_execution",
+      "packet_order": 2,
+      "prerequisite_packet_refs": [
+        "pkt.phase6-r3-branch-replay-contracts-objects-packet.v1"
+      ],
+      "delta_scope": "Capture the accepted packet change, downstream packet or sync impact, revalidation commands, and any required release-gate follow-up."
+    },
+    {
+      "release_slug": "r3-branch-replay",
+      "packet_ref": "pkt.phase6-r3-branch-replay-surface-validation-packet.v1",
+      "packet_family": "surface_validation",
+      "packet_order": 3,
+      "prerequisite_packet_refs": [
+        "pkt.phase6-r3-branch-replay-runtime-execution-packet.v1"
+      ],
+      "delta_scope": "Capture the accepted packet change, downstream packet or sync impact, revalidation commands, and any required release-gate follow-up."
+    },
+    {
+      "release_slug": "r4-artifact-workspace",
+      "packet_ref": "pkt.phase6-r4-artifact-workspace-contracts-objects-packet.v1",
+      "packet_family": "contracts_objects",
+      "packet_order": 1,
+      "prerequisite_packet_refs": [],
+      "delta_scope": "Capture the accepted packet change, downstream packet or sync impact, revalidation commands, and any required release-gate follow-up."
+    },
+    {
+      "release_slug": "r4-artifact-workspace",
+      "packet_ref": "pkt.phase6-r4-artifact-workspace-runtime-execution-packet.v1",
+      "packet_family": "runtime_execution",
+      "packet_order": 2,
+      "prerequisite_packet_refs": [
+        "pkt.phase6-r4-artifact-workspace-contracts-objects-packet.v1"
+      ],
+      "delta_scope": "Capture the accepted packet change, downstream packet or sync impact, revalidation commands, and any required release-gate follow-up."
+    },
+    {
+      "release_slug": "r4-artifact-workspace",
+      "packet_ref": "pkt.phase6-r4-artifact-workspace-surface-validation-packet.v1",
+      "packet_family": "surface_validation",
+      "packet_order": 3,
+      "prerequisite_packet_refs": [
+        "pkt.phase6-r4-artifact-workspace-runtime-execution-packet.v1"
+      ],
+      "delta_scope": "Capture the accepted packet change, downstream packet or sync impact, revalidation commands, and any required release-gate follow-up."
+    },
+    {
+      "release_slug": "r5-prompt-assets",
+      "packet_ref": "pkt.phase6-r5-prompt-assets-contracts-objects-packet.v1",
+      "packet_family": "contracts_objects",
+      "packet_order": 1,
+      "prerequisite_packet_refs": [],
+      "delta_scope": "Capture the accepted packet change, downstream packet or sync impact, revalidation commands, and any required release-gate follow-up."
+    },
+    {
+      "release_slug": "r5-prompt-assets",
+      "packet_ref": "pkt.phase6-r5-prompt-assets-runtime-execution-packet.v1",
+      "packet_family": "runtime_execution",
+      "packet_order": 2,
+      "prerequisite_packet_refs": [
+        "pkt.phase6-r5-prompt-assets-contracts-objects-packet.v1"
+      ],
+      "delta_scope": "Capture the accepted packet change, downstream packet or sync impact, revalidation commands, and any required release-gate follow-up."
+    },
+    {
+      "release_slug": "r5-prompt-assets",
+      "packet_ref": "pkt.phase6-r5-prompt-assets-surface-validation-packet.v1",
+      "packet_family": "surface_validation",
+      "packet_order": 3,
+      "prerequisite_packet_refs": [
+        "pkt.phase6-r5-prompt-assets-runtime-execution-packet.v1"
+      ],
+      "delta_scope": "Capture the accepted packet change, downstream packet or sync impact, revalidation commands, and any required release-gate follow-up."
+    },
+    {
+      "release_slug": "r6-governed-reusable-execution",
+      "packet_ref": "pkt.phase6-r6-governed-reusable-execution-contracts-objects-packet.v1",
+      "packet_family": "contracts_objects",
+      "packet_order": 1,
+      "prerequisite_packet_refs": [],
+      "delta_scope": "Capture the accepted packet change, downstream packet or sync impact, revalidation commands, and any required release-gate follow-up."
+    },
+    {
+      "release_slug": "r6-governed-reusable-execution",
+      "packet_ref": "pkt.phase6-r6-governed-reusable-execution-runtime-execution-packet.v1",
+      "packet_family": "runtime_execution",
+      "packet_order": 2,
+      "prerequisite_packet_refs": [
+        "pkt.phase6-r6-governed-reusable-execution-contracts-objects-packet.v1"
+      ],
+      "delta_scope": "Capture the accepted packet change, downstream packet or sync impact, revalidation commands, and any required release-gate follow-up."
+    },
+    {
+      "release_slug": "r6-governed-reusable-execution",
+      "packet_ref": "pkt.phase6-r6-governed-reusable-execution-surface-validation-packet.v1",
+      "packet_family": "surface_validation",
+      "packet_order": 3,
+      "prerequisite_packet_refs": [
+        "pkt.phase6-r6-governed-reusable-execution-runtime-execution-packet.v1"
+      ],
+      "delta_scope": "Capture the accepted packet change, downstream packet or sync impact, revalidation commands, and any required release-gate follow-up."
+    },
+    {
+      "release_slug": "r7-commissioning-bridge",
+      "packet_ref": "pkt.phase6-r7-commissioning-bridge-contracts-objects-packet.v1",
+      "packet_family": "contracts_objects",
+      "packet_order": 1,
+      "prerequisite_packet_refs": [],
+      "delta_scope": "Capture the accepted packet change, downstream packet or sync impact, revalidation commands, and any required release-gate follow-up."
+    },
+    {
+      "release_slug": "r7-commissioning-bridge",
+      "packet_ref": "pkt.phase6-r7-commissioning-bridge-runtime-execution-packet.v1",
+      "packet_family": "runtime_execution",
+      "packet_order": 2,
+      "prerequisite_packet_refs": [
+        "pkt.phase6-r7-commissioning-bridge-contracts-objects-packet.v1"
+      ],
+      "delta_scope": "Capture the accepted packet change, downstream packet or sync impact, revalidation commands, and any required release-gate follow-up."
+    },
+    {
+      "release_slug": "r7-commissioning-bridge",
+      "packet_ref": "pkt.phase6-r7-commissioning-bridge-chat-surface-packet.v1",
+      "packet_family": "chat_surface",
+      "packet_order": 3,
+      "prerequisite_packet_refs": [
+        "pkt.phase6-r7-commissioning-bridge-runtime-execution-packet.v1"
+      ],
+      "delta_scope": "Capture the accepted packet change, downstream packet or sync impact, revalidation commands, and any required release-gate follow-up."
+    },
+    {
+      "release_slug": "r7-commissioning-bridge",
+      "packet_ref": "pkt.phase6-r7-commissioning-bridge-task-studio-handoff-packet.v1",
+      "packet_family": "task_studio_handoff",
+      "packet_order": 4,
+      "prerequisite_packet_refs": [
+        "pkt.phase6-r7-commissioning-bridge-chat-surface-packet.v1"
+      ],
+      "delta_scope": "Capture the accepted packet change, downstream packet or sync impact, revalidation commands, and any required release-gate follow-up."
+    },
+    {
+      "release_slug": "r7-commissioning-bridge",
+      "packet_ref": "pkt.phase6-r7-commissioning-bridge-test-fixtures-packet.v1",
+      "packet_family": "test_fixtures",
+      "packet_order": 5,
+      "prerequisite_packet_refs": [
+        "pkt.phase6-r7-commissioning-bridge-task-studio-handoff-packet.v1"
+      ],
+      "delta_scope": "Capture the accepted packet change, downstream packet or sync impact, revalidation commands, and any required release-gate follow-up."
+    }
+  ],
+  "summary": {
+    "tracked_release_count": 7,
+    "tracked_packet_count": 23
+  }
+}

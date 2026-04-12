@@ -14177,6 +14177,153 @@
         "P6.6 accepted execution-packet index enumerating the bounded release packets derived from the accepted release-blueprint set.",
         "Accepted for downstream use as the machine-readable packet map feeding execution-packet validation and later delegation."
       ]
+    },
+    {
+      "artifact_id": "sync.phase7-carry-forward-delta-pack.v1",
+      "artifact_type_id": "sync.delta_sync_pack",
+      "title": "Phase 7 carry-forward delta pack operating rule",
+      "version": "1.0.0",
+      "artifact_status": "accepted",
+      "semantic_owner": "Sync steward",
+      "stewardship_mode": "factory_first",
+      "acceptance_authority": "Human plan owner",
+      "canonical_locator": "docs/control-plane/sync/phase-7-carry-forward-delta-pack-operating-rule.md",
+      "sync_scope": "Accepted delta-capture template and operating rule for release, packet, and sync changes that must preserve downstream impact and carry-forward continuity.",
+      "source_authority_refs": [
+        "cp.master-plan.v1",
+        "cp.phase6-release-blueprint-index-data.v1",
+        "cp.phase6-execution-packet-index-data.v1",
+        "surf.phase6-agent-oriented-codebase-pattern-and-documentation-plane-pack.v1"
+      ],
+      "dependency_refs": [
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.master-plan.v1",
+          "propagation_mode": "manual",
+          "required_for_acceptance": true,
+          "notes": "The master plan names P7.1 as the accepted delta-pack deliverable and the append-only carry-forward destination."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.artifact-control-plane-spec.v1",
+          "propagation_mode": "revalidate",
+          "required_for_acceptance": true,
+          "notes": "The accepted control-plane spec defines sync artifact metadata, validation hooks, and stale propagation semantics."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.phase6-release-blueprint-index-data.v1",
+          "propagation_mode": "manual",
+          "required_for_acceptance": true,
+          "notes": "The rule inherits accepted release-blueprint coverage from the Phase 6 blueprint index."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.phase6-execution-packet-index-data.v1",
+          "propagation_mode": "manual",
+          "required_for_acceptance": true,
+          "notes": "The rule inherits accepted execution-packet coverage from the Phase 6 packet index."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "surf.phase6-agent-oriented-codebase-pattern-and-documentation-plane-pack.v1",
+          "propagation_mode": "manual",
+          "required_for_acceptance": true,
+          "notes": "The rule preserves the accepted documentation-plane placement and repo-truth posture for sync artifacts."
+        }
+      ],
+      "validation_hooks": [
+        {
+          "hook_id": "vh.dependency.integrity"
+        },
+        {
+          "hook_id": "vh.revalidation.trigger"
+        },
+        {
+          "hook_id": "vh.manual.acceptance"
+        }
+      ],
+      "stale_rule_id": "sr.sync.manual",
+      "notes": [
+        "P7.1 accepted the minimum delta-pack template and operating loop for every accepted release, packet, or sync change.",
+        "Accepted for downstream use as the durable delta-capture baseline feeding recurring sync, stale detection, and release-gate rechecks."
+      ]
+    },
+    {
+      "artifact_id": "cp.phase7-delta-pack-index-data.v1",
+      "artifact_type_id": "cp.control_plane_dataset",
+      "title": "Phase 7 delta pack index",
+      "version": "1.0.0",
+      "artifact_status": "accepted",
+      "semantic_owner": "Platform architecture steward",
+      "stewardship_mode": "human_factory",
+      "acceptance_authority": "Human plan owner",
+      "canonical_locator": "docs/control-plane/core/phase-7-delta-pack-index.json",
+      "source_authority_refs": [
+        "cp.master-plan.v1",
+        "cp.phase6-release-blueprint-index-data.v1",
+        "cp.phase6-execution-packet-index-data.v1",
+        "sync.phase7-carry-forward-delta-pack.v1"
+      ],
+      "dependency_refs": [
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.master-plan.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The master plan names P7.1 as the accepted delta-pack rule and carry-forward baseline."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.artifact-control-plane-spec.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted control-plane spec defines dataset metadata, dependency semantics, validation hooks, and stale rules."
+        },
+        {
+          "edge_type": "derives_from",
+          "artifact_id": "sync.phase7-carry-forward-delta-pack.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The delta index operationalizes the accepted P7.1 delta-pack rule as a machine-readable coverage map."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.phase6-release-blueprint-index-data.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The delta index tracks the accepted release-blueprint inventory that must trigger durable delta capture."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.phase6-execution-packet-index-data.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The delta index tracks the accepted execution-packet inventory that must trigger durable delta capture."
+        }
+      ],
+      "validation_hooks": [
+        {
+          "hook_id": "vh.schema.json-parse"
+        },
+        {
+          "hook_id": "vh.schema.required-fields"
+        },
+        {
+          "hook_id": "vh.dependency.integrity"
+        },
+        {
+          "hook_id": "vh.consistency.cross-pack-review"
+        },
+        {
+          "hook_id": "vh.manual.acceptance"
+        }
+      ],
+      "stale_rule_id": "sr.control-plane.strict",
+      "notes": [
+        "P7.1 accepted a machine-readable delta-trigger inventory over every accepted Phase 6 release blueprint and execution packet.",
+        "Accepted for downstream use as the coverage map that later Phase 7 sync, stale, and gate automation reads instead of rebuilding packet/release scope ad hoc."
+      ]
     }
   ]
 }

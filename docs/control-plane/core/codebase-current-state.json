@@ -27,6 +27,7 @@
         "releases/",
         "reuse/",
         "semantics/",
+        "sync/",
         "surfaces/"
       ],
       "governing_artifact_refs": [
@@ -142,6 +143,6 @@
     "materialized_root_count": 4,
     "reserved_root_count": 4,
     "gated_root_count": 1,
-    "repo_posture": "control-plane, Factory, tests, and scripts roots are materialized; pilot packets live under docs/control-plane/implementation/ and benchmark datasets live under tests/benchmark-datasets/ while runtime implementation roots remain reserved."
+    "repo_posture": "control-plane, Factory, tests, and scripts roots are materialized; implementation packets and Phase 7 sync artifacts now live under docs/control-plane/ while benchmark datasets live under tests/benchmark-datasets/ and runtime implementation roots remain reserved."
   }
 }

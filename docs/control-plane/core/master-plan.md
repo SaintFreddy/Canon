@@ -237,6 +237,7 @@ This section answers, in plain terms, what is already done and what is not.
 - [x] The Phase 5 Task Studio V1 scope pack has been produced and accepted.
 - [x] The Phase 5 Commissioning Bridge -> Task Studio handoff contract has been produced and accepted.
 - [x] The Phase 6 surface contract packs have been produced and accepted.
+- [x] The Phase 7 delta-pack operating rule and coverage index have been produced and accepted.
 
 ### 5.2 High-level milestone snapshot
 
@@ -724,7 +725,7 @@ This phase is done when governance, proof, protocol packs, reusable execution ob
 
 ---
 
-## Phase 6 — Surface/codebase substrate and execution machinery `[~]`
+## Phase 6 — Surface/codebase substrate and execution machinery `[x]`
 
 ### Goal
 
@@ -778,7 +779,7 @@ This phase is done when the package map, documentation plane, Factory operating 
 
 ---
 
-## Phase 7 — Continuous sync and deltas `[ ]`
+## Phase 7 — Continuous sync and deltas `[~]`
 
 ### Goal
 
@@ -788,7 +789,7 @@ Keep the whole program coherent after work starts landing by making stale detect
 
 This phase is done when every accepted change triggers delta capture, stale detection, sync checks, and regeneration where needed.
 
-#### [ ] P7.1 — Carry-forward delta pack after every packet/release
+#### [x] P7.1 — Carry-forward delta pack after every packet/release
 - **Mode:** Factory-first
 - **Depends on:** P6.6
 - **Deliverable:** delta pack template and operating rule for every accepted packet/release
@@ -2108,3 +2109,29 @@ Notes for future prompts:
 - Start later execution work from `cp.phase6-execution-packet-index-data.v1` and the accepted per-release packet families instead of inventing new packet breakdowns by convenience.
 - Run `scripts/validators/validate_execution_packets.py` whenever packet briefs, packet-family splits, whitelist paths, prerequisite chains, or packet-budget choices change.
 - Preserve the accepted family split and standard-band posture; split packets further instead of widening them, especially around R7 handoff scope.
+
+#### CF-0057 | 2026-04-12 | Source: P7.1 — Carry-forward delta pack after every packet/release
+
+New information:
+- Artifact `sync.phase7-carry-forward-delta-pack.v1` now defines the accepted delta-pack template and operating loop that every accepted release, packet, or sync change must follow before downstream work continues.
+- Artifact `cp.phase7-delta-pack-index-data.v1` now freezes the machine-readable Phase 7 delta-trigger inventory over every accepted Phase 6 release blueprint and execution packet.
+- `scripts/validators/validate_control_plane_integrity.py` now provides a thin repo-local integrity check for registry/graph node, edge, status, hook, and dependency-ref alignment, while `scripts/validators/validate_phase7_sync_artifacts.py` validates sync-pack structure plus delta-index coverage.
+- The documentation-plane manifest and current-state datasets now materialize `docs/control-plane/sync/` as an accepted sync/delta/stale artifact root.
+
+Impact:
+- `P7.2` can drive recurring architecture sync from one accepted delta baseline instead of recreating change scope from ad hoc packet or release lists.
+- Later stale-detection and gate-recheck work can read one explicit release/packet trigger inventory and one explicit sync artifact root instead of inferring control-plane coverage from free-form docs.
+- Registry and dependency-graph changes now have a reusable integrity check before downstream sync automation relies on them.
+
+Status changes:
+- P7.1 marked done.
+- The completion snapshot now records the Phase 7 delta-pack operating rule and coverage index as accepted.
+- Phase 7 marked in progress.
+
+Stale items:
+- None.
+
+Notes for future prompts:
+- Treat `sync.phase7-carry-forward-delta-pack.v1` and `cp.phase7-delta-pack-index-data.v1` as the default delta-capture baseline for later accepted release, packet, or sync changes.
+- Run `python3 scripts/validators/validate_control_plane_integrity.py` and `python3 scripts/validators/validate_phase7_sync_artifacts.py` whenever sync artifacts, manifest/current-state sync placement, or the delta-trigger inventory changes.
+- Preserve the durable pair of sync-pack update plus append-only carry-forward entry; do not collapse accepted delta capture into ad hoc commit commentary.

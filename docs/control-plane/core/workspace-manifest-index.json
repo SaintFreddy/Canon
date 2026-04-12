@@ -21,6 +21,7 @@
         "releases/",
         "reuse/",
         "semantics/",
+        "sync/",
         "surfaces/",
         "implementation/",
         "AGENTS.md",
@@ -36,7 +37,8 @@
       "notes": [
         "This root remains the accepted planning and architecture truth plane.",
         "Generated current-state and packet-context datasets may live under core/ without redefining runtime ownership.",
-        "P6.4 now materializes implementation/ packets beneath this root using accepted control-plane storage conventions only."
+        "P6.4 now materializes implementation/ packets beneath this root using accepted control-plane storage conventions only.",
+        "P7.1 materializes sync/ beneath this root for accepted delta, stale, and gate re-check artifacts."
       ]
     },
     {
