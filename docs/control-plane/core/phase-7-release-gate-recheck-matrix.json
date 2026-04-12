@@ -1,0 +1,431 @@
+{
+  "release_gate_recheck_matrix_meta": {
+    "schema_version": "1.0.0",
+    "title": "Phase 7 release gate recheck matrix",
+    "task_id": "P7.4",
+    "delta_pack_index_ref": "cp.phase7-delta-pack-index-data.v1",
+    "architecture_sync_ref": "sync.phase7-recurring-architecture-sync.v1",
+    "architecture_checklist_ref": "cp.phase7-architecture-sync-checklist-data.v1",
+    "stale_sync_pack_ref": "sync.phase7-stale-regeneration-loop.v1",
+    "stale_rules_ref": "cp.phase7-stale-regeneration-rules-data.v1",
+    "platform_gate_ref": "arch.phase3-platform-gate-spec.v1",
+    "maturity_matrix_ref": "rel.chat-native-maturity-matrix.v1",
+    "milestone_plan_ref": "rel.chat-native-milestone-architecture-plan.v1",
+    "release_blueprint_index_ref": "cp.phase6-release-blueprint-index-data.v1",
+    "execution_packet_index_ref": "cp.phase6-execution-packet-index-data.v1"
+  },
+  "release_gate_follow_up_state_catalog": [
+    {
+      "state": "not_required",
+      "description": "No platform or release gate recheck is required for the current stale-detection output."
+    },
+    {
+      "state": "recheck_required",
+      "description": "One or more platform or release gate rechecks were selected but have not been run yet."
+    },
+    {
+      "state": "recheck_pass",
+      "description": "The selected platform and release gate rechecks were run and all commands passed."
+    },
+    {
+      "state": "recheck_fail",
+      "description": "The selected platform or release gate rechecks were run and at least one command failed."
+    }
+  ],
+  "gate_targets": [
+    {
+      "gate_id": "platform_gate",
+      "gate_ref": "arch.phase3-platform-gate-spec.v1",
+      "release_slug": null,
+      "release_order": 0,
+      "inherits_platform_gate": false,
+      "blueprint_ref": null,
+      "packet_refs": [],
+      "trigger_artifact_refs": [
+        "arch.phase3-platform-gate-spec.v1",
+        "rel.chat-native-maturity-matrix.v1",
+        "rel.chat-native-milestone-architecture-plan.v1",
+        "sync.phase7-recurring-architecture-sync.v1",
+        "cp.phase7-architecture-sync-checklist-data.v1",
+        "sync.phase7-stale-regeneration-loop.v1",
+        "cp.phase7-stale-regeneration-rules-data.v1"
+      ],
+      "platform_gate_test_ids": [
+        "PG-01",
+        "PG-02",
+        "PG-03",
+        "PG-04",
+        "PG-05",
+        "PG-06",
+        "PG-07",
+        "PG-08",
+        "PG-09",
+        "PG-10"
+      ],
+      "required_fixture_families": [],
+      "validation_hook_ids": [
+        "vh.dependency.integrity",
+        "vh.consistency.cross-pack-review",
+        "vh.manual.acceptance"
+      ],
+      "recheck_commands": [
+        "python3 scripts/validators/validate_control_plane_integrity.py",
+        "python3 scripts/validators/validate_phase7_sync_artifacts.py",
+        "python3 scripts/wrappers/run_phase7_architecture_sync.py"
+      ],
+      "governing_artifact_refs": [
+        "arch.phase3-platform-gate-spec.v1",
+        "rel.chat-native-maturity-matrix.v1",
+        "rel.chat-native-milestone-architecture-plan.v1",
+        "sync.phase7-recurring-architecture-sync.v1",
+        "cp.phase7-architecture-sync-checklist-data.v1",
+        "sync.phase7-stale-regeneration-loop.v1",
+        "cp.phase7-stale-regeneration-rules-data.v1"
+      ],
+      "notes": "Platform Gate rechecks remain structural and architecture-facing in this repo; final passage stays human-owned."
+    },
+    {
+      "gate_id": "r1-conversation",
+      "gate_ref": "rel.r1-transcript-chat-contract.v1",
+      "release_slug": "r1-conversation",
+      "release_order": 1,
+      "inherits_platform_gate": true,
+      "blueprint_ref": "bp.phase6-r1-conversation-blueprint.v1",
+      "packet_refs": [
+        "pkt.phase6-r1-conversation-contracts-objects-packet.v1",
+        "pkt.phase6-r1-conversation-runtime-execution-packet.v1",
+        "pkt.phase6-r1-conversation-surface-validation-packet.v1"
+      ],
+      "trigger_artifact_refs": [
+        "rel.r1-transcript-chat-contract.v1",
+        "bp.phase6-r1-conversation-blueprint.v1",
+        "pkt.phase6-r1-conversation-contracts-objects-packet.v1",
+        "pkt.phase6-r1-conversation-runtime-execution-packet.v1",
+        "pkt.phase6-r1-conversation-surface-validation-packet.v1"
+      ],
+      "platform_gate_test_ids": [
+        "PG-01",
+        "PG-02",
+        "PG-03"
+      ],
+      "required_fixture_families": [
+        "golden_scenario",
+        "edge_case",
+        "regression"
+      ],
+      "validation_hook_ids": [
+        "vh.dependency.integrity",
+        "vh.consistency.cross-pack-review",
+        "vh.fixture.or-test-when-applicable",
+        "vh.manual.acceptance"
+      ],
+      "recheck_commands": [
+        "python3 scripts/validators/validate_release_blueprints.py",
+        "python3 scripts/validators/validate_pilot_packets.py docs/control-plane/implementation/packets/phase-6-r1-conversation-contracts-objects-packet.md docs/control-plane/implementation/packets/phase-6-r1-conversation-runtime-execution-packet.md docs/control-plane/implementation/packets/phase-6-r1-conversation-surface-validation-packet.md"
+      ],
+      "governing_artifact_refs": [
+        "rel.r1-transcript-chat-contract.v1",
+        "arch.phase3-platform-gate-spec.v1",
+        "rel.chat-native-maturity-matrix.v1",
+        "rel.chat-native-milestone-architecture-plan.v1",
+        "bp.phase6-r1-conversation-blueprint.v1"
+      ],
+      "notes": "Release-gate rechecks stay structural in this repo and validate the accepted blueprint plus release-local packet set rather than inventing missing runtime gate tests."
+    },
+    {
+      "gate_id": "r2-context-control",
+      "gate_ref": "rel.r2-context-chat-contract.v1",
+      "release_slug": "r2-context-control",
+      "release_order": 2,
+      "inherits_platform_gate": true,
+      "blueprint_ref": "bp.phase6-r2-context-control-blueprint.v1",
+      "packet_refs": [
+        "pkt.phase6-r2-context-control-contracts-objects-packet.v1",
+        "pkt.phase6-r2-context-control-runtime-execution-packet.v1",
+        "pkt.phase6-r2-context-control-surface-validation-packet.v1"
+      ],
+      "trigger_artifact_refs": [
+        "rel.r2-context-chat-contract.v1",
+        "bp.phase6-r2-context-control-blueprint.v1",
+        "pkt.phase6-r2-context-control-contracts-objects-packet.v1",
+        "pkt.phase6-r2-context-control-runtime-execution-packet.v1",
+        "pkt.phase6-r2-context-control-surface-validation-packet.v1"
+      ],
+      "platform_gate_test_ids": [
+        "PG-01",
+        "PG-02"
+      ],
+      "required_fixture_families": [
+        "golden_scenario",
+        "edge_case",
+        "regression"
+      ],
+      "validation_hook_ids": [
+        "vh.dependency.integrity",
+        "vh.consistency.cross-pack-review",
+        "vh.fixture.or-test-when-applicable",
+        "vh.manual.acceptance"
+      ],
+      "recheck_commands": [
+        "python3 scripts/validators/validate_release_blueprints.py",
+        "python3 scripts/validators/validate_pilot_packets.py docs/control-plane/implementation/packets/phase-6-r2-context-control-contracts-objects-packet.md docs/control-plane/implementation/packets/phase-6-r2-context-control-runtime-execution-packet.md docs/control-plane/implementation/packets/phase-6-r2-context-control-surface-validation-packet.md"
+      ],
+      "governing_artifact_refs": [
+        "rel.r2-context-chat-contract.v1",
+        "arch.phase3-platform-gate-spec.v1",
+        "rel.chat-native-maturity-matrix.v1",
+        "rel.chat-native-milestone-architecture-plan.v1",
+        "bp.phase6-r2-context-control-blueprint.v1"
+      ],
+      "notes": "Release-gate rechecks stay structural in this repo and validate the accepted blueprint plus release-local packet set rather than inventing missing runtime gate tests."
+    },
+    {
+      "gate_id": "r3-branch-replay",
+      "gate_ref": "rel.r3-branch-visual-thinker-contract.v1",
+      "release_slug": "r3-branch-replay",
+      "release_order": 3,
+      "inherits_platform_gate": true,
+      "blueprint_ref": "bp.phase6-r3-branch-replay-blueprint.v1",
+      "packet_refs": [
+        "pkt.phase6-r3-branch-replay-contracts-objects-packet.v1",
+        "pkt.phase6-r3-branch-replay-runtime-execution-packet.v1",
+        "pkt.phase6-r3-branch-replay-surface-validation-packet.v1"
+      ],
+      "trigger_artifact_refs": [
+        "rel.r3-branch-visual-thinker-contract.v1",
+        "bp.phase6-r3-branch-replay-blueprint.v1",
+        "pkt.phase6-r3-branch-replay-contracts-objects-packet.v1",
+        "pkt.phase6-r3-branch-replay-runtime-execution-packet.v1",
+        "pkt.phase6-r3-branch-replay-surface-validation-packet.v1"
+      ],
+      "platform_gate_test_ids": [
+        "PG-01",
+        "PG-04"
+      ],
+      "required_fixture_families": [
+        "golden_scenario",
+        "edge_case",
+        "regression"
+      ],
+      "validation_hook_ids": [
+        "vh.dependency.integrity",
+        "vh.consistency.cross-pack-review",
+        "vh.fixture.or-test-when-applicable",
+        "vh.manual.acceptance"
+      ],
+      "recheck_commands": [
+        "python3 scripts/validators/validate_release_blueprints.py",
+        "python3 scripts/validators/validate_pilot_packets.py docs/control-plane/implementation/packets/phase-6-r3-branch-replay-contracts-objects-packet.md docs/control-plane/implementation/packets/phase-6-r3-branch-replay-runtime-execution-packet.md docs/control-plane/implementation/packets/phase-6-r3-branch-replay-surface-validation-packet.md"
+      ],
+      "governing_artifact_refs": [
+        "rel.r3-branch-visual-thinker-contract.v1",
+        "arch.phase3-platform-gate-spec.v1",
+        "rel.chat-native-maturity-matrix.v1",
+        "rel.chat-native-milestone-architecture-plan.v1",
+        "bp.phase6-r3-branch-replay-blueprint.v1"
+      ],
+      "notes": "Release-gate rechecks stay structural in this repo and validate the accepted blueprint plus release-local packet set rather than inventing missing runtime gate tests."
+    },
+    {
+      "gate_id": "r4-artifact-workspace",
+      "gate_ref": "rel.r4-artifact-workspace-contract.v1",
+      "release_slug": "r4-artifact-workspace",
+      "release_order": 4,
+      "inherits_platform_gate": true,
+      "blueprint_ref": "bp.phase6-r4-artifact-workspace-blueprint.v1",
+      "packet_refs": [
+        "pkt.phase6-r4-artifact-workspace-contracts-objects-packet.v1",
+        "pkt.phase6-r4-artifact-workspace-runtime-execution-packet.v1",
+        "pkt.phase6-r4-artifact-workspace-surface-validation-packet.v1"
+      ],
+      "trigger_artifact_refs": [
+        "rel.r4-artifact-workspace-contract.v1",
+        "bp.phase6-r4-artifact-workspace-blueprint.v1",
+        "pkt.phase6-r4-artifact-workspace-contracts-objects-packet.v1",
+        "pkt.phase6-r4-artifact-workspace-runtime-execution-packet.v1",
+        "pkt.phase6-r4-artifact-workspace-surface-validation-packet.v1"
+      ],
+      "platform_gate_test_ids": [
+        "PG-05",
+        "PG-06"
+      ],
+      "required_fixture_families": [
+        "golden_scenario",
+        "edge_case",
+        "regression"
+      ],
+      "validation_hook_ids": [
+        "vh.dependency.integrity",
+        "vh.consistency.cross-pack-review",
+        "vh.fixture.or-test-when-applicable",
+        "vh.manual.acceptance"
+      ],
+      "recheck_commands": [
+        "python3 scripts/validators/validate_release_blueprints.py",
+        "python3 scripts/validators/validate_pilot_packets.py docs/control-plane/implementation/packets/phase-6-r4-artifact-workspace-contracts-objects-packet.md docs/control-plane/implementation/packets/phase-6-r4-artifact-workspace-runtime-execution-packet.md docs/control-plane/implementation/packets/phase-6-r4-artifact-workspace-surface-validation-packet.md"
+      ],
+      "governing_artifact_refs": [
+        "rel.r4-artifact-workspace-contract.v1",
+        "arch.phase3-platform-gate-spec.v1",
+        "rel.chat-native-maturity-matrix.v1",
+        "rel.chat-native-milestone-architecture-plan.v1",
+        "bp.phase6-r4-artifact-workspace-blueprint.v1"
+      ],
+      "notes": "Release-gate rechecks stay structural in this repo and validate the accepted blueprint plus release-local packet set rather than inventing missing runtime gate tests."
+    },
+    {
+      "gate_id": "r5-prompt-assets",
+      "gate_ref": "rel.r5-prompt-studio-contract.v1",
+      "release_slug": "r5-prompt-assets",
+      "release_order": 5,
+      "inherits_platform_gate": true,
+      "blueprint_ref": "bp.phase6-r5-prompt-assets-blueprint.v1",
+      "packet_refs": [
+        "pkt.phase6-r5-prompt-assets-contracts-objects-packet.v1",
+        "pkt.phase6-r5-prompt-assets-runtime-execution-packet.v1",
+        "pkt.phase6-r5-prompt-assets-surface-validation-packet.v1"
+      ],
+      "trigger_artifact_refs": [
+        "rel.r5-prompt-studio-contract.v1",
+        "bp.phase6-r5-prompt-assets-blueprint.v1",
+        "pkt.phase6-r5-prompt-assets-contracts-objects-packet.v1",
+        "pkt.phase6-r5-prompt-assets-runtime-execution-packet.v1",
+        "pkt.phase6-r5-prompt-assets-surface-validation-packet.v1"
+      ],
+      "platform_gate_test_ids": [
+        "PG-06",
+        "PG-07"
+      ],
+      "required_fixture_families": [
+        "golden_scenario",
+        "edge_case",
+        "regression"
+      ],
+      "validation_hook_ids": [
+        "vh.dependency.integrity",
+        "vh.consistency.cross-pack-review",
+        "vh.fixture.or-test-when-applicable",
+        "vh.manual.acceptance"
+      ],
+      "recheck_commands": [
+        "python3 scripts/validators/validate_release_blueprints.py",
+        "python3 scripts/validators/validate_pilot_packets.py docs/control-plane/implementation/packets/phase-6-r5-prompt-assets-contracts-objects-packet.md docs/control-plane/implementation/packets/phase-6-r5-prompt-assets-runtime-execution-packet.md docs/control-plane/implementation/packets/phase-6-r5-prompt-assets-surface-validation-packet.md"
+      ],
+      "governing_artifact_refs": [
+        "rel.r5-prompt-studio-contract.v1",
+        "arch.phase3-platform-gate-spec.v1",
+        "rel.chat-native-maturity-matrix.v1",
+        "rel.chat-native-milestone-architecture-plan.v1",
+        "bp.phase6-r5-prompt-assets-blueprint.v1"
+      ],
+      "notes": "Release-gate rechecks stay structural in this repo and validate the accepted blueprint plus release-local packet set rather than inventing missing runtime gate tests."
+    },
+    {
+      "gate_id": "r6-governed-reusable-execution",
+      "gate_ref": "rel.r6-governed-agent-applet-chat-contract.v1",
+      "release_slug": "r6-governed-reusable-execution",
+      "release_order": 6,
+      "inherits_platform_gate": true,
+      "blueprint_ref": "bp.phase6-r6-governed-reusable-execution-blueprint.v1",
+      "packet_refs": [
+        "pkt.phase6-r6-governed-reusable-execution-contracts-objects-packet.v1",
+        "pkt.phase6-r6-governed-reusable-execution-runtime-execution-packet.v1",
+        "pkt.phase6-r6-governed-reusable-execution-surface-validation-packet.v1"
+      ],
+      "trigger_artifact_refs": [
+        "rel.r6-governed-agent-applet-chat-contract.v1",
+        "bp.phase6-r6-governed-reusable-execution-blueprint.v1",
+        "pkt.phase6-r6-governed-reusable-execution-contracts-objects-packet.v1",
+        "pkt.phase6-r6-governed-reusable-execution-runtime-execution-packet.v1",
+        "pkt.phase6-r6-governed-reusable-execution-surface-validation-packet.v1"
+      ],
+      "platform_gate_test_ids": [
+        "PG-06",
+        "PG-07"
+      ],
+      "required_fixture_families": [
+        "golden_scenario",
+        "edge_case",
+        "regression",
+        "background_parity"
+      ],
+      "validation_hook_ids": [
+        "vh.dependency.integrity",
+        "vh.consistency.cross-pack-review",
+        "vh.fixture.or-test-when-applicable",
+        "vh.manual.acceptance"
+      ],
+      "recheck_commands": [
+        "python3 scripts/validators/validate_release_blueprints.py",
+        "python3 scripts/validators/validate_pilot_packets.py docs/control-plane/implementation/packets/phase-6-r6-governed-reusable-execution-contracts-objects-packet.md docs/control-plane/implementation/packets/phase-6-r6-governed-reusable-execution-runtime-execution-packet.md docs/control-plane/implementation/packets/phase-6-r6-governed-reusable-execution-surface-validation-packet.md"
+      ],
+      "governing_artifact_refs": [
+        "rel.r6-governed-agent-applet-chat-contract.v1",
+        "arch.phase3-platform-gate-spec.v1",
+        "rel.chat-native-maturity-matrix.v1",
+        "rel.chat-native-milestone-architecture-plan.v1",
+        "bp.phase6-r6-governed-reusable-execution-blueprint.v1"
+      ],
+      "notes": "Release-gate rechecks stay structural in this repo and validate the accepted blueprint plus release-local packet set rather than inventing missing runtime gate tests."
+    },
+    {
+      "gate_id": "r7-commissioning-bridge",
+      "gate_ref": "rel.r7-commissioning-bridge-contract.v1",
+      "release_slug": "r7-commissioning-bridge",
+      "release_order": 7,
+      "inherits_platform_gate": true,
+      "blueprint_ref": "bp.phase6-r7-commissioning-bridge-blueprint.v1",
+      "packet_refs": [
+        "pkt.phase6-r7-commissioning-bridge-contracts-objects-packet.v1",
+        "pkt.phase6-r7-commissioning-bridge-runtime-execution-packet.v1",
+        "pkt.phase6-r7-commissioning-bridge-chat-surface-packet.v1",
+        "pkt.phase6-r7-commissioning-bridge-task-studio-handoff-packet.v1",
+        "pkt.phase6-r7-commissioning-bridge-test-fixtures-packet.v1"
+      ],
+      "trigger_artifact_refs": [
+        "rel.r7-commissioning-bridge-contract.v1",
+        "bp.phase6-r7-commissioning-bridge-blueprint.v1",
+        "pkt.phase6-r7-commissioning-bridge-contracts-objects-packet.v1",
+        "pkt.phase6-r7-commissioning-bridge-runtime-execution-packet.v1",
+        "pkt.phase6-r7-commissioning-bridge-chat-surface-packet.v1",
+        "pkt.phase6-r7-commissioning-bridge-task-studio-handoff-packet.v1",
+        "pkt.phase6-r7-commissioning-bridge-test-fixtures-packet.v1"
+      ],
+      "platform_gate_test_ids": [
+        "PG-05",
+        "PG-06",
+        "PG-08",
+        "PG-09"
+      ],
+      "required_fixture_families": [
+        "golden_scenario",
+        "edge_case",
+        "regression",
+        "handoff_continuity"
+      ],
+      "validation_hook_ids": [
+        "vh.dependency.integrity",
+        "vh.consistency.cross-pack-review",
+        "vh.fixture.or-test-when-applicable",
+        "vh.manual.acceptance"
+      ],
+      "recheck_commands": [
+        "python3 scripts/validators/validate_release_blueprints.py",
+        "python3 scripts/validators/validate_pilot_packets.py docs/control-plane/implementation/packets/phase-6-r7-commissioning-bridge-contracts-objects-packet.md docs/control-plane/implementation/packets/phase-6-r7-commissioning-bridge-runtime-execution-packet.md docs/control-plane/implementation/packets/phase-6-r7-commissioning-bridge-chat-surface-packet.md docs/control-plane/implementation/packets/phase-6-r7-commissioning-bridge-task-studio-handoff-packet.md docs/control-plane/implementation/packets/phase-6-r7-commissioning-bridge-test-fixtures-packet.md"
+      ],
+      "governing_artifact_refs": [
+        "rel.r7-commissioning-bridge-contract.v1",
+        "arch.phase3-platform-gate-spec.v1",
+        "rel.chat-native-maturity-matrix.v1",
+        "rel.chat-native-milestone-architecture-plan.v1",
+        "bp.phase6-r7-commissioning-bridge-blueprint.v1"
+      ],
+      "notes": "Release-gate rechecks stay structural in this repo and validate the accepted blueprint plus release-local packet set rather than inventing missing runtime gate tests."
+    }
+  ],
+  "summary": {
+    "gate_target_count": 8,
+    "release_gate_count": 7,
+    "shared_command_count": 11
+  }
+}

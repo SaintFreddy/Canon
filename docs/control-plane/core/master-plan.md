@@ -240,6 +240,7 @@ This section answers, in plain terms, what is already done and what is not.
 - [x] The Phase 7 delta-pack operating rule and coverage index have been produced and accepted.
 - [x] The Phase 7 recurring architecture-sync routine and checklist have been produced and accepted.
 - [x] The Phase 7 stale-detection and regeneration loop has been produced and accepted.
+- [x] The Phase 7 release-gate recheck automation and matrix have been produced and accepted.
 
 ### 5.2 High-level milestone snapshot
 
@@ -249,7 +250,7 @@ This section answers, in plain terms, what is already done and what is not.
 - [x] The pilot packet set, benchmark harness, and internal Factory skills/adapters have been implemented and benchmarked.
 - [x] The release implementation blueprints have been produced and accepted.
 - [x] The broader bounded execution packets have been generated and accepted.
-- [ ] The continuous stale-detection, carry-forward, and sync loop is operational.
+- [x] The continuous stale-detection, carry-forward, and sync loop is operational.
 
 ### 5.3 Phase status summary
 
@@ -260,7 +261,7 @@ This section answers, in plain terms, what is already done and what is not.
 - [x] Phase 4 — done in the repo
 - [x] Phase 5 — done in the repo
 - [x] Phase 6 — done in the repo
-- [ ] Phase 7 — not done
+- [x] Phase 7 — done in the repo
 
 ---
 
@@ -781,7 +782,7 @@ This phase is done when the package map, documentation plane, Factory operating 
 
 ---
 
-## Phase 7 — Continuous sync and deltas `[~]`
+## Phase 7 — Continuous sync and deltas `[x]`
 
 ### Goal
 
@@ -812,7 +813,7 @@ This phase is done when every accepted change triggers delta capture, stale dete
 - **Acceptance:** downstream artifacts are marked stale and regenerated when upstream truth changes
 - **Carry-forward topics:** stale-detection failures, regeneration rules, dependency graph corrections
 
-#### [ ] P7.4 — Release gate re-check automation
+#### [x] P7.4 — Release gate re-check automation
 - **Mode:** Factory-first
 - **Depends on:** P7.3
 - **Deliverable:** automated re-check routines for release gates after accepted changes
@@ -2187,3 +2188,28 @@ Notes for future prompts:
 - Run `python3 scripts/wrappers/run_phase7_stale_detection.py --changed-artifact <artifact-ref> ...` after accepted upstream changes and attach the resulting impacted-artifact report to the active delta pack or carry-forward entry.
 - Use `--apply-registry` only when `auto` propagation should update accepted artifact statuses to `stale`, and keep the resulting registry/graph edits inside the same accepted change.
 - Treat `cp.phase7-stale-regeneration-rules-data.v1` as the default source of regeneration commands; update it rather than inventing per-run command routing ad hoc.
+
+#### CF-0060 | 2026-04-12 | Source: P7.4 — Release gate re-check automation
+
+New information:
+- Artifact `sync.phase7-release-gate-recheck-automation.v1` now defines the accepted routine for selecting Platform Gate and R1-R7 structural rechecks from accepted stale-detection output.
+- Artifact `cp.phase7-release-gate-recheck-matrix-data.v1` now freezes the gate-target matrix, release-local packet recheck commands, Platform Gate inheritance rule, and release-gate follow-up state catalog.
+- `scripts/wrappers/run_phase7_release_gate_rechecks.py` now produces machine-readable release-gate follow-up reports and can optionally run the selected structural recheck commands.
+
+Impact:
+- Accepted deltas can now route release-readiness follow-up from one accepted stale-detection output instead of rebuilding gate pressure from raw graph edges or memory.
+- Platform Gate and release-local blueprint/packet checks now have one explicit structural automation layer that records `not_required`, `recheck_required`, `recheck_pass`, or `recheck_fail` for the active delta pack.
+- The full Phase 7 carry-forward, architecture-sync, stale-detection, and release-gate recheck loop is now operational inside the accepted control plane.
+
+Status changes:
+- P7.4 marked done.
+- Phase 7 marked done.
+- The completion snapshot now records the full continuous stale-detection, carry-forward, and sync loop as operational.
+
+Stale items:
+- None.
+
+Notes for future prompts:
+- Run `python3 scripts/wrappers/run_phase7_release_gate_rechecks.py --stale-report <report-path>` after accepted stale-detection output exists, or pass `--changed-artifact <artifact-ref> ...` to let the wrapper generate the stale input first.
+- Use `--run-commands` when the selected structural rechecks should execute immediately and record the resulting `release-gate follow-up state` in the active delta pack or carry-forward entry.
+- Treat `cp.phase7-release-gate-recheck-matrix-data.v1` as the default release-gate routing baseline instead of inventing release-specific follow-up commands ad hoc.
