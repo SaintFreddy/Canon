@@ -1,0 +1,423 @@
+{
+  "blueprint_index_meta": {
+    "schema_version": "1.0.0",
+    "title": "Phase 6 release blueprint index",
+    "task_id": "P6.5",
+    "release_plan_ref": "rel.chat-native-milestone-architecture-plan.v1",
+    "maturity_matrix_ref": "rel.chat-native-maturity-matrix.v1",
+    "repo_package_baseline_ref": "surf.phase6-repo-package-architecture-and-agent-execution-rules-pack.v1",
+    "documentation_plane_ref": "surf.phase6-agent-oriented-codebase-pattern-and-documentation-plane-pack.v1"
+  },
+  "release_blueprints": [
+    {
+      "release_order": 1,
+      "release_slug": "r1-conversation",
+      "blueprint_artifact_id": "bp.phase6-r1-conversation-blueprint.v1",
+      "release_ref": "rel.r1-transcript-chat-contract.v1",
+      "blueprint_path": "docs/control-plane/implementation/release-blueprints/r1-conversation-blueprint.md",
+      "implementation_scope": "Accepted R1 conversation blueprint mapping bounded chat-native conversation modules, run/context substrate seams, tests, fixtures, and explicit exclusions onto the Phase 6 repo/package layout.",
+      "touched_workspace_roots": [
+        "apps/",
+        "packages/",
+        "services/",
+        "workers/",
+        "tests/"
+      ],
+      "module_clusters": [
+        "apps/chat-native/r1-conversation/",
+        "apps/chat-native/r1-compact-inspect/",
+        "packages/projection-grammar/chat-thread-projection/",
+        "packages/shared-object-schemas/run-and-source/",
+        "packages/shared-object-api/run-continuity/",
+        "packages/environment-control-contracts/run-launch/",
+        "packages/context-compiler-contracts/admitted-basis/",
+        "packages/model-gateway-contracts/chat-turn/",
+        "packages/event-provenance-contracts/run-lineage/",
+        "packages/monitor-inspect/compact-run-inspect/",
+        "services/environment-shell-api/conversation-entry/",
+        "services/execution-control/run-dispatch/",
+        "services/model-gateway/chat-turn-execution/",
+        "services/event-provenance/run-trace/",
+        "workers/context-compiler/compile-run-context/",
+        "tests/contracts/r1-conversation/",
+        "tests/fixtures/r1-conversation/"
+      ],
+      "required_fixture_families": [
+        "golden_scenario",
+        "edge_case",
+        "regression"
+      ],
+      "validation_hooks": [
+        "vh.dependency.integrity",
+        "vh.consistency.cross-pack-review",
+        "vh.fixture.or-test-when-applicable",
+        "vh.manual.acceptance"
+      ],
+      "governing_artifact_refs": [
+        "rel.r1-transcript-chat-contract.v1",
+        "rel.chat-native-maturity-matrix.v1",
+        "rel.chat-native-milestone-architecture-plan.v1",
+        "surf.phase6-repo-package-architecture-and-agent-execution-rules-pack.v1",
+        "surf.phase6-agent-oriented-codebase-pattern-and-documentation-plane-pack.v1",
+        "cp.phase6-workspace-manifest-index-data.v1",
+        "cp.phase6-codebase-current-state-data.v1",
+        "cp.phase6-module-test-contracts-data.v1",
+        "cp.phase6-fixture-rules-data.v1"
+      ]
+    },
+    {
+      "release_order": 2,
+      "release_slug": "r2-context-control",
+      "blueprint_artifact_id": "bp.phase6-r2-context-control-blueprint.v1",
+      "release_ref": "rel.r2-context-chat-contract.v1",
+      "blueprint_path": "docs/control-plane/implementation/release-blueprints/r2-context-control-blueprint.md",
+      "implementation_scope": "Accepted R2 context-control blueprint mapping explicit evidence/context operations, pack lineage seams, tests, fixtures, and deferrals onto the Phase 6 repo/package layout.",
+      "touched_workspace_roots": [
+        "apps/",
+        "packages/",
+        "services/",
+        "workers/",
+        "tests/"
+      ],
+      "module_clusters": [
+        "apps/chat-native/r2-context-control/",
+        "apps/chat-native/r2-pack-inspect/",
+        "packages/projection-grammar/context-control-projection/",
+        "packages/shared-object-schemas/pack-lineage/",
+        "packages/shared-object-api/pack-control/",
+        "packages/context-compiler-contracts/context-operations/",
+        "packages/replay-compare-contracts/pack-basis-diff/",
+        "packages/event-provenance-contracts/pack-lineage/",
+        "packages/monitor-inspect/context-pack-inspect/",
+        "services/environment-shell-api/context-operations/",
+        "services/execution-control/rerun-from-pack/",
+        "services/event-provenance/pack-lineage/",
+        "workers/context-compiler/pack-freeze-diff/",
+        "workers/replay-compare/pack-basis-compare/",
+        "tests/contracts/r2-context-control/",
+        "tests/fixtures/r2-context-control/"
+      ],
+      "required_fixture_families": [
+        "golden_scenario",
+        "edge_case",
+        "regression"
+      ],
+      "validation_hooks": [
+        "vh.dependency.integrity",
+        "vh.consistency.cross-pack-review",
+        "vh.fixture.or-test-when-applicable",
+        "vh.manual.acceptance"
+      ],
+      "governing_artifact_refs": [
+        "rel.r2-context-chat-contract.v1",
+        "rel.chat-native-maturity-matrix.v1",
+        "rel.chat-native-milestone-architecture-plan.v1",
+        "surf.phase6-repo-package-architecture-and-agent-execution-rules-pack.v1",
+        "surf.phase6-agent-oriented-codebase-pattern-and-documentation-plane-pack.v1",
+        "cp.phase6-workspace-manifest-index-data.v1",
+        "cp.phase6-codebase-current-state-data.v1",
+        "cp.phase6-module-test-contracts-data.v1",
+        "cp.phase6-fixture-rules-data.v1"
+      ]
+    },
+    {
+      "release_order": 3,
+      "release_slug": "r3-branch-replay",
+      "blueprint_artifact_id": "bp.phase6-r3-branch-replay-blueprint.v1",
+      "release_ref": "rel.r3-branch-visual-thinker-contract.v1",
+      "blueprint_path": "docs/control-plane/implementation/release-blueprints/r3-branch-replay-blueprint.md",
+      "implementation_scope": "Accepted R3 branch-replay blueprint mapping semantic branch, checkpoint, compare, and merge-proposal seams onto the Phase 6 repo/package layout.",
+      "touched_workspace_roots": [
+        "apps/",
+        "packages/",
+        "services/",
+        "workers/",
+        "tests/"
+      ],
+      "module_clusters": [
+        "apps/chat-native/r3-branch-replay/",
+        "apps/chat-native/r3-mode-projection/",
+        "packages/projection-grammar/branch-projection/",
+        "packages/shared-object-schemas/branch-checkpoint-delta/",
+        "packages/shared-object-api/branch-lineage/",
+        "packages/replay-compare-contracts/branch-replay/",
+        "packages/review-writeback-contracts/merge-review/",
+        "packages/event-provenance-contracts/branch-lineage/",
+        "packages/monitor-inspect/branch-compare/",
+        "services/execution-control/checkpoint-launch/",
+        "services/review-writeback/merge-proposals/",
+        "services/event-provenance/branch-history/",
+        "workers/replay-compare/checkpoint-replay/",
+        "workers/replay-compare/branch-compare/",
+        "tests/contracts/r3-branch-replay/",
+        "tests/fixtures/r3-branch-replay/"
+      ],
+      "required_fixture_families": [
+        "golden_scenario",
+        "edge_case",
+        "regression"
+      ],
+      "validation_hooks": [
+        "vh.dependency.integrity",
+        "vh.consistency.cross-pack-review",
+        "vh.fixture.or-test-when-applicable",
+        "vh.manual.acceptance"
+      ],
+      "governing_artifact_refs": [
+        "rel.r3-branch-visual-thinker-contract.v1",
+        "rel.chat-native-maturity-matrix.v1",
+        "rel.chat-native-milestone-architecture-plan.v1",
+        "surf.phase6-repo-package-architecture-and-agent-execution-rules-pack.v1",
+        "surf.phase6-agent-oriented-codebase-pattern-and-documentation-plane-pack.v1",
+        "cp.phase6-workspace-manifest-index-data.v1",
+        "cp.phase6-codebase-current-state-data.v1",
+        "cp.phase6-module-test-contracts-data.v1",
+        "cp.phase6-fixture-rules-data.v1"
+      ]
+    },
+    {
+      "release_order": 4,
+      "release_slug": "r4-artifact-workspace",
+      "blueprint_artifact_id": "bp.phase6-r4-artifact-workspace-blueprint.v1",
+      "release_ref": "rel.r4-artifact-workspace-contract.v1",
+      "blueprint_path": "docs/control-plane/implementation/release-blueprints/r4-artifact-workspace-blueprint.md",
+      "implementation_scope": "Accepted R4 artifact-workspace blueprint mapping focal-artifact, proposal/review, lineage, and writeback seams onto the Phase 6 repo/package layout.",
+      "touched_workspace_roots": [
+        "apps/",
+        "packages/",
+        "services/",
+        "workers/",
+        "tests/"
+      ],
+      "module_clusters": [
+        "apps/chat-native/r4-artifact-workspace/",
+        "apps/chat-native/r4-proposal-inbox/",
+        "packages/projection-grammar/artifact-workspace-projection/",
+        "packages/shared-object-schemas/artifact-governance/",
+        "packages/shared-object-api/artifact-lineage/",
+        "packages/environment-control-contracts/artifact-run-targeting/",
+        "packages/review-writeback-contracts/artifact-review/",
+        "packages/event-provenance-contracts/artifact-lineage/",
+        "packages/monitor-inspect/artifact-workspace/",
+        "services/environment-shell-api/artifact-run-targeting/",
+        "services/review-writeback/proposal-inbox/",
+        "services/review-writeback/review-anchor/",
+        "services/event-provenance/artifact-history/",
+        "workers/apply-writeback/artifact-lane-apply/",
+        "workers/replay-compare/artifact-revision-compare/",
+        "tests/contracts/r4-artifact-workspace/",
+        "tests/fixtures/r4-artifact-workspace/"
+      ],
+      "required_fixture_families": [
+        "golden_scenario",
+        "edge_case",
+        "regression"
+      ],
+      "validation_hooks": [
+        "vh.dependency.integrity",
+        "vh.consistency.cross-pack-review",
+        "vh.fixture.or-test-when-applicable",
+        "vh.manual.acceptance"
+      ],
+      "governing_artifact_refs": [
+        "rel.r4-artifact-workspace-contract.v1",
+        "rel.chat-native-maturity-matrix.v1",
+        "rel.chat-native-milestone-architecture-plan.v1",
+        "surf.phase6-repo-package-architecture-and-agent-execution-rules-pack.v1",
+        "surf.phase6-agent-oriented-codebase-pattern-and-documentation-plane-pack.v1",
+        "cp.phase6-workspace-manifest-index-data.v1",
+        "cp.phase6-codebase-current-state-data.v1",
+        "cp.phase6-module-test-contracts-data.v1",
+        "cp.phase6-fixture-rules-data.v1"
+      ]
+    },
+    {
+      "release_order": 5,
+      "release_slug": "r5-prompt-assets",
+      "blueprint_artifact_id": "bp.phase6-r5-prompt-assets-blueprint.v1",
+      "release_ref": "rel.r5-prompt-studio-contract.v1",
+      "blueprint_path": "docs/control-plane/implementation/release-blueprints/r5-prompt-assets-blueprint.md",
+      "implementation_scope": "Accepted R5 prompt-assets blueprint mapping governed prompt artifacts, model-profile lineage, validation, and staleness seams onto the Phase 6 repo/package layout.",
+      "touched_workspace_roots": [
+        "apps/",
+        "packages/",
+        "services/",
+        "workers/",
+        "tests/"
+      ],
+      "module_clusters": [
+        "apps/chat-native/r5-prompt-assets/",
+        "apps/chat-native/r5-model-profile-browser/",
+        "packages/projection-grammar/prompt-asset-projection/",
+        "packages/shared-object-schemas/prompt-assets/",
+        "packages/shared-object-api/prompt-assets/",
+        "packages/model-gateway-contracts/model-profile-compat/",
+        "packages/review-writeback-contracts/prompt-asset-review/",
+        "packages/event-provenance-contracts/prompt-lineage/",
+        "packages/monitor-inspect/prompt-browser/",
+        "services/model-gateway/adaptation-execution/",
+        "services/review-writeback/prompt-asset-review/",
+        "services/event-provenance/prompt-lineage/",
+        "workers/replay-compare/adaptation-compare/",
+        "workers/apply-writeback/prompt-asset-apply/",
+        "tests/contracts/r5-prompt-assets/",
+        "tests/fixtures/r5-prompt-assets/"
+      ],
+      "required_fixture_families": [
+        "golden_scenario",
+        "edge_case",
+        "regression"
+      ],
+      "validation_hooks": [
+        "vh.dependency.integrity",
+        "vh.consistency.cross-pack-review",
+        "vh.fixture.or-test-when-applicable",
+        "vh.manual.acceptance"
+      ],
+      "governing_artifact_refs": [
+        "rel.r5-prompt-studio-contract.v1",
+        "rel.chat-native-maturity-matrix.v1",
+        "rel.chat-native-milestone-architecture-plan.v1",
+        "surf.phase6-repo-package-architecture-and-agent-execution-rules-pack.v1",
+        "surf.phase6-agent-oriented-codebase-pattern-and-documentation-plane-pack.v1",
+        "cp.phase6-workspace-manifest-index-data.v1",
+        "cp.phase6-codebase-current-state-data.v1",
+        "cp.phase6-module-test-contracts-data.v1",
+        "cp.phase6-fixture-rules-data.v1"
+      ]
+    },
+    {
+      "release_order": 6,
+      "release_slug": "r6-governed-reusable-execution",
+      "blueprint_artifact_id": "bp.phase6-r6-governed-reusable-execution-blueprint.v1",
+      "release_ref": "rel.r6-governed-agent-applet-chat-contract.v1",
+      "blueprint_path": "docs/control-plane/implementation/release-blueprints/r6-governed-reusable-execution-blueprint.md",
+      "implementation_scope": "Accepted R6 governed reusable-execution blueprint mapping protocol/applet/workflow objects, queue governance, tool hardening, and background parity seams onto the Phase 6 repo/package layout.",
+      "touched_workspace_roots": [
+        "apps/",
+        "packages/",
+        "services/",
+        "workers/",
+        "tests/"
+      ],
+      "module_clusters": [
+        "apps/chat-native/r6-governed-reusable-execution/",
+        "apps/chat-native/r6-chatlet-projection/",
+        "packages/projection-grammar/reusable-execution-projection/",
+        "packages/shared-object-schemas/reusable-execution/",
+        "packages/shared-object-api/governed-execution/",
+        "packages/model-gateway-contracts/reusable-run-execution/",
+        "packages/tool-gateway-contracts/tool-execution-policy/",
+        "packages/review-writeback-contracts/queue-review/",
+        "packages/event-provenance-contracts/reusable-execution-lineage/",
+        "packages/monitor-inspect/queue-inbox/",
+        "services/execution-control/background-run-admission/",
+        "services/model-gateway/reusable-run-execution/",
+        "services/tool-gateway/typed-tool-execution/",
+        "services/review-writeback/queue-review/",
+        "services/event-provenance/applet-lineage/",
+        "workers/tool-sandbox/policy-bounded-run/",
+        "workers/apply-writeback/background-proposal-apply/",
+        "workers/replay-compare/protocol-version-compare/",
+        "tests/contracts/r6-governed-reusable-execution/",
+        "tests/fixtures/r6-governed-reusable-execution/"
+      ],
+      "required_fixture_families": [
+        "golden_scenario",
+        "edge_case",
+        "regression",
+        "background_parity"
+      ],
+      "validation_hooks": [
+        "vh.dependency.integrity",
+        "vh.consistency.cross-pack-review",
+        "vh.fixture.or-test-when-applicable",
+        "vh.manual.acceptance"
+      ],
+      "governing_artifact_refs": [
+        "rel.r6-governed-agent-applet-chat-contract.v1",
+        "rel.chat-native-maturity-matrix.v1",
+        "rel.chat-native-milestone-architecture-plan.v1",
+        "surf.phase6-repo-package-architecture-and-agent-execution-rules-pack.v1",
+        "surf.phase6-agent-oriented-codebase-pattern-and-documentation-plane-pack.v1",
+        "cp.phase6-workspace-manifest-index-data.v1",
+        "cp.phase6-codebase-current-state-data.v1",
+        "cp.phase6-module-test-contracts-data.v1",
+        "cp.phase6-fixture-rules-data.v1"
+      ]
+    },
+    {
+      "release_order": 7,
+      "release_slug": "r7-commissioning-bridge",
+      "blueprint_artifact_id": "bp.phase6-r7-commissioning-bridge-blueprint.v1",
+      "release_ref": "rel.r7-commissioning-bridge-contract.v1",
+      "blueprint_path": "docs/control-plane/implementation/release-blueprints/r7-commissioning-bridge-blueprint.md",
+      "implementation_scope": "Accepted R7 commissioning-bridge blueprint mapping commission/contract preflight, live monitoring, ledger/delta review, and Task Studio-safe handoff seams onto the Phase 6 repo/package layout.",
+      "touched_workspace_roots": [
+        "apps/",
+        "packages/",
+        "services/",
+        "workers/",
+        "tests/"
+      ],
+      "module_clusters": [
+        "apps/chat-native/r7-commissioning-bridge/",
+        "apps/chat-native/r7-live-monitor/",
+        "apps/chat-native/r7-chat-to-run-handoff/",
+        "apps/task-studio/ts-sc-01-task-home/",
+        "apps/task-studio/ts-sc-03-task-contract-panel/",
+        "apps/task-studio/ts-sc-05-context-inspector/",
+        "apps/task-studio/ts-sc-07-authority-panel/",
+        "apps/task-studio/ts-sc-08-live-run-view/",
+        "apps/task-studio/ts-sc-10-proof-ledger/",
+        "apps/task-studio/ts-sc-11-delta-inspector/",
+        "apps/task-studio/ts-sc-12-writeback-panel/",
+        "packages/projection-grammar/commissioning-projection/",
+        "packages/shared-object-schemas/commissioning/",
+        "packages/shared-object-api/commissioning/",
+        "packages/environment-control-contracts/commission-preflight/",
+        "packages/review-writeback-contracts/acceptance-stack/",
+        "packages/replay-compare-contracts/contract-diff/",
+        "packages/tool-gateway-contracts/commissioned-side-effects/",
+        "packages/monitor-inspect/commissioning-monitor/",
+        "services/environment-shell-api/commission-preflight/",
+        "services/execution-control/contract-launch/",
+        "services/review-writeback/acceptance-stack/",
+        "services/event-provenance/commission-lineage/",
+        "services/model-gateway/commissioned-run-execution/",
+        "services/tool-gateway/commissioned-tool-preview/",
+        "workers/context-compiler/preflight-basis-freeze/",
+        "workers/replay-compare/contract-delta-compare/",
+        "workers/apply-writeback/commission-writeback-apply/",
+        "workers/tool-sandbox/commissioned-side-effect-preview/",
+        "tests/contracts/r7-commissioning-bridge/",
+        "tests/fixtures/r7-commissioning-bridge/"
+      ],
+      "required_fixture_families": [
+        "golden_scenario",
+        "edge_case",
+        "regression",
+        "handoff_continuity"
+      ],
+      "validation_hooks": [
+        "vh.dependency.integrity",
+        "vh.consistency.cross-pack-review",
+        "vh.fixture.or-test-when-applicable",
+        "vh.manual.acceptance"
+      ],
+      "governing_artifact_refs": [
+        "rel.r7-commissioning-bridge-contract.v1",
+        "rel.chat-native-maturity-matrix.v1",
+        "rel.chat-native-milestone-architecture-plan.v1",
+        "surf.phase6-repo-package-architecture-and-agent-execution-rules-pack.v1",
+        "surf.phase6-agent-oriented-codebase-pattern-and-documentation-plane-pack.v1",
+        "cp.phase6-workspace-manifest-index-data.v1",
+        "cp.phase6-codebase-current-state-data.v1",
+        "cp.phase6-module-test-contracts-data.v1",
+        "cp.phase6-fixture-rules-data.v1",
+        "surf.phase6-task-studio-surface-contract-pack.v1",
+        "reuse.phase5-commissioning-bridge-task-studio-handoff-contract.v1"
+      ]
+    }
+  ]
+}

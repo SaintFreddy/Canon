@@ -244,7 +244,8 @@ This section answers, in plain terms, what is already done and what is not.
 - [x] The full reusable semantics and Task Studio readiness packs have been produced and accepted.
 - [x] The repo/package architecture, documentation plane, and agent execution system have been implemented.
 - [x] The pilot packet set, benchmark harness, and internal Factory skills/adapters have been implemented and benchmarked.
-- [ ] The implementation blueprints and broader bounded execution packets have not yet been generated and accepted.
+- [x] The release implementation blueprints have been produced and accepted.
+- [ ] The broader bounded execution packets have not yet been generated and accepted.
 - [ ] The continuous stale-detection, carry-forward, and sync loop is operational.
 
 ### 5.3 Phase status summary
@@ -761,7 +762,7 @@ This phase is done when the package map, documentation plane, Factory operating 
 - **Acceptance:** the execution environment is tested on real packet types before scaling up
 - **Carry-forward topics:** packet performance findings, skill improvements, adapter gaps, benchmark outcomes
 
-#### [ ] P6.5 — Release implementation blueprints
+#### [x] P6.5 — Release implementation blueprints
 - **Mode:** Human + Factory
 - **Depends on:** P4.2 through P4.9 and P6.2
 - **Deliverable:** release-by-release blueprints with touched modules, schemas, migrations, APIs/events, UI states, tests, fixtures, exclusions
@@ -2055,3 +2056,29 @@ Notes for future prompts:
 - Start from the accepted pilot packet archetypes before creating broader execution packets; split scope instead of widening the current standard-band packets by default.
 - Run `scripts/validators/validate_pilot_packets.py` and `scripts/wrappers/run_phase6_benchmarks.py` when packet briefs, whitelist roots, fixture bindings, or packet-context rules change.
 - Keep transform-style packet writes additive to `.factory/`, `scripts/`, `docs/control-plane/`, and other explicitly accepted roots unless a new packet family is accepted.
+
+#### CF-0055 | 2026-04-12 | Source: P6.5 — Release implementation blueprints
+
+New information:
+- Seven accepted release blueprints now live under `docs/control-plane/implementation/release-blueprints/`, covering `R1` conversation, `R2` context control, `R3` branch replay, `R4` artifact workspace, `R5` prompt assets, `R6` governed reusable execution, and `R7` commissioning bridge.
+- Artifact `cp.phase6-release-blueprint-index-data.v1` now freezes the machine-readable release-blueprint index, while artifacts `bp.phase6-r1-conversation-blueprint.v1` through `bp.phase6-r7-commissioning-bridge-blueprint.v1` are registered in the control-plane registry and dependency graph as `accepted`.
+- `scripts/validators/validate_release_blueprints.py` now provides a thin repo-local validator for blueprint headers, required sections, workspace-root mapping, fixture-family citations, and cross-pack registry references.
+- The accepted blueprints map each release to bounded app/package/service/worker/test module clusters, fixture families, validation hooks, and explicit exclusions without pretending reserved runtime roots are already implemented.
+
+Impact:
+- `P6.6` can derive bounded execution packets from one accepted per-release blueprint set plus the shared blueprint index instead of reconstructing release scope ad hoc.
+- Later implementation work now has a stable release-by-release map of touched modules, shared-object seams, API/event boundaries, storage posture, UI states, test posture, and deferred work.
+- The commissioning bridge blueprint now connects accepted chat-native and Task Studio route landings through preserved handoff continuity rather than a future-only narrative.
+
+Status changes:
+- P6.5 marked done.
+- The completion snapshot now records the release implementation blueprints as produced and accepted.
+- Phase 6 remains in progress.
+
+Stale items:
+- None.
+
+Notes for future prompts:
+- Start `P6.6` packetization from the accepted blueprint files and `cp.phase6-release-blueprint-index-data.v1` rather than re-deriving release scope from the Phase 4 packs alone.
+- Run `scripts/validators/validate_release_blueprints.py` whenever blueprint sections, module clusters, fixture families, or governing refs change.
+- Treat the blueprint files as bounded build guidance over reserved roots; do not interpret them as proof that runtime code or directories already exist.

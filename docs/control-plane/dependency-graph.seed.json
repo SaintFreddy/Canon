@@ -458,6 +458,54 @@
       "artifact_type_id": "cp.control_plane_spec",
       "artifact_status": "accepted",
       "canonical_locator": "docs/control-plane/core/phase-6-pilot-packet-tuning-notes.md"
+    },
+    {
+      "artifact_id": "bp.phase6-r1-conversation-blueprint.v1",
+      "artifact_type_id": "bp.implementation_blueprint",
+      "artifact_status": "accepted",
+      "canonical_locator": "docs/control-plane/implementation/release-blueprints/r1-conversation-blueprint.md"
+    },
+    {
+      "artifact_id": "bp.phase6-r2-context-control-blueprint.v1",
+      "artifact_type_id": "bp.implementation_blueprint",
+      "artifact_status": "accepted",
+      "canonical_locator": "docs/control-plane/implementation/release-blueprints/r2-context-control-blueprint.md"
+    },
+    {
+      "artifact_id": "bp.phase6-r3-branch-replay-blueprint.v1",
+      "artifact_type_id": "bp.implementation_blueprint",
+      "artifact_status": "accepted",
+      "canonical_locator": "docs/control-plane/implementation/release-blueprints/r3-branch-replay-blueprint.md"
+    },
+    {
+      "artifact_id": "bp.phase6-r4-artifact-workspace-blueprint.v1",
+      "artifact_type_id": "bp.implementation_blueprint",
+      "artifact_status": "accepted",
+      "canonical_locator": "docs/control-plane/implementation/release-blueprints/r4-artifact-workspace-blueprint.md"
+    },
+    {
+      "artifact_id": "bp.phase6-r5-prompt-assets-blueprint.v1",
+      "artifact_type_id": "bp.implementation_blueprint",
+      "artifact_status": "accepted",
+      "canonical_locator": "docs/control-plane/implementation/release-blueprints/r5-prompt-assets-blueprint.md"
+    },
+    {
+      "artifact_id": "bp.phase6-r6-governed-reusable-execution-blueprint.v1",
+      "artifact_type_id": "bp.implementation_blueprint",
+      "artifact_status": "accepted",
+      "canonical_locator": "docs/control-plane/implementation/release-blueprints/r6-governed-reusable-execution-blueprint.md"
+    },
+    {
+      "artifact_id": "bp.phase6-r7-commissioning-bridge-blueprint.v1",
+      "artifact_type_id": "bp.implementation_blueprint",
+      "artifact_status": "accepted",
+      "canonical_locator": "docs/control-plane/implementation/release-blueprints/r7-commissioning-bridge-blueprint.md"
+    },
+    {
+      "artifact_id": "cp.phase6-release-blueprint-index-data.v1",
+      "artifact_type_id": "cp.control_plane_dataset",
+      "artifact_status": "accepted",
+      "canonical_locator": "docs/control-plane/core/phase-6-release-blueprint-index.json"
     }
   ],
   "edges": [
@@ -7804,6 +7852,774 @@
       "edge_type": "depends_on",
       "propagation_mode": "auto",
       "notes": "The accepted benchmark-harness skill defines the shared execution workflow summarized by these tuning notes."
+    },
+    {
+      "edge_id": "e-919",
+      "from_artifact_id": "bp.phase6-r1-conversation-blueprint.v1",
+      "to_artifact_id": "cp.master-plan.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The master plan names release implementation blueprints as the accepted P6.5 deliverable set."
+    },
+    {
+      "edge_id": "e-920",
+      "from_artifact_id": "bp.phase6-r1-conversation-blueprint.v1",
+      "to_artifact_id": "cp.artifact-control-plane-spec.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted control-plane spec defines blueprint metadata, dependency semantics, validation hooks, and stale rules."
+    },
+    {
+      "edge_id": "e-921",
+      "from_artifact_id": "bp.phase6-r1-conversation-blueprint.v1",
+      "to_artifact_id": "rel.chat-native-maturity-matrix.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted maturity matrix fixes the package-floor posture that this blueprint must preserve."
+    },
+    {
+      "edge_id": "e-922",
+      "from_artifact_id": "bp.phase6-r1-conversation-blueprint.v1",
+      "to_artifact_id": "rel.chat-native-milestone-architecture-plan.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted milestone plan fixes the stage focus, deferrals, and anti-overbuild rules that this blueprint must preserve."
+    },
+    {
+      "edge_id": "e-923",
+      "from_artifact_id": "bp.phase6-r1-conversation-blueprint.v1",
+      "to_artifact_id": "rel.r1-transcript-chat-contract.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted R1 conversation release contract defines the release-specific promise, exit criteria, and explicit non-goals implemented by this blueprint."
+    },
+    {
+      "edge_id": "e-924",
+      "from_artifact_id": "bp.phase6-r1-conversation-blueprint.v1",
+      "to_artifact_id": "surf.phase6-repo-package-architecture-and-agent-execution-rules-pack.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted P6.2 pack fixes the workspace-root, route-cluster, service, and worker seam map that this blueprint targets."
+    },
+    {
+      "edge_id": "e-925",
+      "from_artifact_id": "bp.phase6-r1-conversation-blueprint.v1",
+      "to_artifact_id": "surf.phase6-agent-oriented-codebase-pattern-and-documentation-plane-pack.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted P6.3 pack fixes the documentation-plane, manifest, current-state, and fixture posture that this blueprint cites."
+    },
+    {
+      "edge_id": "e-926",
+      "from_artifact_id": "bp.phase6-r1-conversation-blueprint.v1",
+      "to_artifact_id": "cp.phase6-workspace-manifest-index-data.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted manifest index maps this blueprint to bounded workspace roots."
+    },
+    {
+      "edge_id": "e-927",
+      "from_artifact_id": "bp.phase6-r1-conversation-blueprint.v1",
+      "to_artifact_id": "cp.phase6-codebase-current-state-data.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted current-state view keeps this blueprint honest about reserved versus materialized roots."
+    },
+    {
+      "edge_id": "e-928",
+      "from_artifact_id": "bp.phase6-r1-conversation-blueprint.v1",
+      "to_artifact_id": "cp.phase6-module-test-contracts-data.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted module-boundary dataset defines the workspace-family dependency and naming rules that this blueprint must preserve."
+    },
+    {
+      "edge_id": "e-929",
+      "from_artifact_id": "bp.phase6-r1-conversation-blueprint.v1",
+      "to_artifact_id": "cp.phase6-fixture-rules-data.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted fixture-rules dataset defines the frozen fixture-family vocabulary and validation posture that this blueprint cites."
+    },
+    {
+      "edge_id": "e-930",
+      "from_artifact_id": "bp.phase6-r2-context-control-blueprint.v1",
+      "to_artifact_id": "cp.master-plan.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The master plan names release implementation blueprints as the accepted P6.5 deliverable set."
+    },
+    {
+      "edge_id": "e-931",
+      "from_artifact_id": "bp.phase6-r2-context-control-blueprint.v1",
+      "to_artifact_id": "cp.artifact-control-plane-spec.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted control-plane spec defines blueprint metadata, dependency semantics, validation hooks, and stale rules."
+    },
+    {
+      "edge_id": "e-932",
+      "from_artifact_id": "bp.phase6-r2-context-control-blueprint.v1",
+      "to_artifact_id": "rel.chat-native-maturity-matrix.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted maturity matrix fixes the package-floor posture that this blueprint must preserve."
+    },
+    {
+      "edge_id": "e-933",
+      "from_artifact_id": "bp.phase6-r2-context-control-blueprint.v1",
+      "to_artifact_id": "rel.chat-native-milestone-architecture-plan.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted milestone plan fixes the stage focus, deferrals, and anti-overbuild rules that this blueprint must preserve."
+    },
+    {
+      "edge_id": "e-934",
+      "from_artifact_id": "bp.phase6-r2-context-control-blueprint.v1",
+      "to_artifact_id": "rel.r2-context-chat-contract.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted R2 context control release contract defines the release-specific promise, exit criteria, and explicit non-goals implemented by this blueprint."
+    },
+    {
+      "edge_id": "e-935",
+      "from_artifact_id": "bp.phase6-r2-context-control-blueprint.v1",
+      "to_artifact_id": "surf.phase6-repo-package-architecture-and-agent-execution-rules-pack.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted P6.2 pack fixes the workspace-root, route-cluster, service, and worker seam map that this blueprint targets."
+    },
+    {
+      "edge_id": "e-936",
+      "from_artifact_id": "bp.phase6-r2-context-control-blueprint.v1",
+      "to_artifact_id": "surf.phase6-agent-oriented-codebase-pattern-and-documentation-plane-pack.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted P6.3 pack fixes the documentation-plane, manifest, current-state, and fixture posture that this blueprint cites."
+    },
+    {
+      "edge_id": "e-937",
+      "from_artifact_id": "bp.phase6-r2-context-control-blueprint.v1",
+      "to_artifact_id": "cp.phase6-workspace-manifest-index-data.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted manifest index maps this blueprint to bounded workspace roots."
+    },
+    {
+      "edge_id": "e-938",
+      "from_artifact_id": "bp.phase6-r2-context-control-blueprint.v1",
+      "to_artifact_id": "cp.phase6-codebase-current-state-data.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted current-state view keeps this blueprint honest about reserved versus materialized roots."
+    },
+    {
+      "edge_id": "e-939",
+      "from_artifact_id": "bp.phase6-r2-context-control-blueprint.v1",
+      "to_artifact_id": "cp.phase6-module-test-contracts-data.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted module-boundary dataset defines the workspace-family dependency and naming rules that this blueprint must preserve."
+    },
+    {
+      "edge_id": "e-940",
+      "from_artifact_id": "bp.phase6-r2-context-control-blueprint.v1",
+      "to_artifact_id": "cp.phase6-fixture-rules-data.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted fixture-rules dataset defines the frozen fixture-family vocabulary and validation posture that this blueprint cites."
+    },
+    {
+      "edge_id": "e-941",
+      "from_artifact_id": "bp.phase6-r3-branch-replay-blueprint.v1",
+      "to_artifact_id": "cp.master-plan.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The master plan names release implementation blueprints as the accepted P6.5 deliverable set."
+    },
+    {
+      "edge_id": "e-942",
+      "from_artifact_id": "bp.phase6-r3-branch-replay-blueprint.v1",
+      "to_artifact_id": "cp.artifact-control-plane-spec.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted control-plane spec defines blueprint metadata, dependency semantics, validation hooks, and stale rules."
+    },
+    {
+      "edge_id": "e-943",
+      "from_artifact_id": "bp.phase6-r3-branch-replay-blueprint.v1",
+      "to_artifact_id": "rel.chat-native-maturity-matrix.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted maturity matrix fixes the package-floor posture that this blueprint must preserve."
+    },
+    {
+      "edge_id": "e-944",
+      "from_artifact_id": "bp.phase6-r3-branch-replay-blueprint.v1",
+      "to_artifact_id": "rel.chat-native-milestone-architecture-plan.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted milestone plan fixes the stage focus, deferrals, and anti-overbuild rules that this blueprint must preserve."
+    },
+    {
+      "edge_id": "e-945",
+      "from_artifact_id": "bp.phase6-r3-branch-replay-blueprint.v1",
+      "to_artifact_id": "rel.r3-branch-visual-thinker-contract.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted R3 branch replay release contract defines the release-specific promise, exit criteria, and explicit non-goals implemented by this blueprint."
+    },
+    {
+      "edge_id": "e-946",
+      "from_artifact_id": "bp.phase6-r3-branch-replay-blueprint.v1",
+      "to_artifact_id": "surf.phase6-repo-package-architecture-and-agent-execution-rules-pack.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted P6.2 pack fixes the workspace-root, route-cluster, service, and worker seam map that this blueprint targets."
+    },
+    {
+      "edge_id": "e-947",
+      "from_artifact_id": "bp.phase6-r3-branch-replay-blueprint.v1",
+      "to_artifact_id": "surf.phase6-agent-oriented-codebase-pattern-and-documentation-plane-pack.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted P6.3 pack fixes the documentation-plane, manifest, current-state, and fixture posture that this blueprint cites."
+    },
+    {
+      "edge_id": "e-948",
+      "from_artifact_id": "bp.phase6-r3-branch-replay-blueprint.v1",
+      "to_artifact_id": "cp.phase6-workspace-manifest-index-data.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted manifest index maps this blueprint to bounded workspace roots."
+    },
+    {
+      "edge_id": "e-949",
+      "from_artifact_id": "bp.phase6-r3-branch-replay-blueprint.v1",
+      "to_artifact_id": "cp.phase6-codebase-current-state-data.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted current-state view keeps this blueprint honest about reserved versus materialized roots."
+    },
+    {
+      "edge_id": "e-950",
+      "from_artifact_id": "bp.phase6-r3-branch-replay-blueprint.v1",
+      "to_artifact_id": "cp.phase6-module-test-contracts-data.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted module-boundary dataset defines the workspace-family dependency and naming rules that this blueprint must preserve."
+    },
+    {
+      "edge_id": "e-951",
+      "from_artifact_id": "bp.phase6-r3-branch-replay-blueprint.v1",
+      "to_artifact_id": "cp.phase6-fixture-rules-data.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted fixture-rules dataset defines the frozen fixture-family vocabulary and validation posture that this blueprint cites."
+    },
+    {
+      "edge_id": "e-952",
+      "from_artifact_id": "bp.phase6-r4-artifact-workspace-blueprint.v1",
+      "to_artifact_id": "cp.master-plan.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The master plan names release implementation blueprints as the accepted P6.5 deliverable set."
+    },
+    {
+      "edge_id": "e-953",
+      "from_artifact_id": "bp.phase6-r4-artifact-workspace-blueprint.v1",
+      "to_artifact_id": "cp.artifact-control-plane-spec.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted control-plane spec defines blueprint metadata, dependency semantics, validation hooks, and stale rules."
+    },
+    {
+      "edge_id": "e-954",
+      "from_artifact_id": "bp.phase6-r4-artifact-workspace-blueprint.v1",
+      "to_artifact_id": "rel.chat-native-maturity-matrix.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted maturity matrix fixes the package-floor posture that this blueprint must preserve."
+    },
+    {
+      "edge_id": "e-955",
+      "from_artifact_id": "bp.phase6-r4-artifact-workspace-blueprint.v1",
+      "to_artifact_id": "rel.chat-native-milestone-architecture-plan.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted milestone plan fixes the stage focus, deferrals, and anti-overbuild rules that this blueprint must preserve."
+    },
+    {
+      "edge_id": "e-956",
+      "from_artifact_id": "bp.phase6-r4-artifact-workspace-blueprint.v1",
+      "to_artifact_id": "rel.r4-artifact-workspace-contract.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted R4 artifact workspace release contract defines the release-specific promise, exit criteria, and explicit non-goals implemented by this blueprint."
+    },
+    {
+      "edge_id": "e-957",
+      "from_artifact_id": "bp.phase6-r4-artifact-workspace-blueprint.v1",
+      "to_artifact_id": "surf.phase6-repo-package-architecture-and-agent-execution-rules-pack.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted P6.2 pack fixes the workspace-root, route-cluster, service, and worker seam map that this blueprint targets."
+    },
+    {
+      "edge_id": "e-958",
+      "from_artifact_id": "bp.phase6-r4-artifact-workspace-blueprint.v1",
+      "to_artifact_id": "surf.phase6-agent-oriented-codebase-pattern-and-documentation-plane-pack.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted P6.3 pack fixes the documentation-plane, manifest, current-state, and fixture posture that this blueprint cites."
+    },
+    {
+      "edge_id": "e-959",
+      "from_artifact_id": "bp.phase6-r4-artifact-workspace-blueprint.v1",
+      "to_artifact_id": "cp.phase6-workspace-manifest-index-data.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted manifest index maps this blueprint to bounded workspace roots."
+    },
+    {
+      "edge_id": "e-960",
+      "from_artifact_id": "bp.phase6-r4-artifact-workspace-blueprint.v1",
+      "to_artifact_id": "cp.phase6-codebase-current-state-data.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted current-state view keeps this blueprint honest about reserved versus materialized roots."
+    },
+    {
+      "edge_id": "e-961",
+      "from_artifact_id": "bp.phase6-r4-artifact-workspace-blueprint.v1",
+      "to_artifact_id": "cp.phase6-module-test-contracts-data.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted module-boundary dataset defines the workspace-family dependency and naming rules that this blueprint must preserve."
+    },
+    {
+      "edge_id": "e-962",
+      "from_artifact_id": "bp.phase6-r4-artifact-workspace-blueprint.v1",
+      "to_artifact_id": "cp.phase6-fixture-rules-data.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted fixture-rules dataset defines the frozen fixture-family vocabulary and validation posture that this blueprint cites."
+    },
+    {
+      "edge_id": "e-963",
+      "from_artifact_id": "bp.phase6-r5-prompt-assets-blueprint.v1",
+      "to_artifact_id": "cp.master-plan.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The master plan names release implementation blueprints as the accepted P6.5 deliverable set."
+    },
+    {
+      "edge_id": "e-964",
+      "from_artifact_id": "bp.phase6-r5-prompt-assets-blueprint.v1",
+      "to_artifact_id": "cp.artifact-control-plane-spec.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted control-plane spec defines blueprint metadata, dependency semantics, validation hooks, and stale rules."
+    },
+    {
+      "edge_id": "e-965",
+      "from_artifact_id": "bp.phase6-r5-prompt-assets-blueprint.v1",
+      "to_artifact_id": "rel.chat-native-maturity-matrix.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted maturity matrix fixes the package-floor posture that this blueprint must preserve."
+    },
+    {
+      "edge_id": "e-966",
+      "from_artifact_id": "bp.phase6-r5-prompt-assets-blueprint.v1",
+      "to_artifact_id": "rel.chat-native-milestone-architecture-plan.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted milestone plan fixes the stage focus, deferrals, and anti-overbuild rules that this blueprint must preserve."
+    },
+    {
+      "edge_id": "e-967",
+      "from_artifact_id": "bp.phase6-r5-prompt-assets-blueprint.v1",
+      "to_artifact_id": "rel.r5-prompt-studio-contract.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted R5 prompt assets release contract defines the release-specific promise, exit criteria, and explicit non-goals implemented by this blueprint."
+    },
+    {
+      "edge_id": "e-968",
+      "from_artifact_id": "bp.phase6-r5-prompt-assets-blueprint.v1",
+      "to_artifact_id": "surf.phase6-repo-package-architecture-and-agent-execution-rules-pack.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted P6.2 pack fixes the workspace-root, route-cluster, service, and worker seam map that this blueprint targets."
+    },
+    {
+      "edge_id": "e-969",
+      "from_artifact_id": "bp.phase6-r5-prompt-assets-blueprint.v1",
+      "to_artifact_id": "surf.phase6-agent-oriented-codebase-pattern-and-documentation-plane-pack.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted P6.3 pack fixes the documentation-plane, manifest, current-state, and fixture posture that this blueprint cites."
+    },
+    {
+      "edge_id": "e-970",
+      "from_artifact_id": "bp.phase6-r5-prompt-assets-blueprint.v1",
+      "to_artifact_id": "cp.phase6-workspace-manifest-index-data.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted manifest index maps this blueprint to bounded workspace roots."
+    },
+    {
+      "edge_id": "e-971",
+      "from_artifact_id": "bp.phase6-r5-prompt-assets-blueprint.v1",
+      "to_artifact_id": "cp.phase6-codebase-current-state-data.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted current-state view keeps this blueprint honest about reserved versus materialized roots."
+    },
+    {
+      "edge_id": "e-972",
+      "from_artifact_id": "bp.phase6-r5-prompt-assets-blueprint.v1",
+      "to_artifact_id": "cp.phase6-module-test-contracts-data.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted module-boundary dataset defines the workspace-family dependency and naming rules that this blueprint must preserve."
+    },
+    {
+      "edge_id": "e-973",
+      "from_artifact_id": "bp.phase6-r5-prompt-assets-blueprint.v1",
+      "to_artifact_id": "cp.phase6-fixture-rules-data.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted fixture-rules dataset defines the frozen fixture-family vocabulary and validation posture that this blueprint cites."
+    },
+    {
+      "edge_id": "e-974",
+      "from_artifact_id": "bp.phase6-r6-governed-reusable-execution-blueprint.v1",
+      "to_artifact_id": "cp.master-plan.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The master plan names release implementation blueprints as the accepted P6.5 deliverable set."
+    },
+    {
+      "edge_id": "e-975",
+      "from_artifact_id": "bp.phase6-r6-governed-reusable-execution-blueprint.v1",
+      "to_artifact_id": "cp.artifact-control-plane-spec.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted control-plane spec defines blueprint metadata, dependency semantics, validation hooks, and stale rules."
+    },
+    {
+      "edge_id": "e-976",
+      "from_artifact_id": "bp.phase6-r6-governed-reusable-execution-blueprint.v1",
+      "to_artifact_id": "rel.chat-native-maturity-matrix.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted maturity matrix fixes the package-floor posture that this blueprint must preserve."
+    },
+    {
+      "edge_id": "e-977",
+      "from_artifact_id": "bp.phase6-r6-governed-reusable-execution-blueprint.v1",
+      "to_artifact_id": "rel.chat-native-milestone-architecture-plan.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted milestone plan fixes the stage focus, deferrals, and anti-overbuild rules that this blueprint must preserve."
+    },
+    {
+      "edge_id": "e-978",
+      "from_artifact_id": "bp.phase6-r6-governed-reusable-execution-blueprint.v1",
+      "to_artifact_id": "rel.r6-governed-agent-applet-chat-contract.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted R6 governed reusable execution release contract defines the release-specific promise, exit criteria, and explicit non-goals implemented by this blueprint."
+    },
+    {
+      "edge_id": "e-979",
+      "from_artifact_id": "bp.phase6-r6-governed-reusable-execution-blueprint.v1",
+      "to_artifact_id": "surf.phase6-repo-package-architecture-and-agent-execution-rules-pack.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted P6.2 pack fixes the workspace-root, route-cluster, service, and worker seam map that this blueprint targets."
+    },
+    {
+      "edge_id": "e-980",
+      "from_artifact_id": "bp.phase6-r6-governed-reusable-execution-blueprint.v1",
+      "to_artifact_id": "surf.phase6-agent-oriented-codebase-pattern-and-documentation-plane-pack.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted P6.3 pack fixes the documentation-plane, manifest, current-state, and fixture posture that this blueprint cites."
+    },
+    {
+      "edge_id": "e-981",
+      "from_artifact_id": "bp.phase6-r6-governed-reusable-execution-blueprint.v1",
+      "to_artifact_id": "cp.phase6-workspace-manifest-index-data.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted manifest index maps this blueprint to bounded workspace roots."
+    },
+    {
+      "edge_id": "e-982",
+      "from_artifact_id": "bp.phase6-r6-governed-reusable-execution-blueprint.v1",
+      "to_artifact_id": "cp.phase6-codebase-current-state-data.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted current-state view keeps this blueprint honest about reserved versus materialized roots."
+    },
+    {
+      "edge_id": "e-983",
+      "from_artifact_id": "bp.phase6-r6-governed-reusable-execution-blueprint.v1",
+      "to_artifact_id": "cp.phase6-module-test-contracts-data.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted module-boundary dataset defines the workspace-family dependency and naming rules that this blueprint must preserve."
+    },
+    {
+      "edge_id": "e-984",
+      "from_artifact_id": "bp.phase6-r6-governed-reusable-execution-blueprint.v1",
+      "to_artifact_id": "cp.phase6-fixture-rules-data.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted fixture-rules dataset defines the frozen fixture-family vocabulary and validation posture that this blueprint cites."
+    },
+    {
+      "edge_id": "e-985",
+      "from_artifact_id": "bp.phase6-r7-commissioning-bridge-blueprint.v1",
+      "to_artifact_id": "cp.master-plan.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The master plan names release implementation blueprints as the accepted P6.5 deliverable set."
+    },
+    {
+      "edge_id": "e-986",
+      "from_artifact_id": "bp.phase6-r7-commissioning-bridge-blueprint.v1",
+      "to_artifact_id": "cp.artifact-control-plane-spec.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted control-plane spec defines blueprint metadata, dependency semantics, validation hooks, and stale rules."
+    },
+    {
+      "edge_id": "e-987",
+      "from_artifact_id": "bp.phase6-r7-commissioning-bridge-blueprint.v1",
+      "to_artifact_id": "rel.chat-native-maturity-matrix.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted maturity matrix fixes the package-floor posture that this blueprint must preserve."
+    },
+    {
+      "edge_id": "e-988",
+      "from_artifact_id": "bp.phase6-r7-commissioning-bridge-blueprint.v1",
+      "to_artifact_id": "rel.chat-native-milestone-architecture-plan.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted milestone plan fixes the stage focus, deferrals, and anti-overbuild rules that this blueprint must preserve."
+    },
+    {
+      "edge_id": "e-989",
+      "from_artifact_id": "bp.phase6-r7-commissioning-bridge-blueprint.v1",
+      "to_artifact_id": "rel.r7-commissioning-bridge-contract.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted R7 commissioning bridge release contract defines the release-specific promise, exit criteria, and explicit non-goals implemented by this blueprint."
+    },
+    {
+      "edge_id": "e-990",
+      "from_artifact_id": "bp.phase6-r7-commissioning-bridge-blueprint.v1",
+      "to_artifact_id": "surf.phase6-repo-package-architecture-and-agent-execution-rules-pack.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted P6.2 pack fixes the workspace-root, route-cluster, service, and worker seam map that this blueprint targets."
+    },
+    {
+      "edge_id": "e-991",
+      "from_artifact_id": "bp.phase6-r7-commissioning-bridge-blueprint.v1",
+      "to_artifact_id": "surf.phase6-agent-oriented-codebase-pattern-and-documentation-plane-pack.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted P6.3 pack fixes the documentation-plane, manifest, current-state, and fixture posture that this blueprint cites."
+    },
+    {
+      "edge_id": "e-992",
+      "from_artifact_id": "bp.phase6-r7-commissioning-bridge-blueprint.v1",
+      "to_artifact_id": "cp.phase6-workspace-manifest-index-data.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted manifest index maps this blueprint to bounded workspace roots."
+    },
+    {
+      "edge_id": "e-993",
+      "from_artifact_id": "bp.phase6-r7-commissioning-bridge-blueprint.v1",
+      "to_artifact_id": "cp.phase6-codebase-current-state-data.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted current-state view keeps this blueprint honest about reserved versus materialized roots."
+    },
+    {
+      "edge_id": "e-994",
+      "from_artifact_id": "bp.phase6-r7-commissioning-bridge-blueprint.v1",
+      "to_artifact_id": "cp.phase6-module-test-contracts-data.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted module-boundary dataset defines the workspace-family dependency and naming rules that this blueprint must preserve."
+    },
+    {
+      "edge_id": "e-995",
+      "from_artifact_id": "bp.phase6-r7-commissioning-bridge-blueprint.v1",
+      "to_artifact_id": "cp.phase6-fixture-rules-data.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted fixture-rules dataset defines the frozen fixture-family vocabulary and validation posture that this blueprint cites."
+    },
+    {
+      "edge_id": "e-996",
+      "from_artifact_id": "bp.phase6-r7-commissioning-bridge-blueprint.v1",
+      "to_artifact_id": "surf.phase6-task-studio-surface-contract-pack.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted P6.1 Task Studio surface pack defines the Task Studio route landings and continuity constraints that the R7 blueprint must preserve."
+    },
+    {
+      "edge_id": "e-997",
+      "from_artifact_id": "bp.phase6-r7-commissioning-bridge-blueprint.v1",
+      "to_artifact_id": "reuse.phase5-commissioning-bridge-task-studio-handoff-contract.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted P5.7 handoff contract defines the preserved shared-ID payload and continuity rules that the R7 blueprint must preserve."
+    },
+    {
+      "edge_id": "e-998",
+      "from_artifact_id": "cp.phase6-release-blueprint-index-data.v1",
+      "to_artifact_id": "cp.master-plan.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The master plan names release implementation blueprints as the accepted P6.5 deliverable set."
+    },
+    {
+      "edge_id": "e-999",
+      "from_artifact_id": "cp.phase6-release-blueprint-index-data.v1",
+      "to_artifact_id": "cp.artifact-control-plane-spec.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted control-plane spec defines dataset metadata, dependency semantics, validation hooks, and stale rules."
+    },
+    {
+      "edge_id": "e-1000",
+      "from_artifact_id": "cp.phase6-release-blueprint-index-data.v1",
+      "to_artifact_id": "rel.chat-native-maturity-matrix.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted maturity matrix fixes the package-floor posture that the indexed blueprints inherit."
+    },
+    {
+      "edge_id": "e-1001",
+      "from_artifact_id": "cp.phase6-release-blueprint-index-data.v1",
+      "to_artifact_id": "rel.chat-native-milestone-architecture-plan.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted milestone plan fixes the stage ordering and deferrals that the indexed blueprints preserve."
+    },
+    {
+      "edge_id": "e-1002",
+      "from_artifact_id": "cp.phase6-release-blueprint-index-data.v1",
+      "to_artifact_id": "surf.phase6-repo-package-architecture-and-agent-execution-rules-pack.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted P6.2 pack fixes the workspace-root and module-family baseline used throughout the blueprint index."
+    },
+    {
+      "edge_id": "e-1003",
+      "from_artifact_id": "cp.phase6-release-blueprint-index-data.v1",
+      "to_artifact_id": "surf.phase6-agent-oriented-codebase-pattern-and-documentation-plane-pack.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted P6.3 pack fixes the documentation-plane, manifest, current-state, and fixture posture cited by the blueprint index."
+    },
+    {
+      "edge_id": "e-1004",
+      "from_artifact_id": "cp.phase6-release-blueprint-index-data.v1",
+      "to_artifact_id": "cp.phase6-workspace-manifest-index-data.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted manifest index supplies the workspace-root map used by all indexed blueprints."
+    },
+    {
+      "edge_id": "e-1005",
+      "from_artifact_id": "cp.phase6-release-blueprint-index-data.v1",
+      "to_artifact_id": "cp.phase6-codebase-current-state-data.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted current-state view keeps the blueprint index aligned to current repo posture."
+    },
+    {
+      "edge_id": "e-1006",
+      "from_artifact_id": "cp.phase6-release-blueprint-index-data.v1",
+      "to_artifact_id": "cp.phase6-module-test-contracts-data.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted module-boundary dataset anchors workspace-family validation for the indexed blueprints."
+    },
+    {
+      "edge_id": "e-1007",
+      "from_artifact_id": "cp.phase6-release-blueprint-index-data.v1",
+      "to_artifact_id": "cp.phase6-fixture-rules-data.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted fixture-rules dataset anchors fixture-family vocabulary for the indexed blueprints."
+    },
+    {
+      "edge_id": "e-1008",
+      "from_artifact_id": "cp.phase6-release-blueprint-index-data.v1",
+      "to_artifact_id": "bp.phase6-r1-conversation-blueprint.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The blueprint index includes R1 conversation as one bounded release blueprint entry."
+    },
+    {
+      "edge_id": "e-1009",
+      "from_artifact_id": "cp.phase6-release-blueprint-index-data.v1",
+      "to_artifact_id": "bp.phase6-r2-context-control-blueprint.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The blueprint index includes R2 context control as one bounded release blueprint entry."
+    },
+    {
+      "edge_id": "e-1010",
+      "from_artifact_id": "cp.phase6-release-blueprint-index-data.v1",
+      "to_artifact_id": "bp.phase6-r3-branch-replay-blueprint.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The blueprint index includes R3 branch replay as one bounded release blueprint entry."
+    },
+    {
+      "edge_id": "e-1011",
+      "from_artifact_id": "cp.phase6-release-blueprint-index-data.v1",
+      "to_artifact_id": "bp.phase6-r4-artifact-workspace-blueprint.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The blueprint index includes R4 artifact workspace as one bounded release blueprint entry."
+    },
+    {
+      "edge_id": "e-1012",
+      "from_artifact_id": "cp.phase6-release-blueprint-index-data.v1",
+      "to_artifact_id": "bp.phase6-r5-prompt-assets-blueprint.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The blueprint index includes R5 prompt assets as one bounded release blueprint entry."
+    },
+    {
+      "edge_id": "e-1013",
+      "from_artifact_id": "cp.phase6-release-blueprint-index-data.v1",
+      "to_artifact_id": "bp.phase6-r6-governed-reusable-execution-blueprint.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The blueprint index includes R6 governed reusable execution as one bounded release blueprint entry."
+    },
+    {
+      "edge_id": "e-1014",
+      "from_artifact_id": "cp.phase6-release-blueprint-index-data.v1",
+      "to_artifact_id": "bp.phase6-r7-commissioning-bridge-blueprint.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The blueprint index includes R7 commissioning bridge as one bounded release blueprint entry."
     }
   ]
 }
