@@ -242,7 +242,7 @@ This section answers, in plain terms, what is already done and what is not.
 
 - [x] The release contract packs for Platform Gate through R7 have been produced and accepted.
 - [x] The full reusable semantics and Task Studio readiness packs have been produced and accepted.
-- [x] The repo/package architecture and agent execution system have been implemented.
+- [x] The repo/package architecture, documentation plane, and agent execution system have been implemented.
 - [ ] The implementation blueprints and bounded execution packets have not yet been generated and accepted.
 - [ ] The continuous stale-detection, carry-forward, and sync loop is operational.
 
@@ -746,7 +746,7 @@ This phase is done when the package map, documentation plane, Factory operating 
 - **Acceptance:** the repo shape follows architecture and release truth rather than dictating it
 - **Carry-forward topics:** package additions, package boundary moves, module contract rules, agent execution rule changes
 
-#### [ ] P6.3 — Agent-oriented codebase pattern and documentation plane
+#### [x] P6.3 — Agent-oriented codebase pattern and documentation plane
 - **Mode:** Human + Factory
 - **Depends on:** P6.2
 - **Deliverable:** documentation plane, generated current-state view, manifests, test-contract files, fixture rules, compiled context-pack rules for agent packets
@@ -2003,3 +2003,28 @@ Notes for future prompts:
 - Treat `surf.phase6-repo-package-architecture-and-agent-execution-rules-pack.v1` as the accepted package-map and execution baseline for `apps/`, `packages/`, `services/`, `workers/`, `domains/`, `tests/`, and `scripts/` roots.
 - Preserve the rule that repo layout follows accepted architecture, release, and handoff truth; do not use file placement to re-own shared objects or to create direct UI-to-worker execution paths.
 - Keep later implementation-facing work additive to accepted P0.2/P0.3 execution rules and do not import P0.5-only packet-budget policy into package or automation semantics.
+
+#### CF-0053 | 2026-04-12 | Source: P6.3 — Agent-oriented codebase pattern and documentation plane
+
+New information:
+- `docs/control-plane/surfaces/phase-6-agent-oriented-codebase-pattern-and-documentation-plane-pack.md` now defines the accepted Phase 6 documentation-plane and agent-navigation baseline over the accepted repo/package map.
+- Artifacts `surf.phase6-agent-oriented-codebase-pattern-and-documentation-plane-pack.v1`, `cp.phase6-workspace-manifest-index-data.v1`, `cp.phase6-codebase-current-state-data.v1`, `cp.phase6-module-test-contracts-data.v1`, `cp.phase6-fixture-rules-data.v1`, and `cp.phase6-agent-packet-context-pack-rules-data.v1` are registered in the control-plane registry and dependency graph as `accepted`.
+- `tests/contracts/module-boundary.contracts.json` and `tests/fixtures/fixture-rules.json` now materialize the `tests/` root as accepted contract/fixture assets, while `apps/`, `packages/`, `services/`, `workers/`, `domains/`, and `scripts/` remain reserved in the generated current-state view.
+
+Impact:
+- `P6.4` can compile pilot packets, benchmark inputs, and internal execution support against accepted manifests, current-state data, module-boundary contracts, and packet context-pack rules instead of rediscovering repo scope.
+- `P6.5` and `P6.6` can map release blueprints and execution packets to accepted workspace families, validation roots, fixture policies, and bounded context-compilation guidance.
+- Agents now have one accepted documentation-plane layer for navigating current repo posture without turning derived current-state data into new architecture truth.
+
+Status changes:
+- P6.3 marked done.
+- The completion snapshot now records the repo/package architecture, documentation plane, and agent execution system as implemented.
+- Phase 6 remains in progress.
+
+Stale items:
+- None.
+
+Notes for future prompts:
+- Use `cp.phase6-workspace-manifest-index-data.v1` and `cp.phase6-codebase-current-state-data.v1` together as the accepted repo-navigation baseline for later implementation-facing work.
+- Use `cp.phase6-module-test-contracts-data.v1` and `cp.phase6-fixture-rules-data.v1` when blueprinting or packetizing module, validation, replay, or benchmark work.
+- Compile later bounded packet context from accepted manifests/current-state plus accepted P0.5 packet-budget rules; do not reinterpret runtime context-compiler topology as a packet-only invention.

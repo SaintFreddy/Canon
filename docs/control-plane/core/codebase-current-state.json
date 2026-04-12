@@ -1,0 +1,142 @@
+{
+  "current_state_meta": {
+    "schema_version": "1.0.0",
+    "title": "Phase 6 codebase current-state view",
+    "task_id": "P6.3",
+    "generated_on": "2026-04-12",
+    "generated_from_refs": [
+      "cp.phase6-workspace-manifest-index-data.v1",
+      "surf.phase6-agent-oriented-codebase-pattern-and-documentation-plane-pack.v1"
+    ]
+  },
+  "workspace_states": [
+    {
+      "workspace_id": "ws.docs-control-plane",
+      "root_path": "docs/control-plane/",
+      "present_on_disk": true,
+      "current_state": "materialized_active",
+      "notable_entries": [
+        "AGENTS.md",
+        "architecture/",
+        "artifact-control-plane-spec.md",
+        "artifact-registry.seed.json",
+        "canon/",
+        "core/",
+        "dependency-graph.seed.json",
+        "releases/",
+        "reuse/",
+        "semantics/",
+        "surfaces/"
+      ],
+      "governing_artifact_refs": [
+        "cp.master-plan.v1",
+        "cp.artifact-control-plane-spec.v1",
+        "surf.phase6-agent-oriented-codebase-pattern-and-documentation-plane-pack.v1"
+      ]
+    },
+    {
+      "workspace_id": "ws.factory-assets",
+      "root_path": ".factory/",
+      "present_on_disk": true,
+      "current_state": "materialized_active",
+      "notable_entries": [
+        "AGENTS.md",
+        "factory-operating-contract.md",
+        "skills/"
+      ],
+      "governing_artifact_refs": [
+        "cp.factory-operating-contract.v1",
+        "cp.repo-agent-operating-contract.v1",
+        "surf.phase6-agent-oriented-codebase-pattern-and-documentation-plane-pack.v1"
+      ]
+    },
+    {
+      "workspace_id": "ws.apps",
+      "root_path": "apps/",
+      "present_on_disk": false,
+      "current_state": "reserved_not_materialized",
+      "notable_entries": [],
+      "governing_artifact_refs": [
+        "surf.phase6-repo-package-architecture-and-agent-execution-rules-pack.v1",
+        "surf.phase6-chat-native-surface-contract-pack.v1",
+        "surf.phase6-task-studio-surface-contract-pack.v1"
+      ]
+    },
+    {
+      "workspace_id": "ws.packages",
+      "root_path": "packages/",
+      "present_on_disk": false,
+      "current_state": "reserved_not_materialized",
+      "notable_entries": [],
+      "governing_artifact_refs": [
+        "surf.phase6-repo-package-architecture-and-agent-execution-rules-pack.v1",
+        "surf.phase6-shared-projection-grammar-surface-contract-pack.v1"
+      ]
+    },
+    {
+      "workspace_id": "ws.services",
+      "root_path": "services/",
+      "present_on_disk": false,
+      "current_state": "reserved_not_materialized",
+      "notable_entries": [],
+      "governing_artifact_refs": [
+        "surf.phase6-repo-package-architecture-and-agent-execution-rules-pack.v1",
+        "arch.phase3-api-ipc-event-contracts.v1"
+      ]
+    },
+    {
+      "workspace_id": "ws.workers",
+      "root_path": "workers/",
+      "present_on_disk": false,
+      "current_state": "reserved_not_materialized",
+      "notable_entries": [],
+      "governing_artifact_refs": [
+        "surf.phase6-repo-package-architecture-and-agent-execution-rules-pack.v1",
+        "arch.phase3-context-compiler-topology.v1"
+      ]
+    },
+    {
+      "workspace_id": "ws.domains",
+      "root_path": "domains/",
+      "present_on_disk": false,
+      "current_state": "reserved_gated_not_materialized",
+      "notable_entries": [],
+      "governing_artifact_refs": [
+        "surf.phase6-repo-package-architecture-and-agent-execution-rules-pack.v1",
+        "surf.phase6-later-domain-surface-backlog-contract-pack.v1"
+      ]
+    },
+    {
+      "workspace_id": "ws.tests",
+      "root_path": "tests/",
+      "present_on_disk": true,
+      "current_state": "materialized_active",
+      "notable_entries": [
+        "contracts/",
+        "fixtures/"
+      ],
+      "governing_artifact_refs": [
+        "surf.phase6-agent-oriented-codebase-pattern-and-documentation-plane-pack.v1",
+        "reuse.phase5-proof-validation-evaluation-spec.v1",
+        "reuse.phase5-run-class-protocol-packs.v1"
+      ]
+    },
+    {
+      "workspace_id": "ws.scripts",
+      "root_path": "scripts/",
+      "present_on_disk": false,
+      "current_state": "reserved_not_materialized",
+      "notable_entries": [],
+      "governing_artifact_refs": [
+        "surf.phase6-repo-package-architecture-and-agent-execution-rules-pack.v1",
+        "surf.phase6-agent-oriented-codebase-pattern-and-documentation-plane-pack.v1"
+      ]
+    }
+  ],
+  "summary": {
+    "materialized_root_count": 3,
+    "reserved_root_count": 5,
+    "gated_root_count": 1,
+    "repo_posture": "control-plane and Factory roots are materialized; tests/ hosts accepted contract and fixture datasets; implementation roots remain reserved."
+  }
+}

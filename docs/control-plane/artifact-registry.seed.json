@@ -8594,6 +8594,711 @@
         "P6.2 accepted repo/package architecture and agent execution rules pack mapping runtime planes, logical package seams, route/module families, and additive Factory execution rules onto one implementation-facing repo layout.",
         "Accepted for downstream use as the package-map and execution baseline feeding P6.3 documentation-plane work, P6.4 pilot packets, and P6.5-P6.6 implementation-facing work."
       ]
+    },
+    {
+      "artifact_id": "surf.phase6-agent-oriented-codebase-pattern-and-documentation-plane-pack.v1",
+      "artifact_type_id": "surf.surface_repo_pack",
+      "title": "Phase 6 agent-oriented codebase pattern and documentation plane pack",
+      "version": "1.0.0",
+      "artifact_status": "accepted",
+      "semantic_owner": "Surface/repo steward",
+      "stewardship_mode": "human_factory",
+      "acceptance_authority": "Human architecture owner",
+      "canonical_locator": "docs/control-plane/surfaces/phase-6-agent-oriented-codebase-pattern-and-documentation-plane-pack.md",
+      "surface_scope": "Accepted Phase 6 documentation-plane pack defining workspace manifest views, generated current-state datasets, module-boundary test contracts, fixture rules, and packet context-pack compilation rules over the accepted repo/package baseline",
+      "source_authority_refs": [
+        "cp.master-plan.v1",
+        "cp.repo-agent-operating-contract.v1",
+        "cp.factory-operating-contract.v1",
+        "cp.packet-brief-schema-data.v1",
+        "cp.context-budget-and-packet-policy.v1",
+        "cp.forbidden-shortcuts-register.v1",
+        "arch.phase3-context-compiler-topology.v1",
+        "arch.phase3-api-ipc-event-contracts.v1",
+        "reuse.phase5-proof-validation-evaluation-spec.v1",
+        "reuse.phase5-run-class-protocol-packs.v1",
+        "surf.phase6-shared-projection-grammar-surface-contract-pack.v1",
+        "surf.phase6-chat-native-surface-contract-pack.v1",
+        "surf.phase6-task-studio-surface-contract-pack.v1",
+        "surf.phase6-later-domain-surface-backlog-contract-pack.v1",
+        "surf.phase6-repo-package-architecture-and-agent-execution-rules-pack.v1",
+        "canon.phase1-scenario-corpus.v1",
+        "sa.all-prims.v1",
+        "sa.chat-native-release-plan.v1",
+        "sa.task-studio-north-star.v1"
+      ],
+      "dependency_refs": [
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.master-plan.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The master plan defines P6.3 as the documentation-plane task and fixes its deliverable bundle."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.artifact-control-plane-spec.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P0.1 control-plane spec defines artifact metadata, dependency semantics, validation hooks, and stale rules for this documentation-plane pack."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "surf.phase6-repo-package-architecture-and-agent-execution-rules-pack.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P6.2 pack defines the root families, package seams, and boundary rules that the documentation plane must mirror rather than reinterpret."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.repo-agent-operating-contract.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P0.2 operating contract defines accepted-artifact navigation and packet-boundary discipline for agent-facing documentation."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.factory-operating-contract.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P0.3 Factory contract defines the additive execution layer that the documentation plane must preserve."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.packet-brief-schema-data.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted packet-brief schema provides the bounded-work fields that later packet context-pack rules must align to."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.context-budget-and-packet-policy.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P0.5 policy defines budget bands, local-doc-first reads, and escalation rules that packet context-pack compilation must preserve."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.forbidden-shortcuts-register.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The forbidden-shortcuts register prevents the documentation plane from smuggling transcript truth, silent apply, or second-stack drift back into execution guidance."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "arch.phase3-context-compiler-topology.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P3.2 topology keeps agent packet context-pack rules additive to explicit evidence/context compilation rather than a second runtime compiler."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "arch.phase3-api-ipc-event-contracts.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P3.4 API and event contract pack preserves typed service and worker boundaries that the module-boundary datasets must reuse."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "reuse.phase5-proof-validation-evaluation-spec.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P5.2 proof pack defines fixture families, dataset freezing rules, and replay/regression expectations that the fixture-rule dataset must project."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "reuse.phase5-run-class-protocol-packs.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P5.3 protocol pack defines fixture_set_ref bindings and run-class-specific validation posture that the documentation plane must surface."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "surf.phase6-shared-projection-grammar-surface-contract-pack.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted shared grammar pack preserves the route-cluster and alias baseline that app-facing module contracts must respect."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "surf.phase6-chat-native-surface-contract-pack.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted chat-native surface pack supplies the release-cluster naming and alias rules that the documentation plane must preserve for future app modules."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "surf.phase6-task-studio-surface-contract-pack.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted Task Studio surface pack supplies the TS-SC route-contract IDs and handoff-aware surface baseline that future app modules must reuse."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "surf.phase6-later-domain-surface-backlog-contract-pack.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted later-domain backlog pack keeps the documentation plane from treating domains/ as pre-approved implementation scope."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "canon.phase1-scenario-corpus.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted scenario corpus grounds fixture families and continuity expectations in the existing golden and edge-case canon."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "sa.all-prims.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The primitive-set authority preserves the engine/shared-environment/app boundary while documentation-plane data names repo roots."
+        }
+      ],
+      "validation_hooks": [
+        {
+          "hook_id": "vh.dependency.integrity"
+        },
+        {
+          "hook_id": "vh.source.trace-review"
+        },
+        {
+          "hook_id": "vh.consistency.cross-pack-review"
+        },
+        {
+          "hook_id": "vh.manual.acceptance"
+        }
+      ],
+      "stale_rule_id": "sr.derivative.manual",
+      "notes": [
+        "P6.3 accepted documentation-plane pack defining workspace manifests, current-state data, module-boundary contract datasets, fixture rules, and packet context-pack compilation rules.",
+        "Accepted for downstream use as the agent-navigation baseline feeding P6.4 pilot packets, P6.5 blueprints, and P6.6 bounded execution packets."
+      ]
+    },
+    {
+      "artifact_id": "cp.phase6-workspace-manifest-index-data.v1",
+      "artifact_type_id": "cp.control_plane_dataset",
+      "title": "Phase 6 workspace manifest index",
+      "version": "1.0.0",
+      "artifact_status": "accepted",
+      "semantic_owner": "Platform architecture steward",
+      "stewardship_mode": "human_factory",
+      "acceptance_authority": "Human plan owner",
+      "canonical_locator": "docs/control-plane/core/workspace-manifest-index.json",
+      "source_authority_refs": [
+        "cp.master-plan.v1",
+        "surf.phase6-agent-oriented-codebase-pattern-and-documentation-plane-pack.v1",
+        "surf.phase6-repo-package-architecture-and-agent-execution-rules-pack.v1",
+        "cp.repo-agent-operating-contract.v1",
+        "cp.factory-operating-contract.v1"
+      ],
+      "dependency_refs": [
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.master-plan.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The master plan names workspace manifests as part of the accepted P6.3 deliverable set."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.artifact-control-plane-spec.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted control-plane spec defines dataset metadata, dependency semantics, validation hooks, and stale rules."
+        },
+        {
+          "edge_type": "derives_from",
+          "artifact_id": "surf.phase6-agent-oriented-codebase-pattern-and-documentation-plane-pack.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The manifest index is the machine-readable realization of the accepted P6.3 documentation-plane contract."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "surf.phase6-repo-package-architecture-and-agent-execution-rules-pack.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P6.2 root-family and workspace-baseline pack defines the families that this manifest index mirrors."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.repo-agent-operating-contract.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P0.2 contract defines instruction layering and accepted-artifact navigation that the manifest index must preserve."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.factory-operating-contract.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P0.3 contract defines the additive Factory root that the manifest index must keep separate from product ownership."
+        },
+        {
+          "edge_type": "validated_by",
+          "artifact_id": "surf.phase6-agent-oriented-codebase-pattern-and-documentation-plane-pack.v1",
+          "propagation_mode": "revalidate",
+          "required_for_acceptance": true,
+          "notes": "Revalidate the manifest index if the accepted P6.3 documentation-plane pack changes."
+        }
+      ],
+      "validation_hooks": [
+        {
+          "hook_id": "vh.schema.json-parse"
+        },
+        {
+          "hook_id": "vh.schema.required-fields"
+        },
+        {
+          "hook_id": "vh.dependency.integrity"
+        },
+        {
+          "hook_id": "vh.consistency.cross-pack-review"
+        },
+        {
+          "hook_id": "vh.manual.acceptance"
+        }
+      ],
+      "stale_rule_id": "sr.control-plane.strict",
+      "notes": [
+        "P6.3 accepted machine-readable manifest view over the accepted Phase 6 root families and their current materialization posture.",
+        "Accepted for downstream use as the root-family navigation baseline for later blueprints and execution packets."
+      ]
+    },
+    {
+      "artifact_id": "cp.phase6-codebase-current-state-data.v1",
+      "artifact_type_id": "cp.control_plane_dataset",
+      "title": "Phase 6 codebase current-state view",
+      "version": "1.0.0",
+      "artifact_status": "accepted",
+      "semantic_owner": "Platform architecture steward",
+      "stewardship_mode": "human_factory",
+      "acceptance_authority": "Human plan owner",
+      "canonical_locator": "docs/control-plane/core/codebase-current-state.json",
+      "source_authority_refs": [
+        "cp.master-plan.v1",
+        "surf.phase6-agent-oriented-codebase-pattern-and-documentation-plane-pack.v1",
+        "cp.phase6-workspace-manifest-index-data.v1",
+        "cp.phase6-module-test-contracts-data.v1",
+        "cp.phase6-fixture-rules-data.v1"
+      ],
+      "dependency_refs": [
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.master-plan.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The master plan names the generated current-state view as part of P6.3."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.artifact-control-plane-spec.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted control-plane spec defines dataset metadata, dependency semantics, validation hooks, and stale rules."
+        },
+        {
+          "edge_type": "derives_from",
+          "artifact_id": "cp.phase6-workspace-manifest-index-data.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The current-state view is derived from the accepted workspace manifest index plus on-disk repo state."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "surf.phase6-repo-package-architecture-and-agent-execution-rules-pack.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P6.2 root-family baseline defines the reserved versus materialized states that the current-state view reports."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.phase6-module-test-contracts-data.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted module-contract dataset materializes the tests/contracts root that appears in the generated current-state view."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.phase6-fixture-rules-data.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted fixture-rules dataset materializes the tests/fixtures root that appears in the generated current-state view."
+        },
+        {
+          "edge_type": "validated_by",
+          "artifact_id": "surf.phase6-agent-oriented-codebase-pattern-and-documentation-plane-pack.v1",
+          "propagation_mode": "revalidate",
+          "required_for_acceptance": true,
+          "notes": "Revalidate the generated current-state view if the accepted P6.3 documentation-plane pack changes."
+        }
+      ],
+      "validation_hooks": [
+        {
+          "hook_id": "vh.schema.json-parse"
+        },
+        {
+          "hook_id": "vh.schema.required-fields"
+        },
+        {
+          "hook_id": "vh.dependency.integrity"
+        },
+        {
+          "hook_id": "vh.consistency.cross-pack-review"
+        },
+        {
+          "hook_id": "vh.manual.acceptance"
+        }
+      ],
+      "stale_rule_id": "sr.control-plane.strict",
+      "notes": [
+        "P6.3 accepted generated current-state snapshot reporting which Phase 6 root families are materialized, reserved, or gated in the repo today.",
+        "Accepted for downstream use as the repo-state navigation layer that later packets and blueprints can cite without rediscovering root posture."
+      ]
+    },
+    {
+      "artifact_id": "cp.phase6-module-test-contracts-data.v1",
+      "artifact_type_id": "cp.control_plane_dataset",
+      "title": "Phase 6 module boundary contracts",
+      "version": "1.0.0",
+      "artifact_status": "accepted",
+      "semantic_owner": "Platform architecture steward",
+      "stewardship_mode": "human_factory",
+      "acceptance_authority": "Human plan owner",
+      "canonical_locator": "tests/contracts/module-boundary.contracts.json",
+      "source_authority_refs": [
+        "cp.master-plan.v1",
+        "surf.phase6-agent-oriented-codebase-pattern-and-documentation-plane-pack.v1",
+        "surf.phase6-repo-package-architecture-and-agent-execution-rules-pack.v1",
+        "surf.phase6-chat-native-surface-contract-pack.v1",
+        "surf.phase6-task-studio-surface-contract-pack.v1",
+        "arch.phase3-api-ipc-event-contracts.v1"
+      ],
+      "dependency_refs": [
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.master-plan.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The master plan names test-contract files as part of P6.3."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.artifact-control-plane-spec.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted control-plane spec defines dataset metadata, dependency semantics, validation hooks, and stale rules."
+        },
+        {
+          "edge_type": "derives_from",
+          "artifact_id": "surf.phase6-agent-oriented-codebase-pattern-and-documentation-plane-pack.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The module-boundary contract dataset is the machine-readable boundary layer defined by the accepted P6.3 documentation-plane pack."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "surf.phase6-repo-package-architecture-and-agent-execution-rules-pack.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P6.2 pack defines the workspace-family dependency matrix and cross-root refusals that these contracts project."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "surf.phase6-chat-native-surface-contract-pack.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted chat-native surface pack defines the R1-R7 route-cluster naming and alias rules that these contracts preserve."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "surf.phase6-task-studio-surface-contract-pack.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted Task Studio surface pack defines the TS-SC route-contract IDs that these contracts preserve for future modules."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "arch.phase3-api-ipc-event-contracts.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P3.4 pack preserves typed service and worker access rather than direct UI-to-worker shortcuts."
+        },
+        {
+          "edge_type": "validated_by",
+          "artifact_id": "surf.phase6-agent-oriented-codebase-pattern-and-documentation-plane-pack.v1",
+          "propagation_mode": "revalidate",
+          "required_for_acceptance": true,
+          "notes": "Revalidate the boundary-contract dataset if the accepted P6.3 documentation-plane pack changes."
+        }
+      ],
+      "validation_hooks": [
+        {
+          "hook_id": "vh.schema.json-parse"
+        },
+        {
+          "hook_id": "vh.schema.required-fields"
+        },
+        {
+          "hook_id": "vh.dependency.integrity"
+        },
+        {
+          "hook_id": "vh.consistency.cross-pack-review"
+        },
+        {
+          "hook_id": "vh.manual.acceptance"
+        }
+      ],
+      "stale_rule_id": "sr.control-plane.strict",
+      "notes": [
+        "P6.3 accepted machine-readable module-boundary contract suite covering workspace-family dependency rules, naming constraints, and forbidden cross-root shortcuts.",
+        "Accepted for downstream use as the boundary-enforcement basis for later blueprints, packet whitelists, and validators."
+      ]
+    },
+    {
+      "artifact_id": "cp.phase6-fixture-rules-data.v1",
+      "artifact_type_id": "cp.control_plane_dataset",
+      "title": "Phase 6 fixture rules",
+      "version": "1.0.0",
+      "artifact_status": "accepted",
+      "semantic_owner": "Platform architecture steward",
+      "stewardship_mode": "human_factory",
+      "acceptance_authority": "Human plan owner",
+      "canonical_locator": "tests/fixtures/fixture-rules.json",
+      "source_authority_refs": [
+        "cp.master-plan.v1",
+        "surf.phase6-agent-oriented-codebase-pattern-and-documentation-plane-pack.v1",
+        "canon.phase1-scenario-corpus.v1",
+        "reuse.phase5-proof-validation-evaluation-spec.v1",
+        "reuse.phase5-run-class-protocol-packs.v1",
+        "reuse.phase5-commissioning-bridge-task-studio-handoff-contract.v1"
+      ],
+      "dependency_refs": [
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.master-plan.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The master plan names fixture rules as part of P6.3."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.artifact-control-plane-spec.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted control-plane spec defines dataset metadata, dependency semantics, validation hooks, and stale rules."
+        },
+        {
+          "edge_type": "derives_from",
+          "artifact_id": "surf.phase6-agent-oriented-codebase-pattern-and-documentation-plane-pack.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The fixture-rules dataset is the machine-readable fixture layer defined by the accepted P6.3 documentation-plane pack."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "canon.phase1-scenario-corpus.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted scenario corpus grounds golden-scenario and edge-case fixture families."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "reuse.phase5-proof-validation-evaluation-spec.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P5.2 proof pack defines fixture families, dataset freezing rules, and replay/regression expectations that this dataset projects."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "reuse.phase5-run-class-protocol-packs.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P5.3 protocol pack defines fixture_set_ref bindings by run class that this dataset preserves."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "reuse.phase5-commissioning-bridge-task-studio-handoff-contract.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P5.7 handoff contract grounds the handoff-continuity fixture family for R7 to Task Studio transitions."
+        },
+        {
+          "edge_type": "validated_by",
+          "artifact_id": "surf.phase6-agent-oriented-codebase-pattern-and-documentation-plane-pack.v1",
+          "propagation_mode": "revalidate",
+          "required_for_acceptance": true,
+          "notes": "Revalidate the fixture-rules dataset if the accepted P6.3 documentation-plane pack changes."
+        }
+      ],
+      "validation_hooks": [
+        {
+          "hook_id": "vh.schema.json-parse"
+        },
+        {
+          "hook_id": "vh.schema.required-fields"
+        },
+        {
+          "hook_id": "vh.dependency.integrity"
+        },
+        {
+          "hook_id": "vh.consistency.cross-pack-review"
+        },
+        {
+          "hook_id": "vh.manual.acceptance"
+        }
+      ],
+      "stale_rule_id": "sr.control-plane.strict",
+      "notes": [
+        "P6.3 accepted machine-readable fixture-family, storage-root, and protocol-binding rules covering golden, edge-case, regression, background-parity, and handoff-continuity datasets.",
+        "Accepted for downstream use as the validation and benchmark-fixture baseline for later blueprint and packet work."
+      ]
+    },
+    {
+      "artifact_id": "cp.phase6-agent-packet-context-pack-rules-data.v1",
+      "artifact_type_id": "cp.control_plane_dataset",
+      "title": "Phase 6 agent packet context-pack rules",
+      "version": "1.0.0",
+      "artifact_status": "accepted",
+      "semantic_owner": "Platform architecture steward",
+      "stewardship_mode": "human_factory",
+      "acceptance_authority": "Human plan owner",
+      "canonical_locator": "docs/control-plane/core/agent-packet-context-pack-rules.json",
+      "source_authority_refs": [
+        "cp.master-plan.v1",
+        "surf.phase6-agent-oriented-codebase-pattern-and-documentation-plane-pack.v1",
+        "cp.repo-agent-operating-contract.v1",
+        "cp.factory-operating-contract.v1",
+        "cp.packet-brief-schema-data.v1",
+        "cp.context-budget-and-packet-policy.v1",
+        "arch.phase3-context-compiler-topology.v1",
+        "arch.phase3-api-ipc-event-contracts.v1",
+        "cp.phase6-workspace-manifest-index-data.v1",
+        "cp.phase6-codebase-current-state-data.v1"
+      ],
+      "dependency_refs": [
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.master-plan.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The master plan names compiled context-pack rules for agent packets as part of P6.3."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.artifact-control-plane-spec.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted control-plane spec defines dataset metadata, dependency semantics, validation hooks, and stale rules."
+        },
+        {
+          "edge_type": "derives_from",
+          "artifact_id": "surf.phase6-agent-oriented-codebase-pattern-and-documentation-plane-pack.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The packet context-pack rules dataset is the machine-readable execution-packaging layer defined by the accepted P6.3 documentation-plane pack."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.repo-agent-operating-contract.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P0.2 contract defines instruction layering, accepted-artifact defaults, and bounded packet scope."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.factory-operating-contract.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P0.3 contract defines the additive Factory execution layer that packet context-pack guidance must preserve."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.packet-brief-schema-data.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted packet-brief schema defines the bounded packet fields that these context-pack rules align to."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.context-budget-and-packet-policy.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P0.5 policy defines budget bands, local-doc-first reads, supporting-read rules, and subagent limits that these context-pack rules preserve."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "arch.phase3-context-compiler-topology.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P3.2 topology keeps packet context compilation additive to explicit evidence/context assembly rather than a second runtime compiler."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "arch.phase3-api-ipc-event-contracts.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P3.4 contracts preserve typed service and worker access as packets map scope to workspace families."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.phase6-workspace-manifest-index-data.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted workspace manifest index provides the root-family map that packet context packs use to stay inside named workspace scope."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.phase6-codebase-current-state-data.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted current-state view tells later packets which roots are materialized versus reserved today."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.phase6-module-test-contracts-data.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted module-boundary dataset carries cross-root boundary rules into later execution packets."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.phase6-fixture-rules-data.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted fixture-rules dataset carries proof and fixture expectations into later validation-aware packets."
+        },
+        {
+          "edge_type": "validated_by",
+          "artifact_id": "surf.phase6-agent-oriented-codebase-pattern-and-documentation-plane-pack.v1",
+          "propagation_mode": "revalidate",
+          "required_for_acceptance": true,
+          "notes": "Revalidate the packet context-pack rules if the accepted P6.3 documentation-plane pack changes."
+        }
+      ],
+      "validation_hooks": [
+        {
+          "hook_id": "vh.schema.json-parse"
+        },
+        {
+          "hook_id": "vh.schema.required-fields"
+        },
+        {
+          "hook_id": "vh.dependency.integrity"
+        },
+        {
+          "hook_id": "vh.consistency.cross-pack-review"
+        },
+        {
+          "hook_id": "vh.manual.acceptance"
+        }
+      ],
+      "stale_rule_id": "sr.control-plane.strict",
+      "notes": [
+        "P6.3 accepted machine-readable packet context-pack composition rules aligned to accepted packet briefs, budget bands, manifest data, current-state data, module boundaries, and fixture expectations.",
+        "Accepted for downstream use as the context-assembly baseline feeding later P6.6 bounded execution packets."
+      ]
     }
   ]
 }

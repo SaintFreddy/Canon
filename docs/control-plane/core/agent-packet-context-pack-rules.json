@@ -1,0 +1,131 @@
+{
+  "context_pack_rules_meta": {
+    "schema_version": "1.0.0",
+    "title": "Phase 6 agent packet context-pack rules",
+    "task_id": "P6.3",
+    "documentation_plane_ref": "surf.phase6-agent-oriented-codebase-pattern-and-documentation-plane-pack.v1",
+    "packet_policy_ref": "cp.context-budget-and-packet-policy.v1",
+    "packet_schema_ref": "cp.packet-brief-schema-data.v1"
+  },
+  "budget_bands": {
+    "narrow": {
+      "governing_ref_limit": 5,
+      "full_local_doc_limit": 6,
+      "supporting_read_limit": 2,
+      "subagent_limit": 0
+    },
+    "standard": {
+      "governing_ref_limit": 8,
+      "full_local_doc_limit": 10,
+      "supporting_read_limit": 4,
+      "subagent_limit": 1
+    },
+    "extended": {
+      "governing_ref_limit": 12,
+      "full_local_doc_limit": 15,
+      "supporting_read_limit": 6,
+      "subagent_limit": 2
+    }
+  },
+  "required_segments": [
+    {
+      "segment_id": "instruction_stack",
+      "required": true,
+      "included_when": "always",
+      "sources": [
+        "/AGENTS.md",
+        "nearest-descendant AGENTS.md",
+        "packet brief or explicit task scope"
+      ],
+      "purpose": "Carry the execution boundary and narrowed local rules before broader repo context enters the packet."
+    },
+    {
+      "segment_id": "governing_truth",
+      "required": true,
+      "included_when": "always",
+      "sources": [
+        "accepted_artifact_refs",
+        "source_authority_refs when materially shaping work"
+      ],
+      "purpose": "Preserve accepted truth precedence and keep provisional material non-default."
+    },
+    {
+      "segment_id": "documentation_plane_navigation",
+      "required": true,
+      "included_when": "always",
+      "sources": [
+        "cp.phase6-workspace-manifest-index-data.v1",
+        "cp.phase6-codebase-current-state-data.v1"
+      ],
+      "purpose": "Map the packet to accepted workspace families and current materialization state."
+    },
+    {
+      "segment_id": "touched_files_and_local_docs",
+      "required": true,
+      "included_when": "always",
+      "sources": [
+        "file_targets or file_whitelist_ref",
+        "local docs nearest the touched files"
+      ],
+      "purpose": "Preserve the accepted local-doc-first read order."
+    },
+    {
+      "segment_id": "module_contracts_and_fixture_rules",
+      "required": false,
+      "included_when": "when module boundaries, validation, proof, or fixture expectations materially apply",
+      "sources": [
+        "cp.phase6-module-test-contracts-data.v1",
+        "cp.phase6-fixture-rules-data.v1"
+      ],
+      "purpose": "Carry boundary and proof/fixture discipline into later implementation-facing packets."
+    },
+    {
+      "segment_id": "supporting_reads",
+      "required": false,
+      "included_when": "only after local docs leave a bounded unresolved question and the selected budget band allows it",
+      "sources": [
+        "supporting repo reads named in packet notes"
+      ],
+      "purpose": "Keep supporting reads additive rather than the default mode."
+    },
+    {
+      "segment_id": "bounded_subagent_findings",
+      "required": false,
+      "included_when": "only when a bounded read-only subagent was allowed by the selected budget band",
+      "sources": [
+        "read-only subagent summary attached back to the primary packet owner"
+      ],
+      "purpose": "Carry bounded exploration results without replacing the owner's required reads."
+    }
+  ],
+  "assembly_order": [
+    "instruction_stack",
+    "governing_truth",
+    "documentation_plane_navigation",
+    "touched_files_and_local_docs",
+    "module_contracts_and_fixture_rules",
+    "supporting_reads",
+    "bounded_subagent_findings"
+  ],
+  "file_scope_rules": [
+    "Prefer explicit file_targets or file_whitelist_ref from the packet brief.",
+    "Use the workspace manifest index and current-state view to map file scope to accepted root families and current materialization state.",
+    "If required files fall outside the named scope or outside the selected budget band, split or escalate rather than silently widening the packet.",
+    "Cross-root edits are allowed only when every touched root is explicitly named in the packet scope or task."
+  ],
+  "hard_exclusions": [
+    "Non-accepted artifacts as default truth unless the packet explicitly targets them.",
+    "Transcript continuity or ambient provider state as sufficient replay basis.",
+    "Console-only or log-only proof, delta, review, or approval state.",
+    "Semantic ownership inferred from file adjacency alone.",
+    "Direct UI-to-worker or app-to-gateway shortcuts that bypass typed control contracts."
+  ],
+  "output_requirements": [
+    "Record the selected budget band.",
+    "List governing accepted artifact refs and any materially relevant source-authority refs.",
+    "List file_targets or file_whitelist_ref and touched roots.",
+    "Name module-boundary contracts and fixture rules when they materially apply.",
+    "Record supporting reads or bounded subagent findings only when used.",
+    "State the split-or-escalate reason when a band breach occurs."
+  ]
+}

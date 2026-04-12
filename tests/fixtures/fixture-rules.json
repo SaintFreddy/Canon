@@ -1,0 +1,201 @@
+{
+  "fixture_rules_meta": {
+    "schema_version": "1.0.0",
+    "title": "Phase 6 fixture rules",
+    "task_id": "P6.3",
+    "documentation_plane_ref": "surf.phase6-agent-oriented-codebase-pattern-and-documentation-plane-pack.v1",
+    "proof_baseline_ref": "reuse.phase5-proof-validation-evaluation-spec.v1",
+    "protocol_binding_ref": "reuse.phase5-run-class-protocol-packs.v1"
+  },
+  "fixture_families": [
+    {
+      "fixture_family_id": "fixture.family.golden-scenario.v1",
+      "fixture_family": "golden_scenario",
+      "storage_root": "tests/fixtures/golden/",
+      "materialization_posture": "reserved_not_materialized",
+      "required_basis": [
+        "scenario_ref",
+        "frozen_input_refs",
+        "expected_proof_sections",
+        "expected_score_band"
+      ],
+      "governing_artifact_refs": [
+        "canon.phase1-scenario-corpus.v1",
+        "reuse.phase5-proof-validation-evaluation-spec.v1"
+      ],
+      "notes": [
+        "Golden fixtures prove nominal accepted behavior on named scenarios.",
+        "Each fixture remains versioned and frozen when materialized."
+      ]
+    },
+    {
+      "fixture_family_id": "fixture.family.edge-case.v1",
+      "fixture_family": "edge_case",
+      "storage_root": "tests/fixtures/edge-cases/",
+      "materialization_posture": "reserved_not_materialized",
+      "required_basis": [
+        "edge_case_ref",
+        "frozen_input_refs",
+        "expected_blocking_or_warning_posture"
+      ],
+      "governing_artifact_refs": [
+        "canon.phase1-scenario-corpus.v1",
+        "reuse.phase5-proof-validation-evaluation-spec.v1"
+      ],
+      "notes": [
+        "Edge-case fixtures preserve explicit failure and warning behavior."
+      ]
+    },
+    {
+      "fixture_family_id": "fixture.family.regression.v1",
+      "fixture_family": "regression",
+      "storage_root": "tests/fixtures/regression/",
+      "materialization_posture": "reserved_not_materialized",
+      "required_basis": [
+        "prior_run_ref",
+        "prior_proof_ref",
+        "frozen_basis_ref"
+      ],
+      "governing_artifact_refs": [
+        "reuse.phase5-proof-validation-evaluation-spec.v1"
+      ],
+      "notes": [
+        "Regression fixtures protect against semantic drift over time."
+      ]
+    },
+    {
+      "fixture_family_id": "fixture.family.background-parity.v1",
+      "fixture_family": "background_parity",
+      "storage_root": "tests/fixtures/background-parity/",
+      "materialization_posture": "reserved_not_materialized",
+      "required_basis": [
+        "interactive_protocol_ref",
+        "background_protocol_ref",
+        "parity_expectations"
+      ],
+      "governing_artifact_refs": [
+        "reuse.phase5-proof-validation-evaluation-spec.v1",
+        "reuse.phase5-run-class-protocol-packs.v1"
+      ],
+      "notes": [
+        "Background-parity fixtures preserve RC-07 and keep proof and authority minima aligned across execution modes."
+      ]
+    },
+    {
+      "fixture_family_id": "fixture.family.handoff-continuity.v1",
+      "fixture_family": "handoff_continuity",
+      "storage_root": "tests/fixtures/handoff-continuity/",
+      "materialization_posture": "reserved_not_materialized",
+      "required_basis": [
+        "r7_handoff_payload_ref",
+        "task_studio_continuity_expectations"
+      ],
+      "governing_artifact_refs": [
+        "reuse.phase5-proof-validation-evaluation-spec.v1",
+        "reuse.phase5-commissioning-bridge-task-studio-handoff-contract.v1"
+      ],
+      "notes": [
+        "Handoff-continuity fixtures preserve shared IDs, proof links, and lifecycle landings from R7 into Task Studio."
+      ]
+    }
+  ],
+  "run_class_bindings": [
+    {
+      "run_class": "compare",
+      "fixture_set_ref": "fixture.compare.core.v1",
+      "required_fixture_families": [
+        "golden_scenario",
+        "regression",
+        "background_parity",
+        "handoff_continuity"
+      ],
+      "governing_artifact_refs": [
+        "reuse.phase5-run-class-protocol-packs.v1",
+        "reuse.phase5-proof-validation-evaluation-spec.v1"
+      ]
+    },
+    {
+      "run_class": "synthesize",
+      "fixture_set_ref": "fixture.synthesize.core.v1",
+      "required_fixture_families": [
+        "golden_scenario",
+        "regression",
+        "background_parity"
+      ],
+      "governing_artifact_refs": [
+        "reuse.phase5-run-class-protocol-packs.v1",
+        "reuse.phase5-proof-validation-evaluation-spec.v1"
+      ]
+    },
+    {
+      "run_class": "extract",
+      "fixture_set_ref": "fixture.extract.core.v1",
+      "required_fixture_families": [
+        "golden_scenario",
+        "regression",
+        "handoff_continuity"
+      ],
+      "governing_artifact_refs": [
+        "reuse.phase5-run-class-protocol-packs.v1",
+        "reuse.phase5-proof-validation-evaluation-spec.v1"
+      ]
+    },
+    {
+      "run_class": "transform",
+      "fixture_set_ref": "fixture.transform.core.v1",
+      "required_fixture_families": [
+        "golden_scenario",
+        "regression",
+        "background_parity"
+      ],
+      "governing_artifact_refs": [
+        "reuse.phase5-run-class-protocol-packs.v1",
+        "reuse.phase5-proof-validation-evaluation-spec.v1"
+      ]
+    },
+    {
+      "run_class": "audit",
+      "fixture_set_ref": "fixture.audit.core.v1",
+      "required_fixture_families": [
+        "golden_scenario",
+        "edge_case",
+        "regression"
+      ],
+      "governing_artifact_refs": [
+        "reuse.phase5-run-class-protocol-packs.v1",
+        "reuse.phase5-proof-validation-evaluation-spec.v1"
+      ]
+    },
+    {
+      "run_class": "plan",
+      "fixture_set_ref": "fixture.plan.core.v1",
+      "required_fixture_families": [
+        "golden_scenario",
+        "edge_case",
+        "regression"
+      ],
+      "governing_artifact_refs": [
+        "reuse.phase5-run-class-protocol-packs.v1",
+        "reuse.phase5-proof-validation-evaluation-spec.v1"
+      ]
+    },
+    {
+      "run_class": "triage",
+      "fixture_set_ref": "fixture.triage.core.v1",
+      "required_fixture_families": [
+        "edge_case",
+        "regression",
+        "handoff_continuity"
+      ],
+      "governing_artifact_refs": [
+        "reuse.phase5-run-class-protocol-packs.v1",
+        "reuse.phase5-proof-validation-evaluation-spec.v1"
+      ]
+    }
+  ],
+  "dataset_rules": [
+    "Every fixture set and benchmark dataset is versioned and frozen; updates create new versions instead of mutating prior expectations.",
+    "Fixture records retain run-class coverage, expected proof sections, evaluator posture, and linked scenario or lineage refs.",
+    "Derived fixture or benchmark views must preserve a rebuild path back to authoritative frozen inputs and evaluator outputs."
+  ]
+}

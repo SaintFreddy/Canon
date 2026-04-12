@@ -1,0 +1,219 @@
+{
+  "manifest_index_meta": {
+    "schema_version": "1.0.0",
+    "title": "Phase 6 workspace manifest index",
+    "task_id": "P6.3",
+    "documentation_plane_ref": "surf.phase6-agent-oriented-codebase-pattern-and-documentation-plane-pack.v1",
+    "repo_package_baseline_ref": "surf.phase6-repo-package-architecture-and-agent-execution-rules-pack.v1"
+  },
+  "workspace_manifests": [
+    {
+      "workspace_id": "ws.docs-control-plane",
+      "root_path": "docs/control-plane/",
+      "workspace_family": "control_plane",
+      "documentation_role": "accepted planning/spec control plane",
+      "current_posture": "materialized_active",
+      "execution_posture": "accepted_truth_default",
+      "allowed_children": [
+        "architecture/",
+        "canon/",
+        "core/",
+        "releases/",
+        "reuse/",
+        "semantics/",
+        "surfaces/"
+      ],
+      "governing_artifact_refs": [
+        "cp.master-plan.v1",
+        "cp.artifact-control-plane-spec.v1",
+        "surf.phase6-agent-oriented-codebase-pattern-and-documentation-plane-pack.v1"
+      ],
+      "notes": [
+        "This root remains the accepted planning and architecture truth plane.",
+        "Generated current-state and packet-context datasets may live under core/ without redefining runtime ownership."
+      ]
+    },
+    {
+      "workspace_id": "ws.factory-assets",
+      "root_path": ".factory/",
+      "workspace_family": "factory_execution_assets",
+      "documentation_role": "repo-scoped Factory execution assets",
+      "current_posture": "materialized_active",
+      "execution_posture": "accepted_execution_assets",
+      "allowed_children": [
+        "skills/",
+        "AGENTS.md",
+        "factory-operating-contract.md"
+      ],
+      "governing_artifact_refs": [
+        "cp.factory-operating-contract.v1",
+        "cp.repo-agent-operating-contract.v1",
+        "surf.phase6-agent-oriented-codebase-pattern-and-documentation-plane-pack.v1"
+      ],
+      "notes": [
+        "This root remains additive execution tooling and may not become product architecture.",
+        "Later P6.4 skills or adapters must remain consistent with the accepted Factory operating contract."
+      ]
+    },
+    {
+      "workspace_id": "ws.apps",
+      "root_path": "apps/",
+      "workspace_family": "first_party_app_projections",
+      "documentation_role": "chat-native and Task Studio app projections over shared grammar and shared objects",
+      "current_posture": "reserved_not_materialized",
+      "execution_posture": "reserved_future_projection",
+      "allowed_children": [
+        "chat-native/",
+        "task-studio/"
+      ],
+      "governing_artifact_refs": [
+        "surf.phase6-repo-package-architecture-and-agent-execution-rules-pack.v1",
+        "surf.phase6-chat-native-surface-contract-pack.v1",
+        "surf.phase6-task-studio-surface-contract-pack.v1"
+      ],
+      "notes": [
+        "App projections remain above shared packages and below accepted surface contracts.",
+        "No app root is materialized until later implementation or blueprint work lands."
+      ]
+    },
+    {
+      "workspace_id": "ws.packages",
+      "root_path": "packages/",
+      "workspace_family": "shared_contracts_and_runtime_packages",
+      "documentation_role": "shared contracts, schemas, object APIs, grammar/runtime helpers, and inspect packages",
+      "current_posture": "reserved_not_materialized",
+      "execution_posture": "reserved_future_contracts",
+      "allowed_children": [
+        "shared-object-schemas/",
+        "shared-object-api/",
+        "environment-control-contracts/",
+        "context-compiler-contracts/",
+        "event-provenance-contracts/",
+        "review-writeback-contracts/",
+        "replay-compare-contracts/",
+        "model-gateway-contracts/",
+        "tool-gateway-contracts/",
+        "monitor-inspect/",
+        "projection-grammar/"
+      ],
+      "governing_artifact_refs": [
+        "surf.phase6-repo-package-architecture-and-agent-execution-rules-pack.v1",
+        "surf.phase6-shared-projection-grammar-surface-contract-pack.v1"
+      ],
+      "notes": [
+        "Package seams remain below app projections and above services/workers.",
+        "Schema and contract families remain typed foundations rather than convenience buckets."
+      ]
+    },
+    {
+      "workspace_id": "ws.services",
+      "root_path": "services/",
+      "workspace_family": "control_and_gateway_services",
+      "documentation_role": "environment shell, control, provenance, review/writeback, and gateway services",
+      "current_posture": "reserved_not_materialized",
+      "execution_posture": "reserved_future_services",
+      "allowed_children": [
+        "environment-shell-api/",
+        "execution-control/",
+        "review-writeback/",
+        "event-provenance/",
+        "model-gateway/",
+        "tool-gateway/"
+      ],
+      "governing_artifact_refs": [
+        "surf.phase6-repo-package-architecture-and-agent-execution-rules-pack.v1",
+        "arch.phase3-api-ipc-event-contracts.v1"
+      ],
+      "notes": [
+        "Control and gateway services stay behind typed contracts.",
+        "No service root is materialized until implementation work names it explicitly."
+      ]
+    },
+    {
+      "workspace_id": "ws.workers",
+      "root_path": "workers/",
+      "workspace_family": "bounded_worker_families",
+      "documentation_role": "context compilation, replay/compare, apply, validation, and sandbox workers",
+      "current_posture": "reserved_not_materialized",
+      "execution_posture": "reserved_future_workers",
+      "allowed_children": [
+        "context-compiler/",
+        "replay-compare/",
+        "apply-writeback/",
+        "tool-sandbox/"
+      ],
+      "governing_artifact_refs": [
+        "surf.phase6-repo-package-architecture-and-agent-execution-rules-pack.v1",
+        "arch.phase3-context-compiler-topology.v1"
+      ],
+      "notes": [
+        "Worker families operate on frozen refs and typed contracts only.",
+        "Workers remain absent until later implementation-facing work lands."
+      ]
+    },
+    {
+      "workspace_id": "ws.domains",
+      "root_path": "domains/",
+      "workspace_family": "later_domain_packs",
+      "documentation_role": "future domain-pack implementation roots after semantic gates pass",
+      "current_posture": "reserved_gated_not_materialized",
+      "execution_posture": "reserved_future_domains",
+      "allowed_children": [
+        "<domain-slug>/"
+      ],
+      "governing_artifact_refs": [
+        "surf.phase6-repo-package-architecture-and-agent-execution-rules-pack.v1",
+        "surf.phase6-later-domain-surface-backlog-contract-pack.v1"
+      ],
+      "notes": [
+        "Domain roots remain gated on future accepted domain packs and may not be treated as pre-approved implementation scope.",
+        "The documentation plane keeps this root visible without implying semantic ownership today."
+      ]
+    },
+    {
+      "workspace_id": "ws.tests",
+      "root_path": "tests/",
+      "workspace_family": "contracts_fixtures_and_benchmarks",
+      "documentation_role": "module contracts, fixture rules, replay/regression suites, and benchmark datasets",
+      "current_posture": "materialized_active",
+      "execution_posture": "accepted_validation_assets",
+      "allowed_children": [
+        "contracts/",
+        "fixtures/",
+        "replay/",
+        "regression/",
+        "benchmark-datasets/"
+      ],
+      "governing_artifact_refs": [
+        "surf.phase6-agent-oriented-codebase-pattern-and-documentation-plane-pack.v1",
+        "reuse.phase5-proof-validation-evaluation-spec.v1",
+        "reuse.phase5-run-class-protocol-packs.v1"
+      ],
+      "notes": [
+        "P6.3 materializes tests/ as documentation-plane contract and fixture roots before executable harnesses exist.",
+        "Future replay, regression, and benchmark datasets should remain versioned and frozen."
+      ]
+    },
+    {
+      "workspace_id": "ws.scripts",
+      "root_path": "scripts/",
+      "workspace_family": "repo_local_wrappers",
+      "documentation_role": "thin validator and generation wrappers over accepted tools",
+      "current_posture": "reserved_not_materialized",
+      "execution_posture": "reserved_future_wrappers",
+      "allowed_children": [
+        "validators/",
+        "generators/",
+        "wrappers/"
+      ],
+      "governing_artifact_refs": [
+        "surf.phase6-repo-package-architecture-and-agent-execution-rules-pack.v1",
+        "surf.phase6-agent-oriented-codebase-pattern-and-documentation-plane-pack.v1"
+      ],
+      "notes": [
+        "Scripts remain thin wrappers around accepted validators and generators rather than a second control plane.",
+        "This root stays reserved until real wrappers are required."
+      ]
+    }
+  ]
+}

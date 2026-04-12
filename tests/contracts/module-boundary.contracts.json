@@ -1,0 +1,276 @@
+{
+  "contract_suite_meta": {
+    "schema_version": "1.0.0",
+    "title": "Phase 6 module boundary contracts",
+    "task_id": "P6.3",
+    "documentation_plane_ref": "surf.phase6-agent-oriented-codebase-pattern-and-documentation-plane-pack.v1",
+    "repo_package_baseline_ref": "surf.phase6-repo-package-architecture-and-agent-execution-rules-pack.v1"
+  },
+  "workspace_family_contracts": [
+    {
+      "contract_id": "mc.apps.chat-native.routes.v1",
+      "workspace_family": "apps/chat-native",
+      "allowed_dependency_roots": [
+        "packages/projection-grammar/",
+        "packages/shared-object-api/",
+        "packages/monitor-inspect/",
+        "packages/*-contracts/"
+      ],
+      "forbidden_dependency_roots": [
+        "workers/",
+        "services/model-gateway/",
+        "services/tool-gateway/"
+      ],
+      "required_name_patterns": [
+        "r1-*",
+        "r2-*",
+        "r3-*",
+        "r4-*",
+        "r5-*",
+        "r6-*",
+        "r7-*"
+      ],
+      "governing_artifact_refs": [
+        "surf.phase6-repo-package-architecture-and-agent-execution-rules-pack.v1",
+        "surf.phase6-chat-native-surface-contract-pack.v1"
+      ],
+      "notes": [
+        "Chat-native modules remain release-cluster projections over shared objects and shared grammar.",
+        "App code may not import worker logic or gateway internals directly."
+      ]
+    },
+    {
+      "contract_id": "mc.apps.task-studio.routes.v1",
+      "workspace_family": "apps/task-studio",
+      "allowed_dependency_roots": [
+        "packages/projection-grammar/",
+        "packages/shared-object-api/",
+        "packages/monitor-inspect/",
+        "packages/*-contracts/"
+      ],
+      "forbidden_dependency_roots": [
+        "workers/",
+        "services/model-gateway/",
+        "services/tool-gateway/"
+      ],
+      "required_name_patterns": [
+        "ts-sc-01*",
+        "ts-sc-02*",
+        "ts-sc-03*",
+        "ts-sc-04*",
+        "ts-sc-05*",
+        "ts-sc-06*",
+        "ts-sc-07*",
+        "ts-sc-08*",
+        "ts-sc-09*",
+        "ts-sc-10*",
+        "ts-sc-11*",
+        "ts-sc-12*"
+      ],
+      "governing_artifact_refs": [
+        "surf.phase6-repo-package-architecture-and-agent-execution-rules-pack.v1",
+        "surf.phase6-task-studio-surface-contract-pack.v1"
+      ],
+      "notes": [
+        "Task Studio modules stay aligned to accepted route-contract IDs instead of ad hoc page names.",
+        "Task Studio app code may not create Task-Studio-only replacements for shared commissioned-work objects."
+      ]
+    },
+    {
+      "contract_id": "mc.packages.contracts.v1",
+      "workspace_family": "packages/*-contracts",
+      "allowed_dependency_roots": [
+        "packages/shared-object-schemas/",
+        "packages/*-schemas/"
+      ],
+      "forbidden_dependency_roots": [
+        "apps/",
+        "services/",
+        "workers/"
+      ],
+      "required_name_patterns": [
+        "*-contracts/"
+      ],
+      "governing_artifact_refs": [
+        "surf.phase6-repo-package-architecture-and-agent-execution-rules-pack.v1"
+      ],
+      "notes": [
+        "Contract packages remain schema- and envelope-oriented.",
+        "Runtime code must not live under contract packages."
+      ]
+    },
+    {
+      "contract_id": "mc.packages.projection-and-inspect.v1",
+      "workspace_family": "packages/projection-grammar|packages/monitor-inspect",
+      "allowed_dependency_roots": [
+        "packages/shared-object-api/",
+        "packages/*-contracts/"
+      ],
+      "forbidden_dependency_roots": [
+        "services/",
+        "workers/"
+      ],
+      "required_name_patterns": [
+        "projection-grammar/",
+        "monitor-inspect/"
+      ],
+      "governing_artifact_refs": [
+        "surf.phase6-repo-package-architecture-and-agent-execution-rules-pack.v1",
+        "surf.phase6-shared-projection-grammar-surface-contract-pack.v1"
+      ],
+      "notes": [
+        "Projection grammar and inspect packages remain reusable helpers over accepted grammar and inspect semantics.",
+        "They may not become service dispatch or worker orchestration layers."
+      ]
+    },
+    {
+      "contract_id": "mc.services.control.v1",
+      "workspace_family": "services/environment-shell-api|services/execution-control|services/review-writeback|services/event-provenance",
+      "allowed_dependency_roots": [
+        "packages/shared-object-api/",
+        "packages/*-contracts/"
+      ],
+      "forbidden_dependency_roots": [
+        "apps/"
+      ],
+      "required_name_patterns": [
+        "environment-shell-api/",
+        "execution-control/",
+        "review-writeback/",
+        "event-provenance/"
+      ],
+      "governing_artifact_refs": [
+        "surf.phase6-repo-package-architecture-and-agent-execution-rules-pack.v1",
+        "arch.phase3-api-ipc-event-contracts.v1"
+      ],
+      "notes": [
+        "Control services orchestrate typed queries, dispatch, lineage, and review/apply flow.",
+        "They may not import app route code for business meaning."
+      ]
+    },
+    {
+      "contract_id": "mc.services.gateways.v1",
+      "workspace_family": "services/model-gateway|services/tool-gateway",
+      "allowed_dependency_roots": [
+        "packages/model-gateway-contracts/",
+        "packages/tool-gateway-contracts/"
+      ],
+      "forbidden_dependency_roots": [
+        "apps/",
+        "packages/shared-object-api/"
+      ],
+      "required_name_patterns": [
+        "model-gateway/",
+        "tool-gateway/"
+      ],
+      "governing_artifact_refs": [
+        "surf.phase6-repo-package-architecture-and-agent-execution-rules-pack.v1"
+      ],
+      "notes": [
+        "Gateway services normalize model/tool execution and failures only.",
+        "They may not own durable product truth or review semantics."
+      ]
+    },
+    {
+      "contract_id": "mc.workers.bounded.v1",
+      "workspace_family": "workers/*",
+      "allowed_dependency_roots": [
+        "packages/shared-object-api/",
+        "packages/*-contracts/"
+      ],
+      "forbidden_dependency_roots": [
+        "apps/"
+      ],
+      "required_name_patterns": [
+        "context-compiler/",
+        "replay-compare/",
+        "apply-writeback/",
+        "tool-sandbox/"
+      ],
+      "governing_artifact_refs": [
+        "surf.phase6-repo-package-architecture-and-agent-execution-rules-pack.v1",
+        "arch.phase3-context-compiler-topology.v1"
+      ],
+      "notes": [
+        "Workers operate on frozen refs and typed job envelopes.",
+        "They may not reach into app projection code or route-local state."
+      ]
+    },
+    {
+      "contract_id": "mc.domains.gated.v1",
+      "workspace_family": "domains/<domain-slug>",
+      "allowed_dependency_roots": [
+        "packages/shared-object-api/",
+        "packages/projection-grammar/",
+        "packages/*-contracts/"
+      ],
+      "forbidden_dependency_roots": [
+        "packages/shared-object-schemas/reowned-shared-objects/"
+      ],
+      "required_name_patterns": [
+        "<domain-slug>/"
+      ],
+      "governing_artifact_refs": [
+        "surf.phase6-repo-package-architecture-and-agent-execution-rules-pack.v1",
+        "surf.phase6-later-domain-surface-backlog-contract-pack.v1"
+      ],
+      "notes": [
+        "Domain roots remain gated on future semantic packs.",
+        "No later domain may re-own shared commissioned-work objects."
+      ]
+    }
+  ],
+  "global_boundary_contracts": [
+    {
+      "contract_id": "mc.no-direct-ui-worker-rpc.v1",
+      "rule_kind": "forbidden_cross_root_edge",
+      "source_workspace_families": [
+        "apps/chat-native",
+        "apps/task-studio"
+      ],
+      "target_workspace_families": [
+        "workers/*"
+      ],
+      "governing_artifact_refs": [
+        "surf.phase6-repo-package-architecture-and-agent-execution-rules-pack.v1",
+        "arch.phase3-api-ipc-event-contracts.v1"
+      ],
+      "notes": [
+        "Client and app code reach consequential work only through typed environment/control contracts."
+      ]
+    },
+    {
+      "contract_id": "mc.acceptance-stack-alias-only.v1",
+      "rule_kind": "forbidden_workspace_materialization",
+      "forbidden_workspace_patterns": [
+        "packages/acceptance-stack/**",
+        "services/acceptance-stack/**",
+        "workers/acceptance-stack/**"
+      ],
+      "governing_artifact_refs": [
+        "surf.phase6-chat-native-surface-contract-pack.v1",
+        "surf.phase6-repo-package-architecture-and-agent-execution-rules-pack.v1"
+      ],
+      "notes": [
+        "Acceptance Stack remains a chat-native alias and composition only."
+      ]
+    },
+    {
+      "contract_id": "mc.chat-to-run-handoff-routing-only.v1",
+      "rule_kind": "forbidden_workspace_materialization",
+      "forbidden_workspace_patterns": [
+        "packages/chat-to-run-handoff/**",
+        "services/chat-to-run-handoff/**",
+        "workers/chat-to-run-handoff/**"
+      ],
+      "governing_artifact_refs": [
+        "surf.phase6-chat-native-surface-contract-pack.v1",
+        "surf.phase6-task-studio-surface-contract-pack.v1",
+        "surf.phase6-repo-package-architecture-and-agent-execution-rules-pack.v1"
+      ],
+      "notes": [
+        "Chat-to-Run Handoff remains a routing and deep-link envelope rather than a new persistence or transfer service."
+      ]
+    }
+  ]
+}
