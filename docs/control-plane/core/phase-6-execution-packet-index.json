@@ -1,0 +1,1242 @@
+{
+  "execution_packet_index_meta": {
+    "schema_version": "1.0.0",
+    "title": "Phase 6 execution packet index",
+    "task_id": "P6.6",
+    "release_blueprint_index_ref": "cp.phase6-release-blueprint-index-data.v1",
+    "packet_schema_ref": "cp.packet-brief-schema-data.v1",
+    "packet_policy_ref": "cp.context-budget-and-packet-policy.v1",
+    "documentation_plane_ref": "surf.phase6-agent-oriented-codebase-pattern-and-documentation-plane-pack.v1"
+  },
+  "packet_family_catalog": [
+    {
+      "packet_family": "contracts_objects",
+      "description": "Implements release-local shared-object schemas, shared-object APIs, and package contracts from one accepted release blueprint.",
+      "allowed_prefixes": [
+        "packages/shared-object-schemas/",
+        "packages/shared-object-api/",
+        "packages/environment-control-contracts/",
+        "packages/context-compiler-contracts/",
+        "packages/event-provenance-contracts/",
+        "packages/review-writeback-contracts/",
+        "packages/replay-compare-contracts/",
+        "packages/model-gateway-contracts/",
+        "packages/tool-gateway-contracts/"
+      ],
+      "run_class": "transform",
+      "selected_budget_band": "standard"
+    },
+    {
+      "packet_family": "runtime_execution",
+      "description": "Implements release-local services and workers from one accepted release blueprint while preserving typed control, provenance, and review boundaries.",
+      "allowed_prefixes": [
+        "services/",
+        "workers/"
+      ],
+      "run_class": "transform",
+      "selected_budget_band": "standard"
+    },
+    {
+      "packet_family": "surface_validation",
+      "description": "Implements release-local app surfaces, projection grammar, inspect helpers, tests, and fixtures from one accepted release blueprint.",
+      "allowed_prefixes": [
+        "apps/",
+        "packages/projection-grammar/",
+        "packages/monitor-inspect/",
+        "tests/"
+      ],
+      "run_class": "transform",
+      "selected_budget_band": "standard"
+    },
+    {
+      "packet_family": "chat_surface",
+      "description": "Implements the R7 chat-native commissioning surface slice together with shared projection and inspect helpers.",
+      "allowed_prefixes": [
+        "apps/chat-native/",
+        "packages/projection-grammar/",
+        "packages/monitor-inspect/"
+      ],
+      "run_class": "transform",
+      "selected_budget_band": "standard"
+    },
+    {
+      "packet_family": "task_studio_handoff",
+      "description": "Implements the R7 Task Studio handoff landing slice over accepted `TS-SC-*` route modules only.",
+      "allowed_prefixes": [
+        "apps/task-studio/"
+      ],
+      "run_class": "transform",
+      "selected_budget_band": "standard"
+    },
+    {
+      "packet_family": "test_fixtures",
+      "description": "Implements the R7 contract-test and fixture slice, including handoff-continuity coverage.",
+      "allowed_prefixes": [
+        "tests/"
+      ],
+      "run_class": "transform",
+      "selected_budget_band": "standard"
+    }
+  ],
+  "release_packet_defaults": {
+    "default": [
+      "contracts_objects",
+      "runtime_execution",
+      "surface_validation"
+    ],
+    "r7-commissioning-bridge": [
+      "contracts_objects",
+      "runtime_execution",
+      "chat_surface",
+      "task_studio_handoff",
+      "test_fixtures"
+    ]
+  },
+  "execution_packets": [
+    {
+      "release_slug": "r1-conversation",
+      "release_ref": "rel.r1-transcript-chat-contract.v1",
+      "blueprint_ref": "bp.phase6-r1-conversation-blueprint.v1",
+      "packet_family": "contracts_objects",
+      "packet_order": 1,
+      "packet_artifact_id": "pkt.phase6-r1-conversation-contracts-objects-packet.v1",
+      "packet_path": "docs/control-plane/implementation/packets/phase-6-r1-conversation-contracts-objects-packet.md",
+      "packet_title": "Phase 6 R1 conversation contracts and objects packet",
+      "run_class": "transform",
+      "selected_budget_band": "standard",
+      "file_whitelist_ref": "wl.phase6-r1-conversation-contracts-objects.v1",
+      "file_whitelist_paths": [
+        "packages/shared-object-schemas/run-and-source/",
+        "packages/shared-object-api/run-continuity/",
+        "packages/environment-control-contracts/run-launch/",
+        "packages/context-compiler-contracts/admitted-basis/",
+        "packages/model-gateway-contracts/chat-turn/",
+        "packages/event-provenance-contracts/run-lineage/"
+      ],
+      "touched_workspace_roots": [
+        "packages/"
+      ],
+      "prerequisite_packet_refs": [],
+      "required_fixture_families": [
+        "golden_scenario",
+        "edge_case",
+        "regression"
+      ],
+      "validation_hooks": [
+        "vh.dependency.integrity",
+        "vh.consistency.cross-pack-review",
+        "vh.fixture.or-test-when-applicable",
+        "vh.manual.acceptance"
+      ],
+      "source_authority_refs": [
+        "rel.r1-transcript-chat-contract.v1"
+      ],
+      "accepted_artifact_refs": [
+        "bp.phase6-r1-conversation-blueprint.v1",
+        "cp.phase6-release-blueprint-index-data.v1",
+        "cp.phase6-workspace-manifest-index-data.v1",
+        "cp.phase6-codebase-current-state-data.v1",
+        "cp.phase6-module-test-contracts-data.v1",
+        "cp.context-budget-and-packet-policy.v1"
+      ]
+    },
+    {
+      "release_slug": "r1-conversation",
+      "release_ref": "rel.r1-transcript-chat-contract.v1",
+      "blueprint_ref": "bp.phase6-r1-conversation-blueprint.v1",
+      "packet_family": "runtime_execution",
+      "packet_order": 2,
+      "packet_artifact_id": "pkt.phase6-r1-conversation-runtime-execution-packet.v1",
+      "packet_path": "docs/control-plane/implementation/packets/phase-6-r1-conversation-runtime-execution-packet.md",
+      "packet_title": "Phase 6 R1 conversation runtime execution packet",
+      "run_class": "transform",
+      "selected_budget_band": "standard",
+      "file_whitelist_ref": "wl.phase6-r1-conversation-runtime-execution.v1",
+      "file_whitelist_paths": [
+        "services/environment-shell-api/conversation-entry/",
+        "services/execution-control/run-dispatch/",
+        "services/model-gateway/chat-turn-execution/",
+        "services/event-provenance/run-trace/",
+        "workers/context-compiler/compile-run-context/"
+      ],
+      "touched_workspace_roots": [
+        "services/",
+        "workers/"
+      ],
+      "prerequisite_packet_refs": [
+        "pkt.phase6-r1-conversation-contracts-objects-packet.v1"
+      ],
+      "required_fixture_families": [
+        "golden_scenario",
+        "edge_case",
+        "regression"
+      ],
+      "validation_hooks": [
+        "vh.dependency.integrity",
+        "vh.consistency.cross-pack-review",
+        "vh.fixture.or-test-when-applicable",
+        "vh.manual.acceptance"
+      ],
+      "source_authority_refs": [
+        "rel.r1-transcript-chat-contract.v1"
+      ],
+      "accepted_artifact_refs": [
+        "bp.phase6-r1-conversation-blueprint.v1",
+        "cp.phase6-release-blueprint-index-data.v1",
+        "cp.phase6-workspace-manifest-index-data.v1",
+        "cp.phase6-codebase-current-state-data.v1",
+        "cp.phase6-module-test-contracts-data.v1",
+        "cp.context-budget-and-packet-policy.v1"
+      ]
+    },
+    {
+      "release_slug": "r1-conversation",
+      "release_ref": "rel.r1-transcript-chat-contract.v1",
+      "blueprint_ref": "bp.phase6-r1-conversation-blueprint.v1",
+      "packet_family": "surface_validation",
+      "packet_order": 3,
+      "packet_artifact_id": "pkt.phase6-r1-conversation-surface-validation-packet.v1",
+      "packet_path": "docs/control-plane/implementation/packets/phase-6-r1-conversation-surface-validation-packet.md",
+      "packet_title": "Phase 6 R1 conversation surface and validation packet",
+      "run_class": "transform",
+      "selected_budget_band": "standard",
+      "file_whitelist_ref": "wl.phase6-r1-conversation-surface-validation.v1",
+      "file_whitelist_paths": [
+        "apps/chat-native/r1-conversation/",
+        "apps/chat-native/r1-compact-inspect/",
+        "packages/projection-grammar/chat-thread-projection/",
+        "packages/monitor-inspect/compact-run-inspect/",
+        "tests/contracts/r1-conversation/",
+        "tests/fixtures/r1-conversation/"
+      ],
+      "touched_workspace_roots": [
+        "apps/",
+        "packages/",
+        "tests/"
+      ],
+      "prerequisite_packet_refs": [
+        "pkt.phase6-r1-conversation-runtime-execution-packet.v1"
+      ],
+      "required_fixture_families": [
+        "golden_scenario",
+        "edge_case",
+        "regression"
+      ],
+      "validation_hooks": [
+        "vh.dependency.integrity",
+        "vh.consistency.cross-pack-review",
+        "vh.fixture.or-test-when-applicable",
+        "vh.manual.acceptance"
+      ],
+      "source_authority_refs": [
+        "rel.r1-transcript-chat-contract.v1"
+      ],
+      "accepted_artifact_refs": [
+        "bp.phase6-r1-conversation-blueprint.v1",
+        "cp.phase6-release-blueprint-index-data.v1",
+        "cp.phase6-workspace-manifest-index-data.v1",
+        "cp.phase6-codebase-current-state-data.v1",
+        "cp.phase6-module-test-contracts-data.v1",
+        "cp.phase6-fixture-rules-data.v1",
+        "cp.context-budget-and-packet-policy.v1"
+      ]
+    },
+    {
+      "release_slug": "r2-context-control",
+      "release_ref": "rel.r2-context-chat-contract.v1",
+      "blueprint_ref": "bp.phase6-r2-context-control-blueprint.v1",
+      "packet_family": "contracts_objects",
+      "packet_order": 1,
+      "packet_artifact_id": "pkt.phase6-r2-context-control-contracts-objects-packet.v1",
+      "packet_path": "docs/control-plane/implementation/packets/phase-6-r2-context-control-contracts-objects-packet.md",
+      "packet_title": "Phase 6 R2 context control contracts and objects packet",
+      "run_class": "transform",
+      "selected_budget_band": "standard",
+      "file_whitelist_ref": "wl.phase6-r2-context-control-contracts-objects.v1",
+      "file_whitelist_paths": [
+        "packages/shared-object-schemas/pack-lineage/",
+        "packages/shared-object-api/pack-control/",
+        "packages/context-compiler-contracts/context-operations/",
+        "packages/replay-compare-contracts/pack-basis-diff/",
+        "packages/event-provenance-contracts/pack-lineage/"
+      ],
+      "touched_workspace_roots": [
+        "packages/"
+      ],
+      "prerequisite_packet_refs": [],
+      "required_fixture_families": [
+        "golden_scenario",
+        "edge_case",
+        "regression"
+      ],
+      "validation_hooks": [
+        "vh.dependency.integrity",
+        "vh.consistency.cross-pack-review",
+        "vh.fixture.or-test-when-applicable",
+        "vh.manual.acceptance"
+      ],
+      "source_authority_refs": [
+        "rel.r2-context-chat-contract.v1"
+      ],
+      "accepted_artifact_refs": [
+        "bp.phase6-r2-context-control-blueprint.v1",
+        "cp.phase6-release-blueprint-index-data.v1",
+        "cp.phase6-workspace-manifest-index-data.v1",
+        "cp.phase6-codebase-current-state-data.v1",
+        "cp.phase6-module-test-contracts-data.v1",
+        "cp.context-budget-and-packet-policy.v1"
+      ]
+    },
+    {
+      "release_slug": "r2-context-control",
+      "release_ref": "rel.r2-context-chat-contract.v1",
+      "blueprint_ref": "bp.phase6-r2-context-control-blueprint.v1",
+      "packet_family": "runtime_execution",
+      "packet_order": 2,
+      "packet_artifact_id": "pkt.phase6-r2-context-control-runtime-execution-packet.v1",
+      "packet_path": "docs/control-plane/implementation/packets/phase-6-r2-context-control-runtime-execution-packet.md",
+      "packet_title": "Phase 6 R2 context control runtime execution packet",
+      "run_class": "transform",
+      "selected_budget_band": "standard",
+      "file_whitelist_ref": "wl.phase6-r2-context-control-runtime-execution.v1",
+      "file_whitelist_paths": [
+        "services/environment-shell-api/context-operations/",
+        "services/execution-control/rerun-from-pack/",
+        "services/event-provenance/pack-lineage/",
+        "workers/context-compiler/pack-freeze-diff/",
+        "workers/replay-compare/pack-basis-compare/"
+      ],
+      "touched_workspace_roots": [
+        "services/",
+        "workers/"
+      ],
+      "prerequisite_packet_refs": [
+        "pkt.phase6-r2-context-control-contracts-objects-packet.v1"
+      ],
+      "required_fixture_families": [
+        "golden_scenario",
+        "edge_case",
+        "regression"
+      ],
+      "validation_hooks": [
+        "vh.dependency.integrity",
+        "vh.consistency.cross-pack-review",
+        "vh.fixture.or-test-when-applicable",
+        "vh.manual.acceptance"
+      ],
+      "source_authority_refs": [
+        "rel.r2-context-chat-contract.v1"
+      ],
+      "accepted_artifact_refs": [
+        "bp.phase6-r2-context-control-blueprint.v1",
+        "cp.phase6-release-blueprint-index-data.v1",
+        "cp.phase6-workspace-manifest-index-data.v1",
+        "cp.phase6-codebase-current-state-data.v1",
+        "cp.phase6-module-test-contracts-data.v1",
+        "cp.context-budget-and-packet-policy.v1"
+      ]
+    },
+    {
+      "release_slug": "r2-context-control",
+      "release_ref": "rel.r2-context-chat-contract.v1",
+      "blueprint_ref": "bp.phase6-r2-context-control-blueprint.v1",
+      "packet_family": "surface_validation",
+      "packet_order": 3,
+      "packet_artifact_id": "pkt.phase6-r2-context-control-surface-validation-packet.v1",
+      "packet_path": "docs/control-plane/implementation/packets/phase-6-r2-context-control-surface-validation-packet.md",
+      "packet_title": "Phase 6 R2 context control surface and validation packet",
+      "run_class": "transform",
+      "selected_budget_band": "standard",
+      "file_whitelist_ref": "wl.phase6-r2-context-control-surface-validation.v1",
+      "file_whitelist_paths": [
+        "apps/chat-native/r2-context-control/",
+        "apps/chat-native/r2-pack-inspect/",
+        "packages/projection-grammar/context-control-projection/",
+        "packages/monitor-inspect/context-pack-inspect/",
+        "tests/contracts/r2-context-control/",
+        "tests/fixtures/r2-context-control/"
+      ],
+      "touched_workspace_roots": [
+        "apps/",
+        "packages/",
+        "tests/"
+      ],
+      "prerequisite_packet_refs": [
+        "pkt.phase6-r2-context-control-runtime-execution-packet.v1"
+      ],
+      "required_fixture_families": [
+        "golden_scenario",
+        "edge_case",
+        "regression"
+      ],
+      "validation_hooks": [
+        "vh.dependency.integrity",
+        "vh.consistency.cross-pack-review",
+        "vh.fixture.or-test-when-applicable",
+        "vh.manual.acceptance"
+      ],
+      "source_authority_refs": [
+        "rel.r2-context-chat-contract.v1"
+      ],
+      "accepted_artifact_refs": [
+        "bp.phase6-r2-context-control-blueprint.v1",
+        "cp.phase6-release-blueprint-index-data.v1",
+        "cp.phase6-workspace-manifest-index-data.v1",
+        "cp.phase6-codebase-current-state-data.v1",
+        "cp.phase6-module-test-contracts-data.v1",
+        "cp.phase6-fixture-rules-data.v1",
+        "cp.context-budget-and-packet-policy.v1"
+      ]
+    },
+    {
+      "release_slug": "r3-branch-replay",
+      "release_ref": "rel.r3-branch-visual-thinker-contract.v1",
+      "blueprint_ref": "bp.phase6-r3-branch-replay-blueprint.v1",
+      "packet_family": "contracts_objects",
+      "packet_order": 1,
+      "packet_artifact_id": "pkt.phase6-r3-branch-replay-contracts-objects-packet.v1",
+      "packet_path": "docs/control-plane/implementation/packets/phase-6-r3-branch-replay-contracts-objects-packet.md",
+      "packet_title": "Phase 6 R3 branch replay contracts and objects packet",
+      "run_class": "transform",
+      "selected_budget_band": "standard",
+      "file_whitelist_ref": "wl.phase6-r3-branch-replay-contracts-objects.v1",
+      "file_whitelist_paths": [
+        "packages/shared-object-schemas/branch-checkpoint-delta/",
+        "packages/shared-object-api/branch-lineage/",
+        "packages/replay-compare-contracts/branch-replay/",
+        "packages/review-writeback-contracts/merge-review/",
+        "packages/event-provenance-contracts/branch-lineage/"
+      ],
+      "touched_workspace_roots": [
+        "packages/"
+      ],
+      "prerequisite_packet_refs": [],
+      "required_fixture_families": [
+        "golden_scenario",
+        "edge_case",
+        "regression"
+      ],
+      "validation_hooks": [
+        "vh.dependency.integrity",
+        "vh.consistency.cross-pack-review",
+        "vh.fixture.or-test-when-applicable",
+        "vh.manual.acceptance"
+      ],
+      "source_authority_refs": [
+        "rel.r3-branch-visual-thinker-contract.v1"
+      ],
+      "accepted_artifact_refs": [
+        "bp.phase6-r3-branch-replay-blueprint.v1",
+        "cp.phase6-release-blueprint-index-data.v1",
+        "cp.phase6-workspace-manifest-index-data.v1",
+        "cp.phase6-codebase-current-state-data.v1",
+        "cp.phase6-module-test-contracts-data.v1",
+        "cp.context-budget-and-packet-policy.v1"
+      ]
+    },
+    {
+      "release_slug": "r3-branch-replay",
+      "release_ref": "rel.r3-branch-visual-thinker-contract.v1",
+      "blueprint_ref": "bp.phase6-r3-branch-replay-blueprint.v1",
+      "packet_family": "runtime_execution",
+      "packet_order": 2,
+      "packet_artifact_id": "pkt.phase6-r3-branch-replay-runtime-execution-packet.v1",
+      "packet_path": "docs/control-plane/implementation/packets/phase-6-r3-branch-replay-runtime-execution-packet.md",
+      "packet_title": "Phase 6 R3 branch replay runtime execution packet",
+      "run_class": "transform",
+      "selected_budget_band": "standard",
+      "file_whitelist_ref": "wl.phase6-r3-branch-replay-runtime-execution.v1",
+      "file_whitelist_paths": [
+        "services/execution-control/checkpoint-launch/",
+        "services/review-writeback/merge-proposals/",
+        "services/event-provenance/branch-history/",
+        "workers/replay-compare/checkpoint-replay/",
+        "workers/replay-compare/branch-compare/"
+      ],
+      "touched_workspace_roots": [
+        "services/",
+        "workers/"
+      ],
+      "prerequisite_packet_refs": [
+        "pkt.phase6-r3-branch-replay-contracts-objects-packet.v1"
+      ],
+      "required_fixture_families": [
+        "golden_scenario",
+        "edge_case",
+        "regression"
+      ],
+      "validation_hooks": [
+        "vh.dependency.integrity",
+        "vh.consistency.cross-pack-review",
+        "vh.fixture.or-test-when-applicable",
+        "vh.manual.acceptance"
+      ],
+      "source_authority_refs": [
+        "rel.r3-branch-visual-thinker-contract.v1"
+      ],
+      "accepted_artifact_refs": [
+        "bp.phase6-r3-branch-replay-blueprint.v1",
+        "cp.phase6-release-blueprint-index-data.v1",
+        "cp.phase6-workspace-manifest-index-data.v1",
+        "cp.phase6-codebase-current-state-data.v1",
+        "cp.phase6-module-test-contracts-data.v1",
+        "cp.context-budget-and-packet-policy.v1"
+      ]
+    },
+    {
+      "release_slug": "r3-branch-replay",
+      "release_ref": "rel.r3-branch-visual-thinker-contract.v1",
+      "blueprint_ref": "bp.phase6-r3-branch-replay-blueprint.v1",
+      "packet_family": "surface_validation",
+      "packet_order": 3,
+      "packet_artifact_id": "pkt.phase6-r3-branch-replay-surface-validation-packet.v1",
+      "packet_path": "docs/control-plane/implementation/packets/phase-6-r3-branch-replay-surface-validation-packet.md",
+      "packet_title": "Phase 6 R3 branch replay surface and validation packet",
+      "run_class": "transform",
+      "selected_budget_band": "standard",
+      "file_whitelist_ref": "wl.phase6-r3-branch-replay-surface-validation.v1",
+      "file_whitelist_paths": [
+        "apps/chat-native/r3-branch-replay/",
+        "apps/chat-native/r3-mode-projection/",
+        "packages/projection-grammar/branch-projection/",
+        "packages/monitor-inspect/branch-compare/",
+        "tests/contracts/r3-branch-replay/",
+        "tests/fixtures/r3-branch-replay/"
+      ],
+      "touched_workspace_roots": [
+        "apps/",
+        "packages/",
+        "tests/"
+      ],
+      "prerequisite_packet_refs": [
+        "pkt.phase6-r3-branch-replay-runtime-execution-packet.v1"
+      ],
+      "required_fixture_families": [
+        "golden_scenario",
+        "edge_case",
+        "regression"
+      ],
+      "validation_hooks": [
+        "vh.dependency.integrity",
+        "vh.consistency.cross-pack-review",
+        "vh.fixture.or-test-when-applicable",
+        "vh.manual.acceptance"
+      ],
+      "source_authority_refs": [
+        "rel.r3-branch-visual-thinker-contract.v1"
+      ],
+      "accepted_artifact_refs": [
+        "bp.phase6-r3-branch-replay-blueprint.v1",
+        "cp.phase6-release-blueprint-index-data.v1",
+        "cp.phase6-workspace-manifest-index-data.v1",
+        "cp.phase6-codebase-current-state-data.v1",
+        "cp.phase6-module-test-contracts-data.v1",
+        "cp.phase6-fixture-rules-data.v1",
+        "cp.context-budget-and-packet-policy.v1"
+      ]
+    },
+    {
+      "release_slug": "r4-artifact-workspace",
+      "release_ref": "rel.r4-artifact-workspace-contract.v1",
+      "blueprint_ref": "bp.phase6-r4-artifact-workspace-blueprint.v1",
+      "packet_family": "contracts_objects",
+      "packet_order": 1,
+      "packet_artifact_id": "pkt.phase6-r4-artifact-workspace-contracts-objects-packet.v1",
+      "packet_path": "docs/control-plane/implementation/packets/phase-6-r4-artifact-workspace-contracts-objects-packet.md",
+      "packet_title": "Phase 6 R4 artifact workspace contracts and objects packet",
+      "run_class": "transform",
+      "selected_budget_band": "standard",
+      "file_whitelist_ref": "wl.phase6-r4-artifact-workspace-contracts-objects.v1",
+      "file_whitelist_paths": [
+        "packages/shared-object-schemas/artifact-governance/",
+        "packages/shared-object-api/artifact-lineage/",
+        "packages/environment-control-contracts/artifact-run-targeting/",
+        "packages/review-writeback-contracts/artifact-review/",
+        "packages/event-provenance-contracts/artifact-lineage/"
+      ],
+      "touched_workspace_roots": [
+        "packages/"
+      ],
+      "prerequisite_packet_refs": [],
+      "required_fixture_families": [
+        "golden_scenario",
+        "edge_case",
+        "regression"
+      ],
+      "validation_hooks": [
+        "vh.dependency.integrity",
+        "vh.consistency.cross-pack-review",
+        "vh.fixture.or-test-when-applicable",
+        "vh.manual.acceptance"
+      ],
+      "source_authority_refs": [
+        "rel.r4-artifact-workspace-contract.v1"
+      ],
+      "accepted_artifact_refs": [
+        "bp.phase6-r4-artifact-workspace-blueprint.v1",
+        "cp.phase6-release-blueprint-index-data.v1",
+        "cp.phase6-workspace-manifest-index-data.v1",
+        "cp.phase6-codebase-current-state-data.v1",
+        "cp.phase6-module-test-contracts-data.v1",
+        "cp.context-budget-and-packet-policy.v1"
+      ]
+    },
+    {
+      "release_slug": "r4-artifact-workspace",
+      "release_ref": "rel.r4-artifact-workspace-contract.v1",
+      "blueprint_ref": "bp.phase6-r4-artifact-workspace-blueprint.v1",
+      "packet_family": "runtime_execution",
+      "packet_order": 2,
+      "packet_artifact_id": "pkt.phase6-r4-artifact-workspace-runtime-execution-packet.v1",
+      "packet_path": "docs/control-plane/implementation/packets/phase-6-r4-artifact-workspace-runtime-execution-packet.md",
+      "packet_title": "Phase 6 R4 artifact workspace runtime execution packet",
+      "run_class": "transform",
+      "selected_budget_band": "standard",
+      "file_whitelist_ref": "wl.phase6-r4-artifact-workspace-runtime-execution.v1",
+      "file_whitelist_paths": [
+        "services/environment-shell-api/artifact-run-targeting/",
+        "services/review-writeback/proposal-inbox/",
+        "services/review-writeback/review-anchor/",
+        "services/event-provenance/artifact-history/",
+        "workers/apply-writeback/artifact-lane-apply/",
+        "workers/replay-compare/artifact-revision-compare/"
+      ],
+      "touched_workspace_roots": [
+        "services/",
+        "workers/"
+      ],
+      "prerequisite_packet_refs": [
+        "pkt.phase6-r4-artifact-workspace-contracts-objects-packet.v1"
+      ],
+      "required_fixture_families": [
+        "golden_scenario",
+        "edge_case",
+        "regression"
+      ],
+      "validation_hooks": [
+        "vh.dependency.integrity",
+        "vh.consistency.cross-pack-review",
+        "vh.fixture.or-test-when-applicable",
+        "vh.manual.acceptance"
+      ],
+      "source_authority_refs": [
+        "rel.r4-artifact-workspace-contract.v1"
+      ],
+      "accepted_artifact_refs": [
+        "bp.phase6-r4-artifact-workspace-blueprint.v1",
+        "cp.phase6-release-blueprint-index-data.v1",
+        "cp.phase6-workspace-manifest-index-data.v1",
+        "cp.phase6-codebase-current-state-data.v1",
+        "cp.phase6-module-test-contracts-data.v1",
+        "cp.context-budget-and-packet-policy.v1"
+      ]
+    },
+    {
+      "release_slug": "r4-artifact-workspace",
+      "release_ref": "rel.r4-artifact-workspace-contract.v1",
+      "blueprint_ref": "bp.phase6-r4-artifact-workspace-blueprint.v1",
+      "packet_family": "surface_validation",
+      "packet_order": 3,
+      "packet_artifact_id": "pkt.phase6-r4-artifact-workspace-surface-validation-packet.v1",
+      "packet_path": "docs/control-plane/implementation/packets/phase-6-r4-artifact-workspace-surface-validation-packet.md",
+      "packet_title": "Phase 6 R4 artifact workspace surface and validation packet",
+      "run_class": "transform",
+      "selected_budget_band": "standard",
+      "file_whitelist_ref": "wl.phase6-r4-artifact-workspace-surface-validation.v1",
+      "file_whitelist_paths": [
+        "apps/chat-native/r4-artifact-workspace/",
+        "apps/chat-native/r4-proposal-inbox/",
+        "packages/projection-grammar/artifact-workspace-projection/",
+        "packages/monitor-inspect/artifact-workspace/",
+        "tests/contracts/r4-artifact-workspace/",
+        "tests/fixtures/r4-artifact-workspace/"
+      ],
+      "touched_workspace_roots": [
+        "apps/",
+        "packages/",
+        "tests/"
+      ],
+      "prerequisite_packet_refs": [
+        "pkt.phase6-r4-artifact-workspace-runtime-execution-packet.v1"
+      ],
+      "required_fixture_families": [
+        "golden_scenario",
+        "edge_case",
+        "regression"
+      ],
+      "validation_hooks": [
+        "vh.dependency.integrity",
+        "vh.consistency.cross-pack-review",
+        "vh.fixture.or-test-when-applicable",
+        "vh.manual.acceptance"
+      ],
+      "source_authority_refs": [
+        "rel.r4-artifact-workspace-contract.v1"
+      ],
+      "accepted_artifact_refs": [
+        "bp.phase6-r4-artifact-workspace-blueprint.v1",
+        "cp.phase6-release-blueprint-index-data.v1",
+        "cp.phase6-workspace-manifest-index-data.v1",
+        "cp.phase6-codebase-current-state-data.v1",
+        "cp.phase6-module-test-contracts-data.v1",
+        "cp.phase6-fixture-rules-data.v1",
+        "cp.context-budget-and-packet-policy.v1"
+      ]
+    },
+    {
+      "release_slug": "r5-prompt-assets",
+      "release_ref": "rel.r5-prompt-studio-contract.v1",
+      "blueprint_ref": "bp.phase6-r5-prompt-assets-blueprint.v1",
+      "packet_family": "contracts_objects",
+      "packet_order": 1,
+      "packet_artifact_id": "pkt.phase6-r5-prompt-assets-contracts-objects-packet.v1",
+      "packet_path": "docs/control-plane/implementation/packets/phase-6-r5-prompt-assets-contracts-objects-packet.md",
+      "packet_title": "Phase 6 R5 prompt assets contracts and objects packet",
+      "run_class": "transform",
+      "selected_budget_band": "standard",
+      "file_whitelist_ref": "wl.phase6-r5-prompt-assets-contracts-objects.v1",
+      "file_whitelist_paths": [
+        "packages/shared-object-schemas/prompt-assets/",
+        "packages/shared-object-api/prompt-assets/",
+        "packages/model-gateway-contracts/model-profile-compat/",
+        "packages/review-writeback-contracts/prompt-asset-review/",
+        "packages/event-provenance-contracts/prompt-lineage/"
+      ],
+      "touched_workspace_roots": [
+        "packages/"
+      ],
+      "prerequisite_packet_refs": [],
+      "required_fixture_families": [
+        "golden_scenario",
+        "edge_case",
+        "regression"
+      ],
+      "validation_hooks": [
+        "vh.dependency.integrity",
+        "vh.consistency.cross-pack-review",
+        "vh.fixture.or-test-when-applicable",
+        "vh.manual.acceptance"
+      ],
+      "source_authority_refs": [
+        "rel.r5-prompt-studio-contract.v1"
+      ],
+      "accepted_artifact_refs": [
+        "bp.phase6-r5-prompt-assets-blueprint.v1",
+        "cp.phase6-release-blueprint-index-data.v1",
+        "cp.phase6-workspace-manifest-index-data.v1",
+        "cp.phase6-codebase-current-state-data.v1",
+        "cp.phase6-module-test-contracts-data.v1",
+        "cp.context-budget-and-packet-policy.v1"
+      ]
+    },
+    {
+      "release_slug": "r5-prompt-assets",
+      "release_ref": "rel.r5-prompt-studio-contract.v1",
+      "blueprint_ref": "bp.phase6-r5-prompt-assets-blueprint.v1",
+      "packet_family": "runtime_execution",
+      "packet_order": 2,
+      "packet_artifact_id": "pkt.phase6-r5-prompt-assets-runtime-execution-packet.v1",
+      "packet_path": "docs/control-plane/implementation/packets/phase-6-r5-prompt-assets-runtime-execution-packet.md",
+      "packet_title": "Phase 6 R5 prompt assets runtime execution packet",
+      "run_class": "transform",
+      "selected_budget_band": "standard",
+      "file_whitelist_ref": "wl.phase6-r5-prompt-assets-runtime-execution.v1",
+      "file_whitelist_paths": [
+        "services/model-gateway/adaptation-execution/",
+        "services/review-writeback/prompt-asset-review/",
+        "services/event-provenance/prompt-lineage/",
+        "workers/replay-compare/adaptation-compare/",
+        "workers/apply-writeback/prompt-asset-apply/"
+      ],
+      "touched_workspace_roots": [
+        "services/",
+        "workers/"
+      ],
+      "prerequisite_packet_refs": [
+        "pkt.phase6-r5-prompt-assets-contracts-objects-packet.v1"
+      ],
+      "required_fixture_families": [
+        "golden_scenario",
+        "edge_case",
+        "regression"
+      ],
+      "validation_hooks": [
+        "vh.dependency.integrity",
+        "vh.consistency.cross-pack-review",
+        "vh.fixture.or-test-when-applicable",
+        "vh.manual.acceptance"
+      ],
+      "source_authority_refs": [
+        "rel.r5-prompt-studio-contract.v1"
+      ],
+      "accepted_artifact_refs": [
+        "bp.phase6-r5-prompt-assets-blueprint.v1",
+        "cp.phase6-release-blueprint-index-data.v1",
+        "cp.phase6-workspace-manifest-index-data.v1",
+        "cp.phase6-codebase-current-state-data.v1",
+        "cp.phase6-module-test-contracts-data.v1",
+        "cp.context-budget-and-packet-policy.v1"
+      ]
+    },
+    {
+      "release_slug": "r5-prompt-assets",
+      "release_ref": "rel.r5-prompt-studio-contract.v1",
+      "blueprint_ref": "bp.phase6-r5-prompt-assets-blueprint.v1",
+      "packet_family": "surface_validation",
+      "packet_order": 3,
+      "packet_artifact_id": "pkt.phase6-r5-prompt-assets-surface-validation-packet.v1",
+      "packet_path": "docs/control-plane/implementation/packets/phase-6-r5-prompt-assets-surface-validation-packet.md",
+      "packet_title": "Phase 6 R5 prompt assets surface and validation packet",
+      "run_class": "transform",
+      "selected_budget_band": "standard",
+      "file_whitelist_ref": "wl.phase6-r5-prompt-assets-surface-validation.v1",
+      "file_whitelist_paths": [
+        "apps/chat-native/r5-prompt-assets/",
+        "apps/chat-native/r5-model-profile-browser/",
+        "packages/projection-grammar/prompt-asset-projection/",
+        "packages/monitor-inspect/prompt-browser/",
+        "tests/contracts/r5-prompt-assets/",
+        "tests/fixtures/r5-prompt-assets/"
+      ],
+      "touched_workspace_roots": [
+        "apps/",
+        "packages/",
+        "tests/"
+      ],
+      "prerequisite_packet_refs": [
+        "pkt.phase6-r5-prompt-assets-runtime-execution-packet.v1"
+      ],
+      "required_fixture_families": [
+        "golden_scenario",
+        "edge_case",
+        "regression"
+      ],
+      "validation_hooks": [
+        "vh.dependency.integrity",
+        "vh.consistency.cross-pack-review",
+        "vh.fixture.or-test-when-applicable",
+        "vh.manual.acceptance"
+      ],
+      "source_authority_refs": [
+        "rel.r5-prompt-studio-contract.v1"
+      ],
+      "accepted_artifact_refs": [
+        "bp.phase6-r5-prompt-assets-blueprint.v1",
+        "cp.phase6-release-blueprint-index-data.v1",
+        "cp.phase6-workspace-manifest-index-data.v1",
+        "cp.phase6-codebase-current-state-data.v1",
+        "cp.phase6-module-test-contracts-data.v1",
+        "cp.phase6-fixture-rules-data.v1",
+        "cp.context-budget-and-packet-policy.v1"
+      ]
+    },
+    {
+      "release_slug": "r6-governed-reusable-execution",
+      "release_ref": "rel.r6-governed-agent-applet-chat-contract.v1",
+      "blueprint_ref": "bp.phase6-r6-governed-reusable-execution-blueprint.v1",
+      "packet_family": "contracts_objects",
+      "packet_order": 1,
+      "packet_artifact_id": "pkt.phase6-r6-governed-reusable-execution-contracts-objects-packet.v1",
+      "packet_path": "docs/control-plane/implementation/packets/phase-6-r6-governed-reusable-execution-contracts-objects-packet.md",
+      "packet_title": "Phase 6 R6 governed reusable execution contracts and objects packet",
+      "run_class": "transform",
+      "selected_budget_band": "standard",
+      "file_whitelist_ref": "wl.phase6-r6-governed-reusable-execution-contracts-objects.v1",
+      "file_whitelist_paths": [
+        "packages/shared-object-schemas/reusable-execution/",
+        "packages/shared-object-api/governed-execution/",
+        "packages/model-gateway-contracts/reusable-run-execution/",
+        "packages/tool-gateway-contracts/tool-execution-policy/",
+        "packages/review-writeback-contracts/queue-review/",
+        "packages/event-provenance-contracts/reusable-execution-lineage/"
+      ],
+      "touched_workspace_roots": [
+        "packages/"
+      ],
+      "prerequisite_packet_refs": [],
+      "required_fixture_families": [
+        "golden_scenario",
+        "edge_case",
+        "regression",
+        "background_parity"
+      ],
+      "validation_hooks": [
+        "vh.dependency.integrity",
+        "vh.consistency.cross-pack-review",
+        "vh.fixture.or-test-when-applicable",
+        "vh.manual.acceptance"
+      ],
+      "source_authority_refs": [
+        "rel.r6-governed-agent-applet-chat-contract.v1"
+      ],
+      "accepted_artifact_refs": [
+        "bp.phase6-r6-governed-reusable-execution-blueprint.v1",
+        "cp.phase6-release-blueprint-index-data.v1",
+        "cp.phase6-workspace-manifest-index-data.v1",
+        "cp.phase6-codebase-current-state-data.v1",
+        "cp.phase6-module-test-contracts-data.v1",
+        "cp.context-budget-and-packet-policy.v1"
+      ]
+    },
+    {
+      "release_slug": "r6-governed-reusable-execution",
+      "release_ref": "rel.r6-governed-agent-applet-chat-contract.v1",
+      "blueprint_ref": "bp.phase6-r6-governed-reusable-execution-blueprint.v1",
+      "packet_family": "runtime_execution",
+      "packet_order": 2,
+      "packet_artifact_id": "pkt.phase6-r6-governed-reusable-execution-runtime-execution-packet.v1",
+      "packet_path": "docs/control-plane/implementation/packets/phase-6-r6-governed-reusable-execution-runtime-execution-packet.md",
+      "packet_title": "Phase 6 R6 governed reusable execution runtime execution packet",
+      "run_class": "transform",
+      "selected_budget_band": "standard",
+      "file_whitelist_ref": "wl.phase6-r6-governed-reusable-execution-runtime-execution.v1",
+      "file_whitelist_paths": [
+        "services/execution-control/background-run-admission/",
+        "services/model-gateway/reusable-run-execution/",
+        "services/tool-gateway/typed-tool-execution/",
+        "services/review-writeback/queue-review/",
+        "services/event-provenance/applet-lineage/",
+        "workers/tool-sandbox/policy-bounded-run/",
+        "workers/apply-writeback/background-proposal-apply/",
+        "workers/replay-compare/protocol-version-compare/"
+      ],
+      "touched_workspace_roots": [
+        "services/",
+        "workers/"
+      ],
+      "prerequisite_packet_refs": [
+        "pkt.phase6-r6-governed-reusable-execution-contracts-objects-packet.v1"
+      ],
+      "required_fixture_families": [
+        "golden_scenario",
+        "edge_case",
+        "regression",
+        "background_parity"
+      ],
+      "validation_hooks": [
+        "vh.dependency.integrity",
+        "vh.consistency.cross-pack-review",
+        "vh.fixture.or-test-when-applicable",
+        "vh.manual.acceptance"
+      ],
+      "source_authority_refs": [
+        "rel.r6-governed-agent-applet-chat-contract.v1"
+      ],
+      "accepted_artifact_refs": [
+        "bp.phase6-r6-governed-reusable-execution-blueprint.v1",
+        "cp.phase6-release-blueprint-index-data.v1",
+        "cp.phase6-workspace-manifest-index-data.v1",
+        "cp.phase6-codebase-current-state-data.v1",
+        "cp.phase6-module-test-contracts-data.v1",
+        "cp.context-budget-and-packet-policy.v1"
+      ]
+    },
+    {
+      "release_slug": "r6-governed-reusable-execution",
+      "release_ref": "rel.r6-governed-agent-applet-chat-contract.v1",
+      "blueprint_ref": "bp.phase6-r6-governed-reusable-execution-blueprint.v1",
+      "packet_family": "surface_validation",
+      "packet_order": 3,
+      "packet_artifact_id": "pkt.phase6-r6-governed-reusable-execution-surface-validation-packet.v1",
+      "packet_path": "docs/control-plane/implementation/packets/phase-6-r6-governed-reusable-execution-surface-validation-packet.md",
+      "packet_title": "Phase 6 R6 governed reusable execution surface and validation packet",
+      "run_class": "transform",
+      "selected_budget_band": "standard",
+      "file_whitelist_ref": "wl.phase6-r6-governed-reusable-execution-surface-validation.v1",
+      "file_whitelist_paths": [
+        "apps/chat-native/r6-governed-reusable-execution/",
+        "apps/chat-native/r6-chatlet-projection/",
+        "packages/projection-grammar/reusable-execution-projection/",
+        "packages/monitor-inspect/queue-inbox/",
+        "tests/contracts/r6-governed-reusable-execution/",
+        "tests/fixtures/r6-governed-reusable-execution/"
+      ],
+      "touched_workspace_roots": [
+        "apps/",
+        "packages/",
+        "tests/"
+      ],
+      "prerequisite_packet_refs": [
+        "pkt.phase6-r6-governed-reusable-execution-runtime-execution-packet.v1"
+      ],
+      "required_fixture_families": [
+        "golden_scenario",
+        "edge_case",
+        "regression",
+        "background_parity"
+      ],
+      "validation_hooks": [
+        "vh.dependency.integrity",
+        "vh.consistency.cross-pack-review",
+        "vh.fixture.or-test-when-applicable",
+        "vh.manual.acceptance"
+      ],
+      "source_authority_refs": [
+        "rel.r6-governed-agent-applet-chat-contract.v1"
+      ],
+      "accepted_artifact_refs": [
+        "bp.phase6-r6-governed-reusable-execution-blueprint.v1",
+        "cp.phase6-release-blueprint-index-data.v1",
+        "cp.phase6-workspace-manifest-index-data.v1",
+        "cp.phase6-codebase-current-state-data.v1",
+        "cp.phase6-module-test-contracts-data.v1",
+        "cp.phase6-fixture-rules-data.v1",
+        "cp.context-budget-and-packet-policy.v1"
+      ]
+    },
+    {
+      "release_slug": "r7-commissioning-bridge",
+      "release_ref": "rel.r7-commissioning-bridge-contract.v1",
+      "blueprint_ref": "bp.phase6-r7-commissioning-bridge-blueprint.v1",
+      "packet_family": "contracts_objects",
+      "packet_order": 1,
+      "packet_artifact_id": "pkt.phase6-r7-commissioning-bridge-contracts-objects-packet.v1",
+      "packet_path": "docs/control-plane/implementation/packets/phase-6-r7-commissioning-bridge-contracts-objects-packet.md",
+      "packet_title": "Phase 6 R7 commissioning bridge contracts and objects packet",
+      "run_class": "transform",
+      "selected_budget_band": "standard",
+      "file_whitelist_ref": "wl.phase6-r7-commissioning-bridge-contracts-objects.v1",
+      "file_whitelist_paths": [
+        "packages/shared-object-schemas/commissioning/",
+        "packages/shared-object-api/commissioning/",
+        "packages/environment-control-contracts/commission-preflight/",
+        "packages/review-writeback-contracts/acceptance-stack/",
+        "packages/replay-compare-contracts/contract-diff/",
+        "packages/tool-gateway-contracts/commissioned-side-effects/"
+      ],
+      "touched_workspace_roots": [
+        "packages/"
+      ],
+      "prerequisite_packet_refs": [],
+      "required_fixture_families": [
+        "golden_scenario",
+        "edge_case",
+        "regression",
+        "handoff_continuity"
+      ],
+      "validation_hooks": [
+        "vh.dependency.integrity",
+        "vh.consistency.cross-pack-review",
+        "vh.fixture.or-test-when-applicable",
+        "vh.manual.acceptance"
+      ],
+      "source_authority_refs": [
+        "rel.r7-commissioning-bridge-contract.v1"
+      ],
+      "accepted_artifact_refs": [
+        "bp.phase6-r7-commissioning-bridge-blueprint.v1",
+        "cp.phase6-release-blueprint-index-data.v1",
+        "cp.phase6-workspace-manifest-index-data.v1",
+        "cp.phase6-codebase-current-state-data.v1",
+        "cp.phase6-module-test-contracts-data.v1",
+        "cp.context-budget-and-packet-policy.v1"
+      ]
+    },
+    {
+      "release_slug": "r7-commissioning-bridge",
+      "release_ref": "rel.r7-commissioning-bridge-contract.v1",
+      "blueprint_ref": "bp.phase6-r7-commissioning-bridge-blueprint.v1",
+      "packet_family": "runtime_execution",
+      "packet_order": 2,
+      "packet_artifact_id": "pkt.phase6-r7-commissioning-bridge-runtime-execution-packet.v1",
+      "packet_path": "docs/control-plane/implementation/packets/phase-6-r7-commissioning-bridge-runtime-execution-packet.md",
+      "packet_title": "Phase 6 R7 commissioning bridge runtime execution packet",
+      "run_class": "transform",
+      "selected_budget_band": "standard",
+      "file_whitelist_ref": "wl.phase6-r7-commissioning-bridge-runtime-execution.v1",
+      "file_whitelist_paths": [
+        "services/environment-shell-api/commission-preflight/",
+        "services/execution-control/contract-launch/",
+        "services/review-writeback/acceptance-stack/",
+        "services/event-provenance/commission-lineage/",
+        "services/model-gateway/commissioned-run-execution/",
+        "services/tool-gateway/commissioned-tool-preview/",
+        "workers/context-compiler/preflight-basis-freeze/",
+        "workers/replay-compare/contract-delta-compare/",
+        "workers/apply-writeback/commission-writeback-apply/",
+        "workers/tool-sandbox/commissioned-side-effect-preview/"
+      ],
+      "touched_workspace_roots": [
+        "services/",
+        "workers/"
+      ],
+      "prerequisite_packet_refs": [
+        "pkt.phase6-r7-commissioning-bridge-contracts-objects-packet.v1"
+      ],
+      "required_fixture_families": [
+        "golden_scenario",
+        "edge_case",
+        "regression",
+        "handoff_continuity"
+      ],
+      "validation_hooks": [
+        "vh.dependency.integrity",
+        "vh.consistency.cross-pack-review",
+        "vh.fixture.or-test-when-applicable",
+        "vh.manual.acceptance"
+      ],
+      "source_authority_refs": [
+        "rel.r7-commissioning-bridge-contract.v1"
+      ],
+      "accepted_artifact_refs": [
+        "bp.phase6-r7-commissioning-bridge-blueprint.v1",
+        "cp.phase6-release-blueprint-index-data.v1",
+        "cp.phase6-workspace-manifest-index-data.v1",
+        "cp.phase6-codebase-current-state-data.v1",
+        "cp.phase6-module-test-contracts-data.v1",
+        "cp.context-budget-and-packet-policy.v1"
+      ]
+    },
+    {
+      "release_slug": "r7-commissioning-bridge",
+      "release_ref": "rel.r7-commissioning-bridge-contract.v1",
+      "blueprint_ref": "bp.phase6-r7-commissioning-bridge-blueprint.v1",
+      "packet_family": "chat_surface",
+      "packet_order": 3,
+      "packet_artifact_id": "pkt.phase6-r7-commissioning-bridge-chat-surface-packet.v1",
+      "packet_path": "docs/control-plane/implementation/packets/phase-6-r7-commissioning-bridge-chat-surface-packet.md",
+      "packet_title": "Phase 6 R7 commissioning bridge chat surface packet",
+      "run_class": "transform",
+      "selected_budget_band": "standard",
+      "file_whitelist_ref": "wl.phase6-r7-commissioning-bridge-chat-surface.v1",
+      "file_whitelist_paths": [
+        "apps/chat-native/r7-commissioning-bridge/",
+        "apps/chat-native/r7-live-monitor/",
+        "apps/chat-native/r7-chat-to-run-handoff/",
+        "packages/projection-grammar/commissioning-projection/",
+        "packages/monitor-inspect/commissioning-monitor/"
+      ],
+      "touched_workspace_roots": [
+        "apps/",
+        "packages/"
+      ],
+      "prerequisite_packet_refs": [
+        "pkt.phase6-r7-commissioning-bridge-runtime-execution-packet.v1"
+      ],
+      "required_fixture_families": [
+        "golden_scenario",
+        "edge_case",
+        "regression",
+        "handoff_continuity"
+      ],
+      "validation_hooks": [
+        "vh.dependency.integrity",
+        "vh.consistency.cross-pack-review",
+        "vh.fixture.or-test-when-applicable",
+        "vh.manual.acceptance"
+      ],
+      "source_authority_refs": [
+        "rel.r7-commissioning-bridge-contract.v1"
+      ],
+      "accepted_artifact_refs": [
+        "bp.phase6-r7-commissioning-bridge-blueprint.v1",
+        "cp.phase6-release-blueprint-index-data.v1",
+        "cp.phase6-workspace-manifest-index-data.v1",
+        "cp.phase6-codebase-current-state-data.v1",
+        "cp.phase6-module-test-contracts-data.v1",
+        "cp.phase6-fixture-rules-data.v1",
+        "cp.context-budget-and-packet-policy.v1"
+      ]
+    },
+    {
+      "release_slug": "r7-commissioning-bridge",
+      "release_ref": "rel.r7-commissioning-bridge-contract.v1",
+      "blueprint_ref": "bp.phase6-r7-commissioning-bridge-blueprint.v1",
+      "packet_family": "task_studio_handoff",
+      "packet_order": 4,
+      "packet_artifact_id": "pkt.phase6-r7-commissioning-bridge-task-studio-handoff-packet.v1",
+      "packet_path": "docs/control-plane/implementation/packets/phase-6-r7-commissioning-bridge-task-studio-handoff-packet.md",
+      "packet_title": "Phase 6 R7 commissioning bridge Task Studio handoff packet",
+      "run_class": "transform",
+      "selected_budget_band": "standard",
+      "file_whitelist_ref": "wl.phase6-r7-commissioning-bridge-task-studio-handoff.v1",
+      "file_whitelist_paths": [
+        "apps/task-studio/ts-sc-01-task-home/",
+        "apps/task-studio/ts-sc-03-task-contract-panel/",
+        "apps/task-studio/ts-sc-05-context-inspector/",
+        "apps/task-studio/ts-sc-07-authority-panel/",
+        "apps/task-studio/ts-sc-08-live-run-view/",
+        "apps/task-studio/ts-sc-10-proof-ledger/",
+        "apps/task-studio/ts-sc-11-delta-inspector/",
+        "apps/task-studio/ts-sc-12-writeback-panel/"
+      ],
+      "touched_workspace_roots": [
+        "apps/"
+      ],
+      "prerequisite_packet_refs": [
+        "pkt.phase6-r7-commissioning-bridge-chat-surface-packet.v1"
+      ],
+      "required_fixture_families": [
+        "golden_scenario",
+        "edge_case",
+        "regression",
+        "handoff_continuity"
+      ],
+      "validation_hooks": [
+        "vh.dependency.integrity",
+        "vh.consistency.cross-pack-review",
+        "vh.fixture.or-test-when-applicable",
+        "vh.manual.acceptance"
+      ],
+      "source_authority_refs": [
+        "rel.r7-commissioning-bridge-contract.v1",
+        "reuse.phase5-commissioning-bridge-task-studio-handoff-contract.v1",
+        "surf.phase6-task-studio-surface-contract-pack.v1"
+      ],
+      "accepted_artifact_refs": [
+        "bp.phase6-r7-commissioning-bridge-blueprint.v1",
+        "cp.phase6-workspace-manifest-index-data.v1",
+        "cp.phase6-codebase-current-state-data.v1",
+        "cp.phase6-fixture-rules-data.v1",
+        "cp.context-budget-and-packet-policy.v1"
+      ]
+    },
+    {
+      "release_slug": "r7-commissioning-bridge",
+      "release_ref": "rel.r7-commissioning-bridge-contract.v1",
+      "blueprint_ref": "bp.phase6-r7-commissioning-bridge-blueprint.v1",
+      "packet_family": "test_fixtures",
+      "packet_order": 5,
+      "packet_artifact_id": "pkt.phase6-r7-commissioning-bridge-test-fixtures-packet.v1",
+      "packet_path": "docs/control-plane/implementation/packets/phase-6-r7-commissioning-bridge-test-fixtures-packet.md",
+      "packet_title": "Phase 6 R7 commissioning bridge test and fixtures packet",
+      "run_class": "transform",
+      "selected_budget_band": "standard",
+      "file_whitelist_ref": "wl.phase6-r7-commissioning-bridge-test-fixtures.v1",
+      "file_whitelist_paths": [
+        "tests/contracts/r7-commissioning-bridge/",
+        "tests/fixtures/r7-commissioning-bridge/"
+      ],
+      "touched_workspace_roots": [
+        "tests/"
+      ],
+      "prerequisite_packet_refs": [
+        "pkt.phase6-r7-commissioning-bridge-task-studio-handoff-packet.v1"
+      ],
+      "required_fixture_families": [
+        "golden_scenario",
+        "edge_case",
+        "regression",
+        "handoff_continuity"
+      ],
+      "validation_hooks": [
+        "vh.dependency.integrity",
+        "vh.consistency.cross-pack-review",
+        "vh.fixture.or-test-when-applicable",
+        "vh.manual.acceptance"
+      ],
+      "source_authority_refs": [
+        "rel.r7-commissioning-bridge-contract.v1",
+        "reuse.phase5-commissioning-bridge-task-studio-handoff-contract.v1"
+      ],
+      "accepted_artifact_refs": [
+        "bp.phase6-r7-commissioning-bridge-blueprint.v1",
+        "cp.phase6-release-blueprint-index-data.v1",
+        "cp.phase6-workspace-manifest-index-data.v1",
+        "cp.phase6-codebase-current-state-data.v1",
+        "cp.phase6-fixture-rules-data.v1",
+        "cp.context-budget-and-packet-policy.v1"
+      ]
+    }
+  ]
+}

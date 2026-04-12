@@ -11273,6 +11273,2910 @@
         "P6.5 accepted blueprint index enumerating the seven bounded release implementation blueprints and their shared validation posture.",
         "Accepted for downstream use as the machine-readable release-blueprint map feeding later execution-packet shaping and validation."
       ]
+    },
+    {
+      "artifact_id": "pkt.phase6-r1-conversation-contracts-objects-packet.v1",
+      "artifact_type_id": "pkt.execution_packet",
+      "title": "Phase 6 R1 conversation contracts and objects packet",
+      "version": "1.0.0",
+      "artifact_status": "accepted",
+      "semantic_owner": "Implementation steward",
+      "stewardship_mode": "factory_first",
+      "acceptance_authority": "Human implementation owner",
+      "canonical_locator": "docs/control-plane/implementation/packets/phase-6-r1-conversation-contracts-objects-packet.md",
+      "packet_scope": "Bounded `transform` packet for implementing release-local shared-object schemas, shared-object APIs, and typed package contracts inside one release blueprint slice.",
+      "file_whitelist_ref": "wl.phase6-r1-conversation-contracts-objects.v1",
+      "source_authority_refs": [
+        "rel.r1-transcript-chat-contract.v1"
+      ],
+      "dependency_refs": [
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.master-plan.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The master plan names bounded execution packets as the accepted P6.6 deliverable set."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.artifact-control-plane-spec.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted control-plane spec defines execution-packet metadata, dependency semantics, validation hooks, and stale rules."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.packet-brief-schema-data.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted packet-brief schema defines the embedded JSON brief used by this execution packet."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.context-budget-and-packet-policy.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P0.5 packet policy defines the selected budget band and split-or-escalate posture that this packet must preserve."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "rel.r1-transcript-chat-contract.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted R1 conversation release contract defines the release boundary and non-goals that this packet must preserve."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "bp.phase6-r1-conversation-blueprint.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted release blueprint defines the bounded module clusters, fixture families, and exclusions that this packet implements."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.phase6-workspace-manifest-index-data.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted manifest index maps this packet whitelist to bounded workspace roots."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.phase6-codebase-current-state-data.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted current-state view keeps this packet honest about reserved versus materialized roots."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.phase6-release-blueprint-index-data.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted blueprint index provides the release-to-blueprint map that this packet inherits."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.phase6-module-test-contracts-data.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted module-boundary dataset defines the workspace-family dependency and naming rules that this packet must preserve."
+        }
+      ],
+      "validation_hooks": [
+        {
+          "hook_id": "vh.dependency.integrity"
+        },
+        {
+          "hook_id": "vh.consistency.cross-pack-review"
+        },
+        {
+          "hook_id": "vh.fixture.or-test-when-applicable"
+        },
+        {
+          "hook_id": "vh.manual.acceptance"
+        }
+      ],
+      "stale_rule_id": "sr.derivative.manual",
+      "notes": [
+        "P6.6 accepted R1 conversation `contracts_objects` execution packet defining one bounded implementation slice over the accepted release blueprint.",
+        "Accepted for downstream use as one delegable execution unit that stays inside explicit file-whitelist, validation-hook, and approval boundaries."
+      ]
+    },
+    {
+      "artifact_id": "pkt.phase6-r1-conversation-runtime-execution-packet.v1",
+      "artifact_type_id": "pkt.execution_packet",
+      "title": "Phase 6 R1 conversation runtime execution packet",
+      "version": "1.0.0",
+      "artifact_status": "accepted",
+      "semantic_owner": "Implementation steward",
+      "stewardship_mode": "factory_first",
+      "acceptance_authority": "Human implementation owner",
+      "canonical_locator": "docs/control-plane/implementation/packets/phase-6-r1-conversation-runtime-execution-packet.md",
+      "packet_scope": "Bounded `transform` packet for implementing release-local services and workers behind accepted package contracts and boundary rules.",
+      "file_whitelist_ref": "wl.phase6-r1-conversation-runtime-execution.v1",
+      "source_authority_refs": [
+        "rel.r1-transcript-chat-contract.v1"
+      ],
+      "dependency_refs": [
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.master-plan.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The master plan names bounded execution packets as the accepted P6.6 deliverable set."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.artifact-control-plane-spec.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted control-plane spec defines execution-packet metadata, dependency semantics, validation hooks, and stale rules."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.packet-brief-schema-data.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted packet-brief schema defines the embedded JSON brief used by this execution packet."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.context-budget-and-packet-policy.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P0.5 packet policy defines the selected budget band and split-or-escalate posture that this packet must preserve."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "rel.r1-transcript-chat-contract.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted R1 conversation release contract defines the release boundary and non-goals that this packet must preserve."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "bp.phase6-r1-conversation-blueprint.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted release blueprint defines the bounded module clusters, fixture families, and exclusions that this packet implements."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.phase6-workspace-manifest-index-data.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted manifest index maps this packet whitelist to bounded workspace roots."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.phase6-codebase-current-state-data.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted current-state view keeps this packet honest about reserved versus materialized roots."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.phase6-release-blueprint-index-data.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted blueprint index provides the release-to-blueprint map that this packet inherits."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.phase6-module-test-contracts-data.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted module-boundary dataset defines the workspace-family dependency and naming rules that this packet must preserve."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "pkt.phase6-r1-conversation-contracts-objects-packet.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "This packet depends on an earlier bounded packet in the same release sequence and should not execute before it."
+        }
+      ],
+      "validation_hooks": [
+        {
+          "hook_id": "vh.dependency.integrity"
+        },
+        {
+          "hook_id": "vh.consistency.cross-pack-review"
+        },
+        {
+          "hook_id": "vh.fixture.or-test-when-applicable"
+        },
+        {
+          "hook_id": "vh.manual.acceptance"
+        }
+      ],
+      "stale_rule_id": "sr.derivative.manual",
+      "notes": [
+        "P6.6 accepted R1 conversation `runtime_execution` execution packet defining one bounded implementation slice over the accepted release blueprint.",
+        "Accepted for downstream use as one delegable execution unit that stays inside explicit file-whitelist, validation-hook, and approval boundaries."
+      ]
+    },
+    {
+      "artifact_id": "pkt.phase6-r1-conversation-surface-validation-packet.v1",
+      "artifact_type_id": "pkt.execution_packet",
+      "title": "Phase 6 R1 conversation surface and validation packet",
+      "version": "1.0.0",
+      "artifact_status": "accepted",
+      "semantic_owner": "Implementation steward",
+      "stewardship_mode": "factory_first",
+      "acceptance_authority": "Human implementation owner",
+      "canonical_locator": "docs/control-plane/implementation/packets/phase-6-r1-conversation-surface-validation-packet.md",
+      "packet_scope": "Bounded `transform` packet for implementing release-local app surfaces, projection grammar, inspect helpers, contract tests, and fixture assets inside one release slice.",
+      "file_whitelist_ref": "wl.phase6-r1-conversation-surface-validation.v1",
+      "source_authority_refs": [
+        "rel.r1-transcript-chat-contract.v1"
+      ],
+      "dependency_refs": [
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.master-plan.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The master plan names bounded execution packets as the accepted P6.6 deliverable set."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.artifact-control-plane-spec.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted control-plane spec defines execution-packet metadata, dependency semantics, validation hooks, and stale rules."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.packet-brief-schema-data.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted packet-brief schema defines the embedded JSON brief used by this execution packet."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.context-budget-and-packet-policy.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P0.5 packet policy defines the selected budget band and split-or-escalate posture that this packet must preserve."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "rel.r1-transcript-chat-contract.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted R1 conversation release contract defines the release boundary and non-goals that this packet must preserve."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "bp.phase6-r1-conversation-blueprint.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted release blueprint defines the bounded module clusters, fixture families, and exclusions that this packet implements."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.phase6-workspace-manifest-index-data.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted manifest index maps this packet whitelist to bounded workspace roots."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.phase6-codebase-current-state-data.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted current-state view keeps this packet honest about reserved versus materialized roots."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.phase6-release-blueprint-index-data.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted blueprint index provides the release-to-blueprint map that this packet inherits."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.phase6-module-test-contracts-data.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted module-boundary dataset defines the workspace-family dependency and naming rules that this packet must preserve."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.phase6-fixture-rules-data.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted fixture-rules dataset defines the frozen fixture-family vocabulary and validation posture cited by this packet."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "pkt.phase6-r1-conversation-runtime-execution-packet.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "This packet depends on an earlier bounded packet in the same release sequence and should not execute before it."
+        }
+      ],
+      "validation_hooks": [
+        {
+          "hook_id": "vh.dependency.integrity"
+        },
+        {
+          "hook_id": "vh.consistency.cross-pack-review"
+        },
+        {
+          "hook_id": "vh.fixture.or-test-when-applicable"
+        },
+        {
+          "hook_id": "vh.manual.acceptance"
+        }
+      ],
+      "stale_rule_id": "sr.derivative.manual",
+      "notes": [
+        "P6.6 accepted R1 conversation `surface_validation` execution packet defining one bounded implementation slice over the accepted release blueprint.",
+        "Accepted for downstream use as one delegable execution unit that stays inside explicit file-whitelist, validation-hook, and approval boundaries."
+      ]
+    },
+    {
+      "artifact_id": "pkt.phase6-r2-context-control-contracts-objects-packet.v1",
+      "artifact_type_id": "pkt.execution_packet",
+      "title": "Phase 6 R2 context control contracts and objects packet",
+      "version": "1.0.0",
+      "artifact_status": "accepted",
+      "semantic_owner": "Implementation steward",
+      "stewardship_mode": "factory_first",
+      "acceptance_authority": "Human implementation owner",
+      "canonical_locator": "docs/control-plane/implementation/packets/phase-6-r2-context-control-contracts-objects-packet.md",
+      "packet_scope": "Bounded `transform` packet for implementing release-local shared-object schemas, shared-object APIs, and typed package contracts inside one release blueprint slice.",
+      "file_whitelist_ref": "wl.phase6-r2-context-control-contracts-objects.v1",
+      "source_authority_refs": [
+        "rel.r2-context-chat-contract.v1"
+      ],
+      "dependency_refs": [
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.master-plan.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The master plan names bounded execution packets as the accepted P6.6 deliverable set."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.artifact-control-plane-spec.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted control-plane spec defines execution-packet metadata, dependency semantics, validation hooks, and stale rules."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.packet-brief-schema-data.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted packet-brief schema defines the embedded JSON brief used by this execution packet."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.context-budget-and-packet-policy.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P0.5 packet policy defines the selected budget band and split-or-escalate posture that this packet must preserve."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "rel.r2-context-chat-contract.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted R2 context control release contract defines the release boundary and non-goals that this packet must preserve."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "bp.phase6-r2-context-control-blueprint.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted release blueprint defines the bounded module clusters, fixture families, and exclusions that this packet implements."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.phase6-workspace-manifest-index-data.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted manifest index maps this packet whitelist to bounded workspace roots."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.phase6-codebase-current-state-data.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted current-state view keeps this packet honest about reserved versus materialized roots."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.phase6-release-blueprint-index-data.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted blueprint index provides the release-to-blueprint map that this packet inherits."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.phase6-module-test-contracts-data.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted module-boundary dataset defines the workspace-family dependency and naming rules that this packet must preserve."
+        }
+      ],
+      "validation_hooks": [
+        {
+          "hook_id": "vh.dependency.integrity"
+        },
+        {
+          "hook_id": "vh.consistency.cross-pack-review"
+        },
+        {
+          "hook_id": "vh.fixture.or-test-when-applicable"
+        },
+        {
+          "hook_id": "vh.manual.acceptance"
+        }
+      ],
+      "stale_rule_id": "sr.derivative.manual",
+      "notes": [
+        "P6.6 accepted R2 context control `contracts_objects` execution packet defining one bounded implementation slice over the accepted release blueprint.",
+        "Accepted for downstream use as one delegable execution unit that stays inside explicit file-whitelist, validation-hook, and approval boundaries."
+      ]
+    },
+    {
+      "artifact_id": "pkt.phase6-r2-context-control-runtime-execution-packet.v1",
+      "artifact_type_id": "pkt.execution_packet",
+      "title": "Phase 6 R2 context control runtime execution packet",
+      "version": "1.0.0",
+      "artifact_status": "accepted",
+      "semantic_owner": "Implementation steward",
+      "stewardship_mode": "factory_first",
+      "acceptance_authority": "Human implementation owner",
+      "canonical_locator": "docs/control-plane/implementation/packets/phase-6-r2-context-control-runtime-execution-packet.md",
+      "packet_scope": "Bounded `transform` packet for implementing release-local services and workers behind accepted package contracts and boundary rules.",
+      "file_whitelist_ref": "wl.phase6-r2-context-control-runtime-execution.v1",
+      "source_authority_refs": [
+        "rel.r2-context-chat-contract.v1"
+      ],
+      "dependency_refs": [
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.master-plan.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The master plan names bounded execution packets as the accepted P6.6 deliverable set."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.artifact-control-plane-spec.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted control-plane spec defines execution-packet metadata, dependency semantics, validation hooks, and stale rules."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.packet-brief-schema-data.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted packet-brief schema defines the embedded JSON brief used by this execution packet."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.context-budget-and-packet-policy.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P0.5 packet policy defines the selected budget band and split-or-escalate posture that this packet must preserve."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "rel.r2-context-chat-contract.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted R2 context control release contract defines the release boundary and non-goals that this packet must preserve."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "bp.phase6-r2-context-control-blueprint.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted release blueprint defines the bounded module clusters, fixture families, and exclusions that this packet implements."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.phase6-workspace-manifest-index-data.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted manifest index maps this packet whitelist to bounded workspace roots."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.phase6-codebase-current-state-data.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted current-state view keeps this packet honest about reserved versus materialized roots."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.phase6-release-blueprint-index-data.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted blueprint index provides the release-to-blueprint map that this packet inherits."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.phase6-module-test-contracts-data.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted module-boundary dataset defines the workspace-family dependency and naming rules that this packet must preserve."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "pkt.phase6-r2-context-control-contracts-objects-packet.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "This packet depends on an earlier bounded packet in the same release sequence and should not execute before it."
+        }
+      ],
+      "validation_hooks": [
+        {
+          "hook_id": "vh.dependency.integrity"
+        },
+        {
+          "hook_id": "vh.consistency.cross-pack-review"
+        },
+        {
+          "hook_id": "vh.fixture.or-test-when-applicable"
+        },
+        {
+          "hook_id": "vh.manual.acceptance"
+        }
+      ],
+      "stale_rule_id": "sr.derivative.manual",
+      "notes": [
+        "P6.6 accepted R2 context control `runtime_execution` execution packet defining one bounded implementation slice over the accepted release blueprint.",
+        "Accepted for downstream use as one delegable execution unit that stays inside explicit file-whitelist, validation-hook, and approval boundaries."
+      ]
+    },
+    {
+      "artifact_id": "pkt.phase6-r2-context-control-surface-validation-packet.v1",
+      "artifact_type_id": "pkt.execution_packet",
+      "title": "Phase 6 R2 context control surface and validation packet",
+      "version": "1.0.0",
+      "artifact_status": "accepted",
+      "semantic_owner": "Implementation steward",
+      "stewardship_mode": "factory_first",
+      "acceptance_authority": "Human implementation owner",
+      "canonical_locator": "docs/control-plane/implementation/packets/phase-6-r2-context-control-surface-validation-packet.md",
+      "packet_scope": "Bounded `transform` packet for implementing release-local app surfaces, projection grammar, inspect helpers, contract tests, and fixture assets inside one release slice.",
+      "file_whitelist_ref": "wl.phase6-r2-context-control-surface-validation.v1",
+      "source_authority_refs": [
+        "rel.r2-context-chat-contract.v1"
+      ],
+      "dependency_refs": [
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.master-plan.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The master plan names bounded execution packets as the accepted P6.6 deliverable set."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.artifact-control-plane-spec.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted control-plane spec defines execution-packet metadata, dependency semantics, validation hooks, and stale rules."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.packet-brief-schema-data.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted packet-brief schema defines the embedded JSON brief used by this execution packet."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.context-budget-and-packet-policy.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P0.5 packet policy defines the selected budget band and split-or-escalate posture that this packet must preserve."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "rel.r2-context-chat-contract.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted R2 context control release contract defines the release boundary and non-goals that this packet must preserve."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "bp.phase6-r2-context-control-blueprint.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted release blueprint defines the bounded module clusters, fixture families, and exclusions that this packet implements."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.phase6-workspace-manifest-index-data.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted manifest index maps this packet whitelist to bounded workspace roots."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.phase6-codebase-current-state-data.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted current-state view keeps this packet honest about reserved versus materialized roots."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.phase6-release-blueprint-index-data.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted blueprint index provides the release-to-blueprint map that this packet inherits."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.phase6-module-test-contracts-data.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted module-boundary dataset defines the workspace-family dependency and naming rules that this packet must preserve."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.phase6-fixture-rules-data.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted fixture-rules dataset defines the frozen fixture-family vocabulary and validation posture cited by this packet."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "pkt.phase6-r2-context-control-runtime-execution-packet.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "This packet depends on an earlier bounded packet in the same release sequence and should not execute before it."
+        }
+      ],
+      "validation_hooks": [
+        {
+          "hook_id": "vh.dependency.integrity"
+        },
+        {
+          "hook_id": "vh.consistency.cross-pack-review"
+        },
+        {
+          "hook_id": "vh.fixture.or-test-when-applicable"
+        },
+        {
+          "hook_id": "vh.manual.acceptance"
+        }
+      ],
+      "stale_rule_id": "sr.derivative.manual",
+      "notes": [
+        "P6.6 accepted R2 context control `surface_validation` execution packet defining one bounded implementation slice over the accepted release blueprint.",
+        "Accepted for downstream use as one delegable execution unit that stays inside explicit file-whitelist, validation-hook, and approval boundaries."
+      ]
+    },
+    {
+      "artifact_id": "pkt.phase6-r3-branch-replay-contracts-objects-packet.v1",
+      "artifact_type_id": "pkt.execution_packet",
+      "title": "Phase 6 R3 branch replay contracts and objects packet",
+      "version": "1.0.0",
+      "artifact_status": "accepted",
+      "semantic_owner": "Implementation steward",
+      "stewardship_mode": "factory_first",
+      "acceptance_authority": "Human implementation owner",
+      "canonical_locator": "docs/control-plane/implementation/packets/phase-6-r3-branch-replay-contracts-objects-packet.md",
+      "packet_scope": "Bounded `transform` packet for implementing release-local shared-object schemas, shared-object APIs, and typed package contracts inside one release blueprint slice.",
+      "file_whitelist_ref": "wl.phase6-r3-branch-replay-contracts-objects.v1",
+      "source_authority_refs": [
+        "rel.r3-branch-visual-thinker-contract.v1"
+      ],
+      "dependency_refs": [
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.master-plan.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The master plan names bounded execution packets as the accepted P6.6 deliverable set."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.artifact-control-plane-spec.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted control-plane spec defines execution-packet metadata, dependency semantics, validation hooks, and stale rules."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.packet-brief-schema-data.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted packet-brief schema defines the embedded JSON brief used by this execution packet."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.context-budget-and-packet-policy.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P0.5 packet policy defines the selected budget band and split-or-escalate posture that this packet must preserve."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "rel.r3-branch-visual-thinker-contract.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted R3 branch replay release contract defines the release boundary and non-goals that this packet must preserve."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "bp.phase6-r3-branch-replay-blueprint.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted release blueprint defines the bounded module clusters, fixture families, and exclusions that this packet implements."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.phase6-workspace-manifest-index-data.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted manifest index maps this packet whitelist to bounded workspace roots."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.phase6-codebase-current-state-data.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted current-state view keeps this packet honest about reserved versus materialized roots."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.phase6-release-blueprint-index-data.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted blueprint index provides the release-to-blueprint map that this packet inherits."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.phase6-module-test-contracts-data.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted module-boundary dataset defines the workspace-family dependency and naming rules that this packet must preserve."
+        }
+      ],
+      "validation_hooks": [
+        {
+          "hook_id": "vh.dependency.integrity"
+        },
+        {
+          "hook_id": "vh.consistency.cross-pack-review"
+        },
+        {
+          "hook_id": "vh.fixture.or-test-when-applicable"
+        },
+        {
+          "hook_id": "vh.manual.acceptance"
+        }
+      ],
+      "stale_rule_id": "sr.derivative.manual",
+      "notes": [
+        "P6.6 accepted R3 branch replay `contracts_objects` execution packet defining one bounded implementation slice over the accepted release blueprint.",
+        "Accepted for downstream use as one delegable execution unit that stays inside explicit file-whitelist, validation-hook, and approval boundaries."
+      ]
+    },
+    {
+      "artifact_id": "pkt.phase6-r3-branch-replay-runtime-execution-packet.v1",
+      "artifact_type_id": "pkt.execution_packet",
+      "title": "Phase 6 R3 branch replay runtime execution packet",
+      "version": "1.0.0",
+      "artifact_status": "accepted",
+      "semantic_owner": "Implementation steward",
+      "stewardship_mode": "factory_first",
+      "acceptance_authority": "Human implementation owner",
+      "canonical_locator": "docs/control-plane/implementation/packets/phase-6-r3-branch-replay-runtime-execution-packet.md",
+      "packet_scope": "Bounded `transform` packet for implementing release-local services and workers behind accepted package contracts and boundary rules.",
+      "file_whitelist_ref": "wl.phase6-r3-branch-replay-runtime-execution.v1",
+      "source_authority_refs": [
+        "rel.r3-branch-visual-thinker-contract.v1"
+      ],
+      "dependency_refs": [
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.master-plan.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The master plan names bounded execution packets as the accepted P6.6 deliverable set."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.artifact-control-plane-spec.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted control-plane spec defines execution-packet metadata, dependency semantics, validation hooks, and stale rules."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.packet-brief-schema-data.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted packet-brief schema defines the embedded JSON brief used by this execution packet."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.context-budget-and-packet-policy.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P0.5 packet policy defines the selected budget band and split-or-escalate posture that this packet must preserve."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "rel.r3-branch-visual-thinker-contract.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted R3 branch replay release contract defines the release boundary and non-goals that this packet must preserve."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "bp.phase6-r3-branch-replay-blueprint.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted release blueprint defines the bounded module clusters, fixture families, and exclusions that this packet implements."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.phase6-workspace-manifest-index-data.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted manifest index maps this packet whitelist to bounded workspace roots."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.phase6-codebase-current-state-data.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted current-state view keeps this packet honest about reserved versus materialized roots."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.phase6-release-blueprint-index-data.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted blueprint index provides the release-to-blueprint map that this packet inherits."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.phase6-module-test-contracts-data.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted module-boundary dataset defines the workspace-family dependency and naming rules that this packet must preserve."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "pkt.phase6-r3-branch-replay-contracts-objects-packet.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "This packet depends on an earlier bounded packet in the same release sequence and should not execute before it."
+        }
+      ],
+      "validation_hooks": [
+        {
+          "hook_id": "vh.dependency.integrity"
+        },
+        {
+          "hook_id": "vh.consistency.cross-pack-review"
+        },
+        {
+          "hook_id": "vh.fixture.or-test-when-applicable"
+        },
+        {
+          "hook_id": "vh.manual.acceptance"
+        }
+      ],
+      "stale_rule_id": "sr.derivative.manual",
+      "notes": [
+        "P6.6 accepted R3 branch replay `runtime_execution` execution packet defining one bounded implementation slice over the accepted release blueprint.",
+        "Accepted for downstream use as one delegable execution unit that stays inside explicit file-whitelist, validation-hook, and approval boundaries."
+      ]
+    },
+    {
+      "artifact_id": "pkt.phase6-r3-branch-replay-surface-validation-packet.v1",
+      "artifact_type_id": "pkt.execution_packet",
+      "title": "Phase 6 R3 branch replay surface and validation packet",
+      "version": "1.0.0",
+      "artifact_status": "accepted",
+      "semantic_owner": "Implementation steward",
+      "stewardship_mode": "factory_first",
+      "acceptance_authority": "Human implementation owner",
+      "canonical_locator": "docs/control-plane/implementation/packets/phase-6-r3-branch-replay-surface-validation-packet.md",
+      "packet_scope": "Bounded `transform` packet for implementing release-local app surfaces, projection grammar, inspect helpers, contract tests, and fixture assets inside one release slice.",
+      "file_whitelist_ref": "wl.phase6-r3-branch-replay-surface-validation.v1",
+      "source_authority_refs": [
+        "rel.r3-branch-visual-thinker-contract.v1"
+      ],
+      "dependency_refs": [
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.master-plan.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The master plan names bounded execution packets as the accepted P6.6 deliverable set."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.artifact-control-plane-spec.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted control-plane spec defines execution-packet metadata, dependency semantics, validation hooks, and stale rules."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.packet-brief-schema-data.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted packet-brief schema defines the embedded JSON brief used by this execution packet."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.context-budget-and-packet-policy.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P0.5 packet policy defines the selected budget band and split-or-escalate posture that this packet must preserve."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "rel.r3-branch-visual-thinker-contract.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted R3 branch replay release contract defines the release boundary and non-goals that this packet must preserve."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "bp.phase6-r3-branch-replay-blueprint.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted release blueprint defines the bounded module clusters, fixture families, and exclusions that this packet implements."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.phase6-workspace-manifest-index-data.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted manifest index maps this packet whitelist to bounded workspace roots."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.phase6-codebase-current-state-data.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted current-state view keeps this packet honest about reserved versus materialized roots."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.phase6-release-blueprint-index-data.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted blueprint index provides the release-to-blueprint map that this packet inherits."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.phase6-module-test-contracts-data.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted module-boundary dataset defines the workspace-family dependency and naming rules that this packet must preserve."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.phase6-fixture-rules-data.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted fixture-rules dataset defines the frozen fixture-family vocabulary and validation posture cited by this packet."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "pkt.phase6-r3-branch-replay-runtime-execution-packet.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "This packet depends on an earlier bounded packet in the same release sequence and should not execute before it."
+        }
+      ],
+      "validation_hooks": [
+        {
+          "hook_id": "vh.dependency.integrity"
+        },
+        {
+          "hook_id": "vh.consistency.cross-pack-review"
+        },
+        {
+          "hook_id": "vh.fixture.or-test-when-applicable"
+        },
+        {
+          "hook_id": "vh.manual.acceptance"
+        }
+      ],
+      "stale_rule_id": "sr.derivative.manual",
+      "notes": [
+        "P6.6 accepted R3 branch replay `surface_validation` execution packet defining one bounded implementation slice over the accepted release blueprint.",
+        "Accepted for downstream use as one delegable execution unit that stays inside explicit file-whitelist, validation-hook, and approval boundaries."
+      ]
+    },
+    {
+      "artifact_id": "pkt.phase6-r4-artifact-workspace-contracts-objects-packet.v1",
+      "artifact_type_id": "pkt.execution_packet",
+      "title": "Phase 6 R4 artifact workspace contracts and objects packet",
+      "version": "1.0.0",
+      "artifact_status": "accepted",
+      "semantic_owner": "Implementation steward",
+      "stewardship_mode": "factory_first",
+      "acceptance_authority": "Human implementation owner",
+      "canonical_locator": "docs/control-plane/implementation/packets/phase-6-r4-artifact-workspace-contracts-objects-packet.md",
+      "packet_scope": "Bounded `transform` packet for implementing release-local shared-object schemas, shared-object APIs, and typed package contracts inside one release blueprint slice.",
+      "file_whitelist_ref": "wl.phase6-r4-artifact-workspace-contracts-objects.v1",
+      "source_authority_refs": [
+        "rel.r4-artifact-workspace-contract.v1"
+      ],
+      "dependency_refs": [
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.master-plan.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The master plan names bounded execution packets as the accepted P6.6 deliverable set."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.artifact-control-plane-spec.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted control-plane spec defines execution-packet metadata, dependency semantics, validation hooks, and stale rules."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.packet-brief-schema-data.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted packet-brief schema defines the embedded JSON brief used by this execution packet."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.context-budget-and-packet-policy.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P0.5 packet policy defines the selected budget band and split-or-escalate posture that this packet must preserve."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "rel.r4-artifact-workspace-contract.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted R4 artifact workspace release contract defines the release boundary and non-goals that this packet must preserve."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "bp.phase6-r4-artifact-workspace-blueprint.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted release blueprint defines the bounded module clusters, fixture families, and exclusions that this packet implements."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.phase6-workspace-manifest-index-data.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted manifest index maps this packet whitelist to bounded workspace roots."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.phase6-codebase-current-state-data.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted current-state view keeps this packet honest about reserved versus materialized roots."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.phase6-release-blueprint-index-data.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted blueprint index provides the release-to-blueprint map that this packet inherits."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.phase6-module-test-contracts-data.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted module-boundary dataset defines the workspace-family dependency and naming rules that this packet must preserve."
+        }
+      ],
+      "validation_hooks": [
+        {
+          "hook_id": "vh.dependency.integrity"
+        },
+        {
+          "hook_id": "vh.consistency.cross-pack-review"
+        },
+        {
+          "hook_id": "vh.fixture.or-test-when-applicable"
+        },
+        {
+          "hook_id": "vh.manual.acceptance"
+        }
+      ],
+      "stale_rule_id": "sr.derivative.manual",
+      "notes": [
+        "P6.6 accepted R4 artifact workspace `contracts_objects` execution packet defining one bounded implementation slice over the accepted release blueprint.",
+        "Accepted for downstream use as one delegable execution unit that stays inside explicit file-whitelist, validation-hook, and approval boundaries."
+      ]
+    },
+    {
+      "artifact_id": "pkt.phase6-r4-artifact-workspace-runtime-execution-packet.v1",
+      "artifact_type_id": "pkt.execution_packet",
+      "title": "Phase 6 R4 artifact workspace runtime execution packet",
+      "version": "1.0.0",
+      "artifact_status": "accepted",
+      "semantic_owner": "Implementation steward",
+      "stewardship_mode": "factory_first",
+      "acceptance_authority": "Human implementation owner",
+      "canonical_locator": "docs/control-plane/implementation/packets/phase-6-r4-artifact-workspace-runtime-execution-packet.md",
+      "packet_scope": "Bounded `transform` packet for implementing release-local services and workers behind accepted package contracts and boundary rules.",
+      "file_whitelist_ref": "wl.phase6-r4-artifact-workspace-runtime-execution.v1",
+      "source_authority_refs": [
+        "rel.r4-artifact-workspace-contract.v1"
+      ],
+      "dependency_refs": [
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.master-plan.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The master plan names bounded execution packets as the accepted P6.6 deliverable set."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.artifact-control-plane-spec.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted control-plane spec defines execution-packet metadata, dependency semantics, validation hooks, and stale rules."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.packet-brief-schema-data.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted packet-brief schema defines the embedded JSON brief used by this execution packet."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.context-budget-and-packet-policy.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P0.5 packet policy defines the selected budget band and split-or-escalate posture that this packet must preserve."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "rel.r4-artifact-workspace-contract.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted R4 artifact workspace release contract defines the release boundary and non-goals that this packet must preserve."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "bp.phase6-r4-artifact-workspace-blueprint.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted release blueprint defines the bounded module clusters, fixture families, and exclusions that this packet implements."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.phase6-workspace-manifest-index-data.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted manifest index maps this packet whitelist to bounded workspace roots."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.phase6-codebase-current-state-data.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted current-state view keeps this packet honest about reserved versus materialized roots."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.phase6-release-blueprint-index-data.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted blueprint index provides the release-to-blueprint map that this packet inherits."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.phase6-module-test-contracts-data.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted module-boundary dataset defines the workspace-family dependency and naming rules that this packet must preserve."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "pkt.phase6-r4-artifact-workspace-contracts-objects-packet.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "This packet depends on an earlier bounded packet in the same release sequence and should not execute before it."
+        }
+      ],
+      "validation_hooks": [
+        {
+          "hook_id": "vh.dependency.integrity"
+        },
+        {
+          "hook_id": "vh.consistency.cross-pack-review"
+        },
+        {
+          "hook_id": "vh.fixture.or-test-when-applicable"
+        },
+        {
+          "hook_id": "vh.manual.acceptance"
+        }
+      ],
+      "stale_rule_id": "sr.derivative.manual",
+      "notes": [
+        "P6.6 accepted R4 artifact workspace `runtime_execution` execution packet defining one bounded implementation slice over the accepted release blueprint.",
+        "Accepted for downstream use as one delegable execution unit that stays inside explicit file-whitelist, validation-hook, and approval boundaries."
+      ]
+    },
+    {
+      "artifact_id": "pkt.phase6-r4-artifact-workspace-surface-validation-packet.v1",
+      "artifact_type_id": "pkt.execution_packet",
+      "title": "Phase 6 R4 artifact workspace surface and validation packet",
+      "version": "1.0.0",
+      "artifact_status": "accepted",
+      "semantic_owner": "Implementation steward",
+      "stewardship_mode": "factory_first",
+      "acceptance_authority": "Human implementation owner",
+      "canonical_locator": "docs/control-plane/implementation/packets/phase-6-r4-artifact-workspace-surface-validation-packet.md",
+      "packet_scope": "Bounded `transform` packet for implementing release-local app surfaces, projection grammar, inspect helpers, contract tests, and fixture assets inside one release slice.",
+      "file_whitelist_ref": "wl.phase6-r4-artifact-workspace-surface-validation.v1",
+      "source_authority_refs": [
+        "rel.r4-artifact-workspace-contract.v1"
+      ],
+      "dependency_refs": [
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.master-plan.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The master plan names bounded execution packets as the accepted P6.6 deliverable set."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.artifact-control-plane-spec.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted control-plane spec defines execution-packet metadata, dependency semantics, validation hooks, and stale rules."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.packet-brief-schema-data.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted packet-brief schema defines the embedded JSON brief used by this execution packet."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.context-budget-and-packet-policy.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P0.5 packet policy defines the selected budget band and split-or-escalate posture that this packet must preserve."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "rel.r4-artifact-workspace-contract.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted R4 artifact workspace release contract defines the release boundary and non-goals that this packet must preserve."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "bp.phase6-r4-artifact-workspace-blueprint.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted release blueprint defines the bounded module clusters, fixture families, and exclusions that this packet implements."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.phase6-workspace-manifest-index-data.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted manifest index maps this packet whitelist to bounded workspace roots."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.phase6-codebase-current-state-data.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted current-state view keeps this packet honest about reserved versus materialized roots."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.phase6-release-blueprint-index-data.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted blueprint index provides the release-to-blueprint map that this packet inherits."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.phase6-module-test-contracts-data.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted module-boundary dataset defines the workspace-family dependency and naming rules that this packet must preserve."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.phase6-fixture-rules-data.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted fixture-rules dataset defines the frozen fixture-family vocabulary and validation posture cited by this packet."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "pkt.phase6-r4-artifact-workspace-runtime-execution-packet.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "This packet depends on an earlier bounded packet in the same release sequence and should not execute before it."
+        }
+      ],
+      "validation_hooks": [
+        {
+          "hook_id": "vh.dependency.integrity"
+        },
+        {
+          "hook_id": "vh.consistency.cross-pack-review"
+        },
+        {
+          "hook_id": "vh.fixture.or-test-when-applicable"
+        },
+        {
+          "hook_id": "vh.manual.acceptance"
+        }
+      ],
+      "stale_rule_id": "sr.derivative.manual",
+      "notes": [
+        "P6.6 accepted R4 artifact workspace `surface_validation` execution packet defining one bounded implementation slice over the accepted release blueprint.",
+        "Accepted for downstream use as one delegable execution unit that stays inside explicit file-whitelist, validation-hook, and approval boundaries."
+      ]
+    },
+    {
+      "artifact_id": "pkt.phase6-r5-prompt-assets-contracts-objects-packet.v1",
+      "artifact_type_id": "pkt.execution_packet",
+      "title": "Phase 6 R5 prompt assets contracts and objects packet",
+      "version": "1.0.0",
+      "artifact_status": "accepted",
+      "semantic_owner": "Implementation steward",
+      "stewardship_mode": "factory_first",
+      "acceptance_authority": "Human implementation owner",
+      "canonical_locator": "docs/control-plane/implementation/packets/phase-6-r5-prompt-assets-contracts-objects-packet.md",
+      "packet_scope": "Bounded `transform` packet for implementing release-local shared-object schemas, shared-object APIs, and typed package contracts inside one release blueprint slice.",
+      "file_whitelist_ref": "wl.phase6-r5-prompt-assets-contracts-objects.v1",
+      "source_authority_refs": [
+        "rel.r5-prompt-studio-contract.v1"
+      ],
+      "dependency_refs": [
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.master-plan.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The master plan names bounded execution packets as the accepted P6.6 deliverable set."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.artifact-control-plane-spec.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted control-plane spec defines execution-packet metadata, dependency semantics, validation hooks, and stale rules."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.packet-brief-schema-data.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted packet-brief schema defines the embedded JSON brief used by this execution packet."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.context-budget-and-packet-policy.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P0.5 packet policy defines the selected budget band and split-or-escalate posture that this packet must preserve."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "rel.r5-prompt-studio-contract.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted R5 prompt assets release contract defines the release boundary and non-goals that this packet must preserve."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "bp.phase6-r5-prompt-assets-blueprint.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted release blueprint defines the bounded module clusters, fixture families, and exclusions that this packet implements."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.phase6-workspace-manifest-index-data.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted manifest index maps this packet whitelist to bounded workspace roots."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.phase6-codebase-current-state-data.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted current-state view keeps this packet honest about reserved versus materialized roots."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.phase6-release-blueprint-index-data.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted blueprint index provides the release-to-blueprint map that this packet inherits."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.phase6-module-test-contracts-data.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted module-boundary dataset defines the workspace-family dependency and naming rules that this packet must preserve."
+        }
+      ],
+      "validation_hooks": [
+        {
+          "hook_id": "vh.dependency.integrity"
+        },
+        {
+          "hook_id": "vh.consistency.cross-pack-review"
+        },
+        {
+          "hook_id": "vh.fixture.or-test-when-applicable"
+        },
+        {
+          "hook_id": "vh.manual.acceptance"
+        }
+      ],
+      "stale_rule_id": "sr.derivative.manual",
+      "notes": [
+        "P6.6 accepted R5 prompt assets `contracts_objects` execution packet defining one bounded implementation slice over the accepted release blueprint.",
+        "Accepted for downstream use as one delegable execution unit that stays inside explicit file-whitelist, validation-hook, and approval boundaries."
+      ]
+    },
+    {
+      "artifact_id": "pkt.phase6-r5-prompt-assets-runtime-execution-packet.v1",
+      "artifact_type_id": "pkt.execution_packet",
+      "title": "Phase 6 R5 prompt assets runtime execution packet",
+      "version": "1.0.0",
+      "artifact_status": "accepted",
+      "semantic_owner": "Implementation steward",
+      "stewardship_mode": "factory_first",
+      "acceptance_authority": "Human implementation owner",
+      "canonical_locator": "docs/control-plane/implementation/packets/phase-6-r5-prompt-assets-runtime-execution-packet.md",
+      "packet_scope": "Bounded `transform` packet for implementing release-local services and workers behind accepted package contracts and boundary rules.",
+      "file_whitelist_ref": "wl.phase6-r5-prompt-assets-runtime-execution.v1",
+      "source_authority_refs": [
+        "rel.r5-prompt-studio-contract.v1"
+      ],
+      "dependency_refs": [
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.master-plan.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The master plan names bounded execution packets as the accepted P6.6 deliverable set."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.artifact-control-plane-spec.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted control-plane spec defines execution-packet metadata, dependency semantics, validation hooks, and stale rules."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.packet-brief-schema-data.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted packet-brief schema defines the embedded JSON brief used by this execution packet."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.context-budget-and-packet-policy.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P0.5 packet policy defines the selected budget band and split-or-escalate posture that this packet must preserve."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "rel.r5-prompt-studio-contract.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted R5 prompt assets release contract defines the release boundary and non-goals that this packet must preserve."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "bp.phase6-r5-prompt-assets-blueprint.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted release blueprint defines the bounded module clusters, fixture families, and exclusions that this packet implements."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.phase6-workspace-manifest-index-data.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted manifest index maps this packet whitelist to bounded workspace roots."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.phase6-codebase-current-state-data.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted current-state view keeps this packet honest about reserved versus materialized roots."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.phase6-release-blueprint-index-data.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted blueprint index provides the release-to-blueprint map that this packet inherits."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.phase6-module-test-contracts-data.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted module-boundary dataset defines the workspace-family dependency and naming rules that this packet must preserve."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "pkt.phase6-r5-prompt-assets-contracts-objects-packet.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "This packet depends on an earlier bounded packet in the same release sequence and should not execute before it."
+        }
+      ],
+      "validation_hooks": [
+        {
+          "hook_id": "vh.dependency.integrity"
+        },
+        {
+          "hook_id": "vh.consistency.cross-pack-review"
+        },
+        {
+          "hook_id": "vh.fixture.or-test-when-applicable"
+        },
+        {
+          "hook_id": "vh.manual.acceptance"
+        }
+      ],
+      "stale_rule_id": "sr.derivative.manual",
+      "notes": [
+        "P6.6 accepted R5 prompt assets `runtime_execution` execution packet defining one bounded implementation slice over the accepted release blueprint.",
+        "Accepted for downstream use as one delegable execution unit that stays inside explicit file-whitelist, validation-hook, and approval boundaries."
+      ]
+    },
+    {
+      "artifact_id": "pkt.phase6-r5-prompt-assets-surface-validation-packet.v1",
+      "artifact_type_id": "pkt.execution_packet",
+      "title": "Phase 6 R5 prompt assets surface and validation packet",
+      "version": "1.0.0",
+      "artifact_status": "accepted",
+      "semantic_owner": "Implementation steward",
+      "stewardship_mode": "factory_first",
+      "acceptance_authority": "Human implementation owner",
+      "canonical_locator": "docs/control-plane/implementation/packets/phase-6-r5-prompt-assets-surface-validation-packet.md",
+      "packet_scope": "Bounded `transform` packet for implementing release-local app surfaces, projection grammar, inspect helpers, contract tests, and fixture assets inside one release slice.",
+      "file_whitelist_ref": "wl.phase6-r5-prompt-assets-surface-validation.v1",
+      "source_authority_refs": [
+        "rel.r5-prompt-studio-contract.v1"
+      ],
+      "dependency_refs": [
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.master-plan.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The master plan names bounded execution packets as the accepted P6.6 deliverable set."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.artifact-control-plane-spec.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted control-plane spec defines execution-packet metadata, dependency semantics, validation hooks, and stale rules."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.packet-brief-schema-data.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted packet-brief schema defines the embedded JSON brief used by this execution packet."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.context-budget-and-packet-policy.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P0.5 packet policy defines the selected budget band and split-or-escalate posture that this packet must preserve."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "rel.r5-prompt-studio-contract.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted R5 prompt assets release contract defines the release boundary and non-goals that this packet must preserve."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "bp.phase6-r5-prompt-assets-blueprint.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted release blueprint defines the bounded module clusters, fixture families, and exclusions that this packet implements."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.phase6-workspace-manifest-index-data.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted manifest index maps this packet whitelist to bounded workspace roots."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.phase6-codebase-current-state-data.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted current-state view keeps this packet honest about reserved versus materialized roots."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.phase6-release-blueprint-index-data.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted blueprint index provides the release-to-blueprint map that this packet inherits."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.phase6-module-test-contracts-data.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted module-boundary dataset defines the workspace-family dependency and naming rules that this packet must preserve."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.phase6-fixture-rules-data.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted fixture-rules dataset defines the frozen fixture-family vocabulary and validation posture cited by this packet."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "pkt.phase6-r5-prompt-assets-runtime-execution-packet.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "This packet depends on an earlier bounded packet in the same release sequence and should not execute before it."
+        }
+      ],
+      "validation_hooks": [
+        {
+          "hook_id": "vh.dependency.integrity"
+        },
+        {
+          "hook_id": "vh.consistency.cross-pack-review"
+        },
+        {
+          "hook_id": "vh.fixture.or-test-when-applicable"
+        },
+        {
+          "hook_id": "vh.manual.acceptance"
+        }
+      ],
+      "stale_rule_id": "sr.derivative.manual",
+      "notes": [
+        "P6.6 accepted R5 prompt assets `surface_validation` execution packet defining one bounded implementation slice over the accepted release blueprint.",
+        "Accepted for downstream use as one delegable execution unit that stays inside explicit file-whitelist, validation-hook, and approval boundaries."
+      ]
+    },
+    {
+      "artifact_id": "pkt.phase6-r6-governed-reusable-execution-contracts-objects-packet.v1",
+      "artifact_type_id": "pkt.execution_packet",
+      "title": "Phase 6 R6 governed reusable execution contracts and objects packet",
+      "version": "1.0.0",
+      "artifact_status": "accepted",
+      "semantic_owner": "Implementation steward",
+      "stewardship_mode": "factory_first",
+      "acceptance_authority": "Human implementation owner",
+      "canonical_locator": "docs/control-plane/implementation/packets/phase-6-r6-governed-reusable-execution-contracts-objects-packet.md",
+      "packet_scope": "Bounded `transform` packet for implementing release-local shared-object schemas, shared-object APIs, and typed package contracts inside one release blueprint slice.",
+      "file_whitelist_ref": "wl.phase6-r6-governed-reusable-execution-contracts-objects.v1",
+      "source_authority_refs": [
+        "rel.r6-governed-agent-applet-chat-contract.v1"
+      ],
+      "dependency_refs": [
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.master-plan.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The master plan names bounded execution packets as the accepted P6.6 deliverable set."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.artifact-control-plane-spec.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted control-plane spec defines execution-packet metadata, dependency semantics, validation hooks, and stale rules."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.packet-brief-schema-data.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted packet-brief schema defines the embedded JSON brief used by this execution packet."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.context-budget-and-packet-policy.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P0.5 packet policy defines the selected budget band and split-or-escalate posture that this packet must preserve."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "rel.r6-governed-agent-applet-chat-contract.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted R6 governed reusable execution release contract defines the release boundary and non-goals that this packet must preserve."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "bp.phase6-r6-governed-reusable-execution-blueprint.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted release blueprint defines the bounded module clusters, fixture families, and exclusions that this packet implements."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.phase6-workspace-manifest-index-data.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted manifest index maps this packet whitelist to bounded workspace roots."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.phase6-codebase-current-state-data.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted current-state view keeps this packet honest about reserved versus materialized roots."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.phase6-release-blueprint-index-data.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted blueprint index provides the release-to-blueprint map that this packet inherits."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.phase6-module-test-contracts-data.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted module-boundary dataset defines the workspace-family dependency and naming rules that this packet must preserve."
+        }
+      ],
+      "validation_hooks": [
+        {
+          "hook_id": "vh.dependency.integrity"
+        },
+        {
+          "hook_id": "vh.consistency.cross-pack-review"
+        },
+        {
+          "hook_id": "vh.fixture.or-test-when-applicable"
+        },
+        {
+          "hook_id": "vh.manual.acceptance"
+        }
+      ],
+      "stale_rule_id": "sr.derivative.manual",
+      "notes": [
+        "P6.6 accepted R6 governed reusable execution `contracts_objects` execution packet defining one bounded implementation slice over the accepted release blueprint.",
+        "Accepted for downstream use as one delegable execution unit that stays inside explicit file-whitelist, validation-hook, and approval boundaries."
+      ]
+    },
+    {
+      "artifact_id": "pkt.phase6-r6-governed-reusable-execution-runtime-execution-packet.v1",
+      "artifact_type_id": "pkt.execution_packet",
+      "title": "Phase 6 R6 governed reusable execution runtime execution packet",
+      "version": "1.0.0",
+      "artifact_status": "accepted",
+      "semantic_owner": "Implementation steward",
+      "stewardship_mode": "factory_first",
+      "acceptance_authority": "Human implementation owner",
+      "canonical_locator": "docs/control-plane/implementation/packets/phase-6-r6-governed-reusable-execution-runtime-execution-packet.md",
+      "packet_scope": "Bounded `transform` packet for implementing release-local services and workers behind accepted package contracts and boundary rules.",
+      "file_whitelist_ref": "wl.phase6-r6-governed-reusable-execution-runtime-execution.v1",
+      "source_authority_refs": [
+        "rel.r6-governed-agent-applet-chat-contract.v1"
+      ],
+      "dependency_refs": [
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.master-plan.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The master plan names bounded execution packets as the accepted P6.6 deliverable set."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.artifact-control-plane-spec.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted control-plane spec defines execution-packet metadata, dependency semantics, validation hooks, and stale rules."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.packet-brief-schema-data.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted packet-brief schema defines the embedded JSON brief used by this execution packet."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.context-budget-and-packet-policy.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P0.5 packet policy defines the selected budget band and split-or-escalate posture that this packet must preserve."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "rel.r6-governed-agent-applet-chat-contract.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted R6 governed reusable execution release contract defines the release boundary and non-goals that this packet must preserve."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "bp.phase6-r6-governed-reusable-execution-blueprint.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted release blueprint defines the bounded module clusters, fixture families, and exclusions that this packet implements."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.phase6-workspace-manifest-index-data.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted manifest index maps this packet whitelist to bounded workspace roots."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.phase6-codebase-current-state-data.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted current-state view keeps this packet honest about reserved versus materialized roots."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.phase6-release-blueprint-index-data.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted blueprint index provides the release-to-blueprint map that this packet inherits."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.phase6-module-test-contracts-data.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted module-boundary dataset defines the workspace-family dependency and naming rules that this packet must preserve."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "pkt.phase6-r6-governed-reusable-execution-contracts-objects-packet.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "This packet depends on an earlier bounded packet in the same release sequence and should not execute before it."
+        }
+      ],
+      "validation_hooks": [
+        {
+          "hook_id": "vh.dependency.integrity"
+        },
+        {
+          "hook_id": "vh.consistency.cross-pack-review"
+        },
+        {
+          "hook_id": "vh.fixture.or-test-when-applicable"
+        },
+        {
+          "hook_id": "vh.manual.acceptance"
+        }
+      ],
+      "stale_rule_id": "sr.derivative.manual",
+      "notes": [
+        "P6.6 accepted R6 governed reusable execution `runtime_execution` execution packet defining one bounded implementation slice over the accepted release blueprint.",
+        "Accepted for downstream use as one delegable execution unit that stays inside explicit file-whitelist, validation-hook, and approval boundaries."
+      ]
+    },
+    {
+      "artifact_id": "pkt.phase6-r6-governed-reusable-execution-surface-validation-packet.v1",
+      "artifact_type_id": "pkt.execution_packet",
+      "title": "Phase 6 R6 governed reusable execution surface and validation packet",
+      "version": "1.0.0",
+      "artifact_status": "accepted",
+      "semantic_owner": "Implementation steward",
+      "stewardship_mode": "factory_first",
+      "acceptance_authority": "Human implementation owner",
+      "canonical_locator": "docs/control-plane/implementation/packets/phase-6-r6-governed-reusable-execution-surface-validation-packet.md",
+      "packet_scope": "Bounded `transform` packet for implementing release-local app surfaces, projection grammar, inspect helpers, contract tests, and fixture assets inside one release slice.",
+      "file_whitelist_ref": "wl.phase6-r6-governed-reusable-execution-surface-validation.v1",
+      "source_authority_refs": [
+        "rel.r6-governed-agent-applet-chat-contract.v1"
+      ],
+      "dependency_refs": [
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.master-plan.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The master plan names bounded execution packets as the accepted P6.6 deliverable set."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.artifact-control-plane-spec.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted control-plane spec defines execution-packet metadata, dependency semantics, validation hooks, and stale rules."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.packet-brief-schema-data.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted packet-brief schema defines the embedded JSON brief used by this execution packet."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.context-budget-and-packet-policy.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P0.5 packet policy defines the selected budget band and split-or-escalate posture that this packet must preserve."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "rel.r6-governed-agent-applet-chat-contract.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted R6 governed reusable execution release contract defines the release boundary and non-goals that this packet must preserve."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "bp.phase6-r6-governed-reusable-execution-blueprint.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted release blueprint defines the bounded module clusters, fixture families, and exclusions that this packet implements."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.phase6-workspace-manifest-index-data.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted manifest index maps this packet whitelist to bounded workspace roots."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.phase6-codebase-current-state-data.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted current-state view keeps this packet honest about reserved versus materialized roots."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.phase6-release-blueprint-index-data.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted blueprint index provides the release-to-blueprint map that this packet inherits."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.phase6-module-test-contracts-data.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted module-boundary dataset defines the workspace-family dependency and naming rules that this packet must preserve."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.phase6-fixture-rules-data.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted fixture-rules dataset defines the frozen fixture-family vocabulary and validation posture cited by this packet."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "pkt.phase6-r6-governed-reusable-execution-runtime-execution-packet.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "This packet depends on an earlier bounded packet in the same release sequence and should not execute before it."
+        }
+      ],
+      "validation_hooks": [
+        {
+          "hook_id": "vh.dependency.integrity"
+        },
+        {
+          "hook_id": "vh.consistency.cross-pack-review"
+        },
+        {
+          "hook_id": "vh.fixture.or-test-when-applicable"
+        },
+        {
+          "hook_id": "vh.manual.acceptance"
+        }
+      ],
+      "stale_rule_id": "sr.derivative.manual",
+      "notes": [
+        "P6.6 accepted R6 governed reusable execution `surface_validation` execution packet defining one bounded implementation slice over the accepted release blueprint.",
+        "Accepted for downstream use as one delegable execution unit that stays inside explicit file-whitelist, validation-hook, and approval boundaries."
+      ]
+    },
+    {
+      "artifact_id": "pkt.phase6-r7-commissioning-bridge-contracts-objects-packet.v1",
+      "artifact_type_id": "pkt.execution_packet",
+      "title": "Phase 6 R7 commissioning bridge contracts and objects packet",
+      "version": "1.0.0",
+      "artifact_status": "accepted",
+      "semantic_owner": "Implementation steward",
+      "stewardship_mode": "factory_first",
+      "acceptance_authority": "Human implementation owner",
+      "canonical_locator": "docs/control-plane/implementation/packets/phase-6-r7-commissioning-bridge-contracts-objects-packet.md",
+      "packet_scope": "Bounded `transform` packet for implementing release-local shared-object schemas, shared-object APIs, and typed package contracts inside one release blueprint slice.",
+      "file_whitelist_ref": "wl.phase6-r7-commissioning-bridge-contracts-objects.v1",
+      "source_authority_refs": [
+        "rel.r7-commissioning-bridge-contract.v1"
+      ],
+      "dependency_refs": [
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.master-plan.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The master plan names bounded execution packets as the accepted P6.6 deliverable set."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.artifact-control-plane-spec.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted control-plane spec defines execution-packet metadata, dependency semantics, validation hooks, and stale rules."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.packet-brief-schema-data.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted packet-brief schema defines the embedded JSON brief used by this execution packet."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.context-budget-and-packet-policy.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P0.5 packet policy defines the selected budget band and split-or-escalate posture that this packet must preserve."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "rel.r7-commissioning-bridge-contract.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted R7 commissioning bridge release contract defines the release boundary and non-goals that this packet must preserve."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "bp.phase6-r7-commissioning-bridge-blueprint.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted release blueprint defines the bounded module clusters, fixture families, and exclusions that this packet implements."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.phase6-workspace-manifest-index-data.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted manifest index maps this packet whitelist to bounded workspace roots."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.phase6-codebase-current-state-data.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted current-state view keeps this packet honest about reserved versus materialized roots."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.phase6-release-blueprint-index-data.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted blueprint index provides the release-to-blueprint map that this packet inherits."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.phase6-module-test-contracts-data.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted module-boundary dataset defines the workspace-family dependency and naming rules that this packet must preserve."
+        }
+      ],
+      "validation_hooks": [
+        {
+          "hook_id": "vh.dependency.integrity"
+        },
+        {
+          "hook_id": "vh.consistency.cross-pack-review"
+        },
+        {
+          "hook_id": "vh.fixture.or-test-when-applicable"
+        },
+        {
+          "hook_id": "vh.manual.acceptance"
+        }
+      ],
+      "stale_rule_id": "sr.derivative.manual",
+      "notes": [
+        "P6.6 accepted R7 commissioning bridge `contracts_objects` execution packet defining one bounded implementation slice over the accepted release blueprint.",
+        "Accepted for downstream use as one delegable execution unit that stays inside explicit file-whitelist, validation-hook, and approval boundaries."
+      ]
+    },
+    {
+      "artifact_id": "pkt.phase6-r7-commissioning-bridge-runtime-execution-packet.v1",
+      "artifact_type_id": "pkt.execution_packet",
+      "title": "Phase 6 R7 commissioning bridge runtime execution packet",
+      "version": "1.0.0",
+      "artifact_status": "accepted",
+      "semantic_owner": "Implementation steward",
+      "stewardship_mode": "factory_first",
+      "acceptance_authority": "Human implementation owner",
+      "canonical_locator": "docs/control-plane/implementation/packets/phase-6-r7-commissioning-bridge-runtime-execution-packet.md",
+      "packet_scope": "Bounded `transform` packet for implementing release-local services and workers behind accepted package contracts and boundary rules.",
+      "file_whitelist_ref": "wl.phase6-r7-commissioning-bridge-runtime-execution.v1",
+      "source_authority_refs": [
+        "rel.r7-commissioning-bridge-contract.v1"
+      ],
+      "dependency_refs": [
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.master-plan.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The master plan names bounded execution packets as the accepted P6.6 deliverable set."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.artifact-control-plane-spec.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted control-plane spec defines execution-packet metadata, dependency semantics, validation hooks, and stale rules."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.packet-brief-schema-data.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted packet-brief schema defines the embedded JSON brief used by this execution packet."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.context-budget-and-packet-policy.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P0.5 packet policy defines the selected budget band and split-or-escalate posture that this packet must preserve."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "rel.r7-commissioning-bridge-contract.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted R7 commissioning bridge release contract defines the release boundary and non-goals that this packet must preserve."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "bp.phase6-r7-commissioning-bridge-blueprint.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted release blueprint defines the bounded module clusters, fixture families, and exclusions that this packet implements."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.phase6-workspace-manifest-index-data.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted manifest index maps this packet whitelist to bounded workspace roots."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.phase6-codebase-current-state-data.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted current-state view keeps this packet honest about reserved versus materialized roots."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.phase6-release-blueprint-index-data.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted blueprint index provides the release-to-blueprint map that this packet inherits."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.phase6-module-test-contracts-data.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted module-boundary dataset defines the workspace-family dependency and naming rules that this packet must preserve."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "pkt.phase6-r7-commissioning-bridge-contracts-objects-packet.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "This packet depends on an earlier bounded packet in the same release sequence and should not execute before it."
+        }
+      ],
+      "validation_hooks": [
+        {
+          "hook_id": "vh.dependency.integrity"
+        },
+        {
+          "hook_id": "vh.consistency.cross-pack-review"
+        },
+        {
+          "hook_id": "vh.fixture.or-test-when-applicable"
+        },
+        {
+          "hook_id": "vh.manual.acceptance"
+        }
+      ],
+      "stale_rule_id": "sr.derivative.manual",
+      "notes": [
+        "P6.6 accepted R7 commissioning bridge `runtime_execution` execution packet defining one bounded implementation slice over the accepted release blueprint.",
+        "Accepted for downstream use as one delegable execution unit that stays inside explicit file-whitelist, validation-hook, and approval boundaries."
+      ]
+    },
+    {
+      "artifact_id": "pkt.phase6-r7-commissioning-bridge-chat-surface-packet.v1",
+      "artifact_type_id": "pkt.execution_packet",
+      "title": "Phase 6 R7 commissioning bridge chat surface packet",
+      "version": "1.0.0",
+      "artifact_status": "accepted",
+      "semantic_owner": "Implementation steward",
+      "stewardship_mode": "factory_first",
+      "acceptance_authority": "Human implementation owner",
+      "canonical_locator": "docs/control-plane/implementation/packets/phase-6-r7-commissioning-bridge-chat-surface-packet.md",
+      "packet_scope": "Bounded `transform` packet for implementing release-local chat-native commissioning surfaces plus shared projection and inspect helpers for the R7 bridge.",
+      "file_whitelist_ref": "wl.phase6-r7-commissioning-bridge-chat-surface.v1",
+      "source_authority_refs": [
+        "rel.r7-commissioning-bridge-contract.v1"
+      ],
+      "dependency_refs": [
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.master-plan.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The master plan names bounded execution packets as the accepted P6.6 deliverable set."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.artifact-control-plane-spec.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted control-plane spec defines execution-packet metadata, dependency semantics, validation hooks, and stale rules."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.packet-brief-schema-data.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted packet-brief schema defines the embedded JSON brief used by this execution packet."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.context-budget-and-packet-policy.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P0.5 packet policy defines the selected budget band and split-or-escalate posture that this packet must preserve."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "rel.r7-commissioning-bridge-contract.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted R7 commissioning bridge release contract defines the release boundary and non-goals that this packet must preserve."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "bp.phase6-r7-commissioning-bridge-blueprint.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted release blueprint defines the bounded module clusters, fixture families, and exclusions that this packet implements."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.phase6-workspace-manifest-index-data.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted manifest index maps this packet whitelist to bounded workspace roots."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.phase6-codebase-current-state-data.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted current-state view keeps this packet honest about reserved versus materialized roots."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.phase6-release-blueprint-index-data.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted blueprint index provides the release-to-blueprint map that this packet inherits."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.phase6-module-test-contracts-data.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted module-boundary dataset defines the workspace-family dependency and naming rules that this packet must preserve."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.phase6-fixture-rules-data.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted fixture-rules dataset defines the frozen fixture-family vocabulary and validation posture cited by this packet."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "pkt.phase6-r7-commissioning-bridge-runtime-execution-packet.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "This packet depends on an earlier bounded packet in the same release sequence and should not execute before it."
+        }
+      ],
+      "validation_hooks": [
+        {
+          "hook_id": "vh.dependency.integrity"
+        },
+        {
+          "hook_id": "vh.consistency.cross-pack-review"
+        },
+        {
+          "hook_id": "vh.fixture.or-test-when-applicable"
+        },
+        {
+          "hook_id": "vh.manual.acceptance"
+        }
+      ],
+      "stale_rule_id": "sr.derivative.manual",
+      "notes": [
+        "P6.6 accepted R7 commissioning bridge `chat_surface` execution packet defining one bounded implementation slice over the accepted release blueprint.",
+        "Accepted for downstream use as one delegable execution unit that stays inside explicit file-whitelist, validation-hook, and approval boundaries."
+      ]
+    },
+    {
+      "artifact_id": "pkt.phase6-r7-commissioning-bridge-task-studio-handoff-packet.v1",
+      "artifact_type_id": "pkt.execution_packet",
+      "title": "Phase 6 R7 commissioning bridge Task Studio handoff packet",
+      "version": "1.0.0",
+      "artifact_status": "accepted",
+      "semantic_owner": "Implementation steward",
+      "stewardship_mode": "factory_first",
+      "acceptance_authority": "Human implementation owner",
+      "canonical_locator": "docs/control-plane/implementation/packets/phase-6-r7-commissioning-bridge-task-studio-handoff-packet.md",
+      "packet_scope": "Bounded `transform` packet for implementing Task Studio route landings that preserve the accepted R7 commissioning handoff payload without ontology translation.",
+      "file_whitelist_ref": "wl.phase6-r7-commissioning-bridge-task-studio-handoff.v1",
+      "source_authority_refs": [
+        "rel.r7-commissioning-bridge-contract.v1",
+        "reuse.phase5-commissioning-bridge-task-studio-handoff-contract.v1",
+        "surf.phase6-task-studio-surface-contract-pack.v1"
+      ],
+      "dependency_refs": [
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.master-plan.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The master plan names bounded execution packets as the accepted P6.6 deliverable set."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.artifact-control-plane-spec.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted control-plane spec defines execution-packet metadata, dependency semantics, validation hooks, and stale rules."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.packet-brief-schema-data.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted packet-brief schema defines the embedded JSON brief used by this execution packet."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.context-budget-and-packet-policy.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P0.5 packet policy defines the selected budget band and split-or-escalate posture that this packet must preserve."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "rel.r7-commissioning-bridge-contract.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted R7 commissioning bridge release contract defines the release boundary and non-goals that this packet must preserve."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "bp.phase6-r7-commissioning-bridge-blueprint.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted release blueprint defines the bounded module clusters, fixture families, and exclusions that this packet implements."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.phase6-workspace-manifest-index-data.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted manifest index maps this packet whitelist to bounded workspace roots."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.phase6-codebase-current-state-data.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted current-state view keeps this packet honest about reserved versus materialized roots."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.phase6-fixture-rules-data.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted fixture-rules dataset defines the frozen fixture-family vocabulary and validation posture cited by this packet."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "reuse.phase5-commissioning-bridge-task-studio-handoff-contract.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P5.7 handoff contract defines the preserved payload and shared-ID continuity that this packet must preserve."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "surf.phase6-task-studio-surface-contract-pack.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P6.1 Task Studio surface pack defines the Task Studio route landings and continuity constraints that this packet must preserve."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "pkt.phase6-r7-commissioning-bridge-chat-surface-packet.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "This packet depends on an earlier bounded packet in the same release sequence and should not execute before it."
+        }
+      ],
+      "validation_hooks": [
+        {
+          "hook_id": "vh.dependency.integrity"
+        },
+        {
+          "hook_id": "vh.consistency.cross-pack-review"
+        },
+        {
+          "hook_id": "vh.fixture.or-test-when-applicable"
+        },
+        {
+          "hook_id": "vh.manual.acceptance"
+        }
+      ],
+      "stale_rule_id": "sr.derivative.manual",
+      "notes": [
+        "P6.6 accepted R7 commissioning bridge `task_studio_handoff` execution packet defining one bounded implementation slice over the accepted release blueprint.",
+        "Accepted for downstream use as one delegable execution unit that stays inside explicit file-whitelist, validation-hook, and approval boundaries."
+      ]
+    },
+    {
+      "artifact_id": "pkt.phase6-r7-commissioning-bridge-test-fixtures-packet.v1",
+      "artifact_type_id": "pkt.execution_packet",
+      "title": "Phase 6 R7 commissioning bridge test and fixtures packet",
+      "version": "1.0.0",
+      "artifact_status": "accepted",
+      "semantic_owner": "Implementation steward",
+      "stewardship_mode": "factory_first",
+      "acceptance_authority": "Human implementation owner",
+      "canonical_locator": "docs/control-plane/implementation/packets/phase-6-r7-commissioning-bridge-test-fixtures-packet.md",
+      "packet_scope": "Bounded `transform` packet for implementing release-local contract tests, fixture assets, and validator touchpoints for the R7 commissioning bridge.",
+      "file_whitelist_ref": "wl.phase6-r7-commissioning-bridge-test-fixtures.v1",
+      "source_authority_refs": [
+        "rel.r7-commissioning-bridge-contract.v1",
+        "reuse.phase5-commissioning-bridge-task-studio-handoff-contract.v1"
+      ],
+      "dependency_refs": [
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.master-plan.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The master plan names bounded execution packets as the accepted P6.6 deliverable set."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.artifact-control-plane-spec.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted control-plane spec defines execution-packet metadata, dependency semantics, validation hooks, and stale rules."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.packet-brief-schema-data.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted packet-brief schema defines the embedded JSON brief used by this execution packet."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.context-budget-and-packet-policy.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P0.5 packet policy defines the selected budget band and split-or-escalate posture that this packet must preserve."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "rel.r7-commissioning-bridge-contract.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted R7 commissioning bridge release contract defines the release boundary and non-goals that this packet must preserve."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "bp.phase6-r7-commissioning-bridge-blueprint.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted release blueprint defines the bounded module clusters, fixture families, and exclusions that this packet implements."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.phase6-workspace-manifest-index-data.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted manifest index maps this packet whitelist to bounded workspace roots."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.phase6-codebase-current-state-data.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted current-state view keeps this packet honest about reserved versus materialized roots."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.phase6-release-blueprint-index-data.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted blueprint index provides the release-to-blueprint map that this packet inherits."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.phase6-fixture-rules-data.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted fixture-rules dataset defines the frozen fixture-family vocabulary and validation posture cited by this packet."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "reuse.phase5-commissioning-bridge-task-studio-handoff-contract.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P5.7 handoff contract defines the preserved payload and shared-ID continuity that this packet must preserve."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "pkt.phase6-r7-commissioning-bridge-task-studio-handoff-packet.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "This packet depends on an earlier bounded packet in the same release sequence and should not execute before it."
+        }
+      ],
+      "validation_hooks": [
+        {
+          "hook_id": "vh.dependency.integrity"
+        },
+        {
+          "hook_id": "vh.consistency.cross-pack-review"
+        },
+        {
+          "hook_id": "vh.fixture.or-test-when-applicable"
+        },
+        {
+          "hook_id": "vh.manual.acceptance"
+        }
+      ],
+      "stale_rule_id": "sr.derivative.manual",
+      "notes": [
+        "P6.6 accepted R7 commissioning bridge `test_fixtures` execution packet defining one bounded implementation slice over the accepted release blueprint.",
+        "Accepted for downstream use as one delegable execution unit that stays inside explicit file-whitelist, validation-hook, and approval boundaries."
+      ]
+    },
+    {
+      "artifact_id": "cp.phase6-execution-packet-index-data.v1",
+      "artifact_type_id": "cp.control_plane_dataset",
+      "title": "Phase 6 execution packet index",
+      "version": "1.0.0",
+      "artifact_status": "accepted",
+      "semantic_owner": "Platform architecture steward",
+      "stewardship_mode": "human_factory",
+      "acceptance_authority": "Human plan owner",
+      "canonical_locator": "docs/control-plane/core/phase-6-execution-packet-index.json",
+      "source_authority_refs": [
+        "cp.phase6-release-blueprint-index-data.v1",
+        "cp.packet-brief-schema-data.v1",
+        "cp.context-budget-and-packet-policy.v1",
+        "surf.phase6-agent-oriented-codebase-pattern-and-documentation-plane-pack.v1"
+      ],
+      "dependency_refs": [
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.master-plan.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The master plan names bounded execution packets as the accepted P6.6 deliverable set."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.artifact-control-plane-spec.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted control-plane spec defines dataset metadata, dependency semantics, validation hooks, and stale rules."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.packet-brief-schema-data.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted packet-brief schema defines the embedded JSON brief fields that the indexed execution packets must preserve."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.context-budget-and-packet-policy.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P0.5 packet policy defines the budget-band and split-or-escalate posture summarized by the execution-packet index."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.phase6-release-blueprint-index-data.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted blueprint index is the bounded release-to-blueprint source that the execution-packet index packetizes."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.phase6-workspace-manifest-index-data.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted manifest index maps packet whitelists to bounded workspace roots."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.phase6-codebase-current-state-data.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted current-state view keeps execution packets aligned to current repo posture."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.phase6-module-test-contracts-data.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted module-boundary dataset anchors workspace-family validation for the indexed packets."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.phase6-fixture-rules-data.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted fixture-rules dataset anchors fixture-family vocabulary for the indexed packets."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "pkt.phase6-r1-conversation-contracts-objects-packet.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The execution-packet index includes `pkt.phase6-r1-conversation-contracts-objects-packet.v1` as one bounded release packet entry."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "pkt.phase6-r1-conversation-runtime-execution-packet.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The execution-packet index includes `pkt.phase6-r1-conversation-runtime-execution-packet.v1` as one bounded release packet entry."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "pkt.phase6-r1-conversation-surface-validation-packet.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The execution-packet index includes `pkt.phase6-r1-conversation-surface-validation-packet.v1` as one bounded release packet entry."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "pkt.phase6-r2-context-control-contracts-objects-packet.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The execution-packet index includes `pkt.phase6-r2-context-control-contracts-objects-packet.v1` as one bounded release packet entry."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "pkt.phase6-r2-context-control-runtime-execution-packet.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The execution-packet index includes `pkt.phase6-r2-context-control-runtime-execution-packet.v1` as one bounded release packet entry."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "pkt.phase6-r2-context-control-surface-validation-packet.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The execution-packet index includes `pkt.phase6-r2-context-control-surface-validation-packet.v1` as one bounded release packet entry."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "pkt.phase6-r3-branch-replay-contracts-objects-packet.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The execution-packet index includes `pkt.phase6-r3-branch-replay-contracts-objects-packet.v1` as one bounded release packet entry."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "pkt.phase6-r3-branch-replay-runtime-execution-packet.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The execution-packet index includes `pkt.phase6-r3-branch-replay-runtime-execution-packet.v1` as one bounded release packet entry."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "pkt.phase6-r3-branch-replay-surface-validation-packet.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The execution-packet index includes `pkt.phase6-r3-branch-replay-surface-validation-packet.v1` as one bounded release packet entry."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "pkt.phase6-r4-artifact-workspace-contracts-objects-packet.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The execution-packet index includes `pkt.phase6-r4-artifact-workspace-contracts-objects-packet.v1` as one bounded release packet entry."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "pkt.phase6-r4-artifact-workspace-runtime-execution-packet.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The execution-packet index includes `pkt.phase6-r4-artifact-workspace-runtime-execution-packet.v1` as one bounded release packet entry."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "pkt.phase6-r4-artifact-workspace-surface-validation-packet.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The execution-packet index includes `pkt.phase6-r4-artifact-workspace-surface-validation-packet.v1` as one bounded release packet entry."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "pkt.phase6-r5-prompt-assets-contracts-objects-packet.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The execution-packet index includes `pkt.phase6-r5-prompt-assets-contracts-objects-packet.v1` as one bounded release packet entry."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "pkt.phase6-r5-prompt-assets-runtime-execution-packet.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The execution-packet index includes `pkt.phase6-r5-prompt-assets-runtime-execution-packet.v1` as one bounded release packet entry."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "pkt.phase6-r5-prompt-assets-surface-validation-packet.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The execution-packet index includes `pkt.phase6-r5-prompt-assets-surface-validation-packet.v1` as one bounded release packet entry."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "pkt.phase6-r6-governed-reusable-execution-contracts-objects-packet.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The execution-packet index includes `pkt.phase6-r6-governed-reusable-execution-contracts-objects-packet.v1` as one bounded release packet entry."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "pkt.phase6-r6-governed-reusable-execution-runtime-execution-packet.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The execution-packet index includes `pkt.phase6-r6-governed-reusable-execution-runtime-execution-packet.v1` as one bounded release packet entry."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "pkt.phase6-r6-governed-reusable-execution-surface-validation-packet.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The execution-packet index includes `pkt.phase6-r6-governed-reusable-execution-surface-validation-packet.v1` as one bounded release packet entry."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "pkt.phase6-r7-commissioning-bridge-contracts-objects-packet.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The execution-packet index includes `pkt.phase6-r7-commissioning-bridge-contracts-objects-packet.v1` as one bounded release packet entry."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "pkt.phase6-r7-commissioning-bridge-runtime-execution-packet.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The execution-packet index includes `pkt.phase6-r7-commissioning-bridge-runtime-execution-packet.v1` as one bounded release packet entry."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "pkt.phase6-r7-commissioning-bridge-chat-surface-packet.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The execution-packet index includes `pkt.phase6-r7-commissioning-bridge-chat-surface-packet.v1` as one bounded release packet entry."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "pkt.phase6-r7-commissioning-bridge-task-studio-handoff-packet.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The execution-packet index includes `pkt.phase6-r7-commissioning-bridge-task-studio-handoff-packet.v1` as one bounded release packet entry."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "pkt.phase6-r7-commissioning-bridge-test-fixtures-packet.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The execution-packet index includes `pkt.phase6-r7-commissioning-bridge-test-fixtures-packet.v1` as one bounded release packet entry."
+        }
+      ],
+      "validation_hooks": [
+        {
+          "hook_id": "vh.schema.json-parse"
+        },
+        {
+          "hook_id": "vh.schema.required-fields"
+        },
+        {
+          "hook_id": "vh.dependency.integrity"
+        },
+        {
+          "hook_id": "vh.consistency.cross-pack-review"
+        },
+        {
+          "hook_id": "vh.manual.acceptance"
+        }
+      ],
+      "stale_rule_id": "sr.control-plane.strict",
+      "notes": [
+        "P6.6 accepted execution-packet index enumerating the bounded release packets derived from the accepted release-blueprint set.",
+        "Accepted for downstream use as the machine-readable packet map feeding execution-packet validation and later delegation."
+      ]
     }
   ]
 }

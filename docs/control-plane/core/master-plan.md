@@ -245,7 +245,7 @@ This section answers, in plain terms, what is already done and what is not.
 - [x] The repo/package architecture, documentation plane, and agent execution system have been implemented.
 - [x] The pilot packet set, benchmark harness, and internal Factory skills/adapters have been implemented and benchmarked.
 - [x] The release implementation blueprints have been produced and accepted.
-- [ ] The broader bounded execution packets have not yet been generated and accepted.
+- [x] The broader bounded execution packets have been generated and accepted.
 - [ ] The continuous stale-detection, carry-forward, and sync loop is operational.
 
 ### 5.3 Phase status summary
@@ -256,7 +256,7 @@ This section answers, in plain terms, what is already done and what is not.
 - [x] Phase 3 — done in the repo
 - [x] Phase 4 — done in the repo
 - [x] Phase 5 — done in the repo
-- [~] Phase 6 — in progress
+- [x] Phase 6 — done in the repo
 - [ ] Phase 7 — not done
 
 ---
@@ -769,7 +769,7 @@ This phase is done when the package map, documentation plane, Factory operating 
 - **Acceptance:** each release has a real blueprint that can be handed to implementers
 - **Carry-forward topics:** blueprint corrections, module touch changes, migration updates, test coverage changes
 
-#### [ ] P6.6 — Agent execution packets
+#### [x] P6.6 — Agent execution packets
 - **Mode:** Factory-first
 - **Depends on:** P6.5
 - **Deliverable:** bounded packets with scope, file whitelist, dependencies, deliverables, validation hooks, approval rules
@@ -2082,3 +2082,29 @@ Notes for future prompts:
 - Start `P6.6` packetization from the accepted blueprint files and `cp.phase6-release-blueprint-index-data.v1` rather than re-deriving release scope from the Phase 4 packs alone.
 - Run `scripts/validators/validate_release_blueprints.py` whenever blueprint sections, module clusters, fixture families, or governing refs change.
 - Treat the blueprint files as bounded build guidance over reserved roots; do not interpret them as proof that runtime code or directories already exist.
+
+#### CF-0056 | 2026-04-12 | Source: P6.6 — Agent execution packets
+
+New information:
+- Artifact `cp.phase6-execution-packet-index-data.v1` now freezes the machine-readable Phase 6 execution-packet map, and twenty-three bounded execution packets now live under `docs/control-plane/implementation/packets/` as accepted `pkt.execution_packet` artifacts.
+- The accepted packet set covers `R1` through `R6` with `contracts_objects`, `runtime_execution`, and `surface_validation` packet families, while `R7` additionally splits into `chat_surface`, `task_studio_handoff`, and `test_fixtures` packets to preserve handoff-specific scope discipline.
+- `scripts/validators/validate_execution_packets.py` now provides a thin repo-local validator for packet/index alignment, blueprint-subset whitelists, packet-family prefix rules, prerequisite ordering, and budget-band ceilings.
+- All accepted Phase 6 packet assets validate cleanly together with the pilot packets, benchmark harness/results, release blueprints, registry, and dependency graph.
+
+Impact:
+- Phase 6 now has a complete accepted delegation layer: pilot packet archetypes, benchmark evidence, release blueprints, and bounded execution packets can all be handed to implementers without re-deriving scope.
+- `P7.1` can build delta-pack and sync rules against one explicit packet inventory rather than against ad hoc packet patterns.
+- The R7 packet family now preserves a separate Task Studio handoff packet, which protects shared-ID continuity and avoids collapsing chat-side commissioning scope into Task Studio landing work.
+
+Status changes:
+- P6.6 marked done.
+- The completion snapshot now records the broader bounded execution packets as generated and accepted.
+- Phase 6 marked done in the repo.
+
+Stale items:
+- None.
+
+Notes for future prompts:
+- Start later execution work from `cp.phase6-execution-packet-index-data.v1` and the accepted per-release packet families instead of inventing new packet breakdowns by convenience.
+- Run `scripts/validators/validate_execution_packets.py` whenever packet briefs, packet-family splits, whitelist paths, prerequisite chains, or packet-budget choices change.
+- Preserve the accepted family split and standard-band posture; split packets further instead of widening them, especially around R7 handoff scope.
