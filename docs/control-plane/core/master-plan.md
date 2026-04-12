@@ -239,6 +239,7 @@ This section answers, in plain terms, what is already done and what is not.
 - [x] The Phase 6 surface contract packs have been produced and accepted.
 - [x] The Phase 7 delta-pack operating rule and coverage index have been produced and accepted.
 - [x] The Phase 7 recurring architecture-sync routine and checklist have been produced and accepted.
+- [x] The Phase 7 stale-detection and regeneration loop has been produced and accepted.
 
 ### 5.2 High-level milestone snapshot
 
@@ -804,7 +805,7 @@ This phase is done when every accepted change triggers delta capture, stale dete
 - **Acceptance:** accepted changes do not silently diverge from canon, semantics, or architecture
 - **Carry-forward topics:** recurring contradictions, sync failure patterns, architecture pressure points
 
-#### [ ] P7.3 — Stale dependency detection and regeneration loop
+#### [x] P7.3 — Stale dependency detection and regeneration loop
 - **Mode:** Factory-first
 - **Depends on:** P7.1 and P7.2
 - **Deliverable:** stale detection rules, regeneration workflow, stale-marker updates
@@ -2161,3 +2162,28 @@ Notes for future prompts:
 - Run `python3 scripts/wrappers/run_phase7_architecture_sync.py` after accepted delta preparation and record the resulting review-required or stale-candidate outcomes in the active delta pack or carry-forward entry.
 - Treat `cp.phase7-architecture-sync-checklist-data.v1` as the default checklist for canon, semantic, architecture, repo-boundary, and Platform Gate review after later accepted deltas.
 - Keep the recurring routine additive to the accepted Phase 3 sync pass; do not replace the accepted baseline with ad hoc review prompts or view-local heuristics.
+
+#### CF-0059 | 2026-04-12 | Source: P7.3 — Stale dependency detection and regeneration loop
+
+New information:
+- Artifact `sync.phase7-stale-regeneration-loop.v1` now defines the accepted stale-detection and regeneration loop for traversing downstream graph impacts after accepted upstream changes.
+- Artifact `cp.phase7-stale-regeneration-rules-data.v1` now freezes the propagation-action map, artifact-type regeneration defaults, and artifact-specific regeneration overrides used by the stale-detection wrapper.
+- `scripts/wrappers/run_phase7_stale_detection.py` now produces machine-readable downstream impact reports, can optionally apply `auto` stale markers back into the registry/graph, and can run the mapped regeneration commands as part of the same loop.
+
+Impact:
+- `P7.4` can decide which release-gate rechecks to run from one accepted stale-detection output instead of rebuilding affected-artifact sets from raw graph edges.
+- Accepted deltas now have one explicit loop that turns graph propagation modes into reviewable stale, manual-review, or revalidation actions with attached regeneration commands.
+- Registry/graph drift can now be surfaced through the accepted stale loop instead of remaining implicit in downstream artifact edits.
+
+Status changes:
+- P7.3 marked done.
+- The completion snapshot now records the Phase 7 stale-detection and regeneration loop as accepted.
+- Phase 7 remains in progress.
+
+Stale items:
+- None.
+
+Notes for future prompts:
+- Run `python3 scripts/wrappers/run_phase7_stale_detection.py --changed-artifact <artifact-ref> ...` after accepted upstream changes and attach the resulting impacted-artifact report to the active delta pack or carry-forward entry.
+- Use `--apply-registry` only when `auto` propagation should update accepted artifact statuses to `stale`, and keep the resulting registry/graph edits inside the same accepted change.
+- Treat `cp.phase7-stale-regeneration-rules-data.v1` as the default source of regeneration commands; update it rather than inventing per-run command routing ad hoc.

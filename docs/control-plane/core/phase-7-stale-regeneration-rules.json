@@ -1,0 +1,124 @@
+{
+  "stale_regeneration_rules_meta": {
+    "schema_version": "1.0.0",
+    "title": "Phase 7 stale regeneration rules",
+    "task_id": "P7.3",
+    "sync_pack_ref": "sync.phase7-stale-regeneration-loop.v1",
+    "delta_pack_ref": "sync.phase7-carry-forward-delta-pack.v1",
+    "architecture_checklist_ref": "cp.phase7-architecture-sync-checklist-data.v1",
+    "registry_ref": "cp.artifact-registry-data.v1",
+    "dependency_graph_ref": "cp.dependency-graph-data.v1"
+  },
+  "propagation_action_map": [
+    {
+      "propagation_mode": "auto",
+      "action": "mark_stale"
+    },
+    {
+      "propagation_mode": "manual",
+      "action": "manual_review"
+    },
+    {
+      "propagation_mode": "revalidate",
+      "action": "revalidate"
+    },
+    {
+      "propagation_mode": "none",
+      "action": "ignore"
+    }
+  ],
+  "artifact_type_rules": [
+    {
+      "artifact_type_id": "sync.delta_sync_pack",
+      "regeneration_commands": [
+        "python3 scripts/validators/validate_phase7_sync_artifacts.py"
+      ],
+      "notes": "Sync artifacts revalidate through the shared Phase 7 sync validator."
+    },
+    {
+      "artifact_type_id": "cp.control_plane_dataset",
+      "regeneration_commands": [
+        "python3 scripts/validators/validate_control_plane_integrity.py"
+      ],
+      "notes": "Control-plane datasets revalidate through the shared registry/graph integrity validator."
+    },
+    {
+      "artifact_type_id": "bp.implementation_blueprint",
+      "regeneration_commands": [
+        "python3 scripts/validators/validate_release_blueprints.py"
+      ],
+      "notes": "Release blueprints revalidate through the accepted blueprint validator."
+    },
+    {
+      "artifact_type_id": "pkt.execution_packet",
+      "regeneration_commands": [
+        "python3 scripts/validators/validate_execution_packets.py"
+      ],
+      "notes": "Execution packets revalidate through the accepted execution-packet validator."
+    }
+  ],
+  "artifact_overrides": [
+    {
+      "artifact_ref": "cp.phase6-release-blueprint-index-data.v1",
+      "regeneration_commands": [
+        "python3 scripts/validators/validate_release_blueprints.py"
+      ],
+      "notes": "The release-blueprint index regenerates through the accepted blueprint validator."
+    },
+    {
+      "artifact_ref": "cp.phase6-execution-packet-index-data.v1",
+      "regeneration_commands": [
+        "python3 scripts/validators/validate_execution_packets.py"
+      ],
+      "notes": "The execution-packet index regenerates through the accepted execution-packet validator."
+    },
+    {
+      "artifact_ref": "cp.phase6-pilot-benchmark-results-data.v1",
+      "regeneration_commands": [
+        "python3 scripts/wrappers/run_phase6_benchmarks.py --matrix tests/benchmark-datasets/phase-6-pilot-benchmark-matrix.json"
+      ],
+      "notes": "Pilot benchmark results regenerate through the frozen Phase 6 benchmark wrapper."
+    },
+    {
+      "artifact_ref": "cp.phase7-delta-pack-index-data.v1",
+      "regeneration_commands": [
+        "python3 scripts/validators/validate_phase7_sync_artifacts.py"
+      ],
+      "notes": "The delta-pack index regenerates through the shared Phase 7 sync validator."
+    },
+    {
+      "artifact_ref": "cp.phase7-architecture-sync-checklist-data.v1",
+      "regeneration_commands": [
+        "python3 scripts/validators/validate_phase7_sync_artifacts.py",
+        "python3 scripts/wrappers/run_phase7_architecture_sync.py"
+      ],
+      "notes": "The architecture checklist regenerates through the sync validator and recurring architecture-sync wrapper."
+    },
+    {
+      "artifact_ref": "cp.phase7-stale-regeneration-rules-data.v1",
+      "regeneration_commands": [
+        "python3 scripts/validators/validate_phase7_sync_artifacts.py"
+      ],
+      "notes": "The stale-regeneration rules revalidate through the shared Phase 7 sync validator."
+    },
+    {
+      "artifact_ref": "sync.phase7-recurring-architecture-sync.v1",
+      "regeneration_commands": [
+        "python3 scripts/validators/validate_phase7_sync_artifacts.py",
+        "python3 scripts/wrappers/run_phase7_architecture_sync.py"
+      ],
+      "notes": "The recurring architecture-sync routine regenerates with the sync validator and architecture-sync wrapper."
+    },
+    {
+      "artifact_ref": "sync.phase7-stale-regeneration-loop.v1",
+      "regeneration_commands": [
+        "python3 scripts/validators/validate_phase7_sync_artifacts.py"
+      ],
+      "notes": "The stale-regeneration loop revalidates through the shared Phase 7 sync validator."
+    }
+  ],
+  "summary": {
+    "artifact_type_rule_count": 4,
+    "artifact_override_count": 8
+  }
+}

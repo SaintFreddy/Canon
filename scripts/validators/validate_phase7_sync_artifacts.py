@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import json
+import shlex
 import sys
 from pathlib import Path
 
@@ -16,6 +17,9 @@ PACKET_INDEX_PATH = REPO_ROOT / "docs/control-plane/core/phase-6-execution-packe
 DELTA_INDEX_PATH = REPO_ROOT / "docs/control-plane/core/phase-7-delta-pack-index.json"
 ARCHITECTURE_CHECKLIST_PATH = (
     REPO_ROOT / "docs/control-plane/core/phase-7-architecture-sync-checklist.json"
+)
+STALE_RULES_PATH = (
+    REPO_ROOT / "docs/control-plane/core/phase-7-stale-regeneration-rules.json"
 )
 
 SYNC_REQUIRED_HEADINGS = [
@@ -50,6 +54,13 @@ ARCHITECTURE_REQUIRED_STATUSES = {
     "blocked",
 }
 
+EXPECTED_PROPAGATION_ACTIONS = {
+    "auto": "mark_stale",
+    "manual": "manual_review",
+    "revalidate": "revalidate",
+    "none": "ignore",
+}
+
 
 def load_json(path: Path) -> dict:
     return json.loads(path.read_text(encoding="utf-8"))
@@ -64,6 +75,20 @@ def extract_header(text: str) -> dict[str, str]:
             key, value = line.split(": ", 1)
             header[key.strip()] = value.strip()
     return header
+
+
+def validate_command_refs(command: str) -> list[str]:
+    issues: list[str] = []
+    tokens = shlex.split(command)
+    if not tokens:
+        return ["empty regeneration command"]
+
+    for token in tokens[1:]:
+        if token.startswith(("scripts/", "docs/", "tests/", ".factory/")):
+            if not (REPO_ROOT / token).exists():
+                issues.append(f"command references missing path: {token}")
+
+    return issues
 
 
 def validate_sync_pack(entry: dict, registry_ids: set[str]) -> dict:
@@ -267,12 +292,87 @@ def validate_architecture_checklist(registry_ids: set[str]) -> dict | None:
     }
 
 
+def validate_stale_regeneration_rules(
+    registry_ids: set[str], artifact_type_ids: set[str]
+) -> dict | None:
+    if not STALE_RULES_PATH.exists():
+        return None
+
+    issues: list[str] = []
+    rules = load_json(STALE_RULES_PATH)
+    meta = rules["stale_regeneration_rules_meta"]
+    propagation_action_map = rules["propagation_action_map"]
+    type_rules = rules["artifact_type_rules"]
+    overrides = rules["artifact_overrides"]
+
+    for ref_key in (
+        "sync_pack_ref",
+        "delta_pack_ref",
+        "architecture_checklist_ref",
+        "registry_ref",
+        "dependency_graph_ref",
+    ):
+        if meta[ref_key] not in registry_ids:
+            issues.append(f"metadata ref is not registered: {meta[ref_key]}")
+
+    actual_action_map = {
+        entry["propagation_mode"]: entry["action"] for entry in propagation_action_map
+    }
+    if actual_action_map != EXPECTED_PROPAGATION_ACTIONS:
+        issues.append("propagation_action_map does not match accepted action baseline")
+
+    for rule in type_rules:
+        if rule["artifact_type_id"] not in artifact_type_ids:
+            issues.append(
+                f"artifact_type_rule references unknown artifact type: {rule['artifact_type_id']}"
+            )
+        if not rule["regeneration_commands"]:
+            issues.append(
+                f"artifact_type_rule missing regeneration commands: {rule['artifact_type_id']}"
+            )
+        for command in rule["regeneration_commands"]:
+            issues.extend(validate_command_refs(command))
+
+    for override in overrides:
+        if override["artifact_ref"] not in registry_ids:
+            issues.append(
+                f"artifact_override references unregistered artifact: {override['artifact_ref']}"
+            )
+        if not override["regeneration_commands"]:
+            issues.append(
+                f"artifact_override missing regeneration commands: {override['artifact_ref']}"
+            )
+        for command in override["regeneration_commands"]:
+            issues.extend(validate_command_refs(command))
+
+    if rules["summary"]["artifact_type_rule_count"] != len(type_rules):
+        issues.append("artifact_type_rule_count summary mismatch")
+    if rules["summary"]["artifact_override_count"] != len(overrides):
+        issues.append("artifact_override_count summary mismatch")
+
+    wrapper_path = REPO_ROOT / "scripts/wrappers/run_phase7_stale_detection.py"
+    if not wrapper_path.exists():
+        issues.append("stale detection wrapper is missing")
+
+    return {
+        "artifact_id": "cp.phase7-stale-regeneration-rules-data.v1",
+        "canonical_locator": "docs/control-plane/core/phase-7-stale-regeneration-rules.json",
+        "status": "pass" if not issues else "fail",
+        "issues": issues,
+        "artifact_type_rule_count": len(type_rules),
+        "artifact_override_count": len(overrides),
+    }
+
+
 def main() -> int:
     registry = load_json(REGISTRY_PATH)
     manifest_index = load_json(MANIFEST_PATH)
     current_state = load_json(CURRENT_STATE_PATH)
 
     registry_ids = {artifact["artifact_id"] for artifact in registry["artifacts"]}
+    artifact_type_ids = {
+        artifact_type["artifact_type_id"] for artifact_type in registry["artifact_types"]
+    }
     sync_entries = [
         artifact
         for artifact in registry["artifacts"]
@@ -316,6 +416,11 @@ def main() -> int:
     architecture_report = validate_architecture_checklist(registry_ids)
     if architecture_report is not None:
         reports.append(architecture_report)
+    stale_rules_report = validate_stale_regeneration_rules(
+        registry_ids, artifact_type_ids
+    )
+    if stale_rules_report is not None:
+        reports.append(stale_rules_report)
 
     result = {
         "status": "pass"

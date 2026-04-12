@@ -674,6 +674,18 @@
       "artifact_type_id": "cp.control_plane_dataset",
       "artifact_status": "accepted",
       "canonical_locator": "docs/control-plane/core/phase-7-architecture-sync-checklist.json"
+    },
+    {
+      "artifact_id": "sync.phase7-stale-regeneration-loop.v1",
+      "artifact_type_id": "sync.delta_sync_pack",
+      "artifact_status": "accepted",
+      "canonical_locator": "docs/control-plane/sync/phase-7-stale-dependency-detection-and-regeneration-loop.md"
+    },
+    {
+      "artifact_id": "cp.phase7-stale-regeneration-rules-data.v1",
+      "artifact_type_id": "cp.control_plane_dataset",
+      "artifact_status": "accepted",
+      "canonical_locator": "docs/control-plane/core/phase-7-stale-regeneration-rules.json"
     }
   ],
   "edges": [
@@ -11404,6 +11416,166 @@
       "edge_type": "depends_on",
       "propagation_mode": "auto",
       "notes": "The checklist depends on this accepted baseline artifact for one recurring architecture review group."
+    },
+    {
+      "edge_id": "e-1342",
+      "from_artifact_id": "sync.phase7-stale-regeneration-loop.v1",
+      "to_artifact_id": "cp.master-plan.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "manual",
+      "notes": "The master plan names P7.3 as the stale-detection and regeneration deliverable."
+    },
+    {
+      "edge_id": "e-1343",
+      "from_artifact_id": "sync.phase7-stale-regeneration-loop.v1",
+      "to_artifact_id": "cp.artifact-control-plane-spec.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "revalidate",
+      "notes": "The accepted control-plane spec defines the edge semantics, propagation modes, validation hooks, and stale rules this loop operationalizes."
+    },
+    {
+      "edge_id": "e-1344",
+      "from_artifact_id": "sync.phase7-stale-regeneration-loop.v1",
+      "to_artifact_id": "sync.phase7-carry-forward-delta-pack.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "manual",
+      "notes": "The stale-detection loop runs after the accepted delta-pack baseline captures the upstream change."
+    },
+    {
+      "edge_id": "e-1345",
+      "from_artifact_id": "sync.phase7-stale-regeneration-loop.v1",
+      "to_artifact_id": "sync.phase7-recurring-architecture-sync.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "manual",
+      "notes": "The stale-detection loop reuses recurring architecture-sync results as one explicit input to downstream review."
+    },
+    {
+      "edge_id": "e-1346",
+      "from_artifact_id": "sync.phase7-stale-regeneration-loop.v1",
+      "to_artifact_id": "cp.phase7-delta-pack-index-data.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "manual",
+      "notes": "The stale-detection loop inherits the accepted release and packet trigger inventory from the Phase 7 delta index."
+    },
+    {
+      "edge_id": "e-1347",
+      "from_artifact_id": "sync.phase7-stale-regeneration-loop.v1",
+      "to_artifact_id": "cp.phase7-architecture-sync-checklist-data.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "manual",
+      "notes": "The stale-detection loop reads the accepted recurring architecture checklist when routing stale candidates."
+    },
+    {
+      "edge_id": "e-1348",
+      "from_artifact_id": "sync.phase7-stale-regeneration-loop.v1",
+      "to_artifact_id": "cp.artifact-registry-data.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "manual",
+      "notes": "The stale-detection loop resolves accepted artifact metadata and statuses from the registry dataset."
+    },
+    {
+      "edge_id": "e-1349",
+      "from_artifact_id": "sync.phase7-stale-regeneration-loop.v1",
+      "to_artifact_id": "cp.dependency-graph-data.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "manual",
+      "notes": "The stale-detection loop traverses accepted dependency edges and propagation modes from the dependency graph dataset."
+    },
+    {
+      "edge_id": "e-1350",
+      "from_artifact_id": "cp.phase7-stale-regeneration-rules-data.v1",
+      "to_artifact_id": "cp.master-plan.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The master plan names P7.3 as the stale-detection and regeneration deliverable."
+    },
+    {
+      "edge_id": "e-1351",
+      "from_artifact_id": "cp.phase7-stale-regeneration-rules-data.v1",
+      "to_artifact_id": "cp.artifact-control-plane-spec.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted control-plane spec defines dataset metadata, dependency semantics, validation hooks, and stale rules."
+    },
+    {
+      "edge_id": "e-1352",
+      "from_artifact_id": "cp.phase7-stale-regeneration-rules-data.v1",
+      "to_artifact_id": "sync.phase7-stale-regeneration-loop.v1",
+      "edge_type": "derives_from",
+      "propagation_mode": "auto",
+      "notes": "The rules dataset operationalizes the accepted P7.3 loop as machine-readable propagation and regeneration guidance."
+    },
+    {
+      "edge_id": "e-1353",
+      "from_artifact_id": "cp.phase7-stale-regeneration-rules-data.v1",
+      "to_artifact_id": "sync.phase7-recurring-architecture-sync.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The rules dataset reuses the accepted recurring architecture-sync baseline when routing stale candidates."
+    },
+    {
+      "edge_id": "e-1354",
+      "from_artifact_id": "cp.phase7-stale-regeneration-rules-data.v1",
+      "to_artifact_id": "cp.phase7-architecture-sync-checklist-data.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The rules dataset reuses the accepted architecture checklist when routing stale candidates."
+    },
+    {
+      "edge_id": "e-1355",
+      "from_artifact_id": "cp.phase7-stale-regeneration-rules-data.v1",
+      "to_artifact_id": "cp.artifact-registry-data.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The rules dataset resolves accepted artifact metadata and statuses from the registry dataset."
+    },
+    {
+      "edge_id": "e-1356",
+      "from_artifact_id": "cp.phase7-stale-regeneration-rules-data.v1",
+      "to_artifact_id": "cp.dependency-graph-data.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The rules dataset resolves accepted propagation modes and downstream edges from the dependency graph dataset."
+    },
+    {
+      "edge_id": "e-1357",
+      "from_artifact_id": "cp.phase7-stale-regeneration-rules-data.v1",
+      "to_artifact_id": "cp.phase6-release-blueprint-index-data.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The rules dataset cites this accepted artifact when mapping regeneration commands or override behavior."
+    },
+    {
+      "edge_id": "e-1358",
+      "from_artifact_id": "cp.phase7-stale-regeneration-rules-data.v1",
+      "to_artifact_id": "cp.phase6-execution-packet-index-data.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The rules dataset cites this accepted artifact when mapping regeneration commands or override behavior."
+    },
+    {
+      "edge_id": "e-1359",
+      "from_artifact_id": "cp.phase7-stale-regeneration-rules-data.v1",
+      "to_artifact_id": "cp.phase6-pilot-benchmark-results-data.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The rules dataset cites this accepted artifact when mapping regeneration commands or override behavior."
+    },
+    {
+      "edge_id": "e-1360",
+      "from_artifact_id": "cp.phase7-stale-regeneration-rules-data.v1",
+      "to_artifact_id": "cp.phase7-delta-pack-index-data.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The rules dataset cites this accepted artifact when mapping regeneration commands or override behavior."
+    },
+    {
+      "edge_id": "e-1364",
+      "from_artifact_id": "cp.phase7-stale-regeneration-rules-data.v1",
+      "to_artifact_id": "sync.phase7-stale-regeneration-loop.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The rules dataset cites this accepted artifact when mapping regeneration commands or override behavior."
     }
   ]
 }
