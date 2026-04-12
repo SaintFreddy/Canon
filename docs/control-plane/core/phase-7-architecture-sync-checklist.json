@@ -1,0 +1,124 @@
+{
+  "architecture_sync_checklist_meta": {
+    "schema_version": "1.0.0",
+    "title": "Phase 7 architecture sync checklist",
+    "task_id": "P7.2",
+    "sync_pack_ref": "sync.phase7-recurring-architecture-sync.v1",
+    "delta_pack_ref": "sync.phase7-carry-forward-delta-pack.v1",
+    "baseline_sync_pass_ref": "arch.phase3-architecture-sync-pass.v1"
+  },
+  "check_groups": [
+    {
+      "check_group_id": "cg.phase7.topology-layer-boundary.v1",
+      "title": "Topology and layer-boundary preservation",
+      "required_artifact_refs": [
+        "canon.phase1-layer-primitive-separation.v1",
+        "canon.phase1-surface-release-topology.v1",
+        "surf.phase6-repo-package-architecture-and-agent-execution-rules-pack.v1"
+      ],
+      "review_prompts": [
+        "Does the accepted delta keep engine, shared-environment, app, and repo-package boundaries intact?",
+        "Does the accepted delta preserve the fixed release order and the chat-as-projection posture?"
+      ],
+      "escalation_on": [
+        "layer ownership drift",
+        "release-order drift",
+        "repo layout presented as runtime ownership"
+      ]
+    },
+    {
+      "check_group_id": "cg.phase7.run-context-provenance.v1",
+      "title": "Run, context, and provenance continuity",
+      "required_artifact_refs": [
+        "sem.phase2-core-object-state-machines.v1",
+        "arch.phase3-context-compiler-topology.v1",
+        "arch.phase3-data-storage-provenance-spec.v1"
+      ],
+      "review_prompts": [
+        "Does the accepted delta keep Run, Evidence Pack, Context Pack, and provenance continuity as explicit shared objects?",
+        "Does the accepted delta avoid transcript-local or view-local substitutes for frozen context, replay basis, or lineage?"
+      ],
+      "escalation_on": [
+        "run identity drift",
+        "context freeze drift",
+        "provenance or replay gap"
+      ]
+    },
+    {
+      "check_group_id": "cg.phase7.governance-writeback.v1",
+      "title": "Governance, proof, and writeback-lane discipline",
+      "required_artifact_refs": [
+        "reuse.phase2-governance-authority-writeback-invariants.v1",
+        "reuse.phase2-proof-validation-invariants.v1",
+        "arch.phase3-api-ipc-event-contracts.v1"
+      ],
+      "review_prompts": [
+        "Does the accepted delta preserve lane-separated artifact, memory, canon, workflow, and export/writeback behavior?",
+        "Does the accepted delta keep proof, review, approval, and apply behavior on typed boundaries instead of collapsing them into narrative surfaces?"
+      ],
+      "escalation_on": [
+        "writeback-lane collapse",
+        "authority bypass",
+        "proof or approval boundary drift"
+      ]
+    },
+    {
+      "check_group_id": "cg.phase7.projection-repo-boundary.v1",
+      "title": "Projection grammar and repo-boundary discipline",
+      "required_artifact_refs": [
+        "sem.phase2-projection-grammar-contracts.v1",
+        "surf.phase6-agent-oriented-codebase-pattern-and-documentation-plane-pack.v1",
+        "cp.phase6-module-test-contracts-data.v1"
+      ],
+      "review_prompts": [
+        "Does the accepted delta keep views as projections over shared objects rather than introducing app-private backends?",
+        "Does the accepted delta preserve the accepted workspace-family, naming, and cross-root boundary rules?"
+      ],
+      "escalation_on": [
+        "projection-private backend drift",
+        "cross-root boundary violation",
+        "app-private ontology drift"
+      ]
+    },
+    {
+      "check_group_id": "cg.phase7.shortcut-platform-gate.v1",
+      "title": "Forbidden-shortcut and Platform Gate regression review",
+      "required_artifact_refs": [
+        "cp.forbidden-shortcuts-register.v1",
+        "arch.phase3-platform-gate-spec.v1",
+        "arch.phase3-architecture-sync-pass.v1",
+        "rel.chat-native-maturity-matrix.v1"
+      ],
+      "review_prompts": [
+        "Does the accepted delta avoid master-chat truth, silent proposal application, second-stack drift, hidden memory sludge, and other forbidden shortcuts?",
+        "Does the accepted delta preserve Platform Gate as a blocking substrate proof rather than downgrading it into advisory release commentary?"
+      ],
+      "escalation_on": [
+        "forbidden-shortcut regression",
+        "Platform Gate weakening",
+        "architecture sync contradiction"
+      ]
+    }
+  ],
+  "result_status_catalog": [
+    {
+      "status": "aligned",
+      "meaning": "The checklist group was reviewed and no architecture drift was found."
+    },
+    {
+      "status": "review_required",
+      "meaning": "The checklist group is structurally ready but still requires explicit human architecture review."
+    },
+    {
+      "status": "stale_candidate",
+      "meaning": "The checklist group found a downstream artifact or assumption that should enter stale review."
+    },
+    {
+      "status": "blocked",
+      "meaning": "The checklist group is missing accepted baseline artifacts or other required review inputs."
+    }
+  ],
+  "summary": {
+    "check_group_count": 5
+  }
+}

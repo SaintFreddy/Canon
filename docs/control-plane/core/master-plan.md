@@ -238,6 +238,7 @@ This section answers, in plain terms, what is already done and what is not.
 - [x] The Phase 5 Commissioning Bridge -> Task Studio handoff contract has been produced and accepted.
 - [x] The Phase 6 surface contract packs have been produced and accepted.
 - [x] The Phase 7 delta-pack operating rule and coverage index have been produced and accepted.
+- [x] The Phase 7 recurring architecture-sync routine and checklist have been produced and accepted.
 
 ### 5.2 High-level milestone snapshot
 
@@ -796,7 +797,7 @@ This phase is done when every accepted change triggers delta capture, stale dete
 - **Acceptance:** each accepted change leaves a durable, reviewable record of what changed and what that change affects
 - **Carry-forward topics:** delta template changes, recurring omissions, better downstream impact capture
 
-#### [ ] P7.2 — Recurring architecture synchronization after every accepted delta
+#### [x] P7.2 — Recurring architecture synchronization after every accepted delta
 - **Mode:** Human + Factory
 - **Depends on:** P7.1
 - **Deliverable:** recurring sync checklist and execution routine
@@ -2135,3 +2136,28 @@ Notes for future prompts:
 - Treat `sync.phase7-carry-forward-delta-pack.v1` and `cp.phase7-delta-pack-index-data.v1` as the default delta-capture baseline for later accepted release, packet, or sync changes.
 - Run `python3 scripts/validators/validate_control_plane_integrity.py` and `python3 scripts/validators/validate_phase7_sync_artifacts.py` whenever sync artifacts, manifest/current-state sync placement, or the delta-trigger inventory changes.
 - Preserve the durable pair of sync-pack update plus append-only carry-forward entry; do not collapse accepted delta capture into ad hoc commit commentary.
+
+#### CF-0058 | 2026-04-12 | Source: P7.2 — Recurring architecture synchronization after every accepted delta
+
+New information:
+- Artifact `sync.phase7-recurring-architecture-sync.v1` now defines the accepted recurring architecture-sync loop that must run after every accepted delta affecting release, packet, registry/graph, or sync truth.
+- Artifact `cp.phase7-architecture-sync-checklist-data.v1` now freezes five recurring review groups covering topology/layer boundaries, run-context-provenance continuity, governance/writeback discipline, projection/repo boundaries, and forbidden-shortcut plus Platform Gate regressions.
+- `scripts/wrappers/run_phase7_architecture_sync.py` now emits a machine-readable recurring architecture-sync report that confirms accepted baseline inputs are present and enumerates the required manual review prompts.
+
+Impact:
+- `P7.3` can route stale candidates from one accepted checklist instead of inventing ad hoc architecture-review criteria per change.
+- Accepted deltas now have an explicit post-delta architecture review loop that preserves the accepted Phase 3 sync pass and Platform Gate posture without reopening baseline architecture decisions.
+- Later release-gate rechecks can reuse the same checklist groups and baseline refs when deciding whether a delta pressures release readiness.
+
+Status changes:
+- P7.2 marked done.
+- The completion snapshot now records the Phase 7 recurring architecture-sync routine and checklist as accepted.
+- Phase 7 remains in progress.
+
+Stale items:
+- None.
+
+Notes for future prompts:
+- Run `python3 scripts/wrappers/run_phase7_architecture_sync.py` after accepted delta preparation and record the resulting review-required or stale-candidate outcomes in the active delta pack or carry-forward entry.
+- Treat `cp.phase7-architecture-sync-checklist-data.v1` as the default checklist for canon, semantic, architecture, repo-boundary, and Platform Gate review after later accepted deltas.
+- Keep the recurring routine additive to the accepted Phase 3 sync pass; do not replace the accepted baseline with ad hoc review prompts or view-local heuristics.

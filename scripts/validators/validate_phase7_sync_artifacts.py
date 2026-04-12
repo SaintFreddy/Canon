@@ -14,6 +14,9 @@ CURRENT_STATE_PATH = REPO_ROOT / "docs/control-plane/core/codebase-current-state
 BLUEPRINT_INDEX_PATH = REPO_ROOT / "docs/control-plane/core/phase-6-release-blueprint-index.json"
 PACKET_INDEX_PATH = REPO_ROOT / "docs/control-plane/core/phase-6-execution-packet-index.json"
 DELTA_INDEX_PATH = REPO_ROOT / "docs/control-plane/core/phase-7-delta-pack-index.json"
+ARCHITECTURE_CHECKLIST_PATH = (
+    REPO_ROOT / "docs/control-plane/core/phase-7-architecture-sync-checklist.json"
+)
 
 SYNC_REQUIRED_HEADINGS = [
     "## 1. Purpose",
@@ -39,6 +42,13 @@ DELTA_REQUIRED_COMMANDS = [
     "python3 scripts/validators/validate_control_plane_integrity.py",
     "python3 scripts/validators/validate_phase7_sync_artifacts.py",
 ]
+
+ARCHITECTURE_REQUIRED_STATUSES = {
+    "aligned",
+    "review_required",
+    "stale_candidate",
+    "blocked",
+}
 
 
 def load_json(path: Path) -> dict:
@@ -212,6 +222,51 @@ def validate_delta_index(registry_ids: set[str]) -> dict:
     }
 
 
+def validate_architecture_checklist(registry_ids: set[str]) -> dict | None:
+    if not ARCHITECTURE_CHECKLIST_PATH.exists():
+        return None
+
+    issues: list[str] = []
+    checklist = load_json(ARCHITECTURE_CHECKLIST_PATH)
+    meta = checklist["architecture_sync_checklist_meta"]
+    groups = checklist["check_groups"]
+    status_catalog = checklist["result_status_catalog"]
+
+    for ref_key in ("sync_pack_ref", "delta_pack_ref", "baseline_sync_pass_ref"):
+        if meta[ref_key] not in registry_ids:
+            issues.append(f"metadata ref is not registered: {meta[ref_key]}")
+
+    status_values = {entry["status"] for entry in status_catalog}
+    if status_values != ARCHITECTURE_REQUIRED_STATUSES:
+        issues.append("architecture status catalog does not match accepted baseline")
+
+    for group in groups:
+        if not group["review_prompts"]:
+            issues.append(f"check group missing review prompts: {group['check_group_id']}")
+        if not group["escalation_on"]:
+            issues.append(f"check group missing escalation list: {group['check_group_id']}")
+        for ref in group["required_artifact_refs"]:
+            if ref not in registry_ids:
+                issues.append(
+                    f"check group references unregistered artifact: {group['check_group_id']} -> {ref}"
+                )
+
+    if checklist["summary"]["check_group_count"] != len(groups):
+        issues.append("architecture checklist summary count mismatch")
+
+    wrapper_path = REPO_ROOT / "scripts/wrappers/run_phase7_architecture_sync.py"
+    if not wrapper_path.exists():
+        issues.append("architecture sync wrapper is missing")
+
+    return {
+        "artifact_id": "cp.phase7-architecture-sync-checklist-data.v1",
+        "canonical_locator": "docs/control-plane/core/phase-7-architecture-sync-checklist.json",
+        "status": "pass" if not issues else "fail",
+        "issues": issues,
+        "check_group_count": len(groups),
+    }
+
+
 def main() -> int:
     registry = load_json(REGISTRY_PATH)
     manifest_index = load_json(MANIFEST_PATH)
@@ -258,6 +313,9 @@ def main() -> int:
 
     reports = [validate_sync_pack(entry, registry_ids) for entry in sync_entries]
     reports.append(validate_delta_index(registry_ids))
+    architecture_report = validate_architecture_checklist(registry_ids)
+    if architecture_report is not None:
+        reports.append(architecture_report)
 
     result = {
         "status": "pass"

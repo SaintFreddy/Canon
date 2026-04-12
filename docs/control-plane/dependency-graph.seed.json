@@ -662,6 +662,18 @@
       "artifact_type_id": "cp.control_plane_dataset",
       "artifact_status": "accepted",
       "canonical_locator": "docs/control-plane/core/phase-7-delta-pack-index.json"
+    },
+    {
+      "artifact_id": "sync.phase7-recurring-architecture-sync.v1",
+      "artifact_type_id": "sync.delta_sync_pack",
+      "artifact_status": "accepted",
+      "canonical_locator": "docs/control-plane/sync/phase-7-recurring-architecture-synchronization-routine.md"
+    },
+    {
+      "artifact_id": "cp.phase7-architecture-sync-checklist-data.v1",
+      "artifact_type_id": "cp.control_plane_dataset",
+      "artifact_status": "accepted",
+      "canonical_locator": "docs/control-plane/core/phase-7-architecture-sync-checklist.json"
     }
   ],
   "edges": [
@@ -11152,6 +11164,246 @@
       "edge_type": "depends_on",
       "propagation_mode": "auto",
       "notes": "The delta index tracks the accepted execution-packet inventory that must trigger durable delta capture."
+    },
+    {
+      "edge_id": "e-1312",
+      "from_artifact_id": "sync.phase7-recurring-architecture-sync.v1",
+      "to_artifact_id": "cp.master-plan.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "manual",
+      "notes": "The master plan names P7.2 as the recurring architecture-sync deliverable and review loop."
+    },
+    {
+      "edge_id": "e-1313",
+      "from_artifact_id": "sync.phase7-recurring-architecture-sync.v1",
+      "to_artifact_id": "cp.artifact-control-plane-spec.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "revalidate",
+      "notes": "The accepted control-plane spec defines sync artifact metadata, validation hooks, and stale propagation semantics."
+    },
+    {
+      "edge_id": "e-1314",
+      "from_artifact_id": "sync.phase7-recurring-architecture-sync.v1",
+      "to_artifact_id": "sync.phase7-carry-forward-delta-pack.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "manual",
+      "notes": "Recurring architecture sync runs after the accepted P7.1 delta-pack loop captures the change."
+    },
+    {
+      "edge_id": "e-1315",
+      "from_artifact_id": "sync.phase7-recurring-architecture-sync.v1",
+      "to_artifact_id": "cp.phase7-delta-pack-index-data.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "manual",
+      "notes": "Recurring architecture sync inherits the accepted release and packet trigger inventory from the Phase 7 delta index."
+    },
+    {
+      "edge_id": "e-1316",
+      "from_artifact_id": "sync.phase7-recurring-architecture-sync.v1",
+      "to_artifact_id": "arch.phase3-architecture-sync-pass.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "manual",
+      "notes": "The routine extends the accepted Phase 3 architecture sync pass into a recurring post-delta review loop."
+    },
+    {
+      "edge_id": "e-1317",
+      "from_artifact_id": "sync.phase7-recurring-architecture-sync.v1",
+      "to_artifact_id": "arch.phase3-platform-gate-spec.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "manual",
+      "notes": "Recurring sync must keep Platform Gate blocking semantics intact after accepted changes."
+    },
+    {
+      "edge_id": "e-1318",
+      "from_artifact_id": "sync.phase7-recurring-architecture-sync.v1",
+      "to_artifact_id": "cp.forbidden-shortcuts-register.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "manual",
+      "notes": "Recurring sync must keep forbidden-shortcut regressions explicit and reviewable."
+    },
+    {
+      "edge_id": "e-1319",
+      "from_artifact_id": "sync.phase7-recurring-architecture-sync.v1",
+      "to_artifact_id": "surf.phase6-repo-package-architecture-and-agent-execution-rules-pack.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "manual",
+      "notes": "Recurring sync reuses the accepted repo/package architecture baseline for later execution changes."
+    },
+    {
+      "edge_id": "e-1320",
+      "from_artifact_id": "sync.phase7-recurring-architecture-sync.v1",
+      "to_artifact_id": "surf.phase6-agent-oriented-codebase-pattern-and-documentation-plane-pack.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "manual",
+      "notes": "Recurring sync reuses the accepted documentation-plane and repo-truth posture for later sync work."
+    },
+    {
+      "edge_id": "e-1321",
+      "from_artifact_id": "cp.phase7-architecture-sync-checklist-data.v1",
+      "to_artifact_id": "cp.master-plan.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The master plan names P7.2 as the recurring architecture-sync deliverable and review loop."
+    },
+    {
+      "edge_id": "e-1322",
+      "from_artifact_id": "cp.phase7-architecture-sync-checklist-data.v1",
+      "to_artifact_id": "cp.artifact-control-plane-spec.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The accepted control-plane spec defines dataset metadata, dependency semantics, validation hooks, and stale rules."
+    },
+    {
+      "edge_id": "e-1323",
+      "from_artifact_id": "cp.phase7-architecture-sync-checklist-data.v1",
+      "to_artifact_id": "sync.phase7-recurring-architecture-sync.v1",
+      "edge_type": "derives_from",
+      "propagation_mode": "auto",
+      "notes": "The checklist operationalizes the accepted P7.2 sync routine as a machine-readable review baseline."
+    },
+    {
+      "edge_id": "e-1324",
+      "from_artifact_id": "cp.phase7-architecture-sync-checklist-data.v1",
+      "to_artifact_id": "sync.phase7-carry-forward-delta-pack.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The checklist inherits the accepted delta-pack baseline that triggers recurring architecture review."
+    },
+    {
+      "edge_id": "e-1325",
+      "from_artifact_id": "cp.phase7-architecture-sync-checklist-data.v1",
+      "to_artifact_id": "cp.phase7-delta-pack-index-data.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The checklist inherits the accepted release and packet trigger inventory from the Phase 7 delta index."
+    },
+    {
+      "edge_id": "e-1326",
+      "from_artifact_id": "cp.phase7-architecture-sync-checklist-data.v1",
+      "to_artifact_id": "canon.phase1-layer-primitive-separation.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The checklist depends on this accepted baseline artifact for one recurring architecture review group."
+    },
+    {
+      "edge_id": "e-1327",
+      "from_artifact_id": "cp.phase7-architecture-sync-checklist-data.v1",
+      "to_artifact_id": "canon.phase1-surface-release-topology.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The checklist depends on this accepted baseline artifact for one recurring architecture review group."
+    },
+    {
+      "edge_id": "e-1328",
+      "from_artifact_id": "cp.phase7-architecture-sync-checklist-data.v1",
+      "to_artifact_id": "surf.phase6-repo-package-architecture-and-agent-execution-rules-pack.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The checklist depends on this accepted baseline artifact for one recurring architecture review group."
+    },
+    {
+      "edge_id": "e-1329",
+      "from_artifact_id": "cp.phase7-architecture-sync-checklist-data.v1",
+      "to_artifact_id": "sem.phase2-core-object-state-machines.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The checklist depends on this accepted baseline artifact for one recurring architecture review group."
+    },
+    {
+      "edge_id": "e-1330",
+      "from_artifact_id": "cp.phase7-architecture-sync-checklist-data.v1",
+      "to_artifact_id": "arch.phase3-context-compiler-topology.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The checklist depends on this accepted baseline artifact for one recurring architecture review group."
+    },
+    {
+      "edge_id": "e-1331",
+      "from_artifact_id": "cp.phase7-architecture-sync-checklist-data.v1",
+      "to_artifact_id": "arch.phase3-data-storage-provenance-spec.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The checklist depends on this accepted baseline artifact for one recurring architecture review group."
+    },
+    {
+      "edge_id": "e-1332",
+      "from_artifact_id": "cp.phase7-architecture-sync-checklist-data.v1",
+      "to_artifact_id": "reuse.phase2-governance-authority-writeback-invariants.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The checklist depends on this accepted baseline artifact for one recurring architecture review group."
+    },
+    {
+      "edge_id": "e-1333",
+      "from_artifact_id": "cp.phase7-architecture-sync-checklist-data.v1",
+      "to_artifact_id": "reuse.phase2-proof-validation-invariants.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The checklist depends on this accepted baseline artifact for one recurring architecture review group."
+    },
+    {
+      "edge_id": "e-1334",
+      "from_artifact_id": "cp.phase7-architecture-sync-checklist-data.v1",
+      "to_artifact_id": "arch.phase3-api-ipc-event-contracts.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The checklist depends on this accepted baseline artifact for one recurring architecture review group."
+    },
+    {
+      "edge_id": "e-1335",
+      "from_artifact_id": "cp.phase7-architecture-sync-checklist-data.v1",
+      "to_artifact_id": "sem.phase2-projection-grammar-contracts.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The checklist depends on this accepted baseline artifact for one recurring architecture review group."
+    },
+    {
+      "edge_id": "e-1336",
+      "from_artifact_id": "cp.phase7-architecture-sync-checklist-data.v1",
+      "to_artifact_id": "surf.phase6-agent-oriented-codebase-pattern-and-documentation-plane-pack.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The checklist depends on this accepted baseline artifact for one recurring architecture review group."
+    },
+    {
+      "edge_id": "e-1337",
+      "from_artifact_id": "cp.phase7-architecture-sync-checklist-data.v1",
+      "to_artifact_id": "cp.phase6-module-test-contracts-data.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The checklist depends on this accepted baseline artifact for one recurring architecture review group."
+    },
+    {
+      "edge_id": "e-1338",
+      "from_artifact_id": "cp.phase7-architecture-sync-checklist-data.v1",
+      "to_artifact_id": "cp.forbidden-shortcuts-register.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The checklist depends on this accepted baseline artifact for one recurring architecture review group."
+    },
+    {
+      "edge_id": "e-1339",
+      "from_artifact_id": "cp.phase7-architecture-sync-checklist-data.v1",
+      "to_artifact_id": "arch.phase3-platform-gate-spec.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The checklist depends on this accepted baseline artifact for one recurring architecture review group."
+    },
+    {
+      "edge_id": "e-1340",
+      "from_artifact_id": "cp.phase7-architecture-sync-checklist-data.v1",
+      "to_artifact_id": "arch.phase3-architecture-sync-pass.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The checklist depends on this accepted baseline artifact for one recurring architecture review group."
+    },
+    {
+      "edge_id": "e-1341",
+      "from_artifact_id": "cp.phase7-architecture-sync-checklist-data.v1",
+      "to_artifact_id": "rel.chat-native-maturity-matrix.v1",
+      "edge_type": "depends_on",
+      "propagation_mode": "auto",
+      "notes": "The checklist depends on this accepted baseline artifact for one recurring architecture review group."
     }
   ]
 }
