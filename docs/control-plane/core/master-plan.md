@@ -234,11 +234,14 @@ This section answers, in plain terms, what is already done and what is not.
 - [x] The Phase 5 full run-class protocol packs have been produced and accepted.
 - [x] The Phase 5 Workflow / Trigger / Applet / Pack / Integration Binding specs have been produced and accepted.
 - [x] The Phase 5 Task Studio surface and lifecycle contract pack has been produced and accepted.
+- [x] The Phase 5 Task Studio V1 scope pack has been produced and accepted.
+- [x] The Phase 5 Commissioning Bridge -> Task Studio handoff contract has been produced and accepted.
+- [x] The Phase 6 surface contract packs have been produced and accepted.
 
-### 5.2 Not done yet
+### 5.2 High-level milestone snapshot
 
 - [x] The release contract packs for Platform Gate through R7 have been produced and accepted.
-- [ ] The full reusable semantics and Task Studio readiness packs have been produced and accepted.
+- [x] The full reusable semantics and Task Studio readiness packs have been produced and accepted.
 - [ ] The repo/package architecture and agent execution system have been implemented.
 - [ ] The implementation blueprints and bounded execution packets have not yet been generated and accepted.
 - [ ] The continuous stale-detection, carry-forward, and sync loop is operational.
@@ -250,7 +253,7 @@ This section answers, in plain terms, what is already done and what is not.
 - [x] Phase 2 — done in the repo
 - [x] Phase 3 — done in the repo
 - [x] Phase 4 — done in the repo
-- [~] Phase 5 — in progress
+- [x] Phase 5 — done in the repo
 - [~] Phase 6 — in progress
 - [ ] Phase 7 — not done
 
@@ -658,7 +661,7 @@ This phase is done when the release-to-SDK matrix, milestone architecture, and c
 
 ---
 
-## Phase 5 — Full reusable semantics and Task Studio readiness `[ ]`
+## Phase 5 — Full reusable semantics and Task Studio readiness `[x]`
 
 ### Goal
 
@@ -703,14 +706,14 @@ This phase is done when governance, proof, protocol packs, reusable execution ob
 - **Acceptance:** Task Studio is specified as a real app model, not just a future idea
 - **Carry-forward topics:** surface changes, lifecycle clarifications, layout rules, progressive-disclosure refinements
 
-#### [ ] P5.6 — Task Studio V1 scope pack
+#### [x] P5.6 — Task Studio V1 scope pack
 - **Mode:** Human-only
 - **Depends on:** P5.5
 - **Deliverable:** V1 task families, result/proof expectations, non-goals, initial build scope, onboarding/category-teaching constraints
 - **Acceptance:** V1 scope is explicit and protected from uncontrolled sprawl
 - **Carry-forward topics:** V1 inclusions/exclusions, onboarding insights, scope boundary changes
 
-#### [ ] P5.7 — Commissioning Bridge -> Task Studio handoff contract
+#### [x] P5.7 — Commissioning Bridge -> Task Studio handoff contract
 - **Mode:** Human-only
 - **Depends on:** P4.9 and P5.5 and P5.6
 - **Deliverable:** exact object and surface mapping from R7 semantics into Task Studio surfaces
@@ -719,7 +722,7 @@ This phase is done when governance, proof, protocol packs, reusable execution ob
 
 ---
 
-## Phase 6 — Surface/codebase substrate and execution machinery `[ ]`
+## Phase 6 — Surface/codebase substrate and execution machinery `[~]`
 
 ### Goal
 
@@ -729,7 +732,7 @@ Turn accepted specs into a repo, package map, implementation system, and bounded
 
 This phase is done when the package map, documentation plane, Factory operating system, pilot packets, blueprints, and execution packets are in place.
 
-#### [ ] P6.1 — Surface contract packs
+#### [x] P6.1 — Surface contract packs
 - **Mode:** Human + Factory
 - **Depends on:** P2.6 and P5.5
 - **Deliverable:** shared projection grammar packs, chat-native surface contracts, Task Studio surface contracts, later domain-surface backlog contracts
@@ -1909,3 +1912,69 @@ Notes for future prompts:
 - Treat `surf.phase6-shared-projection-grammar-surface-contract-pack.v1`, `surf.phase6-chat-native-surface-contract-pack.v1`, and `surf.phase6-later-domain-surface-backlog-contract-pack.v1` as the accepted Phase 6 surface-contract baseline.
 - Treat `surf.phase6-task-studio-surface-contract-pack.v1` as review-ready only until `reuse.phase5-task-studio-v1-scope-pack.v1` and `reuse.phase5-commissioning-bridge-task-studio-handoff-contract.v1` are human-accepted.
 - Keep `P6.1` out of repo/package/module architecture detail; that belongs to `P6.2`.
+
+#### CF-0049 | 2026-04-12 | Source: P5.6 — Human acceptance and landing
+
+New information:
+- `docs/control-plane/reuse/phase-5-task-studio-v1-scope-pack.md` is now accepted for downstream use.
+- Artifact `reuse.phase5-task-studio-v1-scope-pack.v1` has been promoted from `review_ready` to `accepted`.
+
+Impact:
+- P5.7, P6.1, and later route/module work now have an accepted V1 exposure baseline instead of a review-ready support note.
+- V1 family scope, surface exposure, artifact-lane-first persistence posture, and onboarding constraints are now fixed for downstream use.
+
+Status changes:
+- P5.6 marked done.
+- The completion snapshot now records the Phase 5 Task Studio V1 scope pack as accepted.
+
+Stale items:
+- None.
+
+Notes for future prompts:
+- Treat `reuse.phase5-task-studio-v1-scope-pack.v1` as the accepted V1 scope baseline for Task Studio family exposure, primary-vs-companion surface emphasis, persistence posture, and onboarding/category-teaching constraints.
+- Downstream work may narrow presentation, but it may not reopen the accepted V1 scope decisions without a new accepted delta.
+
+#### CF-0050 | 2026-04-12 | Source: P5.7 — Human acceptance and landing
+
+New information:
+- `docs/control-plane/reuse/phase-5-commissioning-bridge-to-task-studio-handoff-contract.md` is now accepted for downstream use.
+- Artifact `reuse.phase5-commissioning-bridge-task-studio-handoff-contract.v1` has been promoted from `review_ready` to `accepted`.
+
+Impact:
+- Phase 5 now has an accepted R7 -> Task Studio handoff baseline instead of a review-ready support note.
+- P6.1 and P6.2 can rely on exact payload preservation, `Acceptance Stack` decomposition, and lifecycle landing continuity without re-deriving them from R7 and P5.5.
+
+Status changes:
+- P5.7 marked done.
+- The completion snapshot now records the Phase 5 Commissioning Bridge -> Task Studio handoff contract as accepted.
+- Phase 5 marked done.
+
+Stale items:
+- None.
+
+Notes for future prompts:
+- Treat `reuse.phase5-commissioning-bridge-task-studio-handoff-contract.v1` together with `reuse.phase5-task-studio-v1-scope-pack.v1` as the accepted R7 -> Task Studio projection baseline for exact payload preservation, default landings, and reusable-execution continuity.
+- Downstream work may not reinterpret the handoff as export/import, app-local metadata, or ontology translation.
+
+#### CF-0051 | 2026-04-12 | Source: P6.1 — Task Studio surface contract acceptance
+
+New information:
+- `docs/control-plane/surfaces/phase-6-task-studio-surface-contract-pack.md` is now accepted for downstream use.
+- Artifact `surf.phase6-task-studio-surface-contract-pack.v1` has been promoted from `review_ready` to `accepted`.
+- All four P6.1 surface-contract packs are now accepted.
+
+Impact:
+- P6.2 can plan repo/package architecture against fully accepted shared grammar, chat-native, Task Studio, and later-domain surface contracts.
+- Later route/module work no longer needs a provisional Task Studio surface-contract layer.
+
+Status changes:
+- P6.1 marked done.
+- The completion snapshot now records the Phase 6 surface contract packs as accepted.
+- Phase 6 remains in progress.
+
+Stale items:
+- None.
+
+Notes for future prompts:
+- Treat `surf.phase6-task-studio-surface-contract-pack.v1` together with the other accepted `surf.phase6-*` artifacts as the accepted Phase 6 surface-contract baseline.
+- If accepted V1 scope or handoff semantics change later, mark the Task Studio surface contract pack stale and regenerate it rather than patching around drift.

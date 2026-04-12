@@ -1,11 +1,11 @@
 # Phase 5 Task Studio V1 scope pack
 Version: 1.0
-Status: Review-ready
+Status: Accepted
 Task: P5.6 — Task Studio V1 scope pack
 Artifact ID: reuse.phase5-task-studio-v1-scope-pack.v1
-Reuse scope: Review-ready Task Studio V1 scope pack covering initial task-family exposure, surface exposure, result/proof expectations, non-goals, initial build scope, and onboarding/category-teaching constraints over accepted Task Studio semantics
+Reuse scope: Accepted Task Studio V1 scope pack covering initial task-family exposure, surface exposure, result/proof expectations, non-goals, initial build scope, and onboarding/category-teaching constraints over accepted Task Studio semantics
 
-This artifact is review-ready for human acceptance.
+This artifact is accepted for downstream use.
 It narrows V1 exposure and defaults only.
 It does not reopen accepted commissioned-work semantics, Task Studio lifecycle meaning, or the R7 handoff payload.
 
@@ -169,7 +169,7 @@ Reusable-execution lineage remains inspectable in V1; authoring and administrati
 
 ### 11.1 For `P5.7`
 
-- the commissioning-handoff contract should use this pack as the review-ready V1 exposure floor for default landing surfaces, primary/companion splits, and artifact-lane-first persistence,
+- the commissioning-handoff contract should use this pack as the accepted V1 exposure floor for default landing surfaces, primary/companion splits, and artifact-lane-first persistence,
 - the handoff pack may narrow defaults further only when it preserves the full payload and makes any fallback routing explicit.
 
 ### 11.2 For `P6.1`

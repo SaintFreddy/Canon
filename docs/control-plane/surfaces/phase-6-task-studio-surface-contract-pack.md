@@ -1,12 +1,12 @@
 # Phase 6 Task Studio surface contract pack
 Version: 1.0
-Status: Review-ready
+Status: Accepted
 Task: P6.1 — Surface contract packs
 Artifact ID: surf.phase6-task-studio-surface-contract-pack.v1
-Surface scope: Review-ready Phase 6 Task Studio surface contract pack mapping named Task Studio surfaces, route contracts, lifecycle landings, and R7 handoff continuity onto the shared grammar
+Surface scope: Accepted Phase 6 Task Studio surface contract pack mapping named Task Studio surfaces, route contracts, lifecycle landings, and R7 handoff continuity onto the shared grammar
 
-This artifact is review-ready for human acceptance.
-It turns the accepted Task Studio surface/lifecycle baseline plus the review-ready P5.6/P5.7 support packs into a Phase 6 route-contract layer.
+This artifact is accepted for downstream use.
+It turns the accepted Task Studio surface/lifecycle baseline plus the accepted P5.6/P5.7 support packs into a Phase 6 route-contract layer.
 It does not define concrete URL paths, packages, or components.
 
 ## 1. Purpose
@@ -17,7 +17,7 @@ It exists to:
 
 - map each named Task Studio surface to a stable route-contract and shared grammar composition,
 - make lifecycle-primary and companion-surface expectations explicit,
-- apply the review-ready V1 overlay and the review-ready R7 handoff continuity rules at the surface-contract layer.
+- apply the accepted V1 overlay and the accepted R7 handoff continuity rules at the surface-contract layer.
 
 ## 2. Scope boundaries
 
@@ -33,7 +33,7 @@ It exists to:
 - repo/package/module architecture,
 - concrete URL paths, filesystem layout, or component hierarchies,
 - changes to Task Studio semantics already fixed in `P5.5`,
-- changes to V1 scope or handoff meaning beyond the review-ready P5.6/P5.7 support boundary.
+- changes to V1 scope or handoff meaning beyond the accepted P5.6/P5.7 baseline.
 
 ## 3. Task Studio interpretation rules
 
@@ -54,12 +54,12 @@ Companions enrich the same shared objects; they do not replace them.
 
 ### 3.4 V1-overlay rule
 
-The review-ready `P5.6` V1 scope pack narrows default emphasis, primary-vs-companion posture, and landing preference only.
-This pack therefore keeps route contracts stable while allowing a review-ready home-first versus stage-first landing preference over the same object graph.
+The accepted `P5.6` V1 scope pack narrows default emphasis, primary-vs-companion posture, and landing preference only.
+This pack therefore keeps route contracts stable while allowing an accepted home-first versus stage-first landing preference over the same object graph.
 
 ### 3.5 R7-handoff-continuity rule
 
-The review-ready `P5.7` handoff contract defines exact payload preservation from R7 into Task Studio.
+The accepted `P5.7` handoff contract defines exact payload preservation from R7 into Task Studio.
 This pack therefore treats handoff as a route-selection and surface-cluster problem over the same shared objects rather than a new intake or transfer ontology.
 
 ## 4. Route-contract summary
@@ -119,14 +119,14 @@ This pack therefore treats handoff as a route-selection and surface-cluster prob
 1. Shared IDs and lineage refs remain unchanged across the handoff, including reusable-execution refs when materially relevant.
 2. `Acceptance Stack` remains an alias/composition over proof, delta, review, approval, and writeback surfaces rather than a new shared object.
 3. Failed, blocked, background, and resumed runs remain inspectable through the same route contracts; no failure state disappears into scheduler-only or monitor-only storage.
-4. This review-ready pack does not invent a mandatory `handoff_id` or any other Task Studio-private transfer object.
+4. This accepted pack does not invent a mandatory `handoff_id` or any other Task Studio-private transfer object.
 
 ## 8. Boundary locks for downstream work
 
 1. `P6.2` may map packages and modules around these route contracts, but it may not reinterpret Task Studio semantics or the R7 payload.
 2. No Task Studio route contract may create a second truth model beneath the named surface aliases.
 3. `Console` remains diagnostic only; it may not be the only place where governance-critical semantics are available.
-4. This pack stays `review_ready` until the review-ready P5.6/P5.7 support packs are human-accepted or otherwise resolved.
+4. Accepted changes to P5.6 or P5.7 that alter V1 or handoff meaning should mark this pack stale and trigger regeneration.
 
 ## 9. Downstream implications
 
@@ -135,9 +135,9 @@ This pack therefore treats handoff as a route-selection and surface-cluster prob
 - route, module, and component planning should use these route-contract IDs and grammar compositions as the Task Studio implementation baseline,
 - presentation and navigation may vary, but the named surfaces, companions, and lifecycle-primary ownership may not drift.
 
-### 9.2 For later acceptance work
+### 9.2 For later stale review
 
-- once P5.6 and P5.7 are human-accepted, this pack can be promoted from `review_ready` to `accepted` without re-deriving Task Studio routes from scratch.
+- later accepted changes to P5.6, P5.7, or Task Studio handoff semantics should mark this pack stale and regenerate the affected route-contract layer.
 
 ## 10. Review notes
 
@@ -145,5 +145,5 @@ Human review should confirm that this pack:
 
 - maps each named Task Studio surface to one stable route-contract and grammar composition,
 - keeps lifecycle-primary versus companion surface ownership explicit,
-- honors the review-ready V1 overlay and the review-ready R7 handoff contract without semantic drift,
+- honors the accepted V1 overlay and the accepted R7 handoff contract without semantic drift,
 - avoids inventing concrete module/package/URL detail that belongs to `P6.2`.

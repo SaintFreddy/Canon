@@ -1,13 +1,13 @@
 # Phase 5 Commissioning Bridge -> Task Studio handoff contract
 Version: 1.0
-Status: Review-ready
+Status: Accepted
 Task: P5.7 — Commissioning Bridge -> Task Studio handoff contract
 Artifact ID: reuse.phase5-commissioning-bridge-task-studio-handoff-contract.v1
-Reuse scope: Review-ready handoff contract mapping accepted R7 commissioning semantics into Task Studio surfaces and lifecycle without ontology translation
+Reuse scope: Accepted handoff contract mapping accepted R7 commissioning semantics into Task Studio surfaces and lifecycle without ontology translation
 
-This artifact is review-ready for human acceptance.
+This artifact is accepted for downstream use.
 It defines exact projection and continuity rules from R7 into Task Studio surfaces.
-It depends on the review-ready P5.6 V1 scope pack and does not alter accepted R7, Task Studio, governance, proof, or reusable-execution semantics.
+It depends on the accepted P5.6 V1 scope pack and does not alter accepted R7, Task Studio, governance, proof, or reusable-execution semantics.
 
 ## 1. Purpose
 
@@ -33,7 +33,7 @@ It exists to:
 ### Out of scope
 
 - changing R7 shared-object meaning or Task Studio surface meaning,
-- changing V1 inclusion/exclusion policy beyond the review-ready P5.6 scope boundary,
+- changing V1 inclusion/exclusion policy beyond the accepted P5.6 scope boundary,
 - route/module/component implementation detail that belongs to `P6.1`,
 - repo/package architecture that belongs to `P6.2`,
 - inventing a mandatory new shared-object schema for handoff identity.
@@ -63,7 +63,7 @@ Inside Task Studio it decomposes into `Proof Ledger`, `Delta Inspector`, and `Wr
 ### 3.5 Shared-ID-and-lineage rule
 
 The handoff keeps stable shared IDs and lineage refs, including `commission_id`, `contract_id`, `run_id`, `proof_bundle_id`, `state_delta_id`, `writeback_proposal_id`, linked artifact refs, `amends_contract_ref`, and frozen admitted-basis lineage.
-This draft does not invent a mandatory `handoff_id`; if a later accepted shared-object pack introduces one, it must be additive rather than replacing the preserved R7 payload.
+This pack does not invent a mandatory `handoff_id`; if a later accepted shared-object pack introduces one, it must be additive rather than replacing the preserved R7 payload.
 
 ### 3.6 Failure-and-resume-parity rule
 
@@ -158,7 +158,7 @@ When a V1 default chooses `Task Home` first, the landing must preserve direct de
 
 1. `P5.6` may choose a home-first or stage-first default landing, but the exact payload mapping in this pack may not be weakened or replaced.
 2. `P6.1` must implement this handoff as route/module contracts over the accepted Task Studio surfaces and shared grammar, not as a new handoff object model.
-3. `P6.2` may plan package boundaries around this contract only after human acceptance; it may not reinterpret the handoff as repo-driven semantics.
+3. `P6.2` may plan package boundaries around this accepted contract, but it may not reinterpret the handoff as repo-driven semantics.
 4. `Acceptance Stack` remains a projection alias/composition; it may not become a replacement shared object or a hidden convenience verdict.
 5. No mandatory `handoff_id` or export/import artifact is introduced here; any later formalization must remain additive to the preserved R7 payload.
 
@@ -171,8 +171,8 @@ When a V1 default chooses `Task Home` first, the landing must preserve direct de
 
 ### 10.2 For later repo/package work
 
-- once human-accepted, this pack should act as the semantic handoff baseline for package mapping, event routing, and route/module boundaries,
-- until then, it remains the strongest review-ready support note for preserving R7 -> Task Studio continuity without reopening meaning.
+- this accepted pack now acts as the semantic handoff baseline for package mapping, event routing, and route/module boundaries,
+- later package or route planning may refine implementation detail, but it may not reopen the accepted handoff meaning.
 
 ## 11. Review notes
 

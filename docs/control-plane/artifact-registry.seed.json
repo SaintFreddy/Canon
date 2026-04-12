@@ -7168,7 +7168,7 @@
       "artifact_type_id": "reuse.execution_governance_pack",
       "title": "Phase 5 Task Studio V1 scope pack",
       "version": "1.0.0",
-      "artifact_status": "review_ready",
+      "artifact_status": "accepted",
       "semantic_owner": "Governance/proof steward",
       "stewardship_mode": "human_only",
       "acceptance_authority": "Human semantic owner",
@@ -7219,7 +7219,7 @@
           "artifact_id": "cp.artifact-control-plane-spec.v1",
           "propagation_mode": "auto",
           "required_for_acceptance": true,
-          "notes": "The accepted P0.1 control-plane spec defines artifact metadata, dependency semantics, validation hooks, and stale rules for this review-ready scope pack."
+          "notes": "The accepted P0.1 control-plane spec defines artifact metadata, dependency semantics, validation hooks, and stale rules for this accepted scope pack."
         },
         {
           "edge_type": "depends_on",
@@ -7455,8 +7455,8 @@
       ],
       "stale_rule_id": "sr.derivative.manual",
       "notes": [
-        "P5.6 review-ready Task Studio V1 scope pack narrowing initial family exposure, stage-centered surface scope, result/proof/delta expectations, and conservative reusable-execution exposure without reopening accepted semantics.",
-        "Prepared for human review as the conservative V1 boundary feeding later handoff and surface-contract work; not yet accepted for downstream use."
+        "P5.6 accepted Task Studio V1 scope pack narrowing initial family exposure, stage-centered surface scope, result/proof/delta expectations, and conservative reusable-execution exposure without reopening accepted semantics.",
+        "Accepted for downstream use as the conservative V1 boundary feeding commissioning handoff, Task Studio surface contracts, and later route/module planning."
       ]
     },
     {
@@ -7464,7 +7464,7 @@
       "artifact_type_id": "reuse.execution_governance_pack",
       "title": "Phase 5 Commissioning Bridge -> Task Studio handoff contract",
       "version": "1.0.0",
-      "artifact_status": "review_ready",
+      "artifact_status": "accepted",
       "semantic_owner": "Governance/proof steward",
       "stewardship_mode": "human_only",
       "acceptance_authority": "Human semantic owner",
@@ -7515,7 +7515,7 @@
           "artifact_id": "cp.artifact-control-plane-spec.v1",
           "propagation_mode": "auto",
           "required_for_acceptance": true,
-          "notes": "The accepted P0.1 control-plane spec defines artifact metadata, dependency semantics, validation hooks, and stale rules for this review-ready handoff contract."
+          "notes": "The accepted P0.1 control-plane spec defines artifact metadata, dependency semantics, validation hooks, and stale rules for this accepted handoff contract."
         },
         {
           "edge_type": "depends_on",
@@ -7711,7 +7711,7 @@
           "artifact_id": "reuse.phase5-task-studio-v1-scope-pack.v1",
           "propagation_mode": "auto",
           "required_for_acceptance": true,
-          "notes": "The review-ready P5.6 scope pack narrows V1 default landing and exposure choices that this handoff must honor without weakening exact payload preservation."
+          "notes": "The accepted P5.6 scope pack narrows V1 default landing and exposure choices that this handoff must honor without weakening exact payload preservation."
         },
         {
           "edge_type": "depends_on",
@@ -7758,8 +7758,8 @@
       ],
       "stale_rule_id": "sr.derivative.manual",
       "notes": [
-        "P5.7 review-ready Commissioning Bridge -> Task Studio handoff contract mapping the accepted R7 payload onto Task Studio surfaces, lifecycle landings, and continuity rules without ontology translation.",
-        "Prepared for human review as the exact projection baseline for later surface-contract work; not yet accepted for downstream use."
+        "P5.7 accepted Commissioning Bridge -> Task Studio handoff contract mapping the accepted R7 payload onto Task Studio surfaces, lifecycle landings, and continuity rules without ontology translation.",
+        "Accepted for downstream use as the exact projection baseline for Task Studio route contracts, repo/package planning, and later handoff-aware implementation work."
       ]
     },
     {
@@ -8096,12 +8096,12 @@
       "artifact_type_id": "surf.surface_repo_pack",
       "title": "Phase 6 Task Studio surface contract pack",
       "version": "1.0.0",
-      "artifact_status": "review_ready",
+      "artifact_status": "accepted",
       "semantic_owner": "Surface/repo steward",
       "stewardship_mode": "human_factory",
       "acceptance_authority": "Human architecture owner",
       "canonical_locator": "docs/control-plane/surfaces/phase-6-task-studio-surface-contract-pack.md",
-      "surface_scope": "Review-ready Phase 6 Task Studio surface contract pack mapping named Task Studio surfaces, route contracts, lifecycle landings, and R7 handoff continuity onto the shared grammar",
+      "surface_scope": "Accepted Phase 6 Task Studio surface contract pack mapping named Task Studio surfaces, route contracts, lifecycle landings, and R7 handoff continuity onto the shared grammar",
       "source_authority_refs": [
         "cp.master-plan.v1",
         "canon.phase1-layer-primitive-separation.v1",
@@ -8184,14 +8184,14 @@
           "artifact_id": "reuse.phase5-task-studio-v1-scope-pack.v1",
           "propagation_mode": "auto",
           "required_for_acceptance": true,
-          "notes": "The review-ready P5.6 scope pack narrows V1 default landings, primary-vs-companion emphasis, and persistence posture that this pack must honor."
+          "notes": "The accepted P5.6 scope pack narrows V1 default landings, primary-vs-companion emphasis, and persistence posture that this pack must honor."
         },
         {
           "edge_type": "depends_on",
           "artifact_id": "reuse.phase5-commissioning-bridge-task-studio-handoff-contract.v1",
           "propagation_mode": "auto",
           "required_for_acceptance": true,
-          "notes": "The review-ready P5.7 handoff contract defines the exact R7 payload landing and continuity rules that this pack must surface-contract."
+          "notes": "The accepted P5.7 handoff contract defines the exact R7 payload landing and continuity rules that this pack must surface-contract."
         },
         {
           "edge_type": "depends_on",
@@ -8245,8 +8245,8 @@
       ],
       "stale_rule_id": "sr.derivative.manual",
       "notes": [
-        "P6.1 review-ready Task Studio surface contract pack mapping named Task Studio surfaces, route contracts, lifecycle landings, and R7 handoff continuity onto the shared grammar baseline.",
-        "Prepared for human review pending acceptance of the review-ready P5.6/P5.7 support packs; not yet accepted for downstream use."
+        "P6.1 accepted Task Studio surface contract pack mapping named Task Studio surfaces, route contracts, lifecycle landings, and R7 handoff continuity onto the shared grammar baseline.",
+        "Accepted for downstream use as the Task Studio route-contract baseline feeding repo/package planning and later implementation-facing route/module work."
       ]
     },
     {
