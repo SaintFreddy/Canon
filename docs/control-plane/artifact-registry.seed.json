@@ -8360,6 +8360,240 @@
         "P6.1 accepted later domain-surface backlog contract pack reserving future surface families, grammar slots, and dependency gates without inventing domain semantics.",
         "Accepted for downstream use as the boundary-only backlog baseline feeding later domain surface work, repo/package planning, and implementation blueprints."
       ]
+    },
+    {
+      "artifact_id": "surf.phase6-repo-package-architecture-and-agent-execution-rules-pack.v1",
+      "artifact_type_id": "surf.surface_repo_pack",
+      "title": "Phase 6 repo/package architecture and agent execution rules pack",
+      "version": "1.0.0",
+      "artifact_status": "accepted",
+      "semantic_owner": "Surface/repo steward",
+      "stewardship_mode": "human_factory",
+      "acceptance_authority": "Human architecture owner",
+      "canonical_locator": "docs/control-plane/surfaces/phase-6-repo-package-architecture-and-agent-execution-rules-pack.md",
+      "surface_scope": "Accepted Phase 6 repo/package architecture and agent execution rules pack mapping accepted runtime planes, package seams, route contracts, and Factory execution discipline onto one implementation-facing repo layout",
+      "source_authority_refs": [
+        "cp.master-plan.v1",
+        "cp.repo-agent-operating-contract.v1",
+        "cp.factory-operating-contract.v1",
+        "cp.packet-brief-schema-data.v1",
+        "cp.forbidden-shortcuts-register.v1",
+        "canon.phase1-layer-primitive-separation.v1",
+        "canon.phase1-surface-release-topology.v1",
+        "canon.phase1-rewrite-containment-seams.v1",
+        "canon.phase1-scenario-corpus.v1",
+        "sem.phase2-core-object-state-machines.v1",
+        "sem.phase2-projection-grammar-contracts.v1",
+        "arch.phase3-technical-architecture-baseline.v1",
+        "arch.phase3-api-ipc-event-contracts.v1",
+        "arch.phase3-platform-gate-spec.v1",
+        "arch.phase3-architecture-sync-pass.v1",
+        "rel.chat-native-maturity-matrix.v1",
+        "reuse.phase5-commissioning-bridge-task-studio-handoff-contract.v1",
+        "surf.phase6-shared-projection-grammar-surface-contract-pack.v1",
+        "surf.phase6-chat-native-surface-contract-pack.v1",
+        "surf.phase6-task-studio-surface-contract-pack.v1",
+        "surf.phase6-later-domain-surface-backlog-contract-pack.v1",
+        "sa.all-prims.v1",
+        "sa.chat-native-release-plan.v1",
+        "sa.task-studio-north-star.v1"
+      ],
+      "dependency_refs": [
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.master-plan.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The master plan defines P6.2 as the repo/package phase and requires package map, repo layout, module contract, and agent execution deliverables."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.artifact-control-plane-spec.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P0.1 control-plane spec defines artifact metadata, dependency semantics, validation hooks, and stale rules for this repo/package pack."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.repo-agent-operating-contract.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P0.2 operating contract defines accepted-artifact truth, AGENTS layering, packet scope, and registry/graph sync rules that implementation work must inherit."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.factory-operating-contract.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P0.3 Factory contract defines bounded headless execution, autonomy bands, review rules, and no-second-stack constraints that this pack extends into later implementation work."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.packet-brief-schema-data.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted packet-brief schema fixes the minimum bounded-work fields that later implementation packets and module-targeted runs must preserve."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "cp.forbidden-shortcuts-register.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The forbidden-shortcuts register blocks repo-shape architecture drift, direct UI-to-worker backdoors, hidden truth models, and second-stack reintroduction."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "canon.phase1-layer-primitive-separation.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P1.3 owner-layer pack keeps packages and modules from re-owning shared primitives by file placement."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "canon.phase1-surface-release-topology.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P1.4 topology canon fixes the chat-native -> Task Studio path and the first-party app separation that this repo layout must preserve."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "canon.phase1-rewrite-containment-seams.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P1.5 seam map requires repo/package work to stay downstream of stable seam ownership and keep high-blast-radius truth below views."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "canon.phase1-scenario-corpus.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P1.6 scenario corpus grounds package and module planning against branching, proof, writeback, and handoff edge cases."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "sem.phase2-core-object-state-machines.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P2.1 core-object pack defines the shared objects that concrete packages and modules must round-trip without replacement."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "sem.phase2-projection-grammar-contracts.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P2.6 grammar pack defines the shared grammar that app and route modules must reuse rather than replace."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "arch.phase3-technical-architecture-baseline.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P3.1 baseline defines the runtime planes and process families that this concrete repo/package map must follow."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "arch.phase3-api-ipc-event-contracts.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P3.4 API/IPC/event pack defines the typed boundary contracts and no-direct-UI-to-worker rule that package boundaries must preserve."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "arch.phase3-platform-gate-spec.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P3.5 Platform Gate pack defines the forced package/service areas and gate-level boundary expectations that this pack concretizes."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "arch.phase3-architecture-sync-pass.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P3.6 sync pass confirms that the architecture, release doctrine, grammar, and seam map are aligned before repo/package concretization."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "rel.chat-native-maturity-matrix.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P4.1 maturity matrix fixes the non-collapsible logical package seams and the release-by-release package floors this layout must preserve."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "reuse.phase5-commissioning-bridge-task-studio-handoff-contract.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted P5.7 handoff contract fixes the exact R7 payload continuity and route/module boundary rules that concrete app workspaces must honor."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "surf.phase6-shared-projection-grammar-surface-contract-pack.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted shared grammar surface pack defines the route-cluster and alias rules that projection packages must reuse."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "surf.phase6-chat-native-surface-contract-pack.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted chat-native surface pack defines the R1-R7 cluster modules and first-party chat-native app boundaries that this repo layout must support."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "surf.phase6-task-studio-surface-contract-pack.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted Task Studio surface pack defines the `TS-SC-*` route modules and handoff-aware app boundaries that this repo layout must support."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "surf.phase6-later-domain-surface-backlog-contract-pack.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The accepted later-domain backlog pack defines the reserved later-domain roots and the semantic gates that must exist before those roots become active implementation scope."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "sa.all-prims.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The primitive-set authority defines the engine/shared-environment/app boundary and keeps repo layout from becoming semantic ownership proof."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "sa.chat-native-release-plan.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The release doctrine fixes the Platform Gate through R7 order and the bridge stages whose package floors and app roots must remain explicit."
+        },
+        {
+          "edge_type": "depends_on",
+          "artifact_id": "sa.task-studio-north-star.v1",
+          "propagation_mode": "auto",
+          "required_for_acceptance": true,
+          "notes": "The north-star authority defines Task Studio as a run-native commissioned-work app and keeps the package map aligned to that handoff target."
+        }
+      ],
+      "validation_hooks": [
+        {
+          "hook_id": "vh.dependency.integrity"
+        },
+        {
+          "hook_id": "vh.source.trace-review"
+        },
+        {
+          "hook_id": "vh.consistency.cross-pack-review"
+        },
+        {
+          "hook_id": "vh.manual.acceptance"
+        }
+      ],
+      "stale_rule_id": "sr.derivative.manual",
+      "notes": [
+        "P6.2 accepted repo/package architecture and agent execution rules pack mapping runtime planes, logical package seams, route/module families, and additive Factory execution rules onto one implementation-facing repo layout.",
+        "Accepted for downstream use as the package-map and execution baseline feeding P6.3 documentation-plane work, P6.4 pilot packets, and P6.5-P6.6 implementation-facing work."
+      ]
     }
   ]
 }

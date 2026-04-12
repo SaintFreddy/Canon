@@ -242,7 +242,7 @@ This section answers, in plain terms, what is already done and what is not.
 
 - [x] The release contract packs for Platform Gate through R7 have been produced and accepted.
 - [x] The full reusable semantics and Task Studio readiness packs have been produced and accepted.
-- [ ] The repo/package architecture and agent execution system have been implemented.
+- [x] The repo/package architecture and agent execution system have been implemented.
 - [ ] The implementation blueprints and bounded execution packets have not yet been generated and accepted.
 - [ ] The continuous stale-detection, carry-forward, and sync loop is operational.
 
@@ -739,7 +739,7 @@ This phase is done when the package map, documentation plane, Factory operating 
 - **Acceptance:** surfaces reuse one grammar and remain aligned to accepted semantics
 - **Carry-forward topics:** surface contract changes, shared grammar overrides, later-domain implications
 
-#### [ ] P6.2 — Repo/package architecture and agent execution rules
+#### [x] P6.2 — Repo/package architecture and agent execution rules
 - **Mode:** Human + Factory
 - **Depends on:** P3.6 and P4.1 and P5.7
 - **Deliverable:** full package map, repo layout, package boundaries, agent execution rules, module contract requirements
@@ -1978,3 +1978,28 @@ Stale items:
 Notes for future prompts:
 - Treat `surf.phase6-task-studio-surface-contract-pack.v1` together with the other accepted `surf.phase6-*` artifacts as the accepted Phase 6 surface-contract baseline.
 - If accepted V1 scope or handoff semantics change later, mark the Task Studio surface contract pack stale and regenerate it rather than patching around drift.
+
+#### CF-0052 | 2026-04-12 | Source: P6.2 — Repo/package architecture and agent execution rules
+
+New information:
+- `docs/control-plane/surfaces/phase-6-repo-package-architecture-and-agent-execution-rules-pack.md` now defines the accepted Phase 6 repo/package architecture and agent execution baseline.
+- Artifact `surf.phase6-repo-package-architecture-and-agent-execution-rules-pack.v1` is registered in the control-plane registry and dependency graph as `accepted`.
+- The pack maps accepted runtime planes and logical package seams onto concrete repo roots, workspace families, module-boundary rules, and additive agent execution discipline without letting repo shape dictate platform meaning.
+
+Impact:
+- `P6.3` now has an accepted workspace/root and module-boundary baseline for documentation-plane, manifests, and generated current-state work.
+- `P6.4` through `P6.6` can benchmark, blueprint, and packetize work against one accepted repo/package and agent-execution system instead of inventing task-local layout or execution rules.
+- Later implementation work now has explicit first-party app roots, shared package families, service/worker roots, reserved later-domain roots, and preserved no-direct-UI-to-worker / no-second-stack constraints.
+
+Status changes:
+- P6.2 marked done.
+- The completion snapshot now records the repo/package architecture and agent execution system as implemented.
+- Phase 6 remains in progress.
+
+Stale items:
+- None.
+
+Notes for future prompts:
+- Treat `surf.phase6-repo-package-architecture-and-agent-execution-rules-pack.v1` as the accepted package-map and execution baseline for `apps/`, `packages/`, `services/`, `workers/`, `domains/`, `tests/`, and `scripts/` roots.
+- Preserve the rule that repo layout follows accepted architecture, release, and handoff truth; do not use file placement to re-own shared objects or to create direct UI-to-worker execution paths.
+- Keep later implementation-facing work additive to accepted P0.2/P0.3 execution rules and do not import P0.5-only packet-budget policy into package or automation semantics.
