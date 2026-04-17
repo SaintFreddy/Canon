@@ -115,6 +115,11 @@ Required behaviors:
 - bind to workflows
 - compare recipe variants
 - explain why context was assembled a certain way
+- materialize explicit memory/canon admission inputs for admitted runs
+
+Important boundary:
+A Context Recipe is a reusable policy primitive.
+It may guide environment-control admission for memory/canon lane inputs, but it is not itself the admitted per-run lane input.
 
 #### E4. Strategy Preset
 

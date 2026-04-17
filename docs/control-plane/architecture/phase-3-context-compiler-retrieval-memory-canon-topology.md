@@ -109,6 +109,8 @@ Pinned evidence, explicit exclusions, and frozen pack bases survive compaction, 
 
 ## 5. Object separation and compiler outputs
 
+For admitted runs, environment-control admission may supply per-lane memory/canon admission inputs to the compiler. Those lane inputs carry authoritative candidate refs, lane admission state, and optional `reason_code` or reason detail; the canon lane may also carry mode and optional validity summary. A lane may also remain explicitly absent.
+
 | Object | Contains | Explicitly excludes | Produced by |
 | --- | --- | --- | --- |
 | Source Reference | Source identity, locator, version/freshness, trust metadata | Retrieval decisions, memory/canon injection, policy snapshot | Source ingest coordinator |
@@ -142,11 +144,13 @@ Pinned evidence, explicit exclusions, and frozen pack bases survive compaction, 
 | Canon after memory | Scope, acceptance state, consume/challenge mode, dependency notes | Canon constrains context only through explicit selected refs and mode notes; canon does not silently mutate memory | Explicit canon selection set |
 | Policy and authority after canon | Authority Scope, policy bindings, tool/model availability, runtime budget | Authority is a separate injected boundary, not part of evidence or canon | Final compile constraints |
 
+When admitted memory/canon lane inputs are supplied, the memory and canon injection stages use them as the authoritative selection basis. Any compiler fallback remains explicit when a lane input is absent.
+
 ## 8. Freeze / replay / diff behavior
 
 | Mode | Basis | Required behavior | Output |
 | --- | --- | --- | --- |
-| Exact freeze | Frozen Evidence Pack + Context Pack + input snapshot refs | Preserve source versions, selections, memory/canon refs, authority, and branch lineage exactly | Replayable admitted basis |
+| Exact freeze | Frozen Evidence Pack + Context Pack + input snapshot refs | Preserve source versions, selections, memory/canon refs, authority, branch lineage, lane inclusion or exclusion decisions, and whether each lane basis came from explicit admitted inputs or compiler fallback exactly | Replayable admitted basis |
 | Exact replay | Frozen pack refs and frozen source versions | Reconstruct a new Run over the same admitted basis without relying on transcript state | New Run/Proof/Delta with replay lineage |
 | Updated-source replay | Prior pack refs plus refreshed source versions | Re-run retrieval/compile with the same pack policy but new source versions and explicit diff notes | New Run plus basis-diff report |
 | Branch diff | Two pack or branch bases | Compare evidence, memory, canon, authority, and policy differences explicitly | Pack-diff / basis-diff report |

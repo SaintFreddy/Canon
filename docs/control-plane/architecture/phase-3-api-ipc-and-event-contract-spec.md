@@ -99,10 +99,16 @@ Breaking field, enum, or semantic changes require a new message type or a new ma
 | Contract family | Direction | Required refs / fields | Returns / effects |
 | --- | --- | --- | --- |
 | `RunExecutionJob` | Control service -> workers | frozen run/input refs, protocol/policy refs, deadline/priority | Terminal run result refs and lifecycle events |
-| `ContextCompileJob` | Control service -> compiler workers | admitted source/evidence refs, memory/canon mode, runtime budget | Frozen pack refs plus compiler events |
+| `ContextCompileJob` | Control service -> compiler workers | admitted source/evidence refs, memory/canon mode, optional memory/canon admission inputs or explicit lane-absence markers, runtime budget | Frozen pack refs plus compiler events |
 | `ReplayDiffJob` | Control service -> replay workers | pack lineage refs, checkpoint refs, replay/diff mode | Replay result refs, basis-diff refs, lineage events |
 | `ProofValidationJob` | Control service -> validation workers | run/proof/delta refs, verifier-slot refs | Validator result refs, proof update events |
 | `ApplyProposalJob` | Review/apply services -> apply workers | writeback proposal ref, approval refs, lane policy refs | Apply result refs and writeback events |
+
+Rules:
+
+1. Control service may send explicit memory/canon admission inputs when environment-control admission supplies them.
+2. Compiler workers consume supplied lane inputs; they do not author them.
+3. When a lane input is not supplied, the job marks that lane absent explicitly.
 
 ### 5.4 Worker plane <-> model gateway
 
