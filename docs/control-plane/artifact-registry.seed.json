@@ -4373,14 +4373,14 @@
           "artifact_id": "arch.phase3-architecture-sync-pass.v1",
           "propagation_mode": "auto",
           "required_for_acceptance": true,
-          "notes": "The accepted P3.6 sync pass confirms the accepted architecture stack is aligned and provides the final architecture lock before milestone planning proceeds."
+          "notes": "The accepted P3.6 sync pass confirms the accepted architecture stack is aligned and is now recorded in this artifact's Phase 4+ convergence status instead of reopening accepted body sections."
         },
         {
           "edge_type": "depends_on",
           "artifact_id": "rel.chat-native-maturity-matrix.v1",
           "propagation_mode": "auto",
           "required_for_acceptance": true,
-          "notes": "The accepted P4.1 maturity matrix defines the package floors that each milestone must inherit and not overbuild around."
+          "notes": "The accepted P4.1 maturity matrix defines the package floors that each milestone must inherit, and the convergence annotation now records later accepted packs as downstream proof of those floors."
         },
         {
           "edge_type": "informs",
@@ -4414,6 +4414,7 @@
       "stale_rule_id": "sr.derivative.manual",
       "notes": [
         "P4.2 accepted milestone architecture plan defining what Platform Gate and R1-R7 expose, defer, and intentionally refuse to overbuild.",
+        "A Phase 4+ convergence-status annotation preserves the accepted body text while recording the accepted downstream contract packs, Phase 5 semantics packs, Phase 6 implementation packets, and Phase 7 anti-drift enforcement as inherited proof.",
         "Accepted for downstream use as the Phase 4 milestone-architecture baseline feeding the R1-R7 release contract packs and later Phase 6 package planning."
       ]
     },
@@ -4609,6 +4610,7 @@
       "stale_rule_id": "sr.derivative.manual",
       "notes": [
         "P4.3 accepted R1 contract pack defining the first public chat-native release promise, shared primitives, projection-only additions, package floors, exit criteria, and explicit refusals.",
+        "A Phase 4+ convergence-status annotation preserves the accepted body text while recording accepted downstream inheritance to P4.4, resolved downstream planning status, and the retained R1 refusal boundaries.",
         "Accepted for downstream use as the R1 release-contract baseline feeding P4.4 and later release packs plus Phase 6 package planning."
       ]
     },
@@ -4812,6 +4814,7 @@
       "stale_rule_id": "sr.derivative.manual",
       "notes": [
         "P4.4 accepted R2 contract pack defining real evidence/context control, pack operations, package floors, exit criteria, and explicit refusals.",
+        "A Phase 4+ convergence-status annotation preserves the accepted body text while recording accepted downstream inheritance to P4.5, resolved downstream planning status, and the retained R2 pack-control refusal boundaries.",
         "Accepted for downstream use as the R2 release-contract baseline feeding P4.5 and later release packs plus Phase 6 package planning."
       ]
     },
@@ -5015,6 +5018,7 @@
       "stale_rule_id": "sr.derivative.manual",
       "notes": [
         "P4.5 accepted R3 contract pack defining semantic branching, replay, mode projections, off-chain merge behavior, package floors, exit criteria, and explicit refusals.",
+        "A Phase 4+ convergence-status annotation preserves the accepted body text while recording accepted downstream inheritance to P4.6, resolved downstream planning status, and the retained R3 branch-truth refusal boundaries.",
         "Accepted for downstream use as the R3 release-contract baseline feeding P4.6 and later release packs plus Phase 6 package planning."
       ]
     },
@@ -5184,7 +5188,7 @@
           "artifact_id": "rel.r3-branch-visual-thinker-contract.v1",
           "propagation_mode": "auto",
           "required_for_acceptance": true,
-          "notes": "The accepted P4.5 R3 contract defines the branch lineage, proof/delta compare basis, and proposal-bearing branch returns that R4 must inherit rather than replace."
+          "notes": "The accepted P4.5 R3 contract defines the branch lineage, proof/delta compare basis, and proposal-bearing branch returns that accepted P4.6 now inherits rather than replaces."
         },
         {
           "edge_type": "informs",
@@ -5218,6 +5222,7 @@
       "stale_rule_id": "sr.derivative.manual",
       "notes": [
         "P4.6 accepted R4 contract pack defining artifact-centered continuity, focal-artifact runs, proposal/review behavior, historical truth per run, package floors, exit criteria, and explicit refusals.",
+        "A Phase 4+ convergence-status annotation preserves the accepted body text while recording accepted downstream inheritance to P4.7, resolved downstream planning status, and the retained R4 artifact-governance refusal boundaries.",
         "Accepted for downstream use as the R4 release-contract baseline feeding P4.7 and later release packs plus Phase 6 package planning."
       ]
     },
@@ -5421,6 +5426,7 @@
       "stale_rule_id": "sr.derivative.manual",
       "notes": [
         "P4.7 accepted R5 contract pack defining governed prompt assets, prompt cards, model profiles, adaptations, lineage, staleness, package floors, exit criteria, and explicit refusals.",
+        "A Phase 4+ convergence-status annotation preserves the accepted body text while recording accepted downstream inheritance to P4.8, resolved downstream planning status, and the retained R5 prompt-asset / no-hidden-prompt-lore refusal boundaries.",
         "Accepted for downstream use as the R5 release-contract baseline feeding P4.8 and later release packs plus Phase 6 package planning."
       ]
     },
@@ -5632,7 +5638,8 @@
       "stale_rule_id": "sr.derivative.manual",
       "notes": [
         "P4.8 accepted R6 contract pack defining governed reusable execution through protocols, workflows, triggers, applets, bounded background runs, queue/inbox governance, package floors, exit criteria, and explicit refusals.",
-        "Accepted for downstream use as the R6 release-contract baseline feeding P4.9 and later release packs plus Phase 5 governance/object work."
+        "A Phase 4+ convergence-status annotation preserves the accepted body text while recording accepted downstream inheritance to P4.9, resolved downstream planning status, and the retained R6 no-hidden-autonomy / no-second-ontology refusal boundaries.",
+        "Accepted for downstream use as the R6 release-contract baseline feeding P4.9 and later commissioning or Task Studio follow-on surfaces plus accepted Phase 5 governance and reusable-execution composition packs."
       ]
     },
     {
@@ -5851,7 +5858,8 @@
       "stale_rule_id": "sr.derivative.manual",
       "notes": [
         "P4.9 accepted R7 contract pack defining explicit commissioning through commission/contract preflight, monitoring, proof, delta inspection, lane-separated writeback review, Task Studio-safe handoff, package floors, exit criteria, and explicit refusals.",
-        "Accepted for downstream use as the R7 release-contract baseline feeding Phase 5 governance/proof/protocol/handoff work."
+        "A Phase 4+ convergence-status annotation preserves the accepted body text while recording accepted downstream Task Studio realization, resolved downstream planning status, and the retained R7 explicit commissioning / lane-separation / no-ontology-translation refusal boundaries.",
+        "Accepted for downstream use as the R7 release-contract baseline feeding accepted Phase 5 governance, proof, run-class protocol, and Task Studio handoff packs plus later accepted Task Studio-safe surfaces and blueprints."
       ]
     },
     {

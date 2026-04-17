@@ -8,6 +8,32 @@ Release scope: Accepted R6 contract pack covering Protocol/Applet/Workflow/Trigg
 
 This artifact is accepted for downstream use.
 
+## 0. Convergence status (Phase 4+ update)
+
+This contract pack was accepted as P4.8 under the accepted Phase 4 milestone
+architecture plan (`rel.chat-native-milestone-architecture-plan.v1`) and the
+accepted release-to-SDK maturity matrix
+(`rel.chat-native-maturity-matrix.v1`).
+
+As of Phase 4+ convergence:
+
+- P4.7 remains the accepted upstream contract for governed prompt assets,
+  adaptation lineage, and reusable execution inputs that R6 inherits rather
+  than replaces.
+- P4.9 (R7 Commissioning Bridge) is accepted as the direct downstream
+  realization of the R6 handoff described in Section 5.
+- Accepted Phase 5 governance and reusable-execution composition packs deepen
+  the R6 governed reusable-execution substrate without reopening its
+  no-hidden-autonomy or no-second-ontology refusal boundaries.
+- Later accepted commissioning and Task Studio handoff surfaces inherit the R6
+  locks on explicit policy, queue/inbox lineage, typed tool execution, and
+  bounded background-run governance rather than softening them into agent
+  theater.
+
+This pack remains the accepted R6 contract authority. Sections below are kept
+verbatim as the accepted human-owned contract record; convergence context is
+noted here rather than rewritten into body sections.
+
 ## 1. Purpose
 
 This pack turns the accepted milestone architecture story into the concrete contract for R6 Governed Agent / Applet Chat.
@@ -139,6 +165,9 @@ R6 deliberately refuses to overbuild any of the following:
 
 R7 may escalate serious work into explicit Commission/Contract preflight, but it must inherit the R6 governed reusable-execution substrate rather than wrap it in chat-private commissioning semantics.
 
+> P4.9 is now accepted as the direct downstream realization of this handoff.
+> The locks below remain the R6 -> R7 inheritance record.
+
 The R6 contract therefore carries forward these locks:
 
 - protocol, workflow, trigger, and applet identities and versions remain explicit shared objects through the handoff,
@@ -149,12 +178,21 @@ The R6 contract therefore carries forward these locks:
 
 ## 6. Downstream implications
 
-- P4.9 should narrow into Commission, Contract, Authority Scope, preflight, live-monitor, proof-ledger, delta-inspection, and handoff semantics rather than rediscovering whether Protocol/Applet packaging and governed background execution are already real.
-- Later releases must treat R6 as the proof that bounded autonomy is governed substrate rather than agent theater or second-stack orchestration.
-- Phase 5 object and invariant packs should deepen Workflow, Trigger, Applet, proof, and governance semantics on top of this boundary rather than reopening it.
+- P4.9 should narrow into Commission, Contract, Authority Scope, preflight,
+  live-monitor, proof-ledger, delta-inspection, and handoff semantics rather
+  than rediscovering whether Protocol/Applet packaging and governed background
+  execution are already real. *(Resolved - P4.9 accepted as the direct
+  commissioning and handoff realization of this R6 boundary.)*
+- Later releases must treat R6 as the proof that bounded autonomy is governed
+  substrate rather than agent theater or second-stack orchestration.
+  *(Resolved - inherited by accepted R7 and later Task Studio-safe follow-on
+  surfaces.)*
+- Phase 5 object and invariant packs should deepen Workflow, Trigger, Applet,
+  proof, and governance semantics on top of this boundary rather than
+  reopening it. *(Resolved - accepted Phase 5 governance and reusable-
+  execution composition packs deepen this boundary without reopening it.)*
 
 ## 7. Acceptance notes
 
 - This accepted artifact defines the R6 boundary, not the whole release doctrine.
 - This accepted artifact keeps R6 intentionally focused on governed reusable execution and bounded background work so R7 can inherit one explicit governance story without ontology drift.
-

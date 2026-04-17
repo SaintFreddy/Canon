@@ -8,6 +8,26 @@ Release scope: Accepted human-owned milestone architecture plan covering what ea
 
 This artifact is accepted for downstream use.
 
+## 0. Convergence status (Phase 4+ update)
+
+This plan was accepted as P4.2 following the completed P3.6 architecture
+synchronization pass (`arch.phase3-architecture-sync-pass.v1`), which
+confirmed no substrate drift before Phase 4 release-contract work began.
+
+As of Phase 4+ convergence:
+
+- P4.3-P4.9 (R1-R7 contract packs) are accepted and downstream of this plan.
+- Phase 5 semantics packs (P5.1-P5.7) have absorbed the reusable-execution
+  and commissioning seams named in §5.4-§5.5 and §8.
+- Phase 6 implementation packets (P6.1-P6.6) have mapped §6 package-maturity
+  postures to concrete execution packets.
+- Phase 7 automation (P7.1-P7.4) now enforces the anti-drift locks this plan
+  established.
+
+This plan remains the milestone architecture authority. Sections below are
+kept verbatim as the accepted human-owned record; convergence context is
+noted here rather than rewritten into body sections.
+
 ## 1. Purpose
 
 This plan turns the accepted release topology, Platform Gate, and package-maturity matrix into one milestone architecture story.
@@ -122,7 +142,10 @@ When a later stage owns a semantic seam, earlier stages must not pre-spend that 
 
 ## 8. Downstream contract-pack handoff
 
-| Later packet | Must inherit from this milestone plan | Must not reopen |
+> All P4.3-P4.9 contract packs listed below are accepted. This table remains
+> the inheritance record; the accepted packs are the downstream proof.
+
+| Contract pack (all accepted) | Must inherit from this milestone plan | Must not reopen |
 | --- | --- | --- |
 | `P4.3` — R1 Transcript Chat contract pack | Platform Gate as the mandatory substrate proof plus the R1 bounded-run/chat familiarity boundary | Full context editing, branching, artifact-centered continuity, or transcript-truth shortcuts |
 | `P4.4` — R2 Context Chat contract pack | R1 bounded-run continuity plus the R2 requirement that evidence/context control becomes explicit and replayable | Branch-map semantics, artifact governance, or fake sidebar-only context control |
@@ -147,8 +170,10 @@ When a later stage owns a semantic seam, earlier stages must not pre-spend that 
 ## 11. Downstream implications
 
 - P4.2 closes with one accepted milestone architecture story.
-- P4.3-P4.9 can each become a narrower release contract rather than reopening stage ordering.
-- Phase 6 package planning can map concrete modules/services to already-agreed milestone maturity.
+- P4.3-P4.9 have each become a narrower release contract. *(Resolved - all accepted.)*
+- Phase 6 package planning has mapped concrete modules and services to the
+  already-agreed milestone maturity posture. *(Resolved - P6.2 repo/package
+  execution baseline accepted.)*
 
 ## 12. Acceptance notes
 

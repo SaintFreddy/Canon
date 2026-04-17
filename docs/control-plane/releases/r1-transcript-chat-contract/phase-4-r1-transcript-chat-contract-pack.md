@@ -8,6 +8,29 @@ Release scope: Accepted R1 contract pack covering the first public chat-native r
 
 This artifact is accepted for downstream use.
 
+## 0. Convergence status (Phase 4+ update)
+
+This contract pack was accepted as P4.3 under the accepted Phase 4 milestone
+architecture plan (`rel.chat-native-milestone-architecture-plan.v1`) and the
+accepted release-to-SDK maturity matrix
+(`rel.chat-native-maturity-matrix.v1`).
+
+As of Phase 4+ convergence:
+
+- P4.2 now records P4.3-P4.9 as accepted downstream contract packs, and this
+  pack remains the accepted R1 authority for the bounded familiar-chat release
+  boundary.
+- P4.4 (R2 Context Chat) is accepted as the direct downstream inheritance of
+  the R1 handoff described in §5.
+- Phase 6 package planning has mapped the R1 `M3`/`M2` maturity floor in §4.4
+  to concrete execution packets without inventing an R1-private backend.
+- Later accepted release packs inherit the R1 refusals on transcript-as-truth
+  and hidden provider continuity rather than reopening those shortcuts.
+
+This pack remains the accepted R1 contract authority. Sections below are kept
+verbatim as the accepted human-owned contract record; convergence context is
+noted here rather than rewritten into body sections.
+
 ## 1. Purpose
 
 This pack turns the accepted milestone architecture story into the concrete contract for R1 Transcript Chat.
@@ -130,6 +153,9 @@ R1 deliberately refuses to overbuild any of the following:
 
 ## 5. Downstream handoff to R2
 
+> P4.4 is now accepted as the direct downstream realization of this handoff.
+> The locks below remain the R1 -> R2 inheritance record.
+
 R2 may deepen context control, but it must inherit the R1 substrate rather than replace it.
 
 The R1 contract therefore carries forward these locks:
@@ -141,9 +167,15 @@ The R1 contract therefore carries forward these locks:
 
 ## 6. Downstream implications
 
-- P4.4 should narrow into real evidence/context control rather than rediscovering whether R1 already runs on frozen context and stable source refs.
-- Later releases must treat R1 as the proof that familiar chat can already run on the shared substrate without transcript-truth shortcuts.
-- Phase 6 package planning should map R1 UI and service work onto the `M3`/`M2` floors above rather than inventing an R1-private backend.
+- P4.4 has narrowed into real evidence/context control rather than
+  rediscovering whether R1 already runs on frozen context and stable source
+  refs. *(Resolved - P4.4 accepted on inherited R1 substrate.)*
+- Later releases treat R1 as the proof that familiar chat can already run on
+  the shared substrate without transcript-truth shortcuts. *(Resolved -
+  inherited across accepted P4.5-P4.9 release packs.)*
+- Phase 6 package planning has mapped R1 UI and service work onto the `M3`/`M2`
+  floors above rather than inventing an R1-private backend. *(Resolved - Phase
+  6 repo/package execution baseline accepted.)*
 
 ## 7. Acceptance notes
 

@@ -8,6 +8,31 @@ Release scope: Accepted R2 contract pack covering explicit evidence/context cont
 
 This artifact is accepted for downstream use.
 
+## 0. Convergence status (Phase 4+ update)
+
+This contract pack was accepted as P4.4 under the accepted Phase 4 milestone
+architecture plan (`rel.chat-native-milestone-architecture-plan.v1`) and the
+accepted release-to-SDK maturity matrix
+(`rel.chat-native-maturity-matrix.v1`).
+
+As of Phase 4+ convergence:
+
+- P4.3 remains the accepted upstream contract for bounded runs,
+  source-bearing identity, and transcript-as-truth refusal boundaries that R2
+  inherits rather than replaces.
+- P4.5 (R3 Branch / Visual Thinker) is accepted as the direct downstream
+  inheritance of the R2 handoff described in §5.
+- Phase 6 package planning has mapped the R2 `M4`/`M3`/`M2` maturity floor in
+  §4.4 to concrete execution packets without inventing an R2-private pack
+  backend.
+- Later accepted release packs inherit the R2 locks on explicit pack control,
+  freeze/diff lineage, and inspectable memory/canon participation rather than
+  reopening hidden-context shortcuts.
+
+This pack remains the accepted R2 contract authority. Sections below are kept
+verbatim as the accepted human-owned contract record; convergence context is
+noted here rather than rewritten into body sections.
+
 ## 1. Purpose
 
 This pack turns the accepted milestone architecture story into the concrete contract for R2 Context Chat.
@@ -134,6 +159,9 @@ R2 deliberately refuses to overbuild any of the following:
 
 R3 may deepen into branch, checkpoint, and replay exploration, but it must inherit the R2 pack substrate rather than replace it.
 
+> P4.5 is now accepted as the direct downstream realization of this handoff.
+> The locks below remain the R2 -> R3 inheritance record.
+
 The R2 contract therefore carries forward these locks:
 
 - packs already have stable lineage before branch maps appear,
@@ -143,9 +171,15 @@ The R2 contract therefore carries forward these locks:
 
 ## 6. Downstream implications
 
-- P4.5 should narrow into semantic branch/replay behavior rather than rediscovering whether pack freeze and basis diff are already real.
-- Later releases must treat R2 as the proof that context control is a shared-substrate capability instead of a sidebar illusion.
-- Phase 6 package planning should map R2 UI and service work onto the `M4`/`M3`/`M2` floors above rather than inventing an R2-private pack backend.
+- P4.5 has narrowed into semantic branch/replay behavior rather than
+  rediscovering whether pack freeze and basis diff are already real. *(Resolved
+  - P4.5 accepted on inherited R2 pack substrate.)*
+- Later releases treat R2 as the proof that context control is a
+  shared-substrate capability instead of a sidebar illusion. *(Resolved -
+  inherited across accepted P4.6-P4.9 release packs.)*
+- Phase 6 package planning has mapped R2 UI and service work onto the
+  `M4`/`M3`/`M2` floors above rather than inventing an R2-private pack backend.
+  *(Resolved - Phase 6 repo/package execution baseline accepted.)*
 
 ## 7. Acceptance notes
 

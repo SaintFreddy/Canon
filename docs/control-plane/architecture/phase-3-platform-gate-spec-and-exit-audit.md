@@ -5,6 +5,24 @@ Task: P3.5 — Platform Gate spec + exit audit
 Artifact ID: arch.phase3-platform-gate-spec.v1
 Architecture scope: Accepted internal pre-R1 gate defining required primitives, forced package areas, exit tests, audit checklist, and blocking failure conditions
 
+## 0. Gate status (Phase 4+ update)
+
+This gate spec was accepted as P3.5. It defines the hard pre-R1 blocking
+criteria that were proven before Phase 4 release work proceeded.
+
+Gate passage confirmation:
+- `arch.phase3-architecture-sync-pass.v1` (P3.6) confirmed all §6 exit tests
+  and §7 checklist items were met and declared no substrate drift before P4.1.
+- `rel.chat-native-maturity-matrix.v1` (P4.1) inherited the §5 forced package
+  areas without downgrade, confirming the substrate was real enough to bear
+  the Phase 4 maturity floors.
+- Phase 7 automation (`docs/control-plane/sync/`) now provides recurring
+  gate-recheck automation (P7.4) that treats §6 and §8 as its regression basis.
+
+The §6 exit-test catalog, §7 audit checklist, and §8 failure classes below
+are kept verbatim as the authoritative gate record. They are now historical
+proof criteria rather than open blockers.
+
 ## 1. Purpose
 
 This pack defines the hard internal gate that must pass before public R1 release work is considered launchable.
@@ -104,6 +122,9 @@ They do not prescribe final repo layout, but they do prescribe mandatory impleme
 
 ## 7. Exit-audit checklist
 
+> Gate passed. The following checklist is kept as the human-owned audit
+> record. Confirmed at P3.6 acceptance.
+
 The gate may pass only when human review can answer every line below with “yes”.
 
 1. The required primitive set in Section 4 exists on the shared substrate rather than in view-local stubs.
@@ -134,13 +155,19 @@ The gate may pass only when human review can answer every line below with “yes
 
 ### 9.1 For P3.6 architecture sync
 
+*(Resolved - P3.6 sync pass accepted; gate confirmed as final Phase 3 lock.)*
+
 - the sync pass should treat this gate as the final Phase 3 lock and look for canon, seam, scenario, grammar, or shortcut regressions against it.
 
 ### 9.2 For Phase 4 release doctrine
 
+*(Resolved - P4.1-P4.9 all inherit these primitives and package areas.)*
+
 - Platform Gate and later release packs should assume these primitives and package areas already exist rather than reopening the pre-R1 substrate question.
 
 ### 9.3 For Phase 6 repo/package planning
+
+*(Resolved - P6.2-P6.6 packets map forced areas to concrete execution packets.)*
 
 - repo/package work should map these forced areas into concrete packages and services without collapsing them into transcript- or view-owned code.
 

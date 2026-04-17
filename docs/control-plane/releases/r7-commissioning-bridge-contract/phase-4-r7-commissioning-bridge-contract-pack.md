@@ -8,6 +8,33 @@ Release scope: Accepted R7 contract pack covering Commission/Contract preflight,
 
 This artifact is accepted for downstream use.
 
+## 0. Convergence status (Phase 4+ update)
+
+This contract pack was accepted as P4.9 under the accepted Phase 4 milestone
+architecture plan (`rel.chat-native-milestone-architecture-plan.v1`) and the
+accepted release-to-SDK maturity matrix
+(`rel.chat-native-maturity-matrix.v1`).
+
+As of Phase 4+ convergence:
+
+- P4.8 (R6 Governed Agent / Applet Chat) remains the accepted upstream
+  governed reusable-execution substrate that R7 inherits rather than
+  replaces.
+- Accepted Phase 5 governance, proof, run-class protocol, and Task Studio
+  handoff packs deepen the R7 commissioning boundary without reopening its
+  explicit Commission -> Contract -> Run, lane-separation, or no-ontology-
+  translation refusal boundaries.
+- Accepted downstream Task Studio handoff and surface packs now realize the
+  R7 -> Task Studio handoff described in Section 5 rather than redefining the
+  commissioned-work payload.
+- Later accepted surface and blueprint work inherits the R7 locks on explicit
+  authority scope, proof visibility, lane-by-lane review, and shared-ID
+  continuity rather than softening them into task-local bridge semantics.
+
+This pack remains the accepted R7 contract authority. Sections below are kept
+verbatim as the accepted human-owned contract record; convergence context is
+noted here rather than rewritten into body sections.
+
 ## 1. Purpose
 
 This pack turns the accepted milestone architecture story into the concrete contract for R7 Commissioning Bridge.
@@ -140,6 +167,10 @@ R7 deliberately refuses to overbuild any of the following:
 
 Task Studio may become the primary commissioned-work projection, but it must inherit the R7 commissioning payload exactly rather than rewriting object meaning.
 
+> Accepted downstream Task Studio and commissioning-bridge handoff packs now
+> realize this handoff.
+> The locks below remain the R7 -> Task Studio inheritance record.
+
 The R7 contract therefore carries forward these locks:
 
 - shared Commission, Contract, Authority Scope, Run, Proof Bundle, State Delta, Writeback Proposal, and Artifact link identities stay stable across the handoff,
@@ -150,12 +181,22 @@ The R7 contract therefore carries forward these locks:
 
 ## 6. Downstream implications
 
-- Phase 5 packs should deepen governance/authority/writeback, proof/validation/evaluation, run-class protocol packs, reusable execution objects, and Task Studio surfaces on top of this accepted commissioning and handoff boundary rather than reopening it.
-- Later releases must treat R7 as the proof that explicit commissioning and Task Studio-safe continuity are real rather than future-only intent.
-- Phase 6 surface and package planning should map onto the all-`M4` package posture above rather than inventing an R7-private control plane.
+- Phase 5 packs should deepen governance/authority/writeback,
+  proof/validation/evaluation, run-class protocol packs, reusable execution
+  objects, and Task Studio surfaces on top of this accepted commissioning and
+  handoff boundary rather than reopening it. *(Resolved - accepted Phase 5
+  governance, proof, run-class protocol, and Task Studio handoff packs deepen
+  this boundary without reopening it.)*
+- Later releases must treat R7 as the proof that explicit commissioning and
+  Task Studio-safe continuity are real rather than future-only intent.
+  *(Resolved - inherited by accepted downstream Task Studio handoff and
+  surface packs.)*
+- Phase 6 surface and package planning should map onto the all-`M4` package
+  posture above rather than inventing an R7-private control plane. *(Resolved
+  - accepted Phase 6 surface and blueprint work maps onto the shared posture
+  rather than inventing an R7-private control plane.)*
 
 ## 7. Acceptance notes
 
 - This accepted artifact defines the R7 boundary, not the whole reusable-semantics doctrine.
 - This accepted artifact keeps R7 intentionally focused on explicit commissioning, lane-separated governance, and Task Studio-safe handoff so later work can deepen the shared substrate without ontology drift.
-

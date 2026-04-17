@@ -6,6 +6,24 @@ Artifact ID: rel.chat-native-maturity-matrix.v1
 Release ID: chat-native-maturity-matrix
 Release scope: Accepted cross-stage matrix mapping Platform Gate and R1-R7 to required SDK/package maturity floors for the chat-native path
 
+## 0. Convergence status (Phase 4+ update)
+
+This matrix was accepted as P4.1, establishing the first cross-stage
+package-maturity baseline for the chat-native path.
+
+As of Phase 4+ convergence:
+- P4.2 (milestone architecture plan) and P4.3-P4.9 (R1-R7 contract packs)
+  have each cited this matrix as their package-maturity authority.
+- Phase 5 semantics packs (P5.1-P5.7) inherited the M4 floors established
+  here for `pkg.shared-object-api`, `pkg.review-writeback`, `pkg.replay-compare`,
+  `pkg.model-gateway`, `pkg.environment-control`, and `pkg.monitor-inspect`.
+- Phase 6 implementation packets (P6.2-P6.6) mapped the nine package areas in
+  §5 to concrete execution packets without collapsing their ownership boundaries.
+
+This matrix remains the package-maturity authority. §9 downstream implications
+are kept verbatim as the original intent record; convergence outcomes are
+noted here.
+
 ## 1. Purpose
 
 This pack turns the accepted Platform Gate package areas into one explicit release-maturity matrix.
@@ -123,17 +141,27 @@ Phase 6 may map them into concrete packages or services, but it may not collapse
 
 ### 9.1 For P4.2 and later Phase 4 contract packs
 
+*(Resolved - P4.2-P4.9 accepted, all citing this matrix.)*
+
 - the human-only milestone architecture plan and the later R1-R7 packs should use this matrix as the package-maturity baseline instead of rediscovering it stage by stage.
 
 ### 9.2 For Phase 5 reusable semantics
+
+*(Resolved - P5.1-P5.7 accepted on inherited M4 floors.)*
 
 - protocol, workflow, applet, proof, governance, and handoff packs should assume the relevant `M4` floors already exist and focus on semantic deepening rather than substrate reinvention.
 
 ### 9.3 For Phase 6 repo/package planning
 
+*(Resolved - P6.2 repo/package execution baseline and P6.3-P6.6 packets
+accepted against these areas.)*
+
 - concrete package and service plans should map directly onto these forced areas and their stage floors.
 
 ## 10. Review notes
+
+> Review completed at acceptance (P4.1). The criteria below are kept as the
+> original audit record; they are met by the accepted downstream packs.
 
 Human review should confirm that this matrix:
 

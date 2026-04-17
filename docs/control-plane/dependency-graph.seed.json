@@ -3235,7 +3235,7 @@
       "to_artifact_id": "arch.phase3-architecture-sync-pass.v1",
       "edge_type": "depends_on",
       "propagation_mode": "auto",
-      "notes": "The accepted P3.6 sync pass confirms the accepted architecture stack is aligned and provides the final architecture lock before milestone planning proceeds."
+      "notes": "The accepted P3.6 sync pass confirms the accepted architecture stack is aligned and is now recorded in this artifact's Phase 4+ convergence status instead of reopening accepted body sections."
     },
     {
       "edge_id": "e-318",
@@ -3243,7 +3243,7 @@
       "to_artifact_id": "rel.chat-native-maturity-matrix.v1",
       "edge_type": "depends_on",
       "propagation_mode": "auto",
-      "notes": "The accepted P4.1 maturity matrix defines the package floors that each milestone must inherit and not overbuild around."
+      "notes": "The accepted P4.1 maturity matrix defines the package floors that each milestone must inherit, and the convergence annotation now records later accepted packs as downstream proof of those floors."
     },
     {
       "edge_id": "e-319",
@@ -3571,7 +3571,7 @@
       "to_artifact_id": "rel.r1-transcript-chat-contract.v1",
       "edge_type": "depends_on",
       "propagation_mode": "auto",
-      "notes": "The accepted P4.3 R1 contract defines the bounded-run and source-grounded substrate that R2 must inherit rather than replace."
+      "notes": "The accepted P4.3 R1 contract defines the bounded-run and source-grounded substrate that accepted P4.4 now inherits rather than replaces."
     },
     {
       "edge_id": "e-360",
@@ -3755,7 +3755,7 @@
       "to_artifact_id": "rel.r2-context-chat-contract.v1",
       "edge_type": "depends_on",
       "propagation_mode": "auto",
-      "notes": "The accepted P4.4 R2 contract defines the explicit pack-control and replay-basis substrate that R3 must inherit rather than replace."
+      "notes": "The accepted P4.4 R2 contract defines the explicit pack-control and replay-basis substrate that accepted P4.5 now inherits rather than replaces."
     },
     {
       "edge_id": "e-383",
@@ -3923,7 +3923,7 @@
       "to_artifact_id": "rel.r3-branch-visual-thinker-contract.v1",
       "edge_type": "depends_on",
       "propagation_mode": "auto",
-      "notes": "The accepted P4.5 R3 contract defines the branch lineage, proof/delta compare basis, and proposal-bearing branch returns that R4 must inherit rather than replace."
+      "notes": "The accepted P4.5 R3 contract defines the branch lineage, proof/delta compare basis, and proposal-bearing branch returns that accepted P4.6 now inherits rather than replaces."
     },
     {
       "edge_id": "e-404",
@@ -4091,7 +4091,7 @@
       "to_artifact_id": "rel.r4-artifact-workspace-contract.v1",
       "edge_type": "depends_on",
       "propagation_mode": "auto",
-      "notes": "The accepted P4.6 R4 contract defines the artifact-governance and lineage substrate that R5 must inherit rather than replace."
+      "notes": "The accepted P4.6 R4 contract defines the artifact-governance and lineage substrate that accepted P4.7 now inherits rather than replaces."
     },
     {
       "edge_id": "e-425",

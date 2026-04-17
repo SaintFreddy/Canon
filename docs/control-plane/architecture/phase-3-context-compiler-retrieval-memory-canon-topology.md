@@ -5,6 +5,34 @@ Task: P3.2 — Context compiler / retrieval / memory / canon topology
 Artifact ID: arch.phase3-context-compiler-topology.v1
 Architecture scope: Accepted subsystem topology for spans, ingestion, evidence-vs-context distinction, staged retrieval, memory/canon injection, freeze/replay/diff, and recovery/compaction behavior
 
+## 0. Convergence status (Phase 4+ update)
+
+This topology was accepted as P3.2 and defines the context compiler as the
+authoritative subsystem for evidence/context separation, memory/canon injection,
+freeze/replay/diff, and recovery behavior.
+
+As of Phase 4+ convergence:
+- P3.3 (data storage/provenance) and P3.4 (API/event contracts) are accepted
+  and map their storage, index, and event shapes directly to the §4 component
+  topology and §5 object model.
+- P3.5 (Platform Gate) exit tests PG-01 and PG-02 are the executable gate
+  proofs for §8 freeze/replay behavior and §6 stage 4-9 (evidence assembly
+  through freeze).
+- P4.4 (R2 Context Chat), P4.5 (R3 Branch / Visual Thinker), and P4.9
+  (R7 Commissioning Bridge) contract packs are accepted and reference this
+  topology as their context-control authority rather than inventing view-local
+  compiler behavior.
+- P5.5 (Task Studio surface and lifecycle) and P5.6 (Task Studio V1 scope)
+  treat §8 exact-freeze and §7 canon-injection order as substrate assumptions
+  rather than Task Studio-private behavior.
+- Phase 6 context-control and branch-replay packets (P6.2 R2, P6.3 R3) have
+  grounded the §4 retrieval planner, evidence assembler, and pack freezer
+  components in concrete execution packets.
+
+The §3-§9 subsystem specification below is kept verbatim as the accepted
+authority. §10 downstream implications are kept as the original intent record;
+convergence outcomes are noted here.
+
 ## 1. Purpose
 
 This pack defines the context compiler as a first-class subsystem.
@@ -140,17 +168,29 @@ Pinned evidence, explicit exclusions, and frozen pack bases survive compaction, 
 
 ### 10.1 For P3.3 and P3.4
 
+*(Resolved - P3.3 data storage and P3.4 API/event spec accepted; both map
+to §4 components and §5 objects.)*
+
 - storage, index, provenance, and API/event specs should map directly to these compiler components, stages, and frozen outputs.
 
 ### 10.2 For P3.5 Platform Gate
+
+*(Resolved - PG-01 through PG-04 gate tests confirm §8 freeze/replay and
+§6 evidence assembly stages. Gate passed at P3.6.)*
 
 - gate tests should verify frozen context reconstruction, source-region traceability, replay basis continuity, and explicit evidence/context separation.
 
 ### 10.3 For later release and Task Studio work
 
+*(Resolved - P4.4 R2, P4.5 R3, P4.9 R7, P5.5-P5.6 Task Studio, and
+P6.2-P6.3 implementation packets all accepted on this topology.)*
+
 - R2 context control, R3 branching/replay, R7 preflight, and Task Studio context inspection should all project this subsystem rather than inventing view-local compiler behavior.
 
 ## 11. Review notes
+
+> Review completed at acceptance (P3.2). The criteria below are kept as the
+> original audit record; confirmed by P3.6 sync pass and downstream adoption.
 
 Human review should confirm that this topology:
 

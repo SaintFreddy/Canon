@@ -8,6 +8,30 @@ Release scope: Accepted R5 contract pack covering governed prompt assets, prompt
 
 This artifact is accepted for downstream use.
 
+## 0. Convergence status (Phase 4+ update)
+
+This contract pack was accepted as P4.7 under the accepted Phase 4 milestone
+architecture plan (`rel.chat-native-milestone-architecture-plan.v1`) and the
+accepted release-to-SDK maturity matrix
+(`rel.chat-native-maturity-matrix.v1`).
+
+As of Phase 4+ convergence:
+
+- P4.6 remains the accepted upstream contract for artifact-governance
+  continuity, proposal-first durability, and lineage-bearing prompt inputs that
+  R5 inherits rather than replaces.
+- P4.8 (R6 Governed Agent / Applet Chat) is accepted as the direct downstream
+  inheritance of the R5 handoff described in §5.
+- Phase 6 package planning has mapped the R5 `M4`/`M3` maturity floor in §4.4
+  to concrete execution packets without inventing an R5-private prompt backend.
+- Later accepted release packs inherit the R5 locks on governed prompt assets,
+  adaptation lineage, and explicit no-hidden-prompt-lore boundaries rather than
+  reopening prompt-side shadow-memory shortcuts.
+
+This pack remains the accepted R5 contract authority. Sections below are kept
+verbatim as the accepted human-owned contract record; convergence context is
+noted here rather than rewritten into body sections.
+
 ## 1. Purpose
 
 This pack turns the accepted milestone architecture story into the concrete contract for R5 Prompt Studio.
@@ -133,6 +157,9 @@ R5 deliberately refuses to overbuild any of the following:
 
 R6 may turn successful prompt-backed flows into reusable execution, but it must inherit the R5 prompt-asset substrate rather than replace it.
 
+> P4.8 is now accepted as the direct downstream realization of this handoff.
+> The locks below remain the R5 -> R6 inheritance record.
+
 The R5 contract therefore carries forward these locks:
 
 - prompt assets already have stable artifact and adaptation lineage before Protocol/Applet packaging appears,
@@ -142,12 +169,18 @@ The R5 contract therefore carries forward these locks:
 
 ## 6. Downstream implications
 
-- P4.8 should narrow into Protocol/Applet/Workflow/Trigger and background-run semantics rather than rediscovering whether prompt assets are governed artifacts with explicit lineage and staleness.
-- Later releases must treat R5 as the proof that provider abstraction and prompt adaptation are governed substrate rather than hidden prompt lore.
-- Phase 6 package planning should map R5 UI and service work onto the `M4`/`M3` floors above rather than inventing an R5-private prompt backend.
+- P4.8 has narrowed into Protocol/Applet/Workflow/Trigger and background-run
+  semantics rather than rediscovering whether prompt assets are governed
+  artifacts with explicit lineage and staleness. *(Resolved - P4.8 accepted on
+  inherited R5 prompt-asset substrate.)*
+- Later releases must treat R5 as the proof that provider abstraction and
+  prompt adaptation are governed substrate rather than hidden prompt lore.
+  *(Resolved - inherited by accepted downstream release packs.)*
+- Phase 6 package planning has mapped R5 UI and service work onto the
+  `M4`/`M3` floors above rather than inventing an R5-private prompt backend.
+  *(Resolved - Phase 6 repo/package execution baseline accepted.)*
 
 ## 7. Acceptance notes
 
 - This accepted artifact defines the R5 boundary, not the whole release doctrine.
 - This accepted artifact keeps R5 intentionally focused on governed prompt assets and adaptation lineage so later reusable-execution and commissioning stages can inherit one substrate story without rewrite drift.
-

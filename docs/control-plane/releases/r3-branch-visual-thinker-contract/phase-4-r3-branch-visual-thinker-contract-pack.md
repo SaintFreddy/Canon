@@ -8,6 +8,30 @@ Release scope: Accepted R3 contract pack covering semantic branch/replay continu
 
 This artifact is accepted for downstream use.
 
+## 0. Convergence status (Phase 4+ update)
+
+This contract pack was accepted as P4.5 under the accepted Phase 4 milestone
+architecture plan (`rel.chat-native-milestone-architecture-plan.v1`) and the
+accepted release-to-SDK maturity matrix
+(`rel.chat-native-maturity-matrix.v1`).
+
+As of Phase 4+ convergence:
+
+- P4.4 remains the accepted upstream contract for explicit pack control,
+  freeze/diff lineage, and inspectable memory/canon participation that R3
+  inherits rather than replaces.
+- P4.6 (R4 Artifact Workspace) is accepted as the direct downstream
+  inheritance of the R3 handoff described in §5.
+- Phase 6 package planning has mapped the R3 `M4`/`M3`/`M2` maturity floor in
+  §4.4 to concrete execution packets without inventing an R3-private backend.
+- Later accepted release packs inherit the R3 locks on semantic branch truth,
+  explicit merge proposals, and proof/delta-aware replay rather than reopening
+  transcript-clone shortcuts.
+
+This pack remains the accepted R3 contract authority. Sections below are kept
+verbatim as the accepted human-owned contract record; convergence context is
+noted here rather than rewritten into body sections.
+
 ## 1. Purpose
 
 This pack turns the accepted milestone architecture story into the concrete contract for R3 Branch / Visual Thinker.
@@ -135,6 +159,9 @@ R3 deliberately refuses to overbuild any of the following:
 
 R4 may shift visible continuity toward focal artifacts and proposal inbox review, but it must inherit the R3 branch substrate rather than replace it.
 
+> P4.6 is now accepted as the direct downstream realization of this handoff.
+> The locks below remain the R3 -> R4 inheritance record.
+
 The R3 contract therefore carries forward these locks:
 
 - branch and replay already operate on real checkpoints and pack lineage before artifacts become the visible continuity anchor,
@@ -144,12 +171,18 @@ The R3 contract therefore carries forward these locks:
 
 ## 6. Downstream implications
 
-- P4.6 should narrow into artifact-centered continuity and proposal/review behavior rather than rediscovering whether branch lineage, replay basis, and explicit proposals are already real.
-- Later releases must treat R3 as the proof that semantic branching is a shared-substrate capability rather than a fancy transcript UI.
-- Phase 6 package planning should map R3 UI and service work onto the `M4`/`M3`/`M2` floors above rather than inventing an R3-private backend.
+- P4.6 has narrowed into artifact-centered continuity and proposal/review
+  behavior rather than rediscovering whether branch lineage, replay basis, and
+  explicit proposals are already real. *(Resolved - P4.6 accepted on inherited
+  R3 branch substrate.)*
+- Later releases treat R3 as the proof that semantic branching is a
+  shared-substrate capability rather than a fancy transcript UI. *(Resolved -
+  inherited across accepted P4.7-P4.9 release packs.)*
+- Phase 6 package planning has mapped R3 UI and service work onto the
+  `M4`/`M3`/`M2` floors above rather than inventing an R3-private backend.
+  *(Resolved - Phase 6 repo/package execution baseline accepted.)*
 
 ## 7. Acceptance notes
 
 - This accepted artifact defines the R3 boundary, not the whole release doctrine.
 - This accepted artifact keeps R3 intentionally focused on semantic branch/replay continuity so later artifact, prompt, reusable-execution, and commissioning stages can inherit one substrate story without rewrite drift.
-
