@@ -2213,3 +2213,43 @@ Notes for future prompts:
 - Run `python3 scripts/wrappers/run_phase7_release_gate_rechecks.py --stale-report <report-path>` after accepted stale-detection output exists, or pass `--changed-artifact <artifact-ref> ...` to let the wrapper generate the stale input first.
 - Use `--run-commands` when the selected structural rechecks should execute immediately and record the resulting `release-gate follow-up state` in the active delta pack or carry-forward entry.
 - Treat `cp.phase7-release-gate-recheck-matrix-data.v1` as the default release-gate routing baseline instead of inventing release-specific follow-up commands ad hoc.
+
+#### CF-0061 | 2026-04-23 | Source: P4+.step20.remediation.f — Platform Gate truth-status reopen (condition (f), Option A)
+
+New information:
+- Artifact `arch.phase3-platform-gate-spec.v1` is formally **reopened** per the recorded plan-owner decision for Phase 4+ step 20 reopen condition (f), Option A (`canon-knowledgebase/post-reopen-decisions/condition-f.md`).
+- Reopen scope is bounded to three enumerated sub-gates on the existing exit-test catalog:
+  - `PG-01.1` — frozen-context exact-replay sub-invariant on the audit-cited run paths.
+  - `PG-07.1` — gateway contract discipline sub-invariant on the audit-cited gateway boundaries.
+  - `PG-10.1` — no-direct-UI-to-worker-backdoor sub-invariant on the audit-cited ingress paths.
+- Sub-gate definitions and re-pass conditions are recorded in §11 of `docs/control-plane/architecture/phase-3-platform-gate-spec-and-exit-audit.md` (new section appended by this packet).
+- Prior P3.6 "Gate passed" confirmation is preserved as append-only history in §0.2 and §7 of the Platform Gate artifact and is not rewritten.
+
+Impact:
+- Platform Gate `artifact_status` flips from `accepted` to `stale` in `docs/control-plane/artifact-registry.seed.json` and in `docs/control-plane/dependency-graph.seed.json`.
+- `arch.phase3-architecture-sync-pass.v1` (P3.6) registry notes now carry an Option-A footnote explaining that the subsequent Platform Gate reopen does not retroactively invalidate the P3.6 sync-pass acceptance as historical truth.
+- Per the accepted Phase 7 stale-propagation routine (`sync.phase7-stale-regeneration-loop.v1` and `cp.phase7-stale-regeneration-rules-data.v1`), downstream artifacts on `auto` propagation edges were auto-marked `stale` in the same change:
+  - 73 `mark_stale` updates covering: `arch.phase3-architecture-sync-pass.v1` (P3.6); Phase 4 release contracts (`rel.chat-native-maturity-matrix.v1`, `rel.chat-native-milestone-architecture-plan.v1`, and `rel.r1`..`rel.r7-*-contract.v1`); Phase 5 reuse packs (commissioning bridge handoff, governance/authority/writeback, proof/validation, run-class protocol, task-studio surface lifecycle, Task Studio V1, workflow-trigger applet); Phase 6 release blueprints (`bp.phase6-r1`..`bp.phase6-r7-*-blueprint.v1`); Phase 6 surface packs (shared projection grammar, chat-native, task-studio, later-domain backlog, repo/package rules, agent-oriented codebase); Phase 6 execution packets (all R1-R7 packets and three pilot packets); Phase 6/7 control-plane datasets (execution-packet index, release-blueprint index, agent-packet context rules, fixture rules, module test contracts, workspace manifest index, codebase current-state, pilot benchmark matrix/results/tuning-notes, factory skills, Phase 7 delta-pack index, Phase 7 architecture-sync checklist, Phase 7 stale-regeneration rules, Phase 7 release-gate recheck matrix); `cp.phase6-factory-benchmark-harness.v1`.
+  - 4 Phase 7 sync packs (`sync.phase7-carry-forward-delta-pack.v1`, `sync.phase7-recurring-architecture-sync.v1`, `sync.phase7-stale-regeneration-loop.v1`, `sync.phase7-release-gate-recheck-automation.v1`) were flagged for **manual review** rather than auto-stale, per `manual` propagation mode on their edges.
+- The full impact map was produced by `python3 scripts/wrappers/run_phase7_stale_detection.py --changed-artifact arch.phase3-platform-gate-spec.v1 --apply-registry --write /tmp/pg-stale-report.json` and contains 77 impacted artifacts in total.
+- This packet (`pkt.remediate-platform-gate-truth-status.v1`) is the **first** remediation packet to land under Option A; engine-side sub-gate remediation packets are queued behind it and must not start until this packet lands on main.
+
+Status changes:
+- `arch.phase3-platform-gate-spec.v1` status: `accepted` → `stale` (reopen marker).
+- `arch.phase3-platform-gate-spec.v1` version bump: `1.0.0` → `1.1.0` (append-only reopen section added; historical content preserved).
+- P3.5, P3.6, P4.1-P4.9, P6.x, P7.x acceptance entries in the completion snapshot are unchanged — those acceptances are preserved as historical acceptance-time truth.
+
+Stale items:
+- `arch.phase3-platform-gate-spec.v1` — stale pending clearance of sub-gates PG-01.1, PG-07.1, and PG-10.1 via engine-side remediation packets.
+- 73 downstream artifacts auto-marked stale via accepted Phase 7 stale-propagation routine (see Impact above). They flip back to `accepted` through the Phase 7 stale-detection + revalidation loop as each sub-gate clears.
+- 4 Phase 7 sync packs flagged for manual review rather than auto-stale.
+
+Notes for future prompts:
+- Do NOT rewrite the prior P3.6 "Gate passed" history in the Platform Gate artifact. Append-only discipline: add new §11.x entries when each sub-gate clears.
+- Do NOT widen the reopen beyond PG-01.1, PG-07.1, and PG-10.1. Other §6/§7 invariants remain on their P3.6-confirmed pass record.
+- Do NOT start engine-side `pkt.remediate-*` packets for PG-01.1 / PG-07.1 / PG-10.1 until this control-plane truth-status packet is landed on main.
+- When a sub-gate clears, append a new §11.x entry in the Platform Gate artifact, append a carry-forward entry here, and flip `arch.phase3-platform-gate-spec.v1` back to `accepted` only once all three sub-gates have cleared append-only history.
+- Run `python3 scripts/validators/validate_control_plane_integrity.py` after each registry/graph touch on this artifact.
+- Re-run `python3 scripts/wrappers/run_phase7_stale_detection.py --changed-artifact arch.phase3-platform-gate-spec.v1` (without `--apply-registry` for a preview, or with `--apply-registry` to propagate) whenever the Platform Gate status is re-confirmed or re-reopened after sub-gate clearance.
+- For the 4 Phase 7 sync packs flagged `manual_review`, follow the accepted Phase 7 architecture-sync checklist (`cp.phase7-architecture-sync-checklist-data.v1`) rather than auto-marking them stale.
+- Authority records (`canon-now.md`, `canon-knowledgebase/post-reopen-decisions/condition-f.md`, `AGENTIC_ENGINE_AUDIT_LOG.md`, `CANON_PLAN_IMPACT_REPORT.md`) remain human-owned and must not be edited by remediation packets.
