@@ -234,421 +234,421 @@
     {
       "artifact_id": "arch.phase3-platform-gate-spec.v1",
       "artifact_type_id": "arch.technical_architecture_pack",
-      "artifact_status": "accepted",
+      "artifact_status": "stale",
       "canonical_locator": "docs/control-plane/architecture/phase-3-platform-gate-spec-and-exit-audit.md"
     },
     {
       "artifact_id": "rel.chat-native-maturity-matrix.v1",
       "artifact_type_id": "rel.release_contract_pack",
-      "artifact_status": "accepted",
+      "artifact_status": "stale",
       "canonical_locator": "docs/control-plane/releases/chat-native-maturity-matrix/phase-4-release-to-sdk-maturity-matrix.md"
     },
     {
       "artifact_id": "arch.phase3-architecture-sync-pass.v1",
       "artifact_type_id": "arch.technical_architecture_pack",
-      "artifact_status": "accepted",
+      "artifact_status": "stale",
       "canonical_locator": "docs/control-plane/architecture/phase-3-architecture-synchronization-pass.md"
     },
     {
       "artifact_id": "rel.chat-native-milestone-architecture-plan.v1",
       "artifact_type_id": "rel.release_contract_pack",
-      "artifact_status": "accepted",
+      "artifact_status": "stale",
       "canonical_locator": "docs/control-plane/releases/chat-native-milestone-architecture-plan/phase-4-release-milestone-architecture-plan.md"
     },
     {
       "artifact_id": "rel.r1-transcript-chat-contract.v1",
       "artifact_type_id": "rel.release_contract_pack",
-      "artifact_status": "accepted",
+      "artifact_status": "stale",
       "canonical_locator": "docs/control-plane/releases/r1-transcript-chat-contract/phase-4-r1-transcript-chat-contract-pack.md"
     },
     {
       "artifact_id": "rel.r2-context-chat-contract.v1",
       "artifact_type_id": "rel.release_contract_pack",
-      "artifact_status": "accepted",
+      "artifact_status": "stale",
       "canonical_locator": "docs/control-plane/releases/r2-context-chat-contract/phase-4-r2-context-chat-contract-pack.md"
     },
     {
       "artifact_id": "rel.r3-branch-visual-thinker-contract.v1",
       "artifact_type_id": "rel.release_contract_pack",
-      "artifact_status": "accepted",
+      "artifact_status": "stale",
       "canonical_locator": "docs/control-plane/releases/r3-branch-visual-thinker-contract/phase-4-r3-branch-visual-thinker-contract-pack.md"
     },
     {
       "artifact_id": "rel.r4-artifact-workspace-contract.v1",
       "artifact_type_id": "rel.release_contract_pack",
-      "artifact_status": "accepted",
+      "artifact_status": "stale",
       "canonical_locator": "docs/control-plane/releases/r4-artifact-workspace-contract/phase-4-r4-artifact-workspace-contract-pack.md"
     },
     {
       "artifact_id": "rel.r5-prompt-studio-contract.v1",
       "artifact_type_id": "rel.release_contract_pack",
-      "artifact_status": "accepted",
+      "artifact_status": "stale",
       "canonical_locator": "docs/control-plane/releases/r5-prompt-studio-contract/phase-4-r5-prompt-studio-contract-pack.md"
     },
     {
       "artifact_id": "rel.r6-governed-agent-applet-chat-contract.v1",
       "artifact_type_id": "rel.release_contract_pack",
-      "artifact_status": "accepted",
+      "artifact_status": "stale",
       "canonical_locator": "docs/control-plane/releases/r6-governed-agent-applet-chat-contract/phase-4-r6-governed-agent-applet-chat-contract-pack.md"
     },
     {
       "artifact_id": "rel.r7-commissioning-bridge-contract.v1",
       "artifact_type_id": "rel.release_contract_pack",
-      "artifact_status": "accepted",
+      "artifact_status": "stale",
       "canonical_locator": "docs/control-plane/releases/r7-commissioning-bridge-contract/phase-4-r7-commissioning-bridge-contract-pack.md"
     },
     {
       "artifact_id": "reuse.phase5-governance-authority-writeback-spec.v1",
       "artifact_type_id": "reuse.execution_governance_pack",
-      "artifact_status": "accepted",
+      "artifact_status": "stale",
       "canonical_locator": "docs/control-plane/reuse/phase-5-full-governance-authority-and-writeback-spec.md"
     },
     {
       "artifact_id": "reuse.phase5-proof-validation-evaluation-spec.v1",
       "artifact_type_id": "reuse.execution_governance_pack",
-      "artifact_status": "accepted",
+      "artifact_status": "stale",
       "canonical_locator": "docs/control-plane/reuse/phase-5-full-proof-validation-and-evaluation-spec.md"
     },
     {
       "artifact_id": "reuse.phase5-run-class-protocol-packs.v1",
       "artifact_type_id": "reuse.execution_governance_pack",
-      "artifact_status": "accepted",
+      "artifact_status": "stale",
       "canonical_locator": "docs/control-plane/reuse/phase-5-full-run-class-protocol-packs.md"
     },
     {
       "artifact_id": "reuse.phase5-workflow-trigger-applet-pack-integration-binding-specs.v1",
       "artifact_type_id": "reuse.execution_governance_pack",
-      "artifact_status": "accepted",
+      "artifact_status": "stale",
       "canonical_locator": "docs/control-plane/reuse/phase-5-workflow-trigger-applet-pack-and-integration-binding-specs.md"
     },
     {
       "artifact_id": "reuse.phase5-task-studio-surface-lifecycle-contract-pack.v1",
       "artifact_type_id": "reuse.execution_governance_pack",
-      "artifact_status": "accepted",
+      "artifact_status": "stale",
       "canonical_locator": "docs/control-plane/reuse/phase-5-task-studio-surface-and-lifecycle-contract-pack.md"
     },
     {
       "artifact_id": "reuse.phase5-task-studio-v1-scope-pack.v1",
       "artifact_type_id": "reuse.execution_governance_pack",
-      "artifact_status": "accepted",
+      "artifact_status": "stale",
       "canonical_locator": "docs/control-plane/reuse/phase-5-task-studio-v1-scope-pack.md"
     },
     {
       "artifact_id": "reuse.phase5-commissioning-bridge-task-studio-handoff-contract.v1",
       "artifact_type_id": "reuse.execution_governance_pack",
-      "artifact_status": "accepted",
+      "artifact_status": "stale",
       "canonical_locator": "docs/control-plane/reuse/phase-5-commissioning-bridge-to-task-studio-handoff-contract.md"
     },
     {
       "artifact_id": "surf.phase6-shared-projection-grammar-surface-contract-pack.v1",
       "artifact_type_id": "surf.surface_repo_pack",
-      "artifact_status": "accepted",
+      "artifact_status": "stale",
       "canonical_locator": "docs/control-plane/surfaces/phase-6-shared-projection-grammar-surface-contract-pack.md"
     },
     {
       "artifact_id": "surf.phase6-chat-native-surface-contract-pack.v1",
       "artifact_type_id": "surf.surface_repo_pack",
-      "artifact_status": "accepted",
+      "artifact_status": "stale",
       "canonical_locator": "docs/control-plane/surfaces/phase-6-chat-native-surface-contract-pack.md"
     },
     {
       "artifact_id": "surf.phase6-task-studio-surface-contract-pack.v1",
       "artifact_type_id": "surf.surface_repo_pack",
-      "artifact_status": "accepted",
+      "artifact_status": "stale",
       "canonical_locator": "docs/control-plane/surfaces/phase-6-task-studio-surface-contract-pack.md"
     },
     {
       "artifact_id": "surf.phase6-later-domain-surface-backlog-contract-pack.v1",
       "artifact_type_id": "surf.surface_repo_pack",
-      "artifact_status": "accepted",
+      "artifact_status": "stale",
       "canonical_locator": "docs/control-plane/surfaces/phase-6-later-domain-surface-backlog-contract-pack.md"
     },
     {
       "artifact_id": "surf.phase6-repo-package-architecture-and-agent-execution-rules-pack.v1",
       "artifact_type_id": "surf.surface_repo_pack",
-      "artifact_status": "accepted",
+      "artifact_status": "stale",
       "canonical_locator": "docs/control-plane/surfaces/phase-6-repo-package-architecture-and-agent-execution-rules-pack.md"
     },
     {
       "artifact_id": "surf.phase6-agent-oriented-codebase-pattern-and-documentation-plane-pack.v1",
       "artifact_type_id": "surf.surface_repo_pack",
-      "artifact_status": "accepted",
+      "artifact_status": "stale",
       "canonical_locator": "docs/control-plane/surfaces/phase-6-agent-oriented-codebase-pattern-and-documentation-plane-pack.md"
     },
     {
       "artifact_id": "cp.phase6-workspace-manifest-index-data.v1",
       "artifact_type_id": "cp.control_plane_dataset",
-      "artifact_status": "accepted",
+      "artifact_status": "stale",
       "canonical_locator": "docs/control-plane/core/workspace-manifest-index.json"
     },
     {
       "artifact_id": "cp.phase6-codebase-current-state-data.v1",
       "artifact_type_id": "cp.control_plane_dataset",
-      "artifact_status": "accepted",
+      "artifact_status": "stale",
       "canonical_locator": "docs/control-plane/core/codebase-current-state.json"
     },
     {
       "artifact_id": "cp.phase6-module-test-contracts-data.v1",
       "artifact_type_id": "cp.control_plane_dataset",
-      "artifact_status": "accepted",
+      "artifact_status": "stale",
       "canonical_locator": "tests/contracts/module-boundary.contracts.json"
     },
     {
       "artifact_id": "cp.phase6-fixture-rules-data.v1",
       "artifact_type_id": "cp.control_plane_dataset",
-      "artifact_status": "accepted",
+      "artifact_status": "stale",
       "canonical_locator": "tests/fixtures/fixture-rules.json"
     },
     {
       "artifact_id": "cp.phase6-agent-packet-context-pack-rules-data.v1",
       "artifact_type_id": "cp.control_plane_dataset",
-      "artifact_status": "accepted",
+      "artifact_status": "stale",
       "canonical_locator": "docs/control-plane/core/agent-packet-context-pack-rules.json"
     },
     {
       "artifact_id": "cp.phase6-factory-benchmark-harness.v1",
       "artifact_type_id": "cp.control_plane_spec",
-      "artifact_status": "accepted",
+      "artifact_status": "stale",
       "canonical_locator": "docs/control-plane/core/phase-6-factory-benchmark-harness.md"
     },
     {
       "artifact_id": "cp.factory-pilot-packet-authoring-skill.v1",
       "artifact_type_id": "cp.control_plane_spec",
-      "artifact_status": "accepted",
+      "artifact_status": "stale",
       "canonical_locator": ".factory/skills/pilot-packet-authoring/SKILL.md"
     },
     {
       "artifact_id": "cp.factory-benchmark-harness-skill.v1",
       "artifact_type_id": "cp.control_plane_spec",
-      "artifact_status": "accepted",
+      "artifact_status": "stale",
       "canonical_locator": ".factory/skills/benchmark-harness/SKILL.md"
     },
     {
       "artifact_id": "cp.phase6-pilot-benchmark-matrix-data.v1",
       "artifact_type_id": "cp.control_plane_dataset",
-      "artifact_status": "accepted",
+      "artifact_status": "stale",
       "canonical_locator": "tests/benchmark-datasets/phase-6-pilot-benchmark-matrix.json"
     },
     {
       "artifact_id": "pkt.phase6-pilot-plan-release-blueprint-packet.v1",
       "artifact_type_id": "pkt.execution_packet",
-      "artifact_status": "accepted",
+      "artifact_status": "stale",
       "canonical_locator": "docs/control-plane/implementation/packets/phase-6-pilot-plan-release-blueprint-packet.md"
     },
     {
       "artifact_id": "pkt.phase6-pilot-audit-doc-plane-consistency-packet.v1",
       "artifact_type_id": "pkt.execution_packet",
-      "artifact_status": "accepted",
+      "artifact_status": "stale",
       "canonical_locator": "docs/control-plane/implementation/packets/phase-6-pilot-audit-doc-plane-consistency-packet.md"
     },
     {
       "artifact_id": "pkt.phase6-pilot-transform-factory-skill-harness-packet.v1",
       "artifact_type_id": "pkt.execution_packet",
-      "artifact_status": "accepted",
+      "artifact_status": "stale",
       "canonical_locator": "docs/control-plane/implementation/packets/phase-6-pilot-transform-factory-skill-harness-packet.md"
     },
     {
       "artifact_id": "cp.phase6-pilot-benchmark-results-data.v1",
       "artifact_type_id": "cp.control_plane_dataset",
-      "artifact_status": "accepted",
+      "artifact_status": "stale",
       "canonical_locator": "tests/benchmark-datasets/phase-6-pilot-benchmark-results.json"
     },
     {
       "artifact_id": "cp.phase6-pilot-packet-tuning-notes.v1",
       "artifact_type_id": "cp.control_plane_spec",
-      "artifact_status": "accepted",
+      "artifact_status": "stale",
       "canonical_locator": "docs/control-plane/core/phase-6-pilot-packet-tuning-notes.md"
     },
     {
       "artifact_id": "bp.phase6-r1-conversation-blueprint.v1",
       "artifact_type_id": "bp.implementation_blueprint",
-      "artifact_status": "accepted",
+      "artifact_status": "stale",
       "canonical_locator": "docs/control-plane/implementation/release-blueprints/r1-conversation-blueprint.md"
     },
     {
       "artifact_id": "bp.phase6-r2-context-control-blueprint.v1",
       "artifact_type_id": "bp.implementation_blueprint",
-      "artifact_status": "accepted",
+      "artifact_status": "stale",
       "canonical_locator": "docs/control-plane/implementation/release-blueprints/r2-context-control-blueprint.md"
     },
     {
       "artifact_id": "bp.phase6-r3-branch-replay-blueprint.v1",
       "artifact_type_id": "bp.implementation_blueprint",
-      "artifact_status": "accepted",
+      "artifact_status": "stale",
       "canonical_locator": "docs/control-plane/implementation/release-blueprints/r3-branch-replay-blueprint.md"
     },
     {
       "artifact_id": "bp.phase6-r4-artifact-workspace-blueprint.v1",
       "artifact_type_id": "bp.implementation_blueprint",
-      "artifact_status": "accepted",
+      "artifact_status": "stale",
       "canonical_locator": "docs/control-plane/implementation/release-blueprints/r4-artifact-workspace-blueprint.md"
     },
     {
       "artifact_id": "bp.phase6-r5-prompt-assets-blueprint.v1",
       "artifact_type_id": "bp.implementation_blueprint",
-      "artifact_status": "accepted",
+      "artifact_status": "stale",
       "canonical_locator": "docs/control-plane/implementation/release-blueprints/r5-prompt-assets-blueprint.md"
     },
     {
       "artifact_id": "bp.phase6-r6-governed-reusable-execution-blueprint.v1",
       "artifact_type_id": "bp.implementation_blueprint",
-      "artifact_status": "accepted",
+      "artifact_status": "stale",
       "canonical_locator": "docs/control-plane/implementation/release-blueprints/r6-governed-reusable-execution-blueprint.md"
     },
     {
       "artifact_id": "bp.phase6-r7-commissioning-bridge-blueprint.v1",
       "artifact_type_id": "bp.implementation_blueprint",
-      "artifact_status": "accepted",
+      "artifact_status": "stale",
       "canonical_locator": "docs/control-plane/implementation/release-blueprints/r7-commissioning-bridge-blueprint.md"
     },
     {
       "artifact_id": "cp.phase6-release-blueprint-index-data.v1",
       "artifact_type_id": "cp.control_plane_dataset",
-      "artifact_status": "accepted",
+      "artifact_status": "stale",
       "canonical_locator": "docs/control-plane/core/phase-6-release-blueprint-index.json"
     },
     {
       "artifact_id": "pkt.phase6-r1-conversation-contracts-objects-packet.v1",
       "artifact_type_id": "pkt.execution_packet",
-      "artifact_status": "accepted",
+      "artifact_status": "stale",
       "canonical_locator": "docs/control-plane/implementation/packets/phase-6-r1-conversation-contracts-objects-packet.md"
     },
     {
       "artifact_id": "pkt.phase6-r1-conversation-runtime-execution-packet.v1",
       "artifact_type_id": "pkt.execution_packet",
-      "artifact_status": "accepted",
+      "artifact_status": "stale",
       "canonical_locator": "docs/control-plane/implementation/packets/phase-6-r1-conversation-runtime-execution-packet.md"
     },
     {
       "artifact_id": "pkt.phase6-r1-conversation-surface-validation-packet.v1",
       "artifact_type_id": "pkt.execution_packet",
-      "artifact_status": "accepted",
+      "artifact_status": "stale",
       "canonical_locator": "docs/control-plane/implementation/packets/phase-6-r1-conversation-surface-validation-packet.md"
     },
     {
       "artifact_id": "pkt.phase6-r2-context-control-contracts-objects-packet.v1",
       "artifact_type_id": "pkt.execution_packet",
-      "artifact_status": "accepted",
+      "artifact_status": "stale",
       "canonical_locator": "docs/control-plane/implementation/packets/phase-6-r2-context-control-contracts-objects-packet.md"
     },
     {
       "artifact_id": "pkt.phase6-r2-context-control-runtime-execution-packet.v1",
       "artifact_type_id": "pkt.execution_packet",
-      "artifact_status": "accepted",
+      "artifact_status": "stale",
       "canonical_locator": "docs/control-plane/implementation/packets/phase-6-r2-context-control-runtime-execution-packet.md"
     },
     {
       "artifact_id": "pkt.phase6-r2-context-control-surface-validation-packet.v1",
       "artifact_type_id": "pkt.execution_packet",
-      "artifact_status": "accepted",
+      "artifact_status": "stale",
       "canonical_locator": "docs/control-plane/implementation/packets/phase-6-r2-context-control-surface-validation-packet.md"
     },
     {
       "artifact_id": "pkt.phase6-r3-branch-replay-contracts-objects-packet.v1",
       "artifact_type_id": "pkt.execution_packet",
-      "artifact_status": "accepted",
+      "artifact_status": "stale",
       "canonical_locator": "docs/control-plane/implementation/packets/phase-6-r3-branch-replay-contracts-objects-packet.md"
     },
     {
       "artifact_id": "pkt.phase6-r3-branch-replay-runtime-execution-packet.v1",
       "artifact_type_id": "pkt.execution_packet",
-      "artifact_status": "accepted",
+      "artifact_status": "stale",
       "canonical_locator": "docs/control-plane/implementation/packets/phase-6-r3-branch-replay-runtime-execution-packet.md"
     },
     {
       "artifact_id": "pkt.phase6-r3-branch-replay-surface-validation-packet.v1",
       "artifact_type_id": "pkt.execution_packet",
-      "artifact_status": "accepted",
+      "artifact_status": "stale",
       "canonical_locator": "docs/control-plane/implementation/packets/phase-6-r3-branch-replay-surface-validation-packet.md"
     },
     {
       "artifact_id": "pkt.phase6-r4-artifact-workspace-contracts-objects-packet.v1",
       "artifact_type_id": "pkt.execution_packet",
-      "artifact_status": "accepted",
+      "artifact_status": "stale",
       "canonical_locator": "docs/control-plane/implementation/packets/phase-6-r4-artifact-workspace-contracts-objects-packet.md"
     },
     {
       "artifact_id": "pkt.phase6-r4-artifact-workspace-runtime-execution-packet.v1",
       "artifact_type_id": "pkt.execution_packet",
-      "artifact_status": "accepted",
+      "artifact_status": "stale",
       "canonical_locator": "docs/control-plane/implementation/packets/phase-6-r4-artifact-workspace-runtime-execution-packet.md"
     },
     {
       "artifact_id": "pkt.phase6-r4-artifact-workspace-surface-validation-packet.v1",
       "artifact_type_id": "pkt.execution_packet",
-      "artifact_status": "accepted",
+      "artifact_status": "stale",
       "canonical_locator": "docs/control-plane/implementation/packets/phase-6-r4-artifact-workspace-surface-validation-packet.md"
     },
     {
       "artifact_id": "pkt.phase6-r5-prompt-assets-contracts-objects-packet.v1",
       "artifact_type_id": "pkt.execution_packet",
-      "artifact_status": "accepted",
+      "artifact_status": "stale",
       "canonical_locator": "docs/control-plane/implementation/packets/phase-6-r5-prompt-assets-contracts-objects-packet.md"
     },
     {
       "artifact_id": "pkt.phase6-r5-prompt-assets-runtime-execution-packet.v1",
       "artifact_type_id": "pkt.execution_packet",
-      "artifact_status": "accepted",
+      "artifact_status": "stale",
       "canonical_locator": "docs/control-plane/implementation/packets/phase-6-r5-prompt-assets-runtime-execution-packet.md"
     },
     {
       "artifact_id": "pkt.phase6-r5-prompt-assets-surface-validation-packet.v1",
       "artifact_type_id": "pkt.execution_packet",
-      "artifact_status": "accepted",
+      "artifact_status": "stale",
       "canonical_locator": "docs/control-plane/implementation/packets/phase-6-r5-prompt-assets-surface-validation-packet.md"
     },
     {
       "artifact_id": "pkt.phase6-r6-governed-reusable-execution-contracts-objects-packet.v1",
       "artifact_type_id": "pkt.execution_packet",
-      "artifact_status": "accepted",
+      "artifact_status": "stale",
       "canonical_locator": "docs/control-plane/implementation/packets/phase-6-r6-governed-reusable-execution-contracts-objects-packet.md"
     },
     {
       "artifact_id": "pkt.phase6-r6-governed-reusable-execution-runtime-execution-packet.v1",
       "artifact_type_id": "pkt.execution_packet",
-      "artifact_status": "accepted",
+      "artifact_status": "stale",
       "canonical_locator": "docs/control-plane/implementation/packets/phase-6-r6-governed-reusable-execution-runtime-execution-packet.md"
     },
     {
       "artifact_id": "pkt.phase6-r6-governed-reusable-execution-surface-validation-packet.v1",
       "artifact_type_id": "pkt.execution_packet",
-      "artifact_status": "accepted",
+      "artifact_status": "stale",
       "canonical_locator": "docs/control-plane/implementation/packets/phase-6-r6-governed-reusable-execution-surface-validation-packet.md"
     },
     {
       "artifact_id": "pkt.phase6-r7-commissioning-bridge-contracts-objects-packet.v1",
       "artifact_type_id": "pkt.execution_packet",
-      "artifact_status": "accepted",
+      "artifact_status": "stale",
       "canonical_locator": "docs/control-plane/implementation/packets/phase-6-r7-commissioning-bridge-contracts-objects-packet.md"
     },
     {
       "artifact_id": "pkt.phase6-r7-commissioning-bridge-runtime-execution-packet.v1",
       "artifact_type_id": "pkt.execution_packet",
-      "artifact_status": "accepted",
+      "artifact_status": "stale",
       "canonical_locator": "docs/control-plane/implementation/packets/phase-6-r7-commissioning-bridge-runtime-execution-packet.md"
     },
     {
       "artifact_id": "pkt.phase6-r7-commissioning-bridge-chat-surface-packet.v1",
       "artifact_type_id": "pkt.execution_packet",
-      "artifact_status": "accepted",
+      "artifact_status": "stale",
       "canonical_locator": "docs/control-plane/implementation/packets/phase-6-r7-commissioning-bridge-chat-surface-packet.md"
     },
     {
       "artifact_id": "pkt.phase6-r7-commissioning-bridge-task-studio-handoff-packet.v1",
       "artifact_type_id": "pkt.execution_packet",
-      "artifact_status": "accepted",
+      "artifact_status": "stale",
       "canonical_locator": "docs/control-plane/implementation/packets/phase-6-r7-commissioning-bridge-task-studio-handoff-packet.md"
     },
     {
       "artifact_id": "pkt.phase6-r7-commissioning-bridge-test-fixtures-packet.v1",
       "artifact_type_id": "pkt.execution_packet",
-      "artifact_status": "accepted",
+      "artifact_status": "stale",
       "canonical_locator": "docs/control-plane/implementation/packets/phase-6-r7-commissioning-bridge-test-fixtures-packet.md"
     },
     {
       "artifact_id": "cp.phase6-execution-packet-index-data.v1",
       "artifact_type_id": "cp.control_plane_dataset",
-      "artifact_status": "accepted",
+      "artifact_status": "stale",
       "canonical_locator": "docs/control-plane/core/phase-6-execution-packet-index.json"
     },
     {
@@ -660,7 +660,7 @@
     {
       "artifact_id": "cp.phase7-delta-pack-index-data.v1",
       "artifact_type_id": "cp.control_plane_dataset",
-      "artifact_status": "accepted",
+      "artifact_status": "stale",
       "canonical_locator": "docs/control-plane/core/phase-7-delta-pack-index.json"
     },
     {
@@ -672,7 +672,7 @@
     {
       "artifact_id": "cp.phase7-architecture-sync-checklist-data.v1",
       "artifact_type_id": "cp.control_plane_dataset",
-      "artifact_status": "accepted",
+      "artifact_status": "stale",
       "canonical_locator": "docs/control-plane/core/phase-7-architecture-sync-checklist.json"
     },
     {
@@ -684,7 +684,7 @@
     {
       "artifact_id": "cp.phase7-stale-regeneration-rules-data.v1",
       "artifact_type_id": "cp.control_plane_dataset",
-      "artifact_status": "accepted",
+      "artifact_status": "stale",
       "canonical_locator": "docs/control-plane/core/phase-7-stale-regeneration-rules.json"
     },
     {
@@ -696,7 +696,7 @@
     {
       "artifact_id": "cp.phase7-release-gate-recheck-matrix-data.v1",
       "artifact_type_id": "cp.control_plane_dataset",
-      "artifact_status": "accepted",
+      "artifact_status": "stale",
       "canonical_locator": "docs/control-plane/core/phase-7-release-gate-recheck-matrix.json"
     }
   ],
