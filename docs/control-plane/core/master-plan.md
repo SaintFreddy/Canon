@@ -2213,3 +2213,29 @@ Notes for future prompts:
 - Run `python3 scripts/wrappers/run_phase7_release_gate_rechecks.py --stale-report <report-path>` after accepted stale-detection output exists, or pass `--changed-artifact <artifact-ref> ...` to let the wrapper generate the stale input first.
 - Use `--run-commands` when the selected structural rechecks should execute immediately and record the resulting `release-gate follow-up state` in the active delta pack or carry-forward entry.
 - Treat `cp.phase7-release-gate-recheck-matrix-data.v1` as the default release-gate routing baseline instead of inventing release-specific follow-up commands ad hoc.
+
+#### CF-0061 | 2026-04-23 | Source: pkt.remediate-platform-gate-truth-status.v1 — Platform Gate truth-status reopen
+
+New information:
+- Plan-owner decision `canon-knowledgebase/post-reopen-decisions/condition-f.md` (Option A, recorded 2026-04-23) formally reopens the Platform Gate P3.6 acceptance marker against the 2026-04-18 agentic-engine audit-cited contradiction event.
+- `docs/control-plane/architecture/phase-3-platform-gate-spec-and-exit-audit.md` now carries an append-only §0.1 reopen record enumerating the three remediation sub-gates PG-01.1, PG-07.1, and PG-10.1, plus a matching reopen marker under §7. The original §0 "Gate passage confirmation" block and the §7 "Gate passed" line are preserved verbatim as append-only history.
+- `docs/control-plane/artifact-registry.seed.json` records the reopen event in the notes for `arch.phase3-platform-gate-spec.v1`. The artifact's registry status remains `accepted` because the gate specification content itself is still the authoritative gate record; only the P3.6 passage claim is reopened. `docs/control-plane/dependency-graph.seed.json` requires no structural edit because no node status or edge changed.
+- `post-reopen-frozen-posture-replay-audit-sufficiency-checkpoint` is formally superseded by `post-reopen-audit-cited-contradiction-checkpoint` per the same decision.
+
+Impact:
+- Downstream Canon surfaces that previously relied on an unqualified `Gate passed` claim must now read against the reopened acceptance marker. Blueprint and maturity-matrix footnote synchronization is explicitly deferred to the subsequent packets `PG-R2` and `PG-R3`; this packet is bounded to the Platform Gate spec itself plus the registry/graph/master-plan synchronization.
+- `python3 scripts/wrappers/run_phase7_stale_detection.py --changed-artifact arch.phase3-platform-gate-spec.v1` enumerates 77 downstream-impacted artifacts (1 architecture sync pass, 7 release blueprints, 3 surface packs, 7 release contract packs, 7 milestone/contract packs, 24 Phase 6 packets, 7 Phase 5 reusable/handoff specs, 4 Phase 7 sync artifacts, 1 maturity matrix, 1 milestone architecture plan, plus Phase 6 control-plane data and benchmark/packet-authoring skills). This packet does **not** apply `--apply-registry`; stale propagation to those artifacts is bounded to the subsequent `PG-R2`/`PG-R3` packets so downstream status changes remain recorded per decision scope.
+- Ordinary baton continuation remains paused under `canon-now.md` `Baton state: stop — audit-reopen hold`. Engine-side remediation packets (`pkt.remediate-clock-timeprovider.v1`, `pkt.remediate-credentialscope-enforcement.v1`, `pkt.remediate-toolsandboxworker-fork.v1`, and the other authorized wave packets) are cleared to proceed against `SaintFreddy/agentic-engine` now that this packet has landed first per the Option-A ordering.
+
+Status changes:
+- `arch.phase3-platform-gate-spec.v1` registry notes updated to record the reopen event; `artifact_status` retained as `accepted` per the decision's preservation rule.
+- No dependency-graph node status or edge changes; graph remains consistent with the registry and the `validate_control_plane_integrity.py` validator.
+
+Stale items:
+- None propagated by this packet. Downstream stale marking is intentionally deferred to `PG-R2` and `PG-R3`, which carry the bounded authority to update blueprint, maturity-matrix, and high-level architecture footnotes.
+
+Notes for future prompts:
+- Treat `canon-knowledgebase/post-reopen-decisions/condition-f.md` Option A as authoritative; do not re-litigate the reopen posture.
+- Preserve the append-only "Gate passed" history in `docs/control-plane/architecture/phase-3-platform-gate-spec-and-exit-audit.md` §0 and §7; only add further reopen or closure markers alongside it.
+- Close PG-01.1, PG-07.1, and PG-10.1 by landing `pkt.remediate-clock-timeprovider.v1`, `pkt.remediate-stablestringify-unification.v1`, `pkt.remediate-localecompare-sort-paths.v1`, `pkt.remediate-frozenat-in-hashed-doc.v1`, `pkt.remediate-credentialscope-enforcement.v1`, and `pkt.remediate-toolsandboxworker-fork.v1` against `SaintFreddy/agentic-engine`. After those land, `PG-R2` and `PG-R3` can propagate the updated gate status into downstream Canon footnotes, and a successor packet can record the sub-gate closure back into this file and §0.1 as additional append-only history.
+- Do not edit `canon-now.md`, `canon-knowledgebase/`, `AGENTIC_ENGINE_AUDIT_LOG.md`, or `CANON_PLAN_IMPACT_REPORT.md` from remediation packets; those remain human-owned authority records.
