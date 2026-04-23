@@ -1,0 +1,159 @@
+name: Droid Issue Exec
+
+on:
+  issues:
+    types: [opened, labeled]
+  issue_comment:
+    types: [created]
+
+concurrency:
+  group: droid-issue-exec-${{ github.event.issue.number }}
+  cancel-in-progress: false
+
+jobs:
+  exec:
+    # Only fire on real execution requests, not decision/tracking issues
+    if: |
+      (
+        (
+          (github.event_name == 'issues' && github.event.action == 'opened' && contains(github.event.issue.body, '@droid')) ||
+          (github.event_name == 'issue_comment' && contains(github.event.comment.body, '@droid run')) ||
+          (github.event_name == 'issues' && github.event.action == 'labeled' && github.event.label.name == 'remediation')
+        ) &&
+        !contains(github.event.issue.labels.*.name, 'decision') &&
+        !contains(github.event.issue.labels.*.name, 'tracking') &&
+        !contains(github.event.issue.labels.*.name, 'droid-audit')
+      )
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+      issues: write
+      id-token: write
+      actions: read
+    timeout-minutes: 45
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+
+      - name: Setup droid CLI
+        run: |
+          curl -fsSL https://app.factory.ai/cli | sh
+          echo "$HOME/.local/bin" >> $GITHUB_PATH
+
+      - name: Prepare workspace
+        id: prep
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          ISSUE_NUM=${{ github.event.issue.number }}
+          ISSUE_TITLE=$(gh issue view "$ISSUE_NUM" --json title --jq '.title')
+          ISSUE_BODY=$(gh issue view "$ISSUE_NUM" --json body --jq '.body')
+
+          BRANCH="droid/issue-${ISSUE_NUM}-$(date +%s)"
+          echo "BRANCH=$BRANCH" >> $GITHUB_ENV
+          echo "ISSUE_NUM=$ISSUE_NUM" >> $GITHUB_ENV
+          echo "ISSUE_TITLE=$ISSUE_TITLE" >> $GITHUB_ENV
+
+          git config user.name "factory-droid[bot]"
+          git config user.email "138933559+factory-droid[bot]@users.noreply.github.com"
+          git checkout -b "$BRANCH"
+
+          # Save issue body to a file for droid exec
+          cat > /tmp/issue-task.md <<'ISSUE_TASK_EOF'
+          ${{ github.event.issue.body }}
+          ISSUE_TASK_EOF
+          printf '%s\n' "$ISSUE_BODY" > /tmp/issue-task.md
+
+      - name: Post start comment
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh issue comment "$ISSUE_NUM" --body "Droid started autonomous execution on branch \`$BRANCH\`. Workflow run: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+
+      - name: Run droid exec
+        env:
+          FACTORY_API_KEY: ${{ secrets.FACTORY_API_KEY }}
+        run: |
+          PROMPT=$(cat <<'PROMPT_EOF'
+          You are a Droid executing an autonomous remediation task triggered by a GitHub issue.
+
+          Context:
+          - Repository: ${{ github.repository }}
+          - Issue number: ${{ github.event.issue.number }}
+          - Issue title: see below
+
+          Rules:
+          1. Read AGENTS.md and any .factory/skills/*/SKILL.md that apply BEFORE changing code.
+          2. Stay strictly within the scope described in the issue body. Do not widen scope.
+          3. If the issue references a remediation packet, read that packet in full and respect its file_whitelist_ref.
+          4. If the issue references a recorded plan-owner decision, the decision is authoritative. Do not re-litigate it.
+          5. Run any verification commands named in the packet (e.g., corepack pnpm typecheck, corepack pnpm test). Both must be green before completing.
+          6. Commit your changes in logical commits. Do NOT push and do NOT open a PR — the workflow handles that.
+          7. If you discover that the task cannot complete within bounds (missing prerequisite, contradicting authority, unclear scope), stop, leave a file `/tmp/droid-blocker.md` describing the blocker, and exit cleanly.
+          8. Never edit canon-now.md, canon-knowledgebase/, AGENTIC_ENGINE_AUDIT_LOG.md, or CANON_PLAN_IMPACT_REPORT.md. Those are human-owned authority records.
+          9. Never use --auto high or --skip-permissions-unsafe.
+
+          Issue body (the task):
+          PROMPT_EOF
+          )
+          TASK_BODY=$(cat /tmp/issue-task.md)
+          FULL_PROMPT="${PROMPT}
+          ${TASK_BODY}"
+
+          echo "$FULL_PROMPT" | droid exec --auto medium -m claude-opus-4-7 -r high
+
+      - name: Commit changes (if any)
+        id: commit
+        run: |
+          if [ -n "$(git status --porcelain)" ]; then
+            git add -A
+            git commit -m "feat: autonomous droid execution for issue #${ISSUE_NUM}
+
+          Co-authored-by: factory-droid[bot] <138933559+factory-droid[bot]@users.noreply.github.com>" || true
+          fi
+
+          if [ -n "$(git log origin/main..HEAD --oneline)" ]; then
+            git push -u origin "$BRANCH"
+            echo "pushed=true" >> $GITHUB_OUTPUT
+          else
+            echo "pushed=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Open pull request
+        if: steps.commit.outputs.pushed == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          PR_BODY="Autonomously generated by \`droid-issue-exec\` in response to issue #${ISSUE_NUM}.
+
+          **Triggering issue**: #${ISSUE_NUM} — ${ISSUE_TITLE}
+          **Workflow run**: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+          **Model**: claude-opus-4-7 with high reasoning
+          **Auto-review**: will fire on this PR via \`droid-review.yml\`
+
+          Closes #${ISSUE_NUM}"
+
+          gh pr create \
+            --base main \
+            --head "$BRANCH" \
+            --title "Droid: ${ISSUE_TITLE}" \
+            --body "$PR_BODY"
+
+      - name: Post blocker comment (if any)
+        if: always()
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          if [ -f /tmp/droid-blocker.md ]; then
+            BLOCKER=$(cat /tmp/droid-blocker.md)
+            gh issue comment "$ISSUE_NUM" --body "Droid stopped without producing a PR because of a blocker:
+
+          $BLOCKER
+
+          Review the blocker and either narrow the task scope, record the missing decision, or re-comment \`@droid run\` to retry after the blocker is cleared."
+          elif [ "${{ steps.commit.outputs.pushed }}" = "false" ]; then
+            gh issue comment "$ISSUE_NUM" --body "Droid completed the task but produced no file changes. This typically means the work was already done or the scope was interpreted as a no-op."
+          fi
