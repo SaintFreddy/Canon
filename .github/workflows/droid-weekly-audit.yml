@@ -1,0 +1,75 @@
+name: Droid Weekly Audit
+
+on:
+  schedule:
+    - cron: '0 14 * * 1'  # Mondays at 14:00 UTC (09:00 ET / 10:00 ET DST)
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+  pull-requests: read
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+
+      - name: Install Droid CLI
+        run: |
+          curl -fsSL https://app.factory.ai/cli | sh
+          echo "$HOME/.local/bin" >> $GITHUB_PATH
+
+      - name: Generate weekly audit
+        env:
+          FACTORY_API_KEY: ${{ secrets.FACTORY_API_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          WEEK_START=$(date -u -d '7 days ago' +%Y-%m-%d 2>/dev/null || date -u -v-7d +%Y-%m-%d)
+          WEEK_END=$(date -u +%Y-%m-%d)
+
+          git log --since="${WEEK_START}" --until="${WEEK_END}" \
+            --pretty=format:'%h|%ad|%s|%an' --date=short > /tmp/commits.txt
+
+          gh pr list --state merged --search "merged:${WEEK_START}..${WEEK_END}" \
+            --json number,title,author,mergedAt,url > /tmp/merged-prs.json
+
+          droid exec -m claude-opus-4-7 -r high --auto low "
+          Write a weekly audit summary to /tmp/audit-report.md covering the period ${WEEK_START} to ${WEEK_END}.
+
+          Inputs:
+          - /tmp/commits.txt: one commit per line in hash|date|subject|author format.
+          - /tmp/merged-prs.json: JSON list of PRs merged in the window.
+          - The accepted control-plane artifacts under docs/control-plane/ (if present in this repo).
+          - canon-now.md, canon-knowledgebase/canon-phase-4-plus-plan.md (if present).
+
+          Produce:
+          1. Headline (1 sentence): what shipped, what's paused.
+          2. Table of merged PRs with classification (remediation / feature / docs / control-plane / infra / other).
+          3. Risk flags: any PR that modified a high-blast-radius seam or touched Canon authority without a cited decision. Cite specific PRs by number.
+          4. Baton state check: current Baton state from canon-now.md (if present), and whether the week's merges honored it.
+          5. Follow-up recommendations: next bounded step per the phase-4+ plan (without reopening accepted baseline decisions).
+
+          Keep it under 800 words. No emojis. Use plain markdown.
+          "
+
+      - name: Open weekly audit issue
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          WEEK_END=$(date -u +%Y-%m-%d)
+          if [ -f /tmp/audit-report.md ]; then
+            gh issue create \
+              --title "[audit] Week of ${WEEK_END}" \
+              --label "droid-audit,automated" \
+              --body-file /tmp/audit-report.md
+          else
+            gh issue create \
+              --title "[audit] Week of ${WEEK_END} (generation failed)" \
+              --label "droid-audit,automated,needs-review" \
+              --body "Weekly audit generation failed. Check the workflow run logs."
+          fi
