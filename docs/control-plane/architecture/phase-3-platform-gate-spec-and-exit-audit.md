@@ -1,16 +1,51 @@
 # Phase 3 Platform Gate spec and exit audit
-Version: 1.0
-Status: Accepted
+Version: 1.1
+Status: Reopened (formal reopen under Phase 4+ step 20, condition (f))
 Task: P3.5 — Platform Gate spec + exit audit
 Artifact ID: arch.phase3-platform-gate-spec.v1
 Architecture scope: Accepted internal pre-R1 gate defining required primitives, forced package areas, exit tests, audit checklist, and blocking failure conditions
 
 ## 0. Gate status (Phase 4+ update)
 
+### 0.1 Current status (post-reopen, Phase 4+ step 20)
+
+The Platform Gate is formally **reopened** under Phase 4+ step 20 per the
+recorded plan-owner decision for reopen condition (f) (Option A: formal
+reopen with enumerated sub-gates). The prior P3.6 "Gate passed" state
+recorded in §0.2 and §7 below is preserved as append-only history; it is
+not being rewritten or removed.
+
+Reopen scope (do not widen):
+- Three enumerated sub-gates are open blockers pending remediation:
+  - `PG-01.1` — frozen-context exact-replay sub-invariant (see §11.1).
+  - `PG-07.1` — gateway contract discipline sub-invariant (see §11.2).
+  - `PG-10.1` — no-direct-UI-to-worker backdoor sub-invariant (see §11.3).
+- All other §6 exit tests and §7 checklist items remain on their prior
+  P3.6-confirmed pass record; they are not reopened by this decision.
+- Remediation packet queue:
+  - `pkt.remediate-platform-gate-truth-status.v1` (this packet, control-plane
+    alignment — goes first under Option A).
+  - `pkt.remediate-*` engine-side packets for PG-01.1, PG-07.1, PG-10.1
+    follow after this packet lands on main.
+- Downstream artifacts (release contracts, sync passes, Phase 6/7 packs)
+  remain accepted at their own acceptance time; a remediation-pending
+  footnote is recorded in the registry/graph rather than cascading
+  stale-markers across every PG-dependent artifact. Under Option A, the
+  Platform Gate artifact itself carries the reopen marker; sub-gate
+  remediation packets will drive any per-artifact stale propagation.
+
+Authoritative references:
+- `canon-now.md` condition (f).
+- `canon-knowledgebase/post-reopen-decisions/condition-f.md` — Option A accepted.
+- `AGENTIC_ENGINE_AUDIT_LOG.md` — cited failing invariants.
+- `CANON_PLAN_IMPACT_REPORT.md` — governing rows for condition (f).
+
+### 0.2 Prior P3.6 gate passage record (preserved, append-only)
+
 This gate spec was accepted as P3.5. It defines the hard pre-R1 blocking
 criteria that were proven before Phase 4 release work proceeded.
 
-Gate passage confirmation:
+Gate passage confirmation (pre-reopen, historical record):
 - `arch.phase3-architecture-sync-pass.v1` (P3.6) confirmed all §6 exit tests
   and §7 checklist items were met and declared no substrate drift before P4.1.
 - `rel.chat-native-maturity-matrix.v1` (P4.1) inherited the §5 forced package
@@ -20,8 +55,10 @@ Gate passage confirmation:
   gate-recheck automation (P7.4) that treats §6 and §8 as its regression basis.
 
 The §6 exit-test catalog, §7 audit checklist, and §8 failure classes below
-are kept verbatim as the authoritative gate record. They are now historical
-proof criteria rather than open blockers.
+are kept verbatim as the authoritative gate record. The P3.6 "pass" state
+recorded there is historical proof criteria as of P3.6 acceptance; the
+enumerated sub-gates in §0.1 are the currently open blockers. The prior
+checklist entries are not rewritten.
 
 ## 1. Purpose
 
@@ -122,8 +159,11 @@ They do not prescribe final repo layout, but they do prescribe mandatory impleme
 
 ## 7. Exit-audit checklist
 
-> Gate passed. The following checklist is kept as the human-owned audit
-> record. Confirmed at P3.6 acceptance.
+> Gate passed (historical, P3.6 acceptance — preserved append-only).
+> The following checklist is kept as the human-owned audit record.
+> Confirmed at P3.6 acceptance. Per §0.1, the gate is now formally
+> reopened on the sub-gates PG-01.1, PG-07.1, and PG-10.1 enumerated
+> in §11; the prior P3.6 "Gate passed" marker is not rewritten.
 
 The gate may pass only when human review can answer every line below with “yes”.
 
@@ -156,6 +196,11 @@ The gate may pass only when human review can answer every line below with “yes
 ### 9.1 For P3.6 architecture sync
 
 *(Resolved - P3.6 sync pass accepted; gate confirmed as final Phase 3 lock.)*
+*(Post-reopen footnote — Phase 4+ step 20, condition (f), Option A: the
+P3.6 "Gate passed" confirmation remains the historical sync record; the
+sub-gates PG-01.1, PG-07.1, and PG-10.1 in §11 are the open blockers
+that post-reopen remediation must clear. The P3.6 resolution is not
+reopened — only the three enumerated sub-gates are.)*
 
 - the sync pass should treat this gate as the final Phase 3 lock and look for canon, seam, scenario, grammar, or shortcut regressions against it.
 
@@ -179,3 +224,60 @@ Human review should confirm that this gate:
 - proves the substrate on real execution paths,
 - makes required primitives, forced package areas, and tests concrete,
 - leaves no ambiguity about what would fail the prelaunch gate.
+
+## 11. Reopen sub-gates (Phase 4+ step 20, condition (f), Option A)
+
+These sub-gates are the only §6/§7 invariants formally reopened under the
+recorded plan-owner decision for condition (f). They narrow the prior
+`PG-01`, `PG-07`, and `PG-10` exit tests; they do not widen scope to
+additional invariants. Sub-gate pass criteria must be re-proven on the
+same shared substrate required by §3.2 and §3.3.
+
+| Sub-gate | Parent test | Reopened invariant | Pass condition | Remediation packet |
+| --- | --- | --- | --- | --- |
+| `PG-01.1` | `PG-01` | Frozen-context exact replay on the specific code paths cited by the audit log | A completed run on the cited paths replays from frozen packs and input refs with no dependency on provider transcript continuity and no non-deterministic fallback | `pkt.remediate-*` (engine-side, scheduled after this packet lands) |
+| `PG-07.1` | `PG-07` | Gateway contract discipline on the specific gateway boundaries cited by the audit log | Model and tool invocations on the cited boundaries use typed contracts with scoped credentials; failure results are inspectable and reach the failure-audit substrate defined in §4 | `pkt.remediate-*` (engine-side, scheduled after this packet lands) |
+| `PG-10.1` | `PG-10` | No direct UI-to-worker backdoor on the specific ingress paths cited by the audit log | User-initiated work on the cited ingress paths only enters through environment/control APIs; any direct worker RPC is absent or blocked and regression-tested | `pkt.remediate-*` (engine-side, scheduled after this packet lands) |
+
+### 11.1 `PG-01.1` — frozen-context exact replay (reopened sub-invariant)
+
+- Parent §6 test: `PG-01`.
+- Parent §8 failure class: `gate.transcript_truth_dependency`.
+- Audit-cited finding: see the audit log entry referenced by condition (f)
+  in `AGENTIC_ENGINE_AUDIT_LOG.md`.
+- Re-pass requires the cited run paths to replay from frozen `Evidence Pack`
+  and `Context Pack` refs alone, without any implicit fallback to provider
+  transcript state or to non-frozen inputs.
+
+### 11.2 `PG-07.1` — gateway contract discipline (reopened sub-invariant)
+
+- Parent §6 test: `PG-07`.
+- Parent §8 failure class: `gate.untyped_boundary`.
+- Audit-cited finding: see the audit log entry referenced by condition (f)
+  in `AGENTIC_ENGINE_AUDIT_LOG.md`.
+- Re-pass requires the cited gateway calls to go through typed
+  request/result contracts with scoped credentials and to produce
+  inspectable failure results that reach the §4 failure/audit substrate.
+
+### 11.3 `PG-10.1` — no direct UI-to-worker backdoor (reopened sub-invariant)
+
+- Parent §6 test: `PG-10`.
+- Parent §8 failure class: `gate.governance_bypass`.
+- Audit-cited finding: see the audit log entry referenced by condition (f)
+  in `AGENTIC_ENGINE_AUDIT_LOG.md`.
+- Re-pass requires the cited ingress paths to route only through
+  environment/control APIs; any direct worker RPC path must be removed or
+  blocked with a regression test that demonstrates the block.
+
+### 11.4 Reopen procedural rules
+
+- This reopen is bounded to sub-gates §11.1–§11.3. It does not reopen any
+  other §6/§7 entries or any accepted Phase 4+ baseline decision.
+- The prior P3.6 "Gate passed" state in §0.2 and §7 is preserved
+  append-only; it must not be deleted or rewritten.
+- Sub-gate clearance is recorded by append-only history in this file
+  (additional §11.x entries noting the packet that cleared each sub-gate)
+  together with downstream registry/graph updates.
+- Until all three sub-gates clear, downstream work that relies on the
+  cited invariants must treat the relevant paths as remediation-pending
+  rather than assuming the prior P3.6 pass still covers them.
