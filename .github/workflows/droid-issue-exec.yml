@@ -108,12 +108,20 @@ jobs:
       - name: Commit changes (if any)
         id: commit
         run: |
+          # Discard any accidental changes to .github/ (droid must never touch workflows)
+          git checkout -- .github/ 2>/dev/null || true
+          git clean -fd .github/ 2>/dev/null || true
+
           if [ -n "$(git status --porcelain)" ]; then
             git add -A
             git commit -m "feat: autonomous droid execution for issue #${ISSUE_NUM}
 
           Co-authored-by: factory-droid[bot] <138933559+factory-droid[bot]@users.noreply.github.com>" || true
           fi
+
+          # Rebase onto latest origin/main to avoid stale workflow diffs blocking push
+          git fetch origin main
+          git rebase origin/main || { git rebase --abort; echo "rebase-failed=true" >> $GITHUB_OUTPUT; exit 0; }
 
           if [ -n "$(git log origin/main..HEAD --oneline)" ]; then
             git push -u origin "$BRANCH"
