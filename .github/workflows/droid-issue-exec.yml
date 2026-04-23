@@ -12,7 +12,6 @@ concurrency:
 
 jobs:
   exec:
-    # Only fire on real execution requests, not decision/tracking issues
     if: |
       (
         (
@@ -61,17 +60,16 @@ jobs:
           git config user.email "138933559+factory-droid[bot]@users.noreply.github.com"
           git checkout -b "$BRANCH"
 
-          # Save issue body to a file for droid exec
-          cat > /tmp/issue-task.md <<'ISSUE_TASK_EOF'
-          ${{ github.event.issue.body }}
-          ISSUE_TASK_EOF
           printf '%s\n' "$ISSUE_BODY" > /tmp/issue-task.md
+
+          # Authority is in-repo for Canon
+          echo "CANON_AUTHORITY_PATH=$(pwd)" >> $GITHUB_ENV
 
       - name: Post start comment
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          gh issue comment "$ISSUE_NUM" --body "Droid started autonomous execution on branch \`$BRANCH\`. Workflow run: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+          gh issue comment "$ISSUE_NUM" --body "Droid started autonomous execution on branch \`$BRANCH\`. Canon authority available in-repo. Workflow run: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
 
       - name: Run droid exec
         env:
@@ -81,20 +79,22 @@ jobs:
           You are a Droid executing an autonomous remediation task triggered by a GitHub issue.
 
           Context:
-          - Repository: ${{ github.repository }}
+          - Repository: ${{ github.repository }} (Canon — authority source)
           - Issue number: ${{ github.event.issue.number }}
           - Issue title: see below
+          - Canon authority (in-repo): canon-now.md, canon-knowledgebase/post-reopen-decisions/condition-*.md, canon-knowledgebase/canon_tasks.md, canon-knowledgebase/canon-knowledgebase-layer-carry-forward.md
 
           Rules:
           1. Read AGENTS.md and any .factory/skills/*/SKILL.md that apply BEFORE changing code.
-          2. Stay strictly within the scope described in the issue body. Do not widen scope.
-          3. If the issue references a remediation packet, read that packet in full and respect its file_whitelist_ref.
-          4. If the issue references a recorded plan-owner decision, the decision is authoritative. Do not re-litigate it.
-          5. Run any verification commands named in the packet (e.g., corepack pnpm typecheck, corepack pnpm test). Both must be green before completing.
-          6. Commit your changes in logical commits. Do NOT push and do NOT open a PR — the workflow handles that.
-          7. If you discover that the task cannot complete within bounds (missing prerequisite, contradicting authority, unclear scope), stop, leave a file `/tmp/droid-blocker.md` describing the blocker, and exit cleanly.
-          8. Never edit canon-now.md, canon-knowledgebase/, AGENTIC_ENGINE_AUDIT_LOG.md, or CANON_PLAN_IMPACT_REPORT.md. Those are human-owned authority records.
-          9. Never use --auto high or --skip-permissions-unsafe.
+          2. For authority lookups, read the in-repo canon-now.md and canon-knowledgebase/ files.
+          3. Stay strictly within the scope described in the issue body. Do not widen scope.
+          4. If the issue references a remediation packet, read that packet in full and respect its file_whitelist_ref.
+          5. If the issue references a recorded plan-owner decision, the decision is authoritative. Do not re-litigate it.
+          6. Run any verification commands named in the packet (e.g., corepack pnpm typecheck, corepack pnpm test) if the target code exists. Both must be green before completing.
+          7. Commit your changes in logical commits. Do NOT push and do NOT open a PR — the workflow handles that.
+          8. If you discover that the task cannot complete within bounds (missing prerequisite, contradicting authority, unclear scope), stop, leave a file `/tmp/droid-blocker.md` describing the blocker, and exit cleanly.
+          9. Never edit canon-now.md, canon-knowledgebase/, AGENTIC_ENGINE_AUDIT_LOG.md, or CANON_PLAN_IMPACT_REPORT.md. Those are human-owned authority records.
+          10. Never use --auto high or --skip-permissions-unsafe.
 
           Issue body (the task):
           PROMPT_EOF
