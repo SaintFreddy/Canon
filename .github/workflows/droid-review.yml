@@ -24,8 +24,11 @@ jobs:
         with:
           fetch-depth: 1
       - name: Run Droid Auto Review
-        uses: Factory-AI/droid-action@v3
+        uses: Factory-AI/droid-action@v5
         with:
           factory_api_key: ${{ secrets.FACTORY_API_KEY }}
           automatic_review: true
           automatic_security_review: true
+          review_model: claude-opus-4-7
+          reasoning_effort: high
+          security_model: claude-opus-4-7
