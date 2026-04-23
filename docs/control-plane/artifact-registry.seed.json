@@ -3881,7 +3881,8 @@
       "stale_rule_id": "sr.derivative.manual",
       "notes": [
         "P3.5 accepted Platform Gate baseline defining required primitives, forced package/service areas, exit tests, audit checklist, and blocking failure classes.",
-        "Accepted for downstream use as the final Phase 3 architecture gate feeding sync review, release contracts, and later repo/package planning."
+        "Accepted for downstream use as the final Phase 3 architecture gate feeding sync review, release contracts, and later repo/package planning.",
+        "Phase 4+ reopen event (2026-04-23, condition (f) Option A): the P3.6 acceptance marker is reopened as `Gate reopened — audit-cited contradiction event 2026-04-18`. The prior `Gate passed` state is preserved as append-only history per `canon-knowledgebase/post-reopen-decisions/condition-f.md`. Platform Gate's next status is `pending PG-01.1 + PG-07.1 + PG-10.1`. The artifact itself remains accepted as the gate specification; only the P3.6 passage claim is reopened. Downstream blueprint and maturity-matrix footnote sync is bounded to subsequent packets `PG-R2` and `PG-R3`."
       ]
     },
     {
