@@ -4090,7 +4090,8 @@
       "stale_rule_id": "sr.derivative.manual",
       "notes": [
         "P4.1 accepted cross-stage matrix mapping Platform Gate and R1-R7 to forced SDK/package maturity floors.",
-        "Accepted for downstream use as the Phase 4 release-doctrine baseline feeding the human-only milestone architecture plan, later release packs, and Phase 6 package planning."
+        "Accepted for downstream use as the Phase 4 release-doctrine baseline feeding the human-only milestone architecture plan, later release packs, and Phase 6 package planning.",
+        "Phase 4+ reopen awareness (2026-04-24): the artifact remains 'accepted' for downstream use; a Platform Gate reopen notice has been added to the artifact markdown header per `canon-knowledgebase/post-reopen-decisions/condition-f.md` (Option A, DEC-RO-0f). Transitive upstream dependency on `arch.phase3-platform-gate-spec.v1` now carries PG-01.1/PG-07.1/PG-10.1 as remediation sub-gates. Engine sub-gate remediation landed via 8 agentic-engine PRs on 2026-04-24; downstream blueprint propagation landed via Canon PR #35 (PG-R2). Release doctrine and package-maturity/milestone guidance are NOT reopened."
       ]
     },
     {
@@ -4416,7 +4417,8 @@
       "notes": [
         "P4.2 accepted milestone architecture plan defining what Platform Gate and R1-R7 expose, defer, and intentionally refuse to overbuild.",
         "A Phase 4+ convergence-status annotation preserves the accepted body text while recording the accepted downstream contract packs, Phase 5 semantics packs, Phase 6 implementation packets, and Phase 7 anti-drift enforcement as inherited proof.",
-        "Accepted for downstream use as the Phase 4 milestone-architecture baseline feeding the R1-R7 release contract packs and later Phase 6 package planning."
+        "Accepted for downstream use as the Phase 4 milestone-architecture baseline feeding the R1-R7 release contract packs and later Phase 6 package planning.",
+        "Phase 4+ reopen awareness (2026-04-24): the artifact remains 'accepted' for downstream use; a Platform Gate reopen notice has been added to the artifact markdown header per `canon-knowledgebase/post-reopen-decisions/condition-f.md` (Option A, DEC-RO-0f). Transitive upstream dependency on `arch.phase3-platform-gate-spec.v1` now carries PG-01.1/PG-07.1/PG-10.1 as remediation sub-gates. Engine sub-gate remediation landed via 8 agentic-engine PRs on 2026-04-24; downstream blueprint propagation landed via Canon PR #35 (PG-R2). Release doctrine and package-maturity/milestone guidance are NOT reopened."
       ]
     },
     {
