@@ -11,27 +11,29 @@
 
 Before any physical removal of the quarantined draft directories (`Canon/packages/`, `Canon/services/`, `Canon/workers/`), extract every design invariant encoded in their `.mjs` contract-as-code files, identify which invariants are already captured in the post-reopen spec-digests, and port any uncaptured invariants as one-liners into the correct spec-digest file. This preserves design knowledge that git history alone doesn't make discoverable.
 
-## Factual basis (pre-audited during decision)
+## Factual basis (pre-audited during decision, corrected 2026-04-24)
 
-- **Files in scope**: 11 `.mjs` files totaling 1,369 LOC across 3 directories:
-  - `Canon/packages/context-compiler-contracts/admitted-basis/index.mjs`
-  - `Canon/packages/environment-control-contracts/run-launch/index.mjs`
-  - `Canon/packages/event-provenance-contracts/run-lineage/index.mjs`
-  - `Canon/packages/model-gateway-contracts/chat-turn/index.mjs`
-  - `Canon/packages/shared-object-api/run-continuity/index.mjs`
-  - `Canon/packages/shared-object-schemas/run-and-source/index.mjs`
-  - `Canon/services/environment-shell-api/conversation-entry/index.mjs`
-  - `Canon/services/event-provenance/run-trace/index.mjs`
-  - `Canon/services/execution-control/run-dispatch/index.mjs`
-  - `Canon/services/model-gateway/chat-turn-execution/index.mjs`
-  - `Canon/workers/context-compiler/compile-run-context/index.mjs`
-- **Inbound imports**: zero from outside `Canon/` (audited).
-- **Ref-name overlap with control-plane**: zero (audited).
+**IMPORTANT CORRECTION**: The decision record originally expected these files under `Canon/packages/`, `Canon/services/`, `Canon/workers/`. Post-decision verification revealed those files were UNCOMMITTED local workspace state that never reached remote git. They were preserved via a one-time archival commit (Canon PR #25, merged 2026-04-24) under `docs/control-plane/archive/quarantine-pre-reopen/`. This packet now reads from that archive path.
+
+- **Files in scope**: 11 `.mjs` files totaling 1,369 LOC under `docs/control-plane/archive/quarantine-pre-reopen/`:
+  - `packages/context-compiler-contracts/admitted-basis/index.mjs`
+  - `packages/environment-control-contracts/run-launch/index.mjs`
+  - `packages/event-provenance-contracts/run-lineage/index.mjs`
+  - `packages/model-gateway-contracts/chat-turn/index.mjs`
+  - `packages/shared-object-api/run-continuity/index.mjs`
+  - `packages/shared-object-schemas/run-and-source/index.mjs`
+  - `services/environment-shell-api/conversation-entry/index.mjs`
+  - `services/event-provenance/run-trace/index.mjs`
+  - `services/execution-control/run-dispatch/index.mjs`
+  - `services/model-gateway/chat-turn-execution/index.mjs`
+  - `workers/context-compiler/compile-run-context/index.mjs`
+- **Inbound imports into the live Canon or satellite repos**: zero (audited; confirmed none reference the archive path either).
+- **Ref-name overlap with control-plane artifact-registry**: zero (audited).
 - **Domain overlap with spec-digests**: present but under different naming.
 
 ## Execution steps
 
-1. **Extract**: For each of the 11 `.mjs` files, parse out every `invariants: Object.freeze([...])` array. Record each invariant as: `{file, contract_catalog_id, invariant_text}`.
+1. **Extract**: For each of the 11 `.mjs` files under `docs/control-plane/archive/quarantine-pre-reopen/`, parse out every `invariants: Object.freeze([...])` array. Record each invariant as: `{file, contract_catalog_id, invariant_text}`.
 
 2. **Map to spec digest**: For each extracted invariant, identify the target spec digest under `docs/spec-digests/` by subject:
    - `context-compiler-*` → `docs/spec-digests/agentic-engine/engine-compiler.md`
@@ -58,21 +60,21 @@ Before any physical removal of the quarantined draft directories (`Canon/package
    - ...
    ```
 
-5. **Do NOT delete the .mjs files**. This packet is read-and-append only.
+5. **Do NOT delete the .mjs files** from `docs/control-plane/archive/quarantine-pre-reopen/`. This packet is read-and-append only. The archive is permanent.
 
 ## Forbidden
 
-- Do NOT delete, rename, or modify any file under `Canon/packages/`, `Canon/services/`, `Canon/workers/`. That is Packet B's job.
+- Do NOT delete, rename, or modify any file under `docs/control-plane/archive/quarantine-pre-reopen/`. The archive is permanent.
 - Do NOT touch `canon-now.md`, `canon-knowledgebase/`, `AGENTIC_ENGINE_AUDIT_LOG.md`, `CANON_PLAN_IMPACT_REPORT.md` (authority records).
-- Do NOT invent invariants. Only port invariants that exist verbatim in the `.mjs` source.
+- Do NOT invent invariants. Only port invariants that exist verbatim in the archive source.
 - Do NOT merge invariants from different source files into one bullet. One invariant = one bullet, with origin attribution.
 
 ## Verification
 
 - `git diff --stat` shows changes ONLY in `docs/spec-digests/*.md` files.
-- `git diff -- Canon/packages Canon/services Canon/workers` is empty.
+- `git diff -- docs/control-plane/archive/quarantine-pre-reopen` is empty (archive is read-only).
 - PR body lists every invariant found (categorized as "ported" vs "already-captured, skipped") with file attribution.
-- A final checklist confirms all 11 source files were scanned.
+- A final checklist confirms all 11 source files under the archive were scanned.
 - `pnpm typecheck` (if applicable in Canon) + Canon's spec-digest validation remain green.
 
 ## PR body template
