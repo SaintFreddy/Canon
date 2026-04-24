@@ -10408,7 +10408,8 @@
       "stale_rule_id": "sr.derivative.manual",
       "notes": [
         "P6.5 accepted R1 conversation blueprint mapping bounded implementation clusters, validation posture, and explicit exclusions onto the accepted Phase 6 repo/package layout.",
-        "Accepted for downstream use as an implementation-facing release blueprint that later execution packets may cite without reopening release doctrine."
+        "Accepted for downstream use as an implementation-facing release blueprint that later execution packets may cite without reopening release doctrine.",
+        "Phase 4+ reopen awareness (2026-04-24): the artifact remains 'accepted' for downstream use; a Platform Gate reopen notice has been added to the blueprint markdown header per `canon-knowledgebase/post-reopen-decisions/condition-f.md` (Option A, DEC-RO-0f). Transitive upstream dependency on `arch.phase3-platform-gate-spec.v1` now carries PG-01.1/PG-07.1/PG-10.1 as remediation sub-gates. Engine sub-gate remediation landed via 8 agentic-engine PRs on 2026-04-24. Blueprint guidance and release doctrine are NOT reopened."
       ]
     },
     {
@@ -10523,7 +10524,8 @@
       "stale_rule_id": "sr.derivative.manual",
       "notes": [
         "P6.5 accepted R2 context control blueprint mapping bounded implementation clusters, validation posture, and explicit exclusions onto the accepted Phase 6 repo/package layout.",
-        "Accepted for downstream use as an implementation-facing release blueprint that later execution packets may cite without reopening release doctrine."
+        "Accepted for downstream use as an implementation-facing release blueprint that later execution packets may cite without reopening release doctrine.",
+        "Phase 4+ reopen awareness (2026-04-24): the artifact remains 'accepted' for downstream use; a Platform Gate reopen notice has been added to the blueprint markdown header per `canon-knowledgebase/post-reopen-decisions/condition-f.md` (Option A, DEC-RO-0f). Transitive upstream dependency on `arch.phase3-platform-gate-spec.v1` now carries PG-01.1/PG-07.1/PG-10.1 as remediation sub-gates. Engine sub-gate remediation landed via 8 agentic-engine PRs on 2026-04-24. Blueprint guidance and release doctrine are NOT reopened."
       ]
     },
     {
@@ -10638,7 +10640,8 @@
       "stale_rule_id": "sr.derivative.manual",
       "notes": [
         "P6.5 accepted R3 branch replay blueprint mapping bounded implementation clusters, validation posture, and explicit exclusions onto the accepted Phase 6 repo/package layout.",
-        "Accepted for downstream use as an implementation-facing release blueprint that later execution packets may cite without reopening release doctrine."
+        "Accepted for downstream use as an implementation-facing release blueprint that later execution packets may cite without reopening release doctrine.",
+        "Phase 4+ reopen awareness (2026-04-24): the artifact remains 'accepted' for downstream use; a Platform Gate reopen notice has been added to the blueprint markdown header per `canon-knowledgebase/post-reopen-decisions/condition-f.md` (Option A, DEC-RO-0f). Transitive upstream dependency on `arch.phase3-platform-gate-spec.v1` now carries PG-01.1/PG-07.1/PG-10.1 as remediation sub-gates. Engine sub-gate remediation landed via 8 agentic-engine PRs on 2026-04-24. Blueprint guidance and release doctrine are NOT reopened."
       ]
     },
     {
@@ -10753,7 +10756,8 @@
       "stale_rule_id": "sr.derivative.manual",
       "notes": [
         "P6.5 accepted R4 artifact workspace blueprint mapping bounded implementation clusters, validation posture, and explicit exclusions onto the accepted Phase 6 repo/package layout.",
-        "Accepted for downstream use as an implementation-facing release blueprint that later execution packets may cite without reopening release doctrine."
+        "Accepted for downstream use as an implementation-facing release blueprint that later execution packets may cite without reopening release doctrine.",
+        "Phase 4+ reopen awareness (2026-04-24): the artifact remains 'accepted' for downstream use; a Platform Gate reopen notice has been added to the blueprint markdown header per `canon-knowledgebase/post-reopen-decisions/condition-f.md` (Option A, DEC-RO-0f). Transitive upstream dependency on `arch.phase3-platform-gate-spec.v1` now carries PG-01.1/PG-07.1/PG-10.1 as remediation sub-gates. Engine sub-gate remediation landed via 8 agentic-engine PRs on 2026-04-24. Blueprint guidance and release doctrine are NOT reopened."
       ]
     },
     {
@@ -10868,7 +10872,8 @@
       "stale_rule_id": "sr.derivative.manual",
       "notes": [
         "P6.5 accepted R5 prompt assets blueprint mapping bounded implementation clusters, validation posture, and explicit exclusions onto the accepted Phase 6 repo/package layout.",
-        "Accepted for downstream use as an implementation-facing release blueprint that later execution packets may cite without reopening release doctrine."
+        "Accepted for downstream use as an implementation-facing release blueprint that later execution packets may cite without reopening release doctrine.",
+        "Phase 4+ reopen awareness (2026-04-24): the artifact remains 'accepted' for downstream use; a Platform Gate reopen notice has been added to the blueprint markdown header per `canon-knowledgebase/post-reopen-decisions/condition-f.md` (Option A, DEC-RO-0f). Transitive upstream dependency on `arch.phase3-platform-gate-spec.v1` now carries PG-01.1/PG-07.1/PG-10.1 as remediation sub-gates. Engine sub-gate remediation landed via 8 agentic-engine PRs on 2026-04-24. Blueprint guidance and release doctrine are NOT reopened."
       ]
     },
     {
@@ -10983,7 +10988,8 @@
       "stale_rule_id": "sr.derivative.manual",
       "notes": [
         "P6.5 accepted R6 governed reusable execution blueprint mapping bounded implementation clusters, validation posture, and explicit exclusions onto the accepted Phase 6 repo/package layout.",
-        "Accepted for downstream use as an implementation-facing release blueprint that later execution packets may cite without reopening release doctrine."
+        "Accepted for downstream use as an implementation-facing release blueprint that later execution packets may cite without reopening release doctrine.",
+        "Phase 4+ reopen awareness (2026-04-24): the artifact remains 'accepted' for downstream use; a Platform Gate reopen notice has been added to the blueprint markdown header per `canon-knowledgebase/post-reopen-decisions/condition-f.md` (Option A, DEC-RO-0f). Transitive upstream dependency on `arch.phase3-platform-gate-spec.v1` now carries PG-01.1/PG-07.1/PG-10.1 as remediation sub-gates. Engine sub-gate remediation landed via 8 agentic-engine PRs on 2026-04-24. Blueprint guidance and release doctrine are NOT reopened."
       ]
     },
     {
@@ -11114,7 +11120,8 @@
       "stale_rule_id": "sr.derivative.manual",
       "notes": [
         "P6.5 accepted R7 commissioning bridge blueprint mapping bounded implementation clusters, validation posture, and explicit exclusions onto the accepted Phase 6 repo/package layout.",
-        "Accepted for downstream use as an implementation-facing release blueprint that later execution packets may cite without reopening release doctrine."
+        "Accepted for downstream use as an implementation-facing release blueprint that later execution packets may cite without reopening release doctrine.",
+        "Phase 4+ reopen awareness (2026-04-24): the artifact remains 'accepted' for downstream use; a Platform Gate reopen notice has been added to the blueprint markdown header per `canon-knowledgebase/post-reopen-decisions/condition-f.md` (Option A, DEC-RO-0f). Transitive upstream dependency on `arch.phase3-platform-gate-spec.v1` now carries PG-01.1/PG-07.1/PG-10.1 as remediation sub-gates. Engine sub-gate remediation landed via 8 agentic-engine PRs on 2026-04-24. Blueprint guidance and release doctrine are NOT reopened."
       ]
     },
     {
