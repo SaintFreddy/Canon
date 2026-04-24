@@ -8601,7 +8601,8 @@
       "stale_rule_id": "sr.derivative.manual",
       "notes": [
         "P6.2 accepted repo/package architecture and agent execution rules pack mapping runtime planes, logical package seams, route/module families, and additive Factory execution rules onto one implementation-facing repo layout.",
-        "Accepted for downstream use as the package-map and execution baseline feeding P6.3 documentation-plane work, P6.4 pilot packets, and P6.5-P6.6 implementation-facing work."
+        "Accepted for downstream use as the package-map and execution baseline feeding P6.3 documentation-plane work, P6.4 pilot packets, and P6.5-P6.6 implementation-facing work.",
+        "2026-04-24 (pkt.remediate-peerdep-carveout.v1): §6.1 amended with the intra-workspace peer-dependency carve-out under plan-owner decision canon-knowledgebase/post-reopen-decisions/condition-g.md (Option A, delegated-recommendation). Prior §6.1 matrix and text preserved verbatim; new §6.1.1 paragraph narrows interpretation only. artifact_status retained as accepted because the pack is append-preserving; no dependency-graph node-status or edge changes required."
       ]
     },
     {

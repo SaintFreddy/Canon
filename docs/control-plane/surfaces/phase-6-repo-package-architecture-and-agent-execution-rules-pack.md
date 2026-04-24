@@ -133,6 +133,14 @@ They arrange those seams into projection or domain-facing implementation surface
 | `workers/*` | Bounded job execution over frozen refs, compiler/replay/validation/apply work | `packages/shared-object-api/`, relevant `packages/*-contracts/`, gateway contracts | App projections, UI-only helpers, route-local state |
 | `domains/<domain-slug>/` | Future domain-specialized projections and packages after semantic gates pass | accepted shared packages and future domain-specific contracts | Re-owning shared commissioned-work objects or shared grammar families |
 
+#### 6.1.1 Intra-workspace peer-dependency carve-out
+
+Third-party runtime peer-dependencies are forbidden; intra-workspace peer-dependencies between `@canon/*` packages are permitted because they are structurally equivalent to intra-engine imports and do not expand the runtime surface beyond `@canon/*`.
+
+This carve-out preserves the "zero external runtime dependencies" invariant in spirit: the engine still ships no third-party runtime peers. It recognizes that intra-workspace peer-dependencies between `@canon/*` packages are implementation-detail expressions of the monorepo seam map above, not a widening of the release surface. Any future third-party peer-dependency addition still requires an explicit plan-owner decision.
+
+This paragraph is an append-preserving amendment recorded under plan-owner decision `canon-knowledgebase/post-reopen-decisions/condition-g.md` (Option A, delegated-recommendation; 2026-04-23). The remainder of §6.1 above stays as historical context; the carve-out narrows how §6.1's workspace-family dependency matrix is interpreted for peer-dep syntactic shapes without changing any cell of the matrix itself.
+
 ### 6.2 Route and cluster naming rules
 
 1. Chat-native modules should align to accepted release clusters rather than inventing per-surface backends: e.g. `r1-conversation`, `r2-context-control`, `r3-branch-replay`, `r4-artifact-workspace`, `r5-prompt-assets`, `r6-governed-reusable-execution`, and `r7-commissioning-bridge`.
