@@ -2303,3 +2303,26 @@ entries:
       - CF-0089
       - CF-0097
     next_action: PG-R3 — authorize and execute `pkt.platform-gate-downstream-maturity-milestone-sync.v1` covering the 2 remaining accepted artifacts (`rel.chat-native-maturity-matrix.v1` at `docs/control-plane/releases/chat-native-maturity-matrix/phase-4-release-to-sdk-maturity-matrix.md` + `rel.chat-native-milestone-architecture-plan.v1` at `docs/control-plane/releases/chat-native-milestone-architecture-plan/phase-4-release-milestone-architecture-plan.md`). After PG-R3 lands, the Platform Gate spec §0.1.1 remediation sub-gates PG-01.1 / PG-07.1 / PG-10.1 can be marked `closed` since all three engine-side remediation packets (conditions a, b, d) landed on agentic-engine on 2026-04-24. That final closure is a small third packet (`pkt.platform-gate-subgate-closure.v1`) that will retire the "pending sub-gates" language from canon-now.md and canon-phase-4-plus-plan.md step 20 closure note.
+
+  - id: CF-0099
+    date: 2026-04-24
+    status: active
+    kind: packet-landing
+    stage: phase-4-execution
+    packet: pkt.platform-gate-downstream-maturity-milestone-sync.v1
+    topic: platform-gate-reopen-propagation
+    summary: PG-R3 landed on `SaintFreddy/Canon` main via Canon PR #39 (autonomous droid-issue-exec run on claude-opus-4-7 high-reasoning, issue #38). Uniform 'Platform Gate reopen notice (2026-04-23)' blockquote was inserted into the 2 remaining Phase 4 accepted release authorities — `rel.chat-native-maturity-matrix.v1` and `rel.chat-native-milestone-architecture-plan.v1` — at identical logical position (immediately before the `## 1. Purpose` header, i.e. at the end of the existing §0 Convergence status section), and a uniform notes[] append was added to each of the 2 corresponding entries in `docs/control-plane/artifact-registry.seed.json`. Byte-identical text across both .md insertions and both registry-note appends (verified programmatically via regex extraction of the two insert lines). Execution matched the packet scaffold's file_whitelist exactly: 3 files changed (2 .md + 1 .json), no other file touched, no artifact_status flipped, no existing prose rewritten, no §0 Convergence status edits. `python3 scripts/validators/validate_control_plane_integrity.py` returned `status: pass, issues: []` with 111 artifacts and 1424 graph edges intact (unchanged from PG-R2 baseline). PG-R1 (Canon PR #17) + PG-R2 (Canon PR #35) + PG-R3 (Canon PR #39) together satisfy all three doc-sync obligations created by DEC-RO-0f Option A.
+    impact: Downstream consumers of the accepted Phase 4 release-doctrine and milestone-architecture authorities now surface the Platform Gate reopen context without needing to read the gate spec or any blueprint in isolation. Authority guidance itself remains unchanged and `accepted`; release doctrine and package-maturity floors are not reopened. The three-packet Platform Gate reopen downstream propagation (PG-R1 spec-self, PG-R2 7 blueprints, PG-R3 2 release authorities) is now complete. The remaining action before the engine-closure "locally closed" supersession can be formally lifted is a small sub-gate-closure packet (`pkt.platform-gate-subgate-closure.v1`) that flips `arch.phase3-platform-gate-spec.v1` §0.1.1 sub-gates PG-01.1 / PG-07.1 / PG-10.1 from `pending` to `closed` and retires the "pending sub-gates" language from `canon-now.md` Recommendation and from the `canon-phase-4-plus-plan.md` step 20 closure note. All engine-side sub-gate remediation (conditions a, b, d) already landed on `agentic-engine` main on 2026-04-24.
+    source:
+      - canon-ref:dev/kb/canon-phase-4-plus-plan
+      - canon-knowledgebase/post-reopen-decisions/condition-f.md
+      - docs/control-plane/architecture/phase-3-platform-gate-spec-and-exit-audit.md
+      - docs/control-plane/implementation/packets/remediation/pkt.platform-gate-downstream-maturity-milestone-sync.v1.md
+      - docs/control-plane/releases/chat-native-maturity-matrix/phase-4-release-to-sdk-maturity-matrix.md
+      - docs/control-plane/releases/chat-native-milestone-architecture-plan/phase-4-release-milestone-architecture-plan.md
+    supersedes: []
+    related:
+      - CF-0089
+      - CF-0097
+      - CF-0098
+    next_action: Author + execute `pkt.platform-gate-subgate-closure.v1` against `SaintFreddy/Canon` main. Scope (narrow): (i) flip PG-01.1, PG-07.1, PG-10.1 status in `docs/control-plane/architecture/phase-3-platform-gate-spec-and-exit-audit.md §0.1.1` from `pending` to `closed` with citations to the 8 agentic-engine remediation PRs that landed 2026-04-24 (CF-0089..CF-0096), (ii) retire the "pending sub-gates" clause from `canon-now.md` Recommendation block and from the `canon-phase-4-plus-plan.md` step 20 closure note, (iii) append CF-0100 recording the formal lift of the engine-closure "locally closed" supersession. After that packet lands, plan-owner SaintFreddy names the next bounded step — candidate tracks remain as named in CF-0097: Phase 6 materialization pilot, second-model review pass, or stop-for-day.
