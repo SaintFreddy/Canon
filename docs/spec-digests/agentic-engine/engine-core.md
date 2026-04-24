@@ -669,4 +669,20 @@ Opinionated reference modules can live above that.
 
 ---
 
+## Invariants (ported from quarantined pre-reopen contract catalogs, DEC-RO-05)
+
+The following invariants were extracted from `Canon/{packages|services|workers}/<path>/index.mjs`
+during the quarantine invariant-sweep packet (`pkt.quarantine-invariant-sweep.v1`,
+authorized by DEC-RO-05 / CF-0096). The source files were subsequently removed by
+`pkt.quarantine-delete.v1`; git history retains them for archaeology.
+
+- *Lifecycle events are append-only and reconstructable after provider continuity loss.* — sourced from `Canon/packages/event-provenance-contracts/run-lineage/index.mjs` contract `run_lifecycle_event`.
+- *Lineage queries reconstruct state from append-only events rather than implicit transcript history.* — sourced from `Canon/packages/event-provenance-contracts/run-lineage/index.mjs` contract `run_lineage_query`.
+- *Lifecycle facts stay append-only and reconstructable after provider continuity loss.* — sourced from `Canon/services/event-provenance/run-trace/index.mjs` contract `publish_run_lifecycle`.
+- *Source chips and compact inspection derive from stable source lineage rather than transcript-local guesses.* — sourced from `Canon/services/event-provenance/run-trace/index.mjs` contract `publish_source_resolution`.
+- *Resume continuity remains explicit and queryable even when provider continuity is absent.* — sourced from `Canon/services/event-provenance/run-trace/index.mjs` contract `publish_resume_continuity`.
+- *Queries reconstruct trace state from append-only events instead of ambient chat history.* — sourced from `Canon/services/event-provenance/run-trace/index.mjs` contract `query_run_trace`.
+
+---
+
 *End of digest for `agentic-engine/engine-core`*

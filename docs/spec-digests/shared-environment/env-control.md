@@ -525,4 +525,22 @@ Apps may style these projections differently, but they should not invent complet
 
 ---
 
+## Invariants (ported from quarantined pre-reopen contract catalogs, DEC-RO-05)
+
+The following invariants were extracted from `Canon/{packages|services|workers}/<path>/index.mjs`
+during the quarantine invariant-sweep packet (`pkt.quarantine-invariant-sweep.v1`,
+authorized by DEC-RO-05 / CF-0096). The source files were subsequently removed by
+`pkt.quarantine-delete.v1`; git history retains them for archaeology.
+
+- *The provider session hint is optional and non-durable.* — sourced from `Canon/packages/environment-control-contracts/run-launch/index.mjs` contract `start_conversation_run`.
+- *Every accepted launch routes into a new run identity rather than mutating prior assistant truth.* — sourced from `Canon/packages/environment-control-contracts/run-launch/index.mjs` contract `start_conversation_run`.
+- *Resume behavior remains valid even when provider continuity is unavailable.* — sourced from `Canon/packages/environment-control-contracts/run-launch/index.mjs` contract `resume_conversation_run`.
+- *Rerun never reuses the prior run_id.* — sourced from `Canon/packages/environment-control-contracts/run-launch/index.mjs` contract `rerun_conversation_run`.
+- *Conversation entry may consult continuity views but may not treat the thread as the consequential truth anchor.* — sourced from `Canon/services/environment-shell-api/conversation-entry/index.mjs` contract `start_conversation`.
+- *Accepted launches always hand off to execution-control dispatch rather than reaching workers or gateways directly.* — sourced from `Canon/services/environment-shell-api/conversation-entry/index.mjs` contract `start_conversation`.
+- *Resume continuity remains reconstructable from shared refs even when provider continuity is unavailable.* — sourced from `Canon/services/environment-shell-api/conversation-entry/index.mjs` contract `resume_conversation`.
+- *Rerun remains a new run dispatch and may not overwrite prior run truth.* — sourced from `Canon/services/environment-shell-api/conversation-entry/index.mjs` contract `rerun_conversation`.
+
+---
+
 *End of digest for `shared-environment/env-control`*

@@ -2640,4 +2640,34 @@ Projection grammar primitives:
 
 ---
 
+## Invariants (ported from quarantined pre-reopen contract catalogs, DEC-RO-05)
+
+The following invariants were extracted from `Canon/{packages|services|workers}/<path>/index.mjs`
+during the quarantine invariant-sweep packet (`pkt.quarantine-invariant-sweep.v1`,
+authorized by DEC-RO-05 / CF-0096). The source files were subsequently removed by
+`pkt.quarantine-delete.v1`; git history retains them for archaeology.
+
+- *Thread continuity is queryable without treating the thread itself as the consequential truth object.* — sourced from `Canon/packages/shared-object-api/run-continuity/index.mjs` contract `thread_continuity`.
+- *Continuity survives model swaps and provider changes through shared refs.* — sourced from `Canon/packages/shared-object-api/run-continuity/index.mjs` contract `thread_continuity`.
+- *Compact inspection stays anchored to authoritative shared-object refs.* — sourced from `Canon/packages/shared-object-api/run-continuity/index.mjs` contract `run_inspection`.
+- *The view may stay compact, but it may not hide run identity or grounding.* — sourced from `Canon/packages/shared-object-api/run-continuity/index.mjs` contract `run_inspection`.
+- *Resume continuity derives from thread, run, and context refs rather than one provider session token.* — sourced from `Canon/packages/shared-object-api/run-continuity/index.mjs` contract `resume_continuity`.
+- *Regenerate or rerun behavior always creates a new run rather than mutating prior run truth in place.* — sourced from `Canon/packages/shared-object-api/run-continuity/index.mjs` contract `rerun_plan`.
+- *Thread continuity may assist familiar chat UX but does not replace run identity.* — sourced from `Canon/packages/shared-object-schemas/run-and-source/index.mjs` contract `thread_line`.
+- *Provider-managed conversation state may not be the only continuity mechanism.* — sourced from `Canon/packages/shared-object-schemas/run-and-source/index.mjs` contract `thread_line`.
+- *Branch overlays stay linked explicitly rather than being inferred from transcript copies.* — sourced from `Canon/packages/shared-object-schemas/run-and-source/index.mjs` contract `thread_line`.
+- *The input snapshot is the durable launch basis for a later run.* — sourced from `Canon/packages/shared-object-schemas/run-and-source/index.mjs` contract `run_input_snapshot`.
+- *Rerun and resume flows keep the snapshot explicit instead of rebuilding it from provider transcript continuity.* — sourced from `Canon/packages/shared-object-schemas/run-and-source/index.mjs` contract `run_input_snapshot`.
+- *Every consequential assistant answer resolves back to one run.* — sourced from `Canon/packages/shared-object-schemas/run-and-source/index.mjs` contract `run`.
+- *Retry, replay, and rerun behavior creates a new run_id instead of mutating prior run truth in place.* — sourced from `Canon/packages/shared-object-schemas/run-and-source/index.mjs` contract `run`.
+- *Terminal runs always retain proof and delta links even when the delta is empty.* — sourced from `Canon/packages/shared-object-schemas/run-and-source/index.mjs` contract `run`.
+- *Source identity stays stable independently of any one thread or provider session.* — sourced from `Canon/packages/shared-object-schemas/run-and-source/index.mjs` contract `source_reference`.
+- *Source chips and citations must resolve to this substrate rather than decorative transcript-only references.* — sourced from `Canon/packages/shared-object-schemas/run-and-source/index.mjs` contract `source_reference`.
+- *Exact replay depends on this snapshot rather than hidden transcript state.* — sourced from `Canon/packages/shared-object-schemas/run-and-source/index.mjs` contract `context_pack_snapshot`.
+- *Explicit-vs-fallback lane origin stays visible for later replay, audit, and R2 inheritance.* — sourced from `Canon/packages/shared-object-schemas/run-and-source/index.mjs` contract `context_pack_snapshot`.
+- *Compact inspection remains traceable back to the same proof substrate later stages inherit.* — sourced from `Canon/packages/shared-object-schemas/run-and-source/index.mjs` contract `proof_bundle_summary`.
+- *Proof payload stays distinct from UI narration and transcript convenience text.* — sourced from `Canon/packages/shared-object-schemas/run-and-source/index.mjs` contract `proof_bundle_summary`.
+
+---
+
 *End of digest for `shared-environment/env-shared-objects`*

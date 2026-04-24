@@ -109,4 +109,20 @@ Tool categories that should be supported:
 
 ---
 
+## Invariants (ported from quarantined pre-reopen contract catalogs, DEC-RO-05)
+
+The following invariants were extracted from `Canon/{packages|services|workers}/<path>/index.mjs`
+during the quarantine invariant-sweep packet (`pkt.quarantine-invariant-sweep.v1`,
+authorized by DEC-RO-05 / CF-0096). The source files were subsequently removed by
+`pkt.quarantine-delete.v1`; git history retains them for archaeology.
+
+- *The gateway consumes frozen admitted basis and may not rebuild truth from transcript continuity.* — sourced from `Canon/packages/model-gateway-contracts/chat-turn/index.mjs` contract `chat_turn_request`.
+- *Provider session hints may assist UX but do not become durable run truth.* — sourced from `Canon/packages/model-gateway-contracts/chat-turn/index.mjs` contract `chat_turn_request`.
+- *Gateway output remains a bounded run result candidate, not durable product truth by itself.* — sourced from `Canon/packages/model-gateway-contracts/chat-turn/index.mjs` contract `chat_turn_result`.
+- *Gateway execution consumes frozen admitted-basis inputs and may not rebuild truth from transcript continuity.* — sourced from `Canon/services/model-gateway/chat-turn-execution/index.mjs` contract `execute_chat_turn`.
+- *Provider session hints remain optional UX aids and do not become durable run truth.* — sourced from `Canon/services/model-gateway/chat-turn-execution/index.mjs` contract `execute_chat_turn`.
+- *Failure normalization does not erase the run or collapse provider loss into generic transcript noise.* — sourced from `Canon/services/model-gateway/chat-turn-execution/index.mjs` contract `normalize_chat_turn_failure`.
+
+---
+
 *End of digest for `agentic-engine/engine-gateway`*
