@@ -37,20 +37,19 @@ deleted.
 Reopen marker:
 
 - `Gate reopened — audit-cited contradiction event 2026-04-18.`
-- Platform Gate's next status is `pending PG-01.1 + PG-07.1 + PG-10.1`.
+- Platform Gate's next status is `pending PG-01.1 + PG-07.1 + PG-10.1` (all three sub-gates closed 2026-04-24 via the engine-side remediation PRs referenced in §0.1.1; the reopen event itself is preserved as append-only history per DEC-RO-0f Option A, so this spec does NOT revert the §7 audit-checklist header to the prior `Gate passed` line).
 - Successor checkpoint: `post-reopen-frozen-posture-replay-audit-sufficiency-checkpoint`
   is formally superseded by `post-reopen-audit-cited-contradiction-checkpoint`.
 
 ### 0.1.1 Remediation sub-gates
 
-Three remediation sub-gates close the reopen. They must each land before
-the Platform Gate acceptance marker returns to `passed`.
+Three remediation sub-gates close the reopen. All three landed on `SaintFreddy/agentic-engine` main on 2026-04-24. The Platform Gate acceptance marker does NOT automatically revert to `passed` — DEC-RO-0f Option A keeps `Gate passed` as append-only history in §7 and keeps this reopen event recorded alongside it as the new substrate-truth. The sub-gate table below records the closure status and citation evidence for each sub-gate.
 
-| Sub-gate | Closes when |
-| --- | --- |
-| `PG-01.1` | engine `Clock` abstraction landed in `@canon/engine-core` with Shared Env production impl; `stableStringify` unified in `@canon/engine-core`; `localeCompare` purged from replay-sensitive sort paths; `frozenAt` placement decision recorded and implemented (condition (a), condition (d), and the `frozenAt` hash-inclusion sub-decision). |
-| `PG-07.1` | engine-owned `CredentialProvider` and hardened `validateCredentialScope` landed per condition (b) sub-decision B-1 Option A. |
-| `PG-10.1` | `spawnToolSandboxWorker` forks a real Node child and `attachToolSandboxWorkerIpc` is shipped on `contracts/exports.json` per condition (b) sub-decisions B-2 and B-3 Option A. |
+| Sub-gate | Status | Closes when | Closure evidence |
+| --- | --- | --- | --- |
+| `PG-01.1` | closed 2026-04-24 | engine `Clock` abstraction landed in `@canon/engine-core` with Shared Env production impl; `stableStringify` unified in `@canon/engine-core`; `localeCompare` purged from replay-sensitive sort paths; `frozenAt` placement decision recorded and implemented (condition (a), condition (d), and the `frozenAt` hash-inclusion sub-decision). | `SaintFreddy/agentic-engine` PRs for Clock, thaw-timestamp, localeCompare, frozenAt-in-hashed-doc, stableStringify (see CF-0089..CF-0096 in `canon-knowledgebase/canon-knowledgebase-layer-carry-forward.md`). |
+| `PG-07.1` | closed 2026-04-24 | engine-owned `CredentialProvider` and hardened `validateCredentialScope` landed per condition (b) sub-decision B-1 Option A. | `SaintFreddy/agentic-engine` credentialScope-enforcement PR (see CF-0089..CF-0096). |
+| `PG-10.1` | closed 2026-04-24 | `spawnToolSandboxWorker` forks a real Node child and `attachToolSandboxWorkerIpc` is shipped on `contracts/exports.json` per condition (b) sub-decisions B-2 and B-3 Option A. | `SaintFreddy/agentic-engine` toolSandboxWorker-fork PR (see CF-0089..CF-0096). |
 
 ### 0.1.2 Downstream posture
 
@@ -63,10 +62,13 @@ the Platform Gate acceptance marker returns to `passed`.
 - The `PG-01` through `PG-10` exit-test catalog in §6 and the §7
   checklist continue to define the gate's pass conditions. The reopen
   does not redefine them; it reopens the P3.6 passage claim.
-- Ordinary baton continuation remains paused under `canon-now.md`
-  `Baton state: stop — audit-reopen hold` until PG-01.1, PG-07.1, and
-  PG-10.1 close and the remaining reopen-resolution conditions are
-  decided.
+- Ordinary baton continuation was paused under `canon-now.md`
+  `Baton state: stop — audit-reopen hold` while PG-01.1, PG-07.1, and
+  PG-10.1 were open; all three sub-gates closed 2026-04-24 alongside
+  the remaining reopen-resolution conditions (see CF-0089..CF-0099 in
+  `canon-knowledgebase/canon-knowledgebase-layer-carry-forward.md`),
+  so the baton is now in `Baton state: ready` pending plan-owner
+  selection of the next bounded step.
 
 ## 1. Purpose
 
@@ -173,9 +175,12 @@ They do not prescribe final repo layout, but they do prescribe mandatory impleme
 > Gate reopened — audit-cited contradiction event 2026-04-18. The prior
 > `Gate passed` line above is preserved as append-only history per
 > `canon-knowledgebase/post-reopen-decisions/condition-f.md` (Option A,
-> recorded 2026-04-23). Platform Gate's next status is
-> `pending PG-01.1 + PG-07.1 + PG-10.1`. See §0.1 for the remediation
-> sub-gates and successor-checkpoint reference.
+> recorded 2026-04-23). Sub-gates PG-01.1 / PG-07.1 / PG-10.1 all
+> closed 2026-04-24 (see §0.1.1 for closure evidence); under DEC-RO-0f
+> Option A's append-only-history discipline, this §7 audit-checklist
+> header preserves `Gate passed` as prior-state history and does NOT
+> revert to that marker. See §0.1 for the full reopen record and
+> successor-checkpoint reference.
 
 The gate may pass only when human review can answer every line below with “yes”.
 
