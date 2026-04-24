@@ -2220,3 +2220,41 @@ entries:
       - P05
       - P09
     next_action: Open `@droid` remediation issues on `SaintFreddy/agentic-engine` for the four independently-executable engine packets (stableStringify, policy-matcher, engine-version-0.1.0, replay-compare-diff-semantics) and on `SaintFreddy/Canon` for peerDependency carve-out (doc-only). Leave Clock-dependent engine packets (thaw, localeCompare, frozenAt) queued until the Clock PR lands. Prompt plan-owner SaintFreddy for explicit decisions on (e.2) LICENSE choice and (j) Canon quarantined-draft fate.
+
+  - id: CF-0095
+    date: 2026-04-24
+    status: active
+    kind: decision
+    stage: phase-4-execution
+    packet: none
+    topic: legal-posture
+    summary: Plan-owner SaintFreddy recorded DEC-RO-04 for condition (e.2) LICENSE choice = Proprietary / All Rights Reserved across all 5 repos (Canon, agentic-engine, canon-apps, shared-environment, agentic-engine-history). Decision rejected Option 1 MIT, Option 2 Apache-2.0, and Option 3 BSL. Chose Option 4 because it maximises commercial flexibility during 0.1.0, preserves later reversal to any license, and avoids granting rights that must then be honored. Public-SDK aspiration phrased in `AGENTIC_WORKFLOW.md §9 L426` is withdrawn for 0.1.0 and must be reconciled by the LICENSE remediation packet. Full record at `canon-knowledgebase/post-reopen-decisions/condition-e-license.md`.
+    impact: Authorizes `pkt.add-proprietary-license.v1` which will (i) add a Proprietary LICENSE file of the exact form specified in the decision record to each of the 5 repo roots, (ii) update `AGENTIC_WORKFLOW.md §9` to either mark public-SDK posture as aspirational / not current or remove that phrasing entirely (packet surfaces both variants for plan-owner selection), (iii) append a row to `CANON_PLAN_IMPACT_REPORT.md §6 row 6` noting DEC-RO-04 landed on Option 4. This is the last remaining LICENSE-gated action; no other packets were blocked purely on (e.2). Revisit conditions named in the decision record: 1.0 milestone, external partnership triggering specific license posture, or plan-owner electing OSS for community growth.
+    source:
+      - canon-knowledgebase/post-reopen-decisions/condition-e-license.md
+      - canon-ref:dev/canon-now
+      - CANON_PLAN_IMPACT_REPORT.md
+      - AGENTIC_WORKFLOW.md
+    supersedes: []
+    related:
+      - CF-0094
+    next_action: Author packet scaffold `pkt.add-proprietary-license.v1` in `SaintFreddy/Canon/docs/control-plane/implementation/packets/remediation/`, open `@droid`-tagged remediation issue, and merge resulting PRs across all 5 repos.
+
+  - id: CF-0096
+    date: 2026-04-24
+    status: active
+    kind: decision
+    stage: phase-4-execution
+    packet: none
+    topic: repo-structure
+    summary: Plan-owner SaintFreddy recorded DEC-RO-05 for condition (j) Canon quarantined-draft fate = Delete, executed in two sequenced packets under correctness-first discipline. Packet A (`pkt.quarantine-invariant-sweep.v1`) extracts every `invariants: Object.freeze([...])` array from the 11 `.mjs` contract-as-code files under `Canon/packages/`, `Canon/services/`, `Canon/workers/` (1,369 total LOC, zero inbound imports, zero overlap with control-plane artifact-registry ref names), identifies the matching spec digest for each invariant's subject domain, and appends any NOT already captured as one-liners under a clearly-labelled "Invariants (from quarantined pre-reopen contract catalogs)" subsection with origin-file attribution. Packet A does no deletion. Packet B (`pkt.quarantine-delete.v1`) is hard-gated on Packet A landing; it `git rm -r`'s the 3 directories and reconciles `docs/control-plane/surfaces/phase-6-repo-package-architecture-and-agent-execution-rules-pack.md` + `docs/control-plane/core/master-plan.md` prose that still expects Canon to host packages/services/workers. Decision rejected Preserve (slow rot) and Advance (weeks of redundant contract re-authoring in an abandoned mjs format). Full record at `canon-knowledgebase/post-reopen-decisions/condition-j.md`.
+    impact: Unblocks the final two reopen-gating packets. All 12 reopen-resolution conditions are now RECORDED; no escalated decisions remain. Git history preserves the 1,369 LOC of contract-as-code for future archaeology. Canon repo becomes structurally control-plane + authority only, matching its post-reopen identity. `post-reopen-remediation` skill will enforce the two-packet ordering gate: Packet B's issue body cites Packet A's merged PR as a prerequisite and the skill blocks execution if Packet A hasn't landed.
+    source:
+      - canon-knowledgebase/post-reopen-decisions/condition-j.md
+      - canon-ref:dev/canon-now
+      - CANON_PLAN_IMPACT_REPORT.md
+    supersedes: []
+    related:
+      - CF-0094
+      - CF-0095
+    next_action: Author packet scaffolds `pkt.quarantine-invariant-sweep.v1` and `pkt.quarantine-delete.v1` in `SaintFreddy/Canon/docs/control-plane/implementation/packets/remediation/`. Open Packet A's `@droid` issue first. Open Packet B's issue only after Packet A's PR has merged to main.
