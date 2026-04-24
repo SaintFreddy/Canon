@@ -2258,3 +2258,28 @@ entries:
       - CF-0094
       - CF-0095
     next_action: Author packet scaffolds `pkt.quarantine-invariant-sweep.v1` and `pkt.quarantine-delete.v1` in `SaintFreddy/Canon/docs/control-plane/implementation/packets/remediation/`. Open Packet A's `@droid` issue first. Open Packet B's issue only after Packet A's PR has merged to main.
+
+  - id: CF-0097
+    date: 2026-04-24
+    status: active
+    kind: step-closure
+    stage: phase-4-execution
+    packet: none
+    topic: step-20-closure
+    summary: Phase-4+ plan step 20 — audit-cited-contradiction reopen gate — transitions from `open` to `complete`. All three completion signals are satisfied: (i) twelve plan-owner decision records exist under `canon-knowledgebase/post-reopen-decisions/` covering conditions a through j plus the e.1/e.2 sub-decisions and the frozenat-hash-inclusion sub-decision, (ii) Platform Gate truth-status is explicitly reopened per DEC-RO-0f Option A with sub-gates PG-01.1/PG-07.1/PG-10.1, and (iii) `post-reopen-frozen-posture-replay-audit-sufficiency-checkpoint` is formally superseded by `post-reopen-audit-cited-contradiction-checkpoint` per DEC-RO-0i. Beyond the literal completion signal, the full remediation wave authorized by DEC-RO-01 through DEC-RO-05 has been EXECUTED: 21 autonomous droid PRs merged across 5 repos (Canon 10, agentic-engine 8, canon-apps 1, shared-environment 1, agentic-engine-history 1 — see CF-0093..CF-0096 for per-condition attribution). Proprietary LICENSE installed on all 5 repos. Quarantined pre-reopen `.mjs` contract catalogs archived to `docs/control-plane/archive/quarantine-pre-reopen/` in Canon PR #25 with invariants ported into `docs/spec-digests/` via Canon PR #29. AGENTIC_WORKFLOW.md §9 aspirational markup and CANON_PLAN_IMPACT_REPORT.md §6 row-13 append landed via Canon PR #30. `canon-now.md` baton state lifted from `stop — audit-reopen hold` to `ready — post-reopen remediation wave closed 2026-04-24; plan-owner names next bounded step` via Canon PR #31. Local workspace `Canon/packages/`, `Canon/services/`, `Canon/workers/` draft directories physically removed after byte-verified archive preservation.
+    impact: Ordinary baton continuation is cleared to resume. The Phase-4+ plan's "next bounded execution step" field is now `unassigned` pending plan-owner selection from the stage plan (Platform Gate follow-ups PG-R2 and PG-R3, or `R1`..`R7` stage entries). Inherited Baseline items 1-10 and completed steps 1-19 remain carry-forward substrate truth; step 20 closure does not invalidate earlier work. No step auto-activates. The engine-closure posture previously reopened under cited-contradiction review is restored to a more-rigorous closed state via the 8 agentic-engine remediation PRs. The "locally closed" claim is still formally superseded pending PG-R2/PG-R3 landing; those are candidates for the next bounded step alongside Phase-6 materialization packets. Weekly drift-detection audit workflow remains scheduled for Monday 14:00 UTC across all 5 repos.
+    source:
+      - canon-ref:dev/kb/canon-phase-4-plus-plan
+      - canon-ref:dev/canon-now
+      - canon-knowledgebase/post-reopen-decisions/
+    supersedes: []
+    related:
+      - CF-0089
+      - CF-0090
+      - CF-0091
+      - CF-0092
+      - CF-0093
+      - CF-0094
+      - CF-0095
+      - CF-0096
+    next_action: Plan-owner SaintFreddy names the next bounded step. Candidate unblocked tracks: (a) Platform Gate follow-up packets PG-R2 (blueprint/downstream-surface sync) and PG-R3 (maturity-matrix/release-blueprint sync) — these formally close the engine-closure supersession gate; (b) Phase-6 materialization pilot packets `P06.x` against satellite repos — this is the path that puts real runtime code in `agentic-engine` / `canon-apps` / `shared-environment` and produces user-visible chat-native output; (c) a second-model review pass on today's 21 merged PRs for additional assurance before resuming execution. No track is forced; all three are legitimate continuations of the now-closed reopen gate.
