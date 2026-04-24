@@ -10,6 +10,8 @@ This artifact is accepted for downstream use.
 It translates the accepted R2 Context Chat contract into bounded implementation guidance for inspectable evidence/context control, pack operations, memory/canon visibility, and replayable pack lineage.
 It does not create runtime code or widen accepted release semantics.
 
+> **Platform Gate reopen notice (2026-04-23).** This blueprint transitively depends on `arch.phase3-platform-gate-spec.v1`. On 2026-04-23 the plan-owner (SaintFreddy) recorded a formal reopen of the Platform Gate P3.6 acceptance marker against the 2026-04-18 agentic-engine audit-cited contradiction event per `canon-knowledgebase/post-reopen-decisions/condition-f.md` (Option A). Platform Gate's next status is `pending PG-01.1 + PG-07.1 + PG-10.1`. This blueprint itself remains `accepted` for downstream use — the implementation guidance below is unchanged and the release doctrine is not reopened. Consumers reading this blueprint should, however, be aware that PG-01.1 (Clock + stableStringify + localeCompare + frozenAt), PG-07.1 (credentialScope enforcement), and PG-10.1 (spawnToolSandboxWorker + IPC export) are remediation sub-gates still closing. Engine sub-gate remediation landed on `SaintFreddy/agentic-engine` main on 2026-04-24 via 8 autonomous PRs (see `canon-knowledgebase/canon-knowledgebase-layer-carry-forward.md` CF-0089..CF-0096); the sub-gates formally close after PG-R3 (maturity-matrix + milestone-plan sync) lands. See `docs/control-plane/architecture/phase-3-platform-gate-spec-and-exit-audit.md` §0.1 for the full gate reopen markup and successor-checkpoint reference.
+
 ## 1. Purpose
 
 - map real pack control onto concrete app, package, service, worker, and test clusters without reducing it to sidebar theater,
