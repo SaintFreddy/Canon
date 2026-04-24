@@ -2283,3 +2283,23 @@ entries:
       - CF-0095
       - CF-0096
     next_action: Plan-owner SaintFreddy names the next bounded step. Candidate unblocked tracks: (a) Platform Gate follow-up packets PG-R2 (blueprint/downstream-surface sync) and PG-R3 (maturity-matrix/release-blueprint sync) — these formally close the engine-closure supersession gate; (b) Phase-6 materialization pilot packets `P06.x` against satellite repos — this is the path that puts real runtime code in `agentic-engine` / `canon-apps` / `shared-environment` and produces user-visible chat-native output; (c) a second-model review pass on today's 21 merged PRs for additional assurance before resuming execution. No track is forced; all three are legitimate continuations of the now-closed reopen gate.
+
+  - id: CF-0098
+    date: 2026-04-24
+    status: active
+    kind: packet-landing
+    stage: phase-4-execution
+    packet: pkt.platform-gate-downstream-blueprint-sync.v1
+    topic: platform-gate-reopen-propagation
+    summary: PG-R2 landed on `SaintFreddy/Canon` main via Canon PR #35 (autonomous droid-issue-exec run on claude-opus-4-7 high-reasoning, issue #34). Uniform 'Platform Gate reopen notice (2026-04-23)' blockquote was inserted into 7 Phase 6 release blueprint .md files (r1..r7) at identical logical position (between the pre-§1 lead paragraph and the §1 Purpose header), and a uniform notes[] append was added to each of the 7 corresponding entries in `docs/control-plane/artifact-registry.seed.json`. Byte-identical text across all 7 blueprint insertions and all 7 registry-note appends. Execution matched the packet scaffold's file_whitelist exactly: 8 files changed (7 .md + 1 .json), no other file touched, no artifact_status flipped, no existing prose rewritten. `python3 scripts/validators/validate_control_plane_integrity.py` returned `status: pass, issues: []` with 111 artifacts and 1424 graph edges intact. PG-R1 (Canon PR #17, 2026-04-24) + PG-R2 (Canon PR #35, 2026-04-24) together satisfy two of the three doc-sync obligations created by DEC-RO-0f Option A.
+    impact: Downstream consumers of any individual accepted Phase 6 release blueprint now surface the Platform Gate reopen context without needing to read the gate spec in isolation. The blueprint guidance itself remains unchanged and `accepted`; release doctrine is not reopened. PG-R3 (maturity matrix + milestone architecture plan footnote sync) is now the remaining doc-sync packet before the PG-01.1/PG-07.1/PG-10.1 sub-gates can be formally marked closed in the Platform Gate spec (all engine-side remediation already landed via CF-0089..CF-0096).
+    source:
+      - canon-ref:dev/kb/canon-phase-4-plus-plan
+      - canon-knowledgebase/post-reopen-decisions/condition-f.md
+      - docs/control-plane/architecture/phase-3-platform-gate-spec-and-exit-audit.md
+      - docs/control-plane/implementation/packets/remediation/pkt.platform-gate-downstream-blueprint-sync.v1.md
+    supersedes: []
+    related:
+      - CF-0089
+      - CF-0097
+    next_action: PG-R3 — authorize and execute `pkt.platform-gate-downstream-maturity-milestone-sync.v1` covering the 2 remaining accepted artifacts (`rel.chat-native-maturity-matrix.v1` at `docs/control-plane/releases/chat-native-maturity-matrix/phase-4-release-to-sdk-maturity-matrix.md` + `rel.chat-native-milestone-architecture-plan.v1` at `docs/control-plane/releases/chat-native-milestone-architecture-plan/phase-4-release-milestone-architecture-plan.md`). After PG-R3 lands, the Platform Gate spec §0.1.1 remediation sub-gates PG-01.1 / PG-07.1 / PG-10.1 can be marked `closed` since all three engine-side remediation packets (conditions a, b, d) landed on agentic-engine on 2026-04-24. That final closure is a small third packet (`pkt.platform-gate-subgate-closure.v1`) that will retire the "pending sub-gates" language from canon-now.md and canon-phase-4-plus-plan.md step 20 closure note.
