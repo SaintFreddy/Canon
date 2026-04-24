@@ -654,6 +654,7 @@ Findings that cannot be resolved without a plan-owner decision. Each entry: audi
 | 10 | Platform Gate truth-status | Retain "passed" with footnotes, or formally reopen | (a) reopen, list remediation gates PG-01.1, PG-07.1, PG-10.1 etc.; (b) retain passed status with explicit append-only "audit-aware substrate gap" carry-forward; (c) freeze Canon execution entirely pending remediation | (a) — reopen. Explicit, recoverable, append-only. |
 | 11 | Phase 6 packet quarantine state | Does the audit reopen `canon-phase-4-plus-plan.md` baton state `stop`? | (a) yes — audit is a "cited contradiction" per §157; add new step 20 to step ledger; (b) no — baton remains stopped until human owner decides; (c) defer to next session | (b) formal human decision required before (a) |
 | 12 | post-reopen-frozen-posture-replay-audit-sufficiency-checkpoint.md | Supersede the "sufficiency" claim? | (a) supersede with new checkpoint naming stableStringify + Clock + localeCompare + PROV-002/004 as open; (b) retain and add inline corrective notes | (a) — keeps append-only posture |
+| 13 | DEC-RO-04 (condition e.2; supersedes row 6 / X-007) | LICENSE choice — resolved 2026-04-24 by SaintFreddy | Option 4 — Proprietary / All Rights Reserved (selected) | DEC-RO-04 landed 2026-04-24 on Option 4; public-SDK aspiration in AGENTIC_WORKFLOW.md §9 L426 is withdrawn for 0.1.0. See `canon-knowledgebase/post-reopen-decisions/condition-e-license.md` for revisit conditions. |
 
 ---
 
