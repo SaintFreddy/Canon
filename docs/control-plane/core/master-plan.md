@@ -2239,3 +2239,27 @@ Notes for future prompts:
 - Preserve the append-only "Gate passed" history in `docs/control-plane/architecture/phase-3-platform-gate-spec-and-exit-audit.md` §0 and §7; only add further reopen or closure markers alongside it.
 - Close PG-01.1, PG-07.1, and PG-10.1 by landing `pkt.remediate-clock-timeprovider.v1`, `pkt.remediate-stablestringify-unification.v1`, `pkt.remediate-localecompare-sort-paths.v1`, `pkt.remediate-frozenat-in-hashed-doc.v1`, `pkt.remediate-credentialscope-enforcement.v1`, and `pkt.remediate-toolsandboxworker-fork.v1` against `SaintFreddy/agentic-engine`. After those land, `PG-R2` and `PG-R3` can propagate the updated gate status into downstream Canon footnotes, and a successor packet can record the sub-gate closure back into this file and §0.1 as additional append-only history.
 - Do not edit `canon-now.md`, `canon-knowledgebase/`, `AGENTIC_ENGINE_AUDIT_LOG.md`, or `CANON_PLAN_IMPACT_REPORT.md` from remediation packets; those remain human-owned authority records.
+
+#### CF-0062 | 2026-04-24 | Source: pkt.remediate-peerdep-carveout.v1 — Intra-workspace peer-dependency carve-out
+
+New information:
+- Plan-owner decision `canon-knowledgebase/post-reopen-decisions/condition-g.md` (Option A, delegated-recommendation, recorded 2026-04-23) authorizes an intra-workspace peer-dependency carve-out amendment in `docs/control-plane/surfaces/phase-6-repo-package-architecture-and-agent-execution-rules-pack.md` §6.1.
+- `docs/control-plane/surfaces/phase-6-repo-package-architecture-and-agent-execution-rules-pack.md` now carries an append-preserving §6.1.1 paragraph: "Third-party runtime peer-dependencies are forbidden; intra-workspace peer-dependencies between `@canon/*` packages are permitted because they are structurally equivalent to intra-engine imports and do not expand the runtime surface beyond `@canon/*`." The prior §6.1 workspace-family dependency matrix and surrounding text are preserved verbatim; §6.1.1 narrows how the matrix is interpreted for peer-dep syntactic shapes without changing any cell of the matrix itself.
+- `docs/control-plane/artifact-registry.seed.json` records the amendment in the notes for `surf.phase6-repo-package-architecture-and-agent-execution-rules-pack.v1`. The artifact's registry status remains `accepted` because the amendment is append-preserving and narrows only peer-dep syntactic interpretation. `docs/control-plane/dependency-graph.seed.json` requires no structural edit because no node status or edge changed.
+
+Impact:
+- The "zero external runtime dependencies" invariant is preserved in spirit; the engine still ships no third-party runtime peers. Intra-workspace `@canon/*` peer-dependencies are now explicitly authorized as implementation-detail expressions of the monorepo seam map rather than prohibited syntactic shapes.
+- No agentic-engine code change is required by this packet. The decision authorizes existing intra-workspace peer-dep shapes rather than rewriting them away. Any future third-party peer-dep addition still requires an explicit plan-owner decision.
+- Condition (g) is now fully absorbed into accepted Canon control-plane truth alongside conditions (a), (b), (c), (d), (e.1), (f), (h), and (i); conditions (e.2) LICENSE and (j) Canon/packages|services|workers quarantined-draft state remain escalated to the plan-owner.
+
+Status changes:
+- `surf.phase6-repo-package-architecture-and-agent-execution-rules-pack.v1` registry notes updated to record the §6.1 amendment; `artifact_status` retained as `accepted` per the decision's append-preserving rule.
+- No dependency-graph node status or edge changes; graph remains consistent with the registry and the `validate_control_plane_integrity.py` validator.
+
+Stale items:
+- None propagated by this packet. The amendment narrows peer-dep syntactic interpretation only and does not pressure downstream blueprints, manifests, or packets that cite `surf.phase6-repo-package-architecture-and-agent-execution-rules-pack.v1`.
+
+Notes for future prompts:
+- Treat `canon-knowledgebase/post-reopen-decisions/condition-g.md` Option A as authoritative; do not re-litigate the peer-dep carve-out posture or broaden it to third-party peers.
+- Preserve the append-only §6.1 matrix and add any further peer-dep rule refinements alongside §6.1.1 rather than rewriting either.
+- Do not edit `canon-now.md`, `canon-knowledgebase/`, `AGENTIC_ENGINE_AUDIT_LOG.md`, or `CANON_PLAN_IMPACT_REPORT.md` from remediation packets; those remain human-owned authority records.
