@@ -2326,3 +2326,33 @@ entries:
       - CF-0097
       - CF-0098
     next_action: Author + execute `pkt.platform-gate-subgate-closure.v1` against `SaintFreddy/Canon` main. Scope (narrow): (i) flip PG-01.1, PG-07.1, PG-10.1 status in `docs/control-plane/architecture/phase-3-platform-gate-spec-and-exit-audit.md §0.1.1` from `pending` to `closed` with citations to the 8 agentic-engine remediation PRs that landed 2026-04-24 (CF-0089..CF-0096), (ii) retire the "pending sub-gates" clause from `canon-now.md` Recommendation block and from the `canon-phase-4-plus-plan.md` step 20 closure note, (iii) append CF-0100 recording the formal lift of the engine-closure "locally closed" supersession. After that packet lands, plan-owner SaintFreddy names the next bounded step — candidate tracks remain as named in CF-0097: Phase 6 materialization pilot, second-model review pass, or stop-for-day.
+
+  - id: CF-0100
+    date: 2026-04-24
+    status: active
+    kind: packet-landing
+    stage: phase-4-execution
+    packet: pkt.platform-gate-subgate-closure.v1
+    topic: platform-gate-subgate-closure
+    summary: Sub-gate closure packet landed on `SaintFreddy/Canon` main via Canon PR #43 (autonomous droid-issue-exec run on claude-opus-4-7 high-reasoning, issue #42; scaffold landed via Canon PR #41 at 3db2c9f). All 7 surgical edits from the packet scaffold's "Exact edit targets" block landed byte-exactly: 5 edits in `docs/control-plane/architecture/phase-3-platform-gate-spec-and-exit-audit.md` (§0.1 reopen-marker line, §0.1.1 introductory paragraph, §0.1.1 sub-gate table flipped to Status/Closure-evidence columns with all three sub-gates marked `closed 2026-04-24`, §0.1.2 baton-continuation paragraph, §7 checklist reopen-marker footnote), 1 edit in `canon-now.md` Recommendation 'User-selected bounded task' bullet (retired the "PG-R2 and PG-R3 land" clause; recorded the supersession lift), 1 edit in `canon-knowledgebase/canon-phase-4-plus-plan.md` step 20 'next bounded execution step' block (retired the "Platform Gate follow-ups PG-R2 / PG-R3" clause). Execution matched file_whitelist exactly: 3 files changed (22 additions, 17 deletions). DEC-RO-0f Option A append-only-history discipline preserved — §7 `Gate passed.` header line at line 172 still present verbatim; the `## 0.1 Gate status (Phase 4+ reopen event, 2026-04-23)` section header still present verbatim. `python3 scripts/validators/validate_control_plane_integrity.py` returned `status: pass, issues: []` with 111 artifacts and 1424 graph edges (unchanged from PG-R3 baseline). The full four-packet DEC-RO-0f Option A remediation sequence (PG-R1 Canon PR #17 → PG-R2 Canon PR #35 → PG-R3 Canon PR #39 → sub-gate closure Canon PR #43) is now complete.
+    impact: The engine-closure "locally closed" supersession is formally lifted. The engine seam is restored to a more-rigorous closed state via the 8 agentic-engine remediation PRs that landed 2026-04-24 (CF-0089..CF-0096), AND the Platform Gate §0.1.1 sub-gate triple is now marked closed with citation evidence, AND the authority records (canon-now.md + canon-phase-4-plus-plan.md) no longer carry "pending sub-gates" language. Platform Gate acceptance marker reads `reopened 2026-04-18 → closed via PG-R1/R2/R3/subgate-closure 2026-04-24` — not a revert to the prior `passed` marker (append-only-history discipline). The baton is in `Baton state: ready` per canon-now.md; the next bounded step remains **unassigned** pending plan-owner selection. No further Platform Gate reopen-related packets are expected; the next reopen event would require a fresh cited-contradiction trigger per `canon-phase-4-plus-plan.md §157`. Candidate next tracks (all named in CF-0097): (a) Phase 6 materialization pilot packets `P06.x` against satellite repos, (b) second-model review pass over today's 25 merged PRs using GPT-5 (the model not chosen for original authoring), (c) stop-for-day.
+    source:
+      - canon-ref:dev/kb/canon-phase-4-plus-plan
+      - canon-knowledgebase/post-reopen-decisions/condition-f.md
+      - docs/control-plane/architecture/phase-3-platform-gate-spec-and-exit-audit.md
+      - docs/control-plane/implementation/packets/remediation/pkt.platform-gate-subgate-closure.v1.md
+      - canon-now.md
+    supersedes: []
+    related:
+      - CF-0089
+      - CF-0090
+      - CF-0091
+      - CF-0092
+      - CF-0093
+      - CF-0094
+      - CF-0095
+      - CF-0096
+      - CF-0097
+      - CF-0098
+      - CF-0099
+    next_action: Plan-owner SaintFreddy names the next bounded step. Candidate tracks: (a) Phase 6 materialization pilot packets `P06.x` — this is the path that puts real runtime code in `agentic-engine` / `canon-apps` / `shared-environment` and produces user-visible chat-native output; (b) second-model review pass on the 25 PRs merged 2026-04-24 using GPT-5 (the model not chosen for original authoring) — uses the `review` skill; (c) stop-for-day / await fresh plan-owner direction. No track is forced; all three are legitimate continuations of the now-fully-closed reopen gate. The Monday 14:00 UTC weekly drift-detection audit workflow (`.github/workflows/droid-weekly-audit.yml`) will run across all 5 repos and surface anything that drifted since this session.
