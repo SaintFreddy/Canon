@@ -385,4 +385,20 @@ Each entry below uses the following minimum fields:
 
 ---
 
+## Invariants (ported from quarantined pre-reopen contract catalogs, DEC-RO-05)
+
+The following invariants were extracted from `Canon/{packages|services|workers}/<path>/index.mjs`
+during the quarantine invariant-sweep packet (`pkt.quarantine-invariant-sweep.v1`,
+authorized by DEC-RO-05 / CF-0096). The source files were subsequently removed by
+`pkt.quarantine-delete.v1`; git history retains them for archaeology.
+
+- *Prepared runs must compile the admitted basis before gateway execution.* — sourced from `Canon/services/execution-control/run-dispatch/index.mjs` contract `prepare_run`.
+- *Lifecycle publication stays append-only and run-scoped.* — sourced from `Canon/services/execution-control/run-dispatch/index.mjs` contract `prepare_run`.
+- *Resume dispatch preserves explicit continuity events rather than hiding them in provider-local state.* — sourced from `Canon/services/execution-control/run-dispatch/index.mjs` contract `resume_run`.
+- *Rerun dispatch never reuses a prior run identity.* — sourced from `Canon/services/execution-control/run-dispatch/index.mjs` contract `rerun_run`.
+- *Gateway execution starts only after the admitted basis is frozen.* — sourced from `Canon/services/execution-control/run-dispatch/index.mjs` contract `admit_compiled_run`.
+- *Completion remains reconstructable from append-only run and source events.* — sourced from `Canon/services/execution-control/run-dispatch/index.mjs` contract `complete_gateway_run`.
+
+---
+
 *End of digest for `shared-environment/env-governance`*

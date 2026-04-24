@@ -216,4 +216,20 @@ and
 
 ---
 
+## Invariants (ported from quarantined pre-reopen contract catalogs, DEC-RO-05)
+
+The following invariants were extracted from `Canon/{packages|services|workers}/<path>/index.mjs`
+during the quarantine invariant-sweep packet (`pkt.quarantine-invariant-sweep.v1`,
+authorized by DEC-RO-05 / CF-0096). The source files were subsequently removed by
+`pkt.quarantine-delete.v1`; git history retains them for archaeology.
+
+- *Explicit admitted inputs take precedence over fallback lane selection.* — sourced from `Canon/packages/context-compiler-contracts/admitted-basis/index.mjs` contract `compile_run_context`.
+- *Provider continuity hints are advisory only and never become the replay basis.* — sourced from `Canon/packages/context-compiler-contracts/admitted-basis/index.mjs` contract `compile_run_context`.
+- *Explicit admitted inputs take precedence over fallback lane selection.* — sourced from `Canon/workers/context-compiler/compile-run-context/index.mjs` contract `execute_compile_run_context`.
+- *Provider session hints remain advisory only and never become the replay basis.* — sourced from `Canon/workers/context-compiler/compile-run-context/index.mjs` contract `execute_compile_run_context`.
+- *The worker emits a frozen admitted-basis record and compact inspection-ready result for the same run.* — sourced from `Canon/workers/context-compiler/compile-run-context/index.mjs` contract `execute_compile_run_context`.
+- *Context compilation remains a worker seam over frozen refs and returns control through typed dispatch rather than app-local shortcuts.* — sourced from `Canon/workers/context-compiler/compile-run-context/index.mjs` contract `publish_compiled_basis`.
+
+---
+
 *End of digest for `agentic-engine/engine-compiler`*
