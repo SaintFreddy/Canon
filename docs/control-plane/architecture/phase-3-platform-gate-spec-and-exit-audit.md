@@ -23,6 +23,51 @@ The §6 exit-test catalog, §7 audit checklist, and §8 failure classes below
 are kept verbatim as the authoritative gate record. They are now historical
 proof criteria rather than open blockers.
 
+## 0.1 Gate status (Phase 4+ reopen event, 2026-04-23)
+
+On 2026-04-23 the plan-owner (SaintFreddy) recorded a formal reopen of the
+Platform Gate acceptance marker against the 2026-04-18 agentic-engine
+audit-cited contradiction event. The governing decision is
+`canon-knowledgebase/post-reopen-decisions/condition-f.md` (Option A).
+
+Authority-preservation rule: §0 above and §7 below remain verbatim. The
+prior `Gate passed` state is preserved as append-only history and is not
+deleted.
+
+Reopen marker:
+
+- `Gate reopened — audit-cited contradiction event 2026-04-18.`
+- Platform Gate's next status is `pending PG-01.1 + PG-07.1 + PG-10.1`.
+- Successor checkpoint: `post-reopen-frozen-posture-replay-audit-sufficiency-checkpoint`
+  is formally superseded by `post-reopen-audit-cited-contradiction-checkpoint`.
+
+### 0.1.1 Remediation sub-gates
+
+Three remediation sub-gates close the reopen. They must each land before
+the Platform Gate acceptance marker returns to `passed`.
+
+| Sub-gate | Closes when |
+| --- | --- |
+| `PG-01.1` | engine `Clock` abstraction landed in `@canon/engine-core` with Shared Env production impl; `stableStringify` unified in `@canon/engine-core`; `localeCompare` purged from replay-sensitive sort paths; `frozenAt` placement decision recorded and implemented (condition (a), condition (d), and the `frozenAt` hash-inclusion sub-decision). |
+| `PG-07.1` | engine-owned `CredentialProvider` and hardened `validateCredentialScope` landed per condition (b) sub-decision B-1 Option A. |
+| `PG-10.1` | `spawnToolSandboxWorker` forks a real Node child and `attachToolSandboxWorkerIpc` is shipped on `contracts/exports.json` per condition (b) sub-decisions B-2 and B-3 Option A. |
+
+### 0.1.2 Downstream posture
+
+- Every Inherited Baseline item that cites Platform Gate as `passed` now
+  reads against a reopened acceptance marker. Downstream Canon doc
+  synchronization is handled by subsequent packets `PG-R2`
+  (blueprint/footnote sync) and `PG-R3` (maturity-matrix / high-level
+  architecture footnote sync); this packet is bounded to the Platform
+  Gate spec itself plus the registry/graph/master-plan synchronization.
+- The `PG-01` through `PG-10` exit-test catalog in §6 and the §7
+  checklist continue to define the gate's pass conditions. The reopen
+  does not redefine them; it reopens the P3.6 passage claim.
+- Ordinary baton continuation remains paused under `canon-now.md`
+  `Baton state: stop — audit-reopen hold` until PG-01.1, PG-07.1, and
+  PG-10.1 close and the remaining reopen-resolution conditions are
+  decided.
+
 ## 1. Purpose
 
 This pack defines the hard internal gate that must pass before public R1 release work is considered launchable.
@@ -124,6 +169,13 @@ They do not prescribe final repo layout, but they do prescribe mandatory impleme
 
 > Gate passed. The following checklist is kept as the human-owned audit
 > record. Confirmed at P3.6 acceptance.
+>
+> Gate reopened — audit-cited contradiction event 2026-04-18. The prior
+> `Gate passed` line above is preserved as append-only history per
+> `canon-knowledgebase/post-reopen-decisions/condition-f.md` (Option A,
+> recorded 2026-04-23). Platform Gate's next status is
+> `pending PG-01.1 + PG-07.1 + PG-10.1`. See §0.1 for the remediation
+> sub-gates and successor-checkpoint reference.
 
 The gate may pass only when human review can answer every line below with “yes”.
 
